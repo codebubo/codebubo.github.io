@@ -21,6 +21,20 @@ Mata in följande rader i Python-konsolen och reflektera över resultatet:
 -   `print(2.0 + 2)`
 -   `print(0.1 + 0.2)`
 
+<div style="color: red;">**Kommentarer**</div>
+
+1. Tecken inom citationstecken (`" "` ) skrivs ut precis som de är, det är ingenting som beräknas även om det är ett uttryck innanför
+citationstecknen.
+
+2. Uttrycket `2` är ett heltal och `2.0` är ett flyttal. Om ett flyttal
+används i en beräkning kommer svaret att bli ett flyttal, även om det finns
+heltal med i andra delar av uttrycket.
+
+3. `0.1 + 0.2` beräknas inte till exakt `0.3` eftersom Python lagrar tal
+i binär form (basen 2 till skillnad från basen 10). I denna binära
+representation kommer termerna att vara avrundade, och summan blir ett
+närmevärde.
+
 ### Uppgift 2
 
 Använd en enda `print`-sats som skriver ut följande (byt ut namnet mot ditt
@@ -32,6 +46,9 @@ eget). Observera att utskriften är på två rader!
 print("Jag heter\nAnders Andersson")
 ```
 :::
+
+<div style="color:red;">**Svar**</div>
+`print("Jag heter\nAnders Andersson")`
 
 ### Uppgift 3
 
@@ -57,6 +74,10 @@ print(f"Hej, jag heter {fnamn} och är {ålder} år.")
 
 (Resten av variablerna ska användas i en senare uppgift, så deklarera dessa även om de inte används här.)
 
+<div style="color: red;">**Lösningsförslag uppgift 3**</div>
+[Se denna länk](https://gist.github.com/codebubo/9dc1b0f9a8c61984aadd6f2b21138568)
+
+
 ### Uppgift 4
 
 Deklarera följande variabler, och **spara i en fil i Idle**:
@@ -69,6 +90,9 @@ fart = sträcka / tid
 
 Skapa en `print`-sats som skriver ut farten på det aktuella föremålet avrundat till en decimal.
 
+<div style="color: red;">**Lösningsförslag uppgift 4**</div>
+[Se denna länk](https://gist.github.com/codebubo/2f001a1660ac999a0df984ba67bdbd81)
+
 ### Uppgift 5
 
 Deklarera följande variabler i Python:
@@ -80,24 +104,32 @@ b = 21.32
 
 Använd en (enda) `print`-sats med lämpliga formateringstecken för att skriva ut, och göra, följande beräkning. Du ska inte använda flera på varandra följande mellanslag inne i `print`-satsen.
 
-::: {style="background-color: lightblue; width: 100%; height: 120px; padding: 10px; margin-top: 20px;"}
+::: {style="background-color: lightblue; width: 100%; height: 110px; padding: 10px; margin-top: 20px;"}
 ```{python}
 #| echo: false
 print(f"{a:>7.2f}\n+{b:>6.2f}\n-------\n{(a+b):>7.2f}")
 ```
 :::
 
+<p>
+<div style="color: red;">**Svar**</div>
+`print(f"{a:>7.2f}\n+{b:>6.2f}\n-------\n{(a+b):>7.2f}")`
+
 ### Uppgift 6
 
 Använd filen med strängvariablerna från Uppgift 3
 för att med en (enda) `print`-sats med lämpliga formateringstecken för att skriva ut strängarna, högerjusterade enligt nedan. Du ska inte använda flera på varandra följande mellanslag inne i `print`-satsen.
 
-::: {style="background-color: lightblue; width: 100%; height: 100px; padding: 10px; margin-top: 20px;"}
+::: {style="background-color: lightblue; width: 100%; height: 90px; padding: 10px; margin-top: 20px;"}
 ```{python}
 #| echo: false
 print(f"{fnamn:<6} {enamn}\n{adr:>16}\n{postnr :>7} {ort:>2}")
 ```
 :::
+
+<p>
+<div style="color: red;">**Svar**<div>
+`print(f"{fnamn:<6} {enamn}\n{adr:>16}\n{postnr :>7} {ort:>2}")`
 
 ## Villkor i Python
 
@@ -160,10 +192,10 @@ För de booleska variablerna `a`, `b` och `c` gäller
 Fundera ut vilket booleskt värde respektive uttryck nedan kommer att anta,
 och kontrollera det därefter i Python-konsolen:
 
-a. `(a and b) and c`
-b. `a and b and c`
-c. `(a and c) or b`
-d. `a and b or c`
+a. `(a and b) and c` <div style="color: red;">False</div>
+b. `a and b and c` <div style="color: red;">False</div>
+c. `(a and c) or b` <div style="color: red;">True</div>
+d. `a and b or c` <div style="color: red;">True</div>
 
 ### Uppgift 9
 
@@ -203,6 +235,10 @@ Dessa sidor kan inte bilda en triangel
 ```
 :::
 
+<p>
+<div style="color: red;">**Lösningsförslag**</div>
+[Se denna länk](https://gist.github.com/codebubo/34fd14ee9484289f95583597ee927b75)
+
 ### Uppgift 10
 
 Ett program som skriver ut vilket betyg en viss provpoäng motsvarar skulle
@@ -225,6 +261,9 @@ print('Programmet avslutas')
 a. Gör ett flödesschema för programmet.
 b. Skriv om programmet så att det använder de booleska operatorerna
 `not`, `and` och `or` i villkoren.
+
+<div style="color: red;">Lösningsförslag</div>
+[Se denna länk](https://gist.github.com/codebubo/be43369abc47aa71312423d561d4de8c)
 
 ### Uppgift 11
 
@@ -273,4 +312,8 @@ delbart med ett annat.
 1
 ```
 :::
+
+<p>
+<div style="color: red;">**Lösningsförslag**</div>
+[Se denna länk](https://gist.github.com/codebubo/7b7719f9aa172cd7b873e45a88b1afc7)
 

@@ -108,6 +108,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>print(2.0 + 2)</code></li>
 <li><code>print(0.1 + 0.2)</code></li>
 </ul>
+<div style="color: red;">
+<strong>Kommentarer</strong>
+</div>
+<ol type="1">
+<li><p>Tecken inom citationstecken (<code>" "</code> ) skrivs ut precis som de är, det är ingenting som beräknas även om det är ett uttryck innanför citationstecknen.</p></li>
+<li><p>Uttrycket <code>2</code> är ett heltal och <code>2.0</code> är ett flyttal. Om ett flyttal används i en beräkning kommer svaret att bli ett flyttal, även om det finns heltal med i andra delar av uttrycket.</p></li>
+<li><p><code>0.1 + 0.2</code> beräknas inte till exakt <code>0.3</code> eftersom Python lagrar tal i binär form (basen 2 till skillnad från basen 10). I denna binära representation kommer termerna att vara avrundade, och summan blir ett närmevärde.</p></li>
+</ol>
 </section>
 <section id="uppgift-2" class="level3">
 <h3 class="anchored" data-anchor-id="uppgift-2">Uppgift 2</h3>
@@ -120,6 +128,10 @@ Anders Andersson</code></pre>
 </div>
 </div>
 </div>
+<div style="color:red;">
+<strong>Svar</strong>
+</div>
+<p><code>print("Jag heter\nAnders Andersson")</code></p>
 </section>
 <section id="uppgift-3" class="level3">
 <h3 class="anchored" data-anchor-id="uppgift-3">Uppgift 3</h3>
@@ -141,6 +153,10 @@ Anders Andersson</code></pre>
 </div>
 </div>
 <p>(Resten av variablerna ska användas i en senare uppgift, så deklarera dessa även om de inte används här.)</p>
+<div style="color: red;">
+<strong>Lösningsförslag uppgift 3</strong>
+</div>
+<p><a href="https://gist.github.com/codebubo/9dc1b0f9a8c61984aadd6f2b21138568">Se denna länk</a></p>
 </section>
 <section id="uppgift-4" class="level3">
 <h3 class="anchored" data-anchor-id="uppgift-4">Uppgift 4</h3>
@@ -149,6 +165,10 @@ Anders Andersson</code></pre>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>tid <span class="op">=</span> <span class="fl">13.2</span>    <span class="co"># Tiden i sekunder</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>fart <span class="op">=</span> sträcka <span class="op">/</span> tid</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Skapa en <code>print</code>-sats som skriver ut farten på det aktuella föremålet avrundat till en decimal.</p>
+<div style="color: red;">
+<strong>Lösningsförslag uppgift 4</strong>
+</div>
+<p><a href="https://gist.github.com/codebubo/2f001a1660ac999a0df984ba67bdbd81">Se denna länk</a></p>
 </section>
 <section id="uppgift-5" class="level3">
 <h3 class="anchored" data-anchor-id="uppgift-5">Uppgift 5</h3>
@@ -158,7 +178,7 @@ Anders Andersson</code></pre>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="fl">21.32</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Använd en (enda) <code>print</code>-sats med lämpliga formateringstecken för att skriva ut, och göra, följande beräkning. Du ska inte använda flera på varandra följande mellanslag inne i <code>print</code>-satsen.</p>
-<div style="background-color: lightblue; width: 100%; height: 120px; padding: 10px; margin-top: 20px;">
+<div style="background-color: lightblue; width: 100%; height: 110px; padding: 10px; margin-top: 20px;">
 <div class="cell" data-execution_count="5">
 <div class="cell-output cell-output-stdout">
 <pre><code>   1.50
@@ -168,11 +188,16 @@ Anders Andersson</code></pre>
 </div>
 </div>
 </div>
+<p>
+</p><div style="color: red;">
+<strong>Svar</strong>
+</div>
+<p><code>print(f"{a:&gt;7.2f}\n+{b:&gt;6.2f}\n-------\n{(a+b):&gt;7.2f}")</code></p>
 </section>
 <section id="uppgift-6" class="level3">
 <h3 class="anchored" data-anchor-id="uppgift-6">Uppgift 6</h3>
 <p>Använd filen med strängvariablerna från Uppgift 3 för att med en (enda) <code>print</code>-sats med lämpliga formateringstecken för att skriva ut strängarna, högerjusterade enligt nedan. Du ska inte använda flera på varandra följande mellanslag inne i <code>print</code>-satsen.</p>
-<div style="background-color: lightblue; width: 100%; height: 100px; padding: 10px; margin-top: 20px;">
+<div style="background-color: lightblue; width: 100%; height: 90px; padding: 10px; margin-top: 20px;">
 <div class="cell" data-execution_count="6">
 <div class="cell-output cell-output-stdout">
 <pre><code>Anders Andersson
@@ -181,7 +206,12 @@ Anders Andersson</code></pre>
 </div>
 </div>
 </div>
-</section>
+<p>
+</p><div style="color: red;">
+<strong>Svar</strong>
+<div>
+<p><code>print(f"{fnamn:&lt;6} {enamn}\n{adr:&gt;16}\n{postnr :&gt;7} {ort:&gt;2}")</code></p>
+</div></div></section>
 </section>
 <section id="villkor-i-python" class="level2">
 <h2 class="anchored" data-anchor-id="villkor-i-python">Villkor i Python</h2>
@@ -229,10 +259,22 @@ Belopp kvar: 75 kr</code></pre>
 </ul>
 <p>Fundera ut vilket booleskt värde respektive uttryck nedan kommer att anta, och kontrollera det därefter i Python-konsolen:</p>
 <ol type="a">
-<li><code>(a and b) and c</code></li>
-<li><code>a and b and c</code></li>
-<li><code>(a and c) or b</code></li>
-<li><code>a and b or c</code></li>
+<li><code>(a and b) and c</code>
+<div style="color: red;">
+False
+</div></li>
+<li><code>a and b and c</code>
+<div style="color: red;">
+False
+</div></li>
+<li><code>(a and c) or b</code>
+<div style="color: red;">
+True
+</div></li>
+<li><code>a and b or c</code>
+<div style="color: red;">
+True
+</div></li>
 </ol>
 </section>
 <section id="uppgift-9" class="level3">
@@ -262,6 +304,11 @@ Ange längden på sida 2 -&gt; 5
 Ange längden på sida 3 -&gt; 1
 Dessa sidor kan inte bilda en triangel</code></pre>
 </div>
+<p>
+</p><div style="color: red;">
+<strong>Lösningsförslag</strong>
+</div>
+<p><a href="https://gist.github.com/codebubo/34fd14ee9484289f95583597ee927b75">Se denna länk</a></p>
 </section>
 <section id="uppgift-10" class="level3">
 <h3 class="anchored" data-anchor-id="uppgift-10">Uppgift 10</h3>
@@ -281,6 +328,10 @@ Dessa sidor kan inte bilda en triangel</code></pre>
 <li>Gör ett flödesschema för programmet.</li>
 <li>Skriv om programmet så att det använder de booleska operatorerna <code>not</code>, <code>and</code> och <code>or</code> i villkoren.</li>
 </ol>
+<div style="color: red;">
+Lösningsförslag
+</div>
+<p><a href="https://gist.github.com/codebubo/be43369abc47aa71312423d561d4de8c">Se denna länk</a></p>
 </section>
 <section id="uppgift-11" class="level3">
 <h3 class="anchored" data-anchor-id="uppgift-11">Uppgift 11</h3>
@@ -313,6 +364,11 @@ Ange ett årtal -&gt;  2000
 21 % 2
 1</code></pre>
 </div>
+<p>
+</p><div style="color: red;">
+<strong>Lösningsförslag</strong>
+</div>
+<p><a href="https://gist.github.com/codebubo/7b7719f9aa172cd7b873e45a88b1afc7">Se denna länk</a></p>
 </section>
 </section>
 
