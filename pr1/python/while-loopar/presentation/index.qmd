@@ -207,5 +207,5 @@ och inre loopen.
 :::
 
 :::{.smaller-font}
-Uppgifterna 1 -- 7 i dokumentet [Uppgifter Pr1, loopar](https://codebubo.github.io/pr1/uppgifter/while-loopar/)
+Uppgifterna 1 -- 7 i dokumentet [Uppgifter Pr1, loopar](https://codebubo.github.io/pr1/python/uppgifter/while-loopar/)
 :::

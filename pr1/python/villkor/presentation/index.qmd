@@ -313,5 +313,5 @@ print('Programmet avslutas')
 :::
 
 :::{.smaller-font}
-Uppgifterna 7 -- 11 i dokumentet [Uppgifter Pr1, utskrift och villkor](https://codebubo.github.io/pr1/uppgifter/utskrift-och-villkor/#uppgift-7)
+Uppgifterna 7 -- 11 i dokumentet [Uppgifter Pr1, utskrift och villkor](https://codebubo.github.io/pr1/python/uppgifter/utskrift-och-villkor/#uppgift-7)
 :::
