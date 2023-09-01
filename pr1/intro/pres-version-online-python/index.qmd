@@ -384,7 +384,7 @@ på radbrytning, textjustering och antal decimaler för ett tal.
 :::
 
 :::{.smaller-font}
-Uppgifterna 1 -- 6 i dokumentet [Uppgifter Pr1, utskrift och villkor](https://magistern.quarto.pub/uppgifter-pr1-utskrift-och-villkor/)
+Uppgifterna 1 -- 6 i dokumentet [Uppgifter Pr1, utskrift och villkor](https://codebubo.github.io/pr1/uppgifter/utskrift-och-villkor/)
 :::
 
 ## Ett Canvas-element {visibility="hidden"}
