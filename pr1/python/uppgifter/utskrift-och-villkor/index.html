@@ -112,7 +112,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <strong>Kommentarer</strong>
 </div>
 <ol type="1">
-<li><p>Tecken inom citationstecken (<code>" "</code> ) skrivs ut precis som de är, det är ingenting som beräknas även om det är ett uttryck innanför citationstecknen.</p></li>
+<li><p>Tecken inom citationstecken (<code>" "</code> ) skrivs ut precis som de är, det är ingenting som beräknas även om det är ett uttryck innanför citationstecknen. Det som står innanför citationstecken kallas för en <strong>sträng</strong>. Två strängar kan adderas, med resultatet att det blir en ny sträng som består av de båda ingående strängarna i en följd. Därav gäller att <code>"2" + "2"</code> blir <code>22</code> (där <code>22</code> är en sträng och inte ett tal).</p></li>
 <li><p>Uttrycket <code>2</code> är ett heltal och <code>2.0</code> är ett flyttal. Om ett flyttal används i en beräkning kommer svaret att bli ett flyttal, även om det finns heltal med i andra delar av uttrycket.</p></li>
 <li><p><code>0.1 + 0.2</code> beräknas inte till exakt <code>0.3</code> eftersom Python lagrar tal i binär form (basen 2 till skillnad från basen 10). I denna binära representation kommer termerna att vara avrundade, och summan blir ett närmevärde.</p></li>
 </ol>
@@ -129,7 +129,7 @@ Anders Andersson</code></pre>
 </div>
 </div>
 <div style="color:red;">
-<strong>Svar</strong>
+<strong>Svar uppgift 2</strong>
 </div>
 <p><code>print("Jag heter\nAnders Andersson")</code></p>
 </section>
@@ -190,7 +190,7 @@ Anders Andersson</code></pre>
 </div>
 <p>
 </p><div style="color: red;">
-<strong>Svar</strong>
+<strong>Svar uppgift 5</strong>
 </div>
 <p><code>print(f"{a:&gt;7.2f}\n+{b:&gt;6.2f}\n-------\n{(a+b):&gt;7.2f}")</code></p>
 </section>
@@ -208,7 +208,7 @@ Anders Andersson</code></pre>
 </div>
 <p>
 </p><div style="color: red;">
-<strong>Svar</strong>
+<strong>Svar uppgift 6</strong>
 <div>
 <p><code>print(f"{fnamn:&lt;6} {enamn}\n{adr:&gt;16}\n{postnr :&gt;7} {ort:&gt;2}")</code></p>
 </div></div></section>
@@ -224,23 +224,24 @@ Anders Andersson</code></pre>
 <div style="background-color: lightblue; width: 100%; height: 270px; padding: 10px; margin-top: 20px;margin-bottom: 10px;">
 <pre><code># Exempelkörning 1
 Ange belopp (i kr.) att handla för -&gt; 300
-Du har råd att köpa ett järnsmycke
+Beloppet räcker till ett järnsmycke!
 
 # Exempelkörning 2
 Ange belopp (i kr.) att handla för -&gt; 800
-Du har råd att köpa ett silversmycke
+Beloppet räcker till ett ett silversmycke!
 
 # Exempelkörning 3
 Ange belopp (i kr.) att handla för -&gt; 100
-Du har inte råd att köpa något smycke</code></pre>
+Beloppet räcker inte till något smycke.</code></pre>
 </div>
-<p><strong>Utmanande uppgift</strong>: Utöka programmet så att det skriver ut det maximala antalet av respektive smycke som du kan köpa för ett angivet belopp. Programmet ska prioritera de dyraste smyckena.</p>
+<p><strong>Utmanande uppgift</strong>: Ändra programmet så att det skriver ut det maximala antalet av respektive sort smycke som du kan köpa för ett angivet belopp. Programmet ska prioritera de dyraste smyckena.</p>
 <div style="background-color: lightblue; width: 100%; height: 160px; padding: 10px; margin-top: 20px;margin-bottom: 10px;">
 <pre><code># Exempelkörning 4
 Ange belopp (i kr.) att handla för -&gt; 1975
-Antal guldsmycken du kan köpa:  1
-Antal silvermycken du kan köpa: 1
-Antal järnsmycken du kan köpa:  2
+Beloppet räcker till:
+Antal guldsmycken:  1
+Antal silvermycken: 1
+Antal järnsmycken:  2
 Belopp kvar: 75 kr</code></pre>
 </div>
 <div style="background-color: lightyellow; width: 100%; height: 120px; padding: 10px; margin-top: 20px;margin-bottom: 10px;">
@@ -248,6 +249,10 @@ Belopp kvar: 75 kr</code></pre>
 <pre><code>15 // 7 # Ger resultatet 2
 20 // 7 # Ger resultatet 2</code></pre>
 </div>
+<div style="color: red;">
+<strong>Lösningsförslag uppgift 7</strong>
+</div>
+<p><a href="https://gist.github.com/codebubo/5909fb477c99db600505702292b277cf">Se denna länk</a></p>
 </section>
 <section id="uppgift-8" class="level3">
 <h3 class="anchored" data-anchor-id="uppgift-8">Uppgift 8</h3>
@@ -280,24 +285,24 @@ True
 <section id="uppgift-9" class="level3">
 <h3 class="anchored" data-anchor-id="uppgift-9">Uppgift 9</h3>
 <p>Skapa ett program som läser in längderna på tre sidor. Programmet ska sedan avgöra om dessa sidor är sidorna i en rätvinklig triangel.</p>
-<div style="background-color: lightblue; width: 100%; height: 270px; padding: 10px; margin-top: 20px;margin-bottom: 10px;">
+<div style="background-color: lightblue; width: 100%; height: 260px; padding: 10px; margin-top: 20px;margin-bottom: 10px;">
 <pre><code># Exempelkörning 1
 Ange längden på sida 1 -&gt; 3
 Ange längden på sida 2 -&gt; 4
 Ange längden på sida 3 -&gt; 5
-Dessa sidor bildar en rätvinklig triangel
+Dessa sidor kan bilda en rätvinklig triangel
 
 # Exempelkörning 2
 Ange längden på sida 1 -&gt; 3
 Ange längden på sida 2 -&gt; 4
 Ange längden på sida 3 -&gt; 6
-Dessa sidor bildar inte en rätvinklig triangel</code></pre>
+Dessa sidor kan inte bilda inte en rätvinklig triangel</code></pre>
 </div>
-<div style="background-color: lightyellow; width: 100%; height: 60px; padding: 10px; margin-top: 20px;margin-bottom: 10px;">
+<div style="background-color: lightyellow; width: 100%; height: 50px; padding: 10px; margin-top: 20px;margin-bottom: 10px;">
 <p>ⓘ För att kvadrera ett tal används <em>exponentoperatorn</em> <code>**</code>. T ex gäller att om <code>a = 2**3</code> så antar <code>a</code> värdet 8.</p>
 </div>
 <p><strong>Utmanande uppgift</strong>: Utöka programmet så att det även avgör om sidorna bildar en triangel över huvud taget.</p>
-<div style="background-color: lightblue; width: 100%; height: 150px; padding: 10px; margin-top: 20px;margin-bottom: 10px;">
+<div style="background-color: lightblue; width: 100%; height: 130px; padding: 10px; margin-top: 20px;margin-bottom: 10px;">
 <pre><code># Exempelkörning 3
 Ange längden på sida 1 -&gt; 7
 Ange längden på sida 2 -&gt; 5
@@ -306,7 +311,7 @@ Dessa sidor kan inte bilda en triangel</code></pre>
 </div>
 <p>
 </p><div style="color: red;">
-<strong>Lösningsförslag</strong>
+<strong>Lösningsförslag uppgift 9</strong>
 </div>
 <p><a href="https://gist.github.com/codebubo/34fd14ee9484289f95583597ee927b75">Se denna länk</a></p>
 </section>
@@ -329,7 +334,7 @@ Dessa sidor kan inte bilda en triangel</code></pre>
 <li>Skriv om programmet så att det använder de booleska operatorerna <code>not</code>, <code>and</code> och <code>or</code> i villkoren.</li>
 </ol>
 <div style="color: red;">
-Lösningsförslag
+<strong>Lösningsförslag uppgift 10</strong>
 </div>
 <p><a href="https://gist.github.com/codebubo/be43369abc47aa71312423d561d4de8c">Se denna länk</a></p>
 </section>
@@ -366,7 +371,7 @@ Ange ett årtal -&gt;  2000
 </div>
 <p>
 </p><div style="color: red;">
-<strong>Lösningsförslag</strong>
+<strong>Lösningsförslag uppgift 11</strong>
 </div>
 <p><a href="https://gist.github.com/codebubo/7b7719f9aa172cd7b873e45a88b1afc7">Se denna länk</a></p>
 </section>

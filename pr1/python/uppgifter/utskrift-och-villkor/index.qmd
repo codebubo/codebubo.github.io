@@ -23,8 +23,12 @@ Mata in följande rader i Python-konsolen och reflektera över resultatet:
 
 <div style="color: red;">**Kommentarer**</div>
 
-1. Tecken inom citationstecken (`" "` ) skrivs ut precis som de är, det är ingenting som beräknas även om det är ett uttryck innanför
-citationstecknen.
+1. Tecken inom citationstecken (`" "` ) skrivs ut precis som de är, det är
+ingenting som beräknas även om det är ett uttryck innanför citationstecknen.
+Det som står innanför citationstecken kallas för en **sträng**. Två strängar
+kan adderas, med resultatet att det blir en ny sträng som består av de båda
+ingående strängarna i en följd. Därav gäller att `"2" + "2"` blir `22`
+(där `22` är en sträng och inte ett tal). 
 
 2. Uttrycket `2` är ett heltal och `2.0` är ett flyttal. Om ett flyttal
 används i en beräkning kommer svaret att bli ett flyttal, även om det finns
@@ -47,7 +51,7 @@ print("Jag heter\nAnders Andersson")
 ```
 :::
 
-<div style="color:red;">**Svar**</div>
+<div style="color:red;">**Svar uppgift 2**</div>
 `print("Jag heter\nAnders Andersson")`
 
 ### Uppgift 3
@@ -112,7 +116,7 @@ print(f"{a:>7.2f}\n+{b:>6.2f}\n-------\n{(a+b):>7.2f}")
 :::
 
 <p>
-<div style="color: red;">**Svar**</div>
+<div style="color: red;">**Svar uppgift 5**</div>
 `print(f"{a:>7.2f}\n+{b:>6.2f}\n-------\n{(a+b):>7.2f}")`
 
 ### Uppgift 6
@@ -128,7 +132,7 @@ print(f"{fnamn:<6} {enamn}\n{adr:>16}\n{postnr :>7} {ort:>2}")
 :::
 
 <p>
-<div style="color: red;">**Svar**<div>
+<div style="color: red;">**Svar uppgift 6**<div>
 `print(f"{fnamn:<6} {enamn}\n{adr:>16}\n{postnr :>7} {ort:>2}")`
 
 ## Villkor i Python
@@ -148,27 +152,30 @@ använd dessa i programmet.
 ```         
 # Exempelkörning 1
 Ange belopp (i kr.) att handla för -> 300
-Du har råd att köpa ett järnsmycke
+Beloppet räcker till ett järnsmycke!
 
 # Exempelkörning 2
 Ange belopp (i kr.) att handla för -> 800
-Du har råd att köpa ett silversmycke
+Beloppet räcker till ett ett silversmycke!
 
 # Exempelkörning 3
 Ange belopp (i kr.) att handla för -> 100
-Du har inte råd att köpa något smycke
+Beloppet räcker inte till något smycke.
 ```
 :::
 
-**Utmanande uppgift**: Utöka programmet så att det skriver ut det maximala antalet av respektive smycke som du kan köpa för ett angivet belopp. Programmet ska prioritera de dyraste smyckena.
+**Utmanande uppgift**: Ändra programmet så att det skriver ut det maximala
+antalet av respektive sort smycke som du kan köpa för ett angivet belopp.
+Programmet ska prioritera de dyraste smyckena.
 
 ::: {style="background-color: lightblue; width: 100%; height: 160px; padding: 10px; margin-top: 20px;margin-bottom: 10px;"}
 ```         
 # Exempelkörning 4
 Ange belopp (i kr.) att handla för -> 1975
-Antal guldsmycken du kan köpa:  1
-Antal silvermycken du kan köpa: 1
-Antal järnsmycken du kan köpa:  2
+Beloppet räcker till:
+Antal guldsmycken:  1
+Antal silvermycken: 1
+Antal järnsmycken:  2
 Belopp kvar: 75 kr
 ```
 :::
@@ -181,6 +188,9 @@ vid division. Exempel:
 20 // 7 # Ger resultatet 2
 ```
 :::
+
+<div style="color: red;">**Lösningsförslag uppgift 7**</div>
+[Se denna länk](https://gist.github.com/codebubo/5909fb477c99db600505702292b277cf)
 
 ### Uppgift 8
 För de booleska variablerna `a`, `b` och `c` gäller
@@ -199,33 +209,35 @@ d. `a and b or c` <div style="color: red;">True</div>
 
 ### Uppgift 9
 
-Skapa ett program som läser in längderna på tre sidor. Programmet ska sedan avgöra om dessa sidor är sidorna i en rätvinklig triangel.
+Skapa ett program som läser in längderna på tre sidor. Programmet ska sedan
+avgöra om dessa sidor är sidorna i en rätvinklig triangel.
 
-::: {style="background-color: lightblue; width: 100%; height: 270px; padding: 10px; margin-top: 20px;margin-bottom: 10px;"}
+::: {style="background-color: lightblue; width: 100%; height: 260px; padding: 10px; margin-top: 20px;margin-bottom: 10px;"}
 ``` 
 # Exempelkörning 1
 Ange längden på sida 1 -> 3
 Ange längden på sida 2 -> 4
 Ange längden på sida 3 -> 5
-Dessa sidor bildar en rätvinklig triangel
+Dessa sidor kan bilda en rätvinklig triangel
 
 # Exempelkörning 2
 Ange längden på sida 1 -> 3
 Ange längden på sida 2 -> 4
 Ange längden på sida 3 -> 6
-Dessa sidor bildar inte en rätvinklig triangel
+Dessa sidor kan inte bilda inte en rätvinklig triangel
 ```
 :::
 
-::: {style="background-color: lightyellow; width: 100%; height: 60px; padding: 10px; margin-top: 20px;margin-bottom: 10px;"}
+::: {style="background-color: lightyellow; width: 100%; height: 50px; padding: 10px; margin-top: 20px;margin-bottom: 10px;"}
 &#9432;
 För att kvadrera ett tal används *exponentoperatorn* `**`. T ex gäller att om
 `a = 2**3` så antar `a` värdet 8.
 :::
 
-**Utmanande uppgift**: Utöka programmet så att det även avgör om sidorna bildar en triangel över huvud taget.
+**Utmanande uppgift**: Utöka programmet så att det även avgör om sidorna bildar
+en triangel över huvud taget.
 
-::: {style="background-color: lightblue; width: 100%; height: 150px; padding: 10px; margin-top: 20px;margin-bottom: 10px;"}
+::: {style="background-color: lightblue; width: 100%; height: 130px; padding: 10px; margin-top: 20px;margin-bottom: 10px;"}
 ```         
 # Exempelkörning 3
 Ange längden på sida 1 -> 7
@@ -236,7 +248,7 @@ Dessa sidor kan inte bilda en triangel
 :::
 
 <p>
-<div style="color: red;">**Lösningsförslag**</div>
+<div style="color: red;">**Lösningsförslag uppgift 9**</div>
 [Se denna länk](https://gist.github.com/codebubo/34fd14ee9484289f95583597ee927b75)
 
 ### Uppgift 10
@@ -262,7 +274,7 @@ a. Gör ett flödesschema för programmet.
 b. Skriv om programmet så att det använder de booleska operatorerna
 `not`, `and` och `or` i villkoren.
 
-<div style="color: red;">Lösningsförslag</div>
+<div style="color: red;">**Lösningsförslag uppgift 10**</div>
 [Se denna länk](https://gist.github.com/codebubo/be43369abc47aa71312423d561d4de8c)
 
 ### Uppgift 11
@@ -314,6 +326,6 @@ delbart med ett annat.
 :::
 
 <p>
-<div style="color: red;">**Lösningsförslag**</div>
+<div style="color: red;">**Lösningsförslag uppgift 11**</div>
 [Se denna länk](https://gist.github.com/codebubo/7b7719f9aa172cd7b873e45a88b1afc7)
 
