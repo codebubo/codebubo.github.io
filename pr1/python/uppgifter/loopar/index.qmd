@@ -7,7 +7,8 @@ format:
 editor: visual
 ---
 
-## Loopar i Python
+# Loopar i Python
+## while-loopar
 
 **Nedanstående uppgifter ska göras i varsin fil om det inte framgår något annat
 i uppgiften.**
@@ -107,7 +108,7 @@ slumpvis 1, X eller 2.
 <div style="color: red;">**Lösningsförslag uppgift 3**</div>
 [Se denna länk](https://gist.github.com/codebubo/58c3333e698d41210a376f12c4ad69b8)
 
-## Uppgift 4
+### Uppgift 4
 
 Skriv ett program där man ska gissa ett heltal mellan, och inklusive, 1 och 10.
 Gissningarna ska göras tills man gissar rätt. Efter en gissning ska
@@ -133,7 +134,7 @@ Du klarade spelet på gissning nr. 4.
 <div style="color: red;">**Lösningsförslag uppgift 4**</div>
 [Se denna länk](https://gist.github.com/codebubo/8e3a46d5cd58a0e871109451c79d74c5)
 
-## Uppgift 5
+### Uppgift 5
 
 Skriv ett program som beräknar och skriver ut alla heltalslösningar till
 ekvationen $2x+3y=120$ i intervallet $-50 \leq x,y \leq 50$. T ex gäller att
@@ -144,7 +145,7 @@ Tips: Låt programmet testa olika värden på $x$ och $y$ i en nästlad loop.
 <div style="color: red;">**Lösningsförslag uppgift 5**</div>
 [Se denna länk](https://gist.github.com/codebubo/81024df9ed1deea8ebd987a6c2ff7fa9)
 
-## Uppgift 6
+### Uppgift 6
 
 Försök att skapa följande figurer med hjälp av nästlade loopar:
 
@@ -217,7 +218,7 @@ while current_row <= max_rows:
 <div style="color: red;">**Lösningsförslag uppgift 6**</div>
 [Se denna länk](https://gist.github.com/codebubo/31a48c3ef9a4c66b21499507daa1d551)
 
-## Uppgift 7
+### Uppgift 7
 Skriv ett program som genom en meny ger en avatar tre egenskaper plus ett namn:
 
 * Namn, ska kunna sättas till godtycklig sträng
@@ -322,3 +323,54 @@ else:
 
 <div style="color: red;">**Lösningsförslag uppgift 7**</div>
 [Se denna länk](https://gist.github.com/codebubo/8972d09c18eedd43901f79d0922e5cab)
+
+## for-loopar
+
+### Uppgift 8
+I [uppgift 4](https://codebubo.github.io/pr1/python/uppgifter/loopar/#uppgift-4)
+skapade du ett program som lät en spelare gissa ett tal från 1 t o m 10.
+Modifiera detta program så att det startar om efter att spelaren har lyckats
+lista ut talet. Programmet ska totalt köras tre gånger, och när den tredje
+omgången är över ska det avslutas med att skriva ut medelvärdet på antalet
+gissningar som behövdes avrundat till en decimal. Använd en `for`-loop som
+kontrollstruktur för omstarten av programmet.
+
+Kärningsexempel:
+
+::: {style="background-color: lightblue; width: 100%; height: 710px; padding: 10px; margin-top: 20px;margin-bottom: 10px;"}
+```
+SPELOMGÅNG 1
+----------------
+Gissa ett tal mellan 1 och 10 ->5
+Talet 5 är för litet.
+Gissa ett tal mellan 1 och 10 ->7
+Talet 7 är för litet.
+Gissa ett tal mellan 1 och 10 ->9
+Talet 9 är för litet.
+Gissa ett tal mellan 1 och 10 ->10
+RÄTT GISSAT!
+Du klarade spelet på gissning nr. 4.
+
+SPELOMGÅNG 2
+----------------
+Gissa ett tal mellan 1 och 10 ->5
+Talet 5 är för stort.
+Gissa ett tal mellan 1 och 10 ->3
+Talet 3 är för litet.
+Gissa ett tal mellan 1 och 10 ->4
+RÄTT GISSAT!
+Du klarade spelet på gissning nr. 3.
+
+SPELOMGÅNG 3
+----------------
+Gissa ett tal mellan 1 och 10 ->5
+Talet 5 är för stort.
+Gissa ett tal mellan 1 och 10 ->2
+Talet 2 är för stort.
+Gissa ett tal mellan 1 och 10 ->1
+RÄTT GISSAT!
+Du klarade spelet på gissning nr. 3.
+
+Medelvärdet för antalet gissningar per tal: 3.3
+```
+:::

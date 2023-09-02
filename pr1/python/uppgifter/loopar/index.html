@@ -97,8 +97,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="loopar-i-python" class="level2">
-<h2 class="anchored" data-anchor-id="loopar-i-python">Loopar i Python</h2>
+<section id="loopar-i-python" class="level1">
+<h1>Loopar i Python</h1>
+<section id="while-loopar" class="level2">
+<h2 class="anchored" data-anchor-id="while-loopar">while-loopar</h2>
 <p><strong>Nedanstående uppgifter ska göras i varsin fil om det inte framgår något annat i uppgiften.</strong></p>
 <hr>
 <section id="uppgift-1" class="level3">
@@ -193,9 +195,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p><a href="https://gist.github.com/codebubo/58c3333e698d41210a376f12c4ad69b8">Se denna länk</a></p>
 </section>
-</section>
-<section id="uppgift-4" class="level2">
-<h2 class="anchored" data-anchor-id="uppgift-4">Uppgift 4</h2>
+<section id="uppgift-4" class="level3">
+<h3 class="anchored" data-anchor-id="uppgift-4">Uppgift 4</h3>
 <p>Skriv ett program där man ska gissa ett heltal mellan, och inklusive, 1 och 10. Gissningarna ska göras tills man gissar rätt. Efter en gissning ska programmet säga om det gissade talet var för stort eller för litet. När rätt tal gissats så ska det skriva ut hur många gissningar som behövdes.</p>
 <p>Körningsexempel:</p>
 <div style="background-color: lightblue; width: 100%; height: 270px; padding: 10px; margin-top: 20px;margin-bottom: 10px;">
@@ -206,8 +207,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p><a href="https://gist.github.com/codebubo/8e3a46d5cd58a0e871109451c79d74c5">Se denna länk</a></p>
 </section>
-<section id="uppgift-5" class="level2">
-<h2 class="anchored" data-anchor-id="uppgift-5">Uppgift 5</h2>
+<section id="uppgift-5" class="level3">
+<h3 class="anchored" data-anchor-id="uppgift-5">Uppgift 5</h3>
 <p>Skriv ett program som beräknar och skriver ut alla heltalslösningar till ekvationen <span class="math inline">\(2x+3y=120\)</span> i intervallet <span class="math inline">\(-50 \leq x,y \leq 50\)</span>. T ex gäller att <span class="math inline">\(x=30\)</span> och <span class="math inline">\(y=20\)</span> är en lösning.</p>
 <p>Tips: Låt programmet testa olika värden på <span class="math inline">\(x\)</span> och <span class="math inline">\(y\)</span> i en nästlad loop.</p>
 <div style="color: red;">
@@ -215,8 +216,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p><a href="https://gist.github.com/codebubo/81024df9ed1deea8ebd987a6c2ff7fa9">Se denna länk</a></p>
 </section>
-<section id="uppgift-6" class="level2">
-<h2 class="anchored" data-anchor-id="uppgift-6">Uppgift 6</h2>
+<section id="uppgift-6" class="level3">
+<h3 class="anchored" data-anchor-id="uppgift-6">Uppgift 6</h3>
 <p>Försök att skapa följande figurer med hjälp av nästlade loopar:</p>
 <div style="background-color: lightblue; width: 100%; height: 220px; padding: 10px; margin-top: 20px;margin-bottom: 10px;">
 <div class="cell" data-execution_count="4">
@@ -270,8 +271,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p><a href="https://gist.github.com/codebubo/31a48c3ef9a4c66b21499507daa1d551">Se denna länk</a></p>
 </section>
-<section id="uppgift-7" class="level2">
-<h2 class="anchored" data-anchor-id="uppgift-7">Uppgift 7</h2>
+<section id="uppgift-7" class="level3">
+<h3 class="anchored" data-anchor-id="uppgift-7">Uppgift 7</h3>
 <p>Skriv ett program som genom en meny ger en avatar tre egenskaper plus ett namn:</p>
 <ul>
 <li>Namn, ska kunna sättas till godtycklig sträng</li>
@@ -349,6 +350,51 @@ Snabbheten beräknas till 3.</code></pre>
 <strong>Lösningsförslag uppgift 7</strong>
 </div>
 <p><a href="https://gist.github.com/codebubo/8972d09c18eedd43901f79d0922e5cab">Se denna länk</a></p>
+</section>
+</section>
+<section id="for-loopar" class="level2">
+<h2 class="anchored" data-anchor-id="for-loopar">for-loopar</h2>
+<section id="uppgift-8" class="level3">
+<h3 class="anchored" data-anchor-id="uppgift-8">Uppgift 8</h3>
+<p>I <a href="https://codebubo.github.io/pr1/python/uppgifter/loopar/#uppgift-4">uppgift 4</a> skapade du ett program som lät en spelare gissa ett tal från 1 t o m 10. Modifiera detta program så att det startar om efter att spelaren har lyckats lista ut talet. Programmet ska totalt köras tre gånger, och när den tredje omgången är över ska det avslutas med att skriva ut medelvärdet på antalet gissningar som behövdes avrundat till en decimal. Använd en <code>for</code>-loop som kontrollstruktur för omstarten av programmet.</p>
+<p>Kärningsexempel:</p>
+<div style="background-color: lightblue; width: 100%; height: 710px; padding: 10px; margin-top: 20px;margin-bottom: 10px;">
+<pre><code>SPELOMGÅNG 1
+----------------
+Gissa ett tal mellan 1 och 10 -&gt;5
+Talet 5 är för litet.
+Gissa ett tal mellan 1 och 10 -&gt;7
+Talet 7 är för litet.
+Gissa ett tal mellan 1 och 10 -&gt;9
+Talet 9 är för litet.
+Gissa ett tal mellan 1 och 10 -&gt;10
+RÄTT GISSAT!
+Du klarade spelet på gissning nr. 4.
+
+SPELOMGÅNG 2
+----------------
+Gissa ett tal mellan 1 och 10 -&gt;5
+Talet 5 är för stort.
+Gissa ett tal mellan 1 och 10 -&gt;3
+Talet 3 är för litet.
+Gissa ett tal mellan 1 och 10 -&gt;4
+RÄTT GISSAT!
+Du klarade spelet på gissning nr. 3.
+
+SPELOMGÅNG 3
+----------------
+Gissa ett tal mellan 1 och 10 -&gt;5
+Talet 5 är för stort.
+Gissa ett tal mellan 1 och 10 -&gt;2
+Talet 2 är för stort.
+Gissa ett tal mellan 1 och 10 -&gt;1
+RÄTT GISSAT!
+Du klarade spelet på gissning nr. 3.
+
+Medelvärdet på antalet gissningar per tal: 3.3</code></pre>
+</div>
+</section>
+</section>
 </section>
 
 </main>
