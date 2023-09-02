@@ -30,6 +30,9 @@ while i <= 12:
 ```
 :::
 
+<div style="color: red;">**Lösningsförslag uppgift 1**</div>
+[Se denna länk](https://gist.github.com/codebubo/4493e32454dd4157a99a0111ecff1425)
+
 ### Uppgift 2
 
 I spelet <span class="small-caps">lotto</span> ska man tippa 7 olika nummer
@@ -58,6 +61,7 @@ Körningsexempel:
 ```{python}
 #| echo: false
 import random as rand
+rand.seed (782974)
 i = 1
 print("Din LOTTO-rad:", end=" ")
 while i <= 7:
@@ -65,6 +69,9 @@ while i <= 7:
     i += 1
 ```
 :::
+
+<div style="color: red;">**Lösningsförslag uppgift 2**</div>
+[Se denna länk](https://gist.github.com/codebubo/3fff44ded6b2eaa6a6f2dba95ba252df)
 
 ### Uppgift 3
 
@@ -97,6 +104,9 @@ while i <= 13:
 Tips: Formatera utskriften först efter att du vet hur du gör för att få
 slumpvis 1, X eller 2.
 
+<div style="color: red;">**Lösningsförslag uppgift 3**</div>
+[Se denna länk](https://gist.github.com/codebubo/58c3333e698d41210a376f12c4ad69b8)
+
 ## Uppgift 4
 
 Skriv ett program där man ska gissa ett heltal mellan, och inklusive, 1 och 10.
@@ -120,6 +130,9 @@ RÄTT GISSAT!<br>
 Du klarade spelet på gissning nr. 4.
 :::
 
+<div style="color: red;">**Lösningsförslag uppgift 4**</div>
+[Se denna länk](https://gist.github.com/codebubo/8e3a46d5cd58a0e871109451c79d74c5)
+
 ## Uppgift 5
 
 Skriv ett program som beräknar och skriver ut alla heltalslösningar till
@@ -127,6 +140,9 @@ ekvationen $2x+3y=120$ i intervallet $-50 \leq x,y \leq 50$. T ex gäller att
 $x=30$ och $y=20$ är en lösning.
 
 Tips: Låt programmet testa olika värden på $x$ och $y$ i en nästlad loop.
+
+<div style="color: red;">**Lösningsförslag uppgift 5**</div>
+[Se denna länk](https://gist.github.com/codebubo/81024df9ed1deea8ebd987a6c2ff7fa9)
 
 ## Uppgift 6
 
@@ -182,21 +198,24 @@ current_row = 0
 while current_row <= max_rows:
     current_col = 0
     while current_col <= max_cols:
-        if current_row % 2 != 0:
+        if current_row % 2 == 0:
+            if current_col % 2 == 0:
+                print("* ", end = " ")
+            else:
+                print("  ", end=" ")
+        elif current_row % 2 != 0:
             if current_col % 2 != 0:
                 print("* ", end = " ")
             else:
                 print("  ", end=" ")
-        elif current_row % 2 == 0:
-            if current_col % 2 != 0:
-                print("  ", end = " ")
-            else:
-                print("* ", end=" ")
         current_col += 1
     print()
     current_row += 1
 ```
 :::
+
+<div style="color: red;">**Lösningsförslag uppgift 6**</div>
+[Se denna länk](https://gist.github.com/codebubo/31a48c3ef9a4c66b21499507daa1d551)
 
 ## Uppgift 7
 Skriv ett program som genom en meny ger en avatar tre egenskaper plus ett namn:
@@ -226,14 +245,31 @@ Snabbheten beräknas till 3.
 
 Snabbheten är det som saknas upp till 10 från  den angivna styrkan.
 
-::: {style="background-color: lightyellow; width: 100%; height: 1000px; padding: 10px; margin-top: 20px;margin-bottom: 10px;"}
-&#9432; **Tips 1**
+::: {style="background-color: lightyellow; width: 100%; height: 1360px; padding: 10px; margin-top: 20px;margin-bottom: 10px;"}
+&#9432; **Tips 1 -- fritextval**
+
+Om det finns flera olika giltiga alternativ och man önskar filtrera bort
+ogiltiga inmatningar bland dessa alternativ, kan Pythons
+`in`-operator användas. Om vi vill att användaren ska skriva in
+"ÄPPLE" eller "BANAN" som ett svar på en fråga så kan vi deklarera en
+variabel enligt följande:
+
+```python
+frukter = {"ÄPPLE", "BANAN"}
+frukt = input("Ange antingen ÄPPLE eller BANAN -> ")
+if frukt in frukter:
+    print("Tack för ditt val!")
+else:
+    print("Ogiltigt val")
+```
+
+&#9432; **Tips 2 -- versaler och gemener**
 
 Python gör ju skillnad på versaler och gemener ("stora" och "små" bokstäver),
-det gör att en inmatning g (för Gul) och G kommer att tolkas på olika sätt.
-Det kan man sätta villkor för, men det kan bli många varianter att hantera. Ett
-vanligare sätt är att göra om inmatningen till versaler, och sedan göra
-jämförelsen mot versaler. Det görs med den s.k *strängmetoden* `upper`.
+det gör att en inmatning t ex "hon", "Hon" eller "HON" kommer att tolkas på
+olika sätt. Det kan man sätta villkor för, men det kan bli många varianter att
+hantera. Ett vanligare sätt är att göra om inmatningen till versaler, och sedan
+göra jämförelsen mot versaler. Det görs med den s.k *strängmetoden* `upper`.
 
 Ex:
 ```{python}
@@ -252,14 +288,19 @@ if my_upper_str == "ABC":
     # Det spelar ingen roll om användaren matade in abc, aBc
     # eller någon annan kombination av skiftlägen.
 ```
+
+Det finns även en strängmetod som heter `lower` (vilken skriver ut en sträng
+med gemener, "små bokstäver"). Den kan användas enligt
+`my_lower_str = my_str.lower()` 
+
 ::::{.v-space}
 ::::
-&#9432; **Tips 2**
+&#9432; **Tips 3 -- tal i strängar**
 
 För att testa om en inmatning är ett positivt heltal kan strängmetoden
-`isnumeric` användas (minns att `input` alltid ger en sträng). Om strängen
-utgörs av ett tal går det att konvertera till typen `int` eller `float`.
-Men om strängen inte utgörs av ett tal kommer ett försök till konvertering
+`isdigit` användas (minns att `input` alltid ger en sträng). Om strängen
+utgörs av ett heltal går det att konvertera till typen `int`.
+Men om strängen inte utgörs av ett heltal kommer ett försök till konvertering
 att krascha programmet. Därför ska konvertering ske först efter att programmet
 har försäkrat sig om att det är möjligt med en konvertering.
 
@@ -267,9 +308,10 @@ Ex:
 
 ```{python}
 #| echo: true
-# Testar om en sträng utgörs av ett tal, och multiplicerar i så fall det med 2.
+# Testar om en sträng utgörs av ett heltal, och konverterar det till i så fall
+# till heltalstyp varpå det multipliceras med 2.
 my_str = "123" # Ett tal i en sträng
-if my_str.isnumeric():
+if my_str.isdigit():
     my_number = int(my_str)
     print(2*my_number)
 else:
@@ -277,3 +319,6 @@ else:
 ```
 
 :::
+
+<div style="color: red;">**Lösningsförslag uppgift 7**</div>
+[Se denna länk](https://gist.github.com/codebubo/8972d09c18eedd43901f79d0922e5cab)
