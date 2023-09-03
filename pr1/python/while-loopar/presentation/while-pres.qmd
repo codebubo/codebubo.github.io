@@ -198,14 +198,3 @@ Denna kod motsvarar det ritade flödesschemat på förra slajden.
 * Styrsatsen `continue` gör att koden går tillbaka till loopens start.
 * I nästlade loopar går koden igenom alla kombinationer av värden i den yttre
 och inre loopen.
-
-
-
-## Uppgifter
-
-:::{.double-v-space}
-:::
-
-:::{.smaller-font}
-Uppgifterna 1 -- 7 i dokumentet [Uppgifter Pr1, loopar](../../uppgifter/loopar/)
-:::

@@ -3,9 +3,6 @@ title: "Presentation: Introduktion"
 format:
   html:
     fontsize: 1em
-    css: style.css
-    backgroundcolor: black
-    fontcolor: white
 editor: visual
 ---
 
@@ -14,3 +11,7 @@ editor: visual
 :::
 <iframe src="./intro-pres.html" width="800" height="550"></iframe>
 </center>
+
+## Uppgifter
+
+Uppgifterna 1 -- 6 i dokumentet [Uppgifter Pr1, utskrift och villkor](../../uppgifter/utskrift-och-villkor/)

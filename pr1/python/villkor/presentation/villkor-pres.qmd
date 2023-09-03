@@ -306,12 +306,3 @@ else:
 
 print('Programmet avslutas')
 ```
-
-## Uppgifter
-
-:::{.double-v-space}
-:::
-
-:::{.smaller-font}
-Uppgifterna 7 -- 11 i dokumentet [Uppgifter Pr1, utskrift och villkor](../../uppgifter/utskrift-och-villkor/)
-:::

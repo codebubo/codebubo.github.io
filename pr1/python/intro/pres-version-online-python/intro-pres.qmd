@@ -378,15 +378,6 @@ på radbrytning, textjustering och antal decimaler för ett tal.
 ::::
 :::
 
-## Uppgifter
-
-:::{.double-v-space}
-:::
-
-:::{.smaller-font}
-Uppgifterna 1 -- 6 i dokumentet [Uppgifter Pr1, utskrift och villkor](../../uppgifter/utskrift-och-villkor/)
-:::
-
 ## Ett Canvas-element {visibility="hidden"}
 
 Japp, nedanstående ruta är ett Canvas-element, anropat från en separat JavaScript-fil.

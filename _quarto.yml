@@ -8,11 +8,13 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
+    background: secondary
 
 format:
   html:
     theme: cosmo
     css: styles.css
+    backgroundcolor: mintcream
     toc: true
 
 

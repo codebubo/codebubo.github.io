@@ -3,6 +3,7 @@ title: "Uppgifter Pr1, utskrift och villkor"
 format:
   html:
     fontsize: 1em
+    backgroundcolor: white
 editor: visual
 ---
 

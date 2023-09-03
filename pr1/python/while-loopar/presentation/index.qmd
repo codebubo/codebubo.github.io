@@ -3,9 +3,6 @@ title: "Presentation: `while`-loopar"
 format:
   html:
     fontsize: 1em
-    css: style.css
-    backgroundcolor: black
-    fontcolor: white
 editor: visual
 ---
 
@@ -14,3 +11,7 @@ editor: visual
 :::
 <iframe src="./while-pres.html" width="800" height="550"></iframe>
 </center>
+
+## Uppgifter
+
+Uppgifterna 1 -- 7 i dokumentet [Uppgifter Pr1, loopar](../../uppgifter/loopar/)

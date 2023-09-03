@@ -3,9 +3,6 @@ title: "Presentation: Villkor"
 format:
   html:
     fontsize: 1em
-    css: style.css
-    backgroundcolor: black
-    fontcolor: white
 editor: visual
 ---
 
@@ -14,3 +11,7 @@ editor: visual
 :::
 <iframe src="./villkor-pres.html" width="800" height="550"></iframe>
 </center>
+
+## Uppgifter
+
+Uppgifterna 7 -- 11 i dokumentet [Uppgifter Pr1, utskrift och villkor](../../uppgifter/utskrift-och-villkor/)
