@@ -1,5 +1,19 @@
 [
   {
+    "objectID": "pr1/python/intro/pres-version-installerad-python/index.html#uppgifter",
+    "href": "pr1/python/intro/pres-version-installerad-python/index.html#uppgifter",
+    "title": "Presentation: Introduktion",
+    "section": "Uppgifter",
+    "text": "Uppgifter\nUppgifterna 1 – 6 i dokumentet Uppgifter Pr1, utskrift och villkor"
+  },
+  {
+    "objectID": "pr1/python/intro/pres-version-online-python/index.html#uppgifter",
+    "href": "pr1/python/intro/pres-version-online-python/index.html#uppgifter",
+    "title": "Presentation: Introduktion",
+    "section": "Uppgifter",
+    "text": "Uppgifter\nUppgifterna 1 – 6 i dokumentet Uppgifter Pr1, utskrift och villkor"
+  },
+  {
     "objectID": "pr1/python/while-loopar/presentation/while-pres.html#dagens-mål",
     "href": "pr1/python/while-loopar/presentation/while-pres.html#dagens-mål",
     "title": "While-loopar i Python",
@@ -61,13 +75,6 @@
     "title": "While-loopar i Python",
     "section": "Sammanfattning",
     "text": "Sammanfattning\n\nEn loop är en kontrollstruktur som upprepar kod.\nDet finns flera typer av loopar, idag har vi gått igenom while-loopen.\nwhile-loopen löper så länge ett villkor är uppfyllt…\n…eller tills den stöter på en break-sats.\nStyrsatsen continue gör att koden går tillbaka till loopens start.\nI nästlade loopar går koden igenom alla kombinationer av värden i den yttre och inre loopen."
-  },
-  {
-    "objectID": "pr1/python/while-loopar/presentation/while-pres.html#uppgifter",
-    "href": "pr1/python/while-loopar/presentation/while-pres.html#uppgifter",
-    "title": "While-loopar i Python",
-    "section": "Uppgifter",
-    "text": "Uppgifter\n\n\n\n\nUppgifterna 1 – 7 i dokumentet Uppgifter Pr1, loopar"
   },
   {
     "objectID": "pr1/python/uppgifter/loopar/index.html",
@@ -154,13 +161,6 @@
     "text": "Exempel: Kategorisera talet\n\n\n\n\nflowchart LR\nstart[/Inmatning\\n av tal/]\nslut(Programmet\\navslutas)\ncondGeq0{\"Tal ≥ 0?\"}\ncondNoll{\"Är talet 0?\"}\nneg[/Skriv ut\\n negativt/]\nnoll[/Skriv ut\\n noll/]\npos[/Skriv ut\\n positivt/]\nstart--&gt;condGeq0\ncondGeq0--&gt;|Ja|condNoll\ncondGeq0--&gt;|Nej|neg--&gt;slut\ncondNoll--&gt;|Ja|noll--&gt;slut\ncondNoll--&gt;|Nej|pos--&gt;slut\n\n\n\n\n\ntal = int(input('Ange valfritt heltal -&gt;'))\nif tal &gt;= 0:\n   if tal == 0:\n      print('Noll')\n   else:\n      print('Positivt')\nelse:\n   print('Negativt')\n\nprint('Programmet avslutas')"
   },
   {
-    "objectID": "pr1/python/villkor/presentation/villkor-pres.html#uppgifter",
-    "href": "pr1/python/villkor/presentation/villkor-pres.html#uppgifter",
-    "title": "Villkor i Python",
-    "section": "Uppgifter",
-    "text": "Uppgifter\n\n\n\n\nUppgifterna 7 – 11 i dokumentet Uppgifter Pr1, utskrift och villkor"
-  },
-  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
@@ -182,6 +182,13 @@
     "text": "Så småningom kommer på denna sida navigeringsmöjligheter till sajten."
   },
   {
+    "objectID": "pr1/python/villkor/presentation/index.html#uppgifter",
+    "href": "pr1/python/villkor/presentation/index.html#uppgifter",
+    "title": "Presentation: Villkor",
+    "section": "Uppgifter",
+    "text": "Uppgifter\nUppgifterna 7 – 11 i dokumentet Uppgifter Pr1, utskrift och villkor"
+  },
+  {
     "objectID": "pr1/python/uppgifter/utskrift-och-villkor/index.html",
     "href": "pr1/python/uppgifter/utskrift-och-villkor/index.html",
     "title": "Uppgifter Pr1, utskrift och villkor",
@@ -201,6 +208,13 @@
     "title": "Uppgifter Pr1, utskrift och villkor",
     "section": "Villkor i Python",
     "text": "Villkor i Python\nRespektive programmeringsuppgift nedan ska sparas i en fil\n\n\nUppgift 7\nSkapa ett program som ber dig mata in ett belopp med pengar. Programmet ska avgöra om det räcker till att köpa ett smycke av järn, silver eller guld. Skapa även ett flödesschema för programmet.\nPriset för respektive typ av smycke deklareras som variabler, där ett järnmycke kostar 200 kr, ett silversmycke 500 kr och ett guldsmycke 1000 kr. Deklarera variabler för dessa priser och använd dessa i programmet.\n\n# Exempelkörning 1\nAnge belopp (i kr.) att handla för -&gt; 300\nBeloppet räcker till ett järnsmycke!\n\n# Exempelkörning 2\nAnge belopp (i kr.) att handla för -&gt; 800\nBeloppet räcker till ett ett silversmycke!\n\n# Exempelkörning 3\nAnge belopp (i kr.) att handla för -&gt; 100\nBeloppet räcker inte till något smycke.\n\nUtmanande uppgift: Ändra programmet så att det skriver ut det maximala antalet av respektive sort smycke som du kan köpa för ett angivet belopp. Programmet ska prioritera de dyraste smyckena.\n\n# Exempelkörning 4\nAnge belopp (i kr.) att handla för -&gt; 1975\nBeloppet räcker till:\nAntal guldsmycken:  1\nAntal silvermycken: 1\nAntal järnsmycken:  2\nBelopp kvar: 75 kr\n\n\nⓘ Använd heltalsdivision, den ger heltalsdelen vid division. Exempel:\n15 // 7 # Ger resultatet 2\n20 // 7 # Ger resultatet 2\n\n\nLösningsförslag uppgift 7\n\nSe denna länk\n\n\nUppgift 8\nFör de booleska variablerna a, b och c gäller\n\na = True\nb = True\nc = False\n\nFundera ut vilket booleskt värde respektive uttryck nedan kommer att anta, och kontrollera det därefter i Python-konsolen:\n\n(a and b) and c\n\nFalse\n\na and b and c\n\nFalse\n\n(a and c) or b\n\nTrue\n\na and b or c\n\nTrue\n\n\n\n\nUppgift 9\nSkapa ett program som läser in längderna på tre sidor. Programmet ska sedan avgöra om dessa sidor är sidorna i en rätvinklig triangel.\n\n# Exempelkörning 1\nAnge längden på sida 1 -&gt; 3\nAnge längden på sida 2 -&gt; 4\nAnge längden på sida 3 -&gt; 5\nDessa sidor kan bilda en rätvinklig triangel\n\n# Exempelkörning 2\nAnge längden på sida 1 -&gt; 3\nAnge längden på sida 2 -&gt; 4\nAnge längden på sida 3 -&gt; 6\nDessa sidor kan inte bilda inte en rätvinklig triangel\n\n\nⓘ För att kvadrera ett tal används exponentoperatorn **. T ex gäller att om a = 2**3 så antar a värdet 8.\n\nUtmanande uppgift: Utöka programmet så att det även avgör om sidorna bildar en triangel över huvud taget.\n\n# Exempelkörning 3\nAnge längden på sida 1 -&gt; 7\nAnge längden på sida 2 -&gt; 5\nAnge längden på sida 3 -&gt; 1\nDessa sidor kan inte bilda en triangel\n\n\n\nLösningsförslag uppgift 9\n\nSe denna länk\n\n\nUppgift 10\nEtt program som skriver ut vilket betyg en viss provpoäng motsvarar skulle kunna se ut så här:\ne_gräns = 15; c_gräns = 25; a_gräns = 35\npoäng = int(input('Ange din provpoäng -&gt; '))\nif poäng &gt;= a_gräns:\n   print('A')\nelif poäng &gt;= c_gräns:\n   print('C')\nelif poäng &gt;= e_gräns:\n   print('E')\nelse:\n   print('F')\nprint('Programmet avslutas')\n\nGör ett flödesschema för programmet.\nSkriv om programmet så att det använder de booleska operatorerna not, and och or i villkoren.\n\n\nLösningsförslag uppgift 10\n\nSe denna länk\n\n\nUppgift 11\nSkapa ett program som ber dig mata in ett årtal. Programmet avgör om året är ett skottår. Ett årtal som inte är delbart med 4 är inte ett skottår. Är årtalet dessutom delbart 100 måste det också vara delbart med 400 för att vara ett skottår.\n\n# Exempelkörning 1\nAnge ett årtal -&gt;  2020\nÅr 2020 är ett skottår\n\n# Exempelkörning 2\nAnge ett årtal -&gt;  2021\nÅr 2021 är inte ett skottår\n\n# Exempelkörning 3\nAnge ett årtal -&gt;  1800\nÅr 1800 är inte ett skottår\n\n# Exempelkörning 4\nAnge ett årtal -&gt;  2000\nÅr 2000 är ett skottår\n\n\nⓘ Modulooperatorn (%) ger resultatet noll om ett tal är jämnt delbart med ett annat.\n# Exempel 1, delbart\n# (21 är delbart med 3)\n21 % 3\n0\n# Exempel 2, ej delbart\n# (21 är ej delbart med 2)\n21 % 2\n1\n\n\n\nLösningsförslag uppgift 11\n\nSe denna länk"
+  },
+  {
+    "objectID": "pr1/python/while-loopar/presentation/index.html#uppgifter",
+    "href": "pr1/python/while-loopar/presentation/index.html#uppgifter",
+    "title": "Presentation: while-loopar",
+    "section": "Uppgifter",
+    "text": "Uppgifter\nUppgifterna 1 – 7 i dokumentet Uppgifter Pr1, loopar"
   },
   {
     "objectID": "pr1/python/intro/pres-version-online-python/intro-pres.html#klipsk-som-en-dator",
@@ -322,13 +336,6 @@
     "text": "Sammanfattning (forts.)\n\n\n\nDet finns regler och konventioner för namngivning av variabler.\n\n\n\n\nFör att skriva ut variabler i Python används en funktion som heter print.\n\n\n\n\nMed print går det att styra hur utskriften sker, t ex med avseende på radbrytning, textjustering och antal decimaler för ett tal.\n\n\n\n\nUttryck kan evalueras i en sträng i Python med f-string.\n\nprint(f\"Talet är {2+2}\") # Talet är 4"
   },
   {
-    "objectID": "pr1/python/intro/pres-version-online-python/intro-pres.html#uppgifter",
-    "href": "pr1/python/intro/pres-version-online-python/intro-pres.html#uppgifter",
-    "title": "Introduktion Programmering 1, indval",
-    "section": "Uppgifter",
-    "text": "Uppgifter\n\n\n\n\nUppgifterna 1 – 6 i dokumentet Uppgifter Pr1, utskrift och villkor"
-  },
-  {
     "objectID": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#klipsk-som-en-dator",
     "href": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#klipsk-som-en-dator",
     "title": "Introduktion Programmering 1",
@@ -446,12 +453,5 @@
     "title": "Introduktion Programmering 1",
     "section": "Sammanfattning (forts.)",
     "text": "Sammanfattning (forts.)\n\n\n\nDet finns regler och konventioner för namngivning av variabler.\n\n\n\n\nFör att skriva ut variabler i Python används en funktion som heter print.\n\n\n\n\nMed print går det att styra hur utskriften sker, t ex med avseende på radbrytning, textjustering och antal decimaler för ett tal.\n\n\n\n\nUttryck kan evalueras i en sträng i Python med f-string.\n\nprint(f\"Talet är {2+2}\") # Talet är 4"
-  },
-  {
-    "objectID": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#uppgifter",
-    "href": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#uppgifter",
-    "title": "Introduktion Programmering 1",
-    "section": "Uppgifter",
-    "text": "Uppgifter\n\n\n\n\nUppgifterna 1 – 6 i dokumentet Uppgifter Pr1, utskrift och villkor"
   }
 ]
