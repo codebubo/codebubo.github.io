@@ -1,311 +1,73 @@
 [
   {
-    "objectID": "pr1/python/intro/pres-version-installerad-python/index.html#klipsk-som-en-dator",
-    "href": "pr1/python/intro/pres-version-installerad-python/index.html#klipsk-som-en-dator",
-    "title": "Introduktion Programmering 1",
-    "section": "Klipsk som en dator?",
-    "text": "Klipsk som en dator?"
-  },
-  {
-    "objectID": "pr1/python/intro/pres-version-installerad-python/index.html#förkunskaper",
-    "href": "pr1/python/intro/pres-version-installerad-python/index.html#förkunskaper",
-    "title": "Introduktion Programmering 1",
-    "section": "Förkunskaper?",
-    "text": "Förkunskaper?\n\n\n\n\nhttps://shorturl.at/fx035"
-  },
-  {
-    "objectID": "pr1/python/intro/pres-version-installerad-python/index.html#vad-är-ett-datorprogram",
-    "href": "pr1/python/intro/pres-version-installerad-python/index.html#vad-är-ett-datorprogram",
-    "title": "Introduktion Programmering 1",
-    "section": "Vad är ett datorprogram?",
-    "text": "Vad är ett datorprogram?\n\n\n\nEtt datorprogram är som en uppsättning instruktioner eller regler som berättar för datorn vad den ska göra.\n\n\n\n\nPrecis som vi människor använder oss av instruktioner för att utföra olika uppgifter, använder sig också en dator av programmet för att lösa problem och utföra specifika arbetsuppgifter.\n\n\n\n\nDessa instruktioner i ett datorprogram skrivs vanligtvis i ett programmeringsspråk, vilket är ett särskilt språk som både människor och datorer kan förstå.\n\n\n\n\nNär programmet körs på en dator läser den stegvis igenom varje instruktion och utför de angivna operationerna."
-  },
-  {
-    "objectID": "pr1/python/intro/pres-version-installerad-python/index.html#vad-är-ett-datorprogram-forts.",
-    "href": "pr1/python/intro/pres-version-installerad-python/index.html#vad-är-ett-datorprogram-forts.",
-    "title": "Introduktion Programmering 1",
-    "section": "Vad är ett datorprogram? (forts.)",
-    "text": "Vad är ett datorprogram? (forts.)\n\n\n\nGenom att kombinera olika instruktionssekvenser kan man bygga upp mer komplexa program som kan hantera allt från matematiska beräkningar till grafikrendering eller datahantering.\n\n\n\n\nMänniskor skapar dessa program för att automatisera processer, lösa problem eller utveckla nya teknologier och applikationer som används inom allt från spelutveckling till medicinsk forskning och affärsverksamhet.\n\n\n\nSammanfattningsvis kan man säga att ett datorprogram är en samling av instruktioner skrivna i programmeringsspråk, vilket ger möjlighet att styra hur en dators hårdvara fungerar och får den att utföra specifika uppgifter."
-  },
-  {
-    "objectID": "pr1/python/intro/pres-version-installerad-python/index.html#utvecklingsmiljö",
-    "href": "pr1/python/intro/pres-version-installerad-python/index.html#utvecklingsmiljö",
-    "title": "Introduktion Programmering 1",
-    "section": "Utvecklingsmiljö",
-    "text": "Utvecklingsmiljö\nVi kommer att arbeta med Pythons miljö Idle under första halvan av höstterminen\n\n\n  \n\nMiljön består av en konsol där kortare “kodsnuttar” kan skrivas in och en editor där program kan skrivas och sparas.\n\n\nLadda ned från https://www.python.org/downloads"
-  },
-  {
-    "objectID": "pr1/python/intro/pres-version-installerad-python/index.html#dagens-mål",
-    "href": "pr1/python/intro/pres-version-installerad-python/index.html#dagens-mål",
-    "title": "Introduktion Programmering 1",
-    "section": "Dagens mål",
-    "text": "Dagens mål\n\nInstallera Python på datorn\nBekanta sig med konsol och editor genom arbete med\n\nVariabler\nFormaterad utskrift"
-  },
-  {
-    "objectID": "pr1/python/intro/pres-version-installerad-python/index.html#variabler",
-    "href": "pr1/python/intro/pres-version-installerad-python/index.html#variabler",
-    "title": "Introduktion Programmering 1",
-    "section": "Variabler",
-    "text": "Variabler\nEn variabel är ett “namn” på ett värde. Kan även kallas för en identifierare.\n\n# Detta program skrivs i en fil som sparas.\n# Filen skapas i Idle: File -&gt; New File\n# och namnges till fartberäkning\nsträcka = 103  # Sträckan i meter\ntid = 13.2     # Tiden i sekunder\nfart = sträcka / tid\n\nprint(f\"Fart = {fart:.1f} m/s\")\n# Skriver ut Fart = 7.8 m/s\n\nFart = 7.8 m/s\n\n\n\nVariabler kan innehålla andra saker än tal; man säger att även detta är värden."
-  },
-  {
-    "objectID": "pr1/python/intro/pres-version-installerad-python/index.html#variabeltyper",
-    "href": "pr1/python/intro/pres-version-installerad-python/index.html#variabeltyper",
-    "title": "Introduktion Programmering 1",
-    "section": "Variabeltyper",
-    "text": "Variabeltyper\n\nNågra vanliga typer av variabler är  string (sträng), int (heltal) och float (tal med decimaler).\n\n\nPython kan skriva ut variabeltypen för en given variabel.\n\n\n\nett_heltal = 5\nett_flyttal = 2.9\nen_sträng = \"En sträng\"\nprint(type(ett_heltal))\nprint(type(ett_flyttal))\nprint(type(en_sträng))\n\n&lt;class 'int'&gt;\n&lt;class 'float'&gt;\n&lt;class 'str'&gt;"
-  },
-  {
-    "objectID": "pr1/python/intro/pres-version-installerad-python/index.html#variabler-i-datorminnet",
-    "href": "pr1/python/intro/pres-version-installerad-python/index.html#variabler-i-datorminnet",
-    "title": "Introduktion Programmering 1",
-    "section": "Variabler i datorminnet",
-    "text": "Variabler i datorminnet\n\nNär en variabel tilldelas ett värde kommer detta värde att sparas på en plats i datorns minne. När variabeln adresseras kommer namnet att hänvisa till denna minnesplats."
-  },
-  {
-    "objectID": "pr1/python/intro/pres-version-installerad-python/index.html#några-regler-för-variabelnamn",
-    "href": "pr1/python/intro/pres-version-installerad-python/index.html#några-regler-för-variabelnamn",
-    "title": "Introduktion Programmering 1",
-    "section": "Några regler för variabelnamn",
-    "text": "Några regler för variabelnamn\n\n\nAlla bokstavstecken och siffror får användas\n\n\n\n\nPython gör skillnad på versaler och gemener\n\n\n\n\nVariabelnamn kan inte börja med en siffra\n\n\n\n\nVariabelnamn kan inte innehålla mellanslag\n\n\n\n\nVariabelnamn kan inte innehålla bindestreck"
-  },
-  {
-    "objectID": "pr1/python/intro/pres-version-installerad-python/index.html#några-regler-för-variabelnamn-forts.",
-    "href": "pr1/python/intro/pres-version-installerad-python/index.html#några-regler-för-variabelnamn-forts.",
-    "title": "Introduktion Programmering 1",
-    "section": "Några regler för variabelnamn (forts.)",
-    "text": "Några regler för variabelnamn (forts.)\n\n\n\n\n\nVariabelnamn bör inledas med en gemen (“liten”) bokstav\n\n\n\n\nVariabelnamn bör vara uttrycksfulla, dvs beskriva vad de står för\n\n\n\n\nOrd separeras, t ex längd_rekt = 5\n\n\n\n\nLänk: Tillåtna namn på variabler"
-  },
-  {
-    "objectID": "pr1/python/intro/pres-version-installerad-python/index.html#utskrifter-i-python",
-    "href": "pr1/python/intro/pres-version-installerad-python/index.html#utskrifter-i-python",
-    "title": "Introduktion Programmering 1",
-    "section": "Utskrifter i Python",
-    "text": "Utskrifter i Python\n\n\n\nUtskrift av sträng\n\nhello_string = \"Hello, world\"\nprint(hello_string)\n\nHello, world\n\n\n\n\n\n\n\nUtskrift av sträng och tal\n\npris = 10\nprint(f\"Priset är {pris} kr.\")\n\nPriset är 10 kr.\n\n\n\n\n\nUtskrift av heltal\n\npris = 10\nprint(pris)\n\n10\n\n\n\n\n\n\n\nAvrundning\n\nmy_float = 2/3\nprint(f\"{my_float:.2f}\")\n\n0.67\n\n\n\n\n\n\nNär “fast” text ska skrivas ut tillsammans med en variabel används en s.k f-string. Det står för formatted string literal."
-  },
-  {
-    "objectID": "pr1/python/intro/pres-version-installerad-python/index.html#formaterad-utskrift",
-    "href": "pr1/python/intro/pres-version-installerad-python/index.html#formaterad-utskrift",
-    "title": "Introduktion Programmering 1",
-    "section": "Formaterad utskrift",
-    "text": "Formaterad utskrift\nEn teckensträng har en en given textbredd. Det tydliggörs med utfyllnadstecken.\n\ns1 = \"Kalle\"\ns2 = \"Anka\"\nprint(f\"{s1:*&lt;13}\")      # Textbredd 13, vänsterjusterat\nprint(f\"{s1:*&gt;13}\")      # Textbredd 13, högerjusterat\nprint(f\"{s1:*^13}\")      # Textbredd 13, centrerat\nprint(s1.rjust(13, \"*\")) # Finns även ljust och center\nprint(s1.ljust(13) + s2) # Inget utfyllnadstecken!\n\n\n\nKalle********\n********Kalle\n****Kalle****\n********Kalle\nKalle        Anka\n\n\n\nPå rad 7 syns att vi kan slå ihop (konkatenera) två strängar med operatorn +."
-  },
-  {
-    "objectID": "pr1/python/intro/pres-version-installerad-python/index.html#sträng-med-radbrytning",
-    "href": "pr1/python/intro/pres-version-installerad-python/index.html#sträng-med-radbrytning",
-    "title": "Introduktion Programmering 1",
-    "section": "Sträng med radbrytning",
-    "text": "Sträng med radbrytning\nFör att skriva ut en sträng på flera används ett s.k “flykttecken” (escape character).\n\nprint(\"Här är en text\\npå två rader\")\n\nHär är en text\npå två rader\n\n\n\nDetta kan användas tillsammans med textbredden.\n\nprint(f\"Detta är en högerjusterad text\\n{'på flera rader':*&gt;30}\")\n\nDetta är en högerjusterad text\n****************på flera rader\n\n\n\n\n\n\n\n\nDet finns flera exempel på escape characters på denna länk."
-  },
-  {
-    "objectID": "pr1/python/intro/pres-version-installerad-python/index.html#justering-av-tal",
-    "href": "pr1/python/intro/pres-version-installerad-python/index.html#justering-av-tal",
-    "title": "Introduktion Programmering 1",
-    "section": "Justering av tal",
-    "text": "Justering av tal\n\nTabeller blir mer lättlästa om ental står under ental, tiondel under tiondel osv.\n\n\n\na = 10.5; b = 2.38\nc = 2.3;  d = 0.1\nprint(f\"{a:6.2f}\\t\\t{c:6.2f}\\n{b:6.2f}\\t\\t{d:6.2f}\")\nprint(\"----------------------\");\nprint(f\"{(a+b):6.2f}\\t\\t{(c+d):6.2f}\")\n\n 10.50        2.30\n  2.38        0.10\n----------------------\n 12.88        2.40\n\n\n\n\nObservera att beräkningarna sker mellan måsvingarna!"
-  },
-  {
-    "objectID": "pr1/python/intro/pres-version-installerad-python/index.html#sammanfattning",
-    "href": "pr1/python/intro/pres-version-installerad-python/index.html#sammanfattning",
-    "title": "Introduktion Programmering 1",
-    "section": "Sammanfattning",
-    "text": "Sammanfattning\n\n\n\nEtt datorprogram är en följd av instruktioner.\n\n\n\n\nDessa instruktioner skrivs i ett programmeringsspråk.\n\n\n\n\nI Python kan korta kodavsnitt skrivas i konsolen, medan en editor används för att skriva och spara program.\n\n\n\n\nI datorprogram kan användas kommentarer för att det ska bli mer lättläst. För Python gäller tecknet # inleder kommentaren # Kommentar\n\n\n\n\nFör att lagra värden i ett program används variabler.\n\n\n\n\nVariabelns typ beror på vilket sorts värde som lagras."
-  },
-  {
-    "objectID": "pr1/python/intro/pres-version-installerad-python/index.html#sammanfattning-forts.",
-    "href": "pr1/python/intro/pres-version-installerad-python/index.html#sammanfattning-forts.",
-    "title": "Introduktion Programmering 1",
-    "section": "Sammanfattning (forts.)",
-    "text": "Sammanfattning (forts.)\n\n\n\nDet finns regler och konventioner för namngivning av variabler.\n\n\n\n\nFör att skriva ut variabler i Python används en funktion som heter print.\n\n\n\n\nMed print går det att styra hur utskriften sker, t ex med avseende på radbrytning, textjustering och antal decimaler för ett tal.\n\n\n\n\nUttryck kan evalueras i en sträng i Python med f-string.\n\nprint(f\"Talet är {2+2}\") # Talet är 4"
-  },
-  {
-    "objectID": "pr1/python/intro/pres-version-installerad-python/index.html#uppgifter",
-    "href": "pr1/python/intro/pres-version-installerad-python/index.html#uppgifter",
-    "title": "Introduktion Programmering 1",
-    "section": "Uppgifter",
-    "text": "Uppgifter\n\n\n\n\nUppgifterna 1 – 6 i dokumentet Uppgifter Pr1, utskrift och villkor"
-  },
-  {
-    "objectID": "pr1/python/while-loopar/presentation/index.html#dagens-mål",
-    "href": "pr1/python/while-loopar/presentation/index.html#dagens-mål",
+    "objectID": "pr1/python/while-loopar/presentation/while-pres.html#dagens-mål",
+    "href": "pr1/python/while-loopar/presentation/while-pres.html#dagens-mål",
     "title": "While-loopar i Python",
     "section": "Dagens mål",
     "text": "Dagens mål\n\nAtt känna till innebörden av en loopstruktur.\nAtt skriva enkla program som innehåller en eller flera while-loopar.\nAtt kunna använda styrsatserna break och continue.\nPå högre nivå: Att skriva program som innehåller nästlade loopar."
   },
   {
-    "objectID": "pr1/python/while-loopar/presentation/index.html#varför-loopar",
-    "href": "pr1/python/while-loopar/presentation/index.html#varför-loopar",
+    "objectID": "pr1/python/while-loopar/presentation/while-pres.html#varför-loopar",
+    "href": "pr1/python/while-loopar/presentation/while-pres.html#varför-loopar",
     "title": "While-loopar i Python",
     "section": "Varför loopar?",
     "text": "Varför loopar?\n\nLoopar används när en del i ett program ska upprepas ett bestämt eller obestämt antal gånger. Det kan t ex vara ett gissningsspel: Så länge som spelaren gissar fel ska det finnas möjlighet att gissa igen.\nVi vet inte hur många gissningar som behövs, men det ska finnas ett villkor som anger när loopen ska avslutas. Programmet kan även hålla koll på hur många gissningar som behövdes."
   },
   {
-    "objectID": "pr1/python/while-loopar/presentation/index.html#enklast-möjliga-while-loop",
-    "href": "pr1/python/while-loopar/presentation/index.html#enklast-möjliga-while-loop",
+    "objectID": "pr1/python/while-loopar/presentation/while-pres.html#enklast-möjliga-while-loop",
+    "href": "pr1/python/while-loopar/presentation/while-pres.html#enklast-möjliga-while-loop",
     "title": "While-loopar i Python",
     "section": "Enklast möjliga while-loop",
     "text": "Enklast möjliga while-loop\n\n\n\n\nflowchart LR\n    A((Start)) --&gt; B(\"Tilldela\\ni = 1\")\n    B --&gt; C{\"Är i ≤ 5?\"}\n    C --&gt;|Ja| D[/Skriv ut i/]\n    D --&gt; G(Öka i med 1)\n    G --&gt; C \n    C --&gt;|Nej| F((Avsluta))\n\n\n\n\n\n\n\n\n\ni = 1\nwhile i &lt;= 5:\n    print(i, end=\" \")\n    i += 1  # i ökar med 1\nprint(f\"\\nProgrammet avslutas eftersom i = {i}\")\n\n1 2 3 4 5 \nProgrammet avslutas eftersom i = 6\n\n\n\n\n\nVillkoret är på rad 2. Allt som omfattas av loopen är radindraget."
   },
   {
-    "objectID": "pr1/python/while-loopar/presentation/index.html#beräkning-av-summa-ver.-1",
-    "href": "pr1/python/while-loopar/presentation/index.html#beräkning-av-summa-ver.-1",
+    "objectID": "pr1/python/while-loopar/presentation/while-pres.html#beräkning-av-summa-ver.-1",
+    "href": "pr1/python/while-loopar/presentation/while-pres.html#beräkning-av-summa-ver.-1",
     "title": "While-loopar i Python",
     "section": "Beräkning av summa – ver. 1",
     "text": "Beräkning av summa – ver. 1\n# Detta program beräknar summan av ett antal tal\navsluta = False\nsumma = 0\nwhile not avsluta:\n    tal = int(input(\"Ange ett valfritt tal, noll avslutar -&gt; \"))\n    if tal == 0:\n        avsluta = True\n    summa += tal\nprint(f\"Summan är {summa}\")\n\n\n\n\nEtt problem här är även det sista inmatade talet ingår i summan, ett annat villkor för avslut skulle ge en felaktig summa."
   },
   {
-    "objectID": "pr1/python/while-loopar/presentation/index.html#beräkning-av-summa-ver.-2",
-    "href": "pr1/python/while-loopar/presentation/index.html#beräkning-av-summa-ver.-2",
+    "objectID": "pr1/python/while-loopar/presentation/while-pres.html#beräkning-av-summa-ver.-2",
+    "href": "pr1/python/while-loopar/presentation/while-pres.html#beräkning-av-summa-ver.-2",
     "title": "While-loopar i Python",
     "section": "Beräkning av summa – ver. 2",
     "text": "Beräkning av summa – ver. 2\n# Detta program beräknar summan av ett antal tal\nsumma = 0\nwhile True:\n    tal = int(input(\"Ange ett valfritt tal, noll avslutar -&gt; \"))\n    if tal == 0:\n        break\n    summa += tal\nprint(f\"Summan är {summa}\")\n\n\n\n\nHär används styrsatsen break för att avbryta loopen då ett villkor uppfylls. Det gör att det sista talet inte kommer att ingå i summan.\nSjälva loopvillkoret är alltid sant, det är innebörden av while True på rad 3."
   },
   {
-    "objectID": "pr1/python/while-loopar/presentation/index.html#summan-av-positiva-tal",
-    "href": "pr1/python/while-loopar/presentation/index.html#summan-av-positiva-tal",
+    "objectID": "pr1/python/while-loopar/presentation/while-pres.html#summan-av-positiva-tal",
+    "href": "pr1/python/while-loopar/presentation/while-pres.html#summan-av-positiva-tal",
     "title": "While-loopar i Python",
     "section": "Summan av positiva tal",
     "text": "Summan av positiva tal\n# Detta program beräknar summan av ett antal positiva tal\nsumma = 0\nwhile True:\n    tal = int(input(\"Ange ett valfritt tal, noll avslutar -&gt; \"))\n    if tal == 0:\n        break\n    if tal &lt; 0:\n        continue\n    summa += tal\nprint(f\"Summan av de inmatade positiva talen är {summa}\")\n\n\n\n\nStyrsatsen continue används för att hoppa över resten av loopen och börja om från dess början."
   },
   {
-    "objectID": "pr1/python/while-loopar/presentation/index.html#nästlad-loop-flödesschema",
-    "href": "pr1/python/while-loopar/presentation/index.html#nästlad-loop-flödesschema",
+    "objectID": "pr1/python/while-loopar/presentation/while-pres.html#nästlad-loop-flödesschema",
+    "href": "pr1/python/while-loopar/presentation/while-pres.html#nästlad-loop-flödesschema",
     "title": "While-loopar i Python",
     "section": "Nästlad loop – flödesschema",
     "text": "Nästlad loop – flödesschema\n\n\n\n\n\nflowchart LR\n    A((Start)) --&gt; B(\"Ansätt i = 0\")\n    B --&gt; C{\"i ≤  3?\"}\n    C --&gt; |\"Ja\"| D(\"Ansätt j = 0\")\n    D --&gt; E{\"j ≤  3?\"}\n    E --&gt;  |\"Ja\"| F[/Skriv ut i och j/]\n    F --&gt; G(Öka j med 1)\n    G --&gt; E\n    E --&gt; |\"Nej\"|H(\"Öka i med 1\")\n    H --&gt; C\n    C --&gt; |\"Nej\"|I((\"Avsluta\"))\n\n\n\n\n\n\n\n\n\n\nHär finns en “loop i en loop”. För varje varv som den yttre loopen gör så kommer den inre loopen att gå ett givet antal varv."
   },
   {
-    "objectID": "pr1/python/while-loopar/presentation/index.html#nästlad-loop-kodexempel",
-    "href": "pr1/python/while-loopar/presentation/index.html#nästlad-loop-kodexempel",
+    "objectID": "pr1/python/while-loopar/presentation/while-pres.html#nästlad-loop-kodexempel",
+    "href": "pr1/python/while-loopar/presentation/while-pres.html#nästlad-loop-kodexempel",
     "title": "While-loopar i Python",
     "section": "Nästlad loop – kodexempel",
     "text": "Nästlad loop – kodexempel\n# Detta program demonstrerar nästlade loopar\ni = 0\nwhile i &lt; 3: # Start yttre loop\n    j = 0\n    while j &lt; 3: # Start inre loop\n        print(f\"i = {i}, j = {j}\")\n        j += 1\n    i += 1\nprint(\"Programmet avslutas\")\n\n\n\nDenna kod motsvarar det ritade flödesschemat på förra slajden."
   },
   {
-    "objectID": "pr1/python/while-loopar/presentation/index.html#sammanfattning",
-    "href": "pr1/python/while-loopar/presentation/index.html#sammanfattning",
+    "objectID": "pr1/python/while-loopar/presentation/while-pres.html#sammanfattning",
+    "href": "pr1/python/while-loopar/presentation/while-pres.html#sammanfattning",
     "title": "While-loopar i Python",
     "section": "Sammanfattning",
     "text": "Sammanfattning\n\nEn loop är en kontrollstruktur som upprepar kod.\nDet finns flera typer av loopar, idag har vi gått igenom while-loopen.\nwhile-loopen löper så länge ett villkor är uppfyllt…\n…eller tills den stöter på en break-sats.\nStyrsatsen continue gör att koden går tillbaka till loopens start.\nI nästlade loopar går koden igenom alla kombinationer av värden i den yttre och inre loopen."
   },
   {
-    "objectID": "pr1/python/while-loopar/presentation/index.html#uppgifter",
-    "href": "pr1/python/while-loopar/presentation/index.html#uppgifter",
+    "objectID": "pr1/python/while-loopar/presentation/while-pres.html#uppgifter",
+    "href": "pr1/python/while-loopar/presentation/while-pres.html#uppgifter",
     "title": "While-loopar i Python",
     "section": "Uppgifter",
     "text": "Uppgifter\n\n\n\n\nUppgifterna 1 – 7 i dokumentet Uppgifter Pr1, loopar"
-  },
-  {
-    "objectID": "pr1/python/uppgifter/utskrift-och-villkor/index.html",
-    "href": "pr1/python/uppgifter/utskrift-och-villkor/index.html",
-    "title": "Uppgifter Pr1, utskrift och villkor",
-    "section": "",
-    "text": "Nedanstående uppgifter ska göras i Python-konsolen, dvs du ska inte skapa en fil som sparas, om det inte framgår något annat i uppgiften.\n\n\n\nMata in följande rader i Python-konsolen och reflektera över resultatet:\n\nprint(\"2 + 2\")\nprint(\"2\" + \"2\")\nprint(2 + 2)\nprint(2.0 + 2)\nprint(0.1 + 0.2)\n\n\nKommentarer\n\n\nTecken inom citationstecken (\" \" ) skrivs ut precis som de är, det är ingenting som beräknas även om det är ett uttryck innanför citationstecknen. Det som står innanför citationstecken kallas för en sträng. Två strängar kan adderas, med resultatet att det blir en ny sträng som består av de båda ingående strängarna i en följd. Därav gäller att \"2\" + \"2\" blir 22 (där 22 är en sträng och inte ett tal).\nUttrycket 2 är ett heltal och 2.0 är ett flyttal. Om ett flyttal används i en beräkning kommer svaret att bli ett flyttal, även om det finns heltal med i andra delar av uttrycket.\n0.1 + 0.2 beräknas inte till exakt 0.3 eftersom Python lagrar tal i binär form (basen 2 till skillnad från basen 10). I denna binära representation kommer termerna att vara avrundade, och summan blir ett närmevärde.\n\n\n\n\nAnvänd en enda print-sats som skriver ut följande (byt ut namnet mot ditt eget). Observera att utskriften är på två rader!\n\n\n\nJag heter\nAnders Andersson\n\n\n\n\nSvar uppgift 2\n\nprint(\"Jag heter\\nAnders Andersson\")\n\n\n\nSkapa en Python-fil i Idle där du deklarerar följande strängvariabler (som du kan själv kan anpassa innehållet i):\n\nfnamn = \"Anders\"\nenamn = \"Andersson\"\nadr = \"Storgatan 1\"\npostnr = \"999 99\"\nort = \"Storstad\"\nålder = 17\n\nAnvänd en print-sats, där du skriver ut variablerna som en fstring, så att utskriften blir:\n\n\n\nHej, jag heter Anders och är 17 år.\n\n\n\n(Resten av variablerna ska användas i en senare uppgift, så deklarera dessa även om de inte används här.)\n\nLösningsförslag uppgift 3\n\nSe denna länk\n\n\n\nDeklarera följande variabler, och spara i en fil i Idle:\nsträcka = 103 # Sträcka i meter\ntid = 13.2    # Tiden i sekunder\nfart = sträcka / tid\nSkapa en print-sats som skriver ut farten på det aktuella föremålet avrundat till en decimal.\n\nLösningsförslag uppgift 4\n\nSe denna länk\n\n\n\nDeklarera följande variabler i Python:\n\na = 1.5\nb = 21.32\n\nAnvänd en (enda) print-sats med lämpliga formateringstecken för att skriva ut, och göra, följande beräkning. Du ska inte använda flera på varandra följande mellanslag inne i print-satsen.\n\n\n\n   1.50\n+ 21.32\n-------\n  22.82\n\n\n\n\n\nSvar uppgift 5\n\nprint(f\"{a:&gt;7.2f}\\n+{b:&gt;6.2f}\\n-------\\n{(a+b):&gt;7.2f}\")\n\n\n\nAnvänd filen med strängvariablerna från Uppgift 3 för att med en (enda) print-sats med lämpliga formateringstecken för att skriva ut strängarna, högerjusterade enligt nedan. Du ska inte använda flera på varandra följande mellanslag inne i print-satsen.\n\n\n\nAnders Andersson\n     Storgatan 1\n 999 99 Storstad\n\n\n\n\n\nSvar uppgift 6\n\nprint(f\"{fnamn:&lt;6} {enamn}\\n{adr:&gt;16}\\n{postnr :&gt;7} {ort:&gt;2}\")"
-  },
-  {
-    "objectID": "pr1/python/uppgifter/utskrift-och-villkor/index.html#utskrifter-och-beräkningar-i-python",
-    "href": "pr1/python/uppgifter/utskrift-och-villkor/index.html#utskrifter-och-beräkningar-i-python",
-    "title": "Uppgifter Pr1, utskrift och villkor",
-    "section": "",
-    "text": "Nedanstående uppgifter ska göras i Python-konsolen, dvs du ska inte skapa en fil som sparas, om det inte framgår något annat i uppgiften.\n\n\n\nMata in följande rader i Python-konsolen och reflektera över resultatet:\n\nprint(\"2 + 2\")\nprint(\"2\" + \"2\")\nprint(2 + 2)\nprint(2.0 + 2)\nprint(0.1 + 0.2)\n\n\nKommentarer\n\n\nTecken inom citationstecken (\" \" ) skrivs ut precis som de är, det är ingenting som beräknas även om det är ett uttryck innanför citationstecknen. Det som står innanför citationstecken kallas för en sträng. Två strängar kan adderas, med resultatet att det blir en ny sträng som består av de båda ingående strängarna i en följd. Därav gäller att \"2\" + \"2\" blir 22 (där 22 är en sträng och inte ett tal).\nUttrycket 2 är ett heltal och 2.0 är ett flyttal. Om ett flyttal används i en beräkning kommer svaret att bli ett flyttal, även om det finns heltal med i andra delar av uttrycket.\n0.1 + 0.2 beräknas inte till exakt 0.3 eftersom Python lagrar tal i binär form (basen 2 till skillnad från basen 10). I denna binära representation kommer termerna att vara avrundade, och summan blir ett närmevärde.\n\n\n\n\nAnvänd en enda print-sats som skriver ut följande (byt ut namnet mot ditt eget). Observera att utskriften är på två rader!\n\n\n\nJag heter\nAnders Andersson\n\n\n\n\nSvar uppgift 2\n\nprint(\"Jag heter\\nAnders Andersson\")\n\n\n\nSkapa en Python-fil i Idle där du deklarerar följande strängvariabler (som du kan själv kan anpassa innehållet i):\n\nfnamn = \"Anders\"\nenamn = \"Andersson\"\nadr = \"Storgatan 1\"\npostnr = \"999 99\"\nort = \"Storstad\"\nålder = 17\n\nAnvänd en print-sats, där du skriver ut variablerna som en fstring, så att utskriften blir:\n\n\n\nHej, jag heter Anders och är 17 år.\n\n\n\n(Resten av variablerna ska användas i en senare uppgift, så deklarera dessa även om de inte används här.)\n\nLösningsförslag uppgift 3\n\nSe denna länk\n\n\n\nDeklarera följande variabler, och spara i en fil i Idle:\nsträcka = 103 # Sträcka i meter\ntid = 13.2    # Tiden i sekunder\nfart = sträcka / tid\nSkapa en print-sats som skriver ut farten på det aktuella föremålet avrundat till en decimal.\n\nLösningsförslag uppgift 4\n\nSe denna länk\n\n\n\nDeklarera följande variabler i Python:\n\na = 1.5\nb = 21.32\n\nAnvänd en (enda) print-sats med lämpliga formateringstecken för att skriva ut, och göra, följande beräkning. Du ska inte använda flera på varandra följande mellanslag inne i print-satsen.\n\n\n\n   1.50\n+ 21.32\n-------\n  22.82\n\n\n\n\n\nSvar uppgift 5\n\nprint(f\"{a:&gt;7.2f}\\n+{b:&gt;6.2f}\\n-------\\n{(a+b):&gt;7.2f}\")\n\n\n\nAnvänd filen med strängvariablerna från Uppgift 3 för att med en (enda) print-sats med lämpliga formateringstecken för att skriva ut strängarna, högerjusterade enligt nedan. Du ska inte använda flera på varandra följande mellanslag inne i print-satsen.\n\n\n\nAnders Andersson\n     Storgatan 1\n 999 99 Storstad\n\n\n\n\n\nSvar uppgift 6\n\nprint(f\"{fnamn:&lt;6} {enamn}\\n{adr:&gt;16}\\n{postnr :&gt;7} {ort:&gt;2}\")"
-  },
-  {
-    "objectID": "pr1/python/uppgifter/utskrift-och-villkor/index.html#villkor-i-python",
-    "href": "pr1/python/uppgifter/utskrift-och-villkor/index.html#villkor-i-python",
-    "title": "Uppgifter Pr1, utskrift och villkor",
-    "section": "Villkor i Python",
-    "text": "Villkor i Python\nRespektive programmeringsuppgift nedan ska sparas i en fil\n\n\nUppgift 7\nSkapa ett program som ber dig mata in ett belopp med pengar. Programmet ska avgöra om det räcker till att köpa ett smycke av järn, silver eller guld. Skapa även ett flödesschema för programmet.\nPriset för respektive typ av smycke deklareras som variabler, där ett järnmycke kostar 200 kr, ett silversmycke 500 kr och ett guldsmycke 1000 kr. Deklarera variabler för dessa priser och använd dessa i programmet.\n\n# Exempelkörning 1\nAnge belopp (i kr.) att handla för -&gt; 300\nBeloppet räcker till ett järnsmycke!\n\n# Exempelkörning 2\nAnge belopp (i kr.) att handla för -&gt; 800\nBeloppet räcker till ett ett silversmycke!\n\n# Exempelkörning 3\nAnge belopp (i kr.) att handla för -&gt; 100\nBeloppet räcker inte till något smycke.\n\nUtmanande uppgift: Ändra programmet så att det skriver ut det maximala antalet av respektive sort smycke som du kan köpa för ett angivet belopp. Programmet ska prioritera de dyraste smyckena.\n\n# Exempelkörning 4\nAnge belopp (i kr.) att handla för -&gt; 1975\nBeloppet räcker till:\nAntal guldsmycken:  1\nAntal silvermycken: 1\nAntal järnsmycken:  2\nBelopp kvar: 75 kr\n\n\nⓘ Använd heltalsdivision, den ger heltalsdelen vid division. Exempel:\n15 // 7 # Ger resultatet 2\n20 // 7 # Ger resultatet 2\n\n\nLösningsförslag uppgift 7\n\nSe denna länk\n\n\nUppgift 8\nFör de booleska variablerna a, b och c gäller\n\na = True\nb = True\nc = False\n\nFundera ut vilket booleskt värde respektive uttryck nedan kommer att anta, och kontrollera det därefter i Python-konsolen:\n\n(a and b) and c\n\nFalse\n\na and b and c\n\nFalse\n\n(a and c) or b\n\nTrue\n\na and b or c\n\nTrue\n\n\n\n\nUppgift 9\nSkapa ett program som läser in längderna på tre sidor. Programmet ska sedan avgöra om dessa sidor är sidorna i en rätvinklig triangel.\n\n# Exempelkörning 1\nAnge längden på sida 1 -&gt; 3\nAnge längden på sida 2 -&gt; 4\nAnge längden på sida 3 -&gt; 5\nDessa sidor kan bilda en rätvinklig triangel\n\n# Exempelkörning 2\nAnge längden på sida 1 -&gt; 3\nAnge längden på sida 2 -&gt; 4\nAnge längden på sida 3 -&gt; 6\nDessa sidor kan inte bilda inte en rätvinklig triangel\n\n\nⓘ För att kvadrera ett tal används exponentoperatorn **. T ex gäller att om a = 2**3 så antar a värdet 8.\n\nUtmanande uppgift: Utöka programmet så att det även avgör om sidorna bildar en triangel över huvud taget.\n\n# Exempelkörning 3\nAnge längden på sida 1 -&gt; 7\nAnge längden på sida 2 -&gt; 5\nAnge längden på sida 3 -&gt; 1\nDessa sidor kan inte bilda en triangel\n\n\n\nLösningsförslag uppgift 9\n\nSe denna länk\n\n\nUppgift 10\nEtt program som skriver ut vilket betyg en viss provpoäng motsvarar skulle kunna se ut så här:\ne_gräns = 15; c_gräns = 25; a_gräns = 35\npoäng = int(input('Ange din provpoäng -&gt; '))\nif poäng &gt;= a_gräns:\n   print('A')\nelif poäng &gt;= c_gräns:\n   print('C')\nelif poäng &gt;= e_gräns:\n   print('E')\nelse:\n   print('F')\nprint('Programmet avslutas')\n\nGör ett flödesschema för programmet.\nSkriv om programmet så att det använder de booleska operatorerna not, and och or i villkoren.\n\n\nLösningsförslag uppgift 10\n\nSe denna länk\n\n\nUppgift 11\nSkapa ett program som ber dig mata in ett årtal. Programmet avgör om året är ett skottår. Ett årtal som inte är delbart med 4 är inte ett skottår. Är årtalet dessutom delbart 100 måste det också vara delbart med 400 för att vara ett skottår.\n\n# Exempelkörning 1\nAnge ett årtal -&gt;  2020\nÅr 2020 är ett skottår\n\n# Exempelkörning 2\nAnge ett årtal -&gt;  2021\nÅr 2021 är inte ett skottår\n\n# Exempelkörning 3\nAnge ett årtal -&gt;  1800\nÅr 1800 är inte ett skottår\n\n# Exempelkörning 4\nAnge ett årtal -&gt;  2000\nÅr 2000 är ett skottår\n\n\nⓘ Modulooperatorn (%) ger resultatet noll om ett tal är jämnt delbart med ett annat.\n# Exempel 1, delbart\n# (21 är delbart med 3)\n21 % 3\n0\n# Exempel 2, ej delbart\n# (21 är ej delbart med 2)\n21 % 2\n1\n\n\n\nLösningsförslag uppgift 11\n\nSe denna länk"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "CodeBubo Nest",
-    "section": "",
-    "text": "Så småningom kommer på denna sida navigeringsmöjligheter till sajten."
-  },
-  {
-    "objectID": "index.html#hello-world",
-    "href": "index.html#hello-world",
-    "title": "CodeBubo Nest",
-    "section": "",
-    "text": "Så småningom kommer på denna sida navigeringsmöjligheter till sajten."
-  },
-  {
-    "objectID": "pr1/python/villkor/presentation/index.html#vad-är-ett-villkor",
-    "href": "pr1/python/villkor/presentation/index.html#vad-är-ett-villkor",
-    "title": "Villkor i Python",
-    "section": "Vad är ett villkor?",
-    "text": "Vad är ett villkor?\n\nEtt datorprogram är en följd av instruktioner. Dessa instruktioner kan baseras på indata. Beroende på vilka indata som ges kan programmet behöva ta olika vägar.\nDet som avgör vilken väg programmet ska ta ka kallas villkor."
-  },
-  {
-    "objectID": "pr1/python/villkor/presentation/index.html#dagens-mål",
-    "href": "pr1/python/villkor/presentation/index.html#dagens-mål",
-    "title": "Villkor i Python",
-    "section": "Dagens mål",
-    "text": "Dagens mål\n\nAtt förstå hur villkor tecknas i Python med hjälp av if-satser och kunna skriva egna, enkla sådana villkor i kod.\nAtt kunna använda jämförelsoperatorerna.\nAtt känna till innebörden av booleska variabler och kunna använda sådana.\nAtt börja lära sig att tolka, och även skapa egna, flödesscheman för program som innehåller villkor."
-  },
-  {
-    "objectID": "pr1/python/villkor/presentation/index.html#ett-enkelt-villkor",
-    "href": "pr1/python/villkor/presentation/index.html#ett-enkelt-villkor",
-    "title": "Villkor i Python",
-    "section": "Ett enkelt villkor",
-    "text": "Ett enkelt villkor\nI Python så avgörs ett villkor med hjälp av det reserverade ordet if.\n\n\n\n\na = 1\nif a &gt; 0:\n   print(\"a är större än 0\")\n\na är större än 0\n\n\n\n\n\n\na = -1\nif a &gt; 0:\n   print(\"a är större än noll\")\nelse:\n   print(\"a är inte större än noll\")\n\na är inte större än noll"
-  },
-  {
-    "objectID": "pr1/python/villkor/presentation/index.html#exempel-godkänt",
-    "href": "pr1/python/villkor/presentation/index.html#exempel-godkänt",
-    "title": "Villkor i Python",
-    "section": "Exempel: Godkänt?",
-    "text": "Exempel: Godkänt?\n\n\n\n\nflowchart LR\n    start[/Inmatning\\n poäng/]\n    cond{Är poäng över\\nE-gräns?}\n    ja[/Skriv ut\\nGodkänt/]\n    nej(Programmet\\navslutas)\n    start--&gt;cond\n    cond--&gt;|Ja|ja\n    cond--&gt;|Nej|nej\n    ja--&gt;nej\n\n\n\n\n\n\ne_gräns = 15\npoäng = int(input('Ange din provpoäng -&gt; '))\nif poäng &gt;= e_gräns:\n   print('Godkänt')\nprint('Programmet avslutas')\n\n\nResultatet av input är en sträng; denna kan göras om till ett heltal med int enligt rad 2 ovan."
-  },
-  {
-    "objectID": "pr1/python/villkor/presentation/index.html#exempel-godkänt-eller-ej",
-    "href": "pr1/python/villkor/presentation/index.html#exempel-godkänt-eller-ej",
-    "title": "Villkor i Python",
-    "section": "Exempel: Godkänt eller ej?",
-    "text": "Exempel: Godkänt eller ej?\n\n\n\n\nflowchart LR\n    start[/Inmatning\\n poäng/]\n    cond{Är poäng över\\nE-gräns?}\n    ja[/Skriv ut\\nGodkänt/]\n    nej[/Skriv ut\\nEj godkänt/]\n    slut(Programmet\\navslutas)\n    start--&gt;cond\n    cond--&gt;|Ja|ja\n    cond--&gt;|Nej|nej\n    ja--&gt;slut\n    nej--&gt;slut\n\n\n\n\n\n\ne_gräns = 15\npoäng = int(input('Ange din provpoäng -&gt; '))\nif poäng &gt;= e_gräns:\n   print('Godkänt')\nelse:\n  print('Ej godkänt')\nprint('Programmet avslutas')"
-  },
-  {
-    "objectID": "pr1/python/villkor/presentation/index.html#jämförelseoperatorer",
-    "href": "pr1/python/villkor/presentation/index.html#jämförelseoperatorer",
-    "title": "Villkor i Python",
-    "section": "Jämförelseoperatorer",
-    "text": "Jämförelseoperatorer\n\n\n\n&gt;\n&lt;\n&gt;=\n&lt;=\n==\n!=\n\nStörre än\nMindre än\nStörre än eller lika med\nMindre än eller lika med\nLika med\nSkilt från\n\n\nObservera skillnaden mellan tilldelande likhetstecken och jämförande likhetstecken!\n\n\n\n\n\n\nprint(3 == 3)\nprint(3 &lt;= 3)\nprint(3 != 3)\nprint(3 != 4)\n\nTrue\nTrue\nFalse\nTrue\n\n\n\na = 3  # Tilldelande\nb = 8  # Tilldelande\na == b # Jämförande\n# Rad 3 evalueras till False\nTilldelning sker från höger till vänster."
-  },
-  {
-    "objectID": "pr1/python/villkor/presentation/index.html#booleska-värden",
-    "href": "pr1/python/villkor/presentation/index.html#booleska-värden",
-    "title": "Villkor i Python",
-    "section": "Booleska värden",
-    "text": "Booleska värden\nVärdena True och  False kallas för booleska värden (efter George Boole, 1815 – 1864).\nVariabler som antar denna typ av värden kallas för booleska variabler.\n\n\nmy_boolean = True\nif (my_boolean):\n   print(\"Den booleska variabelns värde var True\")\n\nDen booleska variabelns värde var True\n\n\n\n\n\nmy_second_boolean = False\nif (not my_second_boolean):\n   print(\"Den booleska variabelns värde var inte True\")\n\nDen booleska variabelns värde var inte True"
-  },
-  {
-    "objectID": "pr1/python/villkor/presentation/index.html#sammansättning-av-booleska-värden",
-    "href": "pr1/python/villkor/presentation/index.html#sammansättning-av-booleska-värden",
-    "title": "Villkor i Python",
-    "section": "Sammansättning av booleska värden",
-    "text": "Sammansättning av booleska värden\nBooleska värden går att ‘’sätta ihop’’ med operatorerna or och  and .\n\n\na = True\nb = False\nprint(a and b)\nprint(a or b)\nprint((a or b) and a)\nprint(not a)\nprint(not b)\n\nFalse\nTrue\nTrue\nFalse\nTrue"
-  },
-  {
-    "objectID": "pr1/python/villkor/presentation/index.html#exempel-kategorisera-talet",
-    "href": "pr1/python/villkor/presentation/index.html#exempel-kategorisera-talet",
-    "title": "Villkor i Python",
-    "section": "Exempel: Kategorisera talet",
-    "text": "Exempel: Kategorisera talet\n\n\n\n\nflowchart LR\nstart[/Inmatning\\n av tal/]\nslut(Programmet\\navslutas)\ncondGeq0{\"Tal ≥ 0?\"}\ncondNoll{\"Är talet 0?\"}\nneg[/Skriv ut\\n negativt/]\nnoll[/Skriv ut\\n noll/]\npos[/Skriv ut\\n positivt/]\nstart--&gt;condGeq0\ncondGeq0--&gt;|Ja|condNoll\ncondGeq0--&gt;|Nej|neg--&gt;slut\ncondNoll--&gt;|Ja|noll--&gt;slut\ncondNoll--&gt;|Nej|pos--&gt;slut\n\n\n\n\n\ntal = int(input('Ange valfritt heltal -&gt;'))\nif tal &gt;= 0:\n   if tal == 0:\n      print('Noll')\n   else:\n      print('Positivt')\nelse:\n   print('Negativt')\n\nprint('Programmet avslutas')"
-  },
-  {
-    "objectID": "pr1/python/villkor/presentation/index.html#uppgifter",
-    "href": "pr1/python/villkor/presentation/index.html#uppgifter",
-    "title": "Villkor i Python",
-    "section": "Uppgifter",
-    "text": "Uppgifter\n\n\n\n\nUppgifterna 7 – 11 i dokumentet Uppgifter Pr1, utskrift och villkor"
   },
   {
     "objectID": "pr1/python/uppgifter/loopar/index.html",
@@ -329,128 +91,366 @@
     "text": "I uppgift 8 – ska du använda for-loopar i din lösning.\n\n\n\nI uppgift 4 skapade du ett program som lät en spelare gissa ett tal från 1 t o m 10. Modifiera detta program så att det startar om efter att spelaren har lyckats lista ut talet. Programmet ska totalt köras tre gånger, och när den tredje omgången är över ska det avslutas med att skriva ut medelvärdet på antalet gissningar som behövdes avrundat till en decimal. Använd en for-loop som kontrollstruktur för omstarten av programmet.\nKörningsexempel:\n\nSPELOMGÅNG 1\n----------------\nGissa ett tal mellan 1 och 10 -&gt;5\nTalet 5 är för litet.\nGissa ett tal mellan 1 och 10 -&gt;7\nTalet 7 är för litet.\nGissa ett tal mellan 1 och 10 -&gt;9\nTalet 9 är för litet.\nGissa ett tal mellan 1 och 10 -&gt;10\nRÄTT GISSAT!\nDu klarade spelet på gissning nr. 4.\n\nSPELOMGÅNG 2\n----------------\nGissa ett tal mellan 1 och 10 -&gt;5\nTalet 5 är för stort.\nGissa ett tal mellan 1 och 10 -&gt;3\nTalet 3 är för litet.\nGissa ett tal mellan 1 och 10 -&gt;4\nRÄTT GISSAT!\nDu klarade spelet på gissning nr. 3.\n\nSPELOMGÅNG 3\n----------------\nGissa ett tal mellan 1 och 10 -&gt;5\nTalet 5 är för stort.\nGissa ett tal mellan 1 och 10 -&gt;2\nTalet 2 är för stort.\nGissa ett tal mellan 1 och 10 -&gt;1\nRÄTT GISSAT!\nDu klarade spelet på gissning nr. 3.\n\nMedelvärdet för antalet gissningar per tal: 3.3\n\n\nLösningsförslag uppgift 8\n\nSe denna länk"
   },
   {
-    "objectID": "pr1/python/intro/pres-version-online-python/index.html#klipsk-som-en-dator",
-    "href": "pr1/python/intro/pres-version-online-python/index.html#klipsk-som-en-dator",
+    "objectID": "pr1/python/villkor/presentation/villkor-pres.html#vad-är-ett-villkor",
+    "href": "pr1/python/villkor/presentation/villkor-pres.html#vad-är-ett-villkor",
+    "title": "Villkor i Python",
+    "section": "Vad är ett villkor?",
+    "text": "Vad är ett villkor?\n\nEtt datorprogram är en följd av instruktioner. Dessa instruktioner kan baseras på indata. Beroende på vilka indata som ges kan programmet behöva ta olika vägar.\nDet som avgör vilken väg programmet ska ta ka kallas villkor."
+  },
+  {
+    "objectID": "pr1/python/villkor/presentation/villkor-pres.html#dagens-mål",
+    "href": "pr1/python/villkor/presentation/villkor-pres.html#dagens-mål",
+    "title": "Villkor i Python",
+    "section": "Dagens mål",
+    "text": "Dagens mål\n\nAtt förstå hur villkor tecknas i Python med hjälp av if-satser och kunna skriva egna, enkla sådana villkor i kod.\nAtt kunna använda jämförelsoperatorerna.\nAtt känna till innebörden av booleska variabler och kunna använda sådana.\nAtt börja lära sig att tolka, och även skapa egna, flödesscheman för program som innehåller villkor."
+  },
+  {
+    "objectID": "pr1/python/villkor/presentation/villkor-pres.html#ett-enkelt-villkor",
+    "href": "pr1/python/villkor/presentation/villkor-pres.html#ett-enkelt-villkor",
+    "title": "Villkor i Python",
+    "section": "Ett enkelt villkor",
+    "text": "Ett enkelt villkor\nI Python så avgörs ett villkor med hjälp av det reserverade ordet if.\n\n\n\n\na = 1\nif a &gt; 0:\n   print(\"a är större än 0\")\n\na är större än 0\n\n\n\n\n\n\na = -1\nif a &gt; 0:\n   print(\"a är större än noll\")\nelse:\n   print(\"a är inte större än noll\")\n\na är inte större än noll"
+  },
+  {
+    "objectID": "pr1/python/villkor/presentation/villkor-pres.html#exempel-godkänt",
+    "href": "pr1/python/villkor/presentation/villkor-pres.html#exempel-godkänt",
+    "title": "Villkor i Python",
+    "section": "Exempel: Godkänt?",
+    "text": "Exempel: Godkänt?\n\n\n\n\nflowchart LR\n    start[/Inmatning\\n poäng/]\n    cond{Är poäng över\\nE-gräns?}\n    ja[/Skriv ut\\nGodkänt/]\n    nej(Programmet\\navslutas)\n    start--&gt;cond\n    cond--&gt;|Ja|ja\n    cond--&gt;|Nej|nej\n    ja--&gt;nej\n\n\n\n\n\n\ne_gräns = 15\npoäng = int(input('Ange din provpoäng -&gt; '))\nif poäng &gt;= e_gräns:\n   print('Godkänt')\nprint('Programmet avslutas')\n\n\nResultatet av input är en sträng; denna kan göras om till ett heltal med int enligt rad 2 ovan."
+  },
+  {
+    "objectID": "pr1/python/villkor/presentation/villkor-pres.html#exempel-godkänt-eller-ej",
+    "href": "pr1/python/villkor/presentation/villkor-pres.html#exempel-godkänt-eller-ej",
+    "title": "Villkor i Python",
+    "section": "Exempel: Godkänt eller ej?",
+    "text": "Exempel: Godkänt eller ej?\n\n\n\n\nflowchart LR\n    start[/Inmatning\\n poäng/]\n    cond{Är poäng över\\nE-gräns?}\n    ja[/Skriv ut\\nGodkänt/]\n    nej[/Skriv ut\\nEj godkänt/]\n    slut(Programmet\\navslutas)\n    start--&gt;cond\n    cond--&gt;|Ja|ja\n    cond--&gt;|Nej|nej\n    ja--&gt;slut\n    nej--&gt;slut\n\n\n\n\n\n\ne_gräns = 15\npoäng = int(input('Ange din provpoäng -&gt; '))\nif poäng &gt;= e_gräns:\n   print('Godkänt')\nelse:\n  print('Ej godkänt')\nprint('Programmet avslutas')"
+  },
+  {
+    "objectID": "pr1/python/villkor/presentation/villkor-pres.html#jämförelseoperatorer",
+    "href": "pr1/python/villkor/presentation/villkor-pres.html#jämförelseoperatorer",
+    "title": "Villkor i Python",
+    "section": "Jämförelseoperatorer",
+    "text": "Jämförelseoperatorer\n\n\n\n&gt;\n&lt;\n&gt;=\n&lt;=\n==\n!=\n\nStörre än\nMindre än\nStörre än eller lika med\nMindre än eller lika med\nLika med\nSkilt från\n\n\nObservera skillnaden mellan tilldelande likhetstecken och jämförande likhetstecken!\n\n\n\n\n\n\nprint(3 == 3)\nprint(3 &lt;= 3)\nprint(3 != 3)\nprint(3 != 4)\n\nTrue\nTrue\nFalse\nTrue\n\n\n\na = 3  # Tilldelande\nb = 8  # Tilldelande\na == b # Jämförande\n# Rad 3 evalueras till False\nTilldelning sker från höger till vänster."
+  },
+  {
+    "objectID": "pr1/python/villkor/presentation/villkor-pres.html#booleska-värden",
+    "href": "pr1/python/villkor/presentation/villkor-pres.html#booleska-värden",
+    "title": "Villkor i Python",
+    "section": "Booleska värden",
+    "text": "Booleska värden\nVärdena True och  False kallas för booleska värden (efter George Boole, 1815 – 1864).\nVariabler som antar denna typ av värden kallas för booleska variabler.\n\n\nmy_boolean = True\nif (my_boolean):\n   print(\"Den booleska variabelns värde var True\")\n\nDen booleska variabelns värde var True\n\n\n\n\n\nmy_second_boolean = False\nif (not my_second_boolean):\n   print(\"Den booleska variabelns värde var inte True\")\n\nDen booleska variabelns värde var inte True"
+  },
+  {
+    "objectID": "pr1/python/villkor/presentation/villkor-pres.html#sammansättning-av-booleska-värden",
+    "href": "pr1/python/villkor/presentation/villkor-pres.html#sammansättning-av-booleska-värden",
+    "title": "Villkor i Python",
+    "section": "Sammansättning av booleska värden",
+    "text": "Sammansättning av booleska värden\nBooleska värden går att ‘’sätta ihop’’ med operatorerna or och  and .\n\n\na = True\nb = False\nprint(a and b)\nprint(a or b)\nprint((a or b) and a)\nprint(not a)\nprint(not b)\n\nFalse\nTrue\nTrue\nFalse\nTrue"
+  },
+  {
+    "objectID": "pr1/python/villkor/presentation/villkor-pres.html#exempel-kategorisera-talet",
+    "href": "pr1/python/villkor/presentation/villkor-pres.html#exempel-kategorisera-talet",
+    "title": "Villkor i Python",
+    "section": "Exempel: Kategorisera talet",
+    "text": "Exempel: Kategorisera talet\n\n\n\n\nflowchart LR\nstart[/Inmatning\\n av tal/]\nslut(Programmet\\navslutas)\ncondGeq0{\"Tal ≥ 0?\"}\ncondNoll{\"Är talet 0?\"}\nneg[/Skriv ut\\n negativt/]\nnoll[/Skriv ut\\n noll/]\npos[/Skriv ut\\n positivt/]\nstart--&gt;condGeq0\ncondGeq0--&gt;|Ja|condNoll\ncondGeq0--&gt;|Nej|neg--&gt;slut\ncondNoll--&gt;|Ja|noll--&gt;slut\ncondNoll--&gt;|Nej|pos--&gt;slut\n\n\n\n\n\ntal = int(input('Ange valfritt heltal -&gt;'))\nif tal &gt;= 0:\n   if tal == 0:\n      print('Noll')\n   else:\n      print('Positivt')\nelse:\n   print('Negativt')\n\nprint('Programmet avslutas')"
+  },
+  {
+    "objectID": "pr1/python/villkor/presentation/villkor-pres.html#uppgifter",
+    "href": "pr1/python/villkor/presentation/villkor-pres.html#uppgifter",
+    "title": "Villkor i Python",
+    "section": "Uppgifter",
+    "text": "Uppgifter\n\n\n\n\nUppgifterna 7 – 11 i dokumentet Uppgifter Pr1, utskrift och villkor"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "CodeBubo Nest",
+    "section": "",
+    "text": "Så småningom kommer på denna sida navigeringsmöjligheter till sajten."
+  },
+  {
+    "objectID": "index.html#hello-world",
+    "href": "index.html#hello-world",
+    "title": "CodeBubo Nest",
+    "section": "",
+    "text": "Så småningom kommer på denna sida navigeringsmöjligheter till sajten."
+  },
+  {
+    "objectID": "pr1/python/uppgifter/utskrift-och-villkor/index.html",
+    "href": "pr1/python/uppgifter/utskrift-och-villkor/index.html",
+    "title": "Uppgifter Pr1, utskrift och villkor",
+    "section": "",
+    "text": "Nedanstående uppgifter ska göras i Python-konsolen, dvs du ska inte skapa en fil som sparas, om det inte framgår något annat i uppgiften.\n\n\n\nMata in följande rader i Python-konsolen och reflektera över resultatet:\n\nprint(\"2 + 2\")\nprint(\"2\" + \"2\")\nprint(2 + 2)\nprint(2.0 + 2)\nprint(0.1 + 0.2)\n\n\nKommentarer\n\n\nTecken inom citationstecken (\" \" ) skrivs ut precis som de är, det är ingenting som beräknas även om det är ett uttryck innanför citationstecknen. Det som står innanför citationstecken kallas för en sträng. Två strängar kan adderas, med resultatet att det blir en ny sträng som består av de båda ingående strängarna i en följd. Därav gäller att \"2\" + \"2\" blir 22 (där 22 är en sträng och inte ett tal).\nUttrycket 2 är ett heltal och 2.0 är ett flyttal. Om ett flyttal används i en beräkning kommer svaret att bli ett flyttal, även om det finns heltal med i andra delar av uttrycket.\n0.1 + 0.2 beräknas inte till exakt 0.3 eftersom Python lagrar tal i binär form (basen 2 till skillnad från basen 10). I denna binära representation kommer termerna att vara avrundade, och summan blir ett närmevärde.\n\n\n\n\nAnvänd en enda print-sats som skriver ut följande (byt ut namnet mot ditt eget). Observera att utskriften är på två rader!\n\n\n\nJag heter\nAnders Andersson\n\n\n\n\nSvar uppgift 2\n\nprint(\"Jag heter\\nAnders Andersson\")\n\n\n\nSkapa en Python-fil i Idle där du deklarerar följande strängvariabler (som du kan själv kan anpassa innehållet i):\n\nfnamn = \"Anders\"\nenamn = \"Andersson\"\nadr = \"Storgatan 1\"\npostnr = \"999 99\"\nort = \"Storstad\"\nålder = 17\n\nAnvänd en print-sats, där du skriver ut variablerna som en fstring, så att utskriften blir:\n\n\n\nHej, jag heter Anders och är 17 år.\n\n\n\n(Resten av variablerna ska användas i en senare uppgift, så deklarera dessa även om de inte används här.)\n\nLösningsförslag uppgift 3\n\nSe denna länk\n\n\n\nDeklarera följande variabler, och spara i en fil i Idle:\nsträcka = 103 # Sträcka i meter\ntid = 13.2    # Tiden i sekunder\nfart = sträcka / tid\nSkapa en print-sats som skriver ut farten på det aktuella föremålet avrundat till en decimal.\n\nLösningsförslag uppgift 4\n\nSe denna länk\n\n\n\nDeklarera följande variabler i Python:\n\na = 1.5\nb = 21.32\n\nAnvänd en (enda) print-sats med lämpliga formateringstecken för att skriva ut, och göra, följande beräkning. Du ska inte använda flera på varandra följande mellanslag inne i print-satsen.\n\n\n\n   1.50\n+ 21.32\n-------\n  22.82\n\n\n\n\n\nSvar uppgift 5\n\nprint(f\"{a:&gt;7.2f}\\n+{b:&gt;6.2f}\\n-------\\n{(a+b):&gt;7.2f}\")\n\n\n\nAnvänd filen med strängvariablerna från Uppgift 3 för att med en (enda) print-sats med lämpliga formateringstecken för att skriva ut strängarna, högerjusterade enligt nedan. Du ska inte använda flera på varandra följande mellanslag inne i print-satsen.\n\n\n\nAnders Andersson\n     Storgatan 1\n 999 99 Storstad\n\n\n\n\n\nSvar uppgift 6\n\nprint(f\"{fnamn:&lt;6} {enamn}\\n{adr:&gt;16}\\n{postnr :&gt;7} {ort:&gt;2}\")"
+  },
+  {
+    "objectID": "pr1/python/uppgifter/utskrift-och-villkor/index.html#utskrifter-och-beräkningar-i-python",
+    "href": "pr1/python/uppgifter/utskrift-och-villkor/index.html#utskrifter-och-beräkningar-i-python",
+    "title": "Uppgifter Pr1, utskrift och villkor",
+    "section": "",
+    "text": "Nedanstående uppgifter ska göras i Python-konsolen, dvs du ska inte skapa en fil som sparas, om det inte framgår något annat i uppgiften.\n\n\n\nMata in följande rader i Python-konsolen och reflektera över resultatet:\n\nprint(\"2 + 2\")\nprint(\"2\" + \"2\")\nprint(2 + 2)\nprint(2.0 + 2)\nprint(0.1 + 0.2)\n\n\nKommentarer\n\n\nTecken inom citationstecken (\" \" ) skrivs ut precis som de är, det är ingenting som beräknas även om det är ett uttryck innanför citationstecknen. Det som står innanför citationstecken kallas för en sträng. Två strängar kan adderas, med resultatet att det blir en ny sträng som består av de båda ingående strängarna i en följd. Därav gäller att \"2\" + \"2\" blir 22 (där 22 är en sträng och inte ett tal).\nUttrycket 2 är ett heltal och 2.0 är ett flyttal. Om ett flyttal används i en beräkning kommer svaret att bli ett flyttal, även om det finns heltal med i andra delar av uttrycket.\n0.1 + 0.2 beräknas inte till exakt 0.3 eftersom Python lagrar tal i binär form (basen 2 till skillnad från basen 10). I denna binära representation kommer termerna att vara avrundade, och summan blir ett närmevärde.\n\n\n\n\nAnvänd en enda print-sats som skriver ut följande (byt ut namnet mot ditt eget). Observera att utskriften är på två rader!\n\n\n\nJag heter\nAnders Andersson\n\n\n\n\nSvar uppgift 2\n\nprint(\"Jag heter\\nAnders Andersson\")\n\n\n\nSkapa en Python-fil i Idle där du deklarerar följande strängvariabler (som du kan själv kan anpassa innehållet i):\n\nfnamn = \"Anders\"\nenamn = \"Andersson\"\nadr = \"Storgatan 1\"\npostnr = \"999 99\"\nort = \"Storstad\"\nålder = 17\n\nAnvänd en print-sats, där du skriver ut variablerna som en fstring, så att utskriften blir:\n\n\n\nHej, jag heter Anders och är 17 år.\n\n\n\n(Resten av variablerna ska användas i en senare uppgift, så deklarera dessa även om de inte används här.)\n\nLösningsförslag uppgift 3\n\nSe denna länk\n\n\n\nDeklarera följande variabler, och spara i en fil i Idle:\nsträcka = 103 # Sträcka i meter\ntid = 13.2    # Tiden i sekunder\nfart = sträcka / tid\nSkapa en print-sats som skriver ut farten på det aktuella föremålet avrundat till en decimal.\n\nLösningsförslag uppgift 4\n\nSe denna länk\n\n\n\nDeklarera följande variabler i Python:\n\na = 1.5\nb = 21.32\n\nAnvänd en (enda) print-sats med lämpliga formateringstecken för att skriva ut, och göra, följande beräkning. Du ska inte använda flera på varandra följande mellanslag inne i print-satsen.\n\n\n\n   1.50\n+ 21.32\n-------\n  22.82\n\n\n\n\n\nSvar uppgift 5\n\nprint(f\"{a:&gt;7.2f}\\n+{b:&gt;6.2f}\\n-------\\n{(a+b):&gt;7.2f}\")\n\n\n\nAnvänd filen med strängvariablerna från Uppgift 3 för att med en (enda) print-sats med lämpliga formateringstecken för att skriva ut strängarna, högerjusterade enligt nedan. Du ska inte använda flera på varandra följande mellanslag inne i print-satsen.\n\n\n\nAnders Andersson\n     Storgatan 1\n 999 99 Storstad\n\n\n\n\n\nSvar uppgift 6\n\nprint(f\"{fnamn:&lt;6} {enamn}\\n{adr:&gt;16}\\n{postnr :&gt;7} {ort:&gt;2}\")"
+  },
+  {
+    "objectID": "pr1/python/uppgifter/utskrift-och-villkor/index.html#villkor-i-python",
+    "href": "pr1/python/uppgifter/utskrift-och-villkor/index.html#villkor-i-python",
+    "title": "Uppgifter Pr1, utskrift och villkor",
+    "section": "Villkor i Python",
+    "text": "Villkor i Python\nRespektive programmeringsuppgift nedan ska sparas i en fil\n\n\nUppgift 7\nSkapa ett program som ber dig mata in ett belopp med pengar. Programmet ska avgöra om det räcker till att köpa ett smycke av järn, silver eller guld. Skapa även ett flödesschema för programmet.\nPriset för respektive typ av smycke deklareras som variabler, där ett järnmycke kostar 200 kr, ett silversmycke 500 kr och ett guldsmycke 1000 kr. Deklarera variabler för dessa priser och använd dessa i programmet.\n\n# Exempelkörning 1\nAnge belopp (i kr.) att handla för -&gt; 300\nBeloppet räcker till ett järnsmycke!\n\n# Exempelkörning 2\nAnge belopp (i kr.) att handla för -&gt; 800\nBeloppet räcker till ett ett silversmycke!\n\n# Exempelkörning 3\nAnge belopp (i kr.) att handla för -&gt; 100\nBeloppet räcker inte till något smycke.\n\nUtmanande uppgift: Ändra programmet så att det skriver ut det maximala antalet av respektive sort smycke som du kan köpa för ett angivet belopp. Programmet ska prioritera de dyraste smyckena.\n\n# Exempelkörning 4\nAnge belopp (i kr.) att handla för -&gt; 1975\nBeloppet räcker till:\nAntal guldsmycken:  1\nAntal silvermycken: 1\nAntal järnsmycken:  2\nBelopp kvar: 75 kr\n\n\nⓘ Använd heltalsdivision, den ger heltalsdelen vid division. Exempel:\n15 // 7 # Ger resultatet 2\n20 // 7 # Ger resultatet 2\n\n\nLösningsförslag uppgift 7\n\nSe denna länk\n\n\nUppgift 8\nFör de booleska variablerna a, b och c gäller\n\na = True\nb = True\nc = False\n\nFundera ut vilket booleskt värde respektive uttryck nedan kommer att anta, och kontrollera det därefter i Python-konsolen:\n\n(a and b) and c\n\nFalse\n\na and b and c\n\nFalse\n\n(a and c) or b\n\nTrue\n\na and b or c\n\nTrue\n\n\n\n\nUppgift 9\nSkapa ett program som läser in längderna på tre sidor. Programmet ska sedan avgöra om dessa sidor är sidorna i en rätvinklig triangel.\n\n# Exempelkörning 1\nAnge längden på sida 1 -&gt; 3\nAnge längden på sida 2 -&gt; 4\nAnge längden på sida 3 -&gt; 5\nDessa sidor kan bilda en rätvinklig triangel\n\n# Exempelkörning 2\nAnge längden på sida 1 -&gt; 3\nAnge längden på sida 2 -&gt; 4\nAnge längden på sida 3 -&gt; 6\nDessa sidor kan inte bilda inte en rätvinklig triangel\n\n\nⓘ För att kvadrera ett tal används exponentoperatorn **. T ex gäller att om a = 2**3 så antar a värdet 8.\n\nUtmanande uppgift: Utöka programmet så att det även avgör om sidorna bildar en triangel över huvud taget.\n\n# Exempelkörning 3\nAnge längden på sida 1 -&gt; 7\nAnge längden på sida 2 -&gt; 5\nAnge längden på sida 3 -&gt; 1\nDessa sidor kan inte bilda en triangel\n\n\n\nLösningsförslag uppgift 9\n\nSe denna länk\n\n\nUppgift 10\nEtt program som skriver ut vilket betyg en viss provpoäng motsvarar skulle kunna se ut så här:\ne_gräns = 15; c_gräns = 25; a_gräns = 35\npoäng = int(input('Ange din provpoäng -&gt; '))\nif poäng &gt;= a_gräns:\n   print('A')\nelif poäng &gt;= c_gräns:\n   print('C')\nelif poäng &gt;= e_gräns:\n   print('E')\nelse:\n   print('F')\nprint('Programmet avslutas')\n\nGör ett flödesschema för programmet.\nSkriv om programmet så att det använder de booleska operatorerna not, and och or i villkoren.\n\n\nLösningsförslag uppgift 10\n\nSe denna länk\n\n\nUppgift 11\nSkapa ett program som ber dig mata in ett årtal. Programmet avgör om året är ett skottår. Ett årtal som inte är delbart med 4 är inte ett skottår. Är årtalet dessutom delbart 100 måste det också vara delbart med 400 för att vara ett skottår.\n\n# Exempelkörning 1\nAnge ett årtal -&gt;  2020\nÅr 2020 är ett skottår\n\n# Exempelkörning 2\nAnge ett årtal -&gt;  2021\nÅr 2021 är inte ett skottår\n\n# Exempelkörning 3\nAnge ett årtal -&gt;  1800\nÅr 1800 är inte ett skottår\n\n# Exempelkörning 4\nAnge ett årtal -&gt;  2000\nÅr 2000 är ett skottår\n\n\nⓘ Modulooperatorn (%) ger resultatet noll om ett tal är jämnt delbart med ett annat.\n# Exempel 1, delbart\n# (21 är delbart med 3)\n21 % 3\n0\n# Exempel 2, ej delbart\n# (21 är ej delbart med 2)\n21 % 2\n1\n\n\n\nLösningsförslag uppgift 11\n\nSe denna länk"
+  },
+  {
+    "objectID": "pr1/python/intro/pres-version-online-python/intro-pres.html#klipsk-som-en-dator",
+    "href": "pr1/python/intro/pres-version-online-python/intro-pres.html#klipsk-som-en-dator",
     "title": "Introduktion Programmering 1, indval",
     "section": "Klipsk som en dator?",
     "text": "Klipsk som en dator?"
   },
   {
-    "objectID": "pr1/python/intro/pres-version-online-python/index.html#förkunskaper",
-    "href": "pr1/python/intro/pres-version-online-python/index.html#förkunskaper",
+    "objectID": "pr1/python/intro/pres-version-online-python/intro-pres.html#förkunskaper",
+    "href": "pr1/python/intro/pres-version-online-python/intro-pres.html#förkunskaper",
     "title": "Introduktion Programmering 1, indval",
     "section": "Förkunskaper?",
     "text": "Förkunskaper?\n\n\n\n\nhttps://shorturl.at/fhBG5"
   },
   {
-    "objectID": "pr1/python/intro/pres-version-online-python/index.html#vad-är-ett-datorprogram",
-    "href": "pr1/python/intro/pres-version-online-python/index.html#vad-är-ett-datorprogram",
+    "objectID": "pr1/python/intro/pres-version-online-python/intro-pres.html#vad-är-ett-datorprogram",
+    "href": "pr1/python/intro/pres-version-online-python/intro-pres.html#vad-är-ett-datorprogram",
     "title": "Introduktion Programmering 1, indval",
     "section": "Vad är ett datorprogram?",
     "text": "Vad är ett datorprogram?\n\n\n\nEtt datorprogram är som en uppsättning instruktioner eller regler som berättar för datorn vad den ska göra.\n\n\n\n\nPrecis som vi människor använder oss av instruktioner för att utföra olika uppgifter, använder sig också en dator av programmet för att lösa problem och utföra specifika arbetsuppgifter.\n\n\n\n\nDessa instruktioner i ett datorprogram skrivs vanligtvis i ett programmeringsspråk, vilket är ett särskilt språk som både människor och datorer kan förstå.\n\n\n\n\nNär programmet körs på en dator läser den stegvis igenom varje instruktion och utför de angivna operationerna."
   },
   {
-    "objectID": "pr1/python/intro/pres-version-online-python/index.html#vad-är-ett-datorprogram-forts.",
-    "href": "pr1/python/intro/pres-version-online-python/index.html#vad-är-ett-datorprogram-forts.",
+    "objectID": "pr1/python/intro/pres-version-online-python/intro-pres.html#vad-är-ett-datorprogram-forts.",
+    "href": "pr1/python/intro/pres-version-online-python/intro-pres.html#vad-är-ett-datorprogram-forts.",
     "title": "Introduktion Programmering 1, indval",
     "section": "Vad är ett datorprogram? (forts.)",
     "text": "Vad är ett datorprogram? (forts.)\n\n\n\nGenom att kombinera olika instruktionssekvenser kan man bygga upp mer komplexa program som kan hantera allt från matematiska beräkningar till grafikrendering eller datahantering.\n\n\n\n\nMänniskor skapar dessa program för att automatisera processer, lösa problem eller utveckla nya teknologier och applikationer som används inom allt från spelutveckling till medicinsk forskning och affärsverksamhet.\n\n\n\nSammanfattningsvis kan man säga att ett datorprogram är en samling av instruktioner skrivna i programmeringsspråk, vilket ger möjlighet att styra hur en dators hårdvara fungerar och får den att utföra specifika uppgifter."
   },
   {
-    "objectID": "pr1/python/intro/pres-version-online-python/index.html#utvecklingsmiljö",
-    "href": "pr1/python/intro/pres-version-online-python/index.html#utvecklingsmiljö",
+    "objectID": "pr1/python/intro/pres-version-online-python/intro-pres.html#utvecklingsmiljö",
+    "href": "pr1/python/intro/pres-version-online-python/intro-pres.html#utvecklingsmiljö",
     "title": "Introduktion Programmering 1, indval",
     "section": "Utvecklingsmiljö",
     "text": "Utvecklingsmiljö\nVi kommer att arbeta i online-miljön Replit under kursen.\n\n\n\n\n\n  \n\nMiljön består b la av en konsol där kortare “kodsnuttar” kan skrivas in och en editor där program kan skrivas och sparas.\n\n\nRegistrera dig på https://replit.com/ med din “skol-Google”."
   },
   {
-    "objectID": "pr1/python/intro/pres-version-online-python/index.html#dagens-mål",
-    "href": "pr1/python/intro/pres-version-online-python/index.html#dagens-mål",
+    "objectID": "pr1/python/intro/pres-version-online-python/intro-pres.html#dagens-mål",
+    "href": "pr1/python/intro/pres-version-online-python/intro-pres.html#dagens-mål",
     "title": "Introduktion Programmering 1, indval",
     "section": "Dagens mål",
     "text": "Dagens mål\n\nSkapa inloggning på Replit\nBekanta sig med konsol och editor genom arbete med\n\nVariabler\nFormaterad utskrift"
   },
   {
-    "objectID": "pr1/python/intro/pres-version-online-python/index.html#variabler",
-    "href": "pr1/python/intro/pres-version-online-python/index.html#variabler",
+    "objectID": "pr1/python/intro/pres-version-online-python/intro-pres.html#variabler",
+    "href": "pr1/python/intro/pres-version-online-python/intro-pres.html#variabler",
     "title": "Introduktion Programmering 1, indval",
     "section": "Variabler",
     "text": "Variabler\nEn variabel är ett “namn” på ett värde. Kan även kallas för en identifierare.\n\n# Detta program skrivs i en fil som sparas.\n# Filen skapas i Idle: File -&gt; New File\n# och namnges till fartberäkning\nsträcka = 103  # Sträckan i meter\ntid = 13.2     # Tiden i sekunder\nfart = sträcka / tid\n\nprint(f\"Fart = {fart:.1f} m/s\")\n# Skriver ut Fart = 7.8 m/s\n\nFart = 7.8 m/s\n\n\n\nVariabler kan innehålla andra saker än tal; man säger att även detta är värden."
   },
   {
-    "objectID": "pr1/python/intro/pres-version-online-python/index.html#variabeltyper",
-    "href": "pr1/python/intro/pres-version-online-python/index.html#variabeltyper",
+    "objectID": "pr1/python/intro/pres-version-online-python/intro-pres.html#variabeltyper",
+    "href": "pr1/python/intro/pres-version-online-python/intro-pres.html#variabeltyper",
     "title": "Introduktion Programmering 1, indval",
     "section": "Variabeltyper",
     "text": "Variabeltyper\n\nNågra vanliga typer av variabler är  string (sträng), int (heltal) och float (tal med decimaler).\n\n\nPython kan skriva ut variabeltypen för en given variabel.\n\n\n\nett_heltal = 5\nett_flyttal = 2.9\nen_sträng = \"En sträng\"\nprint(type(ett_heltal))\nprint(type(ett_flyttal))\nprint(type(en_sträng))\n\n&lt;class 'int'&gt;\n&lt;class 'float'&gt;\n&lt;class 'str'&gt;"
   },
   {
-    "objectID": "pr1/python/intro/pres-version-online-python/index.html#variabler-i-datorminnet",
-    "href": "pr1/python/intro/pres-version-online-python/index.html#variabler-i-datorminnet",
+    "objectID": "pr1/python/intro/pres-version-online-python/intro-pres.html#variabler-i-datorminnet",
+    "href": "pr1/python/intro/pres-version-online-python/intro-pres.html#variabler-i-datorminnet",
     "title": "Introduktion Programmering 1, indval",
     "section": "Variabler i datorminnet",
     "text": "Variabler i datorminnet\n\nNär en variabel tilldelas ett värde kommer detta värde att sparas på en plats i datorns minne. När variabeln adresseras kommer namnet att hänvisa till denna minnesplats."
   },
   {
-    "objectID": "pr1/python/intro/pres-version-online-python/index.html#några-regler-för-variabelnamn",
-    "href": "pr1/python/intro/pres-version-online-python/index.html#några-regler-för-variabelnamn",
+    "objectID": "pr1/python/intro/pres-version-online-python/intro-pres.html#några-regler-för-variabelnamn",
+    "href": "pr1/python/intro/pres-version-online-python/intro-pres.html#några-regler-för-variabelnamn",
     "title": "Introduktion Programmering 1, indval",
     "section": "Några regler för variabelnamn",
     "text": "Några regler för variabelnamn\n\n\nAlla bokstavstecken och siffror får användas\n\n\n\n\nPython gör skillnad på versaler och gemener\n\n\n\n\nVariabelnamn kan inte börja med en siffra\n\n\n\n\nVariabelnamn kan inte innehålla mellanslag\n\n\n\n\nVariabelnamn kan inte innehålla bindestreck"
   },
   {
-    "objectID": "pr1/python/intro/pres-version-online-python/index.html#några-regler-för-variabelnamn-forts.",
-    "href": "pr1/python/intro/pres-version-online-python/index.html#några-regler-för-variabelnamn-forts.",
+    "objectID": "pr1/python/intro/pres-version-online-python/intro-pres.html#några-regler-för-variabelnamn-forts.",
+    "href": "pr1/python/intro/pres-version-online-python/intro-pres.html#några-regler-för-variabelnamn-forts.",
     "title": "Introduktion Programmering 1, indval",
     "section": "Några regler för variabelnamn (forts.)",
     "text": "Några regler för variabelnamn (forts.)\n\n\n\n\n\nVariabelnamn bör inledas med en gemen (“liten”) bokstav\n\n\n\n\nVariabelnamn bör vara uttrycksfulla, dvs beskriva vad de står för\n\n\n\n\nOrd separeras, t ex längd_rekt = 5\n\n\n\n\nLänk: Tillåtna namn på variabler"
   },
   {
-    "objectID": "pr1/python/intro/pres-version-online-python/index.html#utskrifter-i-python",
-    "href": "pr1/python/intro/pres-version-online-python/index.html#utskrifter-i-python",
+    "objectID": "pr1/python/intro/pres-version-online-python/intro-pres.html#utskrifter-i-python",
+    "href": "pr1/python/intro/pres-version-online-python/intro-pres.html#utskrifter-i-python",
     "title": "Introduktion Programmering 1, indval",
     "section": "Utskrifter i Python",
     "text": "Utskrifter i Python\n\n\n\nUtskrift av sträng\n\nhello_string = \"Hello, world\"\nprint(hello_string)\n\nHello, world\n\n\n\n\n\n\n\nUtskrift av sträng och tal\n\npris = 10\nprint(f\"Priset är {pris} kr.\")\n\nPriset är 10 kr.\n\n\n\n\n\nUtskrift av heltal\n\npris = 10\nprint(pris)\n\n10\n\n\n\n\n\n\n\nAvrundning\n\nmy_float = 2/3\nprint(f\"{my_float:.2f}\")\n\n0.67\n\n\n\n\n\n\nNär “fast” text ska skrivas ut tillsammans med en variabel används en s.k f-string. Det står för formatted string literal."
   },
   {
-    "objectID": "pr1/python/intro/pres-version-online-python/index.html#formaterad-utskrift",
-    "href": "pr1/python/intro/pres-version-online-python/index.html#formaterad-utskrift",
+    "objectID": "pr1/python/intro/pres-version-online-python/intro-pres.html#formaterad-utskrift",
+    "href": "pr1/python/intro/pres-version-online-python/intro-pres.html#formaterad-utskrift",
     "title": "Introduktion Programmering 1, indval",
     "section": "Formaterad utskrift",
     "text": "Formaterad utskrift\nEn teckensträng har en en given textbredd. Det tydliggörs med utfyllnadstecken.\n\ns1 = \"Kalle\"\ns2 = \"Anka\"\nprint(f\"{s1:*&lt;13}\")      # Textbredd 13, vänsterjusterat\nprint(f\"{s1:*&gt;13}\")      # Textbredd 13, högerjusterat\nprint(f\"{s1:*^13}\")      # Textbredd 13, centrerat\nprint(s1.rjust(13, \"*\")) # Finns även ljust och center\nprint(s1.ljust(13) + s2) # Inget utfyllnadstecken!\n\n\n\nKalle********\n********Kalle\n****Kalle****\n********Kalle\nKalle        Anka\n\n\n\nPå rad 7 syns att vi kan slå ihop (konkatenera) två strängar med operatorn +."
   },
   {
-    "objectID": "pr1/python/intro/pres-version-online-python/index.html#sträng-med-radbrytning",
-    "href": "pr1/python/intro/pres-version-online-python/index.html#sträng-med-radbrytning",
+    "objectID": "pr1/python/intro/pres-version-online-python/intro-pres.html#sträng-med-radbrytning",
+    "href": "pr1/python/intro/pres-version-online-python/intro-pres.html#sträng-med-radbrytning",
     "title": "Introduktion Programmering 1, indval",
     "section": "Sträng med radbrytning",
     "text": "Sträng med radbrytning\nFör att skriva ut en sträng på flera används ett s.k “flykttecken” (escape character).\n\nprint(\"Här är en text\\npå två rader\")\n\nHär är en text\npå två rader\n\n\n\nDetta kan användas tillsammans med textbredden.\n\nprint(f\"Detta är en högerjusterad text\\n{'på flera rader':*&gt;30}\")\n\nDetta är en högerjusterad text\n****************på flera rader\n\n\n\n\n\n\n\n\nDet finns flera exempel på escape characters på denna länk."
   },
   {
-    "objectID": "pr1/python/intro/pres-version-online-python/index.html#justering-av-tal",
-    "href": "pr1/python/intro/pres-version-online-python/index.html#justering-av-tal",
+    "objectID": "pr1/python/intro/pres-version-online-python/intro-pres.html#justering-av-tal",
+    "href": "pr1/python/intro/pres-version-online-python/intro-pres.html#justering-av-tal",
     "title": "Introduktion Programmering 1, indval",
     "section": "Justering av tal",
     "text": "Justering av tal\n\nTabeller blir mer lättlästa om ental står under ental, tiondel under tiondel osv.\n\n\n\na = 10.5; b = 2.38\nc = 2.3;  d = 0.1\nprint(f\"{a:6.2f}\\t\\t{c:6.2f}\\n{b:6.2f}\\t\\t{d:6.2f}\")\nprint(\"----------------------\");\nprint(f\"{(a+b):6.2f}\\t\\t{(c+d):6.2f}\")\n\n 10.50        2.30\n  2.38        0.10\n----------------------\n 12.88        2.40\n\n\n\n\nObservera att beräkningarna sker mellan måsvingarna!"
   },
   {
-    "objectID": "pr1/python/intro/pres-version-online-python/index.html#sammanfattning",
-    "href": "pr1/python/intro/pres-version-online-python/index.html#sammanfattning",
+    "objectID": "pr1/python/intro/pres-version-online-python/intro-pres.html#sammanfattning",
+    "href": "pr1/python/intro/pres-version-online-python/intro-pres.html#sammanfattning",
     "title": "Introduktion Programmering 1, indval",
     "section": "Sammanfattning",
     "text": "Sammanfattning\n\n\n\nEtt datorprogram är en följd av instruktioner.\n\n\n\n\nDessa instruktioner skrivs i ett programmeringsspråk.\n\n\n\n\nI Python kan korta kodavsnitt skrivas i konsolen, medan en editor används för att skriva och spara program.\n\n\n\n\nI datorprogram kan användas kommentarer för att det ska bli mer lättläst. För Python gäller tecknet # inleder kommentaren # Kommentar\n\n\n\n\nFör att lagra värden i ett program används variabler.\n\n\n\n\nVariabelns typ beror på vilket sorts värde som lagras."
   },
   {
-    "objectID": "pr1/python/intro/pres-version-online-python/index.html#sammanfattning-forts.",
-    "href": "pr1/python/intro/pres-version-online-python/index.html#sammanfattning-forts.",
+    "objectID": "pr1/python/intro/pres-version-online-python/intro-pres.html#sammanfattning-forts.",
+    "href": "pr1/python/intro/pres-version-online-python/intro-pres.html#sammanfattning-forts.",
     "title": "Introduktion Programmering 1, indval",
     "section": "Sammanfattning (forts.)",
     "text": "Sammanfattning (forts.)\n\n\n\nDet finns regler och konventioner för namngivning av variabler.\n\n\n\n\nFör att skriva ut variabler i Python används en funktion som heter print.\n\n\n\n\nMed print går det att styra hur utskriften sker, t ex med avseende på radbrytning, textjustering och antal decimaler för ett tal.\n\n\n\n\nUttryck kan evalueras i en sträng i Python med f-string.\n\nprint(f\"Talet är {2+2}\") # Talet är 4"
   },
   {
-    "objectID": "pr1/python/intro/pres-version-online-python/index.html#uppgifter",
-    "href": "pr1/python/intro/pres-version-online-python/index.html#uppgifter",
+    "objectID": "pr1/python/intro/pres-version-online-python/intro-pres.html#uppgifter",
+    "href": "pr1/python/intro/pres-version-online-python/intro-pres.html#uppgifter",
     "title": "Introduktion Programmering 1, indval",
+    "section": "Uppgifter",
+    "text": "Uppgifter\n\n\n\n\nUppgifterna 1 – 6 i dokumentet Uppgifter Pr1, utskrift och villkor"
+  },
+  {
+    "objectID": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#klipsk-som-en-dator",
+    "href": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#klipsk-som-en-dator",
+    "title": "Introduktion Programmering 1",
+    "section": "Klipsk som en dator?",
+    "text": "Klipsk som en dator?"
+  },
+  {
+    "objectID": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#förkunskaper",
+    "href": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#förkunskaper",
+    "title": "Introduktion Programmering 1",
+    "section": "Förkunskaper?",
+    "text": "Förkunskaper?\n\n\n\n\nhttps://shorturl.at/fx035"
+  },
+  {
+    "objectID": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#vad-är-ett-datorprogram",
+    "href": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#vad-är-ett-datorprogram",
+    "title": "Introduktion Programmering 1",
+    "section": "Vad är ett datorprogram?",
+    "text": "Vad är ett datorprogram?\n\n\n\nEtt datorprogram är som en uppsättning instruktioner eller regler som berättar för datorn vad den ska göra.\n\n\n\n\nPrecis som vi människor använder oss av instruktioner för att utföra olika uppgifter, använder sig också en dator av programmet för att lösa problem och utföra specifika arbetsuppgifter.\n\n\n\n\nDessa instruktioner i ett datorprogram skrivs vanligtvis i ett programmeringsspråk, vilket är ett särskilt språk som både människor och datorer kan förstå.\n\n\n\n\nNär programmet körs på en dator läser den stegvis igenom varje instruktion och utför de angivna operationerna."
+  },
+  {
+    "objectID": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#vad-är-ett-datorprogram-forts.",
+    "href": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#vad-är-ett-datorprogram-forts.",
+    "title": "Introduktion Programmering 1",
+    "section": "Vad är ett datorprogram? (forts.)",
+    "text": "Vad är ett datorprogram? (forts.)\n\n\n\nGenom att kombinera olika instruktionssekvenser kan man bygga upp mer komplexa program som kan hantera allt från matematiska beräkningar till grafikrendering eller datahantering.\n\n\n\n\nMänniskor skapar dessa program för att automatisera processer, lösa problem eller utveckla nya teknologier och applikationer som används inom allt från spelutveckling till medicinsk forskning och affärsverksamhet.\n\n\n\nSammanfattningsvis kan man säga att ett datorprogram är en samling av instruktioner skrivna i programmeringsspråk, vilket ger möjlighet att styra hur en dators hårdvara fungerar och får den att utföra specifika uppgifter."
+  },
+  {
+    "objectID": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#utvecklingsmiljö",
+    "href": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#utvecklingsmiljö",
+    "title": "Introduktion Programmering 1",
+    "section": "Utvecklingsmiljö",
+    "text": "Utvecklingsmiljö\nVi kommer att arbeta med Pythons miljö Idle under första halvan av höstterminen\n\n\n  \n\nMiljön består av en konsol där kortare “kodsnuttar” kan skrivas in och en editor där program kan skrivas och sparas.\n\n\nLadda ned från https://www.python.org/downloads"
+  },
+  {
+    "objectID": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#dagens-mål",
+    "href": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#dagens-mål",
+    "title": "Introduktion Programmering 1",
+    "section": "Dagens mål",
+    "text": "Dagens mål\n\nInstallera Python på datorn\nBekanta sig med konsol och editor genom arbete med\n\nVariabler\nFormaterad utskrift"
+  },
+  {
+    "objectID": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#variabler",
+    "href": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#variabler",
+    "title": "Introduktion Programmering 1",
+    "section": "Variabler",
+    "text": "Variabler\nEn variabel är ett “namn” på ett värde. Kan även kallas för en identifierare.\n\n# Detta program skrivs i en fil som sparas.\n# Filen skapas i Idle: File -&gt; New File\n# och namnges till fartberäkning\nsträcka = 103  # Sträckan i meter\ntid = 13.2     # Tiden i sekunder\nfart = sträcka / tid\n\nprint(f\"Fart = {fart:.1f} m/s\")\n# Skriver ut Fart = 7.8 m/s\n\nFart = 7.8 m/s\n\n\n\nVariabler kan innehålla andra saker än tal; man säger att även detta är värden."
+  },
+  {
+    "objectID": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#variabeltyper",
+    "href": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#variabeltyper",
+    "title": "Introduktion Programmering 1",
+    "section": "Variabeltyper",
+    "text": "Variabeltyper\n\nNågra vanliga typer av variabler är  string (sträng), int (heltal) och float (tal med decimaler).\n\n\nPython kan skriva ut variabeltypen för en given variabel.\n\n\n\nett_heltal = 5\nett_flyttal = 2.9\nen_sträng = \"En sträng\"\nprint(type(ett_heltal))\nprint(type(ett_flyttal))\nprint(type(en_sträng))\n\n&lt;class 'int'&gt;\n&lt;class 'float'&gt;\n&lt;class 'str'&gt;"
+  },
+  {
+    "objectID": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#variabler-i-datorminnet",
+    "href": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#variabler-i-datorminnet",
+    "title": "Introduktion Programmering 1",
+    "section": "Variabler i datorminnet",
+    "text": "Variabler i datorminnet\n\nNär en variabel tilldelas ett värde kommer detta värde att sparas på en plats i datorns minne. När variabeln adresseras kommer namnet att hänvisa till denna minnesplats."
+  },
+  {
+    "objectID": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#några-regler-för-variabelnamn",
+    "href": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#några-regler-för-variabelnamn",
+    "title": "Introduktion Programmering 1",
+    "section": "Några regler för variabelnamn",
+    "text": "Några regler för variabelnamn\n\n\nAlla bokstavstecken och siffror får användas\n\n\n\n\nPython gör skillnad på versaler och gemener\n\n\n\n\nVariabelnamn kan inte börja med en siffra\n\n\n\n\nVariabelnamn kan inte innehålla mellanslag\n\n\n\n\nVariabelnamn kan inte innehålla bindestreck"
+  },
+  {
+    "objectID": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#några-regler-för-variabelnamn-forts.",
+    "href": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#några-regler-för-variabelnamn-forts.",
+    "title": "Introduktion Programmering 1",
+    "section": "Några regler för variabelnamn (forts.)",
+    "text": "Några regler för variabelnamn (forts.)\n\n\n\n\n\nVariabelnamn bör inledas med en gemen (“liten”) bokstav\n\n\n\n\nVariabelnamn bör vara uttrycksfulla, dvs beskriva vad de står för\n\n\n\n\nOrd separeras, t ex längd_rekt = 5\n\n\n\n\nLänk: Tillåtna namn på variabler"
+  },
+  {
+    "objectID": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#utskrifter-i-python",
+    "href": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#utskrifter-i-python",
+    "title": "Introduktion Programmering 1",
+    "section": "Utskrifter i Python",
+    "text": "Utskrifter i Python\n\n\n\nUtskrift av sträng\n\nhello_string = \"Hello, world\"\nprint(hello_string)\n\nHello, world\n\n\n\n\n\n\n\nUtskrift av sträng och tal\n\npris = 10\nprint(f\"Priset är {pris} kr.\")\n\nPriset är 10 kr.\n\n\n\n\n\nUtskrift av heltal\n\npris = 10\nprint(pris)\n\n10\n\n\n\n\n\n\n\nAvrundning\n\nmy_float = 2/3\nprint(f\"{my_float:.2f}\")\n\n0.67\n\n\n\n\n\n\nNär “fast” text ska skrivas ut tillsammans med en variabel används en s.k f-string. Det står för formatted string literal."
+  },
+  {
+    "objectID": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#formaterad-utskrift",
+    "href": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#formaterad-utskrift",
+    "title": "Introduktion Programmering 1",
+    "section": "Formaterad utskrift",
+    "text": "Formaterad utskrift\nEn teckensträng har en en given textbredd. Det tydliggörs med utfyllnadstecken.\n\ns1 = \"Kalle\"\ns2 = \"Anka\"\nprint(f\"{s1:*&lt;13}\")      # Textbredd 13, vänsterjusterat\nprint(f\"{s1:*&gt;13}\")      # Textbredd 13, högerjusterat\nprint(f\"{s1:*^13}\")      # Textbredd 13, centrerat\nprint(s1.rjust(13, \"*\")) # Finns även ljust och center\nprint(s1.ljust(13) + s2) # Inget utfyllnadstecken!\n\n\n\nKalle********\n********Kalle\n****Kalle****\n********Kalle\nKalle        Anka\n\n\n\nPå rad 7 syns att vi kan slå ihop (konkatenera) två strängar med operatorn +."
+  },
+  {
+    "objectID": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#sträng-med-radbrytning",
+    "href": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#sträng-med-radbrytning",
+    "title": "Introduktion Programmering 1",
+    "section": "Sträng med radbrytning",
+    "text": "Sträng med radbrytning\nFör att skriva ut en sträng på flera används ett s.k “flykttecken” (escape character).\n\nprint(\"Här är en text\\npå två rader\")\n\nHär är en text\npå två rader\n\n\n\nDetta kan användas tillsammans med textbredden.\n\nprint(f\"Detta är en högerjusterad text\\n{'på flera rader':*&gt;30}\")\n\nDetta är en högerjusterad text\n****************på flera rader\n\n\n\n\n\n\n\n\nDet finns flera exempel på escape characters på denna länk."
+  },
+  {
+    "objectID": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#justering-av-tal",
+    "href": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#justering-av-tal",
+    "title": "Introduktion Programmering 1",
+    "section": "Justering av tal",
+    "text": "Justering av tal\n\nTabeller blir mer lättlästa om ental står under ental, tiondel under tiondel osv.\n\n\n\na = 10.5; b = 2.38\nc = 2.3;  d = 0.1\nprint(f\"{a:6.2f}\\t\\t{c:6.2f}\\n{b:6.2f}\\t\\t{d:6.2f}\")\nprint(\"----------------------\");\nprint(f\"{(a+b):6.2f}\\t\\t{(c+d):6.2f}\")\n\n 10.50        2.30\n  2.38        0.10\n----------------------\n 12.88        2.40\n\n\n\n\nObservera att beräkningarna sker mellan måsvingarna!"
+  },
+  {
+    "objectID": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#sammanfattning",
+    "href": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#sammanfattning",
+    "title": "Introduktion Programmering 1",
+    "section": "Sammanfattning",
+    "text": "Sammanfattning\n\n\n\nEtt datorprogram är en följd av instruktioner.\n\n\n\n\nDessa instruktioner skrivs i ett programmeringsspråk.\n\n\n\n\nI Python kan korta kodavsnitt skrivas i konsolen, medan en editor används för att skriva och spara program.\n\n\n\n\nI datorprogram kan användas kommentarer för att det ska bli mer lättläst. För Python gäller tecknet # inleder kommentaren # Kommentar\n\n\n\n\nFör att lagra värden i ett program används variabler.\n\n\n\n\nVariabelns typ beror på vilket sorts värde som lagras."
+  },
+  {
+    "objectID": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#sammanfattning-forts.",
+    "href": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#sammanfattning-forts.",
+    "title": "Introduktion Programmering 1",
+    "section": "Sammanfattning (forts.)",
+    "text": "Sammanfattning (forts.)\n\n\n\nDet finns regler och konventioner för namngivning av variabler.\n\n\n\n\nFör att skriva ut variabler i Python används en funktion som heter print.\n\n\n\n\nMed print går det att styra hur utskriften sker, t ex med avseende på radbrytning, textjustering och antal decimaler för ett tal.\n\n\n\n\nUttryck kan evalueras i en sträng i Python med f-string.\n\nprint(f\"Talet är {2+2}\") # Talet är 4"
+  },
+  {
+    "objectID": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#uppgifter",
+    "href": "pr1/python/intro/pres-version-installerad-python/intro-pres.html#uppgifter",
+    "title": "Introduktion Programmering 1",
     "section": "Uppgifter",
     "text": "Uppgifter\n\n\n\n\nUppgifterna 1 – 6 i dokumentet Uppgifter Pr1, utskrift och villkor"
   }
