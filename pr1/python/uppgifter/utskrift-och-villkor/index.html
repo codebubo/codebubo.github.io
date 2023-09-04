@@ -96,6 +96,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../../../../styles.css">
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body class="nav-fixed">
@@ -141,6 +142,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#utskrifter-och-beräkningar-i-python" id="toc-utskrifter-och-beräkningar-i-python" class="nav-link active" data-scroll-target="#utskrifter-och-beräkningar-i-python">Utskrifter och beräkningar i Python</a>
   <ul class="collapse">
+  <li><a href="#utskrifter" id="toc-utskrifter" class="nav-link" data-scroll-target="#utskrifter">Utskrifter</a>
+  <ul class="collapse">
   <li><a href="#uppgift-1" id="toc-uppgift-1" class="nav-link" data-scroll-target="#uppgift-1">Uppgift 1</a></li>
   <li><a href="#uppgift-2" id="toc-uppgift-2" class="nav-link" data-scroll-target="#uppgift-2">Uppgift 2</a></li>
   <li><a href="#uppgift-3" id="toc-uppgift-3" class="nav-link" data-scroll-target="#uppgift-3">Uppgift 3</a></li>
@@ -155,6 +158,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#uppgift-9" id="toc-uppgift-9" class="nav-link" data-scroll-target="#uppgift-9">Uppgift 9</a></li>
   <li><a href="#uppgift-10" id="toc-uppgift-10" class="nav-link" data-scroll-target="#uppgift-10">Uppgift 10</a></li>
   <li><a href="#uppgift-11" id="toc-uppgift-11" class="nav-link" data-scroll-target="#uppgift-11">Uppgift 11</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -179,8 +183,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="utskrifter-och-beräkningar-i-python" class="level2">
-<h2 class="anchored" data-anchor-id="utskrifter-och-beräkningar-i-python">Utskrifter och beräkningar i Python</h2>
+<section id="utskrifter-och-beräkningar-i-python" class="level1">
+<h1>Utskrifter och beräkningar i Python</h1>
+<section id="utskrifter" class="level2">
+<h2 class="anchored" data-anchor-id="utskrifter">Utskrifter</h2>
 <p><strong>Nedanstående uppgifter ska göras i Python-konsolen, dvs du ska inte skapa en fil som sparas, om det inte framgår något annat i uppgiften.</strong></p>
 <hr>
 <section id="uppgift-1" class="level3">
@@ -193,19 +199,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>print(2.0 + 2)</code></li>
 <li><code>print(0.1 + 0.2)</code></li>
 </ul>
-<div style="color: red;">
-<strong>Kommentarer</strong>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Kommentarer uppgift 1">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Kommentarer uppgift 1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="1">
 <li><p>Tecken inom citationstecken (<code>" "</code> ) skrivs ut precis som de är, det är ingenting som beräknas även om det är ett uttryck innanför citationstecknen. Det som står innanför citationstecken kallas för en <strong>sträng</strong>. Två strängar kan adderas, med resultatet att det blir en ny sträng som består av de båda ingående strängarna i en följd. Därav gäller att <code>"2" + "2"</code> blir <code>22</code> (där <code>22</code> är en sträng och inte ett tal).</p></li>
 <li><p>Uttrycket <code>2</code> är ett heltal och <code>2.0</code> är ett flyttal. Om ett flyttal används i en beräkning kommer svaret att bli ett flyttal, även om det finns heltal med i andra delar av uttrycket.</p></li>
 <li><p><code>0.1 + 0.2</code> beräknas inte till exakt <code>0.3</code> eftersom Python lagrar tal i binär form (basen 2 till skillnad från basen 10). I denna binära representation kommer termerna att vara avrundade, och summan blir ett närmevärde.</p></li>
 </ol>
+</div>
+</div>
+</div>
 </section>
 <section id="uppgift-2" class="level3">
 <h3 class="anchored" data-anchor-id="uppgift-2">Uppgift 2</h3>
 <p>Använd en enda <code>print</code>-sats som skriver ut följande (byt ut namnet mot ditt eget). Observera att utskriften är på två rader!</p>
-<div style="background-color: lightblue; width: 100%; height: 75px; padding: 10px; margin-top: 20px; margin-bottom: 10px;">
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
 <div class="cell" data-execution_count="1">
 <div class="cell-output cell-output-stdout">
 <pre><code>Jag heter
@@ -213,57 +236,110 @@ Anders Andersson</code></pre>
 </div>
 </div>
 </div>
-<div style="color:red;">
-<strong>Svar uppgift 2</strong>
 </div>
-<p><code>print("Jag heter\nAnders Andersson")</code></p>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Svar uppgift 2">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Svar uppgift 2
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Jag heter</span><span class="ch">\n</span><span class="st">Anders Andersson"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="uppgift-3" class="level3">
 <h3 class="anchored" data-anchor-id="uppgift-3">Uppgift 3</h3>
 <p>Skapa en Python-fil i Idle där du deklarerar följande strängvariabler (som du kan själv kan anpassa innehållet i):</p>
-<div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>fnamn <span class="op">=</span> <span class="st">"Anders"</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>enamn <span class="op">=</span> <span class="st">"Andersson"</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>adr <span class="op">=</span> <span class="st">"Storgatan 1"</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>postnr <span class="op">=</span> <span class="st">"999 99"</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>ort <span class="op">=</span> <span class="st">"Storstad"</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>ålder <span class="op">=</span> <span class="dv">17</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 <p>Använd en <code>print</code>-sats, där du skriver ut variablerna som en <code>fstring</code>, så att utskriften blir:</p>
-<div style="background-color: lightblue; width: 100%; height: 50px; padding: 10px; margin-top: 20px; margin-bottom: 10px">
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
 <div class="cell" data-execution_count="3">
 <div class="cell-output cell-output-stdout">
 <pre><code>Hej, jag heter Anders och är 17 år.</code></pre>
 </div>
 </div>
 </div>
-<p>(Resten av variablerna ska användas i en senare uppgift, så deklarera dessa även om de inte används här.)</p>
-<div style="color: red;">
-<strong>Lösningsförslag uppgift 3</strong>
 </div>
-<p><a href="https://gist.github.com/codebubo/9dc1b0f9a8c61984aadd6f2b21138568">Se denna länk</a></p>
+</div>
+<p>(Resten av variablerna ska användas i en senare uppgift, så deklarera dessa även om de inte används här.)</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag uppgift 3">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag uppgift 3
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fnamn <span class="op">=</span> <span class="st">"Anders"</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>enamn <span class="op">=</span> <span class="st">"Andersson"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>adr <span class="op">=</span> <span class="st">"Storgatan 1"</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>postnr <span class="op">=</span> <span class="st">"999 99"</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>ort <span class="op">=</span> <span class="st">"Storstad"</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>ålder <span class="op">=</span> <span class="dv">17</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Hej, jag heter </span><span class="sc">{</span>fnamn<span class="sc">}</span><span class="ss"> och är </span><span class="sc">{å</span>lder<span class="sc">}</span><span class="ss"> år"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="uppgift-4" class="level3">
 <h3 class="anchored" data-anchor-id="uppgift-4">Uppgift 4</h3>
 <p>Deklarera följande variabler, och <strong>spara i en fil i Idle</strong>:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>sträcka <span class="op">=</span> <span class="dv">103</span> <span class="co"># Sträcka i meter</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>tid <span class="op">=</span> <span class="fl">13.2</span>    <span class="co"># Tiden i sekunder</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>fart <span class="op">=</span> sträcka <span class="op">/</span> tid</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>sträcka <span class="op">=</span> <span class="dv">103</span> <span class="co"># Sträcka i meter</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>tid <span class="op">=</span> <span class="fl">13.2</span>    <span class="co"># Tiden i sekunder</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>fart <span class="op">=</span> sträcka <span class="op">/</span> tid</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Skapa en <code>print</code>-sats som skriver ut farten på det aktuella föremålet avrundat till en decimal.</p>
-<div style="color: red;">
-<strong>Lösningsförslag uppgift 4</strong>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag uppgift 4">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
 </div>
-<p><a href="https://gist.github.com/codebubo/2f001a1660ac999a0df984ba67bdbd81">Se denna länk</a></p>
+<div class="callout-title-container flex-fill">
+Lösningsförslag uppgift 4
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>sträcka <span class="op">=</span> <span class="dv">103</span> <span class="co"># Sträcka i meter</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>tid <span class="op">=</span> <span class="fl">13.2</span>    <span class="co"># Tiden i sekunder</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>fart <span class="op">=</span> sträcka <span class="op">/</span> tid</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Farten är </span><span class="sc">{</span>(sträcka <span class="op">/</span> tid)<span class="sc">:.1f}</span><span class="ss"> m/s"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="uppgift-5" class="level3">
 <h3 class="anchored" data-anchor-id="uppgift-5">Uppgift 5</h3>
 <p>Deklarera följande variabler i Python:</p>
 <div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="fl">1.5</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="fl">21.32</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="fl">1.5</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="fl">21.32</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Använd en (enda) <code>print</code>-sats med lämpliga formateringstecken för att skriva ut, och göra, följande beräkning. Du ska inte använda flera på varandra följande mellanslag inne i <code>print</code>-satsen.</p>
-<div style="background-color: lightblue; width: 100%; height: 110px; padding: 10px; margin-top: 20px;">
+<p>Använd därefter en (enda) <code>print</code>-sats med lämpliga formateringstecken för att skriva ut, och göra, följande beräkning. Du ska inte använda flera på varandra följande mellanslag inne i <code>print</code>-satsen.</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
 <div class="cell" data-execution_count="5">
 <div class="cell-output cell-output-stdout">
 <pre><code>   1.50
@@ -273,16 +349,36 @@ Anders Andersson</code></pre>
 </div>
 </div>
 </div>
-<p>
-</p><div style="color: red;">
-<strong>Svar uppgift 5</strong>
 </div>
-<p><code>print(f"{a:&gt;7.2f}\n+{b:&gt;6.2f}\n-------\n{(a+b):&gt;7.2f}")</code></p>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag uppgift 5">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag uppgift 5
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="fl">1.5</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="fl">21.32</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>a<span class="sc">:&gt;7.2f}</span><span class="ch">\n</span><span class="ss">+</span><span class="sc">{</span>b<span class="sc">:&gt;6.2f}</span><span class="ch">\n</span><span class="ss">-------</span><span class="ch">\n</span><span class="sc">{</span>(a<span class="op">+</span>b)<span class="sc">:&gt;7.2f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="uppgift-6" class="level3">
 <h3 class="anchored" data-anchor-id="uppgift-6">Uppgift 6</h3>
 <p>Använd filen med strängvariablerna från Uppgift 3 för att med en (enda) <code>print</code>-sats med lämpliga formateringstecken för att skriva ut strängarna, högerjusterade enligt nedan. Du ska inte använda flera på varandra följande mellanslag inne i <code>print</code>-satsen.</p>
-<div style="background-color: lightblue; width: 100%; height: 90px; padding: 10px; margin-top: 20px;">
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
 <div class="cell" data-execution_count="6">
 <div class="cell-output cell-output-stdout">
 <pre><code>Anders Andersson
@@ -291,12 +387,25 @@ Anders Andersson</code></pre>
 </div>
 </div>
 </div>
-<p>
-</p><div style="color: red;">
-<strong>Svar uppgift 6</strong>
-<div>
-<p><code>print(f"{fnamn:&lt;6} {enamn}\n{adr:&gt;16}\n{postnr :&gt;7} {ort:&gt;2}")</code></p>
-</div></div></section>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Svar uppgift 6">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Svar uppgift 6
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>fnamn<span class="sc">:&lt;6}</span><span class="ss"> </span><span class="sc">{</span>enamn<span class="sc">}</span><span class="ch">\n</span><span class="sc">{</span>adr<span class="sc">:&gt;16}</span><span class="ch">\n</span><span class="sc">{</span>postnr <span class="sc">:&gt;7}</span><span class="ss"> </span><span class="sc">{</span>ort<span class="sc">:&gt;2}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="villkor-i-python" class="level2">
 <h2 class="anchored" data-anchor-id="villkor-i-python">Villkor i Python</h2>
@@ -306,7 +415,12 @@ Anders Andersson</code></pre>
 <h3 class="anchored" data-anchor-id="uppgift-7">Uppgift 7</h3>
 <p>Skapa ett program som ber dig mata in ett belopp med pengar. Programmet ska avgöra om det räcker till att köpa ett smycke av järn, silver eller guld. <strong>Skapa även ett flödesschema</strong> för programmet.</p>
 <p>Priset för respektive typ av smycke deklareras som variabler, där ett järnmycke kostar 200 kr, ett silversmycke 500 kr och ett guldsmycke 1000 kr. Deklarera variabler för dessa priser och använd dessa i programmet.</p>
-<div style="background-color: lightblue; width: 100%; height: 270px; padding: 10px; margin-top: 20px;margin-bottom: 10px;">
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
 <pre><code># Exempelkörning 1
 Ange belopp (i kr.) att handla för -&gt; 300
 Beloppet räcker till ett järnsmycke!
@@ -319,8 +433,15 @@ Beloppet räcker till ett ett silversmycke!
 Ange belopp (i kr.) att handla för -&gt; 100
 Beloppet räcker inte till något smycke.</code></pre>
 </div>
+</div>
+</div>
 <p><strong>Utmanande uppgift</strong>: Ändra programmet så att det skriver ut det maximala antalet av respektive sort smycke som du kan köpa för ett angivet belopp. Programmet ska prioritera de dyraste smyckena.</p>
-<div style="background-color: lightblue; width: 100%; height: 160px; padding: 10px; margin-top: 20px;margin-bottom: 10px;">
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
 <pre><code># Exempelkörning 4
 Ange belopp (i kr.) att handla för -&gt; 1975
 Beloppet räcker till:
@@ -329,15 +450,96 @@ Antal silvermycken: 1
 Antal järnsmycken:  2
 Belopp kvar: 75 kr</code></pre>
 </div>
-<div style="background-color: lightyellow; width: 100%; height: 120px; padding: 10px; margin-top: 20px;margin-bottom: 10px;">
-<p>ⓘ Använd heltalsdivision, den ger <strong>heltalsdelen</strong> vid division. Exempel:</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Tips">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tips
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Använd heltalsdivision, den ger <strong>heltalsdelen</strong> vid division. Exempel:</p>
 <pre><code>15 // 7 # Ger resultatet 2
 20 // 7 # Ger resultatet 2</code></pre>
 </div>
-<div style="color: red;">
-<strong>Lösningsförslag uppgift 7</strong>
 </div>
-<p><a href="https://gist.github.com/codebubo/5909fb477c99db600505702292b277cf">Se denna länk</a></p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag uppgift 7">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag uppgift 7
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><a href="https://gist.github.com/codebubo/5909fb477c99db600505702292b277cf">Se flödesschema här</a></p>
+<p><strong>Lösningsförslag för typavgörandet</strong> (första deluppgiften)</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Detta program demonstrerar hur en if-sats</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># kan vare uppbyggd med elif och else.</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>pris_järn <span class="op">=</span> <span class="dv">200</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>pris_silver <span class="op">=</span> <span class="dv">500</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>pris_guld <span class="op">=</span> <span class="dv">1000</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>belopp <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Ange belopp (i kr.) att handla för -&gt; "</span>))</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> belopp <span class="op">&gt;=</span> pris_guld:</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"Beloppet räcker till ett guldsmycke!"</span>)</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> belopp <span class="op">&gt;=</span> pris_silver: <span class="co"># Om inte tidigare villkor är uppfyllt så prövas detta villkor</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"Beloppet räcker till ett silversmycke!"</span>)</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> belopp <span class="op">&gt;=</span> pris_järn:   <span class="co"># Om inte tidigare villkor är uppfyllt så prövas detta villkor</span></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"Beloppet räcker till ett järnsmycke!"</span>)</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:                       <span class="co"># Om inget av villkoren är uppfyllda så körs nedanstående sats</span></span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"Beloppet räcker inte till något smycke."</span>)</span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Programmet avslutas"</span>)<span class="co"># Denna sats ligger utanför villkorssatsen</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Lösningsförslag för antalsavgörandet</strong> (andra deluppgiften)</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Detta program beräknar hur många smycken av järn,</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># silver respektive guld med ett givet pris som kan</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># köpas för ett givet belopp. Programmet demonstrerar</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># heltalsdivision och ändring av variabelvärde, men</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co"># även hur ett heltal kan matas in och användning av</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="co"># f-string.</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>pris_järn <span class="op">=</span> <span class="dv">200</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>pris_silver <span class="op">=</span> <span class="dv">500</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>pris_guld <span class="op">=</span> <span class="dv">1000</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>belopp <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Ange belopp att handla för -&gt; "</span>))</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>belopp_kvar <span class="op">=</span> belopp</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Hantering av guldsmycken</span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>antal_guld <span class="op">=</span> belopp_kvar <span class="op">//</span> pris_guld     <span class="co"># Variabeln antal_guld skapas och tilldelas ett värde</span></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>belopp_kvar <span class="op">-=</span> antal_guld <span class="op">*</span> pris_guld     <span class="co"># Här ändras variabelvärdet belopp_kvar</span></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Hantering av silversmycken</span></span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>antal_silver <span class="op">=</span> belopp_kvar <span class="op">//</span> pris_silver <span class="co"># Variabeln antal_silver skapas och tilldelas ett värde</span></span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>belopp_kvar <span class="op">-=</span> antal_silver <span class="op">*</span> pris_silver <span class="co"># Här ändras variabelvärdet belopp_kvar</span></span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Hantering av järnsmycken</span></span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>antal_järn <span class="op">=</span> belopp_kvar <span class="op">//</span> pris_järn     <span class="co"># Variabeln antal_järn skapas och tilldelas ett värde</span></span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>belopp_kvar <span class="op">-=</span> antal_järn <span class="op">*</span> pris_järn     <span class="co"># Här ändras variabelvärdet belopp_kvar</span></span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Beloppet räcker till:"</span>)</span>
+<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Antal guldsmycken: </span><span class="sc">{</span>antal_guld<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Antal silversmycken: </span><span class="sc">{</span>antal_silver<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Antal järnsmycken: </span><span class="sc">{</span>antal_j<span class="sc">ä</span>rn<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Belopp kvar: </span><span class="sc">{</span>belopp_kvar<span class="sc">}</span><span class="ss"> kr"</span>)</span>
+<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-34"><a href="#cb16-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Programmet avslutas"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="uppgift-8" class="level3">
 <h3 class="anchored" data-anchor-id="uppgift-8">Uppgift 8</h3>
@@ -349,28 +551,91 @@ Belopp kvar: 75 kr</code></pre>
 </ul>
 <p>Fundera ut vilket booleskt värde respektive uttryck nedan kommer att anta, och kontrollera det därefter i Python-konsolen:</p>
 <ol type="a">
-<li><code>(a and b) and c</code>
-<div style="color: red;">
-False
-</div></li>
-<li><code>a and b and c</code>
-<div style="color: red;">
-False
-</div></li>
-<li><code>(a and c) or b</code>
-<div style="color: red;">
-True
-</div></li>
-<li><code>a and b or c</code>
-<div style="color: red;">
-True
-</div></li>
+<li><code>(a and b) and c</code></li>
 </ol>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Svar uppgift 8a">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Svar uppgift 8a
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>False</code></p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li><code>a and b and c</code></li>
+</ol>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Svar uppgift 8b">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Svar uppgift 8b
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>False</code></p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li><code>(a and c) or b</code></li>
+</ol>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Svar uppgift 8c">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Svar uppgift 8c
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>True</code></p>
+</div>
+</div>
+</div>
+<ol start="4" type="a">
+<li><code>a and b or c</code></li>
+</ol>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Svar uppgift 8d">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Svar uppgift 8d
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>True</code></p>
+</div>
+</div>
+</div>
 </section>
 <section id="uppgift-9" class="level3">
 <h3 class="anchored" data-anchor-id="uppgift-9">Uppgift 9</h3>
 <p>Skapa ett program som läser in längderna på tre sidor. Programmet ska sedan avgöra om dessa sidor är sidorna i en rätvinklig triangel.</p>
-<div style="background-color: lightblue; width: 100%; height: 260px; padding: 10px; margin-top: 20px;margin-bottom: 10px;">
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
 <pre><code># Exempelkörning 1
 Ange längden på sida 1 -&gt; 3
 Ange längden på sida 2 -&gt; 4
@@ -383,50 +648,137 @@ Ange längden på sida 2 -&gt; 4
 Ange längden på sida 3 -&gt; 6
 Dessa sidor kan inte bilda inte en rätvinklig triangel</code></pre>
 </div>
-<div style="background-color: lightyellow; width: 100%; height: 50px; padding: 10px; margin-top: 20px;margin-bottom: 10px;">
-<p>ⓘ För att kvadrera ett tal används <em>exponentoperatorn</em> <code>**</code>. T ex gäller att om <code>a = 2**3</code> så antar <code>a</code> värdet 8.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Tips">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tips
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>För att kvadrera ett tal används <em>exponentoperatorn</em> <code>**</code>. T ex gäller att om <code>a = 2**3</code> så antar <code>a</code> värdet 8.</p>
+</div>
 </div>
 <p><strong>Utmanande uppgift</strong>: Utöka programmet så att det även avgör om sidorna bildar en triangel över huvud taget.</p>
-<div style="background-color: lightblue; width: 100%; height: 130px; padding: 10px; margin-top: 20px;margin-bottom: 10px;">
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
 <pre><code># Exempelkörning 3
 Ange längden på sida 1 -&gt; 7
 Ange längden på sida 2 -&gt; 5
 Ange längden på sida 3 -&gt; 1
 Dessa sidor kan inte bilda en triangel</code></pre>
 </div>
-<p>
-</p><div style="color: red;">
-<strong>Lösningsförslag uppgift 9</strong>
 </div>
-<p><a href="https://gist.github.com/codebubo/34fd14ee9484289f95583597ee927b75">Se denna länk</a></p>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag uppgift 9">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag uppgift 9
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Detta program avgör om tre sidor med given längd kan bilda en rätvinklig</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># triangel, en triangel som inte är rätvinklig eller om de inte kan bilda</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># en triangel över huvud taget.</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Framförallt demonstrerar programmet användadet av de booleska satserna</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co"># "and" och "or", jämförande likheter och exponmenter.</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Ange sida a -&gt; "</span>))</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Ange sida b -&gt; "</span>))</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Ange sida c -&gt; "</span>))</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Kontrollerar om Pythagoras sats gäller för någon kombination av sidorna</span></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (a<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> b<span class="op">**</span><span class="dv">2</span> <span class="op">==</span> c<span class="op">**</span><span class="dv">2</span>) <span class="kw">or</span> (a<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> c<span class="op">**</span><span class="dv">2</span> <span class="op">==</span> b<span class="op">**</span><span class="dv">2</span>) <span class="kw">or</span> (b<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> c<span class="op">**</span><span class="dv">2</span> <span class="op">==</span> a<span class="op">**</span><span class="dv">2</span>):</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Sidorna </span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>b<span class="sc">}</span><span class="ss"> och </span><span class="sc">{</span>c<span class="sc">}</span><span class="ss"> kan bilda en rätvinklig triangel"</span>)</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Kontrollerar om triangelolikheten gäller</span></span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> (a <span class="op">+</span> b <span class="op">&gt;</span> c) <span class="kw">and</span> (a <span class="op">+</span> c <span class="op">&gt;</span> b) <span class="kw">and</span> (b <span class="op">+</span> c <span class="op">&gt;</span> a):</span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Sidorna </span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>b<span class="sc">}</span><span class="ss"> och </span><span class="sc">{</span>c<span class="sc">}</span><span class="ss"> kan bilda en triangel som inte är rätvinklig"</span>)</span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Sidorna </span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>b<span class="sc">}</span><span class="ss"> och </span><span class="sc">{</span>c<span class="sc">}</span><span class="ss"> kan inte bilda en triangel"</span>)</span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Programmet avslutas"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="uppgift-10" class="level3">
 <h3 class="anchored" data-anchor-id="uppgift-10">Uppgift 10</h3>
 <p>Ett program som skriver ut vilket betyg en viss provpoäng motsvarar skulle kunna se ut så här:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>e_gräns <span class="op">=</span> <span class="dv">15</span><span class="op">;</span> c_gräns <span class="op">=</span> <span class="dv">25</span><span class="op">;</span> a_gräns <span class="op">=</span> <span class="dv">35</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>poäng <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">'Ange din provpoäng -&gt; '</span>))</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> poäng <span class="op">&gt;=</span> a_gräns:</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">'A'</span>)</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> poäng <span class="op">&gt;=</span> c_gräns:</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">'C'</span>)</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> poäng <span class="op">&gt;=</span> e_gräns:</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">'E'</span>)</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">'F'</span>)</span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Programmet avslutas'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>e_gräns <span class="op">=</span> <span class="dv">15</span><span class="op">;</span> c_gräns <span class="op">=</span> <span class="dv">25</span><span class="op">;</span> a_gräns <span class="op">=</span> <span class="dv">35</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>poäng <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">'Ange din provpoäng -&gt; '</span>))</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> poäng <span class="op">&gt;=</span> a_gräns:</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">'A'</span>)</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> poäng <span class="op">&gt;=</span> c_gräns:</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">'C'</span>)</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> poäng <span class="op">&gt;=</span> e_gräns:</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">'E'</span>)</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">'F'</span>)</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Programmet avslutas'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol type="a">
 <li>Gör ett flödesschema för programmet.</li>
 <li>Skriv om programmet så att det använder de booleska operatorerna <code>not</code>, <code>and</code> och <code>or</code> i villkoren.</li>
 </ol>
-<div style="color: red;">
-<strong>Lösningsförslag uppgift 10</strong>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag uppgift 10">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
 </div>
-<p><a href="https://gist.github.com/codebubo/be43369abc47aa71312423d561d4de8c">Se denna länk</a></p>
+<div class="callout-title-container flex-fill">
+Lösningsförslag uppgift 10
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><a href="https://gist.github.com/codebubo/be43369abc47aa71312423d561d4de8c">Se flödesschema här</a></p>
+<p><strong>Omskrivning av givet proghram med booleska operatorer</strong></p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Program som skriver ut ett erhållet betyg baserat på</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># givna gränser. Programmet demonstrerar användandet av</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co"># de booleska operatorerna and och not.</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>e_gräns <span class="op">=</span> <span class="dv">15</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>c_gräns <span class="op">=</span> <span class="dv">25</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>a_gräns <span class="op">=</span> <span class="dv">35</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>poäng <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">'Ange din provpoäng -&gt; '</span>))</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> poäng <span class="op">&gt;=</span> e_gräns <span class="kw">and</span> <span class="kw">not</span> poäng <span class="op">&gt;=</span> c_gräns:</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"E"</span>)</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> poäng <span class="op">&gt;=</span> c_gräns <span class="kw">and</span> <span class="kw">not</span> poäng <span class="op">&gt;=</span> a_gräns:</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"C"</span>)</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> poäng <span class="op">&gt;=</span> a_gräns:</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"A"</span>)</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"F"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="uppgift-11" class="level3">
 <h3 class="anchored" data-anchor-id="uppgift-11">Uppgift 11</h3>
 <p>Skapa ett program som ber dig mata in ett årtal. Programmet avgör om året är ett skottår. Ett årtal som inte är delbart med 4 är inte ett skottår. Är årtalet dessutom delbart 100 måste det också vara delbart med 400 för att vara ett skottår.</p>
-<div style="background-color: lightblue; width: 100%; height: 360px; padding: 10px; margin-top: 20px;margin-bottom: 10px;">
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
 <pre><code># Exempelkörning 1
 Ange ett årtal -&gt;  2020
 År 2020 är ett skottår
@@ -443,8 +795,19 @@ Ange ett årtal -&gt;  1800
 Ange ett årtal -&gt;  2000
 År 2000 är ett skottår</code></pre>
 </div>
-<div style="background-color: lightyellow; width: 100%; height: 250px; padding: 10px; margin-top: 20px;margin-bottom: 10px;">
-<p>ⓘ Modulooperatorn (<code>%</code>) ger resultatet <strong>noll</strong> om ett tal är jämnt delbart med ett annat.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Tips">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tips
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Modulooperatorn (<code>%</code>) ger resultatet <strong>noll</strong> om ett tal är jämnt delbart med ett annat.</p>
 <pre><code># Exempel 1, delbart
 # (21 är delbart med 3)
 21 % 3
@@ -454,13 +817,80 @@ Ange ett årtal -&gt;  2000
 21 % 2
 1</code></pre>
 </div>
-<p>
-</p><div style="color: red;">
-<strong>Lösningsförslag uppgift 11</strong>
 </div>
-<p><a href="https://gist.github.com/codebubo/7b7719f9aa172cd7b873e45a88b1afc7">Se denna länk</a></p>
+<p>
+</p><div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag uppgift 10">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag uppgift 10
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Variant 1</strong>, med sammansättande and-sats och villkor som skrivs ut i sin helhet:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Program som avgör om ett år är skottår.</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Programmet demonstrerar villkor där modulooperatorn</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co"># används. Här används egenskapen att om tal a är jämnt</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co"># delbart med tal b så gäller att a % b är noll.</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Denna version använder en sammansättande boolesk</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="co"># operator (and) istället för nästlad if-sats.</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>årtal <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Ange ett årtal -&gt; "</span>))</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> årtal <span class="op">%</span> <span class="dv">400</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"År </span><span class="sc">{å</span>rtal<span class="sc">}</span><span class="ss"> är ett skottår"</span>)</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> årtal <span class="op">%</span> <span class="dv">4</span> <span class="op">==</span> <span class="dv">0</span> <span class="kw">and</span> årtal <span class="op">%</span> <span class="dv">100</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"År </span><span class="sc">{å</span>rtal<span class="sc">}</span><span class="ss"> är inte ett skottår"</span>)</span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> årtal <span class="op">%</span> <span class="dv">4</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"År </span><span class="sc">{å</span>rtal<span class="sc">}</span><span class="ss"> är ett skottår"</span>)</span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"År </span><span class="sc">{å</span>rtal<span class="sc">}</span><span class="ss"> är inte ett skottår"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Variant 2</strong>, samma uppbyggnad som Variant 1. Istället för att jämföra resultatet resultatet av modulo med noll med hjälp av jämförelseoperatorn <code>==</code> så används den booleska operatorn <code>not</code>.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Program som avgör om ett år är skottår.</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Programmet demonstrerar villkor där modulooperatorn</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co"># används. Här används egenskapen att om tal a är jämnt</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co"># delbart med tal b så gäller att a % b är noll.</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Denna version använder en sammansättande boolesk</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="co"># operator istället för nästlad if-sats. Istället för</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co"># skriva ut nolljämförelsen så används `not`-operatorn.</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>årtal <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Ange ett årtal -&gt; "</span>))</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> årtal <span class="op">%</span> <span class="dv">400</span>:</span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"År </span><span class="sc">{å</span>rtal<span class="sc">}</span><span class="ss"> är ett skottår"</span>)</span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> <span class="kw">not</span> årtal <span class="op">%</span> <span class="dv">4</span> <span class="kw">and</span> <span class="kw">not</span> årtal <span class="op">%</span> <span class="dv">100</span>:</span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"År </span><span class="sc">{å</span>rtal<span class="sc">}</span><span class="ss"> är inte ett skottår"</span>)</span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> <span class="kw">not</span> årtal <span class="op">%</span> <span class="dv">4</span>:</span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"År </span><span class="sc">{å</span>rtal<span class="sc">}</span><span class="ss"> är ett skottår"</span>)</span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"År </span><span class="sc">{å</span>rtal<span class="sc">}</span><span class="ss"> är inte ett skottår"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Variant 3</strong>, uppbyggnad av programmet med nästlad <code>if</code>-sats istället för <code>and</code>-operatorn.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Program som avgör om ett år är skottår.</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Programmet demonstrerar villkor där modulooperatorn</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co"># används. Här används egenskapen att om tal a är jämnt</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co"># delbart med tal b så gäller att a % b är noll.</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Istället för sammansättande booleska operatorer så</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="co"># använder programmet en nästlad if-sats.</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>årtal <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Ange ett årtal -&gt; "</span>))</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> årtal <span class="op">%</span> <span class="dv">400</span>:</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"År </span><span class="sc">{å</span>rtal<span class="sc">}</span><span class="ss"> är ett skottår"</span>)</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> <span class="kw">not</span> årtal <span class="op">%</span> <span class="dv">4</span>:</span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> årtal <span class="op">%</span> <span class="dv">100</span>:</span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"År </span><span class="sc">{å</span>rtal<span class="sc">}</span><span class="ss"> är inte ett skottår"</span>)</span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"År </span><span class="sc">{å</span>rtal<span class="sc">}</span><span class="ss"> är ett skottår"</span>)</span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"År </span><span class="sc">{å</span>rtal<span class="sc">}</span><span class="ss"> är inte ett skottår"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 
 
+</section>
 </section>
 </section>
 
