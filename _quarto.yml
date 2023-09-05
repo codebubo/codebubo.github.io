@@ -9,6 +9,9 @@ website:
         text: Home
       - about.qmd
     background: secondary
+  sidebar:
+    style: docked
+    contents: auto
 
 format:
   html:
@@ -16,6 +19,3 @@ format:
     css: styles.css
     backgroundcolor: floralwhite
     toc: true
-
-
-
