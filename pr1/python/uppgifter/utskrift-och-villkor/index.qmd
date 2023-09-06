@@ -1,5 +1,5 @@
 ---
-title: "Uppgifter Pr1, utskrift och villkor"
+title: "Uppgifter: Utskrift och villkor"
 format:
   html:
     fontsize: 1em
@@ -13,7 +13,8 @@ editor: visual
 
 ## Utskrifter
 
-**Nedanstående uppgifter ska göras i Python-konsolen, dvs du ska inte skapa en fil som sparas, om det inte framgår något annat i uppgiften.**
+**Nedanstående uppgifter ska göras i Python-konsolen, dvs du ska inte skapa en
+fil som sparas, om det inte framgår något annat i uppgiften.**
 ---
 
 ### Uppgift 1

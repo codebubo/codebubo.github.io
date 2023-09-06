@@ -1,16 +1,14 @@
 ---
-title: "Presentation: Introduktion"
+title: "Introduktion (Chromebook)"
 format:
   html:
     fontsize: 1em
 editor: visual
 ---
 
-<center>
 :::{.double-v-space}
 :::
 <iframe src="./intro-pres.html" width="800" height="550"></iframe>
-</center>
 
 ## Uppgifter
 

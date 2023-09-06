@@ -9,9 +9,30 @@ website:
         text: Home
       - about.qmd
     background: secondary
+  search:
+    location: navbar
+    type: overlay
+
   sidebar:
-    style: docked
-    contents: auto
+    style: "docked"
+    collapse-level: 2
+    contents:
+      - text: "Programmeringsrelaterat"
+      - text: "---"
+      - section: "Programmering 1"
+        contents: 
+        - section: "Presentationer, Python"
+          contents:
+            - pr1/python/intro/pres-version-installerad-python/index.qmd
+            - pr1/python/intro/pres-version-online-python/index.qmd
+            - pr1/python/villkor/presentation/index.qmd
+            - pr1/python/while-loopar/presentation/index.qmd
+            - pr1/python/for-loopar/presentation/index.qmd
+        - section: "Uppgifter, Python"
+          contents:
+            - pr1/python/uppgifter/utskrift-och-villkor/index.qmd
+            - pr1/python/uppgifter/loopar/index.qmd
+
 
 format:
   html:

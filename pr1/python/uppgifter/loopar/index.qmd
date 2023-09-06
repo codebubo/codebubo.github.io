@@ -1,5 +1,5 @@
 ---
-title: "Uppgifter Pr1, loopar"
+title: "Uppgifter: Loopar"
 format:
   html:
     fontsize: 1em
@@ -310,7 +310,7 @@ current_row = 0
 while current_row <= max_rows:
     current_col = 0
     while current_col <= max_cols:
-        print("* ", end=" ")
+        print("*", end=" ")
         current_col += 1
     print()
     current_row += 1
@@ -524,27 +524,49 @@ print(f"Snabbheten beräknas till {10 - styrka}.")
 
 ## for-loopar
 
-**I uppgift 8 -- ska du använda `for`-loopar i din lösning**.
+**I uppgift 8 -- 10 ska du använda `for`-loopar i din lösning**.
 ---
 
 ### Uppgift 8
-Skapa ett program som ger följande utskrift:
-
-:::{.callout-note appearance="minimal"}
+Skapa program, som med hjälp av en eller flera loopar, ger följande respektive
+utskrift:
 
 Figur A
 
 ```{python}
 #| echo: false
-for i in range(1, 8):
+for i in range(1, 9):
     print(i*"* ")
+```
+:::
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 8A"}
+```python
+for i in range(1, 9):
+    print(i * "*")
+```
+:::
+
+:::{.callout-note appearance="minimal"}
+Figur B
+```{python}
+#| echo: false
+for i in range(8, 0, -1):
+    print(i*"* ")
+```
+:::
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 8B"}
+```python
+for i in range(8, 0, -1):
+    print(i * "*")
 ```
 :::
 
 :::{.callout-note appearance="minimal"}
 
 
-Figur B
+Figur C
 
 ```{python}
 #| echo: false
@@ -556,22 +578,82 @@ for i in range(8, 0, -1):
 ```
 :::
 
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 8C"}
+```python
+for i in range(1, 8):
+    print(i * "*")
+for i in range(8, 0, -1):
+    print(i * "*")
+```
+:::
+
 :::{.callout-note appearance="minimal"}
 
-Figur C
+Figur D
 
 ```{python}
 #| echo: false
 print()
-for i in range(1, 8):
-    print(f"{(2*i-1)*'+ ':^26}")
-for i in range(6, 0, -1):
-    print(f"{(2*i-1)*'- ':^26}")
+for i in range(1, 9):
+    print(f"{(2*i-1)*'* ':^30}")
+for i in range(7, 0, -1):
+    print(f"{(2*i-1)*'* ':^30}")
 ```
 
 :::
 
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 8D"}
+Här måste dels rätt antal tecken tas i anspråk (15 st per rad), dels måste
+dessa tecken centreras och slutligen måste en formel hittas för att beräkna
+antalet stjärnor på nästföljande rad.
+```python
+for i in range(1, 9):
+    print(f"{(2*i-1) * '*':^15}")
+for i in range(7, 0, -1):
+    print(f"{(2*i-1) * '*':^15}")
+```
+:::
+
 ### Uppgift 9
+Skapa en tabell som gör om en temperatur given &deg;F till motsvarande
+temperatur i &deg;C. Tabellen ska vara stegad i tiogradersintervall, se exempel
+nedan. Formeln för konvertering mellan &deg;C och &deg;F är
+$$
+C = \frac{5}{9}F-\frac{160}{9}
+$$
+
+:::{.callout-note appearance="minimal"}
+
+
+```{python}
+#| echo: false
+print("Grader F".ljust(13), end=" ")
+print("Grader C")
+print("=======================")
+
+for F in range(-10, 120, 10):
+    C = 5/9 * F - 160/9
+    print(f"{F:5.0f}", end=" ")
+    print(f"{C:14.1f}")
+```
+
+:::
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 9"}
+```python
+print("Grader F".ljust(13), end=" ")
+print("Grader C")
+print("=======================")
+
+for F in range(-10, 120, 10):
+    C = 5/9 * F - 160/9
+    print(f"{F:5.0f}", end=" ")
+    print(f"{C:14.1f}")
+
+```
+:::
+
+### Uppgift 10
 I uppgift 4 skapade du ett program som lät en spelare gissa ett tal från 1
 t o m 10. Modifiera detta program så att det startar om efter att spelaren har
 lyckats lista ut talet. Programmet ska totalt köras tre gånger, och när den
@@ -619,7 +701,7 @@ Medelvärdet för antalet gissningar per tal: 3.3
 ```
 :::
 
-:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 8"}
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 10"}
 Lösningen görs med en yttre `for`-loop (där vi känner till antalet varv från början) och en inre
 `while`-loop (där antalet varv beror på hur många gissningar som krävs).
 

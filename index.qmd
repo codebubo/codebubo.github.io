@@ -3,5 +3,8 @@ title: "CodeBubo Nest"
 ---
 
 ## Hello, world!
-Så småningom kommer på denna sida navigeringsmöjligheter till
-sajten.
+Under denna sajt samlar jag en del av de presentationer, uppgifter,
+instruktioner och dokument som jag använder i min undervisning i
+matematik, fysik och programmering.
+
+Sajten är under ständig utbyggnad, och viss omstrukturering kan förekomma.
