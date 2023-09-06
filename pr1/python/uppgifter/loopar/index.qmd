@@ -731,3 +731,39 @@ for i in range(1, 4):
 print(f"Medelvärdet för antalet gissningar per tal: {(totalt_antal_gissningar / 3):.1f}")
 ```
 :::
+
+## Uppgifter utan lösningsförslag
+
+**Dessa uppgifter är tänkta för att på egen hand testa förståelsen för
+loopar, och ska kunna lösas enbart med information från presentationer
+och information kring tidigare uppgifter.**
+---
+
+### Uppgift 11
+
+Skriv ett program som simulerar hundra tärningskast med en sexsidig tärning.
+Innan programmet avslutas ska det på lämpligt sätt skriva ut antalet utfall av
+respektive sort (dvs antalet ettor, antalet tvåor osv) samt medelvärdet med
+en decimals noggrannhet.
+
+Kanske går det också att vara kreativ och grafiskt visa antalet utfall av
+respektive sort som ett liggande stapeldiagram, där staplarna utgörs av ett
+antal stjärnor (`*`).
+
+### Uppgift 12
+
+I ett spel som kan användas när man lär sig division sitter deltagarna i en
+ring. Den första personen i ringen säger "ett" och den andra "två".
+När en person ska säga ett tal som är jämnt delbart med tre, så säger den
+"Fizz". Den tredje personen säger alltså "Fizz" istället för tre, eftersom
+tre är jämnt delbart med tre, detsamma gäller den person som ska säga "sex"
+och "nio" osv. När en person ska säga ett tal som är jämnt delbart med fem
+så ska den istället säga "Buzz". När talet femton ska uttalas så ska den
+personen som står på tur säga "FizzBuzz", eftersom femton är jämnt delbart
+med både tre och fem. I ringleken så åker personer som säger fel ut, och spelet
+går vidare med en mindre ring.
+
+Skriv ett program som gör en uppräkning av heltal från 1 till 100, och på
+lämpligt sätt skriver ut talen (när de ska skrivas ut), Fizz (istället för tal
+som är jämnt delbara med tre), Buzz (istället för tal som är jämnt delbara med
+fem) och FizzBuzz (istället för tal som är jämnt delbara med såväl tre som fem).

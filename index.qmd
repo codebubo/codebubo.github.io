@@ -3,7 +3,8 @@ title: "CodeBubo Nest"
 ---
 
 ## Hello, world!
-Under denna sajt samlar jag en del av de presentationer, uppgifter,
+Under denna sajt samlar jag (se sidan [About](about.qmd) om vem "jag" är)
+en del av de presentationer, uppgifter,
 instruktioner och dokument som jag använder i min undervisning i
 matematik, fysik och programmering.
 
