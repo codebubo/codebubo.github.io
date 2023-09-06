@@ -24,7 +24,8 @@ execute:
 
 ## Dagens mål
 
-* Att känna till vad en `for`-loop är.
+* Att känna till vad en `for`-loop är
+* Att kunna använda `range`-funktionen
 * Att känna till skillnaden mellan `while`- och `for`-loopar
 * Att kunna skriva egna små program som innehåller en `for`-loop.
 
@@ -51,7 +52,7 @@ En `for`-loop använder sig av en **lista** som loopas igenom.
 lista = [10, 20, 30]
 for element in lista:
     print(element, end=" ")
-print(f"\nProgrammet avslutas eftersom listan är slut")
+print(f"Loopen avslutas eftersom listan är slut")
 ```
 
 :::{.v-space}
@@ -70,17 +71,42 @@ ett annat värde.
 
 ```{python}
 #| echo: true
-for i in range(3, 10):   # Här skapas listan
-    print(2*i, end=" ")  # Här dubblas respektive element och skrivs ut
+for i in range(3, 8):   # Här skapas listan
+    print(i, end=" ")
 ```
 
 :::{.v-space}
 :::
 
-Funktionen `range(3, 10)` skapar listan `[3, 4, 5, 6, 7, 8, 9]`
+Funktionen `range(3, 8)` skapar listan `[3, 4, 5, 6, 7]`
 
-Om det hade varit en `while`-loop som skulle snurra sju varav skulle ett
+Om det hade varit en `while`-loop som skulle snurra fem varav skulle ett
 villkor och en räknare behövt sättas upp.
+
+## Funktionen `range`
+
+Exempel på hur parametrar påverkar resultatet av `range`
+
+```{python}
+#| echo: true
+lista_A = list(range(10))
+lista_B = list(range(-5, 5))
+lista_C = list(range(0, 10, 2))
+lista_D = list(range(10, 0, -1))
+print(f"lista_A = {lista_A}")
+print(f"lista_B = {lista_B}")
+print(f"lista_C = {lista_C}")
+print(f"lista_D = {lista_D}")
+```
+
+## Exempel: Multiplikationstabell
+
+```{python}
+#| echo: true
+# Detta program beräknar och skriver ut "tolvans tabell"
+for i in range(1, 13):
+    print(f"{i:2.0f} * 12 = {i*12:3.0f}")
+```
 
 ## Andra listelement än tal
 
@@ -103,19 +129,33 @@ for item in items:
 Vi kommer senare att titta på hur element kan läggas till, tas bort och
 sorteras i listor. Det är användbart t ex i spel.
 
-## Exempel: Multiplikationstabell
+## Ett tänkt exempel
 
-```{python}
-#| echo: true
-# Detta program beräknar och skriver ut "tolvans tabell"
-for i in range(1, 13):
-    print(f"{i:2.0f} * 12 = {i*12:3.0f}")
+:::{.v-space}
+:::
+
+```python
+items = ["Klocka", "Kikare", "Termometer"]
+for item in items:
+    if item.is_boostable:
+      item.boost()
+      print(f"Din {item} är nu boostad ✅")
+    else:
+      print(f"{item} gick inte att boosta ❌")
 ```
 
+Sekvensen ovan skulle kunna ingå i ett spelprogram. Här är `is_boostable` en
+*egenskap* hos *objektet* `item` och `boost` är en *metod* som tillämpas. Dessa
+saker måste programmeraren designa själv; det är inte inbyggt i Python.
 
+Senare i kursen kommer vi att komma till klasser, och koppla objekt, egenskaper
+och metoder till dessa.
 
 ## Sammanfattning
 
-* Några sammanfattand
-* punkter
+* `for`-loopar används antingen när något ska göras ett förutbestämt antal
+gånger...
+* ... eller när någon funktion ska tillämpas på ett element i taget i en lista
+* Funktionen `range` kan användas för att skapa listor
+* Funktionen `range` ger olika utdata beroende på vilka parametrar som används
 

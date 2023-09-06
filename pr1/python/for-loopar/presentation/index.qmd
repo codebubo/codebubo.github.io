@@ -1,0 +1,13 @@
+---
+title: "Presentation: for-loopar"
+format:
+  html:
+    fontsize: 1em
+editor: visual
+---
+
+<center>
+:::{.double-v-space}
+:::
+<iframe src="./for-pres.html" width="800" height="550"></iframe>
+</center>

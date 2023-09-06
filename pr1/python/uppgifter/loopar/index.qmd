@@ -528,6 +528,50 @@ print(f"Snabbheten beräknas till {10 - styrka}.")
 ---
 
 ### Uppgift 8
+Skapa ett program som ger följande utskrift:
+
+:::{.callout-note appearance="minimal"}
+
+Figur A
+
+```{python}
+#| echo: false
+for i in range(1, 8):
+    print(i*"* ")
+```
+:::
+
+:::{.callout-note appearance="minimal"}
+
+
+Figur B
+
+```{python}
+#| echo: false
+print()
+for i in range(1, 8):
+    print(i*"* ")
+for i in range(8, 0, -1):
+    print(i*"* ")
+```
+:::
+
+:::{.callout-note appearance="minimal"}
+
+Figur C
+
+```{python}
+#| echo: false
+print()
+for i in range(1, 8):
+    print(f"{(2*i-1)*'+ ':^26}")
+for i in range(6, 0, -1):
+    print(f"{(2*i-1)*'- ':^26}")
+```
+
+:::
+
+### Uppgift 9
 I uppgift 4 skapade du ett program som lät en spelare gissa ett tal från 1
 t o m 10. Modifiera detta program så att det startar om efter att spelaren har
 lyckats lista ut talet. Programmet ska totalt köras tre gånger, och när den
