@@ -64,7 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -95,13 +95,117 @@ ul.task-list li input[type="checkbox"] {
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">About</li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+ <span class="menu-text">Programmeringsrelaterat</span>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Programmering 1</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">Presentationer, Python</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pr1/python/intro/pres-version-installerad-python/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduktion (PC)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pr1/python/intro/pres-version-online-python/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduktion (Chromebook)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pr1/python/villkor/presentation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentation: Villkor</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pr1/python/while-loopar/presentation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentation: <code>while</code>-loopar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pr1/python/for-loopar/presentation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentation: <code>for</code>-loopar</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text">Uppgifter, Python</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pr1/python/uppgifter/utskrift-och-villkor/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uppgifter: Utskrift och villkor</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pr1/python/uppgifter/loopar/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uppgifter: Loopar</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#vem-skriver-på-denna-sajt" id="toc-vem-skriver-på-denna-sajt" class="nav-link active" data-scroll-target="#vem-skriver-på-denna-sajt">Vem skriver på denna sajt?</a></li>
+  <li><a href="#verktyg-som-används-för-uppbyggnad" id="toc-verktyg-som-används-för-uppbyggnad" class="nav-link" data-scroll-target="#verktyg-som-används-för-uppbyggnad">Verktyg som används för uppbyggnad</a></li>
+  <li><a href="#användning-av-materialet" id="toc-användning-av-materialet" class="nav-link" data-scroll-target="#användning-av-materialet">Användning av materialet</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -123,9 +227,20 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>About this site</p>
+<section id="vem-skriver-på-denna-sajt" class="level2">
+<h2 class="anchored" data-anchor-id="vem-skriver-på-denna-sajt">Vem skriver på denna sajt?</h2>
+<p>Jag heter Nikodemus Karlsson, och är verksam gymnasielärare i matematik, fysik och programmering. Syftet med sajten är att samla mycket av det undervisningsmaterial som jag använder.</p>
+</section>
+<section id="verktyg-som-används-för-uppbyggnad" class="level2">
+<h2 class="anchored" data-anchor-id="verktyg-som-används-för-uppbyggnad">Verktyg som används för uppbyggnad</h2>
+<p>Sajten är byggd med publiceringssystemet <a href="https://quarto.org/">Quarto</a> och publicerad på <a href="https://pages.github.com/">GitHub Pages</a>. Det jag framförallt gillar med Quarto är att man skriver i Markdown, och att det är enkelt att integrera text, bilder, kod och matematiska formler. Quarto är dessutom öppen källkod och finns såväl till Windows, Linux och macOs.</p>
+</section>
+<section id="användning-av-materialet" class="level2">
+<h2 class="anchored" data-anchor-id="användning-av-materialet">Användning av materialet</h2>
+<p>Den som vill får gärna använda och kopiera och sprida material från sajten. Källkod till sidorna och presentationerna finns <a href="https://github.com/codebubo/codebubo.github.io">i denna repo på GitHub</a>.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
