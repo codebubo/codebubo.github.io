@@ -924,13 +924,13 @@ Tips
 </div>
 </div>
 <p>
-</p><div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag uppgift 10">
+</p><div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag uppgift 11">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Lösningsförslag uppgift 10
+Lösningsförslag uppgift 11
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -945,51 +945,52 @@ Lösningsförslag uppgift 10
 <span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="co"># operator (and) istället för nästlad if-sats.</span></span>
 <span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>årtal <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Ange ett årtal -&gt; "</span>))</span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> årtal <span class="op">%</span> <span class="dv">400</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> årtal <span class="op">%</span> <span class="dv">400</span> <span class="op">==</span> <span class="dv">0</span>:                         <span class="co"># Årtal jämnt delbart med 400</span></span>
 <span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"År </span><span class="sc">{å</span>rtal<span class="sc">}</span><span class="ss"> är ett skottår"</span>)</span>
-<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> årtal <span class="op">%</span> <span class="dv">4</span> <span class="op">==</span> <span class="dv">0</span> <span class="kw">and</span> årtal <span class="op">%</span> <span class="dv">100</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> årtal <span class="op">%</span> <span class="dv">4</span> <span class="op">==</span> <span class="dv">0</span> <span class="kw">and</span> årtal <span class="op">%</span> <span class="dv">100</span> <span class="op">==</span> <span class="dv">0</span>:    <span class="co"># Årtal jämnt delbart med 4 och 100 men inte med 400</span></span>
 <span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"År </span><span class="sc">{å</span>rtal<span class="sc">}</span><span class="ss"> är inte ett skottår"</span>)</span>
-<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> årtal <span class="op">%</span> <span class="dv">4</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> årtal <span class="op">%</span> <span class="dv">4</span> <span class="op">==</span> <span class="dv">0</span>:                         <span class="co"># Årtal jämnt delbart med 4, men inte med 100</span></span>
 <span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"År </span><span class="sc">{å</span>rtal<span class="sc">}</span><span class="ss"> är ett skottår"</span>)</span>
-<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:                                        <span class="co"># Årtal inte jämnt delbart med 4</span></span>
 <span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"År </span><span class="sc">{å</span>rtal<span class="sc">}</span><span class="ss"> är inte ett skottår"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Variant 2</strong>, samma uppbyggnad som Variant 1. Istället för att jämföra resultatet resultatet av modulo med noll med hjälp av jämförelseoperatorn <code>==</code> så används den booleska operatorn <code>not</code>.</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Program som avgör om ett år är skottår.</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Programmet demonstrerar villkor där modulooperatorn</span></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co"># används. Här används egenskapen att om tal a är jämnt</span></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co"># delbart med tal b så gäller att a % b är noll.</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co"># delbart med tal b så gäller att a % b är noll (eller False).</span></span>
 <span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Denna version använder en sammansättande boolesk</span></span>
 <span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="co"># operator istället för nästlad if-sats. Istället för</span></span>
 <span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co"># skriva ut nolljämförelsen så används `not`-operatorn.</span></span>
 <span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>årtal <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Ange ett årtal -&gt; "</span>))</span>
-<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> årtal <span class="op">%</span> <span class="dv">400</span>:</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> årtal <span class="op">%</span> <span class="dv">400</span>:                      <span class="co"># Årtal jämnt delbart med 400</span></span>
 <span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"År </span><span class="sc">{å</span>rtal<span class="sc">}</span><span class="ss"> är ett skottår"</span>)</span>
-<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> <span class="kw">not</span> årtal <span class="op">%</span> <span class="dv">4</span> <span class="kw">and</span> <span class="kw">not</span> årtal <span class="op">%</span> <span class="dv">100</span>:</span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> <span class="kw">not</span> årtal <span class="op">%</span> <span class="dv">4</span> <span class="kw">and</span> <span class="kw">not</span> årtal <span class="op">%</span> <span class="dv">100</span>:  <span class="co"># Årtal jämnt delbart med 4 och 100 men inte med 400</span></span>
 <span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"År </span><span class="sc">{å</span>rtal<span class="sc">}</span><span class="ss"> är inte ett skottår"</span>)</span>
-<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> <span class="kw">not</span> årtal <span class="op">%</span> <span class="dv">4</span>:</span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> <span class="kw">not</span> årtal <span class="op">%</span> <span class="dv">4</span>:                      <span class="co"># Årtal jämnt delbart med 4, men inte med 100</span></span>
 <span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"År </span><span class="sc">{å</span>rtal<span class="sc">}</span><span class="ss"> är ett skottår"</span>)</span>
-<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:                                    <span class="co"># Årtal inte jämnt delbart med 4</span></span>
 <span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"År </span><span class="sc">{å</span>rtal<span class="sc">}</span><span class="ss"> är inte ett skottår"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Variant 3</strong>, uppbyggnad av programmet med nästlad <code>if</code>-sats istället för <code>and</code>-operatorn.</p>
+<p><strong>Variant 3</strong>, uppbyggnad av programmet med nästlade <code>if</code>-satser istället för booleska operatorer och jämförelseoperatorer.</p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Program som avgör om ett år är skottår.</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Programmet demonstrerar villkor där modulooperatorn</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co"># används. Här används egenskapen att om tal a är jämnt</span></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co"># delbart med tal b så gäller att a % b är noll.</span></span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Istället för sammansättande booleska operatorer så</span></span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="co"># använder programmet en nästlad if-sats.</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co"># delbart med tal b så gäller att a % b är noll (eller False).</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Istället för booleska operatorer så använder programmet</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="co"># nästlade if-sats.</span></span>
 <span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>årtal <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Ange ett årtal -&gt; "</span>))</span>
 <span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> årtal <span class="op">%</span> <span class="dv">400</span>:</span>
-<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"År </span><span class="sc">{å</span>rtal<span class="sc">}</span><span class="ss"> är ett skottår"</span>)</span>
-<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> <span class="kw">not</span> årtal <span class="op">%</span> <span class="dv">4</span>:</span>
-<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> årtal <span class="op">%</span> <span class="dv">100</span>:</span>
-<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"År </span><span class="sc">{å</span>rtal<span class="sc">}</span><span class="ss"> är inte ett skottår"</span>)</span>
-<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"År </span><span class="sc">{å</span>rtal<span class="sc">}</span><span class="ss"> är ett skottår"</span>)</span>
-<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"År </span><span class="sc">{å</span>rtal<span class="sc">}</span><span class="ss"> är inte ett skottår"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> årtal <span class="op">%</span> <span class="dv">4</span>:           <span class="co"># Årtal är inte jämnt delbart med 4</span></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"År </span><span class="sc">{å</span>rtal<span class="sc">}</span><span class="ss"> är inte ett skottår"</span>)</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:                   <span class="co"># Årtal är jämnt delbart med 4</span></span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> årtal <span class="op">%</span> <span class="dv">100</span>:     <span class="co"># Årtal jämnt delbart med 4, men inte med 100</span></span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"År </span><span class="sc">{å</span>rtal<span class="sc">}</span><span class="ss"> är ett skottår"</span>)</span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:               <span class="co"># Årtal jämnt delbart med 4 och med 100</span></span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> årtal <span class="op">%</span> <span class="dv">400</span>: <span class="co"># Årtal jämnt delbart med 4 och 100, men inte med 400</span></span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"År </span><span class="sc">{å</span>rtal<span class="sc">}</span><span class="ss"> är inte ett skottår"</span>)</span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:           <span class="co"># Årtal jämnt delbart med 4, 100 och 400</span></span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"År </span><span class="sc">{å</span>rtal<span class="sc">}</span><span class="ss"> är ett skottår"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>

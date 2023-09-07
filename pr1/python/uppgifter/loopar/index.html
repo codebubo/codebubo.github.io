@@ -357,7 +357,7 @@ Lösningsförslag uppgift 1
 <section id="uppgift-2" class="level3">
 <h3 class="anchored" data-anchor-id="uppgift-2">Uppgift 2</h3>
 <p>I spelet <span class="small-caps">lotto</span> ska man tippa 7 olika nummer mellan &nbsp;1 och 35. Skriv ett program som slumpar fram 7 heltal mellan 1 och 35 under en körning.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Tips">
+<div id="slumptalstips" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -388,7 +388,7 @@ Tips
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag uppgift 2">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -873,7 +873,7 @@ Lösningsförslag uppgift 7
 <hr>
 <section id="uppgift-8" class="level3">
 <h3 class="anchored" data-anchor-id="uppgift-8">Uppgift 8</h3>
-<p>Skapa program, som med hjälp av en eller flera loopar, ger följande respektive utskrift:</p>
+<p>Skapa program, med hjälp av en eller flera loopar, som ger följande respektive utskrift:</p>
 <p>Figur A</p>
 <div class="cell" data-execution_count="10">
 <div class="cell-output cell-output-stdout">
@@ -1103,7 +1103,7 @@ Lösningsförslag uppgift 9
 </section>
 <section id="uppgift-10" class="level3">
 <h3 class="anchored" data-anchor-id="uppgift-10">Uppgift 10</h3>
-<p>I uppgift 4 skapade du ett program som lät en spelare gissa ett tal från 1 t o m 10. Modifiera detta program så att det startar om efter att spelaren har lyckats lista ut talet. Programmet ska totalt köras tre gånger, och när den tredje omgången är över ska det avslutas med att skriva ut medelvärdet på antalet gissningar som behövdes avrundat till en decimal. Använd en <code>for</code>-loop som kontrollstruktur för omstarten av programmet.</p>
+<p>I <a href="#uppgift-4">uppgift 4</a> skapade du ett program som lät en spelare gissa ett tal från 1 t o m 10. Modifiera detta program så att det startar om efter att spelaren har lyckats lista ut talet. Programmet ska totalt köras tre gånger, och när den tredje omgången är över ska det avslutas med att skriva ut medelvärdet på antalet gissningar som behövdes avrundat till en decimal. Använd en <code>for</code>-loop som kontrollstruktur för omstarten av programmet.</p>
 <p>Körningsexempel:</p>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
@@ -1113,33 +1113,33 @@ Lösningsförslag uppgift 9
 <div class="callout-body-container">
 <pre><code>SPELOMGÅNG 1
 ----------------
-Gissa ett tal mellan 1 och 10 -&gt;5
+Gissa ett tal mellan 1 och 10 -&gt; 5
 Talet 5 är för litet.
-Gissa ett tal mellan 1 och 10 -&gt;7
+Gissa ett tal mellan 1 och 10 -&gt; 7
 Talet 7 är för litet.
-Gissa ett tal mellan 1 och 10 -&gt;9
+Gissa ett tal mellan 1 och 10 -&gt; 9
 Talet 9 är för litet.
-Gissa ett tal mellan 1 och 10 -&gt;10
+Gissa ett tal mellan 1 och 10 -&gt; 10
 RÄTT GISSAT!
 Du klarade spelet på gissning nr. 4.
 
 SPELOMGÅNG 2
 ----------------
-Gissa ett tal mellan 1 och 10 -&gt;5
+Gissa ett tal mellan 1 och 10 -&gt; 5
 Talet 5 är för stort.
-Gissa ett tal mellan 1 och 10 -&gt;3
+Gissa ett tal mellan 1 och 10 -&gt; 3
 Talet 3 är för litet.
-Gissa ett tal mellan 1 och 10 -&gt;4
+Gissa ett tal mellan 1 och 10 -&gt; 4
 RÄTT GISSAT!
 Du klarade spelet på gissning nr. 3.
 
 SPELOMGÅNG 3
 ----------------
-Gissa ett tal mellan 1 och 10 -&gt;5
+Gissa ett tal mellan 1 och 10 -&gt; 5
 Talet 5 är för stort.
-Gissa ett tal mellan 1 och 10 -&gt;2
+Gissa ett tal mellan 1 och 10 -&gt; 2
 Talet 2 är för stort.
-Gissa ett tal mellan 1 och 10 -&gt;1
+Gissa ett tal mellan 1 och 10 -&gt; 1
 RÄTT GISSAT!
 Du klarade spelet på gissning nr. 3.
 
@@ -1170,7 +1170,7 @@ Lösningsförslag uppgift 10
 <span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>    antal_gissningar <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a>        gissning <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Gissa ett tal mellan 1 och 10 -&gt;"</span>))</span>
+<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a>        gissning <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Gissa ett tal mellan 1 och 10 -&gt; "</span>))</span>
 <span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a>        antal_gissningar <span class="op">+=</span> <span class="dv">1</span></span>
 <span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> gissning <span class="op">&gt;</span> hemligt_tal:</span>
 <span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"Talet </span><span class="sc">{</span>gissning<span class="sc">}</span><span class="ss"> är för stort."</span>)</span>
@@ -1196,11 +1196,18 @@ Lösningsförslag uppgift 10
 <h3 class="anchored" data-anchor-id="uppgift-11">Uppgift 11</h3>
 <p>Skriv ett program som simulerar hundra tärningskast med en sexsidig tärning. Innan programmet avslutas ska det på lämpligt sätt skriva ut antalet utfall av respektive sort (dvs antalet ettor, antalet tvåor osv) samt medelvärdet med en decimals noggrannhet.</p>
 <p>Kanske går det också att vara kreativ och grafiskt visa antalet utfall av respektive sort som ett liggande stapeldiagram, där staplarna utgörs av ett antal stjärnor (<code>*</code>).</p>
+<p>Se <a href="#slumptalstips">tipset till Uppgift 2 ovan</a> för att skapa slumpvisa heltal i ett intervall.</p>
 </section>
 <section id="uppgift-12" class="level3">
 <h3 class="anchored" data-anchor-id="uppgift-12">Uppgift 12</h3>
-<p>I ett spel som kan användas när man lär sig division sitter deltagarna i en ring. Den första personen i ringen säger “ett” och den andra “två”. När en person ska säga ett tal som är jämnt delbart med tre, så säger den “Fizz”. Den tredje personen säger alltså “Fizz” istället för tre, eftersom tre är jämnt delbart med tre, detsamma gäller den person som ska säga “sex” och “nio” osv. När en person ska säga ett tal som är jämnt delbart med fem så ska den istället säga “Buzz”. När talet femton ska uttalas så ska den personen som står på tur säga “FizzBuzz”, eftersom femton är jämnt delbart med både tre och fem. I ringleken så åker personer som säger fel ut, och spelet går vidare med en mindre ring.</p>
+<p>I en lek som kan användas när man lär sig division sitter deltagarna i en ring. Den första personen i ringen säger “Ett” och den andra “Två”. När en person ska säga ett tal som är jämnt delbart med tre, så säger den “Fizz”. Den tredje personen säger alltså “Fizz” istället för tre, eftersom tre är jämnt delbart med tre, detsamma gäller den person som skulle säga “Sex” och “Nio” osv. När en person ska säga ett tal som är jämnt delbart med fem så ska den istället säga “Buzz”. När talet femton ska uttalas så ska den personen som står på tur säga “FizzBuzz”, eftersom femton är jämnt delbart med både tre och fem. I ringleken så åker personer som säger fel ut, och spelet går vidare med en mindre ring.</p>
 <p>Skriv ett program som gör en uppräkning av heltal från 1 till 100, och på lämpligt sätt skriver ut talen (när de ska skrivas ut), Fizz (istället för tal som är jämnt delbara med tre), Buzz (istället för tal som är jämnt delbara med fem) och FizzBuzz (istället för tal som är jämnt delbara med såväl tre som fem).</p>
+<p>Försök att skriva två varianter på lösning:</p>
+<ul>
+<li>En som innehåller booleska operatorer i villkoren</li>
+<li>En som inte innehåller booleska operatorer i villkoren</li>
+</ul>
+<p>Se lösningsförslag till <a href="../../../../pr1/python/uppgifter/utskrift-och-villkor/index.html#uppgift-11">uppgift 11 på sidan Utskrifter och villkor</a> för att få en idé om uppbyggnaden.</p>
 
 
 </section>
