@@ -4,7 +4,6 @@ format:
   html:
     fontsize: 1em
     css: style.css
-editor: visual
 ---
 
 # Loopar i Python
@@ -56,7 +55,8 @@ I spelet <span class="small-caps">lotto</span> ska man tippa 7 olika nummer
 mellan  1 och 35. Skriv ett program som slumpar fram 7 heltal mellan 1 och
 35 under en körning.
 
-:::{.callout-note title="Tips"}
+:::{#slumptalstips .callout-note}
+# Tips {#slumptalstips}
 För att skapa ett slumptal i Python behövs importeras slumptalsbiblioteket.
 Detta görs överst i koden, varpå ett slumpmässigt heltal skapas enligt
 följande:
@@ -86,7 +86,8 @@ while i <= 7:
 ```
 :::
 
-:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 2"}
+:::{.callout-tip collapse="true" icon="false"}
+## Lösningsförslag uppgift 2
 ```python
 import random as rand
 i = 1
@@ -528,7 +529,7 @@ print(f"Snabbheten beräknas till {10 - styrka}.")
 ---
 
 ### Uppgift 8
-Skapa program, som med hjälp av en eller flera loopar, ger följande respektive
+Skapa program, med hjälp av en eller flera loopar, som ger följande respektive
 utskrift:
 
 Figur A
@@ -654,7 +655,7 @@ for F in range(-10, 120, 10):
 :::
 
 ### Uppgift 10
-I uppgift 4 skapade du ett program som lät en spelare gissa ett tal från 1
+I [uppgift 4](#uppgift-4) skapade du ett program som lät en spelare gissa ett tal från 1
 t o m 10. Modifiera detta program så att det startar om efter att spelaren har
 lyckats lista ut talet. Programmet ska totalt köras tre gånger, och när den
 tredje omgången är över ska det avslutas med att skriva ut medelvärdet på
@@ -667,33 +668,33 @@ Körningsexempel:
 ```
 SPELOMGÅNG 1
 ----------------
-Gissa ett tal mellan 1 och 10 ->5
+Gissa ett tal mellan 1 och 10 -> 5
 Talet 5 är för litet.
-Gissa ett tal mellan 1 och 10 ->7
+Gissa ett tal mellan 1 och 10 -> 7
 Talet 7 är för litet.
-Gissa ett tal mellan 1 och 10 ->9
+Gissa ett tal mellan 1 och 10 -> 9
 Talet 9 är för litet.
-Gissa ett tal mellan 1 och 10 ->10
+Gissa ett tal mellan 1 och 10 -> 10
 RÄTT GISSAT!
 Du klarade spelet på gissning nr. 4.
 
 SPELOMGÅNG 2
 ----------------
-Gissa ett tal mellan 1 och 10 ->5
+Gissa ett tal mellan 1 och 10 -> 5
 Talet 5 är för stort.
-Gissa ett tal mellan 1 och 10 ->3
+Gissa ett tal mellan 1 och 10 -> 3
 Talet 3 är för litet.
-Gissa ett tal mellan 1 och 10 ->4
+Gissa ett tal mellan 1 och 10 -> 4
 RÄTT GISSAT!
 Du klarade spelet på gissning nr. 3.
 
 SPELOMGÅNG 3
 ----------------
-Gissa ett tal mellan 1 och 10 ->5
+Gissa ett tal mellan 1 och 10 -> 5
 Talet 5 är för stort.
-Gissa ett tal mellan 1 och 10 ->2
+Gissa ett tal mellan 1 och 10 -> 2
 Talet 2 är för stort.
-Gissa ett tal mellan 1 och 10 ->1
+Gissa ett tal mellan 1 och 10 -> 1
 RÄTT GISSAT!
 Du klarade spelet på gissning nr. 3.
 
@@ -716,7 +717,7 @@ for i in range(1, 4):
     antal_gissningar = 0
 
     while True:
-        gissning = int(input("Gissa ett tal mellan 1 och 10 ->"))
+        gissning = int(input("Gissa ett tal mellan 1 och 10 -> "))
         antal_gissningar += 1
         if gissning > hemligt_tal:
             print(f"Talet {gissning} är för stort.")
@@ -750,14 +751,17 @@ Kanske går det också att vara kreativ och grafiskt visa antalet utfall av
 respektive sort som ett liggande stapeldiagram, där staplarna utgörs av ett
 antal stjärnor (`*`).
 
+Se [tipset till Uppgift 2 ovan](#slumptalstips) för att skapa slumpvisa
+heltal i ett intervall.
+
 ### Uppgift 12
 
-I ett spel som kan användas när man lär sig division sitter deltagarna i en
-ring. Den första personen i ringen säger "ett" och den andra "två".
+I en lek som kan användas när man lär sig division sitter deltagarna i en
+ring. Den första personen i ringen säger "Ett" och den andra "Två".
 När en person ska säga ett tal som är jämnt delbart med tre, så säger den
 "Fizz". Den tredje personen säger alltså "Fizz" istället för tre, eftersom
-tre är jämnt delbart med tre, detsamma gäller den person som ska säga "sex"
-och "nio" osv. När en person ska säga ett tal som är jämnt delbart med fem
+tre är jämnt delbart med tre, detsamma gäller den person som skulle säga "Sex"
+och "Nio" osv. När en person ska säga ett tal som är jämnt delbart med fem
 så ska den istället säga "Buzz". När talet femton ska uttalas så ska den
 personen som står på tur säga "FizzBuzz", eftersom femton är jämnt delbart
 med både tre och fem. I ringleken så åker personer som säger fel ut, och spelet
@@ -767,3 +771,12 @@ Skriv ett program som gör en uppräkning av heltal från 1 till 100, och på
 lämpligt sätt skriver ut talen (när de ska skrivas ut), Fizz (istället för tal
 som är jämnt delbara med tre), Buzz (istället för tal som är jämnt delbara med
 fem) och FizzBuzz (istället för tal som är jämnt delbara med såväl tre som fem).
+
+Försök att skriva två varianter på lösning:
+
+* En som innehåller booleska operatorer i villkoren
+* En som inte innehåller booleska operatorer i villkoren
+
+Se lösningsförslag till
+[uppgift 11 på sidan Utskrifter och villkor](../utskrift-och-villkor/index.qmd#uppgift-11)
+för att få en idé om uppbyggnaden.

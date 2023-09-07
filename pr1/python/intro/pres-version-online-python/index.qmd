@@ -3,7 +3,6 @@ title: "Introduktion (Chromebook)"
 format:
   html:
     fontsize: 1em
-editor: visual
 ---
 
 :::{.double-v-space}

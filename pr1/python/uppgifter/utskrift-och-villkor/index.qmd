@@ -6,7 +6,6 @@ format:
     css: style.css
 execute: 
   echo: false
-editor: visual
 ---
 
 # Utskrifter och beräkningar i Python
@@ -509,7 +508,7 @@ delbart med ett annat.
 :::
 
 <p>
-:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 10"}
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 11"}
 
 **Variant 1**, med sammansättande and-sats och villkor
 som skrivs ut i sin helhet:
@@ -522,13 +521,13 @@ som skrivs ut i sin helhet:
 # operator (and) istället för nästlad if-sats.
 
 årtal = int(input("Ange ett årtal -> "))
-if årtal % 400 == 0:
+if årtal % 400 == 0:                         # Årtal jämnt delbart med 400
     print(f"År {årtal} är ett skottår")
-elif årtal % 4 == 0 and årtal % 100 == 0:
+elif årtal % 4 == 0 and årtal % 100 == 0:    # Årtal jämnt delbart med 4 och 100 men inte med 400
     print(f"År {årtal} är inte ett skottår")
-elif årtal % 4 == 0:
+elif årtal % 4 == 0:                         # Årtal jämnt delbart med 4, men inte med 100
     print(f"År {årtal} är ett skottår")
-else:
+else:                                        # Årtal inte jämnt delbart med 4
     print(f"År {årtal} är inte ett skottår")
 ```
 
@@ -541,44 +540,45 @@ operatorn `not`.
 # Program som avgör om ett år är skottår.
 # Programmet demonstrerar villkor där modulooperatorn
 # används. Här används egenskapen att om tal a är jämnt
-# delbart med tal b så gäller att a % b är noll.
+# delbart med tal b så gäller att a % b är noll (eller False).
 # Denna version använder en sammansättande boolesk
 # operator istället för nästlad if-sats. Istället för
 # skriva ut nolljämförelsen så används `not`-operatorn.
 
 årtal = int(input("Ange ett årtal -> "))
-if not årtal % 400:
+if not årtal % 400:                      # Årtal jämnt delbart med 400
     print(f"År {årtal} är ett skottår")
-elif not årtal % 4 and not årtal % 100:
+elif not årtal % 4 and not årtal % 100:  # Årtal jämnt delbart med 4 och 100 men inte med 400
     print(f"År {årtal} är inte ett skottår")
-elif not årtal % 4:
+elif not årtal % 4:                      # Årtal jämnt delbart med 4, men inte med 100
     print(f"År {årtal} är ett skottår")
-else:
+else:                                    # Årtal inte jämnt delbart med 4
     print(f"År {årtal} är inte ett skottår")
 ```
 
-**Variant 3**, uppbyggnad av programmet med nästlad
-`if`-sats istället för `and`-operatorn.
+**Variant 3**, uppbyggnad av programmet med nästlade `if`-satser istället för
+booleska operatorer och jämförelseoperatorer.
 
 ```python
 # Program som avgör om ett år är skottår.
 # Programmet demonstrerar villkor där modulooperatorn
 # används. Här används egenskapen att om tal a är jämnt
-# delbart med tal b så gäller att a % b är noll.
-# Istället för sammansättande booleska operatorer så
-# använder programmet en nästlad if-sats.
+# delbart med tal b så gäller att a % b är noll (eller False).
+# Istället för booleska operatorer så använder programmet
+# nästlade if-sats.
 
 årtal = int(input("Ange ett årtal -> "))
 
-if not årtal % 400:
-    print(f"År {årtal} är ett skottår")
-elif not årtal % 4:
-    if not årtal % 100:
-        print(f"År {årtal} är inte ett skottår")
-    else:
-        print(f"År {årtal} är ett skottår")
-else:
+if årtal % 4:           # Årtal är inte jämnt delbart med 4
     print(f"År {årtal} är inte ett skottår")
+else:                   # Årtal är jämnt delbart med 4
+    if årtal % 100:     # Årtal jämnt delbart med 4, men inte med 100
+        print(f"År {årtal} är ett skottår")
+    else:               # Årtal jämnt delbart med 4 och med 100
+        if årtal % 400: # Årtal jämnt delbart med 4 och 100, men inte med 400
+            print(f"År {årtal} är inte ett skottår")
+        else:           # Årtal jämnt delbart med 4, 100 och 400
+            print(f"År {årtal} är ett skottår")
 ```
 
 :::

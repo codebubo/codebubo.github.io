@@ -3,7 +3,6 @@ title: "Presentation: Villkor"
 format:
   html:
     fontsize: 1em
-editor: visual
 ---
 
 :::{.double-v-space}
