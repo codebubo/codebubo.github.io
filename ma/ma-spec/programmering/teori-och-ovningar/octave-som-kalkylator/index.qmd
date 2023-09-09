@@ -1,0 +1,11 @@
+---
+title: "Octave: Octave som kalkylator"
+format:
+  html:
+    fontsize: 1em
+    css: style.css
+execute: 
+  echo: false
+---
+
+# Octave som kalkylator

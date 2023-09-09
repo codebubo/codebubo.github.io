@@ -33,6 +33,14 @@ website:
             contents:
               - pr1/python/uppgifter/utskrift-och-villkor/index.qmd
               - pr1/python/uppgifter/loopar/index.qmd
+      - section: "Programmering i matematik"
+        contents:
+          - section: "MatSpec"
+            contents:
+              - section: "Teori och övningar"
+                contents:
+                  - ma/ma-spec/programmering/teori-och-ovningar/octave-som-kalkylator/index.qmd
+                  - ma/ma-spec/programmering/teori-och-ovningar/funktioner-villkor-och-loopar/index.qmd
 
 format:
   html:
