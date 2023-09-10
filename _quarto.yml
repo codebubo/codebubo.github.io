@@ -15,8 +15,8 @@ website:
     type: overlay
 
   sidebar:
-    style: "docked"
     collapse-level: 2
+    style: "docked"
     contents:
       - text: "Programmeringsrelaterat"
       - text: "---"
