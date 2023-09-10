@@ -14,16 +14,16 @@ execute:
 
 Se kap. 2 i dokumentet [Teori och övningar i programmet Octave](https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/docs/linalg/ovningar-i-octave-kap-0-4.pdf)
 
-## Uppgifter
+## Övningar
 
-### Uppgift 201
+### Övning 201
 
 Skapa en anonym funktion som adderar två tal med varandra och returnerar
 resultatet. Funktionen ska ges handtaget `add`.
 
-:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 201"}
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag övning 201"}
 
-Uppgiften kan antingen lösas i *Command Window* eller genom att skapa en fil
+Övningen kan antingen göras i *Command Window* eller genom att skapa en fil
 i Octave.
 
 ```octave
@@ -32,7 +32,7 @@ add(2, 3) # Skriver ut 5
 ```
 :::
 
-### Uppgift 202
+### Övning 202
 
 Skapa en anonym funktion som parvis multiplicerar talen i två vektorer med
 varandra. Funktionen ska ges handtaget `elementmul`.
@@ -44,7 +44,7 @@ octave:1> elementmul([1 2 3], [4 5 6])
 ans = 4 10 18
 ```
 
-:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 202"}
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag övning 202"}
 
 ```octave
 elementmul = @(u, v) u .* v;
@@ -52,7 +52,7 @@ elementmul([1 2 3], [4 5 6])
 ```
 :::
 
-### Uppgift 203
+### Övning 203
 
 Skapa en anonym funktion som beräknar logaritmen på ett tal $x$ i en valfri
 bas $n$. Funktionen ska tilldelas handtaget `logn`. Funktionen ska kunna ta
@@ -70,7 +70,7 @@ ans =
    0   1   2   3   4
 ```
 
-:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 203"}
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag övning 203"}
 
 Vi utgår från följande sätt att lösa ekvationen $n^y = x$ med avseende på $y$:
 
@@ -92,7 +92,7 @@ logn = @(x, n) log(x) ./ log(n);
 ```
 :::
 
-### Uppgift 204
+### Övning 204
 
 Skapa en namngiven funktion `dotmul` i en separat fil. Funktionen ska parvis
 multiplicera elementen i två vektorer och returnera summan av produkterna.
@@ -106,7 +106,7 @@ octave:1> dotmul([1 2 3], [4 5 6])
 ans = 32
 ```
 
-:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 204"}
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag övning 204"}
 
 ```octave
 # Denna kod sparas i filen dotmul.m
@@ -123,7 +123,7 @@ För att de skript som använder `dotmul` ska hitta funktionen måste sökvägen
 till filen läggas till. Detta görs på menyn `Edit -> Set Path`.
 :::
 
-### Uppgift 205
+### Övning 205
 
 Skapa en funktion clock_hands_angles i en separat fil, vilken ska returnera
 vinkeln för tim- minut- och sekundvisaren för ett givet klockslag på en analog
@@ -151,7 +151,7 @@ m_ang = 177
 s_ang = 270
 ```
 
-:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 205"}
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag övning 205"}
 
 ```octave
 # Denna kod sparas i filen clock_hands_angles.m
@@ -168,7 +168,7 @@ endfunction
 :::
 
 
-### Uppgift 206
+### Övning 206
 
 I spelet LOTTO slumpas sju nummer bland heltalen 1, 2, 3,. . . , 35. Spelaren
 ska gissa vilka nummer som kommer att slumpas fram och hoppas förstås att få
@@ -195,7 +195,7 @@ för utskrift.
 Tips: använd funktionen `randperm`, t ex skapar `randperm(35, 7)`
 en vektor med sju slumpade heltal mellan 1 och 35.
 
-:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 206"}
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag övning 206"}
 
 ```octave
 # Denna kod sparas i filen lottoeval.m
@@ -246,10 +246,10 @@ printf('Antal rätt:        %d\n', antal_ratt);
 ```
 :::
 
-### Uppgift 207
+### Övning 207
 
-Skriv en funktion `lottovinst` som använder funktionen `lottoeval` från uppgift
-[206](#uppgift-206). Funktionen `lottovinst` ska slumpa fram en tippad LOTTO-rad
+Skriv en funktion `lottovinst` som använder funktionen `lottoeval` från övning
+[206](#vning-206). Funktionen `lottovinst` ska slumpa fram en tippad LOTTO-rad
 och köra den upprepade gånger i `lottoeval` tills ett minsta antal rätt uppnås
 på den tippade raden. Funktionen `lottovinst` ska ta emot parametern
 `minst_antal_ratt`, som förstås anger efter hur många rätt på en dragning som
@@ -288,7 +288,7 @@ antal_ratt = 5
 Elapsed time is 0.948647 seconds.
 ```
 
-:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 207"}
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag övning 207"}
 
 ```octave
 # Denna kod sparas i filen lottovinst.m
