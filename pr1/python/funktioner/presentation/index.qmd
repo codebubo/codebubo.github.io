@@ -1,5 +1,5 @@
 ---
-title: "Presentation: `for`-loopar"
+title: "Presentation: Funktioner"
 format:
   html:
     fontsize: 1em
@@ -8,8 +8,9 @@ editor: visual
 
 :::{.double-v-space}
 :::
+
 <iframe src="./func-pres.html" width="800" height="550"></iframe>
 
 ## Uppgifter
 
-Uppgifterna 8 -- 10 i dokumentet [Uppgifter Pr1, loopar](../../uppgifter/loopar/index.qmd#for-loopar)
+Uppgifterna 8 -- 10 i dokumentet [Uppgifter Pr1, funktioner](../../uppgifter/funktioner/index.qmd)

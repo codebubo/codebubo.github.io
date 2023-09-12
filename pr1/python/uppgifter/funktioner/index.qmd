@@ -1,0 +1,170 @@
+---
+title: "Uppgifter: Funktioner"
+format:
+  html:
+    fontsize: 1em
+    css: style.css
+---
+
+# Funktioner i Python
+
+## Uppgift 1
+
+Skriv en funktion `print_hypotenusa`. Funktionen ska ta emot värden på de båda
+kateternas längd i en rätvinklig triangel, och skriva ut längden av
+hypotenusan.
+
+Du behöver inte mata in värden under programkörning, funktionen kan anropas
+direkt med givna värden på kateterna.
+
+Körningsexempel:
+
+:::{.callout-note appearance="minimal"}
+
+```{python}
+#| echo: false
+def print_hypotenusa(a, b):
+    hypotenusa = (a**2 + b**2)**0.5
+    print("Denna utskrift sker från funktionen print_hypotenusa")
+    print(f"Funktionen tog emot parametrarna {a} och {b}")
+    print(f"Hypotenusans längd beräknas till {hypotenusa}")
+
+print_hypotenusa(3, 4)
+```
+:::
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 1"}
+```python
+def print_hypotenusa(a, b):
+    hypotenusa = (a**2 + b**2)**0.5
+    print("Denna utskrift sker från funktionen print_hypotenusa")
+    print(f"Funktionen tog emot parametrarna {a} och {b}")
+    print(f"Hypotenusans längd beräknas till {hypotenusa}")
+
+print_hypotenusa(3, 4)
+```
+:::
+
+## Uppgift 2
+
+Skriv en funktion `beräkna_hypotenusa`. Till skillnad från funktionen i
+[uppgift 1](#uppgift-1) så ska denna funktion **returnera** värdet på
+hypotenusans längd och det är huvudprogrammets uppgift (inte funktionens)
+att skriva ut längden.
+
+:::{.callout-note appearance="minimal"}
+
+```{python}
+#| echo: false
+def beräkna_hypotenusa(a, b):
+    hypotenusa = (a**2 + b**2)**0.5
+    return hypotenusa
+
+katet_1 = 3
+katet_2 = 4
+hypotenusa = beräkna_hypotenusa(katet_1, katet_2)
+print("Denna utskrift sker från huvudprogrammet")
+print(f"Huvudprogrammet skickar argumenten {katet_1} och {katet_2} till funktionen")
+print(f"Funtkionen beräknar hypotenusans längd till {hypotenusa}")
+```
+:::
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 2"}
+```python
+def beräkna_hypotenusa(a, b):
+    hypotenusa = (a**2 + b**2)**0.5
+    return hypotenusa
+
+katet_1 = 3
+katet_2 = 4
+hypotenusa = beräkna_hypotenusa(katet_1, katet_2)
+print("Denna utskrift sker från huvudprogrammet")
+print(f"Huvudprogrammet skickar argumenten {katet_1} och {katet_2} till funktionen")
+print(f"Funtkionen beräknar hypotenusans längd till {hypotenusa}")
+```
+:::
+
+## Uppgift 3
+
+Du har tidigare [skrivit ett program](../loopar/index.qmd#uppgift-4) där du
+låter en spelare gissa på ett framslumpat tal.
+
+Skriv **en funktion** som slumpar fram talet och håller reda på antalet
+gissningar innan talet gissas rätt. Funktionen ska returnera antalet
+gissningar, vilka skrivs ut i huvudprogrammet.
+
+Programmet ska ha följande struktur:
+
+:::{.callout-note appearance="minimal"}
+
+```python
+def spela():
+  # Här skriver du funktionen...
+  # ...och returnerar antalet försök
+
+# Huvudprogram
+antal_försök = spela()
+print(f"Du klarade det på {antal_försök} försök.")
+```
+:::
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 3"}
+
+Detta gissningsspel är lite mer utvecklat än det förra som gjordes.
+Här finns en inmatningskontroll så att enbart tal mellan (och inklusive)
+1 och 10 kommer att godtas som inmatning.
+
+```python
+# I detta program ska spelaren gissa ett tal
+# mellan 1 och 10. Gissningarna är inmatningssäkra,
+# dvs programmet kraschar inte av inmatningsfel.
+# Gissningarna ska göras i en separat funktion, som
+# returnerar antalet försök.
+#
+# Svårighetsgrad: medel eftersom det kan upplevas
+# som komplext med nästlade villkor i loopen.
+
+import random as rand
+
+
+def spela():
+    '''
+    I denna funktion så får användaren gissa på
+    ett tal som datorn slumpat fram.
+    Feedback till användaren i form av ledtråd
+    om det inmatade talet var för stort eller för litet.
+    Parametrar: inga
+    Returvärde: antal gissningar som behövdes
+    '''
+    datorns_tal = rand.randint(1, 10)
+    antal_gissningar = 0
+    while True:
+        gissning = input("Gissa ett tal mellan 1 och 10 -> ")
+        # Inmatningskontroll. Det finns bättre metoder,
+        # men denna enkla fungerar för icke-negativa heltal.
+        if gissning.isdigit():
+            gissning = int(gissning)
+        else:
+            print("Du måste ange ett heltal mellan 1 och 10")
+            continue
+        if (1 <= gissning <= 10):
+            antal_gissningar += 1
+            if gissning > datorns_tal:
+                print("Din gissning var för stor")
+            elif gissning < datorns_tal:
+                print("Din gissning var för liten")
+            else:
+                return antal_gissningar
+        else:
+            print("Du måste ange ett heltal mellan 1 och 10")
+
+
+# Huvudprogram
+print()
+antal_försök = spela()
+print()
+print(f"Du klarade det på {antal_försök} försök.")
+print("Programmet avslutades normalt")
+print()
+```
+:::

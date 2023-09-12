@@ -143,7 +143,7 @@ def print_multabell(n):
 print_multabell(12) # Ange önskad tabell att skriva ut här
 ```
 
-Här ser syns att en valfri multiplikationstabell skrivs ut, men
+Här ser syns att en valfri multiplikationstabell kan skrivas ut, men
 det finns ingen variabel utanför funktionen som känner till något
 om multiplikationen.
 
@@ -162,33 +162,54 @@ print(print_multabell(12))
 Här anropas funktionen, och *skriver ut resultatet* av den på
 rad 6. Vi ser att resultatet blir `None`.
 
-## Ett tänkt exempel
+## Dokumentation av funktioner
 
-:::{.v-space}
-:::
+Funktioner bör dokumenteras. Python använder s.k docstrings för
+detta. Ej att förväxla med kommentarer för kodrader eller
+andra sekvenser i programmet!
 
 ```python
-items = ["Klocka", "Kikare", "Termometer"]
-for item in items:
-    if item.is_boostable:
-      item.boost()
-      print(f"Din {item} är nu boostad ✅")
-    else:
-      print(f"{item} gick inte att boosta ❌")
+def add(a, b):
+  '''
+  Funktionen adderar två tal. Ingen typkontroll sker.
+  Parameter 1: a | ett tal (int eller float)
+  Parameter 2: b | ett tal (int eller float)
+  Returvärde: summan av talen (int eller float)
+  '''
+  sum = a + b
+  return sum
 ```
 
-Sekvensen ovan skulle kunna ingå i ett spelprogram. Här är `is_boostable` en
-*egenskap* hos *objektet* `item` och `boost` är en *metod* som tillämpas. Dessa
-saker måste programmeraren designa själv; det är inte inbyggt i Python.
+Docstrings kan användas av editorn när man skriver kod, eller i
+konsolen när man skriver `help(add)`.
 
-Senare i kursen kommer vi att komma till klasser, och koppla objekt, egenskaper
-och metoder till dessa.
+## Lämna funktionen
+
+En funktion lämnas när den når sista raden eller `return`.
+
+```python
+def maximum(a, b):
+  '''
+  Funktionen returnerar det största av två tal
+  Parameter 1: a | ett tal (int eller float)
+  Parameter 2: b | ett tal (int eller float)
+  Returvärde: Det största av talen. Vid likhet returneras None.
+  '''
+
+  if a > b:
+    return a
+  elif b > a:
+    return b
+  return None # Onödig rad, utan return-sats returneras None ändå
+```
 
 ## Sammanfattning
 
-* `for`-loopar används antingen när något ska göras ett förutbestämt antal
-gånger...
-* ... eller när någon funktion ska tillämpas på ett element i taget i en lista
-* Funktionen `range` kan användas för att skapa listor
-* Funktionen `range` ger olika utdata beroende på vilka parametrar som används
+* Funktioner är byggstenar i program ...
+* ... vilket ger programmet en enklare struktur
+* Variablerna i en funktion är lokala
+* En funktion lämnas vid `return`-sats
+* Om ingen `return`-sats finns returneras `None`
+* En variabel bör tilldelas ett returnerat värde
+* En funktion bör dokumenteras med en docstring
 
