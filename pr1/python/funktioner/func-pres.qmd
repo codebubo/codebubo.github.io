@@ -28,10 +28,10 @@ execute:
 * Att känna till hur en funktion anropas
 * Att kunna läsa ut vilka parametrar en funktion tar
 * Att känna till skillnaden mellan funktioner som har ...
-* ... respektive saknar returvärden
+* ... respektive saknar `return`-sats
 * Att kunna tilldela en variabel ett värde från en funktion
 * Att kunna skriva enkla funktioner ...
-* ... såväl med som utan returvärden
+* ... såväl med som utan `return`
 
 
 ## Vad är en funktion i programmering?
@@ -92,51 +92,75 @@ print(f"Summan av {tal_1} och {tal_2} är {summa}")
 :::
 
 
-## Funktionen `range`
+## Funktioners anatomi
 
-Exempel på hur parametrar påverkar resultatet av `range`
+```python
+def add(a, b):
+  sum = a + b
+  return sum
+```
+
+* `add`: Funktionens namn
+* `a` och `b`: Funktionens *parametrar*
+* `return`: Det värde som funktionen lämnar som resultat
+
+Funktionen anropas t ex enligt `summa = add(1, 2)`.
+Här kallas talen `1` och `2` i anropet för *argument*.
+
+Variabeln `summa` antar det värde som `return` skickar tillbaka.
+
+## Variabler i funktioner
+
+Variablerna som är deklarerade i funktioner är *lokala*. Det
+innebär att de inte är tillgängliga utanför funktionen.
+
+T ex är variablerna `a`, `b` och `sum` enbart tillgängliga inuti
+funktionen `add` nedan.
+
+```python
+def add(a, b):
+  sum = a + b
+  return sum
+
+# Huvudprogram
+add(1, 2)
+# Nedanstående ger ett felmeddelande eftersom
+# giltighetsområdet (omfattningen) för variabeln
+# sum inte räcker till denna nivå i programmet.
+print(sum)
+```
+
+## Funktioners returvärden
+
+Ibland saknas behov av `return`-värde.
+```{python}
+#| echo: true
+def print_multabell(n):
+  # Skriver ut fem rader i multiplikationstabell n
+  for i in range(1, 6):
+    print(f"{i:2.0f} * {n} = {i*n:3.0f}")
+
+print_multabell(12) # Ange önskad tabell att skriva ut här
+```
+
+Här ser syns att en valfri multiplikationstabell skrivs ut, men
+det finns ingen variabel utanför funktionen som känner till något
+om multiplikationen.
+
+## Alla funktioner har ett  returvärde
 
 ```{python}
 #| echo: true
-lista_A = list(range(10))
-lista_B = list(range(-5, 5))
-lista_C = list(range(0, 10, 2))
-lista_D = list(range(10, 0, -1))
-print(f"lista_A = {lista_A}")
-print(f"lista_B = {lista_B}")
-print(f"lista_C = {lista_C}")
-print(f"lista_D = {lista_D}")
+def print_multabell(n):
+  # Skriver ut fem rader i multiplikationstabell n
+  for i in range(1, 6):
+    print(f"{i:2.0f} * {n} = {i*n:3.0f}")
+
+print(print_multabell(12)) 
 ```
 
-## Exempel: Multiplikationstabell
-
-```{python}
-#| echo: true
-# Detta program beräknar och skriver ut "tolvans tabell"
-for i in range(1, 13):
-    print(f"{i:2.0f} * 12 = {i*12:3.0f}")
-```
-
-## Andra listelement än tal
-
-En lista kan innehålla andra element än tal.
-
-:::{.v-space}
-:::
-
-```{python}
-#| echo: true
-items = ["Klocka", "Kikare", "Termometer"]
-print("Du har tillgång till:", end=" ")
-for item in items:
-    print(item, end=" ")
-```
-
-:::{.v-space}
-:::
-
-Vi kommer senare att titta på hur element kan läggas till, tas bort och
-sorteras i listor. Det är användbart t ex i spel.
+Här anropas funktionen, och *skriver ut resultatet* av den på
+rad 6. Vi ser att resultatet blir `None`.
 
 ## Ett tänkt exempel
 
