@@ -13,4 +13,4 @@ editor: visual
 
 ## Uppgifter
 
-Uppgifterna 8 -- 10 i dokumentet [Uppgifter Pr1, funktioner](../../uppgifter/funktioner/index.qmd)
+Uppgifterna i dokumentet [Uppgifter Pr1, funktioner](../../uppgifter/funktioner/index.qmd)
