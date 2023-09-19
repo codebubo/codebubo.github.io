@@ -1,0 +1,33 @@
+---
+title: "Uppgifter: Listor"
+format:
+  html:
+    fontsize: 1em
+    css: style.css
+---
+
+# Listor i Python
+
+## Uppgifter med kommentarer och lösningsförslag
+
+### Uppgift 1
+
+Första uppgiften ...
+
+Körningsexempel:
+
+:::{.callout-note appearance="minimal"}
+
+Eventuellt körningsexempel
+:::
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 1"}
+Lösningsförslag med kommentarer ...
+
+:::
+
+
+## Uppgifter utan lösningsförslag
+
+### Uppgift 2
+
