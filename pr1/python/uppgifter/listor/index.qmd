@@ -49,7 +49,7 @@ Metoden `pop()` kan också ta ett argument. Pröva att utföra
 
 n. `lst.pop(5)`
 
-Se vad som kommer ut och jämför hur lista ser ut efter utförandet av detta med
+Se vad som kommer ut och jämför hur listan ser ut efter utförandet av detta med
 hur den såg ut före.
 
 Pröva nu att utföra
@@ -110,10 +110,14 @@ print(sum)
 Skapa listan `heltal`, som innehåller tio slumpade positiva heltal mellan
 1 och 100.
 
-Skapa därefter de tomma listorna `jämna` och `udda`. Modellen för att lösa
-uppgiften kan vara att man loopar genom alla tal i listan `heltal`, och testa
-om respektive tal är jämnt eller udda. Därefter så läggs talet till i rätt
-lista. Slutligen ska alla listor skrivas ut i storleksordning.
+Skapa därefter de tomma listorna `jämna` och `udda`. Uppgiften är att kopiera
+över de jämna talen från listan `heltal` till listan `jämna`, och på motsvarande
+sätt kopiera över de udda talen till listan `udda`. Slutligen ska alla listor
+skrivas ut i storleksordning.
+
+Modellen för att lösa uppgiften kan vara att man loopar genom alla tal i listan
+`heltal`, och testa om respektive tal är jämnt eller udda. Därefter så läggs
+talet till i rätt lista.
 
 Körningsexempel:
 
@@ -123,7 +127,7 @@ Körningsexempel:
 # | echo: false
 import random as rand
 
-rand.seed(827767287)
+rand.seed(827767288)
 
 heltal = []
 jämna = []
@@ -139,9 +143,12 @@ for tal in heltal:
     else:
         udda.append(tal)
 
-print(f"Heltalslistan är: {sorted(heltal)}")
-print(f"Det finns {len(jämna)} jämna tal i listan. Dessa är: {sorted(jämna)}")
-print(f"Det finns {len(udda)} udda tal i listan. Dessa är: {sorted(udda)}")
+antal_jämna = len(jämna)
+antal_udda = len(udda)
+
+print(f"Den framslumpade heltalslistan är:\n{sorted(heltal)}\n")
+print(f"Det finns {antal_jämna} jämna tal i listan. Dessa är:\n{sorted(jämna)}\n")
+print(f"Det finns {antal_udda} udda tal i listan. Dessa är:\n{sorted(udda)}\n")
 ```
 
 :::
@@ -172,19 +179,27 @@ heltal = []
 jämna = []
 udda = []
 
+# Heltalslistan med slumptal skapas
 for i in range(0, 10):
     slumptal = rand.randint(1, 100)
     heltal.append(slumptal)
 
+# Loopa genom heltalslistan och kopiera jämna och udda tal
+# till respektive ny lista
 for tal in heltal:
-    if tal % 2 == 0:
+    if tal % 2 == 0: # Kontroll om aktuellt tal är delbart med 2
         jämna.append(tal)
     else:
         udda.append(tal)
 
-print(f"Heltalslistan är: {sorted(heltal)}")
-print(f"Det finns {len(jämna)} jämna tal i listan. Dessa är: {sorted(jämna)}")
-print(f"Det finns {len(udda)} udda tal i listan. Dessa är: {sorted(udda)}")
+# Räkna antalet tal i respektive lista...
+antal_jämna = len(jämna)
+antal_udda = len(udda)
+
+# ...och skriv ut dessa
+print(f"Den framslumpade heltalslistan är:\n{sorted(heltal)}\n")
+print(f"Det finns {antal_jämna} jämna tal i listan. Dessa är:\n{sorted(jämna)}\n")
+print(f"Det finns {antal_udda} udda tal i listan. Dessa är:\n{sorted(udda)}\n")
 ```
 
 :::
@@ -217,8 +232,10 @@ urna = list(range(1, 36))
 lottorad = []
 
 for i in range(0, 7):
-    slumpat_index = rand.randint(0, len(urna) - 1)
-    lottorad.append(urna.pop(slumpat_index))
+    max_index = len(urna) - 1
+    slumpat_index = rand.randint(0, max_index)
+    lottotal = urna.pop(slumpat_index)
+    lottorad.append(lottotal)
 print(f"Buggfri LOTTO-rad: {sorted(lottorad)}")
 ```
 
@@ -233,8 +250,10 @@ urna = list(range(1, 36))
 lottorad = []
 
 for i in range(0, 7):
-    slumpat_index = rand.randint(0, len(urna) - 1)
-    lottorad.append(urna.pop(slumpat_index))
+    max_index = len(urna) - 1
+    slumpat_index = rand.randint(0, max_index)
+    lottotal = urna.pop(slumpat_index)
+    lottorad.append(lottotal)
 print(f"Buggfri LOTTO-rad: {sorted(lottorad)}")
 ```
 :::
@@ -255,8 +274,8 @@ Det ska likna följande:
 
 ```
 Vad vill du göra?
-1. Titta på hela listan             2. Titta på en specifik listposition
-3. Lägga till ett värde i listan    4. Ta bort ett värde i listan
+1. Titta på hela listan             2. Titta på ett givet läge i listan
+3. Lägga till ett värde i listan    4. Radera värdet på ett givet läge i listan
 5. Sortera listan                   6. Beräkna listans medelvärde
 7. Avsluta
 
@@ -264,8 +283,8 @@ Ange ditt val -> 3
 Ange det värde du vill lägga till -> 10
 
 Vad vill du göra?
-1. Titta på hela listan             2. Titta på en specifik listposition
-3. Lägga till ett värde i listan    4. Ta bort ett värde i listan
+1. Titta på hela listan             2. Titta på ett givet läge i listan
+3. Lägga till ett värde i listan    4. Radera värdet på ett givet läge i listan
 5. Sortera listan                   6. Beräkna listans medelvärde
 7. Avsluta 
 
@@ -273,21 +292,71 @@ Ange ditt val -> 1
 Här är hela listan just nu: [10] 
 
 Vad vill du göra?
-1. Titta på hela listan             2. Titta på en specifik listposition
-3. Lägga till ett värde i listan    4. Ta bort ett värde i listan
+1. Titta på hela listan             2. Titta på ett givet läge i listan
+3. Lägga till ett värde i listan    4. Radera värdet på ett givet läge i listan
 5. Sortera listan                   6. Beräkna listans medelvärde
 7. Avsluta
 
-Ange ditt val -> 
+Ange ditt val -> 3
+Ange det värde du vill lägga till -> 5
+
+Vad vill du göra?
+1. Titta på hela listan             2. Titta på ett givet läge i listan
+3. Lägga till ett värde i listan    4. Radera värdet på ett givet läge i listan
+5. Sortera listan                   6. Beräkna listans medelvärde
+7. Avsluta
+
+Vad vill du göra?
+1. Titta på hela listan             2. Titta på ett givet läge i listan
+3. Lägga till ett värde i listan    4. Radera värdet på ett givet läge i listan
+5. Sortera listan                   6. Beräkna listans medelvärde
+7. Avsluta
+
+Ange ditt val -> 1
+Här är hela listan just nu: [10, 5]
+
+Vad vill du göra?
+1. Titta på hela listan             2. Titta på ett givet läge i listan
+3. Lägga till ett värde i listan    4. Radera värdet på ett givet läge i listan
+5. Sortera listan                   6. Beräkna listans medelvärde
+7. Avsluta
+
+Ange ditt val -> 4
+Ange läget i listan med värdet som ska raderas (möjliga lägen: 1 till 2) -> 1
+
+Vad vill du göra?
+1. Titta på hela listan             2. Titta på ett givet läge i listan
+3. Lägga till ett värde i listan    4. Radera värdet på ett givet läge i listan
+5. Sortera listan                   6. Beräkna listans medelvärde
+7. Avsluta
+
+Ange ditt val -> 1
+
+Här är hela listan just nu: [5] 
 ```
 
 :::
 
-Listan ska vara inmatningssäker, dvs felaktiga listval ska medföra att
-användaren får göra om valet tills ett korrekt val görs. I
+**Ett läge** i listan är ett heltal från 1 t o m det antal tal som finns där,
+medan ett **värde** i listan är ett heltal.
+Listan ska vara inmatningssäker, dvs felaktiga listval eller värden ska medföra
+att användaren får göra om inmatningen tills den är godtagbar. I
 [Uppgift 3, Funktioner](../funktioner/index.qmd#uppgift-3) finns exempel på
 hur en inmatningssäker meny kan utformas (även om sammanhanget där är
 annorlunda).
 
 Glöm inte att skriva lämpliga kommentarer i koden. Om egendefinierade
 funktioner används ska respektive sådan dokumenteras med en docstring.
+
+:::{.callout-note title="Tips"}
+Om strängar omgärdas av tre citationstecken så kan de enkelt radbrytas.
+Det kan användas för utskrift av menyn (även om det finns andra sätt).
+
+```{python}
+#| echo: true
+print("""Detta är
+en sträng på flera
+rader""")
+```
+
+:::

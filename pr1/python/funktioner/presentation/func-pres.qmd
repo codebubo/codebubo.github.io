@@ -76,9 +76,9 @@ Vi kan skapa och använda funktionen `add` enligt följande:
 
 ```{python}
 #| echo: true
-def add(a, b):   # Här
-  sum = a + b    # skapas
-  return sum     # funktionen
+def add(a, b):     # Här
+  the_sum = a + b  # skapas
+  return the_sum   # funktionen
 
 # Huvudprogram nedan
 tal_1 = 10
@@ -96,8 +96,8 @@ print(f"Summan av {tal_1} och {tal_2} är {summa}")
 
 ```python
 def add(a, b):
-  sum = a + b
-  return sum
+  the_sum = a + b
+  return the_sum
 ```
 
 * `add`: Funktionens namn
@@ -114,20 +114,20 @@ Variabeln `summa` antar det värde som `return` skickar tillbaka.
 Variablerna som är deklarerade i funktioner är *lokala*. Det
 innebär att de inte är tillgängliga utanför funktionen.
 
-T ex är variablerna `a`, `b` och `sum` enbart tillgängliga inuti
+T ex är variablerna `a`, `b` och `the_sum` enbart tillgängliga inuti
 funktionen `add` nedan.
 
 ```python
 def add(a, b):
-  sum = a + b
-  return sum
+  the_sum = a + b
+  return the_sum
 
 # Huvudprogram
 add(1, 2)
 # Nedanstående ger ett felmeddelande eftersom
 # giltighetsområdet (omfattningen) för variabeln
-# sum inte räcker till denna nivå i programmet.
-print(sum)
+# the_sum inte räcker till denna nivå i programmet.
+print(the_sum)
 ```
 
 ## Funktioners returvärden
@@ -176,8 +176,8 @@ def add(a, b):
   Parameter 2: b | ett tal (int eller float)
   Returvärde: summan av talen (int eller float)
   '''
-  sum = a + b
-  return sum
+  the_sum = a + b
+  return the_sum
 ```
 
 Docstrings kan användas av editorn när man skriver kod, eller i
