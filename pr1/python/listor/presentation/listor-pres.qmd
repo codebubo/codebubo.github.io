@@ -73,8 +73,8 @@ temperaturer = [10, 12, 8, 9, 7] # EN variabel för FEM temperaturer
 
 ```{python}
 #| echo: true
-print(temperaturer[0]) # Skriver ut innehållet på position 0
-print(temperaturer[4]) # Skriver ut innehållet på position 4
+print(temperaturer[0]) # Skriver ut innehållet av index 0
+print(temperaturer[4]) # Skriver ut innehållet av index 4
 ```
 
 ## Vad var nu en lista?
