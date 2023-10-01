@@ -33,15 +33,48 @@ En kortlek består av 52 kort. På hur många sätt kan en blandning falla ut om
 a. alla blandningar är tillåtna?
 b. enbart de blandningar där :clubs:3 ligger direkt ovanpå :diamonds:4 räknas?
 
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag"}
+a. Eftersom alla kort är olika gäller att det översta kortet i en blandad
+lek kan vara $1$ av $52$, kortet under detta $1$ av $51$ osv. Det innebär att
+antalet blandningar kan vara $52\cdot 51\cdot 50\cdot\ldots\cdot 1=52!$.
+Multiplikationsprincipen ska tillämpas eftersom antalet möjligheter på en given
+plats i leken inte påverkas av vilka kort som ligger på andra platser.
+
+b. Här kan man tänka att det är $51$ kort som ska blandas, t ex så tar vi bort
+:clubs:3 ur leken. För varje utfall så tänker vi oss vidare att vi "manuellt"
+lägger in detta :clubs:3 ovanpå :diamonds:4. \newline\
+Antalet sådana utfall blir alltså $51!$.
+
+:::
+
 ---
 
 ### Bokstavsföljden
 
-En sträng består av bokstäverna `aabbccdd`. Hur många olika ''ord'' kan bildas
+En sträng består av bokstäverna `aabbccdd`. Hur många olika "ord" kan bildas
 om
 
 a. tecknen i strängen får blandas utan någon begränsning?
 b. inget `a` får stå till höger om ett `c`?
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag"}
+
+a. Vi tänker oss till en början att vi har strängen med två olika `a`, `b`
+och `c`; nämligen `a1,a2,b1,b2,c1,c2`. Dessa kommer förstås att kunna
+permuteras på $6!$ olika sätt. Men nu låter vi `a1` och `a2` förenas till ett
+`a`, varför vi får strängen `a,a,b1,b2,c1,c2`. Eftersom `a` kan permuteras
+på $2!$ olika sätt så blir antalet permutationer $6!/2!$ (där det alltså
+inte spelar någon roll vilket `a` som står på respektive plats). Vi fortsätter
+resonemanget på samma sätt med `b` och `c`, och landar i att antalet
+permutationer blir $8!/(2!\cdot 2!\cdot 2!\cdot 2!)=5040$.
+
+b. Här får vi tänka på ett annat sätt. Vi börjar med att välja lägena för
+respektive bokstav i `bbdd`. Därefter väljer vi platserna för respektive 
+bokstav i `aacc` "mauellt" så att ordningen uppfylls; det kan ses som att
+`aacc` är identiska bokstäver som ska placeras. Antalet sätt blir då
+$8!/(2!\cdot 2!\cdot 4!)=420$. 
+
+:::
 
 ---
 
@@ -55,6 +88,29 @@ alltifrån tom till att den innehåller alla tio bollar)?
 
 b. varje bur måste innehålla minst en boll?
 
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag"}
+
+a. Här kan metoden "Stars and Bars" tillämpas, där bollarna är "stars"
+och burarna är de mellanrum som bildas mellan "bars". Ett exempel på utfall
+är `**|****||****`, vilket visar två bollar i bur 1, fyra bollar i bur 2, inga
+bollar i bur 3 och fyra bollar i bur 4. Vi har totalt 14 element och antalet
+bollar i respektive mellanrum kan förändras genom att vi flyttar på "bars".
+Eftersom det är tre "bars" (vilket ju ger fyra burar) blir antalet
+sätt
+$$
+\binom{10+4-1}{4-1}=\binom{13}{3}=286
+$$
+
+b. Här måste vi redan från början tänka oss att en boll ligger i respektive bur.
+Då blir det sex bollar (eller "stars") kvar att fördela på de fyra burarna.
+Analogt med a-uppgiften så blir antalet sätt
+
+$$
+\binom{6+4-1}{4-1}=\binom{9}{3}=84
+$$
+
+:::
+
 ---
 
 ### Ekvationen
@@ -64,14 +120,43 @@ Hur många lösningar har ekvationen $x_1+x_2+x_3+x_4=10$ om
 a. alla ingående termer är icke-negativa heltal?
 b. var och en av de ingående termer är ett heltal som är minst 1?
 
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag"}
+
+a. Denna övnings lösning är exakt densamma som övningen med basketbollarna
+som skulle placeras i burarna, där varje bur får innehålla hur få eller hur
+många bollar som helst av det maximala antalet $10$.
+Varje *värde* på respektive $x$ är en "star". Det är *fyra stycken* $x$,
+vilket ger tre "bars" Lösningen blir
+$$
+\binom{10+4-1}{4-1}=\binom{13}{3}=286
+$$
+
+b. Denna övnings lösning är exakt densamma som övningen med basketbollarna
+som skulle placeras i burarna, där varje bur ska innehålla minst en boll.
+Lösningen blir
+$$
+\binom{6+4-1}{4-1}=\binom{9}{3}=84
+$$
+
+:::
+
 ---
 
 ### Schackproblemet
 
 Hur många torn kan maximalt placeras ut på ett schackbräde ($8\times 8$ rutor)
-om inget av tornen ska kunna ''äta'' något annat torn? Motivera svaret med
+om inget av tornen ska kunna "äta" något annat torn? Motivera svaret med
 lådprincipen.
 
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag"}
+
+Ett torn kan enbart gå i en enda rad och en enda kolumn. Det finns åtta rader
+och åtta kolumner på schackbrädet. Om det är fler än åtta torn så kommer minst
+en rad eller kolumn att innehålla fler än ett torn. (Tornen ska placeras ut
+diagonalt över brädet; det blir åtta stycken där inget av dem kan "äta" något
+annat torn.)
+
+:::
 ---
 
 ### YATZY
@@ -80,7 +165,19 @@ Ett YATZY-kast är när fem stycken identiska, sexsidiga, tärningar slås.
 Hur många utfall finns det på ett sådant kast? Observera att ordningen saknar
 betydelse, t ex räknas utfallet `[1, 1, 3, 5, 6]` vara desamma som
 utfallet `[1, 3, 1, 6, 5]` om tärningarnas ordning räknas som
-`[T1, T2, T3, T4, T5, T6]`.
+`[T1, T2, T3, T4, T5]`.
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag"}
+
+Detta är, liksom problemet med basketbollarna ovan, ett problem där metoden
+"Stars and Bars" kan tillämpas. Vi tänker oss fem tärningar ("stars") och
+sex utfall ("bars"), där varje tärnings visade tal ska placeras på ett av
+utfallen. Det ger antalet utfall på ett kast till
+$$
+\binom{5+6-1}{6-1}=252
+$$
+
+:::
 
 ---
 
@@ -91,14 +188,43 @@ innehåller $x^{12}y^{13}$ multipliceras med.
 
 ---
 
-### Basketbollkastet
+### Basketbollkasten
 
 Julias träffsäkerhet i ett kast mot mål i basket är $0.7$. Beräkna sannolikheten
 att hon får
 
 a. minst en träff när hon kastar tio gånger.
-b. minst fem träffar när hon kastar tio gånger.
-c. precis fem träffar när hon kastar tio gånger.
+b. precis fem träffar när hon kastar tio gånger.
+c. minst fem träffar när hon kastar tio gånger.
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag"}
+a. Minst en träff på tio kast är komplementhändelsen till *ingen träff* på tio
+kast. Detta ger sannolikheten för minst en träff till $1-0.3^{10}=99.999$ %.
+
+b. Antalet möjliga placeringar i följden om tio kast, som de fem träffarna kan
+"väljas ut" på, är $\binom{10}{5}$; resterande antal placeringar är missarna.
+Det ger sannolikheten för precis fem träffar till
+$$
+\binom{10}{5}0.7^5\cdot 0.3^5\approx 10.3\hspace{1mm}\mathrm{\%}
+$$
+
+c. Minst fem träffar ges av summan
+
+$$
+\begin{matrix*}[l]
+\hspace{3mm}
+\binom{10}{5}0.7^5\cdot 0.3^5 +
+\binom{10}{6}0.7^6\cdot 0.3^4 +
+\binom{10}{7}0.7^7\cdot 0.3^3\\[2mm] +
+\binom{10}{8}0.7^8\cdot 0.3^2 +
+\binom{10}{9}0.7^9\cdot 0.3^1\\[2mm] +
+\binom{10}{10}0.7^{10}\cdot 0.3^0
+\approx 95.3\hspace{1mm}\mathrm{\%}
+\end{matrix*}
+$$
+
+
+:::
 
 ---
 
@@ -106,3 +232,29 @@ c. precis fem träffar när hon kastar tio gånger.
 
 I en grupp som består av $23$ personer så är sannolikheten $50.7$ % att två
 personer har samma födelsedag på året. Visa detta.
+
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag"}
+
+Man kan tänka sig att personerna i gruppen är uppradade enligt
+`[P1, P2, P3,..., P23]`. Sannolikheten att `P2` *inte* har samma födelsedag
+som `P1` är $364/365$. Sannolikheten att `P3` *inte* har samma födelsedag som
+`P1` eller `P2` är $363/365$ osv. Slutligen erhålls att sannolikheten för att
+alla $23$ personer har *olika* födelsedagar är
+
+$$
+\frac{364}{365}\cdot\frac{363}{365}\cdot\frac{362}{365}\cdot
+\ldots\cdot\frac{343}{365}=\left(\frac{1}{365}\right)^{23}\cdot(365\cdot 364
+\cdot363\ldots\cdot343)\approx 0.493
+$$
+
+Komplementhändelsen till att alla födelsedagar är olika är att minst en person
+har gemensam födelsedag med någon annan i gruppen, ges av beräkningen
+$1-0.493=0.507$, dvs $50.7$ %.
+
+Orsaken att sannolikheten blir så stor för en så förhållandevis liten grupp är
+att antalet par i gruppen blir stort. Vi gör ingen förutsägelse om *vilken*
+födelsedag som kan vara gemensam, enbart *att* någon födelsedag är gemensam med
+en viss sannolikhet.
+
+:::
