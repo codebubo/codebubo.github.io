@@ -269,7 +269,7 @@ $$
 
 ---
 
-### Födelsedagarma
+### Födelsedagarna
 
 I en grupp som består av $23$ personer så är sannolikheten $50.7$ % att minst
 två personer har samma födelsedag på året. Visa detta.
