@@ -20,9 +20,38 @@ Hur många olika koder finns det om
 
 a. det inte finns någon begränsning i hur siffrorna i koden får väljas?
 b. ingen siffra får upprepas?
-c. ingen siffra får får upprepas, och den tredje siffran är en 8?
+c. ingen siffra får får upprepas, och den tredje siffran är en $8$?
 d. ingen siffra får upprepas, och koden måste vara i stigande nummerföljd?
-e. ingen siffra får upprepas, och såväl siffran 2 som siffran 5 måste ingå?
+e. ingen siffra får upprepas, och såväl siffran $2$ som siffran $5$ måste ingå?
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag"}
+
+a. Respektive siffra ($0$ -- $9$) kan väljas på varje plats i koden.
+Det gör att det totala antalet koder blir $10\cdot 10\cdot 10\cdot 10=10^4$
+
+b. Den första siffran kan väljas på tio sätt, den andra på nio sätt, den
+tredje på åtta sätt och den fjärde på sju sätt. Det ger antalet koder
+till $P(10,4)=10\cdot 9\cdot 8\cdot 7=5040$.
+
+c. Den första siffran kan väljas på nio sätt, den andra på åtta sätt, den
+tredje på ett sätt och den fjärde på sju sätt. Det ger antalet koder
+till $P(10,4)=9\cdot 8\cdot 1\cdot 7=504$.
+
+d. Här ska vi räkna antalet *oordnade* urval på fyra siffror av tio. Eftersom
+ingen siffra får upprepas, och eftersom det därmed enbart finns en enda
+godtagbar nummerföljd per urval, så kommer antalet oordnade urval att ge det
+sökta antalet koder. Det blir $C(10,4)=210$ st.
+
+e. Här väljer vi först de två siffror som ska ingå (utöver siffrorna 2 och 5).
+Det kan göras på $C(8,2)=28$ olika sätt. Därefter ska de båda positionerna på
+dessa siffror väljas, det kan göras på $C(4,2)=6$ sätt. Därefter ska
+*placeringen* av dessa siffror i de valda lägena bestämmas, det kan ske på
+$2!=2$ sätt. Slutligen så ska placeringen i de kvarvarande lägena väljas för
+siffrorna $2$ och $5$, det kan också göras på $2!=2$ sätt.
+Multiplikationsprincipen ger nu att det totala antalet koder blir
+$28\cdot 6\cdot 2\cdot 2=672$ stycken.
+
+:::
 
 ---
 
@@ -51,27 +80,27 @@ Antalet sådana utfall blir alltså $51!$.
 
 ### Bokstavsföljden
 
-En sträng består av bokstäverna `aabbccdd`. Hur många olika "ord" kan bildas
-om
+En sträng består av bokstäverna `a, a, b, b, c, c, d, d`.
+Hur många olika "ord" kan bildas om
 
-a. tecknen i strängen får blandas utan någon begränsning?
+a. bokstäverna i strängen får blandas utan någon begränsning?
 b. inget `a` får stå till höger om ett `c`?
 
 :::{.callout-tip collapse="true" icon="false" title="Lösningsförslag"}
 
 a. Vi tänker oss till en början att vi har strängen med två olika `a`, `b`
-och `c`; nämligen `a1,a2,b1,b2,c1,c2`. Dessa kommer förstås att kunna
-permuteras på $6!$ olika sätt. Men nu låter vi `a1` och `a2` förenas till ett
-`a`, varför vi får strängen `a,a,b1,b2,c1,c2`. Eftersom `a` kan permuteras
-på $2!$ olika sätt så blir antalet permutationer $6!/2!$ (där det alltså
-inte spelar någon roll vilket `a` som står på respektive plats). Vi fortsätter
-resonemanget på samma sätt med `b` och `c`, och landar i att antalet
-permutationer blir $8!/(2!\cdot 2!\cdot 2!\cdot 2!)=5040$.
+och `c`; nämligen `a1, a2, b1, b2, c1, c2`. Dessa kommer förstås att kunna
+permuteras på $6!$ olika sätt. Men nu låter vi `a1` och `a2` förenas till två
+identiska `a`:n, varför vi får strängen `a, a, b1, b2, c1, c2`. Eftersom `a`
+kan permuteras på $2!$ olika sätt så blir antalet permutationer $6!/2!$ (där
+det alltså inte spelar någon roll vilket `a` som står på respektive plats). Vi
+fortsätter resonemanget på samma sätt med `b`, `c` och `d`, och landar i att
+antalet permutationer blir $8!/(2!\cdot 2!\cdot 2!\cdot 2!)=2\,520$.
 
 b. Här får vi tänka på ett annat sätt. Vi börjar med att välja lägena för
-respektive bokstav i `bbdd`. Därefter väljer vi platserna för respektive 
-bokstav i `aacc` "mauellt" så att ordningen uppfylls; det kan ses som att
-`aacc` är identiska bokstäver som ska placeras. Antalet sätt blir då
+respektive bokstav `b, b, d, d`. Därefter väljer vi platserna för respektive 
+bokstav `a, a, c, c` "manuellt" så att ordningen uppfylls; det kan ses som att
+`a, a, c, c` är identiska bokstäver som ska placeras. Antalet sätt blir då
 $8!/(2!\cdot 2!\cdot 4!)=420$. 
 
 :::
@@ -92,11 +121,11 @@ b. varje bur måste innehålla minst en boll?
 
 a. Här kan metoden "Stars and Bars" tillämpas, där bollarna är "stars"
 och burarna är de mellanrum som bildas mellan "bars". Ett exempel på utfall
-är `**|****||****`, vilket visar två bollar i bur 1, fyra bollar i bur 2, inga
-bollar i bur 3 och fyra bollar i bur 4. Vi har totalt 14 element och antalet
-bollar i respektive mellanrum kan förändras genom att vi flyttar på "bars".
-Eftersom det är tre "bars" (vilket ju ger fyra burar) blir antalet
-sätt
+är `**|****||****`, vilket visar två bollar i bur $1$, fyra bollar i bur $2$,
+inga bollar i bur $3$ och fyra bollar i bur $4$. Vi har totalt tretton element
+(tio "stars" och tre "bars") och antalet bollar i respektive mellanrum kan
+förändras genom att vi flyttar på "bars". Eftersom det är tre "bars" (vilket
+ju ger fyra burar) blir antalet sätt
 $$
 \binom{10+4-1}{4-1}=\binom{13}{3}=286
 $$
@@ -157,6 +186,7 @@ diagonalt över brädet; det blir åtta stycken där inget av dem kan "äta" nå
 annat torn.)
 
 :::
+
 ---
 
 ### YATZY
@@ -171,8 +201,10 @@ utfallet `[1, 3, 1, 6, 5]` om tärningarnas ordning räknas som
 
 Detta är, liksom problemet med basketbollarna ovan, ett problem där metoden
 "Stars and Bars" kan tillämpas. Vi tänker oss fem tärningar ("stars") och
-sex utfall ("bars"), där varje tärnings visade tal ska placeras på ett av
-utfallen. Det ger antalet utfall på ett kast till
+sex utfall (mellanrummen mellan "bars"), där varje tärnings visade tal ska
+placeras på ett av utfallen (ett utfall är t ex `**|*||*||*`, som
+representerar två ettor, en tvåa, en fyra och en sexa). Antalet utfall på ett
+kast blir
 $$
 \binom{5+6-1}{6-1}=252
 $$
@@ -185,6 +217,15 @@ $$
 
 Ett binomuttryck är $(2x-3y)^{25}$. Beräkna koefficienten som faktorn som
 innehåller $x^{12}y^{13}$ multipliceras med.
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag"}
+
+Binomialsatsen ger direkt koefficienten
+$$
+\binom{25}{12}\cdot 2^{12}\cdot (-3)^{13}=-33\, 959\, 763\, 545\, 702\, 400
+$$
+
+:::
 
 ---
 
@@ -230,13 +271,13 @@ $$
 
 ### Födelsedagarma
 
-I en grupp som består av $23$ personer så är sannolikheten $50.7$ % att två
-personer har samma födelsedag på året. Visa detta.
+I en grupp som består av $23$ personer så är sannolikheten $50.7$ % att minst
+två personer har samma födelsedag på året. Visa detta.
 
 
 :::{.callout-tip collapse="true" icon="false" title="Lösningsförslag"}
 
-Man kan tänka sig att personerna i gruppen är uppradade enligt
+Man kan tänka sig att personerna i gruppen är listade enligt
 `[P1, P2, P3,..., P23]`. Sannolikheten att `P2` *inte* har samma födelsedag
 som `P1` är $364/365$. Sannolikheten att `P3` *inte* har samma födelsedag som
 `P1` eller `P2` är $363/365$ osv. Slutligen erhålls att sannolikheten för att
@@ -248,8 +289,9 @@ $$
 \cdot363\ldots\cdot343)\approx 0.493
 $$
 
-Komplementhändelsen till att alla födelsedagar är olika är att minst en person
-har gemensam födelsedag med någon annan i gruppen, ges av beräkningen
+Sannolikheten för komplementhändelsen till att alla födelsedagar är olika,
+vilken är att minst en person har gemensam födelsedag med någon annan i
+gruppen, ges av beräkningen
 $1-0.493=0.507$, dvs $50.7$ %.
 
 Orsaken att sannolikheten blir så stor för en så förhållandevis liten grupp är
