@@ -15,7 +15,7 @@ website:
     type: overlay
 
   sidebar:
-    collapse-level: 2
+    collapse-level: 1
     style: "docked"
     contents:
       - text: "Programmeringsrelaterat"
@@ -45,6 +45,11 @@ website:
                 contents:
                   - ma/ma-spec/programmering/teori-och-ovningar/octave-som-kalkylator/index.qmd
                   - ma/ma-spec/programmering/teori-och-ovningar/funktioner-villkor-och-loopar/index.qmd
+      - section: Matematikrelaterat
+      - text: "---"
+      - section: "Matematik 5"
+        contents:
+          - ma/ma-5/kombinatorik/index.qmd
 
 format:
   html:

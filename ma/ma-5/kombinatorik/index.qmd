@@ -1,0 +1,108 @@
+---
+title: "Kombinatorik: Extra övningar"
+from: markdown+emoji
+format:
+  html:
+    fontsize: 1em
+    css: style.css
+execute: 
+  echo: false
+---
+
+## Några kompletterande övningar
+
+### Kodlåset
+
+Ett kodlås har en kod bestående av fyra siffror, där varje siffra
+kan väljas bland de tio siffrorna 0 -- 9.
+
+Hur många olika koder finns det om
+
+a. det inte finns någon begränsning i hur siffrorna i koden får väljas?
+b. ingen siffra får upprepas?
+c. ingen siffra får får upprepas, och den tredje siffran är en 8?
+d. ingen siffra får upprepas, och koden måste vara i stigande nummerföljd?
+e. ingen siffra får upprepas, och såväl siffran 2 som siffran 5 måste ingå?
+
+---
+
+### Kortleken
+
+En kortlek består av 52 kort. På hur många sätt kan en blandning falla ut om
+
+a. alla blandningar är tillåtna?
+b. enbart de blandningar där :clubs:3 ligger direkt ovanpå :diamonds:4 räknas?
+
+---
+
+### Bokstavsföljden
+
+En sträng består av bokstäverna `aabbccdd`. Hur många olika ''ord'' kan bildas
+om
+
+a. tecknen i strängen får blandas utan någon begränsning?
+b. inget `a` får stå till höger om ett `c`?
+
+---
+
+### Basketbollarna
+
+Tio basketbollar ska placeras i fyra burar. På hur många sätt kan det ske
+om
+
+a. ingen begränsning av antalet bollar görs per bur (dvs en bur kan vara
+alltifrån tom till att den innehåller alla tio bollar)?
+
+b. varje bur måste innehålla minst en boll?
+
+---
+
+### Ekvationen
+
+Hur många lösningar har ekvationen $x_1+x_2+x_3+x_4=10$ om
+
+a. alla ingående termer är icke-negativa heltal?
+b. var och en av de ingående termer är ett heltal som är minst 1?
+
+---
+
+### Schackproblemet
+
+Hur många torn kan maximalt placeras ut på ett schackbräde ($8\times 8$ rutor)
+om inget av tornen ska kunna ''äta'' något annat torn? Motivera svaret med
+lådprincipen.
+
+---
+
+### YATZY
+
+Ett YATZY-kast är när fem stycken identiska, sexsidiga, tärningar slås.
+Hur många utfall finns det på ett sådant kast? Observera att ordningen saknar
+betydelse, t ex räknas utfallet `[1, 1, 3, 5, 6]` vara desamma som
+utfallet `[1, 3, 1, 6, 5]` om tärningarnas ordning räknas som
+`[T1, T2, T3, T4, T5, T6]`.
+
+---
+
+### Binomialkoefficienten
+
+Ett binomuttryck är $(2x-3y)^{25}$. Beräkna koefficienten som faktorn som
+innehåller $x^{12}y^{13}$ multipliceras med.
+
+---
+
+### Basketbollkastet
+
+Julias träffsäkerhet i ett kast mot mål i basket är $0.7$. Beräkna sannolikheten
+att hon får
+
+a. minst en träff när hon kastar tio gånger.
+b. minst fem träffar när hon kastar tio gånger.
+c. precis fem träffar när hon kastar tio gånger.
+
+---
+
+### Födelsedagarma
+
+I en grupp som består av $23$ personer så är sannolikheten $50.7$ % att två
+personer har samma födelsedag på året. Visa detta.
