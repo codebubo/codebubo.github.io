@@ -22,6 +22,7 @@ website:
       - text: "---"
       - section: "Programmering 1"
         contents:
+          - pr1/python/cheat_sheet_python.qmd
           - section: "Presentationer, Python"
             contents:
               - pr1/python/intro/pres-version-installerad-python/index.qmd
