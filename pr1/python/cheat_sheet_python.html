@@ -720,13 +720,13 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
 <td>Returnerar strängen, där de alfanumeriska tecknen är gemener. <code>str1</code> är oförändrad.</td>
 </tr>
 <tr class="even">
-<td><code>.title</code></td>
+<td><code>.title()</code></td>
 <td><code>str1.title()</code></td>
 <td><code>"Detta Är En Sträng Som Består Av 42 Tecken"</code></td>
 <td>Konverterar det första tecknet i varje ord till versal. <code>str1</code> är oförändrad.</td>
 </tr>
 <tr class="odd">
-<td><code>.strip</code></td>
+<td><code>.strip()</code></td>
 <td><code>str1.strip()</code></td>
 <td><code>"Detta är en sträng som består av 42 tecken"</code></td>
 <td>Tar bort mellanslag i början och i slutet av strängen (finns inga sådana i den aktuella strängen). <code>str1</code> är oförändrad.</td>
@@ -741,7 +741,13 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
 <td><code>.split()</code></td>
 <td><code>str1.split()</code></td>
 <td><code>['Detta', 'är', 'en', 'sträng', 'som', 'består', 'av', '42', 'tecken']</code></td>
-<td>Gör om strängen till ord i en lista. <code>str1</code> är oförändrad.</td>
+<td>Gör om strängen till ord i en lista. Separatortecknet är mellanslag som standard. <code>str1</code> är oförändrad.</td>
+</tr>
+<tr class="even">
+<td><code>.index()</code></td>
+<td><code>str1.index("a")</code></td>
+<td><code>4</code></td>
+<td>Returnerar första positionen av ett tecken eller en teckenföljd. <code>str1</code> är oförändrad.</td>
 </tr>
 </tbody>
 </table>
