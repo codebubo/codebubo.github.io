@@ -1,5 +1,5 @@
 ---
-title: "Presentation: Listor"
+title: "Presentation: Strängar"
 format:
   html:
     fontsize: 1em
@@ -13,4 +13,4 @@ editor: visual
 
 ## Uppgifter
 
-Uppgifterna i dokumentet 
+Uppgifterna i dokumentet [Uppgifter Pr1, Strängar](../../uppgifter/strangar/)

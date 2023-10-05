@@ -32,6 +32,7 @@ website:
               - pr1/python/for-loopar/presentation/index.qmd
               - pr1/python/funktioner/presentation/index.qmd
               - pr1/python/listor/presentation/index.qmd
+              - pr1/python/strangar/presentation/index.qmd
           - section: "Uppgifter, Python"
             contents:
               - pr1/python/uppgifter/utskrift-och-villkor/index.qmd
