@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-html/tabby.min.js"></script>
-<script src="../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="../../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.3.450">
 
   <meta name="author" content="Nikodemus Karlsson">
-  <title>CodeBubo - Funktioner i Python</title>
+  <title>CodeBubo - Strängar i Python</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -95,7 +95,7 @@
     code span.vs { color: #abe338; } /* VerbatimString */
     code span.wa { color: #dcc6e0; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto.css">
+  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/theme/quarto.css">
   <link rel="stylesheet" href="style.css">
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FFXVNM3K2N"></script>
 
@@ -106,10 +106,10 @@
   gtag('js', new Date());
   gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
   </script>
-  <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="../../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link href="../../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -399,8 +399,8 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-color="black" data-background-image="https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/funktioner/technology-3762546_1280.jpg" data-background-opacity="1" class="quarto-title-block center">
-  <h1 class="title">Funktioner i Python</h1>
+<section id="title-slide" data-background-color="black" data-background-image="https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/listor/pattern-3177396_1280.png" data-background-opacity="1" class="quarto-title-block center">
+  <h1 class="title">Strängar i Python</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -414,150 +414,142 @@ Nikodemus Karlsson
 <section id="dagens-mål" class="slide level2">
 <h2>Dagens mål</h2>
 <ul>
-<li>Att känna till vad en funktion är för något</li>
-<li>Att känna till hur en funktion anropas</li>
-<li>Att kunna läsa ut vilka parametrar en funktion tar</li>
-<li>Att känna till skillnaden mellan funktioner som har …</li>
-<li>… respektive saknar returvärden</li>
-<li>Att kunna tilldela en variabel ett värde från en funktion</li>
-<li>Att kunna skriva enkla funktioner …</li>
-<li>… såväl med som utan returvärden</li>
+<li>Att känna till datatypen <code>str</code></li>
+<li>Att kunna komma åt enskilda tecken i en sträng</li>
+<li>Att kunna applicera olika <em>metoder</em> på en sträng</li>
 </ul>
 </section>
-<section id="vad-är-en-funktion-i-programmering" class="slide level2">
-<h2>Vad är en funktion i programmering?</h2>
+<section id="vad-är-en-sträng" class="slide level2">
+<h2>Vad är en sträng?</h2>
 <div class="v-space">
 
 </div>
 <div class="blue-bg-small-padding">
-<p>Funktioner används för att dela upp ett program i mindre delar. En funktion <em>anropas</em> från det ställe man vill den ska utföras.</p>
-<p>Vi har redan träffat på funktioner i form av <code>print</code>, <code>input</code> och <code>range</code>. Nu ska vi titta på hur egna funktioner skapas.</p>
+<p>En sträng är en följd av tecken. Ofta används dessa för någon form av utmatning i programmet.</p>
+<p>Den datatyp som representerar en sträng i Python kallas <code>str</code>.</p>
+<p>Strängar har vissa saker gemensamt med listor; t ex så har varje tecken ett index, som gör att det kan adresseras.</p>
 </div>
 </section>
-<section id="användning-av-en-enkel-funktion" class="slide level2">
-<h2>Användning av en enkel funktion</h2>
+<section id="exempel-på-en-sträng" class="slide level2">
+<h2>Exempel på en sträng</h2>
 <div class="double-v-space">
 
 </div>
-<p>Exempel: En funktion som adderar två tal:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>tal_1 <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a>tal_2 <span class="op">=</span> <span class="dv">20</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a>summa <span class="op">=</span> add(tal_1, tal_2)</span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="bu">print</span>(<span class="ss">f"Summan av </span><span class="sc">{</span>tal_1<span class="sc">}</span><span class="ss"> och </span><span class="sc">{</span>tal_2<span class="sc">}</span><span class="ss"> är </span><span class="sc">{</span>summa<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="v-space">
-
-</div>
-<p>Funktionen <code>add</code> finns inte fördefinierad i Python, den måste vi skapa själva!</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>my_string <span class="op">=</span> <span class="st">"Hello, world"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Texten <code>Hello, world</code> kallas för en <em>strängkonstant</em> eller <em>strängliteral</em>. Denna strängkonstant måste vara given inom citationstecken.</p>
 </section>
-<section id="implementering" class="slide level2">
-<h2>Implementering</h2>
-<p>Vi kan skapa och använda funktionen <code>add</code> enligt följande:</p>
-<div class="v-space">
-
-</div>
+<section id="strängar-jämfört-med-listor" class="slide level2">
+<h2>Strängar jämfört med listor</h2>
+<p>Varje teckenläge i en sträng har ett <em>index</em>. Det går att nå ett tecken med hjälp av detta index.</p>
 <div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">def</span> add(a, b):   <span class="co"># Här</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a>  <span class="bu">sum</span> <span class="op">=</span> a <span class="op">+</span> b    <span class="co"># skapas</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a>  <span class="cf">return</span> <span class="bu">sum</span>     <span class="co"># funktionen</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a></span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="co"># Huvudprogram nedan</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a>tal_1 <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a>tal_2 <span class="op">=</span> <span class="dv">20</span></span>
-<span id="cb2-8"><a href="#cb2-8"></a>summa <span class="op">=</span> add(tal_1, tal_2) <span class="co"># Här anropas funktionen</span></span>
-<span id="cb2-9"><a href="#cb2-9"></a></span>
-<span id="cb2-10"><a href="#cb2-10"></a><span class="bu">print</span>(<span class="ss">f"Summan av </span><span class="sc">{</span>tal_1<span class="sc">}</span><span class="ss"> och </span><span class="sc">{</span>tal_2<span class="sc">}</span><span class="ss"> är </span><span class="sc">{</span>summa<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>my_string <span class="op">=</span> <span class="st">"Hello, world"</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="bu">print</span>(<span class="ss">f"Strängkonstanten är: </span><span class="sc">{</span>my_string<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="bu">print</span>(<span class="ss">f"Strängkonstantens första tecken är: </span><span class="sc">{</span>my_string[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="bu">print</span>(<span class="ss">f"Tecknet </span><span class="ch">\"</span><span class="ss">o</span><span class="ch">\"</span><span class="ss"> finns första gången på index: </span><span class="sc">{</span>my_string<span class="sc">.</span>index(<span class="st">'o'</span>)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Summan av 10 och 20 är 30</code></pre>
+<pre><code>Strängkonstanten är: Hello, world
+Strängkonstantens första tecken är: H
+Tecknet "o" finns första gången på index: 4</code></pre>
 </div>
 </div>
+<p>En skillnad mot listor är att strängar inte går att förändra. Vi kan inte lägga till ett tecken med något som liknar <code>append()</code> eller ta bort ett tecken med något som liknar <code>remove()</code>.</p>
+<p>Innehållet i en sträng kallas som sagt <strong>strängkonstant</strong>.</p>
+</section>
+<section id="delsträngar" class="slide level2">
+<h2>Delsträngar</h2>
 <div class="v-space">
 
 </div>
-</section>
-<section id="funktionen-range" class="slide level2">
-<h2>Funktionen <code>range</code></h2>
-<p>Exempel på hur parametrar påverkar resultatet av <code>range</code></p>
+<p>På samma sätt som med listor går det att ta fram en delsträng enligt följande.</p>
 <div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>lista_A <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">10</span>))</span>
-<span id="cb4-2"><a href="#cb4-2"></a>lista_B <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>))</span>
-<span id="cb4-3"><a href="#cb4-3"></a>lista_C <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">2</span>))</span>
-<span id="cb4-4"><a href="#cb4-4"></a>lista_D <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">10</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>))</span>
-<span id="cb4-5"><a href="#cb4-5"></a><span class="bu">print</span>(<span class="ss">f"lista_A = </span><span class="sc">{</span>lista_A<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb4-6"><a href="#cb4-6"></a><span class="bu">print</span>(<span class="ss">f"lista_B = </span><span class="sc">{</span>lista_B<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb4-7"><a href="#cb4-7"></a><span class="bu">print</span>(<span class="ss">f"lista_C = </span><span class="sc">{</span>lista_C<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb4-8"><a href="#cb4-8"></a><span class="bu">print</span>(<span class="ss">f"lista_D = </span><span class="sc">{</span>lista_D<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>my_str <span class="op">=</span> <span class="st">"Detta är en sträng som består av 42 tecken"</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="bu">print</span>(my_str[:<span class="dv">8</span>])</span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="bu">print</span>(my_str[<span class="dv">19</span>:<span class="dv">29</span>])</span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="bu">print</span>(my_str[<span class="dv">33</span>:])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>lista_A = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-lista_B = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4]
-lista_C = [0, 2, 4, 6, 8]
-lista_D = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]</code></pre>
+<pre><code>Detta är
+som består
+42 tecken</code></pre>
 </div>
 </div>
 </section>
-<section id="exempel-multiplikationstabell" class="slide level2">
-<h2>Exempel: Multiplikationstabell</h2>
+<section id="loopa-genom-strängar" class="slide level2">
+<h2>Loopa genom strängar</h2>
+<div class="v-space">
+
+</div>
+<p>Det går att loopa genom en sträng och på så sätt gå igenom tecken för tecken. I följande exempel skrivs vokalerna ut i en sträng samtidigt som övriga tecken maskeras.</p>
 <div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Detta program beräknar och skriver ut "tolvans tabell"</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">13</span>):</span>
-<span id="cb6-3"><a href="#cb6-3"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">:2.0f}</span><span class="ss"> * 12 = </span><span class="sc">{</span>i<span class="op">*</span><span class="dv">12</span><span class="sc">:3.0f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>vowels <span class="op">=</span> <span class="st">"aeiouyåäö"</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>chars <span class="op">=</span> <span class="st">"Hello, world"</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="cf">for</span> char <span class="kw">in</span> chars:</span>
+<span id="cb6-4"><a href="#cb6-4"></a>    <span class="cf">if</span> char.lower() <span class="kw">in</span> vowels:</span>
+<span id="cb6-5"><a href="#cb6-5"></a>        <span class="bu">print</span>(char, end<span class="op">=</span><span class="st">""</span>)</span>
+<span id="cb6-6"><a href="#cb6-6"></a>    <span class="cf">else</span>:</span>
+<span id="cb6-7"><a href="#cb6-7"></a>        <span class="bu">print</span>(<span class="st">"*"</span>, end<span class="op">=</span><span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> 1 * 12 =  12
- 2 * 12 =  24
- 3 * 12 =  36
- 4 * 12 =  48
- 5 * 12 =  60
- 6 * 12 =  72
- 7 * 12 =  84
- 8 * 12 =  96
- 9 * 12 = 108
-10 * 12 = 120
-11 * 12 = 132
-12 * 12 = 144</code></pre>
+<pre><code>*e**o***o***</code></pre>
 </div>
 </div>
 </section>
-<section id="andra-listelement-än-tal" class="slide level2">
-<h2>Andra listelement än tal</h2>
-<p>En lista kan innehålla andra element än tal.</p>
-<div class="v-space">
-
-</div>
+<section id="skapa-en-ny-sträng-utifrån-ett-original" class="slide level2">
+<h2>Skapa en ny sträng utifrån ett original</h2>
+<p>Exempel: skriva ut vokalerna i en sträng.</p>
 <div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>items <span class="op">=</span> [<span class="st">"Klocka"</span>, <span class="st">"Kikare"</span>, <span class="st">"Termometer"</span>]</span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="bu">print</span>(<span class="st">"Du har tillgång till:"</span>, end<span class="op">=</span><span class="st">" "</span>)</span>
-<span id="cb8-3"><a href="#cb8-3"></a><span class="cf">for</span> item <span class="kw">in</span> items:</span>
-<span id="cb8-4"><a href="#cb8-4"></a>    <span class="bu">print</span>(item, end<span class="op">=</span><span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>vowels <span class="op">=</span> <span class="st">"aeiouyåäö"</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>source <span class="op">=</span> <span class="st">"Hello, world"</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a>destination <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="cf">for</span> char <span class="kw">in</span> source:</span>
+<span id="cb8-5"><a href="#cb8-5"></a>    <span class="cf">if</span> char.lower() <span class="kw">in</span> vowels:</span>
+<span id="cb8-6"><a href="#cb8-6"></a>        destination <span class="op">+=</span> char</span>
+<span id="cb8-7"><a href="#cb8-7"></a>    <span class="cf">else</span>:</span>
+<span id="cb8-8"><a href="#cb8-8"></a>        destination <span class="op">+=</span> <span class="st">"*"</span></span>
+<span id="cb8-9"><a href="#cb8-9"></a><span class="bu">print</span>(destination)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Du har tillgång till: Klocka Kikare Termometer </code></pre>
+<pre><code>*e**o***o***</code></pre>
 </div>
 </div>
-<div class="v-space">
-
-</div>
-<p>Vi kommer senare att titta på hur element kan läggas till, tas bort och sorteras i listor. Det är användbart t ex i spel.</p>
+<p>Effekten är bl a att valda delar av <code>source</code> kopieras till <code>destination</code> med additionsoperatorn.</p>
 </section>
-<section id="ett-tänkt-exempel" class="slide level2">
-<h2>Ett tänkt exempel</h2>
+<section id="strängmetoder" class="slide level2">
+<h2>Strängmetoder</h2>
+<p>Vi har redan sett exempel på <em>strängmetoder</em>: <code>.index()</code>, som returnerar indexnumret för första förekomsten av ett tecken i en sträng, och <code>.lower()</code>, vilken returnerar samma sträng som vi tillämpar metoden på, men alla alfanumeriska tecken blir gemener (“små bokstäver”).</p>
+<p>Fler exempel på användbara strängmetoder finns på <a href="../../cheat_sheet_python.html#strängar-och-strängmetoder">detta “cheat sheet”</a>.</p>
+</section>
+<section id="fejka-förändring" class="slide level2">
+<h2>Fejka förändring</h2>
+<p>Strängmetoder förändrar inte strängen.</p>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>my_str <span class="op">=</span> <span class="st">"Detta är en sträng som består av 42 tecken"</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>my_upper_str <span class="op">=</span> my_str.upper()</span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="bu">print</span>(my_str)</span>
+<span id="cb10-4"><a href="#cb10-4"></a><span class="bu">print</span>(my_upper_str)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Detta är en sträng som består av 42 tecken
+DETTA ÄR EN STRÄNG SOM BESTÅR AV 42 TECKEN</code></pre>
+</div>
+</div>
 <div class="v-space">
 
 </div>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>items <span class="op">=</span> [<span class="st">"Klocka"</span>, <span class="st">"Kikare"</span>, <span class="st">"Termometer"</span>]</span>
-<span id="cb10-2"><a href="#cb10-2"></a><span class="cf">for</span> item <span class="kw">in</span> items:</span>
-<span id="cb10-3"><a href="#cb10-3"></a>    <span class="cf">if</span> item.is_boostable:</span>
-<span id="cb10-4"><a href="#cb10-4"></a>      item.boost()</span>
-<span id="cb10-5"><a href="#cb10-5"></a>      <span class="bu">print</span>(<span class="ss">f"Din </span><span class="sc">{</span>item<span class="sc">}</span><span class="ss"> är nu boostad ✅"</span>)</span>
-<span id="cb10-6"><a href="#cb10-6"></a>    <span class="cf">else</span>:</span>
-<span id="cb10-7"><a href="#cb10-7"></a>      <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>item<span class="sc">}</span><span class="ss"> gick inte att boosta ❌"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Sekvensen ovan skulle kunna ingå i ett spelprogram. Här är <code>is_boostable</code> en <em>egenskap</em> hos <em>objektet</em> <code>item</code> och <code>boost</code> är en <em>metod</em> som tillämpas. Dessa saker måste programmeraren designa själv; det är inte inbyggt i Python.</p>
-<p>Senare i kursen kommer vi att komma till klasser, och koppla objekt, egenskaper och metoder till dessa.</p>
+<p>Det går också att tilldela den gamla strängens namn det nya värdet.</p>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>my_str <span class="op">=</span> <span class="st">"Detta är en sträng som består av 42 tecken"</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a>my_str <span class="op">=</span> my_str.upper()</span>
+<span id="cb12-3"><a href="#cb12-3"></a><span class="bu">print</span>(my_str)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>DETTA ÄR EN STRÄNG SOM BESTÅR AV 42 TECKEN</code></pre>
+</div>
+</div>
 </section>
 <section id="sammanfattning" class="slide level2">
 <h2>Sammanfattning</h2>
 <ul>
-<li><code>for</code>-loopar används antingen när något ska göras ett förutbestämt antal gånger…</li>
-<li>… eller när någon funktion ska tillämpas på ett element i taget i en lista</li>
-<li>Funktionen <code>range</code> kan användas för att skapa listor</li>
-<li>Funktionen <code>range</code> ger olika utdata beroende på vilka parametrar som används</li>
+<li>Strängar i ett datorprogram är en följd av tecken</li>
+<li>På samma sätt som listor så kan enskilda tecken kommas åt med sitt indexnummer</li>
+<li>Till skillnad från listor så kan strängen inte förändras…</li>
+<li>… men vi kan få en “effekt” av en förändring t ex genom användning av additionsoperatorn (den gamla strängen skrivs då över)</li>
+<li>Det finns strängmetoder med vars hjälp det går att utföra olika operationer på strängar</li>
 </ul>
 
 <div class="footer footer-default">
@@ -568,19 +560,19 @@ lista_D = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]</code></pre>
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="../../../site_libs/revealjs/dist/reveal.js"></script>
+  <script src="../../../../site_libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="../../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="../../../site_libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/search/search.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script src="../../../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../../../site_libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
