@@ -209,6 +209,9 @@ I följande exempel är följande deklaration gjord: `str1 = "Detta är en strä
 |`.replace()`|`str1.replace("42", "många")`|`"Detta är en sträng som består av många tecken"`|Ersätter ett tecken, eller en följd av tecken, med andra tecken. `str1` är oförändrad.|
 |`.split()`|`str1.split()`|`['Detta', 'är', 'en', 'sträng', 'som', 'består', 'av', '42', 'tecken']`|Gör om strängen till ord i en lista. Separatortecknet är mellanslag som standard. `str1` är oförändrad.|
 |`.index()`|`str1.index("a")`|`4`|Returnerar första positionen av ett tecken eller en teckenföljd. `str1` är oförändrad.|
+|`.isalnum()`|`"abc123".isalnum()`|`True`|Returnerar `True` om alla tecken som kontrolleras är alfanumeriska, dvs bokstäver eller siffror; annars `False`.|
+|`.isalpha()`|`"abc123".isalpha()`|`False`|Returnerar `True` om alla tecken som kontrolleras är bokstäver, annars `False`.|
+|`.isdigit()`|`"42".isdigit()`|`True`|Returnerar `True` om alla tecken som kontrolleras är siffror, annars `False`.|
 
 ## Funktioner
 En funktion i är ett kodblock som kan anropas och processas som en separat del i programmet. Den kan, men behöver inte, returnera ett värde (tal, sträng, lista,...).

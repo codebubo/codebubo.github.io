@@ -76,6 +76,21 @@ något som liknar `remove()`.
 Innehållet i en sträng kallas som sagt
 **strängkonstant**.
 
+## Delsträngar
+
+:::{.v-space}
+:::
+
+På samma sätt som med listor går det att ta fram en delsträng enligt följande.
+
+```{python}
+#| echo: true
+my_str = "Detta är en sträng som består av 42 tecken"
+print(my_str[:8])
+print(my_str[19:29])
+print(my_str[33:])
+```
+
 ## Loopa genom strängar
 
 :::{.v-space}
@@ -99,8 +114,7 @@ for char in chars:
 
 ## Skapa en ny sträng utifrån ett original
 
-Även om det inte går att ändra en sträng så kan en ny skapas utifrån ett
-innehåll.
+Exempel: skriva ut vokalerna i en sträng.
 
 ```{python}
 # | echo: true
@@ -115,6 +129,9 @@ for char in source:
 print(destination)
 ```
 
+Effekten är bl a att valda delar av `source` kopieras till `destination` med
+additionsoperatorn.
+
 ## Strängmetoder
 
 Vi har redan sett exempel på *strängmetoder*: `.index()`, som returnerar
@@ -125,9 +142,38 @@ alfanumeriska tecken blir gemener ("små bokstäver").
 Fler exempel på användbara strängmetoder finns på
 [detta "cheat sheet"](../../cheat_sheet_python.html#strängar-och-strängmetoder).
 
+## Fejka förändring
+
+Strängmetoder förändrar inte strängen.
+
+```{python}
+#| echo: true
+my_str = "Detta är en sträng som består av 42 tecken"
+my_upper_str = my_str.upper()
+print(my_str)
+print(my_upper_str)
+```
+
+:::{.v-space}
+:::
+
+Det går också att tilldela den gamla strängens namn det nya värdet.
+
+```{python}
+#| echo: true
+my_str = "Detta är en sträng som består av 42 tecken"
+my_str = my_str.upper()
+print(my_str)
+```
+
+
 ## Sammanfattning
 
-* Listor används för att samla flera värden under ett enda variabelnamn
-* Man kommer åt de enskilda elementen med dess index
-* Index-räkningen börjar på noll
-* Det finns funktionalitet för att göra olika operationer på en lista
+* Strängar i ett datorprogram är en följd av tecken
+* På samma sätt som listor så kan enskilda tecken kommas åt med sitt
+indexnummer
+* Till skillnad från listor så kan strängen inte förändras...
+* ... men vi kan få en "effekt" av en förändring t ex genom användning av
+additionsoperatorn (den gamla strängen skrivs då över)
+* Det finns strängmetoder med vars hjälp det går att utföra olika operationer
+på strängar
