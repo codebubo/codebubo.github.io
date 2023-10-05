@@ -39,6 +39,7 @@ website:
               - pr1/python/uppgifter/loopar/index.qmd
               - pr1/python/uppgifter/funktioner/index.qmd
               - pr1/python/uppgifter/listor/index.qmd
+              - pr1/python/uppgifter/strangar/index.qmd
       - section: "Programmering i matematik"
         contents:
           - section: "MatSpec"
