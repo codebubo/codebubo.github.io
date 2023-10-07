@@ -6,6 +6,11 @@ format:
     css: style.css
 ---
 
+<!--- Exporteras till pdf i Quarto med 
+ quarto render <filename>.qmd --to pdf 
+ samtidigt som format måste ställas till pdf
+ i YAML-sektionen -->
+
 # Python Cheat Sheet
 
 ## Matematiska operatorer
@@ -22,7 +27,9 @@ format:
 Operatorerna ovan är listade i prioriteringsordning.
 
 ## Variabler
-En variabel är ett namn med ett värde knutet till sig. En variabel är av en specifik *datatyp*. Variabler *tilldelas* ett värde enligt följande exempel (datatyp inom parentes):
+En variabel är ett namn med ett värde knutet till sig. En variabel är av en
+specifik *datatyp*. Variabler *tilldelas* ett värde enligt följande exempel
+(datatyp inom parentes):
 ```python
 pris    = 10                # Heltal (int), utan decimalpunkt
 sträcka = 4.5               # Flyttal (float), med decimalpunkt
@@ -31,10 +38,14 @@ is_game_on = True           # Boolesk variabel (bool), kan anta värdena True oc
 even5   = [2, 4, 6, 8, 10]  # Lista (list)
 ```
 
-En variabel kan förändras med t ex `pris += 0.5` (nu kommer `pris` att ha värdet `10.5`, och således också ha bytt datatyp till `float`).
-Ett annat exempel är `namn += " Lovelace"`. Nu kommer `namn` att utgöras av strängen `"Ada Lovelace"`.
+En variabel kan förändras med t ex `pris += 0.5` (nu kommer `pris` att ha
+värdet `10.5`, och således också ha bytt datatyp till `float`). Ett annat
+exempel är `namn += " Lovelace"`. Nu kommer `namn` att utgöras av strängen
+`"Ada Lovelace"`.
 
-Vissa datatyper går att konvertera till andra datatyper. T ex ger `str(3.14)` resultatet `"3.14"` (konvertering från `float` till `str`) och `int("9")` ger resultatet `9` (konvertering från `str` till `int`).
+Vissa datatyper går att konvertera till andra datatyper. T ex ger `str(3.14)`
+resultatet `"3.14"` (konvertering från `float` till `str`) och `int("9")` ger
+resultatet `9` (konvertering från `str` till `int`).
 
 ## `print`-satsen
 För att skriva ut något till konsolen kan en `print`-sats användas. Exempel:
@@ -46,14 +57,16 @@ print(f"Mitt favorittal är {favorite_number}, förstås.")
 # Skriver ut: Mitt favorittal är 42, förstås.
 ```
 ## `input`-satsen
-Ett program kan vänta på indata från konsolen genom funktionen `input`. Denna funktion returnerar alltid en sträng (`str`). Exempel:
+Ett program kan vänta på indata från konsolen genom funktionen `input`. Denna
+funktion returnerar alltid en sträng (`str`). Exempel:
 ```python
 given_name = input("Ange ditt förnamn -> ")
 print(f"Hej, {given_name}!")
 ```
 
 ## Jämförelseoperatorer
-Följande tilldelningar görs: `a = -2`, `b = a` och `c = 0`. Då kan dessa variabler jämföras t ex enligt följande:
+Följande tilldelningar görs: `a = -2`, `b = a` och `c = 0`. Då kan dessa
+variabler jämföras t ex enligt följande:
 
 | Operator | Operation | Resultat|
 | ------ | ------ | ------ |
@@ -64,10 +77,12 @@ Följande tilldelningar görs: `a = -2`, `b = a` och `c = 0`. Då kan dessa vari
 |Större än eller lika med| `a >= b`| `True`|
 |Mindre än eller lika med| `a <= c`| `True`|
 
-Det går även att jämföra flera variabler i en följd, t ex `a == b < c`, vilket returnar `True`.
+Det går även att jämföra flera variabler i en följd, t ex `a == b < c`, vilket
+returnar `True`.
 
 ## Logiska operatorer
-Det finns tre inbyggda logiska operatorer i Python: `and`, `or` och `not`. Följande tilldelningar görs: `a = True`, `b = False`, `c = True` och `d = False`.
+Det finns tre inbyggda logiska operatorer i Python: `and`, `or` och `not`.
+Följande tilldelningar görs: `a = True`, `b = False`, `c = True` och `d = False`.
 
 | Operator | Operation | Resultat|
 | ------ | ------ | ------ |
@@ -78,7 +93,8 @@ Det finns tre inbyggda logiska operatorer i Python: `and`, `or` och `not`. Följ
 | `not` | `not b` | `True` |
 | `not` | `not a` | `False` |
 
-Det går att tillämpa flera logiska operatorer i en följd, t ex `(a and not b) or (a and d)`, vilket returnerar `True`.
+Det går att tillämpa flera logiska operatorer i en följd, t ex `(a and not b)
+or (a and d)`, vilket returnerar `True`.
 
 ## Villkor
 I Python prövas ett *villkor* med `if`-satser. Syntaxen är
@@ -86,7 +102,8 @@ I Python prövas ett *villkor* med `if`-satser. Syntaxen är
 if <booleskt_uttryck_1>:
     <gör något om booleskt_uttryck_1 är True>
 elif <booleskt_uttryck_2>:
-    <Om inte booleskt_uttryck_1 var True, gör något annat om booleskt_uttryck_2 är True>
+    <Om inte booleskt_uttryck_1 var True, gör något annat om booleskt_uttryck_2
+    är True>
 else:
     <Gör något annat om inget av de tidigare prövade booleska uttrycken var True>
 ```
@@ -114,7 +131,8 @@ while a < 5:
 # Skriver ut 0 1 2 3 4
 ```
 
-Det går att kontrollera hur loopen körs genom nyckelorden `break` (avbryter aktuell loop) och `continue` (startar om loopen från början). Exempel:
+Det går att kontrollera hur loopen körs genom nyckelorden `break` (avbryter
+aktuell loop) och `continue` (startar om loopen från början). Exempel:
 
 ```python
 a = 0
@@ -129,11 +147,14 @@ while True:
 # Skriver ut: 0 1 2 3 4 7 8
 ```
 ### `for`-loopar
-Se avsnitt Listor, underavsnitt Loopa genom listor. Nyckelorden `break` och `continue` fungerar på samma sätt i `for`-loopar som i `while`-loopar.
+Se avsnitt Listor, underavsnitt Loopa genom listor. Nyckelorden `break` och
+`continue` fungerar på samma sätt i `for`-loopar som i `while`-loopar.
 
 ## Listor
 ### Åtkomst av element
-Låt `lst = [10, 20, 30, 40, 50]`. Då gäller att `lst[0]` har värdet `10` och `lst[1]` har värdet `20` osv. Det gäller också att `lst[-1]` har värdet `50` och `lst[-2]` har värdet `40` osv.
+Låt `lst = [10, 20, 30, 40, 50]`. Då gäller att `lst[0]` har värdet `10` och
+`lst[1]` har värdet `20` osv. Det gäller också att `lst[-1]` har värdet `50`
+och `lst[-2]` har värdet `40` osv.
 
 Det går att komma åt delar av listan går det att göra
 ```python
@@ -145,7 +166,9 @@ lst[::-1]  # Resultat: [50, 40, 30, 20, 10] (Baklänges)
 ```
 
 ### Skapa listor
-En lista kan skapas med den inbyggda funktionen `range`. T ex `long_list = list(range(100, 1000, 2))`. Detta kommer att skapa listan `[100, 102, 104,..., 998]`.
+En lista kan skapas med den inbyggda funktionen `range`. T ex
+`long_list = list(range(100, 1000, 2))`. Detta kommer att skapa listan
+`[100, 102, 104,..., 998]`.
 
 ### Antal element i en lista
 Antalet element i en lista erhålls med den inbyggda funktionen `len`. Exempel:
@@ -192,12 +215,19 @@ lst.sort(reverse=True) # lst är nu [10, 8, 5, 3, -1]
 ```
 
 ## Strängar och strängmetoder
-En sträng (datatyp `str`) kan i flera flera fall hanteras som en lista. Exempel: `str1 = "abc 123"`. Då gäller att `str1[1]` innehåller `"b"` och `str1[-1]` innehåller `"3"`. Däremot går det inte att utföra `str1[-1] = 4`; det ger ett felmeddelande eftersom strängar inte är muterbara. Antalet tecken i en sträng erhålls på samma sätt som antalet element i en lista med funktionen `len`; t ex ger `len(str1)` returvärdet `7`.
+En sträng (datatyp `str`) kan i flera flera fall hanteras som en lista.
+Exempel: `str1 = "abc 123"`. Då gäller att `str1[1]` innehåller `"b"` och
+`str1[-1]` innehåller `"3"`. Däremot går det inte att utföra `str1[-1] = 4`;
+det ger ett felmeddelande eftersom strängar inte är muterbara. Antalet tecken i
+en sträng erhålls på samma sätt som antalet element i en lista med funktionen
+`len`; t ex ger `len(str1)` returvärdet `7`.
 
-**Delsträngar** fungerar på samma sätt som att komma åt delar av en lista; se rubriken Listor, underrubrik Åkomst av element ovan.
+**Delsträngar** fungerar på samma sätt som att komma åt delar av en lista; se
+rubriken Listor, underrubrik Åkomst av element ovan.
 
 ### Strängmetoder
-I följande exempel är följande deklaration gjord: `str1 = "Detta är en sträng som består av 42 tecken"`
+I följande exempel är följande deklaration gjord: `str1 = "Detta är en sträng
+som består av 42 tecken"`
 
 | Metod | Exempel | Resultat| Kommentar|
 | ------ | ------ | ------ |------|

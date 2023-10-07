@@ -300,3 +300,99 @@ födelsedag som kan vara gemensam, enbart *att* någon födelsedag är gemensam 
 en viss sannolikhet.
 
 :::
+
+### Grupperingarna
+
+Sex personer, `a`, `b`, `c`, `d`, `e` och `f` ska bilda grupper om två och två.
+På hur många sätt kan detta ske om
+
+a. Person `a`, `b` och `c` är gruppledare för varsina grupper?
+b. Person `a` är gruppledare för en grupp, och de övriga grupperna saknar
+en given gruppledare?
+c. Ingen grupp har någon given gruppledare?
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag"}
+
+
+**a-uppgiften**
+
+Följande illustration ger en idé om hur grupperna formeras:
+
+```
+Grupp 1    Grupp 2    Grupp 3
+ ---        ---        --- 
+| a |      | b |      | c |
+|   |      |   |      |   |
+ ---        ---        --- 
+Valbara personer till grupperna:
+d, e och f
+```
+
+Grupp 1 kan välja en av tre personer, Grupp 2 en av två och till Grupp 3 kommer
+en enda person att kunna väljas  på precis ett sätt. Eftersom `a`, `b` och
+`c` är givna så kommer det inte att kunna bli några dubletter av grupper (som
+det blir i nästa deluppgift). Antalet grupper blir, enligt
+multiplikationsprincipen, $3\cdot 2\cdot 1 = 6$.
+
+**b-uppgiften**
+
+Följande illustration visar hur grupperna formeras. Observera att vi från
+början har två "tomma grupper" dit personer ska väljas in.
+
+```
+Grupp 1    Grupp 2    Grupp 3
+ ---        ---        --- 
+| a |      |   |      |   |
+|   |      |   |      |   |
+ ---        ---        --- 
+Valbara personer till grupperna:
+b, c, d, e och f
+```
+
+Grupp 1 ska välja en person, medan Grupp 2 och Grupp 3 ska välja två personer.
+Om vi enbart tecknar antalet konstellationer med multiplikationsprincipen,
+
+$$
+\binom{5}{1}\binom{4}{2}\binom{2}{2}=30
+$$
+
+så kommer det att finnas fall där Grupp 2 och Grupp 3 i en konstellation
+är densamma som Grupp 3 och Grupp 2 i en annan konstellation. Detta beroende
+på att Grupp 2 och Grupp 3 inte innehåller något på förhand givet element.
+Därför måste vi dividera med antalet permutationer av dessa grupper, vilket är
+$2!$. 
+
+Vi får det korrekta antalet grupper till
+
+$$
+\frac{\binom{5}{1}\binom{4}{2}\binom{2}{2}}{2!}=15
+$$
+
+Vi behöver inte räkna den grupp med en given person först, ett annat sätt
+är att välja två personer av fem till Grupp 2 först, och därefter
+två personer av tre till Grupp 3. Sedan är Grupp 1 given, eftersom det enbart
+finns en person kvar att välja. Givetvis kan vi även välja \mbox{t ex} Grupp
+3 först, därefter Grupp 1 och sist Grupp 2.
+
+$$
+\frac{\binom{5}{2}\binom{3}{2}\binom{1}{1}}{2!}
+=\frac{\binom{5}{2}\binom{3}{1}\binom{2}{2}}{2!}=15
+$$
+
+**c-uppgiften**
+
+Här resonerar vi på precis samma sätt som i b-uppgiften, men nu ska till
+**varje** grupp ska väljas två personer. Eftersom ingen person är given på
+förhand till någon grupp så kommer det att bli multipler av konstellationerna.
+Detta kompenseras genom att dividera med antalet permutationer av alla grupper,
+vilket är $3!$.
+
+$$
+\frac{\binom{6}{2}\binom{4}{2}\binom{2}{2}}{3!}=15
+$$
+
+
+Lustigt nog blir det samma resultat som i b-uppgiften. Det beror på att när
+två grupper är valda så finns det enbart en möjlighet att välja den sista
+gruppen.
+:::
