@@ -334,6 +334,7 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
   <li><a href="#binomialkoefficienten" id="toc-binomialkoefficienten" class="nav-link" data-scroll-target="#binomialkoefficienten">Binomialkoefficienten</a></li>
   <li><a href="#basketbollkasten" id="toc-basketbollkasten" class="nav-link" data-scroll-target="#basketbollkasten">Basketbollkasten</a></li>
   <li><a href="#födelsedagarna" id="toc-födelsedagarna" class="nav-link" data-scroll-target="#födelsedagarna">Födelsedagarna</a></li>
+  <li><a href="#grupperingarna" id="toc-grupperingarna" class="nav-link" data-scroll-target="#grupperingarna">Grupperingarna</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -651,6 +652,69 @@ Lösningsförslag
 \]</span></p>
 <p>Sannolikheten för komplementhändelsen till att alla födelsedagar är olika, vilken är att minst en person har gemensam födelsedag med någon annan i gruppen, ges av beräkningen <span class="math inline">\(1-0.493=0.507\)</span>, dvs <span class="math inline">\(50.7\)</span> %.</p>
 <p>Orsaken att sannolikheten blir så stor för en så förhållandevis liten grupp är att antalet par i gruppen blir stort. Vi gör ingen förutsägelse om <em>vilken</em> födelsedag som kan vara gemensam, enbart <em>att</em> någon födelsedag är gemensam med en viss sannolikhet.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="grupperingarna" class="level3">
+<h3 class="anchored" data-anchor-id="grupperingarna">Grupperingarna</h3>
+<p>Sex personer, <code>a</code>, <code>b</code>, <code>c</code>, <code>d</code>, <code>e</code> och <code>f</code> ska bilda grupper om två och två. På hur många sätt kan detta ske om</p>
+<ol type="a">
+<li>Person <code>a</code>, <code>b</code> och <code>c</code> är gruppledare för varsina grupper?</li>
+<li>Person <code>a</code> är gruppledare för en grupp, och de övriga grupperna saknar en given gruppledare?</li>
+<li>Ingen grupp har någon given gruppledare?</li>
+</ol>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a-uppgiften</strong></p>
+<p>Följande illustration ger en idé om hur grupperna formeras:</p>
+<pre><code>Grupp 1    Grupp 2    Grupp 3
+ ---        ---        --- 
+| a |      | b |      | c |
+|   |      |   |      |   |
+ ---        ---        --- 
+Valbara personer till grupperna:
+d, e och f</code></pre>
+<p>Grupp 1 kan välja en av tre personer, Grupp 2 en av två och till Grupp 3 kommer en enda person att kunna väljas på precis ett sätt. Eftersom <code>a</code>, <code>b</code> och <code>c</code> är givna så kommer det inte att kunna bli några dubletter av grupper (som det blir i nästa deluppgift). Antalet grupper blir, enligt multiplikationsprincipen, <span class="math inline">\(3\cdot 2\cdot 1 = 6\)</span>.</p>
+<p><strong>b-uppgiften</strong></p>
+<p>Följande illustration visar hur grupperna formeras. Observera att vi från början har två “tomma grupper” dit personer ska väljas in.</p>
+<pre><code>Grupp 1    Grupp 2    Grupp 3
+ ---        ---        --- 
+| a |      |   |      |   |
+|   |      |   |      |   |
+ ---        ---        --- 
+Valbara personer till grupperna:
+b, c, d, e och f</code></pre>
+<p>Grupp 1 ska välja en person, medan Grupp 2 och Grupp 3 ska välja två personer. Om vi enbart tecknar antalet konstellationer med multiplikationsprincipen,</p>
+<p><span class="math display">\[
+\binom{5}{1}\binom{4}{2}\binom{2}{2}=30
+\]</span></p>
+<p>så kommer det att finnas fall där Grupp 2 och Grupp 3 i en konstellation är densamma som Grupp 3 och Grupp 2 i en annan konstellation. Detta beroende på att Grupp 2 och Grupp 3 inte innehåller något på förhand givet element. Därför måste vi dividera med antalet permutationer av dessa grupper, vilket är <span class="math inline">\(2!\)</span>.</p>
+<p>Vi får det korrekta antalet grupper till</p>
+<p><span class="math display">\[
+\frac{\binom{5}{1}\binom{4}{2}\binom{2}{2}}{2!}=15
+\]</span></p>
+<p>Vi behöver inte räkna den grupp med en given person först, ett annat sätt är att välja två personer av fem till Grupp 2 först, och därefter två personer av tre till Grupp 3. Sedan är Grupp 1 given, eftersom det enbart finns en person kvar att välja. Givetvis kan vi även välja Grupp 3 först, därefter Grupp 1 och sist Grupp 2.</p>
+<p><span class="math display">\[
+\frac{\binom{5}{2}\binom{3}{2}\binom{1}{1}}{2!}
+=\frac{\binom{5}{2}\binom{3}{1}\binom{2}{2}}{2!}=15
+\]</span></p>
+<p><strong>c-uppgiften</strong></p>
+<p>Här resonerar vi på precis samma sätt som i b-uppgiften, men nu ska till <strong>varje</strong> grupp ska väljas två personer. Eftersom ingen person är given på förhand till någon grupp så kommer det att bli multipler av konstellationerna. Detta kompenseras genom att dividera med antalet permutationer av alla grupper, vilket är <span class="math inline">\(3!\)</span>.</p>
+<p><span class="math display">\[
+\frac{\binom{6}{2}\binom{4}{2}\binom{2}{2}}{3!}=15
+\]</span></p>
+<p>Lustigt nog blir det samma resultat som i b-uppgiften. Det beror på att när två grupper är valda så finns det enbart en möjlighet att välja den sista gruppen.</p>
 </div>
 </div>
 </div>
