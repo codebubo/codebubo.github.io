@@ -48,6 +48,7 @@ website:
                 contents:
                   - ma/ma-spec/programmering/teori-och-ovningar/octave-som-kalkylator/index.qmd
                   - ma/ma-spec/programmering/teori-och-ovningar/funktioner-villkor-och-loopar/index.qmd
+                  - ma/ma-spec/programmering/teori-och-ovningar/lin-ekvationssystem-med-octave/index.qmd
       - section: Matematikrelaterat
       - text: "---"
       - section: "Matematik 5"
