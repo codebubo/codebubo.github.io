@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CodeBubo - Octave: Octave som kalkylator</title>
+<title>CodeBubo - Octave: Lösning av linjära ekvationssystem</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -112,7 +146,7 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Programmering i matematik</li><li class="breadcrumb-item">MatSpec</li><li class="breadcrumb-item"><a href="../../../../../ma/ma-spec/programmering/teori-och-ovningar/octave-som-kalkylator/index.html">Teori och övningar</a></li><li class="breadcrumb-item"><a href="../../../../../ma/ma-spec/programmering/teori-och-ovningar/octave-som-kalkylator/index.html">Octave: Octave som kalkylator</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Programmering i matematik</li><li class="breadcrumb-item">MatSpec</li><li class="breadcrumb-item"><a href="../../../../../ma/ma-spec/programmering/teori-och-ovningar/octave-som-kalkylator/index.html">Teori och övningar</a></li><li class="breadcrumb-item"><a href="../../../../../ma/ma-spec/programmering/teori-och-ovningar/lin-ekvationssystem-med-octave/index.html">Octave: Lösning av linjära ekvationssystem</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -274,7 +308,7 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth3 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../ma/ma-spec/programmering/teori-och-ovningar/octave-som-kalkylator/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../../../ma/ma-spec/programmering/teori-och-ovningar/octave-som-kalkylator/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Octave: Octave som kalkylator</span></a>
   </div>
 </li>
@@ -286,7 +320,7 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../ma/ma-spec/programmering/teori-och-ovningar/lin-ekvationssystem-med-octave/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../../ma/ma-spec/programmering/teori-och-ovningar/lin-ekvationssystem-med-octave/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Octave: Lösning av linjära ekvationssystem</span></a>
   </div>
 </li>
@@ -328,21 +362,14 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#octave-som-kalkylator" id="toc-octave-som-kalkylator" class="nav-link active" data-scroll-target="#octave-som-kalkylator">Octave som kalkylator</a>
+  <li><a href="#lösning-av-linjära-ekvationssystem" id="toc-lösning-av-linjära-ekvationssystem" class="nav-link active" data-scroll-target="#lösning-av-linjära-ekvationssystem">Lösning av linjära ekvationssystem</a>
   <ul class="collapse">
   <li><a href="#teori" id="toc-teori" class="nav-link" data-scroll-target="#teori">Teori</a></li>
   <li><a href="#övningar" id="toc-övningar" class="nav-link" data-scroll-target="#övningar">Övningar</a>
   <ul class="collapse">
-  <li><a href="#övning-101" id="toc-övning-101" class="nav-link" data-scroll-target="#övning-101">Övning 101</a></li>
-  <li><a href="#övning-102" id="toc-övning-102" class="nav-link" data-scroll-target="#övning-102">Övning 102</a></li>
-  <li><a href="#övning-103" id="toc-övning-103" class="nav-link" data-scroll-target="#övning-103">Övning 103</a></li>
-  <li><a href="#övning-104" id="toc-övning-104" class="nav-link" data-scroll-target="#övning-104">Övning 104</a></li>
-  <li><a href="#övning-105" id="toc-övning-105" class="nav-link" data-scroll-target="#övning-105">Övning 105</a></li>
-  <li><a href="#övning-106" id="toc-övning-106" class="nav-link" data-scroll-target="#övning-106">Övning 106</a></li>
-  <li><a href="#övning-107" id="toc-övning-107" class="nav-link" data-scroll-target="#övning-107">Övning 107</a></li>
-  <li><a href="#övning-108" id="toc-övning-108" class="nav-link" data-scroll-target="#övning-108">Övning 108</a></li>
-  <li><a href="#övning-109" id="toc-övning-109" class="nav-link" data-scroll-target="#övning-109">Övning 109</a></li>
-  <li><a href="#övning-110" id="toc-övning-110" class="nav-link" data-scroll-target="#övning-110">Övning 110</a></li>
+  <li><a href="#övning-301" id="toc-övning-301" class="nav-link" data-scroll-target="#övning-301">Övning 301</a></li>
+  <li><a href="#övning-302" id="toc-övning-302" class="nav-link" data-scroll-target="#övning-302">Övning 302</a></li>
+  <li><a href="#övning-303" id="toc-övning-303" class="nav-link" data-scroll-target="#övning-303">Övning 303</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -353,7 +380,7 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Octave: Octave som kalkylator</h1>
+<h1 class="title">Octave: Lösning av linjära ekvationssystem</h1>
 </div>
 
 
@@ -368,403 +395,91 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
 
 </header>
 
-<section id="octave-som-kalkylator" class="level1">
-<h1>Octave som kalkylator</h1>
+<section id="lösning-av-linjära-ekvationssystem" class="level1">
+<h1>Lösning av linjära ekvationssystem</h1>
 <section id="teori" class="level2">
 <h2 class="anchored" data-anchor-id="teori">Teori</h2>
-<p>Se kap. 1 i dokumentet <a href="https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/docs/linalg/ovningar-i-octave-kap-0-4.pdf">Teori och övningar i programmet Octave</a></p>
+<p>Ett sätt att lösa ett linjära ekvationssystem i Octave är att först deklarera det som en koefficientmatris <span class="math inline">\(A\)</span> och en vektor <span class="math inline">\(\vec{v}\)</span> enligt <span class="math inline">\(A\vec{x}=\vec{v}\)</span> (här kommer vektorn <span class="math inline">\(\vec{x}\)</span> att utgöra den beräknade lösningsvektorn).</p>
+<p>För att lösa ekvationssystemet <span class="math inline">\(A\vec{x}=\vec{v}\)</span>, där <span class="math inline">\(A\)</span> och <span class="math inline">\(\vec{v}\)</span> är deklarerade så används “backslash-operatorn” enligt <code>A \ v</code>.</p>
+<p><strong>Exempel</strong></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Lös följande ekvationssystem med Octave</p>
+<p><span class="math display">\[
+\left \{
+\begin{matrix*}[r]
+x_1&amp;+&amp;2x_2&amp;=&amp;-1\\
+2x_1&amp;-&amp;3x_2&amp;=&amp;12
+\end{matrix*}
+\right .
+\]</span></p>
+<p>Vi deklarerar koefficientmatrisen <span class="math inline">\(A\)</span> och vektorn <span class="math inline">\(\vec{v}\)</span>:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode octave code-with-copy"><code class="sourceCode octave"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>octave<span class="op">:</span><span class="fl">1</span><span class="op">&gt;</span> A <span class="op">=</span> [<span class="fl">1</span> <span class="fl">2</span> <span class="op">;</span> <span class="fl">2</span> <span class="op">-</span><span class="fl">3</span>]<span class="op">;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>octave<span class="op">:</span><span class="fl">2</span><span class="op">&gt;</span> v <span class="op">=</span> [<span class="op">-</span><span class="fl">1</span> <span class="op">;</span> <span class="fl">12</span>]<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Därefter så löses systemet:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode octave code-with-copy"><code class="sourceCode octave"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>octave<span class="op">:</span><span class="fl">3</span><span class="op">&gt;</span> x <span class="op">=</span> A <span class="op">\</span> v</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>   <span class="fl">3</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="op">-</span><span class="fl">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>där utmatningen innebär att <span class="math inline">\(x_1=3\)</span> och <span class="math inline">\(x_2=-2\)</span>.</p>
+<p>Just i det här fallet blev lösningen heltal, men det kan bli såväl rationella som irrationella lösningar; man får då ha i åtanke att Octave jobbar med avrundade närmevärden och inte exakta tal (som går att approximera till rationella tal).</p>
+</div>
+</div>
+</div>
 </section>
 <section id="övningar" class="level2">
 <h2 class="anchored" data-anchor-id="övningar">Övningar</h2>
-<section id="övning-101" class="level3">
-<h3 class="anchored" data-anchor-id="övning-101">Övning 101</h3>
-<p>Beräkna <span class="math inline">\(\frac{1}{19} - \frac{1}{17} + \frac{1}{131}\)</span> med Octave. Svara med</p>
-<ol type="a">
-<li>Fyra decimaler</li>
-<li>I bråkform</li>
-<li>Med femton decimaler</li>
-</ol>
-<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 101">
+<section id="övning-301" class="level3">
+<h3 class="anchored" data-anchor-id="övning-301">Övning 301</h3>
+<p>Lös det linjära ekvationssystemet nedan med Octave.</p>
+<p><span class="math display">\[
+\left \{
+\begin{matrix*}[r]
+x&amp;+&amp;2y&amp;+&amp;3z&amp;=&amp;10\\
+x&amp;+&amp;y&amp;-&amp;z&amp;=&amp;4\\
+2x&amp;-&amp;y&amp;+&amp;z&amp;=&amp;5
+\end{matrix*}
+\right .
+\]</span></p>
+<p>Lagra koefficientmatrisen som <code>A</code> och den beräknade lösningen i vektorvariabeln <code>x</code> och verifiera den genom att exekvera <code>A*x</code>.</p>
+</section>
+<section id="övning-302" class="level3">
+<h3 class="anchored" data-anchor-id="övning-302">Övning 302</h3>
+<p>Ställ in Octave i rationellt läge genom att exekverar <code>format rat</code>. Lös sedan det linjära ekvationssystemet</p>
+<p><span class="math display">\[
+\left \{
+  \begin{matrix}
+  5x_1&amp;-&amp;x_2&amp;+&amp;3x_3&amp;=&amp;\frac{1849}{1092}\\[3mm]
+  &amp;x_1 &amp;+&amp;x_3&amp; &amp;=&amp;\frac{119}{156}\\[3mm]
+  &amp;x_3 &amp;-&amp;x_2&amp; &amp;=&amp;\frac{38}{91}
+  \end{matrix}
+\right .
+\]</span></p>
+<p>Lagra koefficientmatrisen som <code>A</code> och den beräknade lösningen i vektorvariabeln <code>x</code> och verifiera den genom att exekvera <code>A*x</code>. Kommentera resultatet.</p>
+</section>
+<section id="övning-303" class="level3">
+<h3 class="anchored" data-anchor-id="övning-303">Övning 303</h3>
+<p>En motorbåt färdas i en flod med strömt vatten. När den går med en given motorstyrka tar det fem timmar för den att färdas från punkt <span class="math inline">\(A\)</span> till <span class="math inline">\(B\)</span>, vilket är en sträcka på 60 km <em>mot</em> strömmen. När den sedan åker tillbaka från <span class="math inline">\(B\)</span> till <span class="math inline">\(A\)</span>, färdas den <em>med</em> strömmen; den färden tar fyra timmar med samma givna motorstyrka.</p>
+<p>Teckna ett ekvationssystem, som du löser med hjälp av Octave, som bestämmer dels båtens fart i vatten som inte är strömt (med den givna motorstyrkan) och dels vattenströmmens fart.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Svar övning 303">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Lösningsförslag övning 101
+Svar övning 303
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Lösningarna är gjorda i <em>Command Window</em>; den text som står tillsammans med ett nummer, t ex <code>Octave:1&gt;</code>, ska inte matas in.</p>
-<p><strong>a-uppgiften</strong></p>
-<pre><code>octave:1&gt; 1/19 - 1/17 + 1/131
-ans = 1.4416e-03</code></pre>
-<p><strong>b-uppgiften</strong></p>
-<pre><code>octave:2&gt; format rat
-octave:3&gt; 1/19 - 1/17 + 1/131
-ans = 61/42313</code></pre>
-<p><strong>c-uppgiften</strong></p>
-<pre><code>octave:4&gt; format long
-octave:5&gt; 1/19 - 1/17 + 1/131
-ans = 1.441637321863255e-03</code></pre>
-</div>
-</div>
-</div>
-</section>
-<section id="övning-102" class="level3">
-<h3 class="anchored" data-anchor-id="övning-102">Övning 102</h3>
-<p>Beräkna <span class="math inline">\(\frac{1}{19^2} - \frac{1}{17^2} + \frac{1}{131^2}\)</span> med Octave. Svara med</p>
-<ol type="a">
-<li>Femton decimaler</li>
-<li>I bråkform</li>
-</ol>
-<p>Jämför dina svar ovan med det du får om du anger samma uttryck i Wolfram Alpha. Kommentera resultatet.</p>
-<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 102">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Lösningsförslag övning 102
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong>a-uppgiften</strong></p>
-<p>Kommentar: formatet med 15 decimaler är kvar från den tidigare inmatningen i övning 1c; formatet ändras inte tillbaka till standard per automatik.</p>
-<pre><code>octave:6&gt; 1/19^2 - 1/17^2 + 1/131^2
-ans = -6.318528474731418e-04</code></pre>
-<p><strong>b-uppgiften</strong></p>
-<pre><code>octave:7&gt; format rat
-octave:8&gt; 1/19^2 - 1/17^2 + 1/131^2
-ans = -17/26905</code></pre>
-<p>Kommentar: Med Wolfram Alpha kommer svaret att bli <span class="math inline">\(\frac{-1131263}{1790389969}\)</span>. Det vi ser är att Octave skapar ett rationellt tal av ett avrundat värde.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="övning-103" class="level3">
-<h3 class="anchored" data-anchor-id="övning-103">Övning 103</h3>
-<p>Beräkna värdet av uttrycket <span class="math display">\[
-\frac{\left (\frac{\sqrt{5} + 1}{2} \right )^{10} - \left (\frac{\sqrt{5} - 1}{2} \right )^{10}}{\sqrt{5}}
-\]</span> på en enda rad.</p>
-<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 103">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Lösningsförslag övning 103
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<pre><code>octave:9&gt; format short
-octave:10&gt; (((sqrt(5) + 1) / 2)^10 - ((sqrt(5) - 1) / 2)^10) / sqrt(5)
-ans = 55.000</code></pre>
-</div>
-</div>
-</div>
-</section>
-<section id="övning-104" class="level3">
-<h3 class="anchored" data-anchor-id="övning-104">Övning 104</h3>
-<p>Skapa en vektor <span class="math inline">\(\vec{v}\)</span> med tio jämnt fördelade vinklar i intervallet 0° – 360° (tips: slå upp funktionen <code>linspace</code> genom att skriva <code>help linspace</code> vid Octave-prompten). Verifiera med en beräkning att identiteten <span class="math inline">\(\sin^2v_j + \cos^2v_j\)</span> gäller, där <span class="math inline">\(v_j\)</span> är komponenten i <span class="math inline">\(\vec{v}\)</span> med indexet <span class="math inline">\(j\)</span>.</p>
-<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 104">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Lösningsförslag övning 104
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<pre><code>octave:11&gt; v = linspace(0, 360, 10)
-v =
-
-     0    40    80   120   160   200   240   280   320   360
-
-octave:12&gt; (sin(v)).^2 + (cos(v)).^2
-ans =
-
-   1   1   1   1   1   1   1   1   1   1
-</code></pre>
-<p>vilket indikerar att respektive summa är 1.</p>
-<p>Observera punkten framför exponent-tecknet i uttrycket; den gör så att beräkningen sker komponentvis. Om punkten utelämnas kommer Octave att mata ut ett felmeddelande.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="övning-105" class="level3">
-<h3 class="anchored" data-anchor-id="övning-105">Övning 105</h3>
-<p>Evaluera följande uttryck i Octave, reflektera över resultatet.</p>
-<ol type="a">
-<li><code>1/0</code></li>
-<li><code>0/0</code></li>
-<li><code>tan(pi/2)</code></li>
-<li><code>inf + 1</code></li>
-<li><code>inf + 1e99</code></li>
-<li><code>inf + inf</code></li>
-<li><code>inf - inf</code></li>
-</ol>
-<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 105">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Lösningsförslag övning 105
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong>a-uppgiften</strong></p>
-<pre><code>octave:13&gt; 1/0
-ans = Inf</code></pre>
-<p><strong>Kommentar</strong>: <code>Inf</code> betyder “oändligheten”.</p>
-<p><strong>b-uppgiften</strong></p>
-<pre><code>octave:14&gt; 0/0
-ans = NaN</code></pre>
-<p><strong>Kommentar</strong>: <code>NaN</code> betyde Not a Number. Det är intressant att notera att Octave gör skillnad på uttrycken i a och b. I matematiken är såväl <span class="math inline">\(1/0\)</span> som <span class="math inline">\(0/0\)</span> odefinierat.</p>
-<p><strong>c-uppgiften</strong></p>
-<pre><code>octave:15&gt; tan(pi/2)
-ans = 1.6331e+16</code></pre>
-<p>Kommentar: Uttrycket <span class="math inline">\(\tan (\pi/2)\)</span> odefinierat i matematiken. Men eftersom Octave avrundar <code>pi</code> till ett ändligt antal decimaler så är inte Octave:s värde på <code>pi</code> detsamma som den matematiska konstanten <span class="math inline">\(\pi\)</span>. Ju närmare <span class="math inline">\(\pi/2\)</span> en vinkel kommer, desto större värde kommer <span class="math inline">\(\arctan(\pi/2)\)</span> att få. Därför så blir inte Octave:s svar <code>Inf</code> eller <code>NaN</code>, det blir helt enkelt ett stort tal.</p>
-<p><strong>d-uppgiften</strong></p>
-<pre><code>octave:16&gt; Inf + 1
-ans = Inf</code></pre>
-<p>Kommentar: Läggs 1 till “oändligheten” är det fortfarande “oändligheten”. Annars så skulle “oändligheten” ha varit ett tal, och det är det inte.</p>
-<p><strong>e-uppgiften</strong></p>
-<pre><code>octave:17&gt; Inf + 1e99
-ans = Inf</code></pre>
-<p>Kommentar: Även om ett väldigt stort tal läggs till oändligheten så är det fortfarande oändligheten, på samma sätt som i övning 105 d.</p>
-<p><strong>f-uppgiften</strong></p>
-<pre><code>octave:18&gt; Inf + Inf
-ans = Inf</code></pre>
-<p>Kommentar: Här kanske det är intressant att svaret inte blir “två oändligheter”. “Oändligheten” är inte kvantiserad.</p>
-<p><strong>g-uppgiften</strong></p>
-<pre><code>octave:19&gt; Inf - Inf
-ans = NaN</code></pre>
-<p>Kommentar: Eftersom oändligheten inte är kvantiserad så kan vad som helst tas bort från oändligheten utan att den förändras. Eftersom något som inte är kvantiserat tar bort från något som inte heller är kvantiserat så blir resultatet odefinierat.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="övning-106" class="level3">
-<h3 class="anchored" data-anchor-id="övning-106">Övning 106</h3>
-<p>Förenkla talet <span class="math inline">\(i^{95}\)</span> med Octave. Hur står sig svaret i förhållande till det värde som uttrycket faktiskt har? Kommentera.</p>
-<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 106">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Lösningsförslag övning 106
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<pre><code>octave:20&gt; i^95
-ans =  -4.8800e-16 - 1.0000e+00i</code></pre>
-<p>Kommentar: Uttryckets värde är precis <span class="math inline">\(-i\)</span>. Eftersom Octave arbetar med närmevärden så kan svaret se ut att skilja sig lite från detta. Du bör dock vara uppmärksam när du ser exponenter som är negativa på ett stort avstånd från noll; det kan ofta vara en “matematisk nolla”.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="övning-107" class="level3">
-<h3 class="anchored" data-anchor-id="övning-107">Övning 107</h3>
-<p>Deklarera en vektor <span class="math inline">\(\vec{v}\)</span> som innehåller tio jämnt fördelade vinklar mellan <span class="math inline">\(0\)</span> och <span class="math inline">\(2\pi\)</span>. Skapa med hjälp av <span class="math inline">\(\vec{v}\)</span> en vektor <span class="math inline">\(\vec{z}\)</span>, vars komponenter <span class="math inline">\(z_j=e^{iv_j}\)</span>.</p>
-<ol type="a">
-<li>Verifiera att <span class="math inline">\(\mathrm{Re}(z_j)=\cos{v}\)</span>. Tips: skriv <code>help real</code> vid Octave-prompten.</li>
-<li>Verifiera att <span class="math inline">\(\mathrm{Im}(z_j)=\sin{v}\)</span>. Tips: skriv <code>help imag</code> vid Octave-prompten.</li>
-</ol>
-<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 107">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Lösningsförslag övning 107
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Arbetsgång: Först skapas vektorn med vinklar, därefter utförs respektive beräkningar vars resultat läggs i varsin resultatsvektor. Slutligen subtraheras dessa resultatsvektorer med varandra. Om likhet gäller ska respektive komponent i denna differensvektor vara noll.</p>
-<pre><code>octave:21&gt; v = linspace(0, 2*pi, 10);
-octave:22&gt; z = e.^(i.*v);
-octave:23&gt; trigres_cos  = cos(v);
-octave:24&gt; trigres_sin  = sin(v);
-octave:25&gt; real(z) - trigres_cos # Detta är a-uppgiften
-ans =
-
-   0   0   0   0   0   0   0   0   0   0
-
-octave:26&gt; imag(z) - trigres_sin # Detta är b-uppgiften
-ans =
-
-   0   0   0   0   0   0   0   0   0   0</code></pre>
-<p>Eftersom differensen av respektive par av vektorkomponenter blir noll så är de lika!</p>
-</div>
-</div>
-</div>
-</section>
-<section id="övning-108" class="level3">
-<h3 class="anchored" data-anchor-id="övning-108">Övning 108</h3>
-<p>I ett annat programspråk så finns en funktion som heter <code>append</code>, vilken används till att lägga till element i listor. Octave har inte den funktionen, istället så kan en komponent <code>a</code> läggas till en vektor v genom <code>v(end+1) = a</code>.</p>
-<p>Skapa en vektor <code>v = [1 2 3]</code> och lägg till talet 4 sist med hjälp av denna metod.</p>
-<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 108">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Lösningsförslag övning 108
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<pre><code>octave:27&gt; v = 1:3
-v =
-
-   1   2   3
-
-octave:28&gt; v(end+1) = 4
-v =
-
-   1   2   3   4</code></pre>
-</div>
-</div>
-</div>
-</section>
-<section id="övning-109" class="level3">
-<h3 class="anchored" data-anchor-id="övning-109">Övning 109</h3>
-<p>Skapa en vektor <span class="math inline">\(\vec{v}\)</span> med talen <span class="math inline">\(0, 0.25, 0.5, 0.75, \ldots 3\)</span> i Octave. Med hjälp av denna vektor ska du skapa en vektor <span class="math inline">\(\vec{x}\)</span>, där <span class="math inline">\(x_i=\log_3 v_i\)</span> (observera att <span class="math inline">\(i\)</span> är index, inte den imaginära enheten!). Kommentera resultatet, speciellt utdatan för <code>x(1)</code>, <code>x(5)</code> och <code>x(end)</code>.</p>
-<p>Tips för beräkningen: skriv om <span class="math inline">\(x=\log_3 v_i\)</span> som en ekvation med <span class="math inline">\(x\)</span> som exponent.</p>
-<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 109">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Lösningsförslag övning 109
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Först måste logaritmen med basen 3 kunna beräknas; Octave har ingen inbyggd funktion för detta. Nedanstående ekvation, vars lösning dels skrivs med logaritmen med basen 3 och dels med hjälp av omskrivning med logaritmlag, är till hjälp.</p>
-<p><span class="math display">\[
-\begin{matrix}
-3^x &amp;=&amp; v_i &amp;\Leftrightarrow&amp; x &amp;=&amp; \log_3 v_i \\[5mm]
-3^x &amp;=&amp; v_i &amp;\Leftrightarrow&amp; x &amp;=&amp; \frac{\log{v_i}}{\log{3}}
-\end{matrix}
-\hspace{5mm} \Rightarrow \log_3{v_i} = \frac{\log{v_i}}{\log{3}}
-\]</span></p>
-<p>Här är <span class="math inline">\(\log v_i\)</span> och <span class="math inline">\(\log 3\)</span> av godtycklig (men samma) bas. Därför kan funktionen <code>log</code> i Octave användas (som ger logaritm med basen <span class="math inline">\(e\)</span>).</p>
-<p>Koden blir</p>
-<pre><code>octave:29&gt; v = 0:0.25:3;
-octave:30&gt; x = log(v) / log(3);
-octave:31&gt; x(1)
-ans = -Inf
-octave:32&gt; x(5)
-ans = 0
-octave:33&gt; x(end)
-ans = 1</code></pre>
-<p><strong>Kommentarer</strong>: <code>x(1)</code> antar “värdet” <code>-Inf</code> eftersom vi önskar lösa ekvationen <span class="math inline">\(3^x = 0\)</span>. Ju längre avstånd från noll utefter den negativa delen på tallinjen, desto närmare noll kommer resultatet att bli. Men det kommer aldrig att <strong>bli</strong> noll. Vi kan se i vektorn <code>v</code> att den första komponenten är noll:</p>
-<pre><code>octave:34&gt; v(1)
-ans = 0</code></pre>
-<p>Att <code>x(5)</code> antar värdet noll måste betyda att <span class="math inline">\(\log_3 1\)</span> beräknas, eftersom <span class="math inline">\(3^0\)</span> är 1. En koll visar också att det är den beräkningen som gjorts:</p>
-<pre><code>octave:35&gt; v(5)
-ans = 1</code></pre>
-<p>Slutligen gäller att <code>x(end)</code> antar värdet 1 eftersom <span class="math inline">\(3^1=3\)</span>. Vi kontrollerar att så är fallet:</p>
-<pre><code>octave:36&gt; v(end)
-ans = 3</code></pre>
-</div>
-</div>
-</div>
-</section>
-<section id="övning-110" class="level3">
-<h3 class="anchored" data-anchor-id="övning-110">Övning 110</h3>
-<p>I den här övningen ska du undersöka funktionen <code>diff</code> och <code>logspace</code>.</p>
-<ol type="a">
-<li>Mata in <code>diff([1 4 6 5.5 10])</code>. Baserat på resultatet, hur tror du att funktionen <code>diff</code> verkar på en vektor?</li>
-<li>Skapa en vektor med hjälp av funktionen <code>logspace</code> enligt <code>logspace(1, 3, 8)</code>. Betrakta vektorn och förklara resultatet.</li>
-<li>Eftersom resultatet av övning 110b automatiskt har lagrats i variabeln <code>ans</code> så kan funktionen <code>diff</code> tillämpas på svaret genom att skriva <code>diff(ans)</code>. Gör det, och lagra resultatet av detta i variabeln <code>expdiff</code>. Betrakta och reflektera över resultatet.</li>
-<li>Logaritmera <code>expdiff</code> från övning 110c.</li>
-<li>Tillämpa nu funktionen <code>diff</code> på resultatet i övning 110d. Kommentera.</li>
-<li>Gör om övningarna 110d och 110e, men logaritmera med basen 2 och 10 i tur och ordning. Kommentera resultatet.</li>
-</ol>
-<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 110">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Lösningsförslag övning 110
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong>a-uppgiften</strong></p>
-<pre><code>octave:37&gt; diff([1 4 6 5.5 10])
-ans =
-
-   3.0000   2.0000  -0.5000   4.5000</code></pre>
-<p>Kommentar: Funktionen <code>diff</code> tar parvis differensen mellan två närliggande tal i vektorn som den verkar på.</p>
-<p><strong>b-uppgiften</strong></p>
-<pre><code>octave:38&gt; logspace(1, 3, 8)
-ans =
-
-     10.000     19.307     37.276     71.969    138.950    268.270    517.947   1000.000</code></pre>
-<p>Kommentar: Detta anrop till funktionen <code>logspace</code> skapar åtta tal mellan (och inklusive) <span class="math inline">\(10^1\)</span> och <span class="math inline">\(10^3\)</span>. Talens <strong>exponenter</strong> är linjärt fördelade, men det blir inte själva talen (som kommer att synas i nästa övning).</p>
-<p><strong>c-uppgiften</strong></p>
-<pre><code>octave:39&gt; expdiff = diff(ans)
-ans =
-
-     9.3070    17.9690    34.6926    66.9810   129.3200   249.6779   482.0525</code></pre>
-<p><strong>Kommentar</strong>: Här syns att differensen ökar.</p>
-<p><strong>d-uppgiften</strong></p>
-<pre><code>octave:40&gt; log(expdiff) 
-ans =
-
-   2.2308   2.8886   3.5465   4.2044   4.8623   5.5202   6.1781</code></pre>
-<p><strong>Kommentar</strong>: Är de logaritmerade differenserna möjligen desamma? Det kommer att visa sig i …</p>
-<p><strong>e-uppgiften</strong></p>
-<pre><code>octave:41&gt; diff(ans)
-ans =
-
-   0.6579   0.6579   0.6579   0.6579   0.6579   0.6579</code></pre>
-<p><strong>Kommentar</strong>: Japp, de logaritmerade differenserna är desamma!</p>
-<p><strong>f-uppgiften</strong></p>
-<p>Vi logaritmerar i tur och ordning med baserna 2 och 10, och sparar resultaten i <code>log2expdiff</code> respektive <code>log10expdiff</code>.</p>
-<pre><code>octave:42&gt; log2expdiff = log2(expdiff)
-log2expdiff =
-
-   3.2183   4.1674   5.1166   6.0657   7.0148   7.9639   8.9130
-octave:43&gt; log10expdiff = log10(expdiff)
-log10expdiff =
-
-   0.9688   1.2545   1.5402   1.8260   2.1117   2.3974   2.6831</code></pre>
-<p>Vi ser att resultaten blir olika beroende på vilken logaritmbas som används. Nu tar vi differensen mellan två närliggande komponenter i respektive vektor:</p>
-<pre><code>octave:44&gt; diff(log2expdiff)
-ans =
-
-   0.9491   0.9491   0.9491   0.9491   0.9491   0.9491
-octave:45&gt; diff(log10expdiff)
-ans =
-
-   0.2857   0.2857   0.2857   0.2857   0.2857   0.2857</code></pre>
-<p>Det syns att differensen mellan komponenternas värden inte förändras, men vilken differens som det blir beror på logaritmbasen.</p>
+<p>Båtens fart i oströmt vatten: <span class="math inline">\(13.5\)</span> km/h</p>
+<p>Strömmens fart: <span class="math inline">\(1.5\)</span> km/h</p>
 </div>
 </div>
 </div>
