@@ -370,6 +370,7 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
   <li><a href="#övning-301" id="toc-övning-301" class="nav-link" data-scroll-target="#övning-301">Övning 301</a></li>
   <li><a href="#övning-302" id="toc-övning-302" class="nav-link" data-scroll-target="#övning-302">Övning 302</a></li>
   <li><a href="#övning-303" id="toc-övning-303" class="nav-link" data-scroll-target="#övning-303">Övning 303</a></li>
+  <li><a href="#övning-304" id="toc-övning-304" class="nav-link" data-scroll-target="#övning-304">Övning 304</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -483,6 +484,39 @@ Svar övning 303
 </div>
 </div>
 </div>
+</section>
+<section id="övning-304" class="level3">
+<h3 class="anchored" data-anchor-id="övning-304">Övning 304</h3>
+<p><strong>Octave-koden i denna övning ska köras från en fil, och inte från konsolen</strong></p>
+<p>Det går att skapa matriser av en godtycklig storlek med slumpade element. T ex så skapar <code>randi([-100 100], 5, 5)</code> en slumpad <span class="math inline">\(5\times 5\)</span>-matris med heltal mellan <span class="math inline">\(-100\)</span> och <span class="math inline">\(100\)</span>:</p>
+<pre><code>octave:1&gt; randi([-100 100], 5, 5)
+ans =
+
+  -56   64   70   69  -17
+   30   98  -82   76  -61
+   10  -41   41  -59   63
+   93   12  -26   24  -45
+   84  -64  -73   49   93</code></pre>
+<ol type="a">
+<li><p>Skapa en <span class="math inline">\(5\times 5\)</span>-matris på detta sätt, och en tillhörande vektor av rätt storlek, med slumpade heltal mellan <span class="math inline">\(-100\)</span> och <span class="math inline">\(100\)</span>. Låt Octave lösa det linjära ekvationssystem som matrisen och vektorn representerar.</p></li>
+<li><p>Skapa en en matris med tillhörande vektor som representerar ett linjärt ekvationssystem med <span class="math inline">\(100\)</span> obekanta och <span class="math inline">\(100\)</span> ekvationer. Tiden kan mätas med funktionerna <code>tic</code> och <code>toc</code> enligt följande:</p></li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode octave code-with-copy"><code class="sourceCode octave"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Skapa matris och vektor</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tic</span>()<span class="op">;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Lös det linjära ekvationssystem matrisen och vektorn representerar.</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># OBS! Se till att resultatet INTE skrivs ut då den processen tar lång tid!</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span>()<span class="op">;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Tiden det tog att lösa systemet skrivs ut i konsolen automatiskt efter toc()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Hur lång tid tar det att lösa detta system av linjära ekvationer?</p>
+<ol start="3" type="a">
+<li><p>Ungefär hur stort ekvationssystem (lika många obekanta som ekvationer) kan lösas på</p>
+<ol type="i">
+<li>1 sekund?</li>
+<li>5 sekunder?</li>
+<li>10 sekunder?</li>
+</ol>
+<p>Pröva dig fram!</p></li>
+</ol>
 
 
 </section>

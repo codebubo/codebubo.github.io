@@ -1,115 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://codebubo.github.io/about.html</loc>
-    <lastmod>2023-10-11T18:35:54.700Z</lastmod>
-  </url>
-  <url>
-    <loc>https://codebubo.github.io/ma/ma-spec/programmering/teori-och-ovningar/lin-ekvationssystem-med-octave/index.html</loc>
-    <lastmod>2023-10-11T18:35:52.755Z</lastmod>
-  </url>
-  <url>
-    <loc>https://codebubo.github.io/ma/ma-spec/programmering/teori-och-ovningar/octave-som-kalkylator/index.html</loc>
-    <lastmod>2023-10-11T18:35:51.922Z</lastmod>
-  </url>
-  <url>
-    <loc>https://codebubo.github.io/pr1/python/while-loopar/presentation/while-pres.html</loc>
-    <lastmod>2023-10-11T18:35:50.709Z</lastmod>
-  </url>
-  <url>
-    <loc>https://codebubo.github.io/pr1/python/funktioner/presentation/func-pres.html</loc>
-    <lastmod>2023-10-11T18:35:48.593Z</lastmod>
-  </url>
-  <url>
-    <loc>https://codebubo.github.io/pr1/python/for-loopar/presentation/for-pres.html</loc>
-    <lastmod>2023-10-11T18:35:46.477Z</lastmod>
-  </url>
-  <url>
-    <loc>https://codebubo.github.io/pr1/python/strangar/presentation/index.html</loc>
-    <lastmod>2023-10-11T18:35:44.385Z</lastmod>
-  </url>
-  <url>
-    <loc>https://codebubo.github.io/pr1/python/cheat_sheet_python.html</loc>
-    <lastmod>2023-10-11T18:35:42.261Z</lastmod>
-  </url>
-  <url>
-    <loc>https://codebubo.github.io/pr1/python/listor/presentation/index.html</loc>
-    <lastmod>2023-10-11T18:35:39.636Z</lastmod>
-  </url>
-  <url>
-    <loc>https://codebubo.github.io/pr1/python/villkor/presentation/index.html</loc>
-    <lastmod>2023-10-11T18:35:37.471Z</lastmod>
-  </url>
-  <url>
-    <loc>https://codebubo.github.io/pr1/python/intro/pres-version-online-python/intro-pres.html</loc>
-    <lastmod>2023-10-11T18:35:36.932Z</lastmod>
-  </url>
-  <url>
-    <loc>https://codebubo.github.io/pr1/python/intro/pres-version-installerad-python/intro-pres.html</loc>
-    <lastmod>2023-10-11T18:35:34.622Z</lastmod>
-  </url>
-  <url>
-    <loc>https://codebubo.github.io/pr1/python/uppgifter/funktioner/index.html</loc>
-    <lastmod>2023-10-11T18:35:30.282Z</lastmod>
-  </url>
-  <url>
-    <loc>https://codebubo.github.io/pr1/python/uppgifter/listor/index.html</loc>
-    <lastmod>2023-10-11T18:35:27.964Z</lastmod>
-  </url>
-  <url>
-    <loc>https://codebubo.github.io/pr1/python/uppgifter/loopar/index.html</loc>
-    <lastmod>2023-10-11T18:35:25.933Z</lastmod>
-  </url>
-  <url>
-    <loc>https://codebubo.github.io/pr1/python/uppgifter/strangar/index.html</loc>
-    <lastmod>2023-10-11T18:35:28.320Z</lastmod>
-  </url>
-  <url>
-    <loc>https://codebubo.github.io/pr1/python/uppgifter/utskrift-och-villkor/index.html</loc>
-    <lastmod>2023-10-11T18:35:32.524Z</lastmod>
-  </url>
-  <url>
     <loc>https://codebubo.github.io/pr1/python/intro/pres-version-installerad-python/index.html</loc>
-    <lastmod>2023-10-11T18:35:34.884Z</lastmod>
+    <lastmod>2023-10-12T10:33:02.029Z</lastmod>
   </url>
   <url>
     <loc>https://codebubo.github.io/pr1/python/intro/pres-version-online-python/index.html</loc>
-    <lastmod>2023-10-11T18:35:37.208Z</lastmod>
+    <lastmod>2023-10-12T10:32:58.519Z</lastmod>
   </url>
   <url>
-    <loc>https://codebubo.github.io/pr1/python/villkor/presentation/villkor-pres.html</loc>
-    <lastmod>2023-10-11T18:35:39.366Z</lastmod>
+    <loc>https://codebubo.github.io/pr1/python/strangar/presentation/index.html</loc>
+    <lastmod>2023-10-12T10:32:55.019Z</lastmod>
   </url>
   <url>
     <loc>https://codebubo.github.io/pr1/python/listor/presentation/listor-pres.html</loc>
-    <lastmod>2023-10-11T18:35:41.689Z</lastmod>
+    <lastmod>2023-10-12T10:32:51.799Z</lastmod>
   </url>
   <url>
-    <loc>https://codebubo.github.io/pr1/python/strangar/presentation/strangar-pres.html</loc>
-    <lastmod>2023-10-11T18:35:44.114Z</lastmod>
-  </url>
-  <url>
-    <loc>https://codebubo.github.io/pr1/python/for-loopar/presentation/index.html</loc>
-    <lastmod>2023-10-11T18:35:44.646Z</lastmod>
-  </url>
-  <url>
-    <loc>https://codebubo.github.io/pr1/python/funktioner/presentation/index.html</loc>
-    <lastmod>2023-10-11T18:35:46.734Z</lastmod>
+    <loc>https://codebubo.github.io/pr1/python/cheat_sheet_python.html</loc>
+    <lastmod>2023-10-12T10:32:48.529Z</lastmod>
   </url>
   <url>
     <loc>https://codebubo.github.io/pr1/python/while-loopar/presentation/index.html</loc>
-    <lastmod>2023-10-11T18:35:48.873Z</lastmod>
+    <lastmod>2023-10-12T10:32:44.459Z</lastmod>
   </url>
   <url>
-    <loc>https://codebubo.github.io/ma/ma-5/kombinatorik/index.html</loc>
-    <lastmod>2023-10-11T18:35:51.351Z</lastmod>
+    <loc>https://codebubo.github.io/pr1/python/for-loopar/presentation/index.html</loc>
+    <lastmod>2023-10-12T10:32:40.709Z</lastmod>
+  </url>
+  <url>
+    <loc>https://codebubo.github.io/pr1/python/funktioner/presentation/index.html</loc>
+    <lastmod>2023-10-12T10:32:37.579Z</lastmod>
+  </url>
+  <url>
+    <loc>https://codebubo.github.io/pr1/python/uppgifter/listor/index.html</loc>
+    <lastmod>2023-10-12T10:32:36.819Z</lastmod>
+  </url>
+  <url>
+    <loc>https://codebubo.github.io/pr1/python/uppgifter/utskrift-och-villkor/index.html</loc>
+    <lastmod>2023-10-12T10:32:29.879Z</lastmod>
+  </url>
+  <url>
+    <loc>https://codebubo.github.io/pr1/python/villkor/presentation/villkor-pres.html</loc>
+    <lastmod>2023-10-12T10:32:23.289Z</lastmod>
+  </url>
+  <url>
+    <loc>https://codebubo.github.io/ma/ma-spec/programmering/teori-och-ovningar/octave-som-kalkylator/index.html</loc>
+    <lastmod>2023-10-12T10:32:18.959Z</lastmod>
   </url>
   <url>
     <loc>https://codebubo.github.io/ma/ma-spec/programmering/teori-och-ovningar/funktioner-villkor-och-loopar/index.html</loc>
-    <lastmod>2023-10-11T18:35:52.415Z</lastmod>
+    <lastmod>2023-10-12T10:32:18.039Z</lastmod>
+  </url>
+  <url>
+    <loc>https://codebubo.github.io/about.html</loc>
+    <lastmod>2023-10-12T10:32:16.569Z</lastmod>
   </url>
   <url>
     <loc>https://codebubo.github.io/index.html</loc>
-    <lastmod>2023-10-11T18:35:54.432Z</lastmod>
+    <lastmod>2023-10-12T10:32:16.289Z</lastmod>
+  </url>
+  <url>
+    <loc>https://codebubo.github.io/ma/ma-5/kombinatorik/index.html</loc>
+    <lastmod>2023-10-12T10:32:17.539Z</lastmod>
+  </url>
+  <url>
+    <loc>https://codebubo.github.io/ma/ma-spec/programmering/teori-och-ovningar/lin-ekvationssystem-med-octave/index.html</loc>
+    <lastmod>2023-10-12T10:32:18.409Z</lastmod>
+  </url>
+  <url>
+    <loc>https://codebubo.github.io/pr1/python/villkor/presentation/index.html</loc>
+    <lastmod>2023-10-12T10:32:19.229Z</lastmod>
+  </url>
+  <url>
+    <loc>https://codebubo.github.io/pr1/python/uppgifter/funktioner/index.html</loc>
+    <lastmod>2023-10-12T10:32:26.479Z</lastmod>
+  </url>
+  <url>
+    <loc>https://codebubo.github.io/pr1/python/uppgifter/loopar/index.html</loc>
+    <lastmod>2023-10-12T10:32:33.619Z</lastmod>
+  </url>
+  <url>
+    <loc>https://codebubo.github.io/pr1/python/uppgifter/strangar/index.html</loc>
+    <lastmod>2023-10-12T10:32:37.309Z</lastmod>
+  </url>
+  <url>
+    <loc>https://codebubo.github.io/pr1/python/funktioner/presentation/func-pres.html</loc>
+    <lastmod>2023-10-12T10:32:40.439Z</lastmod>
+  </url>
+  <url>
+    <loc>https://codebubo.github.io/pr1/python/for-loopar/presentation/for-pres.html</loc>
+    <lastmod>2023-10-12T10:32:44.169Z</lastmod>
+  </url>
+  <url>
+    <loc>https://codebubo.github.io/pr1/python/while-loopar/presentation/while-pres.html</loc>
+    <lastmod>2023-10-12T10:32:47.849Z</lastmod>
+  </url>
+  <url>
+    <loc>https://codebubo.github.io/pr1/python/listor/presentation/index.html</loc>
+    <lastmod>2023-10-12T10:32:48.809Z</lastmod>
+  </url>
+  <url>
+    <loc>https://codebubo.github.io/pr1/python/strangar/presentation/strangar-pres.html</loc>
+    <lastmod>2023-10-12T10:32:54.749Z</lastmod>
+  </url>
+  <url>
+    <loc>https://codebubo.github.io/pr1/python/intro/pres-version-online-python/intro-pres.html</loc>
+    <lastmod>2023-10-12T10:32:58.239Z</lastmod>
+  </url>
+  <url>
+    <loc>https://codebubo.github.io/pr1/python/intro/pres-version-installerad-python/intro-pres.html</loc>
+    <lastmod>2023-10-12T10:33:01.729Z</lastmod>
   </url>
 </urlset>
