@@ -115,3 +115,50 @@ Båtens fart i oströmt vatten: $13.5$ km/h
 
 Strömmens fart: $1.5$ km/h
 :::
+
+### Övning 304
+
+**Octave-koden i denna övning ska köras från en fil, och inte från konsolen**
+
+Det går att skapa matriser av en godtycklig storlek med slumpade element.
+T ex så skapar `randi([-100 100], 5, 5)` en slumpad $5\times 5$-matris med
+heltal mellan $-100$ och $100$:
+
+```
+octave:1> randi([-100 100], 5, 5)
+ans =
+
+  -56   64   70   69  -17
+   30   98  -82   76  -61
+   10  -41   41  -59   63
+   93   12  -26   24  -45
+   84  -64  -73   49   93
+```
+
+a. Skapa en $5\times 5$-matris på detta sätt, och en tillhörande vektor av rätt
+storlek, med slumpade heltal mellan $-100$ och $100$. Låt Octave lösa det
+linjära ekvationssystem som matrisen och vektorn representerar.
+
+b. Skapa en en matris med tillhörande vektor som representerar ett linjärt
+ekvationssystem med $100$ obekanta och $100$ ekvationer. Tiden kan mätas med
+funktionerna `tic` och `toc` enligt följande:
+
+```octave
+# Skapa matris och vektor
+tic();
+# Lös det linjära ekvationssystem matrisen och vektorn representerar.
+# OBS! Se till att resultatet INTE skrivs ut då den processen tar lång tid!
+toc();
+# Tiden det tog att lösa systemet skrivs ut i konsolen automatiskt efter toc()
+```
+
+Hur lång tid tar det att lösa detta system av linjära ekvationer?
+
+c. Ungefär hur stort ekvationssystem (lika många obekanta som ekvationer) kan
+lösas på
+  
+    i. 1 sekund?
+    ii. 5 sekunder?
+    iii. 10 sekunder?
+  
+    Pröva dig fram!
