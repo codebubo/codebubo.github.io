@@ -158,9 +158,9 @@ och `lst[-2]` har värdet `40` osv.
 
 Det går att komma åt delar av listan går det att göra
 ```python
-lst[2:4]   # Resultat: [20, 30] (Elementen mellan två index)
-lst[2:]    # Resultat: [20, 30, 40, 50] (Elementen fr o m index nr. 2)
-lst[:4]    # Resultat: [10, 20, 30] (Elementen till index nr. 4 (men inte inklusive detta))
+lst[2:4]   # Resultat: [30, 40] (Elementen mellan två index)
+lst[2:]    # Resultat: [30, 40, 50] (Elementen fr o m index nr. 2)
+lst[:4]    # Resultat: [10, 20, 30, 40] (Elementen till index nr. 4 (men inte inklusive detta))
 lst[1:4:2] # Resultat: [20, 40] (Vartannat element mellan två index)
 lst[::-1]  # Resultat: [50, 40, 30, 20, 10] (Baklänges)
 ```
