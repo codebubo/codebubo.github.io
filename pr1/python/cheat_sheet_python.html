@@ -651,9 +651,9 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
 <h3 class="anchored" data-anchor-id="åtkomst-av-element">Åtkomst av element</h3>
 <p>Låt <code>lst = [10, 20, 30, 40, 50]</code>. Då gäller att <code>lst[0]</code> har värdet <code>10</code> och <code>lst[1]</code> har värdet <code>20</code> osv. Det gäller också att <code>lst[-1]</code> har värdet <code>50</code> och <code>lst[-2]</code> har värdet <code>40</code> osv.</p>
 <p>Det går att komma åt delar av listan går det att göra</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>lst[<span class="dv">2</span>:<span class="dv">4</span>]   <span class="co"># Resultat: [20, 30] (Elementen mellan två index)</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>lst[<span class="dv">2</span>:]    <span class="co"># Resultat: [20, 30, 40, 50] (Elementen fr o m index nr. 2)</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>lst[:<span class="dv">4</span>]    <span class="co"># Resultat: [10, 20, 30] (Elementen till index nr. 4 (men inte inklusive detta))</span></span>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>lst[<span class="dv">2</span>:<span class="dv">4</span>]   <span class="co"># Resultat: [30, 40] (Elementen mellan två index)</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>lst[<span class="dv">2</span>:]    <span class="co"># Resultat: [30, 40, 50] (Elementen fr o m index nr. 2)</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>lst[:<span class="dv">4</span>]    <span class="co"># Resultat: [10, 20, 30, 40] (Elementen till index nr. 4 (men inte inklusive detta))</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>lst[<span class="dv">1</span>:<span class="dv">4</span>:<span class="dv">2</span>] <span class="co"># Resultat: [20, 40] (Vartannat element mellan två index)</span></span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>lst[::<span class="op">-</span><span class="dv">1</span>]  <span class="co"># Resultat: [50, 40, 30, 20, 10] (Baklänges)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
