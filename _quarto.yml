@@ -41,6 +41,7 @@ website:
               - pr1/python/uppgifter/funktioner/index.qmd
               - pr1/python/uppgifter/listor/index.qmd
               - pr1/python/uppgifter/strangar/index.qmd
+              - pr1/python/uppgifter/egna-datatyper/index.qmd
       - section: "Programmering i matematik"
         contents:
           - section: "MatSpec"
