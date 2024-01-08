@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CodeBubo - Presentation: Listor</title>
+<title>CodeBubo - Octave: Lösning av linjära ekvationssystem</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,8 +69,11 @@ gtag('js', new Date());
 gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../../../styles.css">
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
@@ -109,7 +112,7 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../../pr1/python/cheat_sheet_python.html">Programmering 1</a></li><li class="breadcrumb-item"><a href="../../../../pr1/python/intro/pres-version-installerad-python/index.html">Presentationer, Python</a></li><li class="breadcrumb-item"><a href="../../../../pr1/python/listor/presentation/index.html">Presentation: Listor</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Octave: Lösning av linjära ekvationssystem</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -127,13 +130,13 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
  <span class="menu-text">Programmering 1</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../pr1/python/cheat_sheet_python.html" class="sidebar-item-text sidebar-link">
@@ -142,13 +145,13 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
  <span class="menu-text">Presentationer, Python</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../pr1/python/intro/pres-version-installerad-python/index.html" class="sidebar-item-text sidebar-link">
@@ -187,7 +190,7 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../pr1/python/listor/presentation/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../../pr1/python/listor/presentation/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Presentation: Listor</span></a>
   </div>
 </li>
@@ -195,12 +198,6 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
   <div class="sidebar-item-container"> 
   <a href="../../../../pr1/python/strangar/presentation/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Presentation: Strängar</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../pr1/python/egna-datatyper/presentation/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Presentation: Egna datatyper i Python</span></a>
   </div>
 </li>
       </ul>
@@ -242,12 +239,6 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
   <div class="sidebar-item-container"> 
   <a href="../../../../pr1/python/uppgifter/strangar/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Uppgifter: Strängar</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../pr1/python/uppgifter/egna-datatyper/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Uppgifter: Egna datatyper</span></a>
   </div>
 </li>
       </ul>
@@ -293,12 +284,6 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
  <span class="menu-text">Octave: Funktioner, villkor och loopar</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../../ma/ma-spec/programmering/teori-och-ovningar/lin-ekvationssystem-med-octave/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Octave: Lösning av linjära ekvationssystem</span></a>
-  </div>
-</li>
       </ul>
   </li>
       </ul>
@@ -337,7 +322,14 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#uppgifter" id="toc-uppgifter" class="nav-link active" data-scroll-target="#uppgifter">Uppgifter</a></li>
+  <li><a href="#lösning-av-linjära-ekvationssystem" id="toc-lösning-av-linjära-ekvationssystem" class="nav-link active" data-scroll-target="#lösning-av-linjära-ekvationssystem">Lösning av linjära ekvationssystem</a>
+  <ul class="collapse">
+  <li><a href="#teori" id="toc-teori" class="nav-link" data-scroll-target="#teori">Teori</a></li>
+  <li><a href="#övningar" id="toc-övningar" class="nav-link" data-scroll-target="#övningar">Övningar</a>
+  <ul class="collapse">
+  <li><a href="#övning-301" id="toc-övning-301" class="nav-link" data-scroll-target="#övning-301">Övning 301</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -346,7 +338,7 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Presentation: Listor</h1>
+<h1 class="title">Octave: Lösning av linjära ekvationssystem</h1>
 </div>
 
 
@@ -361,16 +353,38 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
 
 </header>
 
-<div class="double-v-space">
-
+<section id="lösning-av-linjära-ekvationssystem" class="level1">
+<h1>Lösning av linjära ekvationssystem</h1>
+<section id="teori" class="level2">
+<h2 class="anchored" data-anchor-id="teori">Teori</h2>
+<p>Ett sätt att lösa ett linjära ekvationssystem i Octave är att först deklarera det som en koefficientmatris <span class="math inline">\(A\)</span> och en vektor <span class="math inline">\(\vec{v}\)</span> enligt <span class="math inline">\(A\vec{x}=\vec{v}\)</span> (här kommer vektorn <span class="math inline">\(\vec{x}\)</span> att utgöra den beräknade lösningsvektorn).</p>
+<p>För att lösa ekvationssystemet <span class="math inline">\(A\vec{x}=\vec{v}\)</span>, där <span class="math inline">\(A\)</span> och <span class="math inline">\(\vec{v}\)</span> är deklarerade så används “backslash-operatorn” enligt \verb{A &nbsp;v}.</p>
+</section>
+<section id="övningar" class="level2">
+<h2 class="anchored" data-anchor-id="övningar">Övningar</h2>
+<section id="övning-301" class="level3">
+<h3 class="anchored" data-anchor-id="övning-301">Övning 301</h3>
+<p>ldldl</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 301">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
 </div>
-<iframe src="./listor-pres.html" width="800" height="550">
-</iframe>
-<section id="uppgifter" class="level2">
-<h2 class="anchored" data-anchor-id="uppgifter">Uppgifter</h2>
-<p>Uppgifterna i dokumentet <a href="../../../../pr1/python/uppgifter/listor/index.html">Uppgifter Pr1, listor</a></p>
+<div class="callout-title-container flex-fill">
+Lösningsförslag övning 301
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Lösningsförslag?</p>
+</div>
+</div>
+</div>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
