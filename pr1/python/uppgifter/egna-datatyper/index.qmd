@@ -18,7 +18,7 @@ Deklarera en datatyp `Avatar`. Datatypen ska ha attributen `namn`, `färg`,
 :::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 1"}
 ```{python}
 #| echo: true
-class Avatar():
+class Avatar:
     namn = ""
     färg = ""
     ålder = 0

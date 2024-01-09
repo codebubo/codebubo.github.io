@@ -41,7 +41,7 @@ Dessa deklareras t ex som
 
 `my_int = 5 # Heltal`
 
-`my_str = "Hello, world # sträng`
+`my_str = "Hello, world" # sträng`
 
 I programmering behövs ofta variabler som representerar något ''riktigt'',
 t ex en bil, en person eller en avatar som har olika egenskaper.
@@ -57,9 +57,9 @@ Vi kan deklarera en variabeltyp `Car` på det här sättet:
 ```{python}
 # | echo: true
 class Car:
-  brand = ""     # Tom sträng för bilmärket, så länge
-  color = ""     # Tom sträng för färgen, så länge
-  model_year = 0 # Aktuell årsmodell sätts senare
+    brand = ""  # Tom sträng för bilmärket, så länge
+    color = ""  # Tom sträng för färgen, så länge
+    model_year = 0  # Aktuell årsmodell sätts senare
 ```
 
 :::{.v-space}
