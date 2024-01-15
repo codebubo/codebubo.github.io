@@ -1,0 +1,238 @@
+---
+title: "Uppgifter: Binärsökning"
+format:
+  html:
+    fontsize: 1em
+    css: style.css
+---
+
+# Binärsökning i Python
+
+## Exempel och uppgifter
+
+### Beskrivning av algoritm
+
+1. **Förstå problemet**: Binärsökning är en effektiv algoritm för att hitta ett specifikt element i en sorterad lista. Den fungerar genom att kontinuerligt dela listan i hälften tills det sökta elementet hittas eller tills det inte finns några element kvar att söka igenom.
+
+2. **Identifiera indata**: Funktionen behöver fyra indata: en sorterad lista, ett sökt tal och två index som representerar de nedre och övre gränserna för sökningen.
+
+3. **Beräkna mitten**: För varje sökning, beräkna mitten av listan (eller den aktuella delen av listan) genom att addera det nedre och övre indexet och dela med två.
+
+4. **Jämför mitten med målet**: Kontrollera om det sökta talet är lika med, mindre än eller större än elementet i mitten av listan.
+
+5. **Uppdatera gränserna**: Om det sökta talet är mindre än elementet i mitten, uppdatera det övre indexet till att vara ett steg mindre än mitten. Om det sökta talet är större, uppdatera det nedre indexet till att vara ett steg större än mitten.
+
+6. **Returnera resultatet**: Resultatet returneras i form av tre tal; de båda
+indexen som är beräknade samt en boolesk flagga `True` om talet är hittat eller
+`False` om talet ännu inte är hittat eller saknas.
+
+7. **Iterera**: Använd en loop för att upprepa dessa steg tills det sökta talet hittas eller tills det inte finns några element kvar att söka igenom. Denna loop ska vara utanför funktionen och anropa funktionen vid varje iteration.
+
+Kom ihåg att binärsökning endast fungerar på sorterade listor, så om listan inte är sorterad måste du sortera den innan du använder denna funktion. Lycka till med programmeringen! 😊
+
+### Exempel
+
+Här är en lista med tal. Låt oss söka efter talet `14` med hjälp av algoritm.
+
+```
+2 4 6 8 10 12 14 16 18 20
+```
+
+**Fall 1: Söker efter talet `14` som finns i listan**
+
+1. Först beräknar vi mitten av listan. I det här fallet är mittenindexet `5` (värdet `12`).
+
+```
+2 4 6 8 10 [12] 14 16 18 20
+```
+
+2. Eftersom `14` är större än `12`, fortsätter vi att söka i den högra halvan av listan.
+
+```
+14 16 18 20
+```
+
+3. Vi beräknar mitten av den nya listan, vilket är index `1` (värdet `16`).
+
+```
+14 [16] 18 20
+```
+
+4. Eftersom `14` är mindre än `16`, fortsätter vi att söka i den vänstra halvan av listan.
+
+```
+14
+```
+
+5. Nu är det bara ett element kvar i listan och det är det sökta talet `14`. Så vi har hittat talet vi letade efter!
+
+```
+2 4 6 8 10 12 14 16 18 20
+```
+
+**Fall 2: Söker efter talet `11` som inte finns i listan**
+
+1. Först beräknar vi mitten av listan. I det här fallet är mittenindexet `5` (värdet `12`).
+
+```
+2 4 6 8 10 [12] 14 16 18 20
+```
+
+2. Eftersom `11` är mindre än `12`, fortsätter vi att söka i den vänstra halvan av listan.
+
+```
+2 4 6 8 10
+```
+
+3. Vi beräknar mitten av den nya listan, vilket är index `2` (värdet `6`).
+
+```
+2 4 [6] 8 10
+```
+
+4. Eftersom `11` är större än `6`, fortsätter vi att söka i den högra halvan av listan.
+
+```
+8 10
+```
+
+5. Vi beräknar mitten av den nya listan, vilket är index `0` (värdet `8`).
+
+```
+[8] 10
+```
+
+6. Eftersom `11` är större än `8`, fortsätter vi att söka i den högra halvan av listan.
+
+```
+10
+```
+
+7. Nu är det bara ett element kvar i listan och det är inte det sökta talet `11`. Så vi har inte hittat talet vi letade efter!
+
+
+### Uppgift 1
+
+Skriv en funktion som implementerar binärsökning enligt algoritm ovan.
+Till en början, gör inte en loop som upprepar sökningen, utan testa dig fram
+steg för steg och kontrollera att du får rätt index i retur.
+
+Som det står i beskrivningen av algoritm så ska funktionen returnera tre tal.
+Exempel på hur detta går till:
+
+**Exempel**
+```{python}
+# | echo: true
+def calc(a, b):
+    sum = a + b
+    diff = a - b
+    prod = a * b
+    return sum, diff, prod
+
+
+# Anropa funktionen
+summa, differens, produkt = calc(5, 8)
+print(summa, differens, produkt)
+```
+
+Vidare så används *heltalsdivision* för att ta reda på mittenindex. Denna
+resulterar alltid i ett heltal. Exempel:
+
+```{python}
+# | echo: true
+print(21 // 2)  # Ger resultatet 10 (se nedan)
+```
+
+### Uppgift 2
+
+Slutför programmet med en loop som under en körning avgör om, och i så fall
+på vilket index, som det sökta talet finns alternativt saknas.
+
+**Körningsexempel**
+```{python}
+# | echo: false
+def binary_search(arr, target, low, high):
+    if high >= low:
+        mid = (high + low) // 2
+
+        # Om elementet finns i mitten
+        if arr[mid] == target:
+            return mid, mid, True
+
+        # Om elementet är mindre än mitten, då är det bara i vänstra delen
+        elif arr[mid] > target:
+            return low, mid - 1, False
+
+        # Annars är elementet i högra delen
+        else:
+            return mid + 1, high, False
+
+    else:
+        # Elementet finns inte i listan
+        return -1, -1, False
+
+
+a_list = [-1, 2, 4, 5, 8, 12, 15, 16, 20]
+# index: 0  1  2  3  4   5   6   7   8
+key = 5
+counter = 0
+verbose = True
+print("Listan som ska sökas igenom")
+print(a_list)
+print(f"Talet som söks: {key}")
+for key in range(key, key + 1):
+    a = 0
+    b = len(a_list) - 1
+    res = False
+    counter = 0
+    while a != -1 and not res:
+        counter += 1
+        if verbose:
+            print(
+                f"Söker mellan (och inklusive) index {a} och {b} (med mitt på {(a+b)//2})"
+            )
+        a, b, res = binary_search(a_list, key, a, b)
+
+    if res:
+        print(f"Talet {key} hittades på index {a} på {counter} sökningar")
+    else:
+        print(
+            f"Talet {key} finns inte i listan, konstaterades efter {counter} sökningar"
+        )
+
+```
+
+### Uppgift 3
+
+Undersök antalet sökningar som behöver göras för ett antal tal. Här är
+utmatningsexempel på några sökningar i listan:
+
+```{python}
+# | echo: false
+verbose = False
+print("Listan som ska sökas igenom")
+print(a_list)
+for key in range(-2, 20 + 1):
+    a = 0
+    b = len(a_list) - 1
+    res = False
+    counter = 0
+    while a != -1 and not res:
+        counter += 1
+        if verbose:
+            print(
+                f"Söker mellan (och inklusive) index {a} och {b} (med mitt på {(a+b)//2})"
+            )
+        a, b, res = binary_search(a_list, key, a, b)
+
+    if res:
+        print(f"Talet {key} hittades på index {a} på {counter} sökningar")
+    else:
+        print(
+            f"Talet {key} finns inte i listan, konstaterades efter {counter} sökningar"
+        )
+```
+
+Skapa en (sorterad) lista med $1\,000$ element med heltalsvärden mellan $0$ och
+$2\,000$. Hur många sökningar måste maximalt göras för tal som finns respektive
+saknas i listan?
