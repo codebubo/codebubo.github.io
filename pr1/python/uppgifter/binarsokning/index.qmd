@@ -139,6 +139,53 @@ resulterar alltid i heltaldelen av divisionens resultat. Exempel:
 print(21 // 2)  # Ger resultatet 10 (se nedan)
 ```
 
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag"}
+```{python}
+# | echo: true
+def binary_search(lst, key, lower, upper):
+    # Tar emot en lista lst,
+    # en söknyckel key,
+    # ett undre index för sökning i listan,
+    # ett övre index för sökning i listan
+
+    # mi är mittenindex
+    mi = (lower + upper) // 2
+
+    if upper >= lower:
+        # Nyckeln hittades
+        if key == lst[mi]:
+            return mi, mi, True
+
+        # Nyckeln är mindre än värdet på mittenindex
+        if key < lst[mi]:
+            upper = mi - 1
+            return lower, upper, False
+
+        # Nyckeln är större än värdet på mittenindex
+        if key > lst[mi]:
+            lower = mi + 1
+            return lower, upper, False
+
+    # Om inget av ovanstående, nyckeln saknas
+    # i listan
+    return -1, -1, False
+```
+
+Exempel på använding av funktionen för att söka efter talet `12` i en lista:
+```{python}
+# | echo: true
+lst = [2, 4, 5, 7, 9, 12, 14]
+lower = 0
+upper = len(lst) - 1
+print(binary_search(lst, 12, lower, upper))
+```
+
+Innebörden av resultatet `(4, 6, False)` är att **om**  talet `12` finns i
+listan så gäller att det måste ligga mellan (och inklusive) index 4 och 6 i
+listan och att talets befintlighet i listan varken har konstaterats eller
+uteslutits.
+:::
+
 ### Uppgift 2
 
 Slutför programmet med en loop som under en körning avgör om, och i så fall
@@ -197,6 +244,35 @@ for key in range(key, key + 1):
         )
 
 ```
+
+:::{.callout-tip collapse="true" icon="false" title="Partiellt lösningsförslag"}
+
+```{python}
+# | echo: true
+# Huvudprogram där funktionen i Uppgift 1 testas
+# ----------------------------------------------
+
+# En lista definieras
+lst = [2, 4, 5, 7, 9, 12, 14]
+
+# Ett tal att söka efter samt listindexen för denna sökning
+key = 12
+lower = 0
+upper = len(lst) - 1
+
+# Funktionen anropas flera gånger i en loop
+while True:
+    lower, upper, flag = binary_search(lst, key, lower, upper)
+    if flag == True or lower == upper == -1:
+        break
+if flag == True:
+    print(f"Talet {key} hittades på index {lower}")
+else:
+    print(f"Talet {key} finns inte i listan")
+
+```
+:::
+
 
 ### Uppgift 3
 
