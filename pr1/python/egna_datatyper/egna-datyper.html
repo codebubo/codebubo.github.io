@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="../../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../../site_libs/quarto-html/tabby.min.js"></script>
-<script src="../../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.545">
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.3.450">
 
   <meta name="author" content="Nikodemus Karlsson">
   <title>CodeBubo - Egna datatyper i Python</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -95,7 +95,7 @@
     code span.vs { color: #abe338; } /* VerbatimString */
     code span.wa { color: #dcc6e0; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/theme/quarto.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto.css">
   <link rel="stylesheet" href="style.css">
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FFXVNM3K2N"></script>
 
@@ -106,10 +106,10 @@
   gtag('js', new Date());
   gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
   </script>
-  <link href="../../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="../../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="../../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="../../../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -231,8 +231,7 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    padding-bottom: 0.5rem;
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -421,145 +420,161 @@ Nikodemus Karlsson
 <li>Att kunna skicka objekt för vidare process i funktioner</li>
 </ul>
 </section>
-<section id="grundläggande-datatyper" class="slide level2">
-<h2>Grundläggande datatyper</h2>
+<section id="likheter-och-skillnader-mellan-while--och-for-loopar" class="slide level2">
+<h2>Likheter och skillnader mellan <code>while</code>- och <code>for</code>-loopar</h2>
 <div class="v-space">
 
 </div>
 <div class="blue-bg-small-padding">
-<p>Vi har tidigare använt datatyperna heltal, flyttal, listor mm.</p>
-<p>Dessa deklareras t ex som</p>
-<p><code>my_int = 5 # Heltal</code></p>
-<p><code>my_str = "Hello, world" # sträng</code></p>
-<p>I programmering behövs ofta variabler som representerar något ‘’riktigt’’, t ex en bil, en person eller en avatar som har olika egenskaper.</p>
+<p>Ofta används <code>while</code>-loopar när antalet varv avgörs under programkörningens gång, medan <code>for</code>-loopar används då det är ett känt antal varv. I vissa fall går den ena typen av loop lika bra som den andra.</p>
+<p>En <code>for</code>-loop använder sig av en <strong>lista</strong> som loopas igenom.</p>
 </div>
 </section>
-<section id="deklarera-en-egen-datatyp" class="slide level2">
-<h2>Deklarera en egen datatyp</h2>
+<section id="enklast-möjliga-for-loop" class="slide level2">
+<h2>Enklast möjliga <code>for</code>-loop</h2>
 <div class="double-v-space">
 
 </div>
-<p>Vi kan deklarera en variabeltyp <code>Car</code> på det här sättet:</p>
-<div id="5a25ba52" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="kw">class</span> Car:</span>
-<span id="cb1-2"><a></a>    brand <span class="op">=</span> <span class="st">""</span>  <span class="co"># Tom sträng för bilmärket, så länge</span></span>
-<span id="cb1-3"><a></a>    color <span class="op">=</span> <span class="st">""</span>  <span class="co"># Tom sträng för färgen, så länge</span></span>
-<span id="cb1-4"><a></a>    model_year <span class="op">=</span> <span class="dv">0</span>  <span class="co"># Aktuell årsmodell sätts senare</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>lista <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>]</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="cf">for</span> element <span class="kw">in</span> lista:</span>
+<span id="cb1-3"><a href="#cb1-3"></a>    <span class="bu">print</span>(element, end<span class="op">=</span><span class="st">" "</span>)</span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="bu">print</span>(<span class="ss">f"Loopen avslutas eftersom listan är slut"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>10 20 30 Loopen avslutas eftersom listan är slut</code></pre>
+</div>
 </div>
 <div class="v-space">
 
 </div>
-<p>Nu har vi tillgång till datatypen <code>Car</code>, och kan skapa variabler av denna typ. I var och en av dessa variabler ingår de olika <em>attributen</em> (<code>brand</code>, <code>color</code> och <code>model_year</code>).</p>
+<p>Variabeln <code>element</code> antar respektive värde i listan i tur och ordning.</p>
 </section>
-<section id="skapa-objekt" class="slide level2">
-<h2>Skapa objekt</h2>
-<p>När en variabel skapas av en viss datatyp kallas det för att ett <em>objekt</em>, eller en <em>instans</em> av denna typ skapas.</p>
-<div id="90ca2ac8" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="co"># Här skaps objekten a_car och b_car</span></span>
-<span id="cb2-2"><a></a>a_car <span class="op">=</span> Car()</span>
-<span id="cb2-3"><a></a>b_car <span class="op">=</span> Car()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="längre-listor" class="slide level2">
+<h2>Längre listor</h2>
+<p>Listorna behöver inte skrivas in manuellt, det är bra då loopen behöver snurra många varv. Här används <code>range</code> för att skapa en lista från ett värde till ett annat värde.</p>
+<div class="v-space">
+
 </div>
-<p>Nu kan vi sätta respektive objekts attribut.</p>
-<div id="069b4740" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>a_car.brand <span class="op">=</span> <span class="st">"Volvo"</span></span>
-<span id="cb3-2"><a></a>a_car.color <span class="op">=</span> <span class="st">"Blue"</span></span>
-<span id="cb3-3"><a></a>a_car.model_year <span class="op">=</span> <span class="dv">2005</span></span>
-<span id="cb3-4"><a></a>b_car.brand <span class="op">=</span> <span class="st">"Tesla"</span></span>
-<span id="cb3-5"><a></a>b_car.color <span class="op">=</span> <span class="st">"White"</span></span>
-<span id="cb3-6"><a></a>b_car.model_year <span class="op">=</span> <span class="dv">2020</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Nu innehåller <code>a_car</code> och <code>b_car</code> sin aktuella information.</p>
-</section>
-<section id="använda-attribut" class="slide level2">
-<h2>Använda attribut</h2>
-<p>Vi använder samma syntax för att extrahera information från ett objekt som vi gjorde när vi satte det.</p>
-<div id="aa73c839" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="bu">print</span>(<span class="ss">f"a_car årsmodell: </span><span class="sc">{</span>a_car<span class="sc">.</span>model_year<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb4-2"><a></a><span class="bu">print</span>(<span class="ss">f"a_car märke: </span><span class="sc">{</span>a_car<span class="sc">.</span>brand<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb4-3"><a></a><span class="bu">print</span>(<span class="ss">f"b_car årsmodell: </span><span class="sc">{</span>b_car<span class="sc">.</span>model_year<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb4-4"><a></a><span class="bu">print</span>(<span class="st">"a_car är älde än b_car"</span>) <span class="cf">if</span> b_car.model_year <span class="op">&gt;</span> a_car.model_year <span class="cf">else</span> <span class="bu">print</span>(<span class="st">"a_car är äldre än b_car"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>, <span class="dv">8</span>):   <span class="co"># Här skapas listan</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>    <span class="bu">print</span>(i, end<span class="op">=</span><span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>a_car årsmodell: 2005
-a_car märke: Volvo
-b_car årsmodell: 2020
-a_car är älde än b_car</code></pre>
+<pre><code>3 4 5 6 7 </code></pre>
 </div>
 </div>
-<p>På det här sättet kan många variabler skapas av en och samma typ, som alla innehåller sin unika information. Det är användbart i t ex register och spel.</p>
+<div class="v-space">
+
+</div>
+<p>Funktionen <code>range(3, 8)</code> skapar listan <code>[3, 4, 5, 6, 7]</code></p>
+<p>Om det hade varit en <code>while</code>-loop som skulle snurra fem varav skulle ett villkor och en räknare behövt sättas upp.</p>
 </section>
-<section id="exempel-en-spelares-position" class="slide level2">
-<h2>Exempel: en spelares position</h2>
-<div id="44adac11" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="im">import</span> random <span class="im">as</span> rand</span>
-<span id="cb6-2"><a></a><span class="kw">class</span> Player():</span>
-<span id="cb6-3"><a></a>  position_x <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb6-4"><a></a>  position_y <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb6-5"><a></a></span>
-<span id="cb6-6"><a></a><span class="kw">def</span> set_position(current_player): <span class="co"># En funktion som slumpar fram ett läge</span></span>
-<span id="cb6-7"><a></a>  x <span class="op">=</span> rand.randint(<span class="dv">0</span>, <span class="dv">10</span>)</span>
-<span id="cb6-8"><a></a>  y <span class="op">=</span> rand.randint(<span class="dv">0</span>, <span class="dv">10</span>)</span>
-<span id="cb6-9"><a></a>  current_player.position_x <span class="op">=</span> x   <span class="co"># Sätt den aktuella instansens läge</span></span>
-<span id="cb6-10"><a></a>  current_player.position_y <span class="op">=</span> y</span>
-<span id="cb6-11"><a></a></span>
-<span id="cb6-12"><a></a>player_1 <span class="op">=</span> Player() <span class="co"># Skapar två instanser av Player</span></span>
-<span id="cb6-13"><a></a>player_2 <span class="op">=</span> Player()</span>
-<span id="cb6-14"><a></a></span>
-<span id="cb6-15"><a></a>set_position(player_1) <span class="co"># Sätter ett slumpvis valt läge för player_1</span></span>
-<span id="cb6-16"><a></a>set_position(player_2) <span class="co"># Sätter ett slumpvis valt läge för player_2</span></span>
-<span id="cb6-17"><a></a><span class="bu">print</span>(<span class="ss">f"Player 1 at (</span><span class="sc">{</span>player_1<span class="sc">.</span>position_x<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>player_1<span class="sc">.</span>position_y<span class="sc">}</span><span class="ss">)"</span>)</span>
-<span id="cb6-18"><a></a><span class="bu">print</span>(<span class="ss">f"Player 2 at (</span><span class="sc">{</span>player_2<span class="sc">.</span>position_x<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>player_2<span class="sc">.</span>position_y<span class="sc">}</span><span class="ss">)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="funktionen-range" class="slide level2">
+<h2>Funktionen <code>range</code></h2>
+<p>Exempel på hur parametrar påverkar resultatet av <code>range</code></p>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>lista_A <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">10</span>))</span>
+<span id="cb5-2"><a href="#cb5-2"></a>lista_B <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>))</span>
+<span id="cb5-3"><a href="#cb5-3"></a>lista_C <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">2</span>))</span>
+<span id="cb5-4"><a href="#cb5-4"></a>lista_D <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">10</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>))</span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="bu">print</span>(<span class="ss">f"lista_A = </span><span class="sc">{</span>lista_A<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb5-6"><a href="#cb5-6"></a><span class="bu">print</span>(<span class="ss">f"lista_B = </span><span class="sc">{</span>lista_B<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="bu">print</span>(<span class="ss">f"lista_C = </span><span class="sc">{</span>lista_C<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="bu">print</span>(<span class="ss">f"lista_D = </span><span class="sc">{</span>lista_D<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Player 1 at (7, 6)
-Player 2 at (9, 5)</code></pre>
+<pre><code>lista_A = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+lista_B = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4]
+lista_C = [0, 2, 4, 6, 8]
+lista_D = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]</code></pre>
 </div>
 </div>
 </section>
-<section id="referenser" class="slide level2">
-<h2>Referenser</h2>
-<p>Vi tittar på funktionen <code>set_position(player)</code> igen</p>
-<div id="9ded4ef4" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="kw">def</span> set_position(current_player): <span class="co"># En funktion som slumpar fram ett läge</span></span>
-<span id="cb8-2"><a></a>  x <span class="op">=</span> rand.randint(<span class="dv">0</span>, <span class="dv">10</span>)</span>
-<span id="cb8-3"><a></a>  y <span class="op">=</span> rand.randint(<span class="dv">0</span>, <span class="dv">10</span>)</span>
-<span id="cb8-4"><a></a>  player.position_x <span class="op">=</span> x   <span class="co"># Sätt den aktuella instansens läge</span></span>
-<span id="cb8-5"><a></a>  player.position_y <span class="op">=</span> y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="exempel-multiplikationstabell" class="slide level2">
+<h2>Exempel: Multiplikationstabell</h2>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># Detta program beräknar och skriver ut "tolvans tabell"</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">13</span>):</span>
+<span id="cb7-3"><a href="#cb7-3"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">:2.0f}</span><span class="ss"> * 12 = </span><span class="sc">{</span>i<span class="op">*</span><span class="dv">12</span><span class="sc">:3.0f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> 1 * 12 =  12
+ 2 * 12 =  24
+ 3 * 12 =  36
+ 4 * 12 =  48
+ 5 * 12 =  60
+ 6 * 12 =  72
+ 7 * 12 =  84
+ 8 * 12 =  96
+ 9 * 12 = 108
+10 * 12 = 120
+11 * 12 = 132
+12 * 12 = 144</code></pre>
 </div>
-<p>När <code>current_player</code> är av en egendefinierad datatyp, som t ex <code>Player</code>, så opererar funktionen på just detta objekt. Man säger att <code>current_player</code> är en <em>referens</em>, ett alias, till det objekt som funktionen anropas med.</p>
-<p>När en funktion tar emot t ex ett tal så kommer istället en <em>kopia</em> av den variabeln att skapas i funktionen, och det ursprungliga värdet ändras inte.</p>
+</div>
+</section>
+<section id="andra-listelement-än-tal" class="slide level2">
+<h2>Andra listelement än tal</h2>
+<p>En lista kan innehålla andra element än tal.</p>
+<div class="v-space">
+
+</div>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>items <span class="op">=</span> [<span class="st">"Klocka"</span>, <span class="st">"Kikare"</span>, <span class="st">"Termometer"</span>]</span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="bu">print</span>(<span class="st">"Du har tillgång till:"</span>, end<span class="op">=</span><span class="st">" "</span>)</span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="cf">for</span> item <span class="kw">in</span> items:</span>
+<span id="cb9-4"><a href="#cb9-4"></a>    <span class="bu">print</span>(item, end<span class="op">=</span><span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Du har tillgång till: Klocka Kikare Termometer </code></pre>
+</div>
+</div>
+<div class="v-space">
+
+</div>
+<p>Vi kommer senare att titta på hur element kan läggas till, tas bort och sorteras i listor. Det är användbart t ex i spel.</p>
+</section>
+<section id="ett-tänkt-exempel" class="slide level2">
+<h2>Ett tänkt exempel</h2>
+<div class="v-space">
+
+</div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>items <span class="op">=</span> [<span class="st">"Klocka"</span>, <span class="st">"Kikare"</span>, <span class="st">"Termometer"</span>]</span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="cf">for</span> item <span class="kw">in</span> items:</span>
+<span id="cb11-3"><a href="#cb11-3"></a>    <span class="cf">if</span> item.is_boostable:</span>
+<span id="cb11-4"><a href="#cb11-4"></a>      item.boost()</span>
+<span id="cb11-5"><a href="#cb11-5"></a>      <span class="bu">print</span>(<span class="ss">f"Din </span><span class="sc">{</span>item<span class="sc">}</span><span class="ss"> är nu boostad ✅"</span>)</span>
+<span id="cb11-6"><a href="#cb11-6"></a>    <span class="cf">else</span>:</span>
+<span id="cb11-7"><a href="#cb11-7"></a>      <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>item<span class="sc">}</span><span class="ss"> gick inte att boosta ❌"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Sekvensen ovan skulle kunna ingå i ett spelprogram. Här är <code>is_boostable</code> en <em>egenskap</em> hos <em>objektet</em> <code>item</code> och <code>boost</code> är en <em>metod</em> som tillämpas. Dessa saker måste programmeraren designa själv; det är inte inbyggt i Python.</p>
+<p>Senare i kursen kommer vi att komma till klasser, och koppla objekt, egenskaper och metoder till dessa.</p>
 </section>
 <section id="sammanfattning" class="slide level2">
 <h2>Sammanfattning</h2>
 <ul>
-<li>Egendefinierade datatyper deklareras med hjälp av nyckelordet <code>class</code></li>
-<li>Variablerna i klassen kallas för attribut</li>
-<li>En instans av en sådan datyp skapas enligt syntaxen <code>my_var = My_type()</code></li>
-<li>Attribut kan kommas åt med punkt-operatorn, enligt syntaxen <code>my_var.x</code></li>
-<li>När en funktion tar emot en egendefinierad datatyp så opererar den på originalobjektet</li>
+<li><code>for</code>-loopar används antingen när något ska göras ett förutbestämt antal gånger…</li>
+<li>… eller när någon funktion ska tillämpas på ett element i taget i en lista</li>
+<li>Funktionen <code>range</code> kan användas för att skapa listor</li>
+<li>Funktionen <code>range</code> ger olika utdata beroende på vilka parametrar som används</li>
 </ul>
 
-<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
-</div>
 </div>
 </section>
     </div>
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="../../../../site_libs/revealjs/dist/reveal.js"></script>
+  <script src="../../../site_libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="../../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="../../../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="../../../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="../../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="../../../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="../../../../site_libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="../../../../site_libs/revealjs/plugin/search/search.js"></script>
-  <script src="../../../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="../../../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -569,6 +584,7 @@ Player 2 at (9, 5)</code></pre>
       Reveal.initialize({
 'controlsAuto': false,
 'previewLinksAuto': false,
+'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -829,9 +845,10 @@ Player 2 at (9, 5)</code></pre>
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      function tippyHover(el, contentFn) {
         const config = {
           allowHTML: true,
+          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -841,17 +858,8 @@ Player 2 at (9, 5)</code></pre>
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start',
+          placement: 'bottom-start'
         };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 

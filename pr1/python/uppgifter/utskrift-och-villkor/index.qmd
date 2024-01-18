@@ -1,0 +1,331 @@
+---
+title: "Uppgifter Pr1, utskrift och villkor"
+format:
+  html:
+    fontsize: 1em
+editor: visual
+---
+
+## Utskrifter och beräkningar i Python
+
+**Nedanstående uppgifter ska göras i Python-konsolen, dvs du ska inte skapa en fil som sparas, om det inte framgår något annat i uppgiften.**
+---
+
+### Uppgift 1
+
+Mata in följande rader i Python-konsolen och reflektera över resultatet:
+
+-   `print("2 + 2")`
+-   `print("2" + "2")`
+-   `print(2 + 2)`
+-   `print(2.0 + 2)`
+-   `print(0.1 + 0.2)`
+
+<div style="color: red;">**Kommentarer**</div>
+
+1. Tecken inom citationstecken (`" "` ) skrivs ut precis som de är, det är
+ingenting som beräknas även om det är ett uttryck innanför citationstecknen.
+Det som står innanför citationstecken kallas för en **sträng**. Två strängar
+kan adderas, med resultatet att det blir en ny sträng som består av de båda
+ingående strängarna i en följd. Därav gäller att `"2" + "2"` blir `22`
+(där `22` är en sträng och inte ett tal). 
+
+2. Uttrycket `2` är ett heltal och `2.0` är ett flyttal. Om ett flyttal
+används i en beräkning kommer svaret att bli ett flyttal, även om det finns
+heltal med i andra delar av uttrycket.
+
+3. `0.1 + 0.2` beräknas inte till exakt `0.3` eftersom Python lagrar tal
+i binär form (basen 2 till skillnad från basen 10). I denna binära
+representation kommer termerna att vara avrundade, och summan blir ett
+närmevärde.
+
+### Uppgift 2
+
+Använd en enda `print`-sats som skriver ut följande (byt ut namnet mot ditt
+eget). Observera att utskriften är på två rader!
+
+::: {style="background-color: lightblue; width: 100%; height: 75px; padding: 10px; margin-top: 20px; margin-bottom: 10px;"}
+```{python}
+#|echo: false
+print("Jag heter\nAnders Andersson")
+```
+:::
+
+<div style="color:red;">**Svar uppgift 2**</div>
+`print("Jag heter\nAnders Andersson")`
+
+### Uppgift 3
+
+Skapa en Python-fil i Idle där du deklarerar följande strängvariabler (som du kan själv kan anpassa innehållet i):
+
+```{python}
+fnamn = "Anders"
+enamn = "Andersson"
+adr = "Storgatan 1"
+postnr = "999 99"
+ort = "Storstad"
+ålder = 17
+```
+
+Använd en `print`-sats, där du skriver ut variablerna som en `fstring`, så att utskriften blir:
+
+::: {style="background-color: lightblue; width: 100%; height: 50px; padding: 10px; margin-top: 20px; margin-bottom: 10px"}
+```{python}
+#|echo: false
+print(f"Hej, jag heter {fnamn} och är {ålder} år.")
+```
+:::
+
+(Resten av variablerna ska användas i en senare uppgift, så deklarera dessa även om de inte används här.)
+
+<div style="color: red;">**Lösningsförslag uppgift 3**</div>
+[Se denna länk](https://gist.github.com/codebubo/9dc1b0f9a8c61984aadd6f2b21138568)
+
+
+### Uppgift 4
+
+Deklarera följande variabler, och **spara i en fil i Idle**:
+
+```python
+sträcka = 103 # Sträcka i meter
+tid = 13.2    # Tiden i sekunder
+fart = sträcka / tid
+```
+
+Skapa en `print`-sats som skriver ut farten på det aktuella föremålet avrundat till en decimal.
+
+<div style="color: red;">**Lösningsförslag uppgift 4**</div>
+[Se denna länk](https://gist.github.com/codebubo/2f001a1660ac999a0df984ba67bdbd81)
+
+### Uppgift 5
+
+Deklarera följande variabler i Python:
+
+```{python}
+a = 1.5
+b = 21.32
+```
+
+Använd en (enda) `print`-sats med lämpliga formateringstecken för att skriva ut, och göra, följande beräkning. Du ska inte använda flera på varandra följande mellanslag inne i `print`-satsen.
+
+::: {style="background-color: lightblue; width: 100%; height: 110px; padding: 10px; margin-top: 20px;"}
+```{python}
+#| echo: false
+print(f"{a:>7.2f}\n+{b:>6.2f}\n-------\n{(a+b):>7.2f}")
+```
+:::
+
+<p>
+<div style="color: red;">**Svar uppgift 5**</div>
+`print(f"{a:>7.2f}\n+{b:>6.2f}\n-------\n{(a+b):>7.2f}")`
+
+### Uppgift 6
+
+Använd filen med strängvariablerna från Uppgift 3
+för att med en (enda) `print`-sats med lämpliga formateringstecken för att skriva ut strängarna, högerjusterade enligt nedan. Du ska inte använda flera på varandra följande mellanslag inne i `print`-satsen.
+
+::: {style="background-color: lightblue; width: 100%; height: 90px; padding: 10px; margin-top: 20px;"}
+```{python}
+#| echo: false
+print(f"{fnamn:<6} {enamn}\n{adr:>16}\n{postnr :>7} {ort:>2}")
+```
+:::
+
+<p>
+<div style="color: red;">**Svar uppgift 6**<div>
+`print(f"{fnamn:<6} {enamn}\n{adr:>16}\n{postnr :>7} {ort:>2}")`
+
+## Villkor i Python
+
+**Respektive programmeringsuppgift nedan ska sparas i en fil**
+---
+
+### Uppgift 7
+
+Skapa ett program som ber dig mata in ett belopp med pengar. Programmet ska avgöra om det räcker till att köpa ett smycke av järn, silver eller guld.
+**Skapa även ett flödesschema** för programmet.
+
+Priset för respektive typ av smycke deklareras som variabler, där ett järnmycke kostar 200 kr, ett silversmycke 500 kr och ett guldsmycke 1000 kr. Deklarera variabler för dessa priser och
+använd dessa i programmet.
+
+::: {style="background-color: lightblue; width: 100%; height: 270px; padding: 10px; margin-top: 20px;margin-bottom: 10px;"}
+```         
+# Exempelkörning 1
+Ange belopp (i kr.) att handla för -> 300
+Beloppet räcker till ett järnsmycke!
+
+# Exempelkörning 2
+Ange belopp (i kr.) att handla för -> 800
+Beloppet räcker till ett ett silversmycke!
+
+# Exempelkörning 3
+Ange belopp (i kr.) att handla för -> 100
+Beloppet räcker inte till något smycke.
+```
+:::
+
+**Utmanande uppgift**: Ändra programmet så att det skriver ut det maximala
+antalet av respektive sort smycke som du kan köpa för ett angivet belopp.
+Programmet ska prioritera de dyraste smyckena.
+
+::: {style="background-color: lightblue; width: 100%; height: 160px; padding: 10px; margin-top: 20px;margin-bottom: 10px;"}
+```         
+# Exempelkörning 4
+Ange belopp (i kr.) att handla för -> 1975
+Beloppet räcker till:
+Antal guldsmycken:  1
+Antal silvermycken: 1
+Antal järnsmycken:  2
+Belopp kvar: 75 kr
+```
+:::
+::: {style="background-color: lightyellow; width: 100%; height: 120px; padding: 10px; margin-top: 20px;margin-bottom: 10px;"}
+&#9432; Använd heltalsdivision, den ger **heltalsdelen**
+vid division. Exempel:
+
+```
+15 // 7 # Ger resultatet 2
+20 // 7 # Ger resultatet 2
+```
+:::
+
+<div style="color: red;">**Lösningsförslag uppgift 7**</div>
+[Se denna länk](https://gist.github.com/codebubo/5909fb477c99db600505702292b277cf)
+
+### Uppgift 8
+För de booleska variablerna `a`, `b` och `c` gäller
+
+* `a = True`
+* `b = True`
+* `c = False`
+
+Fundera ut vilket booleskt värde respektive uttryck nedan kommer att anta,
+och kontrollera det därefter i Python-konsolen:
+
+a. `(a and b) and c` <div style="color: red;">False</div>
+b. `a and b and c` <div style="color: red;">False</div>
+c. `(a and c) or b` <div style="color: red;">True</div>
+d. `a and b or c` <div style="color: red;">True</div>
+
+### Uppgift 9
+
+Skapa ett program som läser in längderna på tre sidor. Programmet ska sedan
+avgöra om dessa sidor är sidorna i en rätvinklig triangel.
+
+::: {style="background-color: lightblue; width: 100%; height: 260px; padding: 10px; margin-top: 20px;margin-bottom: 10px;"}
+``` 
+# Exempelkörning 1
+Ange längden på sida 1 -> 3
+Ange längden på sida 2 -> 4
+Ange längden på sida 3 -> 5
+Dessa sidor kan bilda en rätvinklig triangel
+
+# Exempelkörning 2
+Ange längden på sida 1 -> 3
+Ange längden på sida 2 -> 4
+Ange längden på sida 3 -> 6
+Dessa sidor kan inte bilda inte en rätvinklig triangel
+```
+:::
+
+::: {style="background-color: lightyellow; width: 100%; height: 50px; padding: 10px; margin-top: 20px;margin-bottom: 10px;"}
+&#9432;
+För att kvadrera ett tal används *exponentoperatorn* `**`. T ex gäller att om
+`a = 2**3` så antar `a` värdet 8.
+:::
+
+**Utmanande uppgift**: Utöka programmet så att det även avgör om sidorna bildar
+en triangel över huvud taget.
+
+::: {style="background-color: lightblue; width: 100%; height: 130px; padding: 10px; margin-top: 20px;margin-bottom: 10px;"}
+```         
+# Exempelkörning 3
+Ange längden på sida 1 -> 7
+Ange längden på sida 2 -> 5
+Ange längden på sida 3 -> 1
+Dessa sidor kan inte bilda en triangel
+```
+:::
+
+<p>
+<div style="color: red;">**Lösningsförslag uppgift 9**</div>
+[Se denna länk](https://gist.github.com/codebubo/34fd14ee9484289f95583597ee927b75)
+
+### Uppgift 10
+
+Ett program som skriver ut vilket betyg en viss provpoäng motsvarar skulle
+kunna se ut så här:
+
+```python
+e_gräns = 15; c_gräns = 25; a_gräns = 35
+poäng = int(input('Ange din provpoäng -> '))
+if poäng >= a_gräns:
+   print('A')
+elif poäng >= c_gräns:
+   print('C')
+elif poäng >= e_gräns:
+   print('E')
+else:
+   print('F')
+print('Programmet avslutas')
+```
+
+a. Gör ett flödesschema för programmet.
+b. Skriv om programmet så att det använder de booleska operatorerna
+`not`, `and` och `or` i villkoren.
+
+<div style="color: red;">**Lösningsförslag uppgift 10**</div>
+[Se denna länk](https://gist.github.com/codebubo/be43369abc47aa71312423d561d4de8c)
+
+### Uppgift 11
+
+Skapa ett program som ber dig mata in ett årtal.
+Programmet avgör om året är ett skottår.
+Ett årtal som inte är delbart med 4 är inte ett skottår. Är
+årtalet dessutom delbart 100 måste det också vara delbart med
+400 för att vara ett skottår.
+
+::: {style="background-color: lightblue; width: 100%; height: 360px; padding: 10px; margin-top: 20px;margin-bottom: 10px;"}
+```      
+# Exempelkörning 1
+Ange ett årtal ->  2020
+År 2020 är ett skottår
+
+# Exempelkörning 2
+Ange ett årtal ->  2021
+År 2021 är inte ett skottår
+
+# Exempelkörning 3
+Ange ett årtal ->  1800
+År 1800 är inte ett skottår
+
+# Exempelkörning 4
+Ange ett årtal ->  2000
+År 2000 är ett skottår
+```
+:::
+
+::: {style="background-color: lightyellow; width: 100%; height: 250px; padding: 10px; margin-top: 20px;margin-bottom: 10px;"}
+&#9432;
+Modulooperatorn (`%`) ger resultatet **noll** om ett tal är jämnt
+delbart med ett annat.
+
+```
+# Exempel 1, delbart
+# (21 är delbart med 3)
+21 % 3
+0
+```
+
+```
+# Exempel 2, ej delbart
+# (21 är ej delbart med 2)
+21 % 2
+1
+```
+:::
+
+<p>
+<div style="color: red;">**Lösningsförslag uppgift 11**</div>
+[Se denna länk](https://gist.github.com/codebubo/7b7719f9aa172cd7b873e45a88b1afc7)
+
