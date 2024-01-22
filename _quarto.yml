@@ -43,6 +43,7 @@ website:
               - pr1/python/uppgifter/strangar/index.qmd
               - pr1/python/uppgifter/egna-datatyper/index.qmd
               - pr1/python/uppgifter/binarsokning/index.qmd
+              - pr1/python/uppgifter/sortering/index.qmd
       - section: "Programmering i matematik"
         contents:
           - section: "MatSpec"
