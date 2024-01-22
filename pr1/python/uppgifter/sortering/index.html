@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CodeBubo - Presentation: Strängar</title>
+<title>CodeBubo - Uppgifter: Sortering</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -75,8 +109,38 @@ gtag('js', new Date());
 gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../../../styles.css">
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
@@ -115,7 +179,7 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../../pr1/python/cheat_sheet_python.html">Programmering 1</a></li><li class="breadcrumb-item"><a href="../../../../pr1/python/intro/pres-version-installerad-python/index.html">Presentationer, Python</a></li><li class="breadcrumb-item"><a href="../../../../pr1/python/strangar/presentation/index.html">Presentation: Strängar</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../../pr1/python/cheat_sheet_python.html">Programmering 1</a></li><li class="breadcrumb-item"><a href="../../../../pr1/python/uppgifter/utskrift-och-villkor/index.html">Uppgifter, Python</a></li><li class="breadcrumb-item"><a href="../../../../pr1/python/uppgifter/sortering/index.html">Uppgifter: Sortering</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -148,13 +212,13 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
  <span class="menu-text">Presentationer, Python</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../pr1/python/intro/pres-version-installerad-python/index.html" class="sidebar-item-text sidebar-link">
@@ -199,7 +263,7 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../pr1/python/strangar/presentation/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../../pr1/python/strangar/presentation/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Presentation: Strängar</span></a>
   </div>
 </li>
@@ -213,13 +277,13 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
  <span class="menu-text">Uppgifter, Python</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../pr1/python/uppgifter/utskrift-och-villkor/index.html" class="sidebar-item-text sidebar-link">
@@ -264,7 +328,7 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../pr1/python/uppgifter/sortering/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../pr1/python/uppgifter/sortering/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Uppgifter: Sortering</span></a>
   </div>
 </li>
@@ -355,16 +419,26 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#uppgifter" id="toc-uppgifter" class="nav-link active" data-scroll-target="#uppgifter">Uppgifter</a></li>
+  <li><a href="#en-sorteringsalgoritm-i-python" id="toc-en-sorteringsalgoritm-i-python" class="nav-link active" data-scroll-target="#en-sorteringsalgoritm-i-python">En sorteringsalgoritm i Python</a>
+  <ul class="collapse">
+  <li><a href="#exempel-och-uppgifter" id="toc-exempel-och-uppgifter" class="nav-link" data-scroll-target="#exempel-och-uppgifter">Exempel och uppgifter</a>
+  <ul class="collapse">
+  <li><a href="#beskrivning-av-en-algoritm" id="toc-beskrivning-av-en-algoritm" class="nav-link" data-scroll-target="#beskrivning-av-en-algoritm">Beskrivning av en algoritm</a></li>
+  <li><a href="#uppgift-1" id="toc-uppgift-1" class="nav-link" data-scroll-target="#uppgift-1">Uppgift 1</a></li>
+  <li><a href="#uppgift-2" id="toc-uppgift-2" class="nav-link" data-scroll-target="#uppgift-2">Uppgift 2</a></li>
+  <li><a href="#uppgift-3" id="toc-uppgift-3" class="nav-link" data-scroll-target="#uppgift-3">Uppgift 3</a></li>
+  <li><a href="#uppgift-4" id="toc-uppgift-4" class="nav-link" data-scroll-target="#uppgift-4">Uppgift 4</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../../pr1/python/cheat_sheet_python.html">Programmering 1</a></li><li class="breadcrumb-item"><a href="../../../../pr1/python/intro/pres-version-installerad-python/index.html">Presentationer, Python</a></li><li class="breadcrumb-item"><a href="../../../../pr1/python/strangar/presentation/index.html">Presentation: Strängar</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../../pr1/python/cheat_sheet_python.html">Programmering 1</a></li><li class="breadcrumb-item"><a href="../../../../pr1/python/uppgifter/utskrift-och-villkor/index.html">Uppgifter, Python</a></li><li class="breadcrumb-item"><a href="../../../../pr1/python/uppgifter/sortering/index.html">Uppgifter: Sortering</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Presentation: Strängar</h1>
+<h1 class="title">Uppgifter: Sortering</h1>
 </div>
 
 
@@ -381,16 +455,108 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
 </header>
 
 
-<div class="double-v-space">
-
+<section id="en-sorteringsalgoritm-i-python" class="level1">
+<h1>En sorteringsalgoritm i Python</h1>
+<section id="exempel-och-uppgifter" class="level2">
+<h2 class="anchored" data-anchor-id="exempel-och-uppgifter">Exempel och uppgifter</h2>
+<section id="beskrivning-av-en-algoritm" class="level3">
+<h3 class="anchored" data-anchor-id="beskrivning-av-en-algoritm">Beskrivning av en algoritm</h3>
+<p>Sorteringsalgoritm börjar med att att jämföra det <strong>första</strong> elementets storlek i tur och ordning med alla andra element i listan. Så fort som jämförelsen ger att något element är större än det första, så byts plats på dessa.</p>
+<p>Därefter så fortsätter sorteringen genom att ha det <strong>andra</strong> elementet som referens, och jämföra det med vart och ett av de element som har högre index. När ett element som är mindre än referenselementets position så byter dessa element plats.</p>
+<p>På så sätt fortskrider sorteringen tills alla element, utom det sista, har varit referenselement.</p>
+<p>Här är en illustration över processen när listan</p>
+<p>Steg 1: [<strong>7</strong>, 5, 4, 6] -&gt; [<strong>5</strong>, 7, 4, 6] -&gt; [<strong>4</strong>, 7, 5, 6] (Talen 7 och 5 byter plats med varandra, följt av att talen 5 och 4 byter plats med varandra)</p>
+<p>Steg 2: [4, <strong>7</strong>, 5, 6] -&gt; [4, <strong>5</strong>, 7, 6] ) (Talen 7 och 5 byter plats med varandra)</p>
+<p>Steg 3: [4, 5, <strong>7</strong>, 6] -&gt; [4, 5, <strong>6</strong>, 7] (Slutligen byter talen 6 och 7 plats med varandra, det sista talet måste nu vara det största)</p>
+<p>Sorterad lista: [4, 5, 6, 7]</p>
+</section>
+<section id="uppgift-1" class="level3">
+<h3 class="anchored" data-anchor-id="uppgift-1">Uppgift 1</h3>
+<p>Som vi såg i beskrivningen av algoritm så bygger sorteringen på att byta plats på elementen parvis. Skriv en funktion <code>swap(lst, i, j)</code>, där <code>lst</code> är en lista och <code>i</code> och <code>j</code> är de index vars tal ska byta plats. Eftersom <code>lst</code> är en lista, som funktionen hanterar som en <em>referens</em> så behöver inget returneras, listan i funktionen är samma lista som den utanför funktionen.</p>
+<p><strong>Körningsexempel</strong></p>
+<div id="1e8b9929" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [<span class="dv">7</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">6</span>]</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Listan före platsbytet: </span><span class="sc">{</span>lst<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>swap(lst, <span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Listan efter platsbytet: </span><span class="sc">{</span>lst<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Listan före platsbytet: [7, 5, 4, 6]
+Listan efter platsbytet: [7, 4, 5, 6]</code></pre>
 </div>
-<iframe src="./strangar-pres.html" width="800" height="550">
-</iframe>
-<section id="uppgifter" class="level2">
-<h2 class="anchored" data-anchor-id="uppgifter">Uppgifter</h2>
-<p>Uppgifterna i dokumentet <a href="../../uppgifter/strangar/">Uppgifter Pr1, Strängar</a></p>
+</div>
+</section>
+<section id="uppgift-2" class="level3">
+<h3 class="anchored" data-anchor-id="uppgift-2">Uppgift 2</h3>
+<p>Skriv nu en funktion <code>sortera</code> som implementerar algoritm som är beskriven ovan. Denna funktion kommer att behöva anropa funktionen <code>swap</code>.</p>
+<p>Av samma orsak som funktionen <code>swap</code> inte returnerade något, ska heller inte <code>sortera</code> returnera något.</p>
+<p><strong>Körningsexempel</strong></p>
+<div id="5537f5fd" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [<span class="dv">7</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">6</span>]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Listan före sortering: </span><span class="sc">{</span>lst<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>sortera(lst)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Listan efter sortering: </span><span class="sc">{</span>lst<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Listan före sortering: [7, 5, 4, 6]
+Listan efter sortering: [4, 5, 6, 7]</code></pre>
+</div>
+</div>
+</section>
+<section id="uppgift-3" class="level3">
+<h3 class="anchored" data-anchor-id="uppgift-3">Uppgift 3</h3>
+<p>Emellanåt kan behövas en funktion som kontrollerar om en lista är sorterad. Implementera en sådan funktion <code>is_sorted</code>; funktionen ska returnera det booleska värdet <code>True</code> om listan är sorterad och <code>False</code> om den inte är det.</p>
+<p><strong>Körningsexempel</strong></p>
+<div id="7c6c9432" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [<span class="dv">7</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Är listan sorterad? </span><span class="sc">{</span>is_sorted(lst)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>sortera(lst)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Är listan sorterad nu då? </span><span class="sc">{</span>is_sorted(lst)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Är listan sorterad? False
+Är listan sorterad nu då? True</code></pre>
+</div>
+</div>
+</section>
+<section id="uppgift-4" class="level3">
+<h3 class="anchored" data-anchor-id="uppgift-4">Uppgift 4</h3>
+<p>Det går att mäta tiden det tar för en funktion att köra. Nedanstående exempel visar hur det kan göras (här mäts tiden för en loop som snurrar 1000 varv)</p>
+<p><strong>Exempel tidsmätning</strong></p>
+<div id="62799818" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>start_time <span class="op">=</span> time.perf_counter()</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1000</span>):</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    n <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>end_time <span class="op">=</span> time.perf_counter()</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Antalet sekunder som krävdes för loopen: </span><span class="sc">{</span>end_time <span class="op">-</span> start_time<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Antalet sekunder som krävdes för loopen: 0.000194500000361586</code></pre>
+</div>
+</div>
+<p>Skapa en lista <code>lst</code> och lägg in ett antal heltal mellan <span class="math inline">\(1\)</span> och <span class="math inline">\(10\,000\)</span> i slumpvis ordning. Mät tiden det tar för listan att sorteras med hjälp av din funktion <code>sortera</code> ovan om antalet element är</p>
+<ol type="a">
+<li><span class="math inline">\(100\)</span></li>
+<li><span class="math inline">\(1000\)</span></li>
+<li><span class="math inline">\(10\,000\)</span></li>
+<li><span class="math inline">\(100\,000\)</span></li>
+</ol>
+<p>Gör samma sak med Pythons metod <code>sort</code> för att få en jämförelse av effektiviteten mellan vår algoritm och Pythons algoritm.</p>
+<p><strong>Exempel på användning av <code>sort</code></strong></p>
+<div id="c8ecdb3e" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [<span class="dv">7</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">6</span>]</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lst)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>lst.sort()  <span class="co"># Pythons inbyggda sorteringsmetod tillämpas</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lst)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[7, 5, 4, 6]
+[4, 5, 6, 7]</code></pre>
+</div>
+</div>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
