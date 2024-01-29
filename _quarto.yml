@@ -34,6 +34,7 @@ website:
               - pr1/python/listor/presentation/index.qmd
               - pr1/python/strangar/presentation/index.qmd
               - pr1/python/egna-datatyper/presentation/index.qmd
+              - pr1/python/spara-data-pa-fil/presentation/index.qmd
           - section: "Uppgifter, Python"
             contents:
               - pr1/python/uppgifter/utskrift-och-villkor/index.qmd
@@ -44,6 +45,7 @@ website:
               - pr1/python/uppgifter/egna-datatyper/index.qmd
               - pr1/python/uppgifter/binarsokning/index.qmd
               - pr1/python/uppgifter/sortering/index.qmd
+              - pr1/python/uppgifter/bilregister/index.qmd
       - section: "Programmering i matematik"
         contents:
           - section: "MatSpec"
