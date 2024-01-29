@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.4.545">
 
   <meta name="author" content="Nikodemus Karlsson">
-  <title>CodeBubo - Egna datatyper i Python</title>
+  <title>CodeBubo - Spara data till fil i Python</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -401,7 +401,7 @@
     <div class="slides">
 
 <section id="title-slide" data-background-color="black" data-background-image="https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/for-loopar/frame-3083868_1280.png" data-background-opacity="1" class="quarto-title-block center">
-  <h1 class="title">Egna datatyper i Python</h1>
+  <h1 class="title">Spara data till fil i Python</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -415,126 +415,90 @@ Nikodemus Karlsson
 <section id="dagens-mål" class="slide level2">
 <h2>Dagens mål</h2>
 <ul>
-<li>Att kunna skapa egna datatyper</li>
-<li>Att känna till skillnaden mellan datatyp och objekt</li>
-<li>Att läsa och tilldela datatypen attribut</li>
-<li>Att kunna skicka objekt för vidare process i funktioner</li>
+<li>Att kunna läsa in och skriva data från instanser av en egendefinierad datatyp på fil.</li>
 </ul>
 </section>
-<section id="grundläggande-datatyper" class="slide level2">
-<h2>Grundläggande datatyper</h2>
+<section id="json-format" class="slide level2">
+<h2>JSON-format</h2>
 <div class="v-space">
 
 </div>
-<div class="blue-bg-small-padding">
-<p>Vi har tidigare använt datatyperna heltal, flyttal, listor mm.</p>
-<p>Dessa deklareras t ex som</p>
-<p><code>my_int = 5 # Heltal</code></p>
-<p><code>my_str = "Hello, world" # sträng</code></p>
-<p>I programmering behövs ofta variabler som representerar något ‘’riktigt’’, t ex en bil, en person eller en avatar som har olika egenskaper.</p>
-</div>
+<p>Vi kommer att spara datan på fil i <code>JSON</code>-format (JavaScript Object Notation). Det är ett vanligt sätt att representera data på i många sammanhang.</p>
+<pre><code>{
+    "namn": "Anna",
+    "ålder": 30,
+    "stad": "Stockholm"
+}</code></pre>
+<p>För att använda <code>JSON</code> i Python behövs importeras en modul:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="im">import</span> json</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="deklarera-en-egen-datatyp" class="slide level2">
-<h2>Deklarera en egen datatyp</h2>
+<section id="skapa-en-egen-datatyp" class="slide level2">
+<h2>Skapa en egen datatyp</h2>
 <div class="double-v-space">
 
 </div>
 <p>Vi kan deklarera en variabeltyp <code>Car</code> på det här sättet:</p>
-<div id="eb6f2e98" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="kw">class</span> Car:</span>
-<span id="cb1-2"><a></a>    brand <span class="op">=</span> <span class="st">""</span>  <span class="co"># Tom sträng för bilmärket, så länge</span></span>
-<span id="cb1-3"><a></a>    color <span class="op">=</span> <span class="st">""</span>  <span class="co"># Tom sträng för färgen, så länge</span></span>
-<span id="cb1-4"><a></a>    model_year <span class="op">=</span> <span class="dv">0</span>  <span class="co"># Aktuell årsmodell sätts senare</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="6777e426" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="kw">class</span> Car:</span>
+<span id="cb3-2"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, brand, price, mileage):</span>
+<span id="cb3-3"><a></a>        <span class="va">self</span>.brand <span class="op">=</span> brand</span>
+<span id="cb3-4"><a></a>        <span class="va">self</span>.price <span class="op">=</span> price</span>
+<span id="cb3-5"><a></a>        <span class="va">self</span>.mileage <span class="op">=</span> mileage</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="v-space">
 
 </div>
-<p>Nu har vi tillgång till datatypen <code>Car</code>, och kan skapa variabler av denna typ. I var och en av dessa variabler ingår de olika <em>attributen</em> (<code>brand</code>, <code>color</code> och <code>model_year</code>).</p>
+<p><em>Instanser</em> av denna datatyp kan skapas enligt</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>car1 <span class="op">=</span> Car(<span class="st">"Volvo"</span>, <span class="dv">200000</span>, <span class="dv">10000</span>)</span>
+<span id="cb4-2"><a></a>car2 <span class="op">=</span> Car(<span class="st">"BMW"</span>, <span class="dv">300000</span>, <span class="dv">5000</span>)</span>
+<span id="cb4-3"><a></a>cars <span class="op">=</span> [car1, car2]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="skapa-objekt" class="slide level2">
-<h2>Skapa objekt</h2>
-<p>När en variabel skapas av en viss datatyp kallas det för att ett <em>objekt</em>, eller en <em>instans</em> av denna typ skapas.</p>
-<div id="a5375543" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="co"># Här skaps objekten a_car och b_car</span></span>
-<span id="cb2-2"><a></a>a_car <span class="op">=</span> Car()</span>
-<span id="cb2-3"><a></a>b_car <span class="op">=</span> Car()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Nu kan vi sätta respektive objekts attribut.</p>
-<div id="0768fa89" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>a_car.brand <span class="op">=</span> <span class="st">"Volvo"</span></span>
-<span id="cb3-2"><a></a>a_car.color <span class="op">=</span> <span class="st">"Blue"</span></span>
-<span id="cb3-3"><a></a>a_car.model_year <span class="op">=</span> <span class="dv">2005</span></span>
-<span id="cb3-4"><a></a>b_car.brand <span class="op">=</span> <span class="st">"Tesla"</span></span>
-<span id="cb3-5"><a></a>b_car.color <span class="op">=</span> <span class="st">"White"</span></span>
-<span id="cb3-6"><a></a>b_car.model_year <span class="op">=</span> <span class="dv">2020</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Nu innehåller <code>a_car</code> och <code>b_car</code> sin aktuella information.</p>
+<section id="konvertera-instanserna-till-json" class="slide level2">
+<h2>Konvertera instanserna till JSON</h2>
+<ul>
+<li>JSON kan inte direkt hantera Python-objekt, så vi behöver konvertera våra objekt till en Python-datatypes som JSON kan serialisera, som en dict.</li>
+<li>Använda <code>__dict__</code> för att konvertera objekt till dict.</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>cars_dict <span class="op">=</span> [car.__dict__ <span class="cf">for</span> car <span class="kw">in</span> cars]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Detta sätt att skapa en lista på kallas för <em>listomfattning</em> eller <em>list comprehension</em>. <code>cars_dict</code> är alltså en lista.</p>
 </section>
-<section id="använda-attribut" class="slide level2">
-<h2>Använda attribut</h2>
-<p>Vi använder samma syntax för att extrahera information från ett objekt som vi gjorde när vi satte det.</p>
-<div id="becc6591" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="bu">print</span>(<span class="ss">f"a_car årsmodell: </span><span class="sc">{</span>a_car<span class="sc">.</span>model_year<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb4-2"><a></a><span class="bu">print</span>(<span class="ss">f"a_car märke: </span><span class="sc">{</span>a_car<span class="sc">.</span>brand<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb4-3"><a></a><span class="bu">print</span>(<span class="ss">f"b_car årsmodell: </span><span class="sc">{</span>b_car<span class="sc">.</span>model_year<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb4-4"><a></a><span class="bu">print</span>(<span class="st">"a_car är älde än b_car"</span>) <span class="cf">if</span> b_car.model_year <span class="op">&gt;</span> a_car.model_year <span class="cf">else</span> <span class="bu">print</span>(<span class="st">"a_car är äldre än b_car"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>a_car årsmodell: 2005
-a_car märke: Volvo
-b_car årsmodell: 2020
-a_car är älde än b_car</code></pre>
+<section id="instansen-på-fil" class="slide level2">
+<h2>Instansen på fil</h2>
+<div class="double-v-space">
+
 </div>
+<p>Vi använder <code>json.dump()</code> för att spara till fil:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'cars.json'</span>, <span class="st">'w'</span>) <span class="im">as</span> f:</span>
+<span id="cb6-2"><a></a>    json.dump(cars_dict, f)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="double-v-space">
+
 </div>
-<p>På det här sättet kan många variabler skapas av en och samma typ, som alla innehåller sin unika information. Det är användbart i t ex register och spel.</p>
+<p>Vi använder <code>json.load()</code> för att läsa från fil:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'cars.json'</span>, <span class="st">'r'</span>) <span class="im">as</span> f:</span>
+<span id="cb7-2"><a></a>    loaded_cars_dict <span class="op">=</span> json.load(f)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="exempel-en-spelares-position" class="slide level2">
-<h2>Exempel: en spelares position</h2>
-<div id="47fe0cb0" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="im">import</span> random <span class="im">as</span> rand</span>
-<span id="cb6-2"><a></a><span class="kw">class</span> Player():</span>
-<span id="cb6-3"><a></a>  position_x <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb6-4"><a></a>  position_y <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb6-5"><a></a></span>
-<span id="cb6-6"><a></a><span class="kw">def</span> set_position(current_player): <span class="co"># En funktion som slumpar fram ett läge</span></span>
-<span id="cb6-7"><a></a>  x <span class="op">=</span> rand.randint(<span class="dv">0</span>, <span class="dv">10</span>)</span>
-<span id="cb6-8"><a></a>  y <span class="op">=</span> rand.randint(<span class="dv">0</span>, <span class="dv">10</span>)</span>
-<span id="cb6-9"><a></a>  current_player.position_x <span class="op">=</span> x   <span class="co"># Sätt den aktuella instansens läge</span></span>
-<span id="cb6-10"><a></a>  current_player.position_y <span class="op">=</span> y</span>
-<span id="cb6-11"><a></a></span>
-<span id="cb6-12"><a></a>player_1 <span class="op">=</span> Player() <span class="co"># Skapar två instanser av Player</span></span>
-<span id="cb6-13"><a></a>player_2 <span class="op">=</span> Player()</span>
-<span id="cb6-14"><a></a></span>
-<span id="cb6-15"><a></a>set_position(player_1) <span class="co"># Sätter ett slumpvis valt läge för player_1</span></span>
-<span id="cb6-16"><a></a>set_position(player_2) <span class="co"># Sätter ett slumpvis valt läge för player_2</span></span>
-<span id="cb6-17"><a></a><span class="bu">print</span>(<span class="ss">f"Player 1 at (</span><span class="sc">{</span>player_1<span class="sc">.</span>position_x<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>player_1<span class="sc">.</span>position_y<span class="sc">}</span><span class="ss">)"</span>)</span>
-<span id="cb6-18"><a></a><span class="bu">print</span>(<span class="ss">f"Player 2 at (</span><span class="sc">{</span>player_2<span class="sc">.</span>position_x<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>player_2<span class="sc">.</span>position_y<span class="sc">}</span><span class="ss">)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Player 1 at (10, 3)
-Player 2 at (6, 1)</code></pre>
+<section id="konvertera-tillbaka-till-objekt" class="slide level2">
+<h2>Konvertera tillbaka till objekt</h2>
+<div class="v-space">
+
 </div>
+<p>Konvertera <code>dict</code> tillbaka till <code>Car</code>-objekt.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a>loaded_cars <span class="op">=</span> [Car(<span class="op">**</span>car_dict) <span class="cf">for</span> car_dict <span class="kw">in</span> loaded_cars_dict]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="double-v-space">
+
 </div>
-</section>
-<section id="referenser" class="slide level2">
-<h2>Referenser</h2>
-<p>Vi tittar på funktionen <code>set_position(player)</code> igen</p>
-<div id="5dbcb9d2" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="kw">def</span> set_position(current_player): <span class="co"># En funktion som slumpar fram ett läge</span></span>
-<span id="cb8-2"><a></a>  x <span class="op">=</span> rand.randint(<span class="dv">0</span>, <span class="dv">10</span>)</span>
-<span id="cb8-3"><a></a>  y <span class="op">=</span> rand.randint(<span class="dv">0</span>, <span class="dv">10</span>)</span>
-<span id="cb8-4"><a></a>  player.position_x <span class="op">=</span> x   <span class="co"># Sätt den aktuella instansens läge</span></span>
-<span id="cb8-5"><a></a>  player.position_y <span class="op">=</span> y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>När <code>current_player</code> är av en egendefinierad datatyp, som t ex <code>Player</code>, så opererar funktionen på just detta objekt. Man säger att <code>current_player</code> är en <em>referens</em>, ett alias, till det objekt som funktionen anropas med.</p>
-<p>När en funktion tar emot t ex ett tal så kommer istället en <em>kopia</em> av den variabeln att skapas i funktionen, och det ursprungliga värdet ändras inte.</p>
+<p>Nu innehåller listan de båda bilarna; t ex det första objektets bilmärke är</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>loaded_cars[<span class="dv">0</span>].brand <span class="co"># Volvo</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="sammanfattning" class="slide level2">
 <h2>Sammanfattning</h2>
 <ul>
-<li>Egendefinierade datatyper deklareras med hjälp av nyckelordet <code>class</code></li>
-<li>Variablerna i klassen kallas för attribut</li>
-<li>En instans av en sådan datyp skapas enligt syntaxen <code>my_var = My_type()</code></li>
-<li>Attribut kan kommas åt med punkt-operatorn, enligt syntaxen <code>my_var.x</code></li>
-<li>När en funktion tar emot en egendefinierad datatyp så opererar den på originalobjektet</li>
+<li>Instanser av egendefinierade datatyper kan lagras på fil</li>
+<li>Ett vanligt format är <code>JSON</code>; filen är läsbar och förståelig för människor</li>
+<li>För att lagra instansen som <code>JSON</code> måste den omvandlas till en <code>dict</code> (<em>dictionary</em>) i Python, som lagrar datan i samma format</li>
+<li>För att skriva till filen används metoden <code>json.dump()</code></li>
+<li>För att läsa från filen används metoden <code>json.load()</code></li>
+<li>Efter inläsning kan datan lagras i en lista i programmet</li>
 </ul>
 
 <div class="quarto-auto-generated-content">

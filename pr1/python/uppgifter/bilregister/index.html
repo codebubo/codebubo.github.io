@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CodeBubo - Uppgifter: Listor</title>
+<title>CodeBubo - Uppgifter: Bilregister</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -150,7 +150,7 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../../pr1/python/cheat_sheet_python.html">Programmering 1</a></li><li class="breadcrumb-item"><a href="../../../../pr1/python/uppgifter/utskrift-och-villkor/index.html">Uppgifter, Python</a></li><li class="breadcrumb-item"><a href="../../../../pr1/python/uppgifter/listor/index.html">Uppgifter: Listor</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../../pr1/python/cheat_sheet_python.html">Programmering 1</a></li><li class="breadcrumb-item"><a href="../../../../pr1/python/uppgifter/utskrift-och-villkor/index.html">Uppgifter, Python</a></li><li class="breadcrumb-item"><a href="../../../../pr1/python/uppgifter/bilregister/index.html">Uppgifter: Bilregister</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -281,7 +281,7 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../pr1/python/uppgifter/listor/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../../pr1/python/uppgifter/listor/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Uppgifter: Listor</span></a>
   </div>
 </li>
@@ -311,7 +311,7 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../pr1/python/uppgifter/bilregister/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../pr1/python/uppgifter/bilregister/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Uppgifter: Bilregister</span></a>
   </div>
 </li>
@@ -402,18 +402,12 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#listor-i-python" id="toc-listor-i-python" class="nav-link active" data-scroll-target="#listor-i-python">Listor i Python</a>
+  <li><a href="#spara-bilregister-på-fil" id="toc-spara-bilregister-på-fil" class="nav-link active" data-scroll-target="#spara-bilregister-på-fil">Spara bilregister på fil</a>
   <ul class="collapse">
-  <li><a href="#uppgifter-med-kommentarer-och-lösningsförslag" id="toc-uppgifter-med-kommentarer-och-lösningsförslag" class="nav-link" data-scroll-target="#uppgifter-med-kommentarer-och-lösningsförslag">Uppgifter med kommentarer och lösningsförslag</a>
+  <li><a href="#exempel-och-uppgifter" id="toc-exempel-och-uppgifter" class="nav-link" data-scroll-target="#exempel-och-uppgifter">Exempel och uppgifter</a>
   <ul class="collapse">
-  <li><a href="#uppgift-1" id="toc-uppgift-1" class="nav-link" data-scroll-target="#uppgift-1">Uppgift 1</a></li>
-  <li><a href="#uppgift-2" id="toc-uppgift-2" class="nav-link" data-scroll-target="#uppgift-2">Uppgift 2</a></li>
-  <li><a href="#uppgift-3" id="toc-uppgift-3" class="nav-link" data-scroll-target="#uppgift-3">Uppgift 3</a></li>
-  <li><a href="#uppgift-4" id="toc-uppgift-4" class="nav-link" data-scroll-target="#uppgift-4">Uppgift 4</a></li>
-  </ul></li>
-  <li><a href="#uppgift-utan-lösningsförslag" id="toc-uppgift-utan-lösningsförslag" class="nav-link" data-scroll-target="#uppgift-utan-lösningsförslag">Uppgift utan lösningsförslag</a>
-  <ul class="collapse">
-  <li><a href="#uppgift-5" id="toc-uppgift-5" class="nav-link" data-scroll-target="#uppgift-5">Uppgift 5</a></li>
+  <li><a href="#kod" id="toc-kod" class="nav-link" data-scroll-target="#kod">Kod</a></li>
+  <li><a href="#uppgifter" id="toc-uppgifter" class="nav-link" data-scroll-target="#uppgifter">Uppgifter</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -422,9 +416,9 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../../pr1/python/cheat_sheet_python.html">Programmering 1</a></li><li class="breadcrumb-item"><a href="../../../../pr1/python/uppgifter/utskrift-och-villkor/index.html">Uppgifter, Python</a></li><li class="breadcrumb-item"><a href="../../../../pr1/python/uppgifter/listor/index.html">Uppgifter: Listor</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../../pr1/python/cheat_sheet_python.html">Programmering 1</a></li><li class="breadcrumb-item"><a href="../../../../pr1/python/uppgifter/utskrift-och-villkor/index.html">Uppgifter, Python</a></li><li class="breadcrumb-item"><a href="../../../../pr1/python/uppgifter/bilregister/index.html">Uppgifter: Bilregister</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Uppgifter: Listor</h1>
+<h1 class="title">Uppgifter: Bilregister</h1>
 </div>
 
 
@@ -441,334 +435,131 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
 </header>
 
 
-<section id="listor-i-python" class="level1">
-<h1>Listor i Python</h1>
-<section id="uppgifter-med-kommentarer-och-lösningsförslag" class="level2">
-<h2 class="anchored" data-anchor-id="uppgifter-med-kommentarer-och-lösningsförslag">Uppgifter med kommentarer och lösningsförslag</h2>
-<section id="uppgift-1" class="level3">
-<h3 class="anchored" data-anchor-id="uppgift-1">Uppgift 1</h3>
-<p><strong>Denna övning ska genomföras i konsolen, dvs inte sparas i någon fil</strong></p>
-<p>Skapa listan <code>lst</code>. Lägg till tio stycken heltalsvärden; dessa ska inte vara i någon storleksordning. Utför därefter följande:</p>
-<ol type="a">
-<li><code>print(lst)</code></li>
-<li><code>print(lst[0])</code></li>
-<li><code>print(lst[2])</code></li>
-<li><code>print(lst[-1])</code></li>
-</ol>
-<p>Vad skrivs ut? Reflektera över varför resultatet blir det som det blir.</p>
-<p>Pröva nu följande kommandon på <code>lst</code>:</p>
-<ol start="5" type="a">
-<li><code>print(len(lst))</code></li>
-<li><code>print(sum(lst))</code></li>
-<li><code>print(max(lst))</code></li>
-<li><code>print(min(lst))</code></li>
-<li><code>print(sorted(lst))</code></li>
-<li><code>print(lst)</code></li>
-<li><code>lst.sort(reverse=True)</code></li>
-<li><code>print(lst)</code></li>
-</ol>
-<p>Vad skrivs ut? Reflektera speciellt över skillnaden mellan utskriften i j-uppgiften respektive l-uppgiften.</p>
-<p>Pröva nu att utföra</p>
-<ol start="13" type="a">
-<li><code>lst.pop()</code></li>
-</ol>
-<p>Vad hände? Hur ser listan ut nu, och vad verkar <code>pop()</code> göra med listan?</p>
-<p>Metoden <code>pop()</code> kan också ta ett argument. Pröva att utföra</p>
-<ol start="14" type="a">
-<li><code>lst.pop(5)</code></li>
-</ol>
-<p>Se vad som kommer ut och jämför hur listan ser ut efter utförandet av detta med hur den såg ut före.</p>
-<p>Pröva nu att utföra</p>
-<ol start="15" type="a">
-<li><code>lst.append(42)</code></li>
-</ol>
-<p>Hur ser listan ut nu, och vad verkar <code>append()</code> göra med listan?</p>
-<p>Slutligen kan en del av en lista väljas ut, det kallas för <em>slicing</em> på engelska. Se till att du har minst 10 element i din lista (utför kommandot <code>len(lst)</code> för att se antalet element; om det är färre än 10 element kan du lägga till så många som behövs med <code>append</code>), och utför kommandona</p>
-<ol start="16" type="a">
-<li><code>print(lst[2:5])</code></li>
-<li><code>print(lst[5:])</code></li>
-<li><code>print(lst[:5])</code></li>
-</ol>
-<p>Dessa ‘’slicar’’ förändrar inte variabeln <code>lst</code>. Däremot går det att skapa en annan variabel som innehåller de fem första värdena i <code>lst</code> genom <code>lst2 = lst[:5]</code>. Pröva detta, jämför därefter variabeln <code>lst</code> och <code>lst2</code> med varandra.</p>
-<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag uppgift 1">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Lösningsförslag uppgift 1
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Dessa uppgifter är inte av karaktären att det finns lösningsförslag. Däremot kan det tryckas på att <code>lst.sort()</code>, <code>lst.pop()</code> och <code>lst.append()</code> <em>förändrar</em> listan <code>lst</code>; de är s.k <em>metoder</em> som opererar på listor.</p>
-<p>De övriga operationerna i uppgifterna ger enbart en utmatning av det som önskas, t ex <code>print(sorted(lst))</code> skriver ut en sorterad lista. (<code>sorted</code> är en funktion som <em>returnerar en ny lista</em>, men som inte förändrar den lista som den tog emot).</p>
-</div>
-</div>
-</div>
+<section id="spara-bilregister-på-fil" class="level1">
+<h1>Spara bilregister på fil</h1>
+<section id="exempel-och-uppgifter" class="level2">
+<h2 class="anchored" data-anchor-id="exempel-och-uppgifter">Exempel och uppgifter</h2>
+<section id="kod" class="level3">
+<h3 class="anchored" data-anchor-id="kod">Kod</h3>
+<p>Nedanstående kod implementerar ett litet register som sparas på fil.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Filnamnet där vi kommer att lagra bilarna</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>FILENAME <span class="op">=</span> <span class="st">"cars.json"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># En lista för att lagra bilobjekten</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>cars_list <span class="op">=</span> []</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Definiera en klass för att representera en bil</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Car:</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, brand, price, mileage):</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.brand <span class="op">=</span> brand</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.price <span class="op">=</span> price</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.mileage <span class="op">=</span> mileage</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Funktion för att skriva ut bilnummer</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_number(i):</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Bil #</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"---------"</span>)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Funktion för att skriva ut information om en bil</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_car(car, i<span class="op">=</span><span class="dv">0</span>):</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>        print_number(i)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Märke: </span><span class="sc">{</span>car<span class="sc">.</span>brand<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Miltal: </span><span class="sc">{</span>car<span class="sc">.</span>mileage<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Pris: </span><span class="sc">{</span>car<span class="sc">.</span>price<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>()</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Funktion för att skriva ut en lista av bilar</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_cars_list(loaded_cars_dict):</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Konvertera varje bil-dict till ett bilobjekt</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    loaded_cars <span class="op">=</span> [Car(<span class="op">**</span>car_dict) <span class="cf">for</span> car_dict <span class="kw">in</span> loaded_cars_dict]</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    i <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> car <span class="kw">in</span> loaded_cars:</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>        print_car(car, i)</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>        i <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Funktion för att konvertera en lista av bil-dicts till en lista av bilobjekt</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_cars_list(loaded_cars_dict):</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [Car(<span class="op">**</span>car_dict) <span class="cf">for</span> car_dict <span class="kw">in</span> loaded_cars_dict]</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Funktion för att skriva ut alla bilar i cars_list</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_cars():</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Sortera bilarna efter märke</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>    cars_list.sort(key<span class="op">=</span><span class="kw">lambda</span> car: car.brand)</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>    i <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> car <span class="kw">in</span> cars_list:</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>        print_car(car, i)</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>        i <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="co"># Funktion för att ta inmatning från användaren och skapa ett nytt bilobjekt</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> input_car():</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>    brand <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Ange märke -&gt; "</span>)</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>    price <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Ange pris -&gt; "</span>))</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>    mileage <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Ange miltal -&gt; "</span>))</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> Car(brand, price, mileage)</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="co"># Funktion för att spara en bil till filen</span></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> save_car(car):</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Läs in befintliga bilar från filen</span></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>        <span class="cf">with</span> <span class="bu">open</span>(FILENAME, <span class="st">'r'</span>) <span class="im">as</span> f:</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>            cars_dict <span class="op">=</span> json.load(f)</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>            cars_list <span class="op">=</span> get_cars_list(cars_dict)</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">FileNotFoundError</span>:</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>        cars_list <span class="op">=</span> []</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> json.JSONDecodeError:</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Det gick inte att tolka filen 'car.json' som JSON."</span>)</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>        cars_list <span class="op">=</span> []</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Ett oväntat fel inträffade: </span><span class="sc">{</span><span class="bu">str</span>(e)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>        cars_list <span class="op">=</span> []</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Lägg till den nya bilen</span></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>    cars_list.append(car)</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Skriv tillbaka hela listan till filen</span></span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>    cars_dict <span class="op">=</span> [car.__dict__ <span class="cf">for</span> car <span class="kw">in</span> cars_list]</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(FILENAME, <span class="st">'w'</span>) <span class="im">as</span> f:</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>        json.dump(cars_dict, f)</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="co"># Funktion för att läsa in bilar från filen</span></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> read_cars_from_file():</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>        <span class="cf">with</span> <span class="bu">open</span>(FILENAME, <span class="st">'r'</span>) <span class="im">as</span> f:</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>            loaded_cars_dict <span class="op">=</span> json.load(f)</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>            cars_list.extend(get_cars_list(loaded_cars_dict))</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">FileNotFoundError</span>:</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Filen car.json kunde inte hittas, skapar en tom..."</span>)</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>        <span class="cf">with</span> <span class="bu">open</span>(FILENAME, <span class="st">'w'</span>) <span class="im">as</span> f:</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>            <span class="cf">pass</span></span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> json.JSONDecodeError:</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Det gick inte att tolka filen 'car.json' som JSON."</span>)</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Ett oväntat fel inträffade: </span><span class="sc">{</span><span class="bu">str</span>(e)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a><span class="co">#----------------Huvudprogram------------------------</span></span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a><span class="co"># Skapa en ny bil, spara den och skriv ut alla bilar</span></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>new_car <span class="op">=</span> input_car()</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>save_car(new_car)</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>read_cars_from_file()</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>print_cars()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="uppgift-2" class="level3">
-<h3 class="anchored" data-anchor-id="uppgift-2">Uppgift 2</h3>
-<p><strong>Denna övning ska göras i en fil som sparas</strong></p>
-<p>Skapa en lista med heltal från 1 till 100 och använd en for-loop för att beräkna summan av alla tal i listan. OBS! Du ska inte använda funktionen <code>sum</code>, men du bör kontrollera din beräknade summa med denna funktion.</p>
-<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag uppgift 2">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Lösningsförslag uppgift 2
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">101</span>))</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">sum</span> <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> lst:</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">sum</span> <span class="op">+=</span> i</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">sum</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="uppgift-3" class="level3">
-<h3 class="anchored" data-anchor-id="uppgift-3">Uppgift 3</h3>
-<p><strong>Denna övning ska göras i en fil som sparas</strong></p>
-<p>Skapa listan <code>heltal</code>, som innehåller tio slumpade positiva heltal mellan 1 och 100.</p>
-<p>Skapa därefter de tomma listorna <code>jämna</code> och <code>udda</code>. Uppgiften är att kopiera över de jämna talen från listan <code>heltal</code> till listan <code>jämna</code>, och på motsvarande sätt kopiera över de udda talen till listan <code>udda</code>. Slutligen ska alla listor skrivas ut i storleksordning.</p>
-<p>Modellen för att lösa uppgiften kan vara att man loopar genom alla tal i listan <code>heltal</code>, och testa om respektive tal är jämnt eller udda. Därefter så läggs talet till i rätt lista.</p>
-<p>Körningsexempel:</p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="5e2570a9" class="cell" data-execution_count="1">
-<div class="cell-output cell-output-stdout">
-<pre><code>Den framslumpade heltalslistan är:
-[1, 7, 52, 55, 60, 63, 68, 74, 90, 92]
-
-Det finns 6 jämna tal i listan. Dessa är:
-[52, 60, 68, 74, 90, 92]
-
-Det finns 4 udda tal i listan. Dessa är:
-[1, 7, 55, 63]
-</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled" title="Tips">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tips
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>För att skapa en listan med slumpmässiga heltal måste <code>random</code>-modulen importeras överst i programmet. Därefter kan ett slumpat heltal skapas. Koden blir som följer:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random <span class="im">as</span> rand</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>slumptal <span class="op">=</span> rand.randint(<span class="dv">1</span>, <span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>För att lägga till ett tal en lista används metoden <code>append</code> (se Uppgift 1); detta måste förstås ske i en loop eftersom det är flera tal som ska läggas till. Förmodligen är det bästa sättet att använda två separata loopar: en loop för att skapa innehållet i listan <code>heltal</code>, och en annan loop för att skapa innehållet i listan <code>jämna</code> respektive <code>udda</code>.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag uppgift 3">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Lösningsförslag uppgift 3
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random <span class="im">as</span> rand</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>heltal <span class="op">=</span> []</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>jämna <span class="op">=</span> []</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>udda <span class="op">=</span> []</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Heltalslistan med slumptal skapas</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">10</span>):</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    slumptal <span class="op">=</span> rand.randint(<span class="dv">1</span>, <span class="dv">100</span>)</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    heltal.append(slumptal)</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Loopa genom heltalslistan och kopiera jämna och udda tal</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co"># till respektive ny lista</span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> tal <span class="kw">in</span> heltal:</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> tal <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>: <span class="co"># Kontroll om aktuellt tal är delbart med 2</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>        jämna.append(tal)</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>        udda.append(tal)</span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Räkna antalet tal i respektive lista...</span></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>antal_jämna <span class="op">=</span> <span class="bu">len</span>(jämna)</span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>antal_udda <span class="op">=</span> <span class="bu">len</span>(udda)</span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="co"># ...och skriv ut dessa</span></span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Den framslumpade heltalslistan är:</span><span class="ch">\n</span><span class="sc">{</span><span class="bu">sorted</span>(heltal)<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Det finns </span><span class="sc">{</span>antal_j<span class="sc">ä</span>mna<span class="sc">}</span><span class="ss"> jämna tal i listan. Dessa är:</span><span class="ch">\n</span><span class="sc">{</span><span class="bu">sorted</span>(jämna)<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Det finns </span><span class="sc">{</span>antal_udda<span class="sc">}</span><span class="ss"> udda tal i listan. Dessa är:</span><span class="ch">\n</span><span class="sc">{</span><span class="bu">sorted</span>(udda)<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="uppgift-4" class="level3">
-<h3 class="anchored" data-anchor-id="uppgift-4">Uppgift 4</h3>
-<p><strong>Denna övning ska göras i en fil som sparas</strong></p>
-<p>I <a href="../../../../pr1/python/uppgifter/loopar/index.html#uppgift-2">Uppgift 2, Loopar i Python</a> skapade du ett program som skulle slumpa fram en LOTTO-rad. Detta program har en stor brist: det finns risk för att ett och samma tal slumpas fram fler än en gång. Nu, när vi har tillgång till listor, kan vi korrigera denna brist!</p>
-<p>Modell: Skapa först en lista (den kan kallas <code>urna</code>) som innehåller heltalen 1 – 35. Därefter så slumpas ett tal ur denna urna (och tar bort det), ett i taget, och lägger till i en annan lista (som t ex kan kallas <code>lottorad</code>). Det slumpade heltalet är alltså <em>indexet</em> för talet som slumpas fram ur <code>urna</code>.</p>
-<p>Tänk på att när urnan innehåller 35 nummer ska indexet som slumpas fram vara mellan 0 och 34. Allteftersom urnan minskar i storlek måste indexets slumpomfång minskas för att undvika risk för programkrasch (som är följden av att man begär ett tal med ett index som är större än det maximala).</p>
-<p>Körningsexempel:</p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="770f8440" class="cell" data-execution_count="2">
-<div class="cell-output cell-output-stdout">
-<pre><code>Buggfri LOTTO-rad: [5, 19, 21, 26, 27, 29, 34]</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag uppgift 4">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Lösningsförslag uppgift 4
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random <span class="im">as</span> rand</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>urna <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">36</span>))</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>lottorad <span class="op">=</span> []</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">7</span>):</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    max_index <span class="op">=</span> <span class="bu">len</span>(urna) <span class="op">-</span> <span class="dv">1</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    slumpat_index <span class="op">=</span> rand.randint(<span class="dv">0</span>, max_index)</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    lottotal <span class="op">=</span> urna.pop(slumpat_index)</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    lottorad.append(lottotal)</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Buggfri LOTTO-rad: </span><span class="sc">{</span><span class="bu">sorted</span>(lottorad)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="uppgift-utan-lösningsförslag" class="level2">
-<h2 class="anchored" data-anchor-id="uppgift-utan-lösningsförslag">Uppgift utan lösningsförslag</h2>
-<section id="uppgift-5" class="level3">
-<h3 class="anchored" data-anchor-id="uppgift-5">Uppgift 5</h3>
-<p><em>Denna uppgift är lite större än de hittills givna uppgifterna. Här används villkor, loopar och listor. Även om inte egendefinierade funktioner behöver användas i detta program så kan det bli mer överskådligt om så görs. Arbeta gärna med det tillsammans med en kompis!</em></p>
-<p>Du ska skapa ett program som låter en användare sköta en lista genom en meny. Det ska likna följande:</p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<pre><code>Vad vill du göra?
-1. Titta på hela listan             2. Titta på ett givet läge i listan
-3. Lägga till ett värde i listan    4. Radera värdet på ett givet läge i listan
-5. Sortera listan                   6. Beräkna listans medelvärde
-7. Avsluta
-
-Ange ditt val -&gt; 3
-Ange det värde du vill lägga till -&gt; 10
-
-Vad vill du göra?
-1. Titta på hela listan             2. Titta på ett givet läge i listan
-3. Lägga till ett värde i listan    4. Radera värdet på ett givet läge i listan
-5. Sortera listan                   6. Beräkna listans medelvärde
-7. Avsluta 
-
-Ange ditt val -&gt; 1
-Här är hela listan just nu: [10] 
-
-Vad vill du göra?
-1. Titta på hela listan             2. Titta på ett givet läge i listan
-3. Lägga till ett värde i listan    4. Radera värdet på ett givet läge i listan
-5. Sortera listan                   6. Beräkna listans medelvärde
-7. Avsluta
-
-Ange ditt val -&gt; 3
-Ange det värde du vill lägga till -&gt; 5
-
-Vad vill du göra?
-1. Titta på hela listan             2. Titta på ett givet läge i listan
-3. Lägga till ett värde i listan    4. Radera värdet på ett givet läge i listan
-5. Sortera listan                   6. Beräkna listans medelvärde
-7. Avsluta
-
-Vad vill du göra?
-1. Titta på hela listan             2. Titta på ett givet läge i listan
-3. Lägga till ett värde i listan    4. Radera värdet på ett givet läge i listan
-5. Sortera listan                   6. Beräkna listans medelvärde
-7. Avsluta
-
-Ange ditt val -&gt; 1
-Här är hela listan just nu: [10, 5]
-
-Vad vill du göra?
-1. Titta på hela listan             2. Titta på ett givet läge i listan
-3. Lägga till ett värde i listan    4. Radera värdet på ett givet läge i listan
-5. Sortera listan                   6. Beräkna listans medelvärde
-7. Avsluta
-
-Ange ditt val -&gt; 4
-Ange läget i listan med värdet som ska raderas (möjliga lägen: 1 till 2) -&gt; 1
-
-Vad vill du göra?
-1. Titta på hela listan             2. Titta på ett givet läge i listan
-3. Lägga till ett värde i listan    4. Radera värdet på ett givet läge i listan
-5. Sortera listan                   6. Beräkna listans medelvärde
-7. Avsluta
-
-Ange ditt val -&gt; 1
-
-Här är hela listan just nu: [5] </code></pre>
-</div>
-</div>
-</div>
-<p><strong>Ett läge</strong> i listan är ett heltal från 1 t o m det antal tal som finns där, medan ett <strong>värde</strong> i listan är ett heltal. Listan ska vara inmatningssäker, dvs felaktiga listval eller värden ska medföra att användaren får göra om inmatningen tills den är godtagbar. I <a href="../../../../pr1/python/uppgifter/funktioner/index.html#uppgift-3">Uppgift 3, Funktioner</a> finns exempel på hur en inmatningssäker meny kan utformas (även om sammanhanget där är annorlunda).</p>
-<p>Glöm inte att skriva lämpliga kommentarer i koden. Om egendefinierade funktioner används ska respektive sådan dokumenteras med en docstring.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Tips">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tips
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Om strängar omgärdas av tre citationstecken så kan de enkelt radbrytas. Det kan användas för utskrift av menyn (även om det finns andra sätt).</p>
-<div id="bcfb4aa1" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"""Detta är</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="st">en sträng på flera</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="st">rader"""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Detta är
-en sträng på flera
-rader</code></pre>
-</div>
-</div>
-</div>
-</div>
+<section id="uppgifter" class="level3">
+<h3 class="anchored" data-anchor-id="uppgifter">Uppgifter</h3>
+<ol type="1">
+<li><p><strong>Provkörning</strong>: Provkör programmet ett antal gånger! När du har lagt till några bilar, öppna filen <code>cars.json</code> och studera hur den ser ut.</p></li>
+<li><p><strong>Meny</strong>: Skapa en meny där de befintliga funktionerna används. Val ska kunna göras tills dess att alternativet Avsluta väljs.</p></li>
+<li><p><strong>Utökning av <code>Car</code>-klassen</strong>: Lägg till fler attribut till <code>Car</code>-klassen, till exempel modell, årsmodell, färg, etc. Modifiera sedan alla funktioner som använder <code>Car</code>-objekt för att hantera de nya attributen.</p></li>
+<li><p><strong>Fler operationer på bilarna</strong>: Skriv funktioner för att utföra olika operationer på bilarna, till exempel att hitta den dyraste bilen, den billigaste bilen, bilen med minst körsträcka, etc.</p></li>
+<li><p><strong>Ta bort en bil från registret</strong>: Skriv en funktion som tar bort en given bil från registret och uppdaterar filen.</p></li>
+<li><p><strong>Filtrering av bilar</strong>: Skriv en funktion som tar en lista av bilar och ett villkor, och returnerar en ny lista med bara de bilar som uppfyller villkoret. Villkoret kan vara en funktion som tar en bil och returnerar <code>True</code> eller <code>False</code>.</p></li>
+<li><p><strong>Sökning av bilar</strong>: Skriv en funktion som tar en lista av bilar och ett märke, och returnerar en ny lista med bara de bilar som har det märket.</p></li>
+<li><p><strong>Sortering av bilar</strong>: Skriv en funktion som tar en lista av bilar och en nyckelfunktion, och returnerar en ny lista med bilarna sorterade enligt nyckelfunktionen (<code>key</code>).</p></li>
+<li><p><strong>Felhantering</strong>: Lägg till mer robust felhantering till programmet. Till exempel, vad händer om användaren matar in ogiltiga data när de skapar en ny bil?</p></li>
+<li><p><strong>Dokumentation</strong>: Skriv dokumentation för dina funktioner, inklusive beskrivningar av vad de gör, deras parametrar och returvärden, och exempel på hur man använder dem.</p></li>
+</ol>
 
 
 </section>
