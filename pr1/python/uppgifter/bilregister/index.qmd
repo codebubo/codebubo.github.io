@@ -16,6 +16,7 @@ Nedanstående kod implementerar ett litet register som sparas på fil.
 
 ```python
 import json
+import os # För att kunna avgöra om filen är tom, se rad 102 - 103
 
 # Filnamnet där vi kommer att lagra bilarna
 FILENAME = "cars.json"
@@ -59,6 +60,9 @@ def get_cars_list(loaded_cars_dict):
 
 # Funktion för att skriva ut alla bilar i cars_list
 def print_cars():
+    if len(cars_list) == 0:
+        print("Finns inga bilar i listan!")
+        return
     # Sortera bilarna efter märke
     cars_list.sort(key=lambda car: car.brand)
     i = 1
@@ -71,7 +75,9 @@ def input_car():
     brand = input("Ange märke -> ")
     price = int(input("Ange pris -> "))
     mileage = int(input("Ange miltal -> "))
-    return Car(brand, price, mileage)
+    car = Car(brand, price, mileage)
+    cars_list.append(car)
+    return car
 
 # Funktion för att spara en bil till filen
 def save_car(car):
@@ -83,8 +89,10 @@ def save_car(car):
     except FileNotFoundError:
         cars_list = []
     except json.JSONDecodeError:
-        print("Det gick inte att tolka filen 'car.json' som JSON.")
-        cars_list = []
+        if not os.path.getsize(FILENAME):
+            cars_list = []
+        else:
+            print("Det gick inte att tolka filen 'car.json' som JSON.")
     except Exception as e:
         print(f"Ett oväntat fel inträffade: {str(e)}")
         cars_list = []
@@ -108,16 +116,18 @@ def read_cars_from_file():
         with open(FILENAME, 'w') as f:
             pass
     except json.JSONDecodeError:
-        print("Det gick inte att tolka filen 'car.json' som JSON.")
+        if os.path.getsize(FILENAME):
+            print("Det gick inte att tolka filen 'car.json' som JSON.")
+        pass
     except Exception as e:
         print(f"Ett oväntat fel inträffade: {str(e)}")
 
-#----------------Huvudprogram------------------------
 # Skapa en ny bil, spara den och skriv ut alla bilar
+read_cars_from_file()
 new_car = input_car()
 save_car(new_car)
-read_cars_from_file()
 print_cars()
+
 ```
 
 ### Uppgifter
