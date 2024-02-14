@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CodeBubo - Presentation: for-loopar</title>
+<title>CodeBubo - Matrisinvertering: Extra övningar</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,8 +69,11 @@ gtag('js', new Date());
 gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../../../styles.css">
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
@@ -109,7 +112,7 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../../pr1/python/cheat_sheet_python.html">Programmering 1</a></li><li class="breadcrumb-item"><a href="../../../../pr1/python/intro/pres-version-installerad-python/index.html">Presentationer, Python</a></li><li class="breadcrumb-item"><a href="../../../../pr1/python/for-loopar/presentation/index.html">Presentation: <code>for</code>-loopar</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../../ma/ma-spec/ovningar/matrisinvertering/index.html">Matematik specialisering</a></li><li class="breadcrumb-item"><a href="../../../../ma/ma-spec/ovningar/matrisinvertering/index.html">Matrisinvertering: Extra övningar</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -127,13 +130,13 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
  <span class="menu-text">Programmering 1</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../pr1/python/cheat_sheet_python.html" class="sidebar-item-text sidebar-link">
@@ -142,13 +145,13 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
  <span class="menu-text">Presentationer, Python</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../pr1/python/intro/pres-version-installerad-python/index.html" class="sidebar-item-text sidebar-link">
@@ -175,7 +178,7 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../pr1/python/for-loopar/presentation/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../../pr1/python/for-loopar/presentation/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Presentation: <code>for</code>-loopar</span></a>
   </div>
 </li>
@@ -353,16 +356,16 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true">
  <span class="menu-text">Matematik specialisering</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../ma/ma-spec/ovningar/matrisinvertering/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../ma/ma-spec/ovningar/matrisinvertering/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Matrisinvertering: Extra övningar</span></a>
   </div>
 </li>
@@ -378,7 +381,12 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#uppgifter" id="toc-uppgifter" class="nav-link active" data-scroll-target="#uppgifter">Uppgifter</a></li>
+  <li><a href="#några-kompletterande-övningar" id="toc-några-kompletterande-övningar" class="nav-link active" data-scroll-target="#några-kompletterande-övningar">Några kompletterande övningar</a>
+  <ul class="collapse">
+  <li><a href="#ekvationssystemet" id="toc-ekvationssystemet" class="nav-link" data-scroll-target="#ekvationssystemet">Ekvationssystemet</a></li>
+  <li><a href="#determinanten" id="toc-determinanten" class="nav-link" data-scroll-target="#determinanten">Determinanten</a></li>
+  <li><a href="#koda-matrisinvertering" id="toc-koda-matrisinvertering" class="nav-link" data-scroll-target="#koda-matrisinvertering">Koda matrisinvertering</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -387,7 +395,7 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Presentation: <code>for</code>-loopar</h1>
+<h1 class="title">Matrisinvertering: Extra övningar</h1>
 </div>
 
 
@@ -402,16 +410,100 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
 
 </header>
 
-<div class="double-v-space">
+<section id="några-kompletterande-övningar" class="level2">
+<h2 class="anchored" data-anchor-id="några-kompletterande-övningar">Några kompletterande övningar</h2>
+<section id="ekvationssystemet" class="level3">
+<h3 class="anchored" data-anchor-id="ekvationssystemet">Ekvationssystemet</h3>
+<p>Vi har ekvationssystemet <span class="math display">\[
+\left\{
+\begin{matrix}
+x &amp;+&amp; 2y &amp;+&amp; z &amp;=&amp; -1 \\
+2x &amp;+&amp; 6y &amp;&amp;    &amp;=&amp; -2 \\
+x &amp;+&amp;  6y &amp;+&amp; z &amp;=&amp; \phantom{-}3
+\end{matrix}
+\right .
+\]</span> Bestäm lösningen till detta genom att teckna en koefficientmatris <span class="math inline">\(A\)</span>, en lösningsvektor <span class="math inline">\(\vec{v}\)</span> och en vektor för högerledet, <span class="math inline">\(\vec{b}\)</span>. Invertera <span class="math inline">\(A\)</span> och bestäm lösningsvektorn genom operationen <span class="math inline">\(A^{-1}A\vec{v}=A^{-1}\vec{b}\)</span>.</p>
+</section>
+<section id="determinanten" class="level3">
+<h3 class="anchored" data-anchor-id="determinanten">Determinanten</h3>
+<p>Om vi har en <span class="math inline">\(2\times 2\)</span>-matris <span class="math inline">\(A\)</span> enligt <span class="math display">\[
+A=\begin{bmatrix}
+a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22}
+\end{bmatrix}
+\]</span> så gäller att determinanten, <span class="math inline">\(\det A\)</span>, beräknas enligt <span class="math display">\[
+\det A = a_{11}a_{22}-a_{12}a_{21}
+\]</span> För en <span class="math inline">\(3\times3\)</span>-matris gäller följande formel för determinanten: <span class="math display">\[
+A=\begin{bmatrix}
+a_{11} &amp; a_{12} &amp; a_{13} \\ a_{21} &amp; a_{22} &amp; a_{23} \\ a_{31} &amp; a_{32} &amp; a_{33}
+\end{bmatrix}
+\Rightarrow\det A=
+a_{11}\begin{bmatrix}
+a_{22} &amp; a_{23} \\ a_{32} &amp; a_{33}
+\end{bmatrix}
+-
+a_{12}\begin{bmatrix}
+a_{21} &amp; a_{23} \\ a_{31} &amp; a_{33}
+\end{bmatrix}
++
+a_{13}\begin{bmatrix}
+a_{21} &amp; a_{22} \\ a_{31} &amp; a_{32}
+\end{bmatrix}
+\]</span> En av de saker determinanten berättar för oss är om en matris är singulär (och därmed inte går att invertera); determinanten är för dessa matriser noll.</p>
+<p>Skapa en Pythonfunktion som tar en <span class="math inline">\(3\times 3\)</span>-matris som argument och returnerar dess determinant. Matrisen kan implementeras som en 2D-lista; exempel på anrop till funktionen <code>det([[1,2,3], [4,5,6],[7,8,9]])</code>. Jämför ditt svar med Wolfram Alpha!</p>
+</section>
+<section id="koda-matrisinvertering" class="level3">
+<h3 class="anchored" data-anchor-id="koda-matrisinvertering">Koda matrisinvertering</h3>
+<p>Matrisinverteringar är ett tidskrävande arbete som kräver stor noggranhet, och som ligger till grund för ekvationssystemslösning. Det är mycket vanligt att datorer löser stora ekvationssystem, och därför behövs algoritmer för matrisinvertering kodas i program. Nedan visas pdeudokod för Gauss-Jordan-elimination. Skapa en Python-funktion som implementerar denna kod med listor.</p>
+<pre><code>Funktion INVERTERA(A):
+  # A är en nxn matris
+  # Returnerar A^-1 om den existerar, annars ett felmeddelande
 
-</div>
-<iframe src="./for-pres.html" width="800" height="550">
-</iframe>
-<section id="uppgifter" class="level2">
-<h2 class="anchored" data-anchor-id="uppgifter">Uppgifter</h2>
-<p>Uppgifterna 8 – 10 i dokumentet <a href="../../../../pr1/python/uppgifter/loopar/index.html#for-loopar">Uppgifter Pr1, loopar</a></p>
+  # Skapa en förstorad matris [A|I]
+  I = Skapa en nxn identitetsmatris
+  AI = Skapa en nx2n matris genom att sätta ihop A och I horisontellt
+
+  # Applicera elementära radoperationer på [A|I] för att få den på formen [I|B]
+  För i från 1 till n:
+    # Hitta pivotelementet på rad i och kolumn i
+    pivot = AI[i][i]
+
+    # Kontrollera om pivotelementet är noll
+    Om pivot == 0:
+      # Hitta en annan rad j under rad i som har ett icke-noll element på kolumn i
+      j = i + 1
+      Medan j &lt;= n och AI[j][i] == 0:
+        j = j + 1
+      
+      # Om ingen sådan rad hittades, så är A inte inverterbar
+      Om j &gt; n:
+        Returnera "Matrisen A är inte inverterbar"
+      
+      # Annars, byt plats på rad i och rad j
+      Annars:
+        Byt rad i och rad j i AI
+    
+    # Dela rad i med pivotelementet för att få ett 1-tal på position i, i
+    För k från 1 till 2n:
+      AI[i][k] = AI[i][k] / pivot
+    
+    # Eliminera alla andra element på kolumn i genom att subtrahera lämpliga multipler av rad i från andra rader
+    För j från 1 till n:
+      Om j != i:
+        faktor = AI[j][i]
+        För k från 1 till 2n:
+          AI[j][k] = AI[j][k] - faktor * AI[i][k]
+  
+  # Extrahera matrisen B från den högra halvan av AI
+  B = Skapa en nxn matris
+  För i från 1 till n:
+    För j från 1 till n:
+      B[i][j] = AI[i][n+j]
+  
+  # Returnera B som är inversen av A
+  Returnera B</code></pre>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
