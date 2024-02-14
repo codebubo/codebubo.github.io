@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="../../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../../site_libs/quarto-html/tabby.min.js"></script>
-<script src="../../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.545">
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.3.450">
 
   <meta name="author" content="Nikodemus Karlsson">
-  <title>CodeBubo - Introduktion Programmering 1, indval</title>
+  <title>CodeBubo - Egna datatyper i Python</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -95,7 +95,7 @@
     code span.vs { color: #abe338; } /* VerbatimString */
     code span.wa { color: #dcc6e0; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/theme/quarto.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto.css">
   <link rel="stylesheet" href="style.css">
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FFXVNM3K2N"></script>
 
@@ -106,10 +106,10 @@
   gtag('js', new Date());
   gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
   </script>
-  <link href="../../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="../../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="../../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="../../../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -231,8 +231,7 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    padding-bottom: 0.5rem;
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -400,8 +399,8 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-color="black" data-background-image="https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/intro/bg-front.jpg" class="quarto-title-block center">
-  <h1 class="title">Introduktion Programmering 1, indval</h1>
+<section id="title-slide" data-background-color="black" data-background-image="https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/for-loopar/frame-3083868_1280.png" data-background-opacity="1" class="quarto-title-block center">
+  <h1 class="title">Egna datatyper i Python</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -412,412 +411,170 @@ Nikodemus Karlsson
 </div>
 
 </section>
-<section id="klipsk-som-en-dator" class="slide level2">
-<h2>Klipsk som en dator?</h2>
-<iframe data-external="1" src="https://www.youtube.com/embed/FN2RM-CHkuI" width="1000" height="550" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-<div class="quarto-auto-generated-content">
-<div class="footer footer-default">
-
-</div>
-</div></section>
-<section id="förkunskaper" class="slide level2">
-<h2>Förkunskaper?</h2>
-<div class="double-v-space">
-
-</div>
-<p><img data-src="https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/intro/enkat-indval.png" height="300"></p>
-<p><a href="https://shorturl.at/fhBG5">https://shorturl.at/fhBG5</a></p>
-</section>
-<section id="vad-är-ett-datorprogram" class="slide level2">
-<h2>Vad är ett datorprogram?</h2>
-<div class="smaller-font">
-<div class="fragment fade-in-then-semi-out">
-<ul>
-<li>Ett datorprogram är som en uppsättning instruktioner eller regler som berättar för datorn vad den ska göra.</li>
-</ul>
-</div>
-<div class="fragment fade-in-then-semi-out">
-<ul>
-<li>Precis som vi människor använder oss av instruktioner för att utföra olika uppgifter, använder sig också en dator av programmet för att lösa problem och utföra specifika arbetsuppgifter.</li>
-</ul>
-</div>
-<div class="fragment fade-in-then-semi-out">
-<ul>
-<li>Dessa instruktioner i ett datorprogram skrivs vanligtvis i ett programmeringsspråk, vilket är ett särskilt språk som både människor och datorer kan förstå.</li>
-</ul>
-</div>
-<div class="fragment fade-in-then-semi-out">
-<ul>
-<li>När programmet körs på en dator läser den stegvis igenom varje instruktion och utför de angivna operationerna.</li>
-</ul>
-</div>
-</div>
-</section>
-<section id="vad-är-ett-datorprogram-forts." class="slide level2">
-<h2>Vad är ett datorprogram? (forts.)</h2>
-<div class="smaller-font">
-<div class="fragment fade-right fade-in-then-semi-out">
-<ul>
-<li>Genom att kombinera olika instruktionssekvenser kan man bygga upp mer komplexa program som kan hantera allt från matematiska beräkningar till grafikrendering eller datahantering.</li>
-</ul>
-</div>
-<div class="fragment fade-right fade-in-then-semi-out">
-<ul>
-<li>Människor skapar dessa program för att automatisera processer, lösa problem eller utveckla nya teknologier och applikationer som används inom allt från spelutveckling till medicinsk forskning och affärsverksamhet.</li>
-</ul>
-</div>
-<div class="fragment fade-up">
-<p>Sammanfattningsvis kan man säga att ett datorprogram är en samling av instruktioner skrivna i programmeringsspråk, vilket ger möjlighet att styra hur en dators hårdvara fungerar och får den att utföra specifika uppgifter.</p>
-</div>
-</div>
-</section>
-<section id="utvecklingsmiljö" class="slide level2">
-<h2>Utvecklingsmiljö</h2>
-<p>Vi kommer att arbeta i online-miljön <strong>Replit</strong> under kursen.</p>
-<div class="double-v-space">
-
-</div>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>&nbsp; <img data-src="https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/intro/replit-image.png" class="quarto-figure quarto-figure-left" style="width:100.0%" alt="[https://replit.com/]"></p>
-</div><div class="column" style="width:50%;">
-<p>Miljön består b la av en <strong>konsol</strong> där kortare “kodsnuttar” kan skrivas in och en <strong>editor</strong> där program kan skrivas och sparas.</p>
-</div>
-</div>
-<p>Registrera dig på <a href="https://replit.com/">https://replit.com/</a> med din “skol-Google”.</p>
-</section>
 <section id="dagens-mål" class="slide level2">
 <h2>Dagens mål</h2>
 <ul>
-<li>Skapa inloggning på <strong>Replit</strong></li>
-<li>Bekanta sig med konsol och editor genom arbete med
-<ul>
-<li>Variabler</li>
-<li>Formaterad utskrift</li>
-</ul></li>
+<li>Att kunna skapa egna datatyper</li>
+<li>Att känna till skillnaden mellan datatyp och objekt</li>
+<li>Att läsa och tilldela datatypen attribut</li>
+<li>Att kunna skicka objekt för vidare process i funktioner</li>
 </ul>
 </section>
-<section id="variabler" class="slide level2">
-<h2>Variabler</h2>
-<p>En variabel är ett “namn” på ett värde. Kan även kallas för en identifierare.</p>
-<div id="a725017e" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="co"># Detta program skrivs i en fil som sparas.</span></span>
-<span id="cb1-2"><a></a><span class="co"># Filen skapas i Idle: File -&gt; New File</span></span>
-<span id="cb1-3"><a></a><span class="co"># och namnges till fartberäkning</span></span>
-<span id="cb1-4"><a></a>sträcka <span class="op">=</span> <span class="dv">103</span>  <span class="co"># Sträckan i meter</span></span>
-<span id="cb1-5"><a></a>tid <span class="op">=</span> <span class="fl">13.2</span>     <span class="co"># Tiden i sekunder</span></span>
-<span id="cb1-6"><a></a>fart <span class="op">=</span> sträcka <span class="op">/</span> tid</span>
-<span id="cb1-7"><a></a></span>
-<span id="cb1-8"><a></a><span class="bu">print</span>(<span class="ss">f"Fart = </span><span class="sc">{</span>fart<span class="sc">:.1f}</span><span class="ss"> m/s"</span>)</span>
-<span id="cb1-9"><a></a><span class="co"># Skriver ut Fart = 7.8 m/s</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Fart = 7.8 m/s</code></pre>
-</div>
-</div>
-<div class="fragment fade-right">
-<p>Variabler kan innehålla andra saker än tal; man säger att även detta är värden.</p>
-</div>
-</section>
-<section id="variabeltyper" class="slide level2">
-<h2>Variabeltyper</h2>
+<section id="likheter-och-skillnader-mellan-while--och-for-loopar" class="slide level2">
+<h2>Likheter och skillnader mellan <code>while</code>- och <code>for</code>-loopar</h2>
 <div class="v-space">
-<p>Några vanliga <strong>typer</strong> av variabler är <span style="font-size: 85%;"> <code>string</code></span> (sträng), <span style="font-size: 85%;"><code>int</code></span> (heltal) och <span style="font-size: 85%;"><code>float</code></span> (tal med decimaler).</p>
+
 </div>
-<div class="v-space">
-<p>Python kan skriva ut variabeltypen för en given variabel.</p>
-</div>
-<div class="v-space">
-<div id="23f22f53" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>ett_heltal <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb3-2"><a></a>ett_flyttal <span class="op">=</span> <span class="fl">2.9</span></span>
-<span id="cb3-3"><a></a>en_sträng <span class="op">=</span> <span class="st">"En sträng"</span></span>
-<span id="cb3-4"><a></a><span class="bu">print</span>(<span class="bu">type</span>(ett_heltal))</span>
-<span id="cb3-5"><a></a><span class="bu">print</span>(<span class="bu">type</span>(ett_flyttal))</span>
-<span id="cb3-6"><a></a><span class="bu">print</span>(<span class="bu">type</span>(en_sträng))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;class 'int'&gt;
-&lt;class 'float'&gt;
-&lt;class 'str'&gt;</code></pre>
-</div>
-</div>
-</div>
-</section>
-<section id="variabler-i-datorminnet" class="slide level2">
-<h2>Variabler i datorminnet</h2>
 <div class="blue-bg-small-padding">
-<p>När en variabel tilldelas ett värde kommer detta värde att sparas på en plats i datorns minne. När variabeln adresseras kommer namnet att hänvisa till denna minnesplats.</p>
+<p>Ofta används <code>while</code>-loopar när antalet varv avgörs under programkörningens gång, medan <code>for</code>-loopar används då det är ett känt antal varv. I vissa fall går den ena typen av loop lika bra som den andra.</p>
+<p>En <code>for</code>-loop använder sig av en <strong>lista</strong> som loopas igenom.</p>
 </div>
 </section>
-<section id="några-regler-för-variabelnamn" class="slide level2">
-<h2>Några regler för variabelnamn</h2>
-<div class="fragment fade-right">
-<ul>
-<li>Alla bokstavstecken och siffror får användas</li>
-</ul>
+<section id="enklast-möjliga-for-loop" class="slide level2">
+<h2>Enklast möjliga <code>for</code>-loop</h2>
+<div class="double-v-space">
+
 </div>
-<div class="fragment fade-right">
-<ul>
-<li>Python gör skillnad på versaler och gemener</li>
-</ul>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>lista <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>]</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="cf">for</span> element <span class="kw">in</span> lista:</span>
+<span id="cb1-3"><a href="#cb1-3"></a>    <span class="bu">print</span>(element, end<span class="op">=</span><span class="st">" "</span>)</span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="bu">print</span>(<span class="ss">f"Loopen avslutas eftersom listan är slut"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>10 20 30 Loopen avslutas eftersom listan är slut</code></pre>
 </div>
-<div class="fragment fade-right">
-<ul>
-<li>Variabelnamn kan inte börja med en siffra</li>
-</ul>
 </div>
-<div class="fragment fade-right">
-<ul>
-<li>Variabelnamn kan inte innehålla mellanslag</li>
-</ul>
-</div>
-<div class="fragment fade-right">
-<ul>
-<li>Variabelnamn kan inte innehålla bindestreck</li>
-</ul>
-</div>
-</section>
-<section id="några-regler-för-variabelnamn-forts." class="slide level2">
-<h2>Några regler för variabelnamn (forts.)</h2>
 <div class="v-space">
 
 </div>
-<div class="fragment fade-right">
-<ul>
-<li>Variabelnamn bör inledas med en gemen (“liten”) bokstav</li>
-</ul>
-</div>
-<div class="fragment fade-right">
-<ul>
-<li>Variabelnamn bör vara uttrycksfulla, dvs beskriva vad de står för</li>
-</ul>
-</div>
-<div class="fragment fade-right">
-<ul>
-<li>Ord separeras, t ex <span style="font-size: 85%;"><code>längd_rekt = 5</code></span></li>
-</ul>
-</div>
-<div class="fragment fade-right">
-<div style="background-color: yellow; width: 100%; height: 70px; padding: 10px; margin-top: 20px;">
-<p><a href="https://www.w3schools.com/python/gloss_python_variable_names.asp">Länk: Tillåtna namn på variabler</a></p>
-</div>
-</div>
+<p>Variabeln <code>element</code> antar respektive värde i listan i tur och ordning.</p>
 </section>
-<section id="utskrifter-i-python" class="slide level2">
-<h2>Utskrifter i Python</h2>
-<div class="columns">
-<div class="column" style="width:55%;">
-<div class="fragment fade-right" data-fragment-index="1">
-<p>Utskrift av sträng</p>
-<div id="4c028713" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>hello_string <span class="op">=</span> <span class="st">"Hello, world"</span></span>
-<span id="cb5-2"><a></a><span class="bu">print</span>(hello_string)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Hello, world</code></pre>
-</div>
-</div>
-</div>
-<div class="new-line">
-
-</div>
-<div class="fragment fade-right" data-fragment-index="3">
-<p>Utskrift av sträng och tal</p>
-<div id="f457d880" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>pris <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb7-2"><a></a><span class="bu">print</span>(<span class="ss">f"Priset är </span><span class="sc">{</span>pris<span class="sc">}</span><span class="ss"> kr."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Priset är 10 kr.</code></pre>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:45%;">
-<div class="fragment fade-left" data-fragment-index="2">
-<p>Utskrift av heltal</p>
-<div id="952142c3" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>pris <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb9-2"><a></a><span class="bu">print</span>(pris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>10</code></pre>
-</div>
-</div>
-</div>
-<div class="new-line">
-
-</div>
-<div class="fragment fade-left" data-fragment-index="4">
-<p>Avrundning</p>
-<div id="ab8ebfe3" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>my_float <span class="op">=</span> <span class="dv">2</span><span class="op">/</span><span class="dv">3</span></span>
-<span id="cb11-2"><a></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>my_float<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>0.67</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="v-space fragment fade-up" data-fragment-index="5">
-<p>När “fast” text ska skrivas ut tillsammans med en variabel används en s.k f-string. Det står för <em>formatted string literal</em>.</p>
-</div>
-</section>
-<section id="formaterad-utskrift" class="slide level2">
-<h2>Formaterad utskrift</h2>
-<p>En teckensträng har en en given <em>textbredd</em>. Det tydliggörs med utfyllnadstecken.</p>
-<div id="5582d0e1" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>s1 <span class="op">=</span> <span class="st">"Kalle"</span></span>
-<span id="cb13-2"><a></a>s2 <span class="op">=</span> <span class="st">"Anka"</span></span>
-<span id="cb13-3"><a></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>s1<span class="sc">:*&lt;13}</span><span class="ss">"</span>)      <span class="co"># Textbredd 13, vänsterjusterat</span></span>
-<span id="cb13-4"><a></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>s1<span class="sc">:*&gt;13}</span><span class="ss">"</span>)      <span class="co"># Textbredd 13, högerjusterat</span></span>
-<span id="cb13-5"><a></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>s1<span class="sc">:*^13}</span><span class="ss">"</span>)      <span class="co"># Textbredd 13, centrerat</span></span>
-<span id="cb13-6"><a></a><span class="bu">print</span>(s1.rjust(<span class="dv">13</span>, <span class="st">"*"</span>)) <span class="co"># Finns även ljust och center</span></span>
-<span id="cb13-7"><a></a><span class="bu">print</span>(s1.ljust(<span class="dv">13</span>) <span class="op">+</span> s2) <span class="co"># Inget utfyllnadstecken!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell fragment" data-execution_count="7">
-<div class="cell-output cell-output-stdout">
-<pre><code>Kalle********
-********Kalle
-****Kalle****
-********Kalle
-Kalle        Anka</code></pre>
-</div>
-</div>
-<div class="fragment fade-up">
-<p>På rad 7 syns att vi kan slå ihop (<em>konkatenera</em>) två strängar med operatorn <span style="font-size: 85%;"><code>+</code></span>.</p>
-</div>
-</section>
-<section id="sträng-med-radbrytning" class="slide level2">
-<h2>Sträng med radbrytning</h2>
-<p>För att skriva ut en sträng på flera används ett s.k “flykttecken” (<em>escape character</em>).</p>
-<div id="b26cf3f0" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a><span class="bu">print</span>(<span class="st">"Här är en text</span><span class="ch">\n</span><span class="st">på två rader"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Här är en text
-på två rader</code></pre>
-</div>
-</div>
-<div class="fragment fade-right">
-<p>Detta kan användas tillsammans med textbredden.</p>
-<div id="6336dad9" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a></a><span class="bu">print</span>(<span class="ss">f"Detta är en högerjusterad text</span><span class="ch">\n</span><span class="sc">{</span><span class="st">'på flera rader'</span><span class="sc">:*&gt;30}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Detta är en högerjusterad text
-****************på flera rader</code></pre>
-</div>
-</div>
-</div>
-<div class="new-line">
-
-</div>
-<div class="fragment fade-up">
-<div style="background-color: yellow; width: 100%; height: 75px; padding: 10px;">
-<p><a href="https://www.w3schools.com/python/gloss_python_escape_characters.asp">Det finns flera exempel på <em>escape characters</em> på denna länk</a>.</p>
-</div>
-</div>
-</section>
-<section id="justering-av-tal" class="slide level2">
-<h2>Justering av tal</h2>
+<section id="längre-listor" class="slide level2">
+<h2>Längre listor</h2>
+<p>Listorna behöver inte skrivas in manuellt, det är bra då loopen behöver snurra många varv. Här används <code>range</code> för att skapa en lista från ett värde till ett annat värde.</p>
 <div class="v-space">
-<p>Tabeller blir mer lättlästa om ental står under ental, tiondel under tiondel osv.</p>
+
 </div>
-<div class="v-space">
-<div id="e7698406" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a></a>a <span class="op">=</span> <span class="fl">10.5</span><span class="op">;</span> b <span class="op">=</span> <span class="fl">2.38</span></span>
-<span id="cb19-2"><a></a>c <span class="op">=</span> <span class="fl">2.3</span><span class="op">;</span>  d <span class="op">=</span> <span class="fl">0.1</span></span>
-<span id="cb19-3"><a></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>a<span class="sc">:6.2f}</span><span class="ch">\t\t</span><span class="sc">{</span>c<span class="sc">:6.2f}</span><span class="ch">\n</span><span class="sc">{</span>b<span class="sc">:6.2f}</span><span class="ch">\t\t</span><span class="sc">{</span>d<span class="sc">:6.2f}</span><span class="ss">"</span>)</span>
-<span id="cb19-4"><a></a><span class="bu">print</span>(<span class="st">"----------------------"</span>)<span class="op">;</span></span>
-<span id="cb19-5"><a></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>(a<span class="op">+</span>b)<span class="sc">:6.2f}</span><span class="ch">\t\t</span><span class="sc">{</span>(c<span class="op">+</span>d)<span class="sc">:6.2f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>, <span class="dv">8</span>):   <span class="co"># Här skapas listan</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>    <span class="bu">print</span>(i, end<span class="op">=</span><span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> 10.50        2.30
-  2.38        0.10
-----------------------
- 12.88        2.40</code></pre>
-</div>
+<pre><code>3 4 5 6 7 </code></pre>
 </div>
 </div>
 <div class="v-space">
-<p>Observera att beräkningarna sker mellan måsvingarna!</p>
+
 </div>
+<p>Funktionen <code>range(3, 8)</code> skapar listan <code>[3, 4, 5, 6, 7]</code></p>
+<p>Om det hade varit en <code>while</code>-loop som skulle snurra fem varav skulle ett villkor och en räknare behövt sättas upp.</p>
+</section>
+<section id="funktionen-range" class="slide level2">
+<h2>Funktionen <code>range</code></h2>
+<p>Exempel på hur parametrar påverkar resultatet av <code>range</code></p>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>lista_A <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">10</span>))</span>
+<span id="cb5-2"><a href="#cb5-2"></a>lista_B <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>))</span>
+<span id="cb5-3"><a href="#cb5-3"></a>lista_C <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">2</span>))</span>
+<span id="cb5-4"><a href="#cb5-4"></a>lista_D <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">10</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>))</span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="bu">print</span>(<span class="ss">f"lista_A = </span><span class="sc">{</span>lista_A<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb5-6"><a href="#cb5-6"></a><span class="bu">print</span>(<span class="ss">f"lista_B = </span><span class="sc">{</span>lista_B<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="bu">print</span>(<span class="ss">f"lista_C = </span><span class="sc">{</span>lista_C<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="bu">print</span>(<span class="ss">f"lista_D = </span><span class="sc">{</span>lista_D<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>lista_A = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+lista_B = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4]
+lista_C = [0, 2, 4, 6, 8]
+lista_D = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]</code></pre>
+</div>
+</div>
+</section>
+<section id="exempel-multiplikationstabell" class="slide level2">
+<h2>Exempel: Multiplikationstabell</h2>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># Detta program beräknar och skriver ut "tolvans tabell"</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">13</span>):</span>
+<span id="cb7-3"><a href="#cb7-3"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">:2.0f}</span><span class="ss"> * 12 = </span><span class="sc">{</span>i<span class="op">*</span><span class="dv">12</span><span class="sc">:3.0f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> 1 * 12 =  12
+ 2 * 12 =  24
+ 3 * 12 =  36
+ 4 * 12 =  48
+ 5 * 12 =  60
+ 6 * 12 =  72
+ 7 * 12 =  84
+ 8 * 12 =  96
+ 9 * 12 = 108
+10 * 12 = 120
+11 * 12 = 132
+12 * 12 = 144</code></pre>
+</div>
+</div>
+</section>
+<section id="andra-listelement-än-tal" class="slide level2">
+<h2>Andra listelement än tal</h2>
+<p>En lista kan innehålla andra element än tal.</p>
+<div class="v-space">
+
+</div>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>items <span class="op">=</span> [<span class="st">"Klocka"</span>, <span class="st">"Kikare"</span>, <span class="st">"Termometer"</span>]</span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="bu">print</span>(<span class="st">"Du har tillgång till:"</span>, end<span class="op">=</span><span class="st">" "</span>)</span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="cf">for</span> item <span class="kw">in</span> items:</span>
+<span id="cb9-4"><a href="#cb9-4"></a>    <span class="bu">print</span>(item, end<span class="op">=</span><span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Du har tillgång till: Klocka Kikare Termometer </code></pre>
+</div>
+</div>
+<div class="v-space">
+
+</div>
+<p>Vi kommer senare att titta på hur element kan läggas till, tas bort och sorteras i listor. Det är användbart t ex i spel.</p>
+</section>
+<section id="ett-tänkt-exempel" class="slide level2">
+<h2>Ett tänkt exempel</h2>
+<div class="v-space">
+
+</div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>items <span class="op">=</span> [<span class="st">"Klocka"</span>, <span class="st">"Kikare"</span>, <span class="st">"Termometer"</span>]</span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="cf">for</span> item <span class="kw">in</span> items:</span>
+<span id="cb11-3"><a href="#cb11-3"></a>    <span class="cf">if</span> item.is_boostable:</span>
+<span id="cb11-4"><a href="#cb11-4"></a>      item.boost()</span>
+<span id="cb11-5"><a href="#cb11-5"></a>      <span class="bu">print</span>(<span class="ss">f"Din </span><span class="sc">{</span>item<span class="sc">}</span><span class="ss"> är nu boostad ✅"</span>)</span>
+<span id="cb11-6"><a href="#cb11-6"></a>    <span class="cf">else</span>:</span>
+<span id="cb11-7"><a href="#cb11-7"></a>      <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>item<span class="sc">}</span><span class="ss"> gick inte att boosta ❌"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Sekvensen ovan skulle kunna ingå i ett spelprogram. Här är <code>is_boostable</code> en <em>egenskap</em> hos <em>objektet</em> <code>item</code> och <code>boost</code> är en <em>metod</em> som tillämpas. Dessa saker måste programmeraren designa själv; det är inte inbyggt i Python.</p>
+<p>Senare i kursen kommer vi att komma till klasser, och koppla objekt, egenskaper och metoder till dessa.</p>
 </section>
 <section id="sammanfattning" class="slide level2">
 <h2>Sammanfattning</h2>
-<div class="smaller-font">
-<div class="fragment fade-right">
 <ul>
-<li>Ett datorprogram är en följd av instruktioner.</li>
+<li><code>for</code>-loopar används antingen när något ska göras ett förutbestämt antal gånger…</li>
+<li>… eller när någon funktion ska tillämpas på ett element i taget i en lista</li>
+<li>Funktionen <code>range</code> kan användas för att skapa listor</li>
+<li>Funktionen <code>range</code> ger olika utdata beroende på vilka parametrar som används</li>
 </ul>
-</div>
-<div class="fragment fade-right">
-<ul>
-<li>Dessa instruktioner skrivs i ett programmeringsspråk.</li>
-</ul>
-</div>
-<div class="fragment fade-right">
-<ul>
-<li>I Python kan korta kodavsnitt skrivas i <strong>konsolen</strong>, medan en <strong>editor</strong> används för att skriva och spara program.</li>
-</ul>
-</div>
-<div class="fragment fade-right">
-<ul>
-<li>I datorprogram kan användas kommentarer för att det ska bli mer lättläst. För Python gäller tecknet <span style="font-size: 85%;"><code>#</code></span> inleder kommentaren <span style="font-size: 85%;"><code># Kommentar</code></span></li>
-</ul>
-</div>
-<div class="fragment fade-right">
-<ul>
-<li>För att lagra värden i ett program används variabler.</li>
-</ul>
-</div>
-<div class="fragment fade-right">
-<ul>
-<li>Variabelns <strong>typ</strong> beror på vilket sorts värde som lagras.</li>
-</ul>
-</div>
-</div>
-</section>
-<section id="sammanfattning-forts." class="slide level2">
-<h2>Sammanfattning (forts.)</h2>
-<div style="font-size: 95%">
-<div class="fragment fade-right">
-<ul>
-<li>Det finns regler och konventioner för namngivning av variabler.</li>
-</ul>
-</div>
-<div class="fragment fade-right">
-<ul>
-<li>För att skriva ut variabler i Python används en <strong>funktion</strong> som heter <span style="font-size: 85%;"><code>print</code></span>.</li>
-</ul>
-</div>
-<div class="fragment fade-right">
-<ul>
-<li>Med <span style="font-size: 85%;"><code>print</code></span> går det att styra hur utskriften sker, t ex med avseende på radbrytning, textjustering och antal decimaler för ett tal.</li>
-</ul>
-</div>
-<div class="fragment fade-right">
-<ul>
-<li>Uttryck kan evalueras i en sträng i Python med f-string.
-<ul>
-<li><span style="font-size: 85%;"><code>print(f"Talet är {2+2}") # Talet är 4</code> </span></li>
-</ul></li>
-</ul>
-</div>
-</div>
-</section>
 
+<div class="footer footer-default">
+
+</div>
+</section>
     </div>
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="../../../../site_libs/revealjs/dist/reveal.js"></script>
+  <script src="../../../site_libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="../../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="../../../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="../../../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="../../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="../../../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="../../../../site_libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="../../../../site_libs/revealjs/plugin/search/search.js"></script>
-  <script src="../../../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="../../../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -827,6 +584,7 @@ på två rader</code></pre>
       Reveal.initialize({
 'controlsAuto': false,
 'previewLinksAuto': false,
+'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -1087,9 +845,10 @@ på två rader</code></pre>
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      function tippyHover(el, contentFn) {
         const config = {
           allowHTML: true,
+          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1099,17 +858,8 @@ på två rader</code></pre>
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start',
+          placement: 'bottom-start'
         };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
