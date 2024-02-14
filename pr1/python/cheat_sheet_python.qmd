@@ -26,16 +26,21 @@ format:
 
 Operatorerna ovan är listade i prioriteringsordning.
 
-## Variabler
+## Variabler och datatyper
+
+### Inbyggda datatyper
+
 En variabel är ett namn med ett värde knutet till sig. En variabel är av en
 specifik *datatyp*. Variabler *tilldelas* ett värde enligt följande exempel
 (datatyp inom parentes):
+
 ```python
-pris    = 10                # Heltal (int), utan decimalpunkt
-sträcka = 4.5               # Flyttal (float), med decimalpunkt
-namn    = "Ada"             # Sträng (str)
-is_game_on = True           # Boolesk variabel (bool), kan anta värdena True och False
-even5   = [2, 4, 6, 8, 10]  # Lista (list)
+pris    = 10                # Datatyp int (Heltal), utan decimalpunkt
+sträcka = 4.5               # Datayp float (flyttal), med decimalpunkt
+namn    = "Ada"             # Datatyp str (Sträng), teckenföljd
+is_game_on = True           # Datatyp bool (Boolesk variabel), kan anta värdena True och False
+even5   = [2, 4, 6, 8, 10]  # Datatyp list (Lista)
+uppslag = {"a":1, "b":2}    # Datatyp dict (Uppslagstabell)
 ```
 
 En variabel kan förändras med t ex `pris += 0.5` (nu kommer `pris` att ha
@@ -46,6 +51,27 @@ exempel är `namn += " Lovelace"`. Nu kommer `namn` att utgöras av strängen
 Vissa datatyper går att konvertera till andra datatyper. T ex ger `str(3.14)`
 resultatet `"3.14"` (konvertering från `float` till `str`) och `int("9")` ger
 resultatet `9` (konvertering från `str` till `int`).
+
+### Egendefinierade datatyper
+
+En egendefinierad datatyp skapas med nyckelorden `class`. Den kan skapas och
+användas enligt följande:
+
+```python
+# Datatypen skapas
+class Bil:
+    märke = ""
+    årsmodell = -1
+
+# En instans skapas
+a_bil = Bil()
+a_bil.märke = "Volvo"
+a_bil.årsmodell = 2021
+
+# Informationen kan läsas enligt
+print(f"Variabeln a_bil är en bil av märket {a_bil.märke} ", end="")
+print(f"och årsmodell {a_bil.årsmodell}")
+```
 
 ## `print`-satsen
 För att skriva ut något till konsolen kan en `print`-sats användas. Exempel:
@@ -150,8 +176,9 @@ while True:
 Se avsnitt Listor, underavsnitt Loopa genom listor. Nyckelorden `break` och
 `continue` fungerar på samma sätt i `for`-loopar som i `while`-loopar.
 
-## Listor
-### Åtkomst av element
+## Dataföljder
+### Listor
+#### Åtkomst av element
 Låt `lst = [10, 20, 30, 40, 50]`. Då gäller att `lst[0]` har värdet `10` och
 `lst[1]` har värdet `20` osv. Det gäller också att `lst[-1]` har värdet `50`
 och `lst[-2]` har värdet `40` osv.
@@ -165,19 +192,19 @@ lst[1:4:2] # Resultat: [20, 40] (Vartannat element mellan två index)
 lst[::-1]  # Resultat: [50, 40, 30, 20, 10] (Baklänges)
 ```
 
-### Skapa listor
+#### Skapa listor
 En lista kan skapas med den inbyggda funktionen `range`. T ex
 `long_list = list(range(100, 1000, 2))`. Detta kommer att skapa listan
 `[100, 102, 104,..., 998]`.
 
-### Antal element i en lista
+#### Antal element i en lista
 Antalet element i en lista erhålls med den inbyggda funktionen `len`. Exempel:
 ```python
 lst = list(range(100, 1000, 2))
 print(len(lst)) # Skriver ut antalet element: 450
 ```
 
-### Kontrollera om ett element finns i en lista
+#### Kontrollera om ett element finns i en lista
 Förekomsten av ett element i en lista kan kontrolleras enligt följande:
 ```python
 long_list = list(range(100, 1000, 2))
@@ -185,7 +212,7 @@ long_list = list(range(100, 1000, 2))
 501 in long_list # Returnerar False
 ```
 
-### Loopa genom listor
+#### Loopa genom listor
 En lista kan gås igenom element för element i en `for`-loop enligt fäljande:
 ```python
 lst = list(range(5, 0, -1)) # Skapar listan [5, 4, 3, 2, 1]
@@ -194,7 +221,8 @@ for i in lst:
 # Matar ut: 5 4 3 2 1
 ```
 
-### Lägga till och ta bort element från en lista
+#### Lägga till och ta bort element från en lista
+
 Följande exempel visar några tilläggs- och borttagningsoperationer:
 ```python
 lst = [10, 20, 30, 40]
@@ -205,7 +233,8 @@ lst.pop()      # Returnerar 50, lst är nu [10, 40]
 a = lst.pop()  # a är nu 40, lst är nu [10]
 ```
 
-### Sortering av en lista
+#### Sortering av en lista
+
 Följande exempel visar hur en lista kan sorteras
 ```python
 lst = [5, 3, 10, -1, 8]
@@ -213,6 +242,29 @@ sorted(lst) # Returnerar [-1, 3, 5, 8, 10]; lst är fortfarande [5, 3, 10, -1, 8
 lst.sort()  # Returnerar inget, lst är ändrad till [-1, 3, 5, 8, 10]
 lst.sort(reverse=True) # lst är nu [10, 8, 5, 3, -1]
 ```
+
+### Uppslagstabeller
+
+En uppslagstabell fungerar som en lista, men istället för numrerade index
+så har den `nyckel:värde`-par. Exempel:
+
+```python
+my_dict = {"Kalle":"Anka", 10:"Tio"}
+
+print(my_dict["Kalle"]) # Skriver ut Anka
+print(my_dict[10])      # Skriver ut Tio
+
+# Värdena kan loopas igenom på samma sätt som en listas värden
+for vals in my_dict:
+    print(vals, end = " ") # Skriver ut "Anka 10" på en rad
+
+# Det går även att lägga till nyckel:värde-par i en dictionary...
+my_dict["Tjugo":20]
+
+# ...eller ta bort värden
+del my_dict ["Kalle"]
+    
+``` 
 
 ## Strängar och strängmetoder
 En sträng (datatyp `str`) kan i flera flera fall hanteras som en lista.
