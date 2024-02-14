@@ -246,24 +246,29 @@ lst.sort(reverse=True) # lst är nu [10, 8, 5, 3, -1]
 ### Uppslagstabeller
 
 En uppslagstabell fungerar som en lista, men istället för numrerade index
-så har den `nyckel:värde`-par. Exempel:
+så har den `nyckel:värde`-par. Nyckeln kan vara tal eller strängar, värdet
+kan vara vilken  variabeltyp som helst. Exempel:
 
 ```python
-my_dict = {"Kalle":"Anka", 10:"Tio"}
-
-print(my_dict["Kalle"]) # Skriver ut Anka
-print(my_dict[10])      # Skriver ut Tio
-
-# Värdena kan loopas igenom på samma sätt som en listas värden
-for vals in my_dict:
-    print(vals, end = " ") # Skriver ut "Anka 10" på en rad
-
-# Det går även att lägga till nyckel:värde-par i en dictionary...
-my_dict["Tjugo":20]
-
-# ...eller ta bort värden
-del my_dict ["Kalle"]
     
+my_dict = {"sträng":"Banan", "heltal":10}
+
+# Loopar genom uppslagstabellen
+for key, value in my_dict.items():
+    print(f"{key} -> {value}", end=", ")
+    # Skriver ut "sträng -> Banan, heltal -> 10, "
+
+print()
+my_dict["värden"] = [1, 2, 3] # Lägger till en ny nyckel
+
+del my_dict["heltal"] # Raderar nyckeln "heltal"
+
+# Alternativ loop genom uppslagstabellen
+for key in my_dict.keys():
+    print(f"{key} -> {my_dict[key]}")
+    # Skriver ut:
+    # sträng -> Banan
+    # värden -> [1, 2, 3]
 ``` 
 
 ## Strängar och strängmetoder
