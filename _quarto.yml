@@ -60,6 +60,10 @@ website:
       - section: "Matematik 5"
         contents:
           - ma/ma-5/kombinatorik/index.qmd
+      - section: "Matematik specialisering"
+
+        contents:
+          - ma/ma-spec/ovningar/matrisinvertering/index.qmd
 
 format:
   html:
