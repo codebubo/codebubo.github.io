@@ -383,9 +383,10 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
   <ul>
   <li><a href="#några-kompletterande-övningar" id="toc-några-kompletterande-övningar" class="nav-link active" data-scroll-target="#några-kompletterande-övningar">Några kompletterande övningar</a>
   <ul class="collapse">
+  <li><a href="#reducerad-trappstegsform" id="toc-reducerad-trappstegsform" class="nav-link" data-scroll-target="#reducerad-trappstegsform">Reducerad trappstegsform</a></li>
   <li><a href="#ekvationssystemet" id="toc-ekvationssystemet" class="nav-link" data-scroll-target="#ekvationssystemet">Ekvationssystemet</a></li>
-  <li><a href="#determinanten" id="toc-determinanten" class="nav-link" data-scroll-target="#determinanten">Determinanten</a></li>
-  <li><a href="#koda-matrisinvertering" id="toc-koda-matrisinvertering" class="nav-link" data-scroll-target="#koda-matrisinvertering">Koda matrisinvertering</a></li>
+  <li><a href="#kodningsövning-determinanten" id="toc-kodningsövning-determinanten" class="nav-link" data-scroll-target="#kodningsövning-determinanten">Kodningsövning: Determinanten</a></li>
+  <li><a href="#kodningsövning-matrisinvertering" id="toc-kodningsövning-matrisinvertering" class="nav-link" data-scroll-target="#kodningsövning-matrisinvertering">Kodningsövning: matrisinvertering</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -412,6 +413,36 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
 
 <section id="några-kompletterande-övningar" class="level2">
 <h2 class="anchored" data-anchor-id="några-kompletterande-övningar">Några kompletterande övningar</h2>
+<section id="reducerad-trappstegsform" class="level3">
+<h3 class="anchored" data-anchor-id="reducerad-trappstegsform">Reducerad trappstegsform</h3>
+<p>Radreducera matrisen <span class="math display">\[
+\begin{bmatrix*}[r]
+  1 &amp; 3 &amp; 5 &amp; 7 \\ 3 &amp; 5 &amp; 7 &amp; 9 \\ 5 &amp; 7 &amp; 9 &amp; 1
+\end{bmatrix*}
+\]</span></p>
+<p>till reducerad trappstegsform och markera pivotkolonnerna.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Svar">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Svar
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Den reducerade trappstegsformen är</p>
+<p><span class="math display">\[
+\begin{bmatrix*}[r]
+1 &amp; 0 &amp; -1 &amp; 0 \\ 0 &amp; 1 &amp; 2 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix*}
+\]</span></p>
+</div>
+</div>
+</div>
+</section>
 <section id="ekvationssystemet" class="level3">
 <h3 class="anchored" data-anchor-id="ekvationssystemet">Ekvationssystemet</h3>
 <p>Vi har ekvationssystemet <span class="math display">\[
@@ -422,10 +453,27 @@ x &amp;+&amp; 2y &amp;+&amp; z &amp;=&amp; -1 \\
 x &amp;+&amp;  6y &amp;+&amp; z &amp;=&amp; \phantom{-}3
 \end{matrix}
 \right .
-\]</span> Bestäm lösningen till detta genom att teckna en koefficientmatris <span class="math inline">\(A\)</span>, en lösningsvektor <span class="math inline">\(\vec{v}\)</span> och en vektor för högerledet, <span class="math inline">\(\vec{b}\)</span>. Invertera <span class="math inline">\(A\)</span> och bestäm lösningsvektorn genom operationen <span class="math inline">\(A^{-1}A\vec{v}=A^{-1}\vec{b}\)</span>.</p>
+\]</span></p>
+<p>Bestäm lösningen till detta genom att teckna en koefficientmatris <span class="math inline">\(A\)</span>, en lösningsvektor <span class="math inline">\(\vec{v}\)</span> och en vektor för högerledet, <span class="math inline">\(\vec{b}\)</span>. Invertera <span class="math inline">\(A\)</span> och bestäm lösningsvektorn genom operationen <span class="math inline">\(A^{-1}A\vec{v}=A^{-1}\vec{b}\)</span>.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Svar">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Svar
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(x=-4\)</span>, <span class="math inline">\(y=1\)</span> och <span class="math inline">\(z=1\)</span>. Observera att det är övningen med matrisinvertering samt matrismultiplikation som är syftet, inte själva ekvationslösningen.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="determinanten" class="level3">
-<h3 class="anchored" data-anchor-id="determinanten">Determinanten</h3>
+<section id="kodningsövning-determinanten" class="level3">
+<h3 class="anchored" data-anchor-id="kodningsövning-determinanten">Kodningsövning: Determinanten</h3>
 <p>Om vi har en <span class="math inline">\(2\times 2\)</span>-matris <span class="math inline">\(A\)</span> enligt <span class="math display">\[
 A=\begin{bmatrix}
 a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22}
@@ -449,11 +497,12 @@ a_{13}\begin{bmatrix}
 a_{21} &amp; a_{22} \\ a_{31} &amp; a_{32}
 \end{bmatrix}
 \]</span> En av de saker determinanten berättar för oss är om en matris är singulär (och därmed inte går att invertera); determinanten är för dessa matriser noll.</p>
-<p>Skapa en Pythonfunktion som tar en <span class="math inline">\(3\times 3\)</span>-matris som argument och returnerar dess determinant. Matrisen kan implementeras som en 2D-lista; exempel på anrop till funktionen <code>det([[1,2,3], [4,5,6],[7,8,9]])</code>. Jämför ditt svar med Wolfram Alpha!</p>
+<p>Skapa en Pythonfunktion som tar en <span class="math inline">\(3\times 3\)</span>-matris som argument och returnerar dess determinant. Matrisen kan implementeras som en 2D-lista; exempel på anrop till funktionen <code>det([[1,2,3], [4,5,6], [7,8,9]])</code>. Jämför ditt svar med <a href="https://bit.ly/4bGpviK">Wolfram Alpha</a>!</p>
 </section>
-<section id="koda-matrisinvertering" class="level3">
-<h3 class="anchored" data-anchor-id="koda-matrisinvertering">Koda matrisinvertering</h3>
+<section id="kodningsövning-matrisinvertering" class="level3">
+<h3 class="anchored" data-anchor-id="kodningsövning-matrisinvertering">Kodningsövning: matrisinvertering</h3>
 <p>Matrisinverteringar är ett tidskrävande arbete som kräver stor noggranhet, och som ligger till grund för ekvationssystemslösning. Det är mycket vanligt att datorer löser stora ekvationssystem, och därför behövs algoritmer för matrisinvertering kodas i program. Nedan visas pdeudokod för Gauss-Jordan-elimination. Skapa en Python-funktion som implementerar denna kod med listor.</p>
+<p>Tips: Börja med att skapa funktioner för att byta plats på två rader, att addera en multipel av en rad till en annan och för att multiplicera en rad med ett tal; dvs funktioner som implementerar de elementära radoperationerna!</p>
 <pre><code>Funktion INVERTERA(A):
   # A är en nxn matris
   # Returnerar A^-1 om den existerar, annars ett felmeddelande
