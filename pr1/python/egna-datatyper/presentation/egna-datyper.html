@@ -8,7 +8,7 @@
 <link href="../../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../../../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.450">
+  <meta name="generator" content="quarto-1.4.545">
 
   <meta name="author" content="Nikodemus Karlsson">
   <title>CodeBubo - Egna datatyper i Python</title>
@@ -31,7 +31,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span { line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -231,7 +231,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -439,11 +440,11 @@ Nikodemus Karlsson
 
 </div>
 <p>Vi kan deklarera en variabeltyp <code>Car</code> på det här sättet:</p>
-<div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">class</span> Car:</span>
-<span id="cb1-2"><a href="#cb1-2"></a>    brand <span class="op">=</span> <span class="st">""</span>  <span class="co"># Tom sträng för bilmärket, så länge</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a>    color <span class="op">=</span> <span class="st">""</span>  <span class="co"># Tom sträng för färgen, så länge</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a>    model_year <span class="op">=</span> <span class="dv">0</span>  <span class="co"># Aktuell årsmodell sätts senare</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="da0ca072" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="kw">class</span> Car:</span>
+<span id="cb1-2"><a></a>    brand <span class="op">=</span> <span class="st">""</span>  <span class="co"># Tom sträng för bilmärket, så länge</span></span>
+<span id="cb1-3"><a></a>    color <span class="op">=</span> <span class="st">""</span>  <span class="co"># Tom sträng för färgen, så länge</span></span>
+<span id="cb1-4"><a></a>    model_year <span class="op">=</span> <span class="dv">0</span>  <span class="co"># Aktuell årsmodell sätts senare</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="v-space">
 
@@ -453,30 +454,30 @@ Nikodemus Karlsson
 <section id="skapa-objekt" class="slide level2">
 <h2>Skapa objekt</h2>
 <p>När en variabel skapas av en viss datatyp kallas det för att ett <em>objekt</em>, eller en <em>instans</em> av denna typ skapas.</p>
-<div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Här skaps objekten a_car och b_car</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a>a_car <span class="op">=</span> Car()</span>
-<span id="cb2-3"><a href="#cb2-3"></a>b_car <span class="op">=</span> Car()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="63804b6f" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="co"># Här skaps objekten a_car och b_car</span></span>
+<span id="cb2-2"><a></a>a_car <span class="op">=</span> Car()</span>
+<span id="cb2-3"><a></a>b_car <span class="op">=</span> Car()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Nu kan vi sätta respektive objekts attribut.</p>
-<div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>a_car.brand <span class="op">=</span> <span class="st">"Volvo"</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a>a_car.color <span class="op">=</span> <span class="st">"Blue"</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a>a_car.model_year <span class="op">=</span> <span class="dv">2005</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a>b_car.brand <span class="op">=</span> <span class="st">"Tesla"</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a>b_car.color <span class="op">=</span> <span class="st">"White"</span></span>
-<span id="cb3-6"><a href="#cb3-6"></a>b_car.model_year <span class="op">=</span> <span class="dv">2020</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="49eda1a3" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>a_car.brand <span class="op">=</span> <span class="st">"Volvo"</span></span>
+<span id="cb3-2"><a></a>a_car.color <span class="op">=</span> <span class="st">"Blue"</span></span>
+<span id="cb3-3"><a></a>a_car.model_year <span class="op">=</span> <span class="dv">2005</span></span>
+<span id="cb3-4"><a></a>b_car.brand <span class="op">=</span> <span class="st">"Tesla"</span></span>
+<span id="cb3-5"><a></a>b_car.color <span class="op">=</span> <span class="st">"White"</span></span>
+<span id="cb3-6"><a></a>b_car.model_year <span class="op">=</span> <span class="dv">2020</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Nu innehåller <code>a_car</code> och <code>b_car</code> sin aktuella information.</p>
 </section>
 <section id="använda-attribut" class="slide level2">
 <h2>Använda attribut</h2>
 <p>Vi använder samma syntax för att extrahera information från ett objekt som vi gjorde när vi satte det.</p>
-<div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="bu">print</span>(<span class="ss">f"a_car årsmodell: </span><span class="sc">{</span>a_car<span class="sc">.</span>model_year<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="bu">print</span>(<span class="ss">f"a_car märke: </span><span class="sc">{</span>a_car<span class="sc">.</span>brand<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="bu">print</span>(<span class="ss">f"b_car årsmodell: </span><span class="sc">{</span>b_car<span class="sc">.</span>model_year<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="bu">print</span>(<span class="st">"a_car är älde än b_car"</span>) <span class="cf">if</span> b_car.model_year <span class="op">&gt;</span> a_car.model_year <span class="cf">else</span> <span class="bu">print</span>(<span class="st">"a_car är äldre än b_car"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="b792553e" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="bu">print</span>(<span class="ss">f"a_car årsmodell: </span><span class="sc">{</span>a_car<span class="sc">.</span>model_year<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-2"><a></a><span class="bu">print</span>(<span class="ss">f"a_car märke: </span><span class="sc">{</span>a_car<span class="sc">.</span>brand<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-3"><a></a><span class="bu">print</span>(<span class="ss">f"b_car årsmodell: </span><span class="sc">{</span>b_car<span class="sc">.</span>model_year<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-4"><a></a><span class="bu">print</span>(<span class="st">"a_car är älde än b_car"</span>) <span class="cf">if</span> b_car.model_year <span class="op">&gt;</span> a_car.model_year <span class="cf">else</span> <span class="bu">print</span>(<span class="st">"a_car är äldre än b_car"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>a_car årsmodell: 2005
 a_car märke: Volvo
@@ -488,40 +489,40 @@ a_car är älde än b_car</code></pre>
 </section>
 <section id="exempel-en-spelares-position" class="slide level2">
 <h2>Exempel: en spelares position</h2>
-<div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="im">import</span> random <span class="im">as</span> rand</span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="kw">class</span> Player():</span>
-<span id="cb6-3"><a href="#cb6-3"></a>  position_x <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a>  position_y <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a></span>
-<span id="cb6-6"><a href="#cb6-6"></a><span class="kw">def</span> set_position(current_player): <span class="co"># En funktion som slumpar fram ett läge</span></span>
-<span id="cb6-7"><a href="#cb6-7"></a>  x <span class="op">=</span> rand.randint(<span class="dv">0</span>, <span class="dv">10</span>)</span>
-<span id="cb6-8"><a href="#cb6-8"></a>  y <span class="op">=</span> rand.randint(<span class="dv">0</span>, <span class="dv">10</span>)</span>
-<span id="cb6-9"><a href="#cb6-9"></a>  current_player.position_x <span class="op">=</span> x   <span class="co"># Sätt den aktuella instansens läge</span></span>
-<span id="cb6-10"><a href="#cb6-10"></a>  current_player.position_y <span class="op">=</span> y</span>
-<span id="cb6-11"><a href="#cb6-11"></a></span>
-<span id="cb6-12"><a href="#cb6-12"></a>player_1 <span class="op">=</span> Player() <span class="co"># Skapar två instanser av Player</span></span>
-<span id="cb6-13"><a href="#cb6-13"></a>player_2 <span class="op">=</span> Player()</span>
-<span id="cb6-14"><a href="#cb6-14"></a></span>
-<span id="cb6-15"><a href="#cb6-15"></a>set_position(player_1) <span class="co"># Sätter ett slumpvis valt läge för player_1</span></span>
-<span id="cb6-16"><a href="#cb6-16"></a>set_position(player_2) <span class="co"># Sätter ett slumpvis valt läge för player_2</span></span>
-<span id="cb6-17"><a href="#cb6-17"></a><span class="bu">print</span>(<span class="ss">f"Player 1 at (</span><span class="sc">{</span>player_1<span class="sc">.</span>position_x<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>player_1<span class="sc">.</span>position_y<span class="sc">}</span><span class="ss">)"</span>)</span>
-<span id="cb6-18"><a href="#cb6-18"></a><span class="bu">print</span>(<span class="ss">f"Player 2 at (</span><span class="sc">{</span>player_2<span class="sc">.</span>position_x<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>player_2<span class="sc">.</span>position_y<span class="sc">}</span><span class="ss">)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="24a7486f" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="im">import</span> random <span class="im">as</span> rand</span>
+<span id="cb6-2"><a></a><span class="kw">class</span> Player():</span>
+<span id="cb6-3"><a></a>  position_x <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb6-4"><a></a>  position_y <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb6-5"><a></a></span>
+<span id="cb6-6"><a></a><span class="kw">def</span> set_position(current_player): <span class="co"># En funktion som slumpar fram ett läge</span></span>
+<span id="cb6-7"><a></a>  x <span class="op">=</span> rand.randint(<span class="dv">0</span>, <span class="dv">10</span>)</span>
+<span id="cb6-8"><a></a>  y <span class="op">=</span> rand.randint(<span class="dv">0</span>, <span class="dv">10</span>)</span>
+<span id="cb6-9"><a></a>  current_player.position_x <span class="op">=</span> x   <span class="co"># Sätt den aktuella instansens läge</span></span>
+<span id="cb6-10"><a></a>  current_player.position_y <span class="op">=</span> y</span>
+<span id="cb6-11"><a></a></span>
+<span id="cb6-12"><a></a>player_1 <span class="op">=</span> Player() <span class="co"># Skapar två instanser av Player</span></span>
+<span id="cb6-13"><a></a>player_2 <span class="op">=</span> Player()</span>
+<span id="cb6-14"><a></a></span>
+<span id="cb6-15"><a></a>set_position(player_1) <span class="co"># Sätter ett slumpvis valt läge för player_1</span></span>
+<span id="cb6-16"><a></a>set_position(player_2) <span class="co"># Sätter ett slumpvis valt läge för player_2</span></span>
+<span id="cb6-17"><a></a><span class="bu">print</span>(<span class="ss">f"Player 1 at (</span><span class="sc">{</span>player_1<span class="sc">.</span>position_x<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>player_1<span class="sc">.</span>position_y<span class="sc">}</span><span class="ss">)"</span>)</span>
+<span id="cb6-18"><a></a><span class="bu">print</span>(<span class="ss">f"Player 2 at (</span><span class="sc">{</span>player_2<span class="sc">.</span>position_x<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>player_2<span class="sc">.</span>position_y<span class="sc">}</span><span class="ss">)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Player 1 at (5, 6)
-Player 2 at (3, 1)</code></pre>
+<pre><code>Player 1 at (7, 7)
+Player 2 at (4, 4)</code></pre>
 </div>
 </div>
 </section>
 <section id="referenser" class="slide level2">
 <h2>Referenser</h2>
 <p>Vi tittar på funktionen <code>set_position(player)</code> igen</p>
-<div class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">def</span> set_position(current_player): <span class="co"># En funktion som slumpar fram ett läge</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a>  x <span class="op">=</span> rand.randint(<span class="dv">0</span>, <span class="dv">10</span>)</span>
-<span id="cb8-3"><a href="#cb8-3"></a>  y <span class="op">=</span> rand.randint(<span class="dv">0</span>, <span class="dv">10</span>)</span>
-<span id="cb8-4"><a href="#cb8-4"></a>  player.position_x <span class="op">=</span> x   <span class="co"># Sätt den aktuella instansens läge</span></span>
-<span id="cb8-5"><a href="#cb8-5"></a>  player.position_y <span class="op">=</span> y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="b8c757dd" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="kw">def</span> set_position(current_player): <span class="co"># En funktion som slumpar fram ett läge</span></span>
+<span id="cb8-2"><a></a>  x <span class="op">=</span> rand.randint(<span class="dv">0</span>, <span class="dv">10</span>)</span>
+<span id="cb8-3"><a></a>  y <span class="op">=</span> rand.randint(<span class="dv">0</span>, <span class="dv">10</span>)</span>
+<span id="cb8-4"><a></a>  player.position_x <span class="op">=</span> x   <span class="co"># Sätt den aktuella instansens läge</span></span>
+<span id="cb8-5"><a></a>  player.position_y <span class="op">=</span> y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>När <code>current_player</code> är av en egendefinierad datatyp, som t ex <code>Player</code>, så opererar funktionen på just detta objekt. Man säger att <code>current_player</code> är en <em>referens</em>, ett alias, till det objekt som funktionen anropas med.</p>
 <p>När en funktion tar emot t ex ett tal så kommer istället en <em>kopia</em> av den variabeln att skapas i funktionen, och det ursprungliga värdet ändras inte.</p>
@@ -536,8 +537,10 @@ Player 2 at (3, 1)</code></pre>
 <li>När en funktion tar emot en egendefinierad datatyp så opererar den på originalobjektet</li>
 </ul>
 
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
+</div>
 </div>
 </section>
     </div>
@@ -566,7 +569,6 @@ Player 2 at (3, 1)</code></pre>
       Reveal.initialize({
 'controlsAuto': false,
 'previewLinksAuto': false,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -827,10 +829,9 @@ Player 2 at (3, 1)</code></pre>
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn) {
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -840,8 +841,17 @@ Player 2 at (3, 1)</code></pre>
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 

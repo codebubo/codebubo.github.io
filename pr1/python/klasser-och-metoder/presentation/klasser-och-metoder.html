@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.4.545">
 
   <meta name="author" content="Nikodemus Karlsson">
-  <title>CodeBubo - While-loopar i Python</title>
+  <title>CodeBubo - Klasser och metoder i Python</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -395,17 +395,13 @@
       margin-right: 0; 
     }
   </style>
-  <meta name="mermaid-theme" content="dark">
-  <script src="../../../../site_libs/quarto-diagram/mermaid.min.js"></script>
-  <script src="../../../../site_libs/quarto-diagram/mermaid-init.js"></script>
-  <link href="../../../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-dark">
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-color="black" data-background-image="https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/while-loopar/peacock-1302721_1280.png" data-background-opacity="1" class="quarto-title-block center">
-  <h1 class="title">While-loopar i Python</h1>
+<section id="title-slide" data-background-color="black" data-background-image="https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/for-loopar/frame-3083868_1280.png" data-background-opacity="1" class="quarto-title-block center">
+  <h1 class="title">Klasser och metoder i Python</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -419,171 +415,157 @@ Nikodemus Karlsson
 <section id="dagens-mål" class="slide level2">
 <h2>Dagens mål</h2>
 <ul>
-<li>Att känna till innebörden av en loopstruktur.</li>
-<li>Att skriva enkla program som innehåller en eller flera <code>while</code>-loopar.</li>
-<li>Att kunna använda styrsatserna <code>break</code> och <code>continue</code>.</li>
-<li>På högre nivå: Att skriva program som innehåller nästlade loopar.</li>
+<li>Att kunna skapa en klass och knyta några funktioner till denna</li>
+<li>Att tillämpa metoder på objekt</li>
+<li>Att känna till vad <code>self</code>-parametern är</li>
+<li>Att kunna skicka objekt för vidare process i funktioner</li>
 </ul>
 </section>
-<section id="varför-loopar" class="slide level2">
-<h2>Varför loopar?</h2>
+<section id="klasser-i-python" class="slide level2">
+<h2>Klasser i Python</h2>
+<div class="v-space">
+
+</div>
 <div class="blue-bg-small-padding">
-<p>Loopar används när en del i ett program ska upprepas ett bestämt eller obestämt antal gånger. Det kan t ex vara ett gissningsspel: Så länge som spelaren gissar fel ska det finnas möjlighet att gissa igen.</p>
-<p>Vi vet inte hur många gissningar som behövs, men det ska finnas ett <strong>villkor</strong> som anger när loopen ska avslutas. Programmet kan även hålla koll på hur många gissningar som behövdes.</p>
+<p>Vi har tidigare gått igenom hur egna datatyper (<em>klasser</em>) kan skapas. Till dessa knöt vi variabler, t ex ett namn eller ett pris.</p>
+<p>Det går även att knyta <em>funktioner</em> till dessa datatyper. Det gör att objektet kan “göra” saker, t ex ett objekt <code>bil</code> tutar, eller att någon egenskap förändras, t ex hastigheten, förändras.</p>
 </div>
 </section>
-<section id="enklast-möjliga-while-loop" class="slide level2">
-<h2>Enklast möjliga while-loop</h2>
-<div class="cell" data-reveal="true" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-    A((Start)) --&gt; B("Tilldela\ni = 1")
-    B --&gt; C{"Är i ≤ 5?"}
-    C --&gt;|Ja| D[/Skriv ut i/]
-    D --&gt; G(Öka i med 1)
-    G --&gt; C 
-    C --&gt;|Nej| F((Avsluta))
-</pre>
+<section id="deklarera-en-metod" class="slide level2">
+<h2>Deklarera en metod</h2>
+<p>Vi kan deklarera och använda en klass <code>Car</code> på det här sättet:</p>
+<div id="a03704c3" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="kw">class</span> Car:</span>
+<span id="cb1-2"><a></a>  speed <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-3"><a></a>  </span>
+<span id="cb1-4"><a></a>  <span class="co"># Metod</span></span>
+<span id="cb1-5"><a></a>  <span class="kw">def</span> set_speed(<span class="va">self</span>, new_speed):</span>
+<span id="cb1-6"><a></a>    <span class="va">self</span>.speed <span class="op">=</span> new_speed</span>
+<span id="cb1-7"><a></a>    </span>
+<span id="cb1-8"><a></a>my_car <span class="op">=</span> Car()</span>
+<span id="cb1-9"><a></a>your_car <span class="op">=</span> Car()</span>
+<span id="cb1-10"><a></a>my_car.set_speed(<span class="dv">100</span>)</span>
+<span id="cb1-11"><a></a>your_car.set_speed(<span class="dv">70</span>)</span>
+<span id="cb1-12"><a></a></span>
+<span id="cb1-13"><a></a><span class="bu">print</span>(<span class="ss">f"my_car speed: </span><span class="sc">{</span>my_car<span class="sc">.</span>speed<span class="sc">}</span><span class="ss">, your_car speed: </span><span class="sc">{</span>your_car<span class="sc">.</span>speed<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<div class="v-space">
-
-</div>
-<div id="f7d3effd" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>i <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb1-2"><a></a><span class="cf">while</span> i <span class="op">&lt;=</span> <span class="dv">5</span>:</span>
-<span id="cb1-3"><a></a>    <span class="bu">print</span>(i, end<span class="op">=</span><span class="st">" "</span>)</span>
-<span id="cb1-4"><a></a>    i <span class="op">+=</span> <span class="dv">1</span>  <span class="co"># i ökar med 1</span></span>
-<span id="cb1-5"><a></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Programmet avslutas eftersom i = </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>1 2 3 4 5 
-Programmet avslutas eftersom i = 6</code></pre>
-</div>
-</div>
-<div class="v-space">
-
-</div>
-<p>Villkoret är på rad 2. Allt som omfattas av loopen är <em>radindraget</em>.</p>
+<p>Sista raden skriver ut<br> <span class="code-out">my_car speed: 100, your_car speed: 70</span></p>
 </section>
-<section id="beräkning-av-summa-ver.-1" class="slide level2">
-<h2>Beräkning av summa – ver. 1</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="co"># Detta program beräknar summan av ett antal tal</span></span>
-<span id="cb3-2"><a></a>avsluta <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb3-3"><a></a>summa <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb3-4"><a></a><span class="cf">while</span> <span class="kw">not</span> avsluta:</span>
-<span id="cb3-5"><a></a>    tal <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Ange ett valfritt tal, noll avslutar -&gt; "</span>))</span>
-<span id="cb3-6"><a></a>    <span class="cf">if</span> tal <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb3-7"><a></a>        avsluta <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb3-8"><a></a>    summa <span class="op">+=</span> tal</span>
-<span id="cb3-9"><a></a><span class="bu">print</span>(<span class="ss">f"Summan är </span><span class="sc">{</span>summa<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="fragment fade-right">
-<div class="v-space">
-
-</div>
-<p>Ett problem här är även det sista inmatade talet ingår i summan, ett annat villkor för avslut skulle ge en felaktig summa.</p>
-</div>
+<section id="parametern-self" class="slide level2">
+<h2>Parametern <code>self</code></h2>
+<p>Som vi såg så håller Python reda på respektive bils fart.</p>
+<p>Detta vet Python pga parametern <code>self</code> i metoden:</p>
+<p><code>def set_speed(self, new_speed):</code></p>
+<p>Varje instans har ett ID-nummer. Detta skickas till metoderna som en <em>referens</em> för identifiering.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="kw">def</span> set_speed(<span class="va">self</span>, new_speed):</span>
+<span id="cb2-2"><a></a>    <span class="va">self</span>.speed <span class="op">=</span> new_speed</span>
+<span id="cb2-3"><a></a></span>
+<span id="cb2-4"><a></a>my_car <span class="op">=</span> Car()</span>
+<span id="cb2-5"><a></a>my_car.set_speed(<span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>ID-numret skickas till metoden som ett osynligt argument. Alla metoder måste ha parametern <code>self</code> som första parameter.</p>
 </section>
-<section id="beräkning-av-summa-ver.-2" class="slide level2">
-<h2>Beräkning av summa – ver. 2</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="co"># Detta program beräknar summan av ett antal tal</span></span>
-<span id="cb4-2"><a></a>summa <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb4-3"><a></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb4-4"><a></a>    tal <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Ange ett valfritt tal, noll avslutar -&gt; "</span>))</span>
-<span id="cb4-5"><a></a>    <span class="cf">if</span> tal <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb4-6"><a></a>        <span class="cf">break</span></span>
-<span id="cb4-7"><a></a>    summa <span class="op">+=</span> tal</span>
-<span id="cb4-8"><a></a><span class="bu">print</span>(<span class="ss">f"Summan är </span><span class="sc">{</span>summa<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="fragment fade-right">
-<div class="v-space">
-
-</div>
-<p>Här används styrsatsen <code>break</code> för att avbryta loopen då ett villkor uppfylls. Det gör att det sista talet inte kommer att ingå i summan.</p>
-<p>Själva loopvillkoret är <strong>alltid</strong> sant, det är innebörden av <br><code>while True</code> på rad 3.</p>
-</div>
-</section>
-<section id="summan-av-positiva-tal" class="slide level2">
-<h2>Summan av positiva tal</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="co"># Detta program beräknar summan av ett antal positiva tal</span></span>
-<span id="cb5-2"><a></a>summa <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb5-3"><a></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb5-4"><a></a>    tal <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Ange ett valfritt tal, noll avslutar -&gt; "</span>))</span>
-<span id="cb5-5"><a></a>    <span class="cf">if</span> tal <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb5-6"><a></a>        <span class="cf">break</span></span>
-<span id="cb5-7"><a></a>    <span class="cf">if</span> tal <span class="op">&lt;</span> <span class="dv">0</span>:</span>
-<span id="cb5-8"><a></a>        <span class="cf">continue</span></span>
-<span id="cb5-9"><a></a>    summa <span class="op">+=</span> tal</span>
-<span id="cb5-10"><a></a><span class="bu">print</span>(<span class="ss">f"Summan av de inmatade positiva talen är </span><span class="sc">{</span>summa<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="fragment fade-right">
-<div class="v-space">
-
-</div>
-<p>Styrsatsen <code>continue</code> används för att hoppa över resten av loopen och börja om från dess början.</p>
-</div>
-</section>
-<section id="nästlad-loop-flödesschema" class="slide level2">
-<h2>Nästlad loop – flödesschema</h2>
+<section id="exempel" class="slide level2">
+<h2>Exempel</h2>
 <div class="double-v-space">
-<div class="cell" data-reveal="true" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-    A((Start)) --&gt; B("Ansätt i = 0")
-    B --&gt; C{"i ≤  3?"}
-    C --&gt; |"Ja"| D("Ansätt j = 0")
-    D --&gt; E{"j ≤  3?"}
-    E --&gt;  |"Ja"| F[/Skriv ut i och j/]
-    F --&gt; G(Öka j med 1)
-    G --&gt; E
-    E --&gt; |"Nej"|H("Öka i med 1")
-    H --&gt; C
-    C --&gt; |"Nej"|I(("Avsluta"))
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-</div>
-<div class="fragment fade-right">
-<div class="v-space">
 
 </div>
-<p>Här finns en “loop i en loop”. För varje varv som den yttre loopen gör så kommer den inre loopen att gå ett givet antal varv.</p>
-</div>
+<p>I en <a href="../../../../pr1/python/for-loopar/presentation/for-pres.html#8">tidigare presentation</a> fanns exempel på en tänkt spelkod:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>items <span class="op">=</span> [<span class="st">"Klocka"</span>, <span class="st">"Kikare"</span>, <span class="st">"Termometer"</span>]</span>
+<span id="cb3-2"><a></a><span class="cf">for</span> item <span class="kw">in</span> items:</span>
+<span id="cb3-3"><a></a>    <span class="cf">if</span> item.is_boostable:</span>
+<span id="cb3-4"><a></a>      item.boost()</span>
+<span id="cb3-5"><a></a>      <span class="bu">print</span>(<span class="ss">f"Din </span><span class="sc">{</span>item<span class="sc">}</span><span class="ss"> är nu boostad ✅"</span>)</span>
+<span id="cb3-6"><a></a>    <span class="cf">else</span>:</span>
+<span id="cb3-7"><a></a>      <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>item<span class="sc">}</span><span class="ss"> gick inte att boosta ❌"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="nästlad-loop-kodexempel" class="slide level2">
-<h2>Nästlad loop – kodexempel</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="co"># Detta program demonstrerar nästlade loopar</span></span>
-<span id="cb6-2"><a></a>i <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb6-3"><a></a><span class="cf">while</span> i <span class="op">&lt;</span> <span class="dv">3</span>: <span class="co"># Start yttre loop</span></span>
-<span id="cb6-4"><a></a>    j <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb6-5"><a></a>    <span class="cf">while</span> j <span class="op">&lt;</span> <span class="dv">3</span>: <span class="co"># Start inre loop</span></span>
-<span id="cb6-6"><a></a>        <span class="bu">print</span>(<span class="ss">f"i = </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">, j = </span><span class="sc">{</span>j<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb6-7"><a></a>        j <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb6-8"><a></a>    i <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb6-9"><a></a><span class="bu">print</span>(<span class="st">"Programmet avslutas"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="v-space">
+<section id="exempel-1" class="slide level2">
+<h2>Exempel</h2>
+<p>Implementationen skulle kunna se ut så här:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="kw">class</span> Item:</span>
+<span id="cb4-2"><a></a>  is_boostable <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb4-3"><a></a>  is_boosted <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb4-4"><a></a></span>
+<span id="cb4-5"><a></a>  <span class="kw">def</span> boost(<span class="va">self</span>):</span>
+<span id="cb4-6"><a></a>    <span class="cf">if</span> <span class="va">self</span>.is_boostable:</span>
+<span id="cb4-7"><a></a>      <span class="va">self</span>.is_boosted <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb4-8"><a></a></span>
+<span id="cb4-9"><a></a>klocka <span class="op">=</span> Item()  <span class="co"># Skapa på samma sätt kikare och termometer</span></span>
+<span id="cb4-10"><a></a>kikare.boostable <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb4-11"><a></a>items <span class="op">=</span> [klocka, kikare, termometer]</span>
+<span id="cb4-12"><a></a></span>
+<span id="cb4-13"><a></a><span class="cf">for</span> item <span class="kw">in</span> items:</span>
+<span id="cb4-14"><a></a>    <span class="cf">if</span> item.is_boostable:</span>
+<span id="cb4-15"><a></a>      item.boost()</span>
+<span id="cb4-16"><a></a>      <span class="bu">print</span>(<span class="ss">f"Din </span><span class="sc">{</span>item<span class="sc">}</span><span class="ss"> är nu boostad ✅"</span>)     <span class="co"># För att `item` ska skriva</span></span>
+<span id="cb4-17"><a></a>    <span class="cf">else</span>:                                       <span class="co"># något vettigt måste sådan</span></span>
+<span id="cb4-18"><a></a>      <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>item<span class="sc">}</span><span class="ss"> gick inte att boosta ❌"</span>)  <span class="co"># funktionalitet läggas in.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="metoden-__init__" class="slide level2">
+<h2>Metoden <code>__init__</code></h2>
+<p>För att tilldela värden till en instans i samband med att den skapas så kan man använda en metod som heter <code>__init__</code></p>
+<div id="030ff777" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="kw">class</span> Car:</span>
+<span id="cb5-2"><a></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, brand, mileage):</span>
+<span id="cb5-3"><a></a>    <span class="va">self</span>.brand <span class="op">=</span> brand</span>
+<span id="cb5-4"><a></a>    <span class="va">self</span>.mileage <span class="op">=</span> mileage</span>
+<span id="cb5-5"><a></a></span>
+<span id="cb5-6"><a></a>my_car <span class="op">=</span> Car(<span class="st">"Volvo"</span>, <span class="dv">1200</span>)</span>
+<span id="cb5-7"><a></a><span class="bu">print</span>(<span class="ss">f"Märke: </span><span class="sc">{</span>my_car<span class="sc">.</span>brand<span class="sc">}</span><span class="ss">, Miltal: </span><span class="sc">{</span>my_car<span class="sc">.</span>mileage<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="double-v-space">
 
 </div>
-<p>Denna kod motsvarar det ritade flödesschemat på förra slajden.</p>
+<p>Skriver ut: <span class="code-out">Märke: Volvo, Miltal: 1200</span>, vi har alltså initierat ett <code>Car</code>-objekt med dessa värden med hjälp av den fördefinierade metoden <code>__init__</code></p>
+</section>
+<section id="metoden-__str__" class="slide level2">
+<h2>Metoden <code>__str__</code></h2>
+<p>Ibland vill man kunna skriva ut information om objekt med en kort <code>print</code>-sats, t ex <code>print(my_car)</code>. Då kan metoden <code>__str__</code> användas.</p>
+<div id="eedfd9d9" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="kw">class</span> Car:</span>
+<span id="cb6-2"><a></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, brand, mileage):</span>
+<span id="cb6-3"><a></a>    <span class="va">self</span>.brand <span class="op">=</span> brand</span>
+<span id="cb6-4"><a></a>    <span class="va">self</span>.mileage <span class="op">=</span> mileage</span>
+<span id="cb6-5"><a></a></span>
+<span id="cb6-6"><a></a>  <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb6-7"><a></a>    <span class="cf">return</span> (<span class="ss">f"Märke: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>brand<span class="sc">}</span><span class="ss">, Miltal: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>mileage<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb6-8"><a></a></span>
+<span id="cb6-9"><a></a>my_car <span class="op">=</span> Car(<span class="st">"Volvo"</span>, <span class="dv">1200</span>)</span>
+<span id="cb6-10"><a></a><span class="bu">print</span>(my_car)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Sista raden skriver ut <span class="code-out">Märke: Volvo, Miltal: 1200</span></p>
+<p>Utskriftssträngen definieras av <code>__str__</code>-metoden.</p>
+</section>
+<section id="statiska-metoder" class="slide level2 scrollable">
+<h2>Statiska metoder</h2>
+<p>En statisk metod är en funktion som är knuten till en klass, men inte till ett objekt.</p>
+<div id="ec668559" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="kw">class</span> Age:</span>
+<span id="cb7-2"><a></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, age):</span>
+<span id="cb7-3"><a></a>    <span class="va">self</span>.age <span class="op">=</span> age</span>
+<span id="cb7-4"><a></a>  </span>
+<span id="cb7-5"><a></a>  <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb7-6"><a></a>    <span class="cf">return</span> <span class="bu">str</span>(<span class="va">self</span>.age)</span>
+<span id="cb7-7"><a></a>  </span>
+<span id="cb7-8"><a></a>  <span class="at">@staticmethod</span> <span class="co"># En funktion som hör till klassen, men inte till ett objekt</span></span>
+<span id="cb7-9"><a></a>  <span class="kw">def</span> create_from_birthyear(year):</span>
+<span id="cb7-10"><a></a>    age <span class="op">=</span> <span class="dv">2024</span> <span class="op">-</span> year</span>
+<span id="cb7-11"><a></a>    <span class="cf">return</span> Age(age)</span>
+<span id="cb7-12"><a></a></span>
+<span id="cb7-13"><a></a>age_Kalle <span class="op">=</span> Age(<span class="dv">18</span>)</span>
+<span id="cb7-14"><a></a>age_Linda <span class="op">=</span> Age.create_from_birthyear(<span class="dv">2002</span>)</span>
+<span id="cb7-15"><a></a><span class="bu">print</span>(<span class="ss">f"Kalle: </span><span class="sc">{</span>age_Kalle<span class="sc">}</span><span class="ss">, Linda: </span><span class="sc">{</span>age_Linda<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Kalle: 18, Linda: 22</code></pre>
+</div>
+</div>
 </section>
 <section id="sammanfattning" class="slide level2">
 <h2>Sammanfattning</h2>
 <ul>
-<li>En loop är en kontrollstruktur som upprepar kod.</li>
-<li>Det finns flera typer av loopar, idag har vi gått igenom <code>while</code>-loopen.</li>
-<li><code>while</code>-loopen löper så länge ett villkor är uppfyllt…</li>
-<li>…eller tills den stöter på en <code>break</code>-sats.</li>
-<li>Styrsatsen <code>continue</code> gör att koden går tillbaka till loopens start.</li>
-<li>I nästlade loopar går koden igenom alla kombinationer av värden i den yttre och inre loopen.</li>
+<li>Funktioner till en klass kallas för metoder</li>
+<li>Metoderna anropas på samma sätt som funktioner i allmänhet, men föregås av namnet på instansen som tillämpar den. (t ex <code>my_item.boost()</code>)</li>
+<li>Metoderna tar en “osynlig referens” till instansen i form av <code>self</code>. Detta <code>self</code> måste finnas först i parameterlistan.</li>
+<li>En statisk metod är en funktion som är organiserad till en klass, men inte är knuten till ett objekt. Den skapas med <code>@staticmethod</code></li>
 </ul>
 
 <div class="quarto-auto-generated-content">

@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="../../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../../site_libs/quarto-html/tabby.min.js"></script>
-<script src="../../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.545">
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.3.450">
 
   <meta name="author" content="Nikodemus Karlsson">
-  <title>CodeBubo - While-loopar i Python</title>
+  <title>CodeBubo - Egna datatyper i Python</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -95,7 +95,7 @@
     code span.vs { color: #abe338; } /* VerbatimString */
     code span.wa { color: #dcc6e0; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/theme/quarto.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto.css">
   <link rel="stylesheet" href="style.css">
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FFXVNM3K2N"></script>
 
@@ -106,10 +106,10 @@
   gtag('js', new Date());
   gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
   </script>
-  <link href="../../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="../../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="../../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="../../../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -231,8 +231,7 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    padding-bottom: 0.5rem;
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -395,17 +394,13 @@
       margin-right: 0; 
     }
   </style>
-  <meta name="mermaid-theme" content="dark">
-  <script src="../../../../site_libs/quarto-diagram/mermaid.min.js"></script>
-  <script src="../../../../site_libs/quarto-diagram/mermaid-init.js"></script>
-  <link href="../../../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-dark">
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-color="black" data-background-image="https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/while-loopar/peacock-1302721_1280.png" data-background-opacity="1" class="quarto-title-block center">
-  <h1 class="title">While-loopar i Python</h1>
+<section id="title-slide" data-background-color="black" data-background-image="https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/for-loopar/frame-3083868_1280.png" data-background-opacity="1" class="quarto-title-block center">
+  <h1 class="title">Egna datatyper i Python</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -419,196 +414,167 @@ Nikodemus Karlsson
 <section id="dagens-mål" class="slide level2">
 <h2>Dagens mål</h2>
 <ul>
-<li>Att känna till innebörden av en loopstruktur.</li>
-<li>Att skriva enkla program som innehåller en eller flera <code>while</code>-loopar.</li>
-<li>Att kunna använda styrsatserna <code>break</code> och <code>continue</code>.</li>
-<li>På högre nivå: Att skriva program som innehåller nästlade loopar.</li>
+<li>Att kunna skapa egna datatyper</li>
+<li>Att känna till skillnaden mellan datatyp och objekt</li>
+<li>Att läsa och tilldela datatypen attribut</li>
+<li>Att kunna skicka objekt för vidare process i funktioner</li>
 </ul>
 </section>
-<section id="varför-loopar" class="slide level2">
-<h2>Varför loopar?</h2>
+<section id="likheter-och-skillnader-mellan-while--och-for-loopar" class="slide level2">
+<h2>Likheter och skillnader mellan <code>while</code>- och <code>for</code>-loopar</h2>
+<div class="v-space">
+
+</div>
 <div class="blue-bg-small-padding">
-<p>Loopar används när en del i ett program ska upprepas ett bestämt eller obestämt antal gånger. Det kan t ex vara ett gissningsspel: Så länge som spelaren gissar fel ska det finnas möjlighet att gissa igen.</p>
-<p>Vi vet inte hur många gissningar som behövs, men det ska finnas ett <strong>villkor</strong> som anger när loopen ska avslutas. Programmet kan även hålla koll på hur många gissningar som behövdes.</p>
+<p>Ofta används <code>while</code>-loopar när antalet varv avgörs under programkörningens gång, medan <code>for</code>-loopar används då det är ett känt antal varv. I vissa fall går den ena typen av loop lika bra som den andra.</p>
+<p>En <code>for</code>-loop använder sig av en <strong>lista</strong> som loopas igenom.</p>
 </div>
 </section>
-<section id="enklast-möjliga-while-loop" class="slide level2">
-<h2>Enklast möjliga while-loop</h2>
-<div class="cell" data-reveal="true" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-    A((Start)) --&gt; B("Tilldela\ni = 1")
-    B --&gt; C{"Är i ≤ 5?"}
-    C --&gt;|Ja| D[/Skriv ut i/]
-    D --&gt; G(Öka i med 1)
-    G --&gt; C 
-    C --&gt;|Nej| F((Avsluta))
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<div class="v-space">
-
-</div>
-<div id="f7d3effd" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>i <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb1-2"><a></a><span class="cf">while</span> i <span class="op">&lt;=</span> <span class="dv">5</span>:</span>
-<span id="cb1-3"><a></a>    <span class="bu">print</span>(i, end<span class="op">=</span><span class="st">" "</span>)</span>
-<span id="cb1-4"><a></a>    i <span class="op">+=</span> <span class="dv">1</span>  <span class="co"># i ökar med 1</span></span>
-<span id="cb1-5"><a></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Programmet avslutas eftersom i = </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>1 2 3 4 5 
-Programmet avslutas eftersom i = 6</code></pre>
-</div>
-</div>
-<div class="v-space">
-
-</div>
-<p>Villkoret är på rad 2. Allt som omfattas av loopen är <em>radindraget</em>.</p>
-</section>
-<section id="beräkning-av-summa-ver.-1" class="slide level2">
-<h2>Beräkning av summa – ver. 1</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="co"># Detta program beräknar summan av ett antal tal</span></span>
-<span id="cb3-2"><a></a>avsluta <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb3-3"><a></a>summa <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb3-4"><a></a><span class="cf">while</span> <span class="kw">not</span> avsluta:</span>
-<span id="cb3-5"><a></a>    tal <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Ange ett valfritt tal, noll avslutar -&gt; "</span>))</span>
-<span id="cb3-6"><a></a>    <span class="cf">if</span> tal <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb3-7"><a></a>        avsluta <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb3-8"><a></a>    summa <span class="op">+=</span> tal</span>
-<span id="cb3-9"><a></a><span class="bu">print</span>(<span class="ss">f"Summan är </span><span class="sc">{</span>summa<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="fragment fade-right">
-<div class="v-space">
-
-</div>
-<p>Ett problem här är även det sista inmatade talet ingår i summan, ett annat villkor för avslut skulle ge en felaktig summa.</p>
-</div>
-</section>
-<section id="beräkning-av-summa-ver.-2" class="slide level2">
-<h2>Beräkning av summa – ver. 2</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="co"># Detta program beräknar summan av ett antal tal</span></span>
-<span id="cb4-2"><a></a>summa <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb4-3"><a></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb4-4"><a></a>    tal <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Ange ett valfritt tal, noll avslutar -&gt; "</span>))</span>
-<span id="cb4-5"><a></a>    <span class="cf">if</span> tal <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb4-6"><a></a>        <span class="cf">break</span></span>
-<span id="cb4-7"><a></a>    summa <span class="op">+=</span> tal</span>
-<span id="cb4-8"><a></a><span class="bu">print</span>(<span class="ss">f"Summan är </span><span class="sc">{</span>summa<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="fragment fade-right">
-<div class="v-space">
-
-</div>
-<p>Här används styrsatsen <code>break</code> för att avbryta loopen då ett villkor uppfylls. Det gör att det sista talet inte kommer att ingå i summan.</p>
-<p>Själva loopvillkoret är <strong>alltid</strong> sant, det är innebörden av <br><code>while True</code> på rad 3.</p>
-</div>
-</section>
-<section id="summan-av-positiva-tal" class="slide level2">
-<h2>Summan av positiva tal</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="co"># Detta program beräknar summan av ett antal positiva tal</span></span>
-<span id="cb5-2"><a></a>summa <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb5-3"><a></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb5-4"><a></a>    tal <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Ange ett valfritt tal, noll avslutar -&gt; "</span>))</span>
-<span id="cb5-5"><a></a>    <span class="cf">if</span> tal <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb5-6"><a></a>        <span class="cf">break</span></span>
-<span id="cb5-7"><a></a>    <span class="cf">if</span> tal <span class="op">&lt;</span> <span class="dv">0</span>:</span>
-<span id="cb5-8"><a></a>        <span class="cf">continue</span></span>
-<span id="cb5-9"><a></a>    summa <span class="op">+=</span> tal</span>
-<span id="cb5-10"><a></a><span class="bu">print</span>(<span class="ss">f"Summan av de inmatade positiva talen är </span><span class="sc">{</span>summa<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="fragment fade-right">
-<div class="v-space">
-
-</div>
-<p>Styrsatsen <code>continue</code> används för att hoppa över resten av loopen och börja om från dess början.</p>
-</div>
-</section>
-<section id="nästlad-loop-flödesschema" class="slide level2">
-<h2>Nästlad loop – flödesschema</h2>
+<section id="enklast-möjliga-for-loop" class="slide level2">
+<h2>Enklast möjliga <code>for</code>-loop</h2>
 <div class="double-v-space">
-<div class="cell" data-reveal="true" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-    A((Start)) --&gt; B("Ansätt i = 0")
-    B --&gt; C{"i ≤  3?"}
-    C --&gt; |"Ja"| D("Ansätt j = 0")
-    D --&gt; E{"j ≤  3?"}
-    E --&gt;  |"Ja"| F[/Skriv ut i och j/]
-    F --&gt; G(Öka j med 1)
-    G --&gt; E
-    E --&gt; |"Nej"|H("Öka i med 1")
-    H --&gt; C
-    C --&gt; |"Nej"|I(("Avsluta"))
-</pre>
+
 </div>
-<p></p></figure><p></p>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>lista <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>]</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="cf">for</span> element <span class="kw">in</span> lista:</span>
+<span id="cb1-3"><a href="#cb1-3"></a>    <span class="bu">print</span>(element, end<span class="op">=</span><span class="st">" "</span>)</span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="bu">print</span>(<span class="ss">f"Loopen avslutas eftersom listan är slut"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>10 20 30 Loopen avslutas eftersom listan är slut</code></pre>
 </div>
 </div>
-</div>
-</div>
-<div class="fragment fade-right">
 <div class="v-space">
 
 </div>
-<p>Här finns en “loop i en loop”. För varje varv som den yttre loopen gör så kommer den inre loopen att gå ett givet antal varv.</p>
+<p>Variabeln <code>element</code> antar respektive värde i listan i tur och ordning.</p>
+</section>
+<section id="längre-listor" class="slide level2">
+<h2>Längre listor</h2>
+<p>Listorna behöver inte skrivas in manuellt, det är bra då loopen behöver snurra många varv. Här används <code>range</code> för att skapa en lista från ett värde till ett annat värde.</p>
+<div class="v-space">
+
+</div>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>, <span class="dv">8</span>):   <span class="co"># Här skapas listan</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>    <span class="bu">print</span>(i, end<span class="op">=</span><span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>3 4 5 6 7 </code></pre>
+</div>
+</div>
+<div class="v-space">
+
+</div>
+<p>Funktionen <code>range(3, 8)</code> skapar listan <code>[3, 4, 5, 6, 7]</code></p>
+<p>Om det hade varit en <code>while</code>-loop som skulle snurra fem varav skulle ett villkor och en räknare behövt sättas upp.</p>
+</section>
+<section id="funktionen-range" class="slide level2">
+<h2>Funktionen <code>range</code></h2>
+<p>Exempel på hur parametrar påverkar resultatet av <code>range</code></p>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>lista_A <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">10</span>))</span>
+<span id="cb5-2"><a href="#cb5-2"></a>lista_B <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>))</span>
+<span id="cb5-3"><a href="#cb5-3"></a>lista_C <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">2</span>))</span>
+<span id="cb5-4"><a href="#cb5-4"></a>lista_D <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">10</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>))</span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="bu">print</span>(<span class="ss">f"lista_A = </span><span class="sc">{</span>lista_A<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb5-6"><a href="#cb5-6"></a><span class="bu">print</span>(<span class="ss">f"lista_B = </span><span class="sc">{</span>lista_B<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="bu">print</span>(<span class="ss">f"lista_C = </span><span class="sc">{</span>lista_C<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="bu">print</span>(<span class="ss">f"lista_D = </span><span class="sc">{</span>lista_D<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>lista_A = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+lista_B = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4]
+lista_C = [0, 2, 4, 6, 8]
+lista_D = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]</code></pre>
+</div>
 </div>
 </section>
-<section id="nästlad-loop-kodexempel" class="slide level2">
-<h2>Nästlad loop – kodexempel</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="co"># Detta program demonstrerar nästlade loopar</span></span>
-<span id="cb6-2"><a></a>i <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb6-3"><a></a><span class="cf">while</span> i <span class="op">&lt;</span> <span class="dv">3</span>: <span class="co"># Start yttre loop</span></span>
-<span id="cb6-4"><a></a>    j <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb6-5"><a></a>    <span class="cf">while</span> j <span class="op">&lt;</span> <span class="dv">3</span>: <span class="co"># Start inre loop</span></span>
-<span id="cb6-6"><a></a>        <span class="bu">print</span>(<span class="ss">f"i = </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">, j = </span><span class="sc">{</span>j<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb6-7"><a></a>        j <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb6-8"><a></a>    i <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb6-9"><a></a><span class="bu">print</span>(<span class="st">"Programmet avslutas"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="exempel-multiplikationstabell" class="slide level2">
+<h2>Exempel: Multiplikationstabell</h2>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># Detta program beräknar och skriver ut "tolvans tabell"</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">13</span>):</span>
+<span id="cb7-3"><a href="#cb7-3"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">:2.0f}</span><span class="ss"> * 12 = </span><span class="sc">{</span>i<span class="op">*</span><span class="dv">12</span><span class="sc">:3.0f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> 1 * 12 =  12
+ 2 * 12 =  24
+ 3 * 12 =  36
+ 4 * 12 =  48
+ 5 * 12 =  60
+ 6 * 12 =  72
+ 7 * 12 =  84
+ 8 * 12 =  96
+ 9 * 12 = 108
+10 * 12 = 120
+11 * 12 = 132
+12 * 12 = 144</code></pre>
+</div>
+</div>
+</section>
+<section id="andra-listelement-än-tal" class="slide level2">
+<h2>Andra listelement än tal</h2>
+<p>En lista kan innehålla andra element än tal.</p>
 <div class="v-space">
 
 </div>
-<p>Denna kod motsvarar det ritade flödesschemat på förra slajden.</p>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>items <span class="op">=</span> [<span class="st">"Klocka"</span>, <span class="st">"Kikare"</span>, <span class="st">"Termometer"</span>]</span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="bu">print</span>(<span class="st">"Du har tillgång till:"</span>, end<span class="op">=</span><span class="st">" "</span>)</span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="cf">for</span> item <span class="kw">in</span> items:</span>
+<span id="cb9-4"><a href="#cb9-4"></a>    <span class="bu">print</span>(item, end<span class="op">=</span><span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Du har tillgång till: Klocka Kikare Termometer </code></pre>
+</div>
+</div>
+<div class="v-space">
+
+</div>
+<p>Vi kommer senare att titta på hur element kan läggas till, tas bort och sorteras i listor. Det är användbart t ex i spel.</p>
+</section>
+<section id="ett-tänkt-exempel" class="slide level2">
+<h2>Ett tänkt exempel</h2>
+<div class="v-space">
+
+</div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>items <span class="op">=</span> [<span class="st">"Klocka"</span>, <span class="st">"Kikare"</span>, <span class="st">"Termometer"</span>]</span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="cf">for</span> item <span class="kw">in</span> items:</span>
+<span id="cb11-3"><a href="#cb11-3"></a>    <span class="cf">if</span> item.is_boostable:</span>
+<span id="cb11-4"><a href="#cb11-4"></a>      item.boost()</span>
+<span id="cb11-5"><a href="#cb11-5"></a>      <span class="bu">print</span>(<span class="ss">f"Din </span><span class="sc">{</span>item<span class="sc">}</span><span class="ss"> är nu boostad ✅"</span>)</span>
+<span id="cb11-6"><a href="#cb11-6"></a>    <span class="cf">else</span>:</span>
+<span id="cb11-7"><a href="#cb11-7"></a>      <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>item<span class="sc">}</span><span class="ss"> gick inte att boosta ❌"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Sekvensen ovan skulle kunna ingå i ett spelprogram. Här är <code>is_boostable</code> en <em>egenskap</em> hos <em>objektet</em> <code>item</code> och <code>boost</code> är en <em>metod</em> som tillämpas. Dessa saker måste programmeraren designa själv; det är inte inbyggt i Python.</p>
+<p>Senare i kursen kommer vi att komma till klasser, och koppla objekt, egenskaper och metoder till dessa.</p>
 </section>
 <section id="sammanfattning" class="slide level2">
 <h2>Sammanfattning</h2>
 <ul>
-<li>En loop är en kontrollstruktur som upprepar kod.</li>
-<li>Det finns flera typer av loopar, idag har vi gått igenom <code>while</code>-loopen.</li>
-<li><code>while</code>-loopen löper så länge ett villkor är uppfyllt…</li>
-<li>…eller tills den stöter på en <code>break</code>-sats.</li>
-<li>Styrsatsen <code>continue</code> gör att koden går tillbaka till loopens start.</li>
-<li>I nästlade loopar går koden igenom alla kombinationer av värden i den yttre och inre loopen.</li>
+<li><code>for</code>-loopar används antingen när något ska göras ett förutbestämt antal gånger…</li>
+<li>… eller när någon funktion ska tillämpas på ett element i taget i en lista</li>
+<li>Funktionen <code>range</code> kan användas för att skapa listor</li>
+<li>Funktionen <code>range</code> ger olika utdata beroende på vilka parametrar som används</li>
 </ul>
 
-<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
-</div>
 </div>
 </section>
     </div>
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="../../../../site_libs/revealjs/dist/reveal.js"></script>
+  <script src="../../../site_libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="../../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="../../../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="../../../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="../../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="../../../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="../../../../site_libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="../../../../site_libs/revealjs/plugin/search/search.js"></script>
-  <script src="../../../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="../../../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -618,6 +584,7 @@ Programmet avslutas eftersom i = 6</code></pre>
       Reveal.initialize({
 'controlsAuto': false,
 'previewLinksAuto': false,
+'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -878,9 +845,10 @@ Programmet avslutas eftersom i = 6</code></pre>
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      function tippyHover(el, contentFn) {
         const config = {
           allowHTML: true,
+          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -890,17 +858,8 @@ Programmet avslutas eftersom i = 6</code></pre>
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start',
+          placement: 'bottom-start'
         };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
