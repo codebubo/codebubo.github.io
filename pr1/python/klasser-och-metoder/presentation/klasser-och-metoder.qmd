@@ -46,13 +46,11 @@ egenskap förändras, t ex hastigheten, förändras.
 
 ## Deklarera en metod
 
-:::{.double-v-space}
-:::
-
 Vi kan deklarera och använda en klass `Car` på det här sättet:
 
 ```{python}
 # | echo: true
+# |output: false
 class Car:
   speed = 0
   
@@ -68,9 +66,15 @@ your_car.set_speed(70)
 print(f"my_car speed: {my_car.speed}, your_car speed: {your_car.speed}")
 
 ```
-:::{.v-space}
-:::
 
+
+```{python}
+#|echo: false
+# Definiera variabel för att visa i text nedan
+out_str = str(f"my_car speed: {my_car.speed}, your_car speed: {your_car.speed}")
+```
+
+Sista raden skriver ut<br> <span class="code-out">`{python} out_str`</span>
 
 ## Parametern `self`
 
@@ -138,13 +142,92 @@ for item in items:
       print(f"{item} gick inte att boosta ❌")  # funktionalitet läggas in.
 ```
 
-## Fortsättning följer
+## Metoden `__init__`
 
+För att tilldela värden till en instans i samband med att den skapas
+så kan man använda en metod som heter `__init__`
+
+```{python}
+#|echo: true
+#|output: false
+class Car:
+  def __init__(self, brand, mileage):
+    self.brand = brand
+    self.mileage = mileage
+
+my_car = Car("Volvo", 1200)
+print(f"Märke: {my_car.brand}, Miltal: {my_car.mileage}")
+```
+
+```{python}
+#|echo: false
+# Definiera variabel för att visa i text nedan
+out_str = f"Märke: {my_car.brand}, Miltal: {my_car.mileage}"
+```
 :::{.double-v-space}
 :::
 
-Vi kommer att titta mer på  hur attribut kan sättas i samband med initieringen
-av instanser samt hur ut utskrifter kan göras, t ex `print(my_car)`. 
+Skriver ut: <span class="code-out">`{python} out_str`</span>,
+vi har alltså initierat ett `Car`-objekt med dessa värden med hjälp av
+den fördefinierade metoden `__init__`
+
+
+## Metoden `__str__`
+
+Ibland vill man kunna skriva ut information om objekt med en kort
+`print`-sats, t ex `print(my_car)`. Då kan metoden `__str__` användas.  
+
+```{python}
+#|echo: true
+#|output: false
+class Car:
+  def __init__(self, brand, mileage):
+    self.brand = brand
+    self.mileage = mileage
+
+  def __str__(self):
+    return (f"Märke: {self.brand}, Miltal: {self.mileage}")
+
+my_car = Car("Volvo", 1200)
+print(my_car)
+```
+
+```{python}
+#|echo: false
+# Definiera variabel för att visa i text nedan
+car_str = str(my_car)
+```
+Sista raden skriver ut <span class="code-out">`{python} car_str`</span>
+
+Utskriftssträngen definieras av `__str__`-metoden. 
+
+
+## Statiska metoder {.scrollable}
+
+En statisk metod är en funktion som är knuten till en klass, men inte
+till ett objekt. 
+
+```{python}
+#| echo: true
+#| output: true
+class Age:
+  def __init__(self, age):
+    self.age = age
+  
+  def __str__(self):
+    return str(self.age)
+  
+  @staticmethod # En funktion som hör till klassen, men inte till ett objekt
+  def create_from_birthyear(year):
+    age = 2024 - year
+    return Age(age)
+
+age_Kalle = Age(18)
+age_Linda = Age.create_from_birthyear(2002)
+print(f"Kalle: {age_Kalle}, Linda: {age_Linda}")
+
+```
+
 
 ## Sammanfattning
 
@@ -153,3 +236,5 @@ av instanser samt hur ut utskrifter kan göras, t ex `print(my_car)`.
 av namnet på instansen som tillämpar den. (t ex `my_item.boost()`)
 * Metoderna tar en "osynlig referens" till instansen i form av `self`.
 Detta `self` måste finnas först i parameterlistan.
+* En statisk metod är en funktion som är organiserad till en klass, men
+inte är knuten till ett objekt. Den skapas med `@staticmethod`
