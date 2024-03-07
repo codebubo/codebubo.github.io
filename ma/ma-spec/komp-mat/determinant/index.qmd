@@ -30,4 +30,5 @@ Motivera!
 2. Den symmetriska gruppen:
    a. Bestäm antalet element då $n=4$.
    b. Ange och skriv ned (på samma sätt som på s. 49 i studiematerialet)
-  alla permutationer för $n=4$.
+      alla permutationer för $n=4$. Ange också för respektive permutation
+      om dess paritet är jämn eller udda.
