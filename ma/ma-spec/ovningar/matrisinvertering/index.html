@@ -414,6 +414,12 @@ window.Quarto = {
  <span class="menu-text">Matrisinvertering: Extra övningar</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../ma/ma-spec/komp-mat/determinant/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Determinant mm</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -527,20 +533,22 @@ a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22}
 \end{bmatrix}
 \]</span> så gäller att determinanten, <span class="math inline">\(\det A\)</span>, beräknas enligt <span class="math display">\[
 \det A = a_{11}a_{22}-a_{12}a_{21}
-\]</span> För en <span class="math inline">\(3\times3\)</span>-matris gäller följande formel för determinanten: <span class="math display">\[
+\]</span></p>
+<p>För en <span class="math inline">\(3\times3\)</span>-matris gäller följande formel för determinanten:</p>
+<p><span class="math display">\[
 A=\begin{bmatrix}
 a_{11} &amp; a_{12} &amp; a_{13} \\ a_{21} &amp; a_{22} &amp; a_{23} \\ a_{31} &amp; a_{32} &amp; a_{33}
 \end{bmatrix}
 \Rightarrow\det A=
-a_{11}\begin{bmatrix}
+a_{11}\det\begin{bmatrix}
 a_{22} &amp; a_{23} \\ a_{32} &amp; a_{33}
 \end{bmatrix}
 -
-a_{12}\begin{bmatrix}
+a_{12}\det\begin{bmatrix}
 a_{21} &amp; a_{23} \\ a_{31} &amp; a_{33}
 \end{bmatrix}
 +
-a_{13}\begin{bmatrix}
+a_{13}\det\begin{bmatrix}
 a_{21} &amp; a_{22} \\ a_{31} &amp; a_{32}
 \end{bmatrix}
 \]</span> En av de saker determinanten berättar för oss är om en matris är singulär (och därmed inte går att invertera); determinanten är för dessa matriser noll.</p>

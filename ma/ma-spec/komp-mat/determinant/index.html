@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CodeBubo - CodeBubo Nest</title>
+<title>CodeBubo - Determinant mm</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +23,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../../">
+<script src="../../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -75,8 +75,37 @@ gtag('js', new Date());
 gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../../styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
@@ -86,7 +115,7 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../../../index.html">
     <span class="navbar-title">CodeBubo</span>
     </a>
   </div>
@@ -97,11 +126,11 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../../../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -115,7 +144,7 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">CodeBubo Nest</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../../ma/ma-spec/ovningar/matrisinvertering/index.html">Matematik specialisering</a></li><li class="breadcrumb-item"><a href="../../../../ma/ma-spec/komp-mat/determinant/index.html">Determinant mm</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -142,7 +171,7 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pr1/python/cheat_sheet_python.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../pr1/python/cheat_sheet_python.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python Cheat Sheet</span></a>
   </div>
 </li>
@@ -157,67 +186,67 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pr1/python/intro/pres-version-installerad-python/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../pr1/python/intro/pres-version-installerad-python/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduktion (PC)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pr1/python/intro/pres-version-online-python/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../pr1/python/intro/pres-version-online-python/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduktion (Chromebook)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pr1/python/villkor/presentation/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../pr1/python/villkor/presentation/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Presentation: Villkor</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pr1/python/while-loopar/presentation/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../pr1/python/while-loopar/presentation/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Presentation: <code>while</code>-loopar</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pr1/python/for-loopar/presentation/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../pr1/python/for-loopar/presentation/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Presentation: <code>for</code>-loopar</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pr1/python/funktioner/presentation/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../pr1/python/funktioner/presentation/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Presentation: Funktioner</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pr1/python/listor/presentation/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../pr1/python/listor/presentation/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Presentation: Listor</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pr1/python/strangar/presentation/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../pr1/python/strangar/presentation/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Presentation: Strängar</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pr1/python/egna-datatyper/presentation/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../pr1/python/egna-datatyper/presentation/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Presentation: Egna datatyper i Python</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pr1/python/spara-data-pa-fil/presentation/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../pr1/python/spara-data-pa-fil/presentation/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Presentation: Spara data till fil</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pr1/python/klasser-och-metoder/presentation/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../pr1/python/klasser-och-metoder/presentation/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Presentation: Klasser och metoder</span></a>
   </div>
 </li>
@@ -234,61 +263,61 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pr1/python/uppgifter/utskrift-och-villkor/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../pr1/python/uppgifter/utskrift-och-villkor/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Uppgifter: Utskrift och villkor</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pr1/python/uppgifter/loopar/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../pr1/python/uppgifter/loopar/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Uppgifter: Loopar</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pr1/python/uppgifter/funktioner/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../pr1/python/uppgifter/funktioner/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Uppgifter: Funktioner</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pr1/python/uppgifter/listor/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../pr1/python/uppgifter/listor/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Uppgifter: Listor</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pr1/python/uppgifter/strangar/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../pr1/python/uppgifter/strangar/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Uppgifter: Strängar</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pr1/python/uppgifter/egna-datatyper/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../pr1/python/uppgifter/egna-datatyper/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Uppgifter: Egna datatyper</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pr1/python/uppgifter/binarsokning/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../pr1/python/uppgifter/binarsokning/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Uppgifter: Binärsökning</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pr1/python/uppgifter/sortering/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../pr1/python/uppgifter/sortering/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Uppgifter: Sortering</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pr1/python/uppgifter/bilregister/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../pr1/python/uppgifter/bilregister/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Uppgifter: Bilregister</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pr1/python/uppgifter/klasser-och-metoder/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../pr1/python/uppgifter/klasser-och-metoder/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Uppgifter: Klasser och metoder</span></a>
   </div>
 </li>
@@ -325,19 +354,19 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ma/ma-spec/programmering/teori-och-ovningar/octave-som-kalkylator/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../ma/ma-spec/programmering/teori-och-ovningar/octave-som-kalkylator/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Octave: Octave som kalkylator</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ma/ma-spec/programmering/teori-och-ovningar/funktioner-villkor-och-loopar/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../ma/ma-spec/programmering/teori-och-ovningar/funktioner-villkor-och-loopar/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Octave: Funktioner, villkor och loopar</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ma/ma-spec/programmering/teori-och-ovningar/lin-ekvationssystem-med-octave/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../ma/ma-spec/programmering/teori-och-ovningar/lin-ekvationssystem-med-octave/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Octave: Lösning av linjära ekvationssystem</span></a>
   </div>
 </li>
@@ -363,7 +392,7 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ma/ma-5/kombinatorik/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../ma/ma-5/kombinatorik/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Kombinatorik: Extra övningar</span></a>
   </div>
 </li>
@@ -371,22 +400,22 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true">
  <span class="menu-text">Matematik specialisering</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ma/ma-spec/ovningar/matrisinvertering/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../ma/ma-spec/ovningar/matrisinvertering/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Matrisinvertering: Extra övningar</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ma/ma-spec/komp-mat/determinant/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../ma/ma-spec/komp-mat/determinant/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Determinant mm</span></a>
   </div>
 </li>
@@ -402,16 +431,16 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#hello-world" id="toc-hello-world" class="nav-link active" data-scroll-target="#hello-world">Hello, world!</a></li>
+  <li><a href="#uppgifter" id="toc-uppgifter" class="nav-link active" data-scroll-target="#uppgifter">Uppgifter</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../../ma/ma-spec/ovningar/matrisinvertering/index.html">Matematik specialisering</a></li><li class="breadcrumb-item"><a href="../../../../ma/ma-spec/komp-mat/determinant/index.html">Determinant mm</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">CodeBubo Nest</h1>
+<h1 class="title">Determinant mm</h1>
 </div>
 
 
@@ -428,10 +457,26 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
 </header>
 
 
-<section id="hello-world" class="level2">
-<h2 class="anchored" data-anchor-id="hello-world">Hello, world!</h2>
-<p>Under denna sajt samlar jag (se sidan <a href="./about.html">About</a> om vem “jag” är) en del av de presentationer, uppgifter, instruktioner och dokument som jag använder i min undervisning i matematik, fysik och programmering.</p>
-<p>Sajten är under ständig utbyggnad, och viss omstrukturering kan förekomma.</p>
+<div class="double-v-space">
+
+</div>
+<iframe src="https://cloudheaven.se/~nikodemus/slides/slides_determinanter/" width="800" height="550">
+</iframe>
+<section id="uppgifter" class="level2">
+<h2 class="anchored" data-anchor-id="uppgifter">Uppgifter</h2>
+<ol type="1">
+<li><p>Gå igenom begreppen injektiv, surjektiv och bijektiv på <a href="https://www.mathsisfun.com/sets/injective-surjective-bijective.html">denna sida</a> och gör de 10 quiz-frågorna som finns länkade i slutet på sidan.</p></li>
+<li><p>Avgör för respektive funktion nedan om den är injektiv eller inte. Motivera!</p>
+<p>A. <span class="math inline">\(f:\mathbb{R} \to \mathbb{R}\)</span> där <span class="math inline">\(f(x)=x^3+4\)</span></p>
+<p>B. <span class="math inline">\(f:\mathbb{N} \to \mathbb{N}\)</span> där <span class="math inline">\(f(x)=x^3+4\)</span></p>
+<p>C. <span class="math inline">\(f:\mathbb{R} \to \mathbb{R}\)</span> där <span class="math inline">\(f(x)=x^2+4\)</span></p>
+<p>D. <span class="math inline">\(f:\mathbb{N} \to \mathbb{N}\)</span> där <span class="math inline">\(f(x)=x^2+4\)</span></p></li>
+<li><p>Den symmetriska gruppen:</p>
+<ol type="a">
+<li>Bestäm antalet element då <span class="math inline">\(n=4\)</span>.</li>
+<li>Ange och skriv ned (på samma sätt som på s. 49 i studiematerialet) alla permutationer för <span class="math inline">\(n=4\)</span>.</li>
+</ol></li>
+</ol>
 
 
 </section>
