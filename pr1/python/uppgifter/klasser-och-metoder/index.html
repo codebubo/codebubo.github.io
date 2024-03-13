@@ -469,6 +469,7 @@ window.Quarto = {
   <li><a href="#klasser-och-metoder-i-python" id="toc-klasser-och-metoder-i-python" class="nav-link active" data-scroll-target="#klasser-och-metoder-i-python">Klasser och metoder i Python</a>
   <ul class="collapse">
   <li><a href="#uppgift-1" id="toc-uppgift-1" class="nav-link" data-scroll-target="#uppgift-1">Uppgift 1</a></li>
+  <li><a href="#uppgift-2" id="toc-uppgift-2" class="nav-link" data-scroll-target="#uppgift-2">Uppgift 2</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -503,7 +504,7 @@ window.Quarto = {
 <p>Det ska finnas en metod, <code>uppdatera_position</code>, som flyttar avataren från ett läge till ett annat (alltså uppdaterar koordinaterna). Det ska också finnas en <em>statisk metod</em> som tar två instanser av <code>Avatar</code> och returnerar avståndet mellan dem.</p>
 <p>Man ska också kunna skriva ut information om en avatar med <code>print(avatar)</code>, det måste alltså finnas en <code>__str__</code>-metod.</p>
 <p>När klassen är klar skulle användandet av den kunna se ut så här (se också utskrifterna under koden):</p>
-<div id="48d90eac" class="cell" data-execution_count="2">
+<div id="9bf253fa" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>avatar1 <span class="op">=</span> Avatar(<span class="st">"Efelia"</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>avatar2 <span class="op">=</span> Avatar(<span class="st">"Zmille"</span>, <span class="dv">8</span>, <span class="dv">1</span>, <span class="dv">4</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -522,6 +523,66 @@ Det här är Zmille med styrkan 8. Snabbheten är 2. Positionen är (1, 4).
 Avståndet mellan Efelia och Zmille är 1.41 enheter.
 Efelia byter läge till (-2, 4)
 Det här är Efelia med styrkan 4. Snabbheten är 6. Positionen är (-2, 4).</code></pre>
+</div>
+</div>
+</section>
+<section id="uppgift-2" class="level2">
+<h2 class="anchored" data-anchor-id="uppgift-2">Uppgift 2</h2>
+<p>Deklarera en klass <code>Dice</code>, som ska vara en mall för en tärning. Ett <code>Dice</code>-objekt (en tärning alltså) ska kunna initieras med det antal sidor som tärningen ska ha, t ex <code>dice = Dice(6)</code>.</p>
+<p>Det ska finnas en metod, <code>roll</code>, som slår tärningen. Denna ska ta emot en parameter som anger hur många gånger som tärningen ska slås. Den kan användas enligt <code>dice.roll(5)</code>, vilket alltså indikerar att tärningen slås fem gånger.</p>
+<p>Det ska finnas en metod <code>get_results</code>, som returnerar en lista med utfallshistorik. Vidare ska det finnas en metod <code>print_frequencies</code> som skriver ut en frekvenstabell med kolumner för absolut frekvens och relativ frekvens.</p>
+<p>Slutligen ska <code>__str__</code> implementeras så att <code>print(dice)</code> ger information om det senaste utfallet.</p>
+<p>Se nedanstående deklarationer och utmatningar:</p>
+<div id="78929055" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>dice <span class="op">=</span> Dice()</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>dice.roll(<span class="dv">3</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Utfallshistoriken är nu: </span><span class="sc">{</span>dice<span class="sc">.</span>get_results()<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>dice.print_frequencies()</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>dice.roll(<span class="dv">8</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Utfallshistoriken är nu: </span><span class="sc">{</span>dice<span class="sc">.</span>get_results()<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>dice.print_frequencies()</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>dice.roll(<span class="dv">100</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>dice.print_frequencies()</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dice)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Slår tärning, antal kast: 3
+Utfallshistoriken är nu: [2, 2, 6]
+
+ Utfall      Frekvens     Relativ frekvens
+=============================================
+   1     |      0      |      0.00 %
+   2     |      2      |     66.67 %
+   3     |      0      |      0.00 %
+   4     |      0      |      0.00 %
+   5     |      0      |      0.00 %
+   6     |      1      |     33.33 %
+
+Slår tärning, antal kast: 8
+Utfallshistoriken är nu: [2, 2, 6, 6, 6, 1, 1, 3, 1, 3, 1]
+
+ Utfall      Frekvens     Relativ frekvens
+=============================================
+   1     |      4      |     36.36 %
+   2     |      2      |     18.18 %
+   3     |      2      |     18.18 %
+   4     |      0      |      0.00 %
+   5     |      0      |      0.00 %
+   6     |      3      |     27.27 %
+
+Slår tärning, antal kast: 100
+ Utfall      Frekvens     Relativ frekvens
+=============================================
+   1     |     20      |     18.02 %
+   2     |     14      |     12.61 %
+   3     |     19      |     17.12 %
+   4     |     22      |     19.82 %
+   5     |     20      |     18.02 %
+   6     |     16      |     14.41 %
+
+Tärningen visar 5</code></pre>
 </div>
 </div>
 
