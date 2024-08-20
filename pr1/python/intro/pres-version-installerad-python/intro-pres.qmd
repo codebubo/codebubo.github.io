@@ -30,9 +30,9 @@ execute:
 :::{.double-v-space}
 :::
 
-![](https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/intro/enkat-te22c.png){height=300}
+![](https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/intro/pr1-survey-2024.png){height=300}
 
-[https://shorturl.at/fx035](https://shorturl.at/fx035)
+[https://tinyurl.com/37n7zry2](https://tinyurl.com/37n7zry2)
 
 ## Vad är ett datorprogram?
 
@@ -375,27 +375,3 @@ på radbrytning, textjustering och antal decimaler för ett tal.
 ::::
 :::
 
-## Ett Canvas-element {visibility="hidden"}
-
-Japp, nedanstående ruta är ett Canvas-element, anropat från en separat JavaScript-fil.
-
-<canvas id="myCanvas" width="1050" height="200" style="border:1px solid #000000;">
-
-Your browser does not support the HTML canvas tag.
-
-</canvas>
-
-```{=html}
-<script src="test.js"></script>
-```
-Test
-
-<canvas id="myCanvas_1" width="1050" height="200" style="border:1px solid #000000;">
-
-Your browser does not support the HTML canvas tag.
-
-</canvas>
-
-```{=html}
-<script src="test.js"></script>
-```
