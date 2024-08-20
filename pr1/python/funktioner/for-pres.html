@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="../../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../../site_libs/quarto-html/tabby.min.js"></script>
-<script src="../../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.5.56">
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.3.450">
 
   <meta name="author" content="Nikodemus Karlsson">
-  <title>CodeBubo – Klasser och metoder i Python</title>
+  <title>CodeBubo - Funktioner i Python</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -42,7 +42,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -95,7 +95,7 @@
     code span.vs { color: #abe338; } /* VerbatimString */
     code span.wa { color: #dcc6e0; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/theme/quarto.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto.css">
   <link rel="stylesheet" href="style.css">
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FFXVNM3K2N"></script>
 
@@ -106,10 +106,10 @@
   gtag('js', new Date());
   gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
   </script>
-  <link href="../../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="../../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="../../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="../../../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -231,8 +231,7 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    padding-bottom: 0.5rem;
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -400,8 +399,8 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-color="black" data-background-image="https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/for-loopar/frame-3083868_1280.png" data-background-opacity="1" class="quarto-title-block center">
-  <h1 class="title">Klasser och metoder i Python</h1>
+<section id="title-slide" data-background-color="black" data-background-image="https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/funktioner/technology-3762546_1280.jpg" data-background-opacity="1" class="quarto-title-block center">
+  <h1 class="title">Funktioner i Python</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -415,182 +414,173 @@ Nikodemus Karlsson
 <section id="dagens-mål" class="slide level2">
 <h2>Dagens mål</h2>
 <ul>
-<li>Att kunna skapa en klass och knyta några funktioner till denna</li>
-<li>Att tillämpa metoder på objekt</li>
-<li>Att känna till vad <code>self</code>-parametern är</li>
-<li>Att kunna skicka objekt för vidare process i funktioner</li>
+<li>Att känna till vad en funktion är för något</li>
+<li>Att känna till hur en funktion anropas</li>
+<li>Att kunna läsa ut vilka parametrar en funktion tar</li>
+<li>Att känna till skillnaden mellan funktioner som har …</li>
+<li>… respektive saknar returvärden</li>
+<li>Att kunna tilldela en variabel ett värde från en funktion</li>
+<li>Att kunna skriva enkla funktioner …</li>
+<li>… såväl med som utan returvärden</li>
 </ul>
 </section>
-<section id="klasser-i-python" class="slide level2">
-<h2>Klasser i Python</h2>
+<section id="vad-är-en-funktion-i-programmering" class="slide level2">
+<h2>Vad är en funktion i programmering?</h2>
 <div class="v-space">
 
 </div>
 <div class="blue-bg-small-padding">
-<p>Vi har tidigare gått igenom hur egna datatyper (<em>klasser</em>) kan skapas. Till dessa knöt vi variabler, t ex ett namn eller ett pris.</p>
-<p>Det går även att knyta <em>funktioner</em> till dessa datatyper. Det gör att objektet kan “göra” saker, t ex ett objekt <code>bil</code> tutar, eller att någon egenskap förändras, t ex hastigheten, förändras.</p>
+<p>Funktioner används för att dela upp ett program i mindre delar. En funktion <em>anropas</em> från det ställe man vill den ska utföras.</p>
+<p>Vi har redan träffat på funktioner i form av <code>print</code>, <code>input</code> och <code>range</code>. Nu ska vi titta på hur egna funktioner skapas.</p>
 </div>
 </section>
-<section id="deklarera-en-metod" class="slide level2">
-<h2>Deklarera en metod</h2>
-<p>Vi kan deklarera och använda en klass <code>Car</code> på det här sättet:</p>
-<div id="c4bc1aca" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="kw">class</span> Car:</span>
-<span id="cb1-2"><a></a>  speed <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb1-3"><a></a>  </span>
-<span id="cb1-4"><a></a>  <span class="co"># Metod</span></span>
-<span id="cb1-5"><a></a>  <span class="kw">def</span> set_speed(<span class="va">self</span>, new_speed):</span>
-<span id="cb1-6"><a></a>    <span class="va">self</span>.speed <span class="op">=</span> new_speed</span>
-<span id="cb1-7"><a></a>    </span>
-<span id="cb1-8"><a></a>my_car <span class="op">=</span> Car()</span>
-<span id="cb1-9"><a></a>your_car <span class="op">=</span> Car()</span>
-<span id="cb1-10"><a></a>my_car.set_speed(<span class="dv">100</span>)</span>
-<span id="cb1-11"><a></a>your_car.set_speed(<span class="dv">70</span>)</span>
-<span id="cb1-12"><a></a></span>
-<span id="cb1-13"><a></a><span class="bu">print</span>(<span class="ss">f"my_car speed: </span><span class="sc">{</span>my_car<span class="sc">.</span>speed<span class="sc">}</span><span class="ss">, your_car speed: </span><span class="sc">{</span>your_car<span class="sc">.</span>speed<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Sista raden skriver ut<br> <span class="code-out">my_car speed: 100, your_car speed: 70</span></p>
-</section>
-<section id="parametern-self" class="slide level2">
-<h2>Parametern <code>self</code></h2>
-<p>Som vi såg så håller Python reda på respektive bils fart.</p>
-<p>Detta vet Python pga parametern <code>self</code> i metoden:</p>
-<p><code>def set_speed(self, new_speed):</code></p>
-<p>Varje instans har ett ID-nummer. Detta skickas till metoderna som en <em>referens</em> för identifiering.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="kw">def</span> set_speed(<span class="va">self</span>, new_speed):</span>
-<span id="cb2-2"><a></a>    <span class="va">self</span>.speed <span class="op">=</span> new_speed</span>
-<span id="cb2-3"><a></a></span>
-<span id="cb2-4"><a></a>my_car <span class="op">=</span> Car()</span>
-<span id="cb2-5"><a></a>my_car.set_speed(<span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>ID-numret skickas till metoden som ett osynligt argument. Alla metoder måste ha parametern <code>self</code> som första parameter.</p>
-</section>
-<section id="exempel" class="slide level2">
-<h2>Exempel</h2>
+<section id="användning-av-en-enkel-funktion" class="slide level2">
+<h2>Användning av en enkel funktion</h2>
 <div class="double-v-space">
 
 </div>
-<p>I en <a href="../../../../pr1/python/for-loopar/presentation/for-pres.html#8">tidigare presentation</a> fanns exempel på en tänkt spelkod:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>items <span class="op">=</span> [<span class="st">"Klocka"</span>, <span class="st">"Kikare"</span>, <span class="st">"Termometer"</span>]</span>
-<span id="cb3-2"><a></a><span class="cf">for</span> item <span class="kw">in</span> items:</span>
-<span id="cb3-3"><a></a>    <span class="cf">if</span> item.is_boostable:</span>
-<span id="cb3-4"><a></a>      item.boost()</span>
-<span id="cb3-5"><a></a>      <span class="bu">print</span>(<span class="ss">f"Din </span><span class="sc">{</span>item<span class="sc">}</span><span class="ss"> är nu boostad ✅"</span>)</span>
-<span id="cb3-6"><a></a>    <span class="cf">else</span>:</span>
-<span id="cb3-7"><a></a>      <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>item<span class="sc">}</span><span class="ss"> gick inte att boosta ❌"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="exempel-1" class="slide level2">
-<h2>Exempel</h2>
-<p>Implementationen skulle kunna se ut så här:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="kw">class</span> Item:</span>
-<span id="cb4-2"><a></a>  is_boostable <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb4-3"><a></a>  is_boosted <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb4-4"><a></a></span>
-<span id="cb4-5"><a></a>  <span class="kw">def</span> boost(<span class="va">self</span>):</span>
-<span id="cb4-6"><a></a>    <span class="cf">if</span> <span class="va">self</span>.is_boostable:</span>
-<span id="cb4-7"><a></a>      <span class="va">self</span>.is_boosted <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb4-8"><a></a></span>
-<span id="cb4-9"><a></a>klocka <span class="op">=</span> Item()  <span class="co"># Skapa på samma sätt kikare och termometer</span></span>
-<span id="cb4-10"><a></a>kikare.boostable <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb4-11"><a></a>items <span class="op">=</span> [klocka, kikare, termometer]</span>
-<span id="cb4-12"><a></a></span>
-<span id="cb4-13"><a></a><span class="cf">for</span> item <span class="kw">in</span> items:</span>
-<span id="cb4-14"><a></a>    <span class="cf">if</span> item.is_boostable:</span>
-<span id="cb4-15"><a></a>      item.boost()</span>
-<span id="cb4-16"><a></a>      <span class="bu">print</span>(<span class="ss">f"Din </span><span class="sc">{</span>item<span class="sc">}</span><span class="ss"> är nu boostad ✅"</span>)     <span class="co"># För att `item` ska skriva</span></span>
-<span id="cb4-17"><a></a>    <span class="cf">else</span>:                                       <span class="co"># något vettigt måste sådan</span></span>
-<span id="cb4-18"><a></a>      <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>item<span class="sc">}</span><span class="ss"> gick inte att boosta ❌"</span>)  <span class="co"># funktionalitet läggas in.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="metoden-__init__" class="slide level2">
-<h2>Metoden <code>__init__</code></h2>
-<p>För att tilldela värden till en instans i samband med att den skapas så kan man använda en metod som heter <code>__init__</code></p>
-<div id="aec4a440" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="kw">class</span> Car:</span>
-<span id="cb5-2"><a></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, brand, mileage):</span>
-<span id="cb5-3"><a></a>    <span class="va">self</span>.brand <span class="op">=</span> brand</span>
-<span id="cb5-4"><a></a>    <span class="va">self</span>.mileage <span class="op">=</span> mileage</span>
-<span id="cb5-5"><a></a></span>
-<span id="cb5-6"><a></a>my_car <span class="op">=</span> Car(<span class="st">"Volvo"</span>, <span class="dv">1200</span>)</span>
-<span id="cb5-7"><a></a><span class="bu">print</span>(<span class="ss">f"Märke: </span><span class="sc">{</span>my_car<span class="sc">.</span>brand<span class="sc">}</span><span class="ss">, Miltal: </span><span class="sc">{</span>my_car<span class="sc">.</span>mileage<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="double-v-space">
+<p>Exempel: En funktion som adderar två tal:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>tal_1 <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>tal_2 <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>summa <span class="op">=</span> add(tal_1, tal_2)</span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="bu">print</span>(<span class="ss">f"Summan av </span><span class="sc">{</span>tal_1<span class="sc">}</span><span class="ss"> och </span><span class="sc">{</span>tal_2<span class="sc">}</span><span class="ss"> är </span><span class="sc">{</span>summa<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="v-space">
 
 </div>
-<p>Skriver ut: <span class="code-out">Märke: Volvo, Miltal: 1200</span>, vi har alltså initierat ett <code>Car</code>-objekt med dessa värden med hjälp av den fördefinierade metoden <code>__init__</code></p>
+<p>Funktionen <code>add</code> finns inte fördefinierad i Python, den måste vi skapa själva!</p>
 </section>
-<section id="metoden-__str__" class="slide level2">
-<h2>Metoden <code>__str__</code></h2>
-<p>Ibland vill man kunna skriva ut information om objekt med en kort <code>print</code>-sats, t ex <code>print(my_car)</code>. Då kan metoden <code>__str__</code> användas.</p>
-<div id="54e16481" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="kw">class</span> Car:</span>
-<span id="cb6-2"><a></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, brand, mileage):</span>
-<span id="cb6-3"><a></a>    <span class="va">self</span>.brand <span class="op">=</span> brand</span>
-<span id="cb6-4"><a></a>    <span class="va">self</span>.mileage <span class="op">=</span> mileage</span>
-<span id="cb6-5"><a></a></span>
-<span id="cb6-6"><a></a>  <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
-<span id="cb6-7"><a></a>    <span class="cf">return</span> (<span class="ss">f"Märke: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>brand<span class="sc">}</span><span class="ss">, Miltal: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>mileage<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb6-8"><a></a></span>
-<span id="cb6-9"><a></a>my_car <span class="op">=</span> Car(<span class="st">"Volvo"</span>, <span class="dv">1200</span>)</span>
-<span id="cb6-10"><a></a><span class="bu">print</span>(my_car)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="implementering" class="slide level2">
+<h2>Implementering</h2>
+<p>Vi kan skapa och använda funktionen <code>add</code> enligt följande:</p>
+<div class="v-space">
+
 </div>
-<p>Sista raden skriver ut <span class="code-out">Märke: Volvo, Miltal: 1200</span></p>
-<p>Utskriftssträngen definieras av <code>__str__</code>-metoden.</p>
-</section>
-<section id="statiska-metoder" class="slide level2 scrollable">
-<h2>Statiska metoder</h2>
-<p>En statisk metod är en funktion som är knuten till en klass, men inte till ett objekt.</p>
-<div id="94dfd959" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="kw">class</span> Age:</span>
-<span id="cb7-2"><a></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, age):</span>
-<span id="cb7-3"><a></a>    <span class="va">self</span>.age <span class="op">=</span> age</span>
-<span id="cb7-4"><a></a>  </span>
-<span id="cb7-5"><a></a>  <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
-<span id="cb7-6"><a></a>    <span class="cf">return</span> <span class="bu">str</span>(<span class="va">self</span>.age)</span>
-<span id="cb7-7"><a></a>  </span>
-<span id="cb7-8"><a></a>  <span class="at">@staticmethod</span> <span class="co"># En funktion som hör till klassen, men inte till ett objekt</span></span>
-<span id="cb7-9"><a></a>  <span class="kw">def</span> create_from_birthyear(year):</span>
-<span id="cb7-10"><a></a>    age <span class="op">=</span> <span class="dv">2024</span> <span class="op">-</span> year</span>
-<span id="cb7-11"><a></a>    <span class="cf">return</span> Age(age)</span>
-<span id="cb7-12"><a></a></span>
-<span id="cb7-13"><a></a>age_Kalle <span class="op">=</span> Age(<span class="dv">18</span>)</span>
-<span id="cb7-14"><a></a>age_Linda <span class="op">=</span> Age.create_from_birthyear(<span class="dv">2002</span>)</span>
-<span id="cb7-15"><a></a><span class="bu">print</span>(<span class="ss">f"Kalle: </span><span class="sc">{</span>age_Kalle<span class="sc">}</span><span class="ss">, Linda: </span><span class="sc">{</span>age_Linda<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">def</span> add(a, b):   <span class="co"># Här</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>  <span class="bu">sum</span> <span class="op">=</span> a <span class="op">+</span> b    <span class="co"># skapas</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>  <span class="cf">return</span> <span class="bu">sum</span>     <span class="co"># funktionen</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a></span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="co"># Huvudprogram nedan</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a>tal_1 <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a>tal_2 <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb2-8"><a href="#cb2-8"></a>summa <span class="op">=</span> add(tal_1, tal_2) <span class="co"># Här anropas funktionen</span></span>
+<span id="cb2-9"><a href="#cb2-9"></a></span>
+<span id="cb2-10"><a href="#cb2-10"></a><span class="bu">print</span>(<span class="ss">f"Summan av </span><span class="sc">{</span>tal_1<span class="sc">}</span><span class="ss"> och </span><span class="sc">{</span>tal_2<span class="sc">}</span><span class="ss"> är </span><span class="sc">{</span>summa<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Kalle: 18, Linda: 22</code></pre>
+<pre><code>Summan av 10 och 20 är 30</code></pre>
 </div>
 </div>
+<div class="v-space">
+
+</div>
+</section>
+<section id="funktionen-range" class="slide level2">
+<h2>Funktionen <code>range</code></h2>
+<p>Exempel på hur parametrar påverkar resultatet av <code>range</code></p>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>lista_A <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">10</span>))</span>
+<span id="cb4-2"><a href="#cb4-2"></a>lista_B <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>))</span>
+<span id="cb4-3"><a href="#cb4-3"></a>lista_C <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">2</span>))</span>
+<span id="cb4-4"><a href="#cb4-4"></a>lista_D <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">10</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>))</span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="bu">print</span>(<span class="ss">f"lista_A = </span><span class="sc">{</span>lista_A<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="bu">print</span>(<span class="ss">f"lista_B = </span><span class="sc">{</span>lista_B<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="bu">print</span>(<span class="ss">f"lista_C = </span><span class="sc">{</span>lista_C<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="bu">print</span>(<span class="ss">f"lista_D = </span><span class="sc">{</span>lista_D<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>lista_A = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+lista_B = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4]
+lista_C = [0, 2, 4, 6, 8]
+lista_D = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]</code></pre>
+</div>
+</div>
+</section>
+<section id="exempel-multiplikationstabell" class="slide level2">
+<h2>Exempel: Multiplikationstabell</h2>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Detta program beräknar och skriver ut "tolvans tabell"</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">13</span>):</span>
+<span id="cb6-3"><a href="#cb6-3"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">:2.0f}</span><span class="ss"> * 12 = </span><span class="sc">{</span>i<span class="op">*</span><span class="dv">12</span><span class="sc">:3.0f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> 1 * 12 =  12
+ 2 * 12 =  24
+ 3 * 12 =  36
+ 4 * 12 =  48
+ 5 * 12 =  60
+ 6 * 12 =  72
+ 7 * 12 =  84
+ 8 * 12 =  96
+ 9 * 12 = 108
+10 * 12 = 120
+11 * 12 = 132
+12 * 12 = 144</code></pre>
+</div>
+</div>
+</section>
+<section id="andra-listelement-än-tal" class="slide level2">
+<h2>Andra listelement än tal</h2>
+<p>En lista kan innehålla andra element än tal.</p>
+<div class="v-space">
+
+</div>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>items <span class="op">=</span> [<span class="st">"Klocka"</span>, <span class="st">"Kikare"</span>, <span class="st">"Termometer"</span>]</span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="bu">print</span>(<span class="st">"Du har tillgång till:"</span>, end<span class="op">=</span><span class="st">" "</span>)</span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="cf">for</span> item <span class="kw">in</span> items:</span>
+<span id="cb8-4"><a href="#cb8-4"></a>    <span class="bu">print</span>(item, end<span class="op">=</span><span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Du har tillgång till: Klocka Kikare Termometer </code></pre>
+</div>
+</div>
+<div class="v-space">
+
+</div>
+<p>Vi kommer senare att titta på hur element kan läggas till, tas bort och sorteras i listor. Det är användbart t ex i spel.</p>
+</section>
+<section id="ett-tänkt-exempel" class="slide level2">
+<h2>Ett tänkt exempel</h2>
+<div class="v-space">
+
+</div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>items <span class="op">=</span> [<span class="st">"Klocka"</span>, <span class="st">"Kikare"</span>, <span class="st">"Termometer"</span>]</span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="cf">for</span> item <span class="kw">in</span> items:</span>
+<span id="cb10-3"><a href="#cb10-3"></a>    <span class="cf">if</span> item.is_boostable:</span>
+<span id="cb10-4"><a href="#cb10-4"></a>      item.boost()</span>
+<span id="cb10-5"><a href="#cb10-5"></a>      <span class="bu">print</span>(<span class="ss">f"Din </span><span class="sc">{</span>item<span class="sc">}</span><span class="ss"> är nu boostad ✅"</span>)</span>
+<span id="cb10-6"><a href="#cb10-6"></a>    <span class="cf">else</span>:</span>
+<span id="cb10-7"><a href="#cb10-7"></a>      <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>item<span class="sc">}</span><span class="ss"> gick inte att boosta ❌"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Sekvensen ovan skulle kunna ingå i ett spelprogram. Här är <code>is_boostable</code> en <em>egenskap</em> hos <em>objektet</em> <code>item</code> och <code>boost</code> är en <em>metod</em> som tillämpas. Dessa saker måste programmeraren designa själv; det är inte inbyggt i Python.</p>
+<p>Senare i kursen kommer vi att komma till klasser, och koppla objekt, egenskaper och metoder till dessa.</p>
 </section>
 <section id="sammanfattning" class="slide level2">
 <h2>Sammanfattning</h2>
 <ul>
-<li>Funktioner till en klass kallas för metoder</li>
-<li>Metoderna anropas på samma sätt som funktioner i allmänhet, men föregås av namnet på instansen som tillämpar den. (t ex <code>my_item.boost()</code>)</li>
-<li>Metoderna tar en “osynlig referens” till instansen i form av <code>self</code>. Detta <code>self</code> måste finnas först i parameterlistan.</li>
-<li>En statisk metod är en funktion som är organiserad till en klass, men inte är knuten till ett objekt. Den skapas med <code>@staticmethod</code></li>
+<li><code>for</code>-loopar används antingen när något ska göras ett förutbestämt antal gånger…</li>
+<li>… eller när någon funktion ska tillämpas på ett element i taget i en lista</li>
+<li>Funktionen <code>range</code> kan användas för att skapa listor</li>
+<li>Funktionen <code>range</code> ger olika utdata beroende på vilka parametrar som används</li>
 </ul>
 
-<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
-</div>
 </div>
 </section>
     </div>
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="../../../../site_libs/revealjs/dist/reveal.js"></script>
+  <script src="../../../site_libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="../../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="../../../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="../../../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="../../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="../../../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="../../../../site_libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="../../../../site_libs/revealjs/plugin/search/search.js"></script>
-  <script src="../../../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="../../../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -600,6 +590,7 @@ Nikodemus Karlsson
       Reveal.initialize({
 'controlsAuto': false,
 'previewLinksAuto': false,
+'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -816,7 +807,18 @@ Nikodemus Karlsson
         }
         return false;
       }
-      const onCopySuccess = function(e) {
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        text: function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+      });
+      clipboard.on('success', function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -848,50 +850,11 @@ Nikodemus Karlsson
         }, 1000);
         // clear code selection
         e.clearSelection();
-      }
-      const getTextToCopy = function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-      }
-      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-        text: getTextToCopy
       });
-      clipboard.on('success', onCopySuccess);
-      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-        // For code content inside modals, clipBoardJS needs to be initialized with a container option
-        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-          text: getTextToCopy,
-          container: window.document.getElementById('quarto-embedded-source-code-modal')
-        });
-        clipboardModal.on('success', onCopySuccess);
-      }
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp("https:\/\/codebubo\.github\.io\/");
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-        }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-            // undo the damage that might have been done by quarto-nav.js in the case of
-            // links that we want to consider external
-            if (link.dataset.originalHref !== undefined) {
-              link.href = link.dataset.originalHref;
-            }
-          }
-        }
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      function tippyHover(el, contentFn) {
         const config = {
           allowHTML: true,
+          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -901,17 +864,8 @@ Nikodemus Karlsson
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start',
+          placement: 'bottom-start'
         };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -925,11 +879,7 @@ Nikodemus Karlsson
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          if (note) {
-            return note.innerHTML;
-          } else {
-            return "";
-          }
+          return note.innerHTML;
         });
       }
       const findCites = (el) => {
