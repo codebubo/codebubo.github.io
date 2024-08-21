@@ -583,4 +583,73 @@ else:                   # Årtal är jämnt delbart med 4
 
 :::
 
+## Uppgifter utan lösningsförslag
 
+### Uppgift 12
+
+Du ska formatera ett (typ) kassakvitto enligt nedan:
+
+```{python}
+#| echo: false
+
+avskiljare = "-"
+tab_rub_1 = "Vara"
+tab_rub_2 = "Pris per kg"
+tab_rub_3 = "Vikt [kg]"
+tab_rub_4 = "Belopp [kr]"
+frukt_1 = "Äpple"
+frukt_2 = "Papaya"
+frukt_3 = "Vattenmelon"
+vikt_1 = 1.2
+vikt_2 = 0.72
+vikt_3 = 3.51
+pris_1 = 25.0
+pris_2 = 139.9
+pris_3 = 19.99
+belopp_1 = pris_1 * vikt_1
+belopp_2 = pris_2 * vikt_2
+belopp_3 = pris_3 * vikt_3
+sum_str = "Summa:"
+
+"""
+Vara          Pris per kg   Vikt   Belopp
+-----------------------------------------
+Äpple           25.00       1.20    30.00
+Papaya         139.90       0.72   100.73
+Vattenmelon     19.99       3.51    70.17
+-----------------------------------------
+                           Summa:  200.89
+"""
+
+print(tab_rub_1.rjust(11), tab_rub_2.rjust(15), tab_rub_3.rjust(11), tab_rub_4.rjust(13))
+print(55*"-")
+print(frukt_1.rjust(11), f"{pris_1:12.2f}", f"{vikt_1:11.2f}", f"{belopp_1:13.2f}")
+print(frukt_2.rjust(11), f"{pris_2:12.2f}", f"{vikt_2:11.2f}", f"{belopp_2:13.2f}")
+print(frukt_3.rjust(11), f"{pris_3:12.2f}", f"{vikt_3:11.2f}", f"{belopp_3:13.2f}")
+print(55*"-")
+print(sum_str.rjust(41), f"{(belopp_1 + belopp_2 + belopp_3):8.2f}")
+```
+Detta ska göras med enbart följande deklarerade variabler:
+```python
+avskiljare = "-"
+tab_rub_1 = "Vara"
+tab_rub_2 = "Pris per kg"
+tab_rub_3 = "Vikt [kg]"
+tab_rub_4 = "Belopp [kr]"
+frukt_1 = "Äpple"
+frukt_2 = "Papaya"
+frukt_3 = "Vattenmelon"
+vikt_1 = 1.2
+vikt_2 = 0.72
+vikt_3 = 3.51
+pris_1 = 25.0
+pris_2 = 139.9
+pris_3 = 19.99
+belopp_1 = pris_1 * vikt_1
+belopp_2 = pris_2 * vikt_2
+belopp_3 = pris_3 * vikt_3
+sum_str = "Summa:"
+```
+Du ska alltså inte använda mellanslag eller upprepade tecken (t ex
+flera "`-`" för radmarkeringar). Ett tips är att titta slajden om
+[formaterad utskrift](../../intro/pres-version-installerad-python/intro-pres.qmd#/formaterad-utskrift).
