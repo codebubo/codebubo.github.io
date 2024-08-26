@@ -205,34 +205,6 @@ Beloppet räcker inte till något smycke.
 ```
 :::
 
-**Utmanande uppgift**: Ändra programmet så att det skriver ut det maximala
-antalet av respektive sort smycke som du kan köpa för ett angivet belopp.
-Programmet ska prioritera de dyraste smyckena.
-
-:::{.callout-note appearance="minimal"}
-
-```         
-# Exempelkörning 4
-Ange belopp (i kr.) att handla för -> 1975
-Beloppet räcker till:
-Antal guldsmycken:  1
-Antal silvermycken: 1
-Antal järnsmycken:  2
-Belopp kvar: 75 kr
-```
-:::
-
-:::{.callout-note title="Tips"}
-
-Använd heltalsdivision, den ger **heltalsdelen**
-vid division. Exempel:
-
-```
-15 // 7 # Ger resultatet 2
-20 // 7 # Ger resultatet 2
-```
-:::
-
 :::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 7"}
 
 [Se flödesschema här](https://gist.github.com/codebubo/5909fb477c99db600505702292b277cf)
@@ -263,44 +235,6 @@ else:                       # Om inget av villkoren är uppfyllda så körs neda
 print("Programmet avslutas")# Denna sats ligger utanför villkorssatsen
 ```
 
-**Lösningsförslag för antalsavgörandet** (andra deluppgiften)
-
-```python
-# Detta program beräknar hur många smycken av järn,
-# silver respektive guld med ett givet pris som kan
-# köpas för ett givet belopp. Programmet demonstrerar
-# heltalsdivision och ändring av variabelvärde, men
-# även hur ett heltal kan matas in och användning av
-# f-string.
-
-pris_järn = 200
-pris_silver = 500
-pris_guld = 1000
-
-belopp = int(input("Ange belopp att handla för -> "))
-belopp_kvar = belopp
-
-# Hantering av guldsmycken
-antal_guld = belopp_kvar // pris_guld     # Variabeln antal_guld skapas och tilldelas ett värde
-belopp_kvar -= antal_guld * pris_guld     # Här ändras variabelvärdet belopp_kvar
-
-# Hantering av silversmycken
-antal_silver = belopp_kvar // pris_silver # Variabeln antal_silver skapas och tilldelas ett värde
-belopp_kvar -= antal_silver * pris_silver # Här ändras variabelvärdet belopp_kvar
-
-# Hantering av järnsmycken
-antal_järn = belopp_kvar // pris_järn     # Variabeln antal_järn skapas och tilldelas ett värde
-belopp_kvar -= antal_järn * pris_järn     # Här ändras variabelvärdet belopp_kvar
-
-print("Beloppet räcker till:")
-print(f"Antal guldsmycken: {antal_guld}")
-print(f"Antal silversmycken: {antal_silver}")
-print(f"Antal järnsmycken: {antal_järn}")
-
-print(f"Belopp kvar: {belopp_kvar} kr")
-
-print("Programmet avslutas")
-```
 :::
 
 ### Uppgift 8
@@ -653,3 +587,76 @@ sum_str = "Summa:"
 Du ska alltså inte använda mellanslag eller upprepade tecken (t ex
 flera "`-`" för radmarkeringar). Ett tips är att titta slajden om
 [formaterad utskrift](../../intro/pres-version-installerad-python/intro-pres.qmd#/formaterad-utskrift).
+
+### Uppgift 13
+
+Denna uppgift bygger på [Uppgift 7](#uppgift-7).
+Förbättra  programmet så att det skriver ut det maximala antalet smycken av
+respektive sort smycke som du kan köpa för ett angivet belopp.
+Programmet ska prioritera de dyraste smyckena.
+
+:::{.callout-note appearance="minimal"}
+
+```         
+# Exempelkörning
+Ange belopp (i kr.) att handla för -> 2950
+Beloppet räcker till:
+Antal guldsmycken:  2
+Antal silvermycken: 1
+Antal järnsmycken:  2
+Belopp kvar: 50 kr
+```
+
+Siffrorna som anger antalet ska vara högerjusterade!
+
+```{python}
+#| echo: false
+# Detta program beräknar hur många smycken av järn,
+# silver respektive guld med ett givet pris som kan
+# köpas för ett givet belopp. Programmet demonstrerar
+# heltalsdivision och ändring av variabelvärde, men
+# även hur ett heltal kan matas in och användning av
+# f-string.
+
+pris_järn = 200
+pris_silver = 500
+pris_guld = 1000
+
+# belopp = int(input("Ange belopp att handla för -> "))
+belopp = 2950
+belopp_kvar = belopp
+
+# Hantering av guldsmycken
+antal_guld = belopp_kvar // pris_guld     # Variabeln antal_guld skapas och tilldelas ett värde
+belopp_kvar -= antal_guld * pris_guld     # Här ändras variabelvärdet belopp_kvar
+
+# Hantering av silversmycken
+antal_silver = belopp_kvar // pris_silver # Variabeln antal_silver skapas och tilldelas ett värde
+belopp_kvar -= antal_silver * pris_silver # Här ändras variabelvärdet belopp_kvar
+
+# Hantering av järnsmycken
+antal_järn = belopp_kvar // pris_järn     # Variabeln antal_järn skapas och tilldelas ett värde
+belopp_kvar -= antal_järn * pris_järn     # Här ändras variabelvärdet belopp_kvar
+
+#print("Beloppet räcker till:")
+#print(f"Antal guldsmycken: {antal_guld}")
+#print(f"Antal silversmycken: {antal_silver}")
+#print(f"Antal järnsmycken: {antal_järn}")
+
+#print(f"Belopp kvar: {belopp_kvar} kr")
+
+#print("Programmet avslutas")
+```
+
+:::
+
+:::{.callout-note title="Tips"}
+
+Använd heltalsdivision, den ger **heltalsdelen**
+vid division. Exempel:
+
+```
+15 // 7 # Ger resultatet 2
+20 // 7 # Ger resultatet 2
+```
+:::

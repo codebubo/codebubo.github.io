@@ -5,6 +5,8 @@ format:
     fontsize: 1em
 ---
 
+[Presentation på hela skärmen](villkor-pres.html)
+
 :::{.double-v-space}
 :::
 <iframe src="./villkor-pres.html" width="800" height="550"></iframe>
