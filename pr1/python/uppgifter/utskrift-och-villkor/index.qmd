@@ -441,7 +441,6 @@ delbart med ett annat.
 ```
 :::
 
-<p>
 :::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 11"}
 
 **Variant 1**, med sammansättande and-sats och villkor
