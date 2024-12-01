@@ -1,0 +1,34 @@
+---
+title: "Determinant mm"
+format:
+  html:
+    fontsize: 1em
+editor: visual
+---
+
+:::{.double-v-space}
+:::
+<iframe src="https://cloudheaven.se/~nikodemus/slides/slides_determinanter/" width="800" height="550"></iframe>
+
+## Uppgifter
+
+1. Gå igenom begreppen injektiv, surjektiv och bijektiv på
+[denna sida](https://www.mathsisfun.com/sets/injective-surjective-bijective.html)
+och gör de 10 quiz-frågorna som finns länkade i slutet på sidan.
+
+1. Avgör för respektive funktion nedan om den är injektiv eller inte.
+Motivera!
+
+    A. $f:\mathbb{R} \to \mathbb{R}$ där $f(x)=x^3+4$
+
+    B. $f:\mathbb{N} \to \mathbb{N}$  där $f(x)=x^3+4$
+
+    C. $f:\mathbb{R} \to \mathbb{R}$  där $f(x)=x^2+4$
+
+    D. $f:\mathbb{N} \to \mathbb{N}$  där $f(x)=x^2+4$
+
+2. Den symmetriska gruppen:
+   a. Bestäm antalet element då $n=4$.
+   b. Ange och skriv ned (på samma sätt som på s. 49 i studiematerialet)
+      alla permutationer för $n=4$. Ange också för respektive permutation
+      antalet inversioner och om dess paritet är jämn eller udda.

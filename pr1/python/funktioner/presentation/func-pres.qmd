@@ -1,0 +1,215 @@
+---
+title: Funktioner i Python
+from: markdown+emoji
+title-slide-attributes:
+  data-background-image: https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/funktioner/technology-3762546_1280.jpg
+  data-background-opacity: "1"
+  data-background-color: "black"
+author: "Nikodemus Karlsson"
+format:
+  revealjs:
+    mermaid: 
+      theme: dark
+    theme: dark
+    transition: slide
+    background-transition: slide
+    slide-number: true
+    controls: true
+    controls-layout: edges
+    date-format: "DD MMM YYYY"
+    css: style.css
+execute: 
+  echo: false
+---
+
+## Dagens mål
+
+* Att känna till vad en funktion är för något
+* Att känna till hur en funktion anropas
+* Att kunna läsa ut vilka parametrar en funktion tar
+* Att känna till skillnaden mellan funktioner som har ...
+* ... respektive saknar `return`-sats
+* Att kunna tilldela en variabel ett värde från en funktion
+* Att kunna skriva enkla funktioner ...
+* ... såväl med som utan `return`
+
+
+## Vad är en funktion i programmering?
+
+:::{.v-space}
+:::
+
+:::{.blue-bg-small-padding }
+Funktioner används för att dela upp ett program i mindre delar. En funktion
+*anropas* från det ställe man vill den ska utföras.
+
+Vi har redan träffat på funktioner i form av `print`, `input` och `range`.
+Nu ska vi titta på hur egna funktioner skapas.
+:::
+
+## Användning av en enkel funktion
+
+:::{.double-v-space}
+:::
+
+Exempel: En funktion som adderar två tal:
+
+```python
+tal_1 = 10
+tal_2 = 20
+summa = add(tal_1, tal_2)
+print(f"Summan av {tal_1} och {tal_2} är {summa}")
+```
+
+:::{.v-space}
+:::
+
+Funktionen `add` finns inte fördefinierad i Python, den måste vi skapa själva!
+
+## Implementering
+
+Vi kan skapa och använda funktionen `add` enligt följande:
+
+:::{.v-space}
+:::
+
+
+```{python}
+#| echo: true
+def add(a, b):     # Här
+  the_sum = a + b  # skapas
+  return the_sum   # funktionen
+
+# Huvudprogram nedan
+tal_1 = 10
+tal_2 = 20
+summa = add(tal_1, tal_2) # Här anropas funktionen
+
+print(f"Summan av {tal_1} och {tal_2} är {summa}")
+```
+
+:::{.v-space}
+:::
+
+
+## Funktioners anatomi
+
+```python
+def add(a, b):
+  the_sum = a + b
+  return the_sum
+```
+
+* `add`: Funktionens namn
+* `a` och `b`: Funktionens *parametrar*
+* `return`: Det värde som funktionen lämnar som resultat
+
+Funktionen anropas t ex enligt `summa = add(1, 2)`.
+Här kallas talen `1` och `2` i anropet för *argument*.
+
+Variabeln `summa` antar det värde som `return` skickar tillbaka.
+
+## Variabler i funktioner
+
+Variablerna som är deklarerade i funktioner är *lokala*. Det
+innebär att de inte är tillgängliga utanför funktionen.
+
+T ex är variablerna `a`, `b` och `the_sum` enbart tillgängliga inuti
+funktionen `add` nedan.
+
+```python
+def add(a, b):
+  the_sum = a + b
+  return the_sum
+
+# Huvudprogram
+add(1, 2)
+# Nedanstående ger ett felmeddelande eftersom
+# giltighetsområdet (omfattningen) för variabeln
+# the_sum inte räcker till denna nivå i programmet.
+print(the_sum)
+```
+
+## Funktioners returvärden
+
+Ibland saknas behov av `return`-värde.
+```{python}
+#| echo: true
+def print_multabell(n):
+  # Skriver ut fem rader i multiplikationstabell n
+  for i in range(1, 6):
+    print(f"{i:2.0f} * {n} = {i*n:3.0f}")
+
+print_multabell(12) # Ange önskad tabell att skriva ut här
+```
+
+Här ser syns att en valfri multiplikationstabell kan skrivas ut, men
+det finns ingen variabel utanför funktionen som känner till något
+om multiplikationen.
+
+## Alla funktioner har ett  returvärde
+
+```{python}
+#| echo: true
+def print_multabell(n):
+  # Skriver ut fem rader i multiplikationstabell n
+  for i in range(1, 6):
+    print(f"{i:2.0f} * {n} = {i*n:3.0f}")
+
+print(print_multabell(12)) 
+```
+
+Här anropas funktionen, och *skriver ut resultatet* av den på
+rad 6. Vi ser att resultatet blir `None`.
+
+## Dokumentation av funktioner
+
+Funktioner bör dokumenteras. Python använder s.k docstrings för
+detta. Ej att förväxla med kommentarer för kodrader eller
+andra sekvenser i programmet!
+
+```python
+def add(a, b):
+  '''
+  Funktionen adderar två tal. Ingen typkontroll sker.
+  Parameter 1: a | ett tal (int eller float)
+  Parameter 2: b | ett tal (int eller float)
+  Returvärde: summan av talen (int eller float)
+  '''
+  the_sum = a + b
+  return the_sum
+```
+
+Docstrings kan användas av editorn när man skriver kod, eller i
+konsolen när man skriver `help(add)`.
+
+## Lämna funktionen
+
+En funktion lämnas när den når sista raden eller `return`.
+
+```python
+def maximum(a, b):
+  '''
+  Funktionen returnerar det största av två tal
+  Parameter 1: a | ett tal (int eller float)
+  Parameter 2: b | ett tal (int eller float)
+  Returvärde: Det största av talen. Vid likhet returneras None.
+  '''
+
+  if a > b:
+    return a
+  elif b > a:
+    return b
+  return None # Onödig rad, utan return-sats returneras None ändå
+```
+
+## Sammanfattning
+
+* Funktioner är byggstenar i program ...
+* ... vilket ger programmet en enklare struktur
+* Variablerna i en funktion är lokala
+* En funktion lämnas vid `return`-sats
+* Om ingen `return`-sats finns returneras `None`
+* En variabel bör tilldelas ett returnerat värde
+* En funktion bör dokumenteras med en docstring
+

@@ -1,0 +1,170 @@
+---
+title: "Uppgifter: Bilregister"
+format:
+  html:
+    fontsize: 1em
+    css: style.css
+---
+
+# Spara bilregister på fil
+
+## Exempel och uppgifter
+
+### Kod
+
+Nedanstående kod implementerar ett litet register som sparas på fil.
+
+```python
+import json
+import os # För att kunna avgöra om filen är tom, se rad 102 - 103
+
+# Filnamnet där vi kommer att lagra bilarna
+FILENAME = "cars.json"
+
+# En lista för att lagra bilobjekten
+cars_list = []
+
+# Definiera en klass för att representera en bil
+class Car:
+    def __init__(self, brand, price, mileage):
+        self.brand = brand
+        self.price = price
+        self.mileage = mileage
+
+# Funktion för att skriva ut bilnummer
+def print_number(i):
+    print(f"Bil #{i}")
+    print("---------")
+
+# Funktion för att skriva ut information om en bil
+def print_car(car, i=0):
+    if i != 0:
+        print_number(i)
+    print(f"Märke: {car.brand}")
+    print(f"Miltal: {car.mileage}")
+    print(f"Pris: {car.price}")
+    print()
+
+# Funktion för att skriva ut en lista av bilar
+def print_cars_list(loaded_cars_dict):
+    # Konvertera varje bil-dict till ett bilobjekt
+    loaded_cars = [Car(**car_dict) for car_dict in loaded_cars_dict]
+    i = 1
+    for car in loaded_cars:
+        print_car(car, i)
+        i += 1
+
+# Funktion för att konvertera en lista av bil-dicts till en lista av bilobjekt
+def get_cars_list(loaded_cars_dict):
+    return [Car(**car_dict) for car_dict in loaded_cars_dict]
+
+# Funktion för att skriva ut alla bilar i cars_list
+def print_cars():
+    if len(cars_list) == 0:
+        print("Finns inga bilar i listan!")
+        return
+    # Sortera bilarna efter märke
+    cars_list.sort(key=lambda car: car.brand)
+    i = 1
+    for car in cars_list:
+        print_car(car, i)
+        i += 1
+
+# Funktion för att ta inmatning från användaren och skapa ett nytt bilobjekt
+def input_car():
+    brand = input("Ange märke -> ")
+    price = int(input("Ange pris -> "))
+    mileage = int(input("Ange miltal -> "))
+    car = Car(brand, price, mileage)
+    cars_list.append(car)
+    return car
+
+# Funktion för att spara en bil till filen
+def save_car(car):
+    # Läs in befintliga bilar från filen
+    try:
+        with open(FILENAME, 'r') as f:
+            cars_dict = json.load(f)
+            cars_list = get_cars_list(cars_dict)
+    except FileNotFoundError:
+        cars_list = []
+    except json.JSONDecodeError:
+        if not os.path.getsize(FILENAME):
+            cars_list = []
+        else:
+            print("Det gick inte att tolka filen 'car.json' som JSON.")
+    except Exception as e:
+        print(f"Ett oväntat fel inträffade: {str(e)}")
+        cars_list = []
+
+    # Lägg till den nya bilen
+    cars_list.append(car)
+
+    # Skriv tillbaka hela listan till filen
+    cars_dict = [car.__dict__ for car in cars_list]
+    with open(FILENAME, 'w') as f:
+        json.dump(cars_dict, f)
+
+# Funktion för att läsa in bilar från filen
+def read_cars_from_file():
+    try:
+        with open(FILENAME, 'r') as f:
+            loaded_cars_dict = json.load(f)
+            cars_list.extend(get_cars_list(loaded_cars_dict))
+    except FileNotFoundError:
+        print("Filen car.json kunde inte hittas, skapar en tom...")
+        with open(FILENAME, 'w') as f:
+            pass
+    except json.JSONDecodeError:
+        if os.path.getsize(FILENAME):
+            print("Det gick inte att tolka filen 'car.json' som JSON.")
+        pass
+    except Exception as e:
+        print(f"Ett oväntat fel inträffade: {str(e)}")
+
+# Skapa en ny bil, spara den och skriv ut alla bilar
+read_cars_from_file()
+new_car = input_car()
+save_car(new_car)
+print_cars()
+
+```
+
+### Uppgifter
+
+1. **Provkörning**: Provkör programmet ett antal gånger! När du har lagt till
+några bilar, öppna filen `cars.json` och studera hur den ser ut.
+
+2. **Meny**: Skapa en meny där de befintliga funktionerna används. Val ska
+kunna göras tills dess att alternativet Avsluta väljs.
+
+3. **Utökning av `Car`-klassen**: Lägg till fler attribut till `Car`-klassen,
+till exempel modell, årsmodell, färg, etc. Modifiera sedan alla funktioner som
+använder `Car`-objekt för att hantera de nya attributen.
+
+4. **Fler operationer på bilarna**: Skriv funktioner för att utföra olika
+operationer på bilarna, till exempel att hitta den dyraste bilen, den
+billigaste bilen, bilen med minst körsträcka, etc.
+
+5. **Ta  bort en bil från registret**: Skriv en funktion som tar bort en given
+bil från registret och uppdaterar filen.
+
+6. **Filtrering av bilar**: Skriv en funktion som tar en lista av bilar och ett
+villkor, och returnerar en ny lista med bara de bilar som uppfyller villkoret.
+Villkoret kan vara en funktion som tar en bil och returnerar `True` eller
+`False`.
+
+7. **Sökning av bilar**: Skriv en funktion som tar en lista av bilar och ett
+märke, och returnerar en ny lista med bara de bilar som har det märket.
+
+8. **Sortering av bilar**: Skriv en funktion som tar en lista av bilar och en
+nyckelfunktion, och returnerar en ny lista med bilarna sorterade enligt
+nyckelfunktionen (`key`).
+
+9. **Felhantering**: Lägg till mer robust felhantering till programmet. Till
+exempel, vad händer om användaren matar in ogiltiga data när de skapar en ny
+bil?
+
+10. **Dokumentation**: Skriv dokumentation för dina funktioner, inklusive
+beskrivningar av vad de gör, deras parametrar och returvärden, och exempel på
+hur man använder dem.

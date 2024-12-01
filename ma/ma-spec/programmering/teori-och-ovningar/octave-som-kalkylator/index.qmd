@@ -1,0 +1,486 @@
+---
+title: "Octave: Octave som kalkylator"
+format:
+  html:
+    fontsize: 1em
+    css: style.css
+execute: 
+  echo: false
+---
+
+# Octave som kalkylator
+
+## Teori
+
+Se kap. 1 i dokumentet [Teori och övningar i programmet Octave](https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/docs/linalg/ovningar-i-octave-kap-0-4.pdf)
+
+## Övningar
+
+### Övning 101
+
+Beräkna $\frac{1}{19} - \frac{1}{17} + \frac{1}{131}$ med Octave. Svara med
+  
+  a. Fyra decimaler
+  b. I bråkform
+  c. Med femton decimaler
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag övning 101"}
+
+Lösningarna är gjorda i *Command Window*; den text som står tillsammans med ett
+nummer, t ex `Octave:1>`, ska inte matas in.
+
+**a-uppgiften**
+
+```
+octave:1> 1/19 - 1/17 + 1/131
+ans = 1.4416e-03
+```
+
+**b-uppgiften**
+
+```
+octave:2> format rat
+octave:3> 1/19 - 1/17 + 1/131
+ans = 61/42313
+```
+
+**c-uppgiften**
+
+```
+octave:4> format long
+octave:5> 1/19 - 1/17 + 1/131
+ans = 1.441637321863255e-03
+```
+:::
+
+### Övning 102
+
+Beräkna $\frac{1}{19^2} - \frac{1}{17^2} + \frac{1}{131^2}$ med Octave.
+Svara med
+
+  a. Femton decimaler
+  b. I bråkform
+
+Jämför dina svar ovan med det du får om du anger samma uttryck i Wolfram Alpha.
+Kommentera resultatet.
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag övning 102"}
+
+**a-uppgiften**
+
+Kommentar: formatet med 15 decimaler är kvar från den tidigare
+inmatningen i övning 1c; formatet ändras inte tillbaka till standard per
+automatik.
+
+```
+octave:6> 1/19^2 - 1/17^2 + 1/131^2
+ans = -6.318528474731418e-04
+```
+
+**b-uppgiften**
+
+```
+octave:7> format rat
+octave:8> 1/19^2 - 1/17^2 + 1/131^2
+ans = -17/26905
+```
+
+Kommentar: Med Wolfram Alpha kommer svaret att bli
+$\frac{-1131263}{1790389969}$. Det vi ser är att Octave skapar ett rationellt
+tal av ett avrundat värde.
+:::
+
+### Övning 103
+
+Beräkna värdet av uttrycket
+$$
+\frac{\left (\frac{\sqrt{5} + 1}{2} \right )^{10} - \left (\frac{\sqrt{5} - 1}{2} \right )^{10}}{\sqrt{5}}
+$$
+på en enda rad.
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag övning 103"}
+```
+octave:9> format short
+octave:10> (((sqrt(5) + 1) / 2)^10 - ((sqrt(5) - 1) / 2)^10) / sqrt(5)
+ans = 55.000
+```
+:::
+
+### Övning 104
+
+Skapa en vektor $\vec{v}$ med tio jämnt fördelade vinklar i intervallet
+0&deg; -- 360&deg; (tips: slå upp funktionen `linspace` genom att skriva
+`help linspace` vid Octave-prompten). Verifiera med en beräkning att
+identiteten $\sin^2v_j + \cos^2v_j$ gäller, där $v_j$ är komponenten i $\vec{v}$
+med indexet $j$.
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag övning 104"}
+
+```
+octave:11> v = linspace(0, 360, 10)
+v =
+
+     0    40    80   120   160   200   240   280   320   360
+
+octave:12> (sin(v)).^2 + (cos(v)).^2
+ans =
+
+   1   1   1   1   1   1   1   1   1   1
+
+```
+vilket indikerar att respektive summa är 1.
+
+Observera punkten framför exponent-tecknet i uttrycket; den gör så att
+beräkningen sker komponentvis. Om punkten utelämnas kommer Octave att mata ut
+ett felmeddelande.
+:::
+
+### Övning 105
+
+Evaluera följande uttryck i Octave, reflektera över resultatet.
+
+  a. `1/0`
+  b. `0/0`
+  c. `tan(pi/2)`
+  d. `inf + 1`
+  e. `inf + 1e99`
+  f. `inf + inf`
+  g. `inf - inf`
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag övning 105"}
+
+**a-uppgiften**
+
+```
+octave:13> 1/0
+ans = Inf
+```
+
+**Kommentar**: `Inf` betyder "oändligheten".
+
+**b-uppgiften**
+
+```
+octave:14> 0/0
+ans = NaN
+```
+
+**Kommentar**: `NaN` betyde Not a Number. Det är intressant att notera att Octave
+gör skillnad på uttrycken i a och b. I matematiken är såväl $1/0$ som $0/0$
+odefinierat.
+
+**c-uppgiften**
+
+```
+octave:15> tan(pi/2)
+ans = 1.6331e+16
+```
+
+Kommentar: Uttrycket $\tan (\pi/2)$ odefinierat i matematiken. Men eftersom
+Octave avrundar `pi` till ett ändligt antal decimaler så är inte Octave:s värde
+på `pi` detsamma som den matematiska konstanten $\pi$. Ju närmare $\pi/2$ en
+vinkel kommer, desto större värde kommer $\arctan(\pi/2)$ att få. Därför så
+blir inte Octave:s svar `Inf` eller `NaN`, det blir helt enkelt ett stort tal.
+
+**d-uppgiften**
+
+```
+octave:16> Inf + 1
+ans = Inf
+```
+
+Kommentar: Läggs 1 till "oändligheten" är det fortfarande "oändligheten".
+Annars så skulle "oändligheten" ha varit ett tal, och det är det inte.
+
+**e-uppgiften**
+
+```
+octave:17> Inf + 1e99
+ans = Inf
+```
+
+Kommentar: Även om ett väldigt stort tal läggs till oändligheten så är det
+fortfarande oändligheten, på samma sätt som i övning 105 d.
+
+**f-uppgiften**
+
+```
+octave:18> Inf + Inf
+ans = Inf
+```
+
+Kommentar: Här kanske det är intressant att svaret inte blir "två oändligheter".
+"Oändligheten" är inte kvantiserad.
+
+**g-uppgiften**
+
+```
+octave:19> Inf - Inf
+ans = NaN
+```
+
+Kommentar: Eftersom oändligheten inte är kvantiserad så kan vad som helst tas
+bort från oändligheten utan att den förändras. Eftersom något som inte är
+kvantiserat tar bort från något som inte heller är kvantiserat så blir
+resultatet odefinierat.
+:::
+
+### Övning 106
+
+Förenkla talet $i^{95}$ med Octave. Hur står sig svaret i förhållande till det
+värde som uttrycket faktiskt har? Kommentera.
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag övning 106"}
+
+```
+octave:20> i^95
+ans =  -4.8800e-16 - 1.0000e+00i
+```
+
+Kommentar: Uttryckets värde är precis $-i$. Eftersom Octave arbetar med
+närmevärden så kan svaret se ut att skilja sig lite från detta. Du bör dock
+vara uppmärksam när du ser exponenter som är negativa på ett stort avstånd från
+noll; det kan ofta vara en "matematisk nolla".
+:::
+
+### Övning 107
+
+Deklarera en vektor $\vec{v}$ som innehåller tio jämnt fördelade vinklar mellan
+$0$ och $2\pi$. Skapa med hjälp av $\vec{v}$ en vektor $\vec{z}$, vars
+komponenter $z_j=e^{iv_j}$.
+
+  a. Verifiera att $\mathrm{Re}(z_j)=\cos{v}$. Tips: skriv `help real`
+  vid Octave-prompten.
+  b. Verifiera att $\mathrm{Im}(z_j)=\sin{v}$. Tips: skriv `help imag`
+  vid Octave-prompten.
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag övning 107"}
+Arbetsgång: Först skapas vektorn med vinklar, därefter utförs respektive
+beräkningar vars resultat läggs i varsin resultatsvektor. Slutligen subtraheras
+dessa resultatsvektorer med varandra. Om likhet gäller ska respektive komponent
+i denna differensvektor vara noll.
+
+```
+octave:21> v = linspace(0, 2*pi, 10);
+octave:22> z = e.^(i.*v);
+octave:23> trigres_cos  = cos(v);
+octave:24> trigres_sin  = sin(v);
+octave:25> real(z) - trigres_cos # Detta är a-uppgiften
+ans =
+
+   0   0   0   0   0   0   0   0   0   0
+
+octave:26> imag(z) - trigres_sin # Detta är b-uppgiften
+ans =
+
+   0   0   0   0   0   0   0   0   0   0
+```
+
+Eftersom differensen av respektive par av vektorkomponenter blir noll så är
+de lika!
+:::
+
+### Övning 108
+
+I ett annat programspråk så finns en funktion som heter `append`, vilken
+används till att lägga till element i listor. Octave har inte den funktionen,
+istället så kan en komponent `a` läggas till en vektor v genom `v(end+1) = a`.
+
+Skapa en vektor `v = [1 2 3]` och lägg till talet 4 sist med hjälp av denna
+metod.
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag övning 108"}
+
+```
+octave:27> v = 1:3
+v =
+
+   1   2   3
+
+octave:28> v(end+1) = 4
+v =
+
+   1   2   3   4
+```
+:::
+
+### Övning 109
+
+Skapa en vektor $\vec{v}$ med talen $0, 0.25, 0.5, 0.75, \ldots 3$ i Octave.
+Med hjälp av denna vektor ska du skapa en vektor $\vec{x}$, där
+$x_i=\log_3 v_i$ (observera att $i$ är index, inte den imaginära enheten!).
+Kommentera resultatet, speciellt utdatan för `x(1)`, `x(5)` och `x(end)`.
+
+Tips för beräkningen: skriv om $x=\log_3 v_i$ som en ekvation med $x$ som
+exponent.
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag övning 109"}
+
+Först måste logaritmen med basen 3 kunna beräknas; Octave har ingen inbyggd
+funktion för detta. Nedanstående ekvation, vars lösning dels skrivs med
+logaritmen med basen 3 och dels med hjälp av omskrivning med logaritmlag,
+är till hjälp.
+
+$$
+\begin{matrix}
+3^x &=& v_i &\Leftrightarrow& x &=& \log_3 v_i \\[5mm]
+3^x &=& v_i &\Leftrightarrow& x &=& \frac{\log{v_i}}{\log{3}}
+\end{matrix}
+\hspace{5mm} \Rightarrow \log_3{v_i} = \frac{\log{v_i}}{\log{3}}
+$$
+
+Här är $\log v_i$ och $\log 3$ av godtycklig (men samma) bas. Därför kan
+funktionen `log` i Octave användas (som ger logaritm med basen $e$).
+
+Koden blir
+
+```
+octave:29> v = 0:0.25:3;
+octave:30> x = log(v) / log(3);
+octave:31> x(1)
+ans = -Inf
+octave:32> x(5)
+ans = 0
+octave:33> x(end)
+ans = 1
+```
+
+**Kommentarer**: `x(1)` antar "värdet" `-Inf` eftersom vi önskar lösa ekvationen
+$3^x = 0$. Ju längre avstånd från noll utefter den negativa delen på tallinjen,
+desto närmare noll kommer resultatet att bli. Men det kommer aldrig att **bli**
+noll. Vi kan se i vektorn `v` att den första komponenten är noll:
+
+```
+octave:34> v(1)
+ans = 0
+```
+
+Att `x(5)` antar värdet noll måste betyda att $\log_3 1$ beräknas, eftersom
+$3^0$ är 1. En koll visar också att det är den beräkningen som gjorts:
+
+```
+octave:35> v(5)
+ans = 1
+```
+
+
+Slutligen gäller att `x(end)` antar värdet 1 eftersom $3^1=3$.
+Vi kontrollerar att så är fallet:
+
+```
+octave:36> v(end)
+ans = 3
+```
+:::
+
+### Övning 110
+
+I den här övningen ska du undersöka funktionen `diff` och `logspace`.
+
+  a. Mata in `diff([1 4 6 5.5 10])`. Baserat på resultatet, hur tror du att
+  funktionen `diff` verkar på en vektor?
+  b. Skapa en vektor med hjälp av funktionen `logspace` enligt
+  `logspace(1, 3, 8)`. Betrakta vektorn och förklara resultatet.
+  c. Eftersom resultatet av övning 110b automatiskt har lagrats i variabeln
+  `ans` så kan funktionen `diff` tillämpas på svaret genom att skriva
+  `diff(ans)`. Gör det, och lagra resultatet av detta i variabeln `expdiff`.
+  Betrakta och reflektera över resultatet.
+  d. Logaritmera `expdiff` från övning 110c.
+  e. Tillämpa nu funktionen `diff` på resultatet i övning 110d. Kommentera.
+  f. Gör om övningarna 110d och 110e, men logaritmera med basen 2 och 10 i tur
+  och ordning. Kommentera resultatet.
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag övning 110"}
+
+**a-uppgiften**
+
+```
+octave:37> diff([1 4 6 5.5 10])
+ans =
+
+   3.0000   2.0000  -0.5000   4.5000
+```
+
+Kommentar: Funktionen `diff` tar parvis differensen mellan två närliggande
+tal i vektorn som den verkar på.
+
+**b-uppgiften**
+
+```
+octave:38> logspace(1, 3, 8)
+ans =
+
+     10.000     19.307     37.276     71.969    138.950    268.270    517.947   1000.000
+```
+
+Kommentar: Detta anrop till funktionen `logspace` skapar åtta tal mellan (och
+inklusive) $10^1$ och $10^3$. Talens **exponenter** är linjärt fördelade,
+men det blir inte själva talen (som kommer att synas i nästa övning).
+
+**c-uppgiften**
+
+```
+octave:39> expdiff = diff(ans)
+ans =
+
+     9.3070    17.9690    34.6926    66.9810   129.3200   249.6779   482.0525
+```
+
+**Kommentar**: Här syns att differensen ökar.
+
+**d-uppgiften**
+
+```
+octave:40> log(expdiff) 
+ans =
+
+   2.2308   2.8886   3.5465   4.2044   4.8623   5.5202   6.1781
+```
+
+**Kommentar**: Är de logaritmerade differenserna möjligen desamma?
+Det kommer att visa sig i ...
+
+**e-uppgiften**
+
+```
+octave:41> diff(ans)
+ans =
+
+   0.6579   0.6579   0.6579   0.6579   0.6579   0.6579
+```
+
+**Kommentar**: Japp, de logaritmerade differenserna är desamma!
+
+**f-uppgiften**
+
+Vi logaritmerar i tur och ordning med baserna 2 och 10, och sparar resultaten
+i `log2expdiff` respektive `log10expdiff`.
+
+```
+octave:42> log2expdiff = log2(expdiff)
+log2expdiff =
+
+   3.2183   4.1674   5.1166   6.0657   7.0148   7.9639   8.9130
+octave:43> log10expdiff = log10(expdiff)
+log10expdiff =
+
+   0.9688   1.2545   1.5402   1.8260   2.1117   2.3974   2.6831
+```
+
+Vi ser att resultaten blir olika beroende på vilken  logaritmbas som används.
+Nu tar vi differensen mellan två närliggande komponenter i respektive vektor:
+
+```
+octave:44> diff(log2expdiff)
+ans =
+
+   0.9491   0.9491   0.9491   0.9491   0.9491   0.9491
+octave:45> diff(log10expdiff)
+ans =
+
+   0.2857   0.2857   0.2857   0.2857   0.2857   0.2857
+```
+
+Det syns att differensen mellan komponenternas värden inte förändras, men
+vilken differens som det blir beror på logaritmbasen.
+:::

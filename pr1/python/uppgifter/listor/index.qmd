@@ -1,0 +1,362 @@
+---
+title: "Uppgifter: Listor"
+format:
+  html:
+    fontsize: 1em
+    css: style.css
+---
+
+# Listor i Python
+
+## Uppgifter med kommentarer och lösningsförslag
+
+### Uppgift 1
+
+**Denna övning ska genomföras i konsolen, dvs inte sparas i någon fil**
+
+Skapa listan `lst`. Lägg till tio stycken heltalsvärden; dessa ska inte
+vara i någon storleksordning. Utför därefter följande:
+
+a. `print(lst)`
+b. `print(lst[0])`
+c. `print(lst[2])`
+d. `print(lst[-1])`
+
+Vad skrivs ut? Reflektera över varför resultatet blir det som det blir.
+
+Pröva nu följande kommandon på `lst`:
+
+
+e. `print(len(lst))`
+f. `print(sum(lst))`
+g. `print(max(lst))`
+h. `print(min(lst))` 
+i. `print(sorted(lst))`
+j. `print(lst)`
+k. `lst.sort(reverse=True)`
+l. `print(lst)`
+
+Vad skrivs ut? Reflektera speciellt över skillnaden mellan utskriften i
+j-uppgiften respektive l-uppgiften.
+
+Pröva nu att utföra
+
+m. `lst.pop()`
+
+Vad hände? Hur ser listan ut nu, och vad verkar `pop()` göra med listan?
+
+Metoden `pop()` kan också ta ett argument. Pröva att utföra
+
+n. `lst.pop(5)`
+
+Se vad som kommer ut och jämför hur listan ser ut efter utförandet av detta med
+hur den såg ut före.
+
+Pröva nu att utföra
+
+o. `lst.append(42)`
+
+Hur ser listan ut nu, och vad verkar `append()` göra med listan?
+
+Slutligen kan en del av en lista väljas ut, det kallas för *slicing* på
+engelska. Se till att du har minst 10 element i din lista (utför kommandot
+`len(lst)` för att se antalet element; om det är färre än 10 element
+kan du lägga till så många som behövs med `append`), och utför kommandona
+
+p. `print(lst[2:5])`
+q. `print(lst[5:])`
+r. `print(lst[:5])`
+
+Dessa ''slicar'' förändrar inte variabeln `lst`. Däremot går det att skapa en
+annan variabel som innehåller de fem första värdena i `lst` genom
+`lst2 = lst[:5]`. Pröva detta, jämför därefter variabeln `lst` och `lst2` med
+varandra.
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 1"}
+Dessa uppgifter är inte av karaktären att det finns lösningsförslag. Däremot
+kan det tryckas på att `lst.sort()`, `lst.pop()` och `lst.append()` *förändrar*
+listan `lst`; de är s.k *metoder* som opererar på listor.
+
+De övriga operationerna i uppgifterna ger enbart en utmatning
+av det som önskas, t ex `print(sorted(lst))` skriver ut en sorterad lista.
+(`sorted` är en funktion som *returnerar en ny lista*, men som inte förändrar
+den lista som den tog emot).
+
+:::
+
+### Uppgift 2
+
+**Denna övning ska göras i en fil som sparas**
+
+Skapa en lista med heltal från 1 till 100 och använd en for-loop för att beräkna
+summan av alla tal i listan. OBS! Du ska inte använda funktionen `sum`, men
+du bör kontrollera din beräknade summa med denna funktion.
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 2"}
+
+```python
+lst = list(range(1, 101))
+sum = 0
+for i in lst:
+  sum += i
+print(sum)
+```
+:::
+
+### Uppgift 3
+
+**Denna övning ska göras i en fil som sparas**
+
+Skapa listan `heltal`, som innehåller tio slumpade positiva heltal mellan
+1 och 100.
+
+Skapa därefter de tomma listorna `jämna` och `udda`. Uppgiften är att kopiera
+över de jämna talen från listan `heltal` till listan `jämna`, och på motsvarande
+sätt kopiera över de udda talen till listan `udda`. Slutligen ska alla listor
+skrivas ut i storleksordning.
+
+Modellen för att lösa uppgiften kan vara att man loopar genom alla tal i listan
+`heltal`, och testa om respektive tal är jämnt eller udda. Därefter så läggs
+talet till i rätt lista.
+
+Körningsexempel:
+
+:::{.callout-note appearance="minimal"}
+
+```{python}
+# | echo: false
+import random as rand
+
+rand.seed(827767288)
+
+heltal = []
+jämna = []
+udda = []
+
+for i in range(0, 10):
+    slumptal = rand.randint(1, 100)
+    heltal.append(slumptal)
+
+for tal in heltal:
+    if tal % 2 == 0:
+        jämna.append(tal)
+    else:
+        udda.append(tal)
+
+antal_jämna = len(jämna)
+antal_udda = len(udda)
+
+print(f"Den framslumpade heltalslistan är:\n{sorted(heltal)}\n")
+print(f"Det finns {antal_jämna} jämna tal i listan. Dessa är:\n{sorted(jämna)}\n")
+print(f"Det finns {antal_udda} udda tal i listan. Dessa är:\n{sorted(udda)}\n")
+```
+
+:::
+
+:::{.callout-note title="Tips"}
+För att skapa en listan med slumpmässiga heltal måste `random`-modulen
+importeras överst i programmet. Därefter kan ett slumpat heltal skapas.
+Koden blir som följer:
+
+```python
+import random as rand
+slumptal = rand.randint(1, 100)
+```
+
+För att lägga till ett tal en lista används metoden `append` (se Uppgift 1);
+detta måste förstås ske i en loop eftersom det är flera tal som ska läggas till.
+Förmodligen är det bästa sättet att använda två separata loopar: en loop för
+att skapa innehållet i listan `heltal`, och en annan loop för att skapa
+innehållet i listan `jämna` respektive `udda`.
+:::
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 3"}
+
+```python
+import random as rand
+
+heltal = []
+jämna = []
+udda = []
+
+# Heltalslistan med slumptal skapas
+for i in range(0, 10):
+    slumptal = rand.randint(1, 100)
+    heltal.append(slumptal)
+
+# Loopa genom heltalslistan och kopiera jämna och udda tal
+# till respektive ny lista
+for tal in heltal:
+    if tal % 2 == 0: # Kontroll om aktuellt tal är delbart med 2
+        jämna.append(tal)
+    else:
+        udda.append(tal)
+
+# Räkna antalet tal i respektive lista...
+antal_jämna = len(jämna)
+antal_udda = len(udda)
+
+# ...och skriv ut dessa
+print(f"Den framslumpade heltalslistan är:\n{sorted(heltal)}\n")
+print(f"Det finns {antal_jämna} jämna tal i listan. Dessa är:\n{sorted(jämna)}\n")
+print(f"Det finns {antal_udda} udda tal i listan. Dessa är:\n{sorted(udda)}\n")
+```
+
+:::
+
+### Uppgift 4
+
+**Denna övning ska göras i en fil som sparas**
+
+I [Uppgift 2, Loopar i Python](../loopar/index.qmd#uppgift-2) skapade du ett
+program som skulle slumpa fram en LOTTO-rad. Detta program har en stor brist:
+det finns risk för att ett och samma tal slumpas fram fler än en gång. Nu, när
+vi har tillgång till listor, kan vi korrigera denna brist!
+
+Modell: Skapa först en lista (den kan kallas `urna`) som innehåller heltalen
+1 -- 35. Därefter så slumpas ett tal ur denna urna (och tar bort det), ett i
+taget, och lägger till i en annan lista (som t ex kan kallas `lottorad`).
+Det slumpade heltalet är alltså *indexet* för talet som slumpas fram ur `urna`.
+
+Tänk på att när urnan innehåller 35 nummer ska indexet som slumpas fram vara
+mellan 0 och 34. Allteftersom urnan minskar i storlek måste indexets
+slumpomfång minskas för att undvika risk för programkrasch (som är följden av
+att man begär ett tal med ett index som är större än det maximala).
+
+Körningsexempel:
+
+:::{.callout-note appearance="minimal"}
+```{python}
+# | echo: false
+urna = list(range(1, 36))
+lottorad = []
+
+for i in range(0, 7):
+    max_index = len(urna) - 1
+    slumpat_index = rand.randint(0, max_index)
+    lottotal = urna.pop(slumpat_index)
+    lottorad.append(lottotal)
+print(f"Buggfri LOTTO-rad: {sorted(lottorad)}")
+```
+
+:::
+
+
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 4"}
+```python
+import random as rand
+urna = list(range(1, 36))
+lottorad = []
+
+for i in range(0, 7):
+    max_index = len(urna) - 1
+    slumpat_index = rand.randint(0, max_index)
+    lottotal = urna.pop(slumpat_index)
+    lottorad.append(lottotal)
+print(f"Buggfri LOTTO-rad: {sorted(lottorad)}")
+```
+:::
+
+## Uppgift utan lösningsförslag
+
+### Uppgift 5
+
+*Denna uppgift är lite större än de hittills givna uppgifterna. Här används
+villkor, loopar och listor. Även om inte egendefinierade funktioner behöver
+användas i detta program så kan det bli mer överskådligt om så görs. Arbeta
+gärna med det tillsammans med en kompis!*
+
+Du ska skapa ett program som låter en användare sköta en lista genom en meny.
+Det ska likna följande:
+
+:::{.callout-note appearance="minimal"}
+
+```
+Vad vill du göra?
+1. Titta på hela listan             2. Titta på ett givet läge i listan
+3. Lägga till ett värde i listan    4. Radera värdet på ett givet läge i listan
+5. Sortera listan                   6. Beräkna listans medelvärde
+7. Avsluta
+
+Ange ditt val -> 3
+Ange det värde du vill lägga till -> 10
+
+Vad vill du göra?
+1. Titta på hela listan             2. Titta på ett givet läge i listan
+3. Lägga till ett värde i listan    4. Radera värdet på ett givet läge i listan
+5. Sortera listan                   6. Beräkna listans medelvärde
+7. Avsluta 
+
+Ange ditt val -> 1
+Här är hela listan just nu: [10] 
+
+Vad vill du göra?
+1. Titta på hela listan             2. Titta på ett givet läge i listan
+3. Lägga till ett värde i listan    4. Radera värdet på ett givet läge i listan
+5. Sortera listan                   6. Beräkna listans medelvärde
+7. Avsluta
+
+Ange ditt val -> 3
+Ange det värde du vill lägga till -> 5
+
+Vad vill du göra?
+1. Titta på hela listan             2. Titta på ett givet läge i listan
+3. Lägga till ett värde i listan    4. Radera värdet på ett givet läge i listan
+5. Sortera listan                   6. Beräkna listans medelvärde
+7. Avsluta
+
+Vad vill du göra?
+1. Titta på hela listan             2. Titta på ett givet läge i listan
+3. Lägga till ett värde i listan    4. Radera värdet på ett givet läge i listan
+5. Sortera listan                   6. Beräkna listans medelvärde
+7. Avsluta
+
+Ange ditt val -> 1
+Här är hela listan just nu: [10, 5]
+
+Vad vill du göra?
+1. Titta på hela listan             2. Titta på ett givet läge i listan
+3. Lägga till ett värde i listan    4. Radera värdet på ett givet läge i listan
+5. Sortera listan                   6. Beräkna listans medelvärde
+7. Avsluta
+
+Ange ditt val -> 4
+Ange läget i listan med värdet som ska raderas (möjliga lägen: 1 till 2) -> 1
+
+Vad vill du göra?
+1. Titta på hela listan             2. Titta på ett givet läge i listan
+3. Lägga till ett värde i listan    4. Radera värdet på ett givet läge i listan
+5. Sortera listan                   6. Beräkna listans medelvärde
+7. Avsluta
+
+Ange ditt val -> 1
+
+Här är hela listan just nu: [5] 
+```
+
+:::
+
+**Ett läge** i listan är ett heltal från 1 t o m det antal tal som finns där,
+medan ett **värde** i listan är ett heltal.
+Listan ska vara inmatningssäker, dvs felaktiga listval eller värden ska medföra
+att användaren får göra om inmatningen tills den är godtagbar. I
+[Uppgift 3, Funktioner](../funktioner/index.qmd#uppgift-3) finns exempel på
+hur en inmatningssäker meny kan utformas (även om sammanhanget där är
+annorlunda).
+
+Glöm inte att skriva lämpliga kommentarer i koden. Om egendefinierade
+funktioner används ska respektive sådan dokumenteras med en docstring.
+
+:::{.callout-note title="Tips"}
+Om strängar omgärdas av tre citationstecken så kan de enkelt radbrytas.
+Det kan användas för utskrift av menyn (även om det finns andra sätt).
+
+```{python}
+#| echo: true
+print("""Detta är
+en sträng på flera
+rader""")
+```
+
+:::

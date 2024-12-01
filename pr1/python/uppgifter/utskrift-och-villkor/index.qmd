@@ -1,0 +1,662 @@
+---
+title: "Uppgifter: Utskrift och villkor"
+format:
+  html:
+    fontsize: 1em
+    css: style.css
+execute: 
+  echo: false
+---
+
+# Utskrifter och beräkningar i Python
+
+## Utskrifter
+
+**Nedanstående uppgifter ska göras i Python-konsolen, dvs du ska inte skapa en
+fil som sparas, om det inte framgår något annat i uppgiften.**
+---
+
+### Uppgift 1
+
+Mata in följande rader i Python-konsolen och reflektera över resultatet:
+
+-   `print("2 + 2")`
+-   `print("2" + "2")`
+-   `print(2 + 2)`
+-   `print(2.0 + 2)`
+-   `print(0.1 + 0.2)`
+
+:::{.callout-tip collapse="true" icon="false" title="Kommentarer uppgift 1"}
+
+1. Tecken inom citationstecken (`" "` ) skrivs ut precis som de är, det är
+ingenting som beräknas även om det är ett uttryck innanför citationstecknen.
+Det som står innanför citationstecken kallas för en **sträng**. Två strängar
+kan adderas, med resultatet att det blir en ny sträng som består av de båda
+ingående strängarna i en följd. Därav gäller att `"2" + "2"` blir `22`
+(där `22` är en sträng och inte ett tal). 
+
+2. Uttrycket `2` är ett heltal och `2.0` är ett flyttal. Om ett flyttal
+används i en beräkning kommer svaret att bli ett flyttal, även om det finns
+heltal med i andra delar av uttrycket.
+
+3. `0.1 + 0.2` beräknas inte till exakt `0.3` eftersom Python lagrar tal
+i binär form (basen 2 till skillnad från basen 10). I denna binära
+representation kommer termerna att vara avrundade, och summan blir ett
+närmevärde.
+
+:::
+
+### Uppgift 2
+
+Använd en enda `print`-sats som skriver ut följande (byt ut namnet mot ditt
+eget). Observera att utskriften är på två rader!
+
+:::{.callout-note appearance="minimal"}
+
+```{python}
+#|echo: false
+print("Jag heter\nAnders Andersson")
+```
+:::
+
+:::{.callout-tip collapse="true" icon="false" title="Svar uppgift 2"}
+```python
+print("Jag heter\nAnders Andersson")
+``` 
+:::
+
+### Uppgift 3
+
+Skapa en Python-fil i Idle där du deklarerar följande strängvariabler (som du kan själv kan anpassa innehållet i):
+
+```{python}
+fnamn = "Anders"
+enamn = "Andersson"
+adr = "Storgatan 1"
+postnr = "999 99"
+ort = "Storstad"
+ålder = 17
+```
+
+Använd en `print`-sats, där du skriver ut variablerna som en `fstring`, så att utskriften blir:
+
+:::{.callout-note appearance="minimal"}
+```{python}
+#|echo: false
+print(f"Hej, jag heter {fnamn} och är {ålder} år.")
+```
+:::
+
+(Resten av variablerna ska användas i en senare uppgift, så deklarera dessa även om de inte används här.)
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 3"}
+```python
+fnamn = "Anders"
+enamn = "Andersson"
+adr = "Storgatan 1"
+postnr = "999 99"
+ort = "Storstad"
+ålder = 17
+
+print(f"Hej, jag heter {fnamn} och är {ålder} år")
+```
+:::
+
+### Uppgift 4
+
+Deklarera följande variabler, och **spara i en fil i Idle**:
+
+```python
+sträcka = 103 # Sträcka i meter
+tid = 13.2    # Tiden i sekunder
+fart = sträcka / tid
+```
+
+Skapa en `print`-sats som skriver ut farten på det aktuella föremålet avrundat till en decimal.
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 4"}
+```python
+sträcka = 103 # Sträcka i meter
+tid = 13.2    # Tiden i sekunder
+fart = sträcka / tid
+
+print(f"Farten är {(sträcka / tid):.1f} m/s")
+```
+:::
+
+### Uppgift 5
+
+Deklarera följande variabler i Python:
+
+```{python}
+#| echo: true
+a = 1.5
+b = 21.32
+```
+
+Använd därefter en (enda) `print`-sats med lämpliga formateringstecken för att skriva ut, och göra, följande beräkning. Du ska inte använda flera på varandra följande mellanslag inne i `print`-satsen.
+
+:::{.callout-note appearance="minimal"}
+
+```{python}
+#| echo: false
+print(f"{a:>7.2f}\n+{b:>6.2f}\n-------\n{(a+b):>7.2f}")
+```
+:::
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 5"}
+```python
+a = 1.5
+b = 21.32
+print(f"{a:>7.2f}\n+{b:>6.2f}\n-------\n{(a+b):>7.2f}")
+```
+:::
+
+### Uppgift 6
+
+Använd filen med strängvariablerna från Uppgift 3
+för att med en (enda) `print`-sats med lämpliga formateringstecken för att skriva ut strängarna, högerjusterade enligt nedan. Du ska inte använda flera på varandra följande mellanslag inne i `print`-satsen.
+
+:::{.callout-note appearance="minimal"}
+
+```{python}
+#| echo: false
+print(f"{fnamn:<6} {enamn}\n{adr:>16}\n{postnr :>7} {ort:>2}")
+```
+
+:::
+
+:::{.callout-tip collapse="true" icon="false" title="Svar uppgift 6"}
+
+```python
+print(f"{fnamn:<6} {enamn}\n{adr:>16}\n{postnr :>7} {ort:>2}")
+```
+:::
+
+## Villkor i Python
+
+**Respektive programmeringsuppgift nedan ska sparas i en fil**
+
+---
+
+### Uppgift 7
+
+Skapa ett program som ber dig mata in ett belopp med pengar. Programmet ska
+avgöra om det räcker till att köpa ett smycke av järn, silver eller guld.
+**Skapa även ett flödesschema** för programmet.
+
+Priset för respektive typ av smycke deklareras som variabler, där ett järnmycke kostar 200 kr, ett silversmycke 500 kr och ett guldsmycke 1000 kr. Deklarera variabler för dessa priser och
+använd dessa i programmet.
+
+:::{.callout-note appearance="minimal"}
+
+```         
+# Exempelkörning 1
+Ange belopp (i kr.) att handla för -> 300
+Beloppet räcker till ett järnsmycke!
+
+# Exempelkörning 2
+Ange belopp (i kr.) att handla för -> 800
+Beloppet räcker till ett ett silversmycke!
+
+# Exempelkörning 3
+Ange belopp (i kr.) att handla för -> 100
+Beloppet räcker inte till något smycke.
+```
+:::
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 7"}
+
+[Se flödesschema här](https://gist.github.com/codebubo/5909fb477c99db600505702292b277cf)
+
+**Lösningsförslag för typavgörandet** (första deluppgiften)
+
+```python
+# Detta program demonstrerar hur en if-sats
+# kan vare uppbyggd med elif och else.
+pris_järn = 200
+pris_silver = 500
+pris_guld = 1000
+
+belopp = int(input("Ange belopp (i kr.) att handla för -> "))
+
+if belopp >= pris_guld:
+  print("Beloppet räcker till ett guldsmycke!")
+    
+elif belopp >= pris_silver: # Om inte tidigare villkor är uppfyllt så prövas detta villkor
+  print("Beloppet räcker till ett silversmycke!")
+
+elif belopp >= pris_järn:   # Om inte tidigare villkor är uppfyllt så prövas detta villkor
+  print("Beloppet räcker till ett järnsmycke!")
+
+else:                       # Om inget av villkoren är uppfyllda så körs nedanstående sats
+  print("Beloppet räcker inte till något smycke.")
+
+print("Programmet avslutas")# Denna sats ligger utanför villkorssatsen
+```
+
+:::
+
+### Uppgift 8
+För de booleska variablerna `a`, `b` och `c` gäller
+
+* `a = True`
+* `b = True`
+* `c = False`
+
+Fundera ut vilket booleskt värde respektive uttryck nedan kommer att anta,
+och kontrollera det därefter i Python-konsolen:
+
+a. `(a and b) and c`
+
+:::{.callout-tip collapse="true" icon="false" title="Svar uppgift 8a"}
+`False`
+:::
+b. `a and b and c`
+
+:::{.callout-tip collapse="true" icon="false" title="Svar uppgift 8b"}
+`False`
+:::
+
+c. `(a and c) or b`
+
+:::{.callout-tip collapse="true" icon="false" title="Svar uppgift 8c"}
+`True`
+:::
+
+d. `a and b or c`
+
+:::{.callout-tip collapse="true" icon="false" title="Svar uppgift 8d"}
+`True`
+:::
+
+### Uppgift 9
+
+Skapa ett program som läser in längderna på tre sidor. Programmet ska sedan
+avgöra om dessa sidor är sidorna i en rätvinklig triangel.
+
+:::{.callout-note appearance="minimal"}
+
+``` 
+# Exempelkörning 1
+Ange längden på sida 1 -> 3
+Ange längden på sida 2 -> 4
+Ange längden på sida 3 -> 5
+Dessa sidor kan bilda en rätvinklig triangel
+
+# Exempelkörning 2
+Ange längden på sida 1 -> 3
+Ange längden på sida 2 -> 4
+Ange längden på sida 3 -> 6
+Dessa sidor kan inte bilda inte en rätvinklig triangel
+```
+:::
+
+:::{.callout-note title="Tips"}
+För att kvadrera ett tal används *exponentoperatorn* `**`. T ex gäller att om
+`a = 2**3` så antar `a` värdet 8.
+:::
+
+**Utmanande uppgift**: Utöka programmet så att det även avgör om sidorna bildar
+en triangel över huvud taget.
+
+:::{.callout-note appearance="minimal"}
+
+```         
+# Exempelkörning 3
+Ange längden på sida 1 -> 7
+Ange längden på sida 2 -> 5
+Ange längden på sida 3 -> 1
+Dessa sidor kan inte bilda en triangel
+```
+:::
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 9"}
+
+```python
+# Detta program avgör om tre sidor med given längd kan bilda en rätvinklig
+# triangel, en triangel som inte är rätvinklig eller om de inte kan bilda
+# en triangel över huvud taget.
+# Framförallt demonstrerar programmet användadet av de booleska satserna
+# "and" och "or", jämförande likheter och exponmenter.
+
+a = int(input("Ange sida a -> "))
+b = int(input("Ange sida b -> "))
+c = int(input("Ange sida c -> "))
+
+# Kontrollerar om Pythagoras sats gäller för någon kombination av sidorna
+if (a**2 + b**2 == c**2) or (a**2 + c**2 == b**2) or (b**2 + c**2 == a**2):
+    print(f"Sidorna {a}, {b} och {c} kan bilda en rätvinklig triangel")
+
+# Kontrollerar om triangelolikheten gäller
+elif (a + b > c) and (a + c > b) and (b + c > a):
+    print(f"Sidorna {a}, {b} och {c} kan bilda en triangel som inte är rätvinklig")
+
+else:
+    print(f"Sidorna {a}, {b} och {c} kan inte bilda en triangel")
+
+print("Programmet avslutas")
+```
+:::
+
+### Uppgift 10
+
+Ett program som skriver ut vilket betyg en viss provpoäng motsvarar skulle
+kunna se ut så här:
+
+```python
+e_gräns = 15; c_gräns = 25; a_gräns = 35
+poäng = int(input('Ange din provpoäng -> '))
+if poäng >= a_gräns:
+   print('A')
+elif poäng >= c_gräns:
+   print('C')
+elif poäng >= e_gräns:
+   print('E')
+else:
+   print('F')
+print('Programmet avslutas')
+```
+
+a. Gör ett flödesschema för programmet.
+b. Skriv om programmet så att det använder de booleska operatorerna
+`not`, `and` och `or` i villkoren.
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 10"}
+
+[Se flödesschema här](https://gist.github.com/codebubo/be43369abc47aa71312423d561d4de8c)
+
+**Omskrivning av givet proghram med booleska operatorer**
+
+```python
+# Program som skriver ut ett erhållet betyg baserat på
+# givna gränser. Programmet demonstrerar användandet av
+# de booleska operatorerna and och not.
+
+e_gräns = 15
+c_gräns = 25
+a_gräns = 35
+
+poäng = int(input('Ange din provpoäng -> '))
+
+if poäng >= e_gräns and not poäng >= c_gräns:
+    print("E")
+elif poäng >= c_gräns and not poäng >= a_gräns:
+    print("C")
+elif poäng >= a_gräns:
+    print("A")
+else:
+    print("F")
+```
+
+:::
+
+### Uppgift 11
+
+Skapa ett program som ber dig mata in ett årtal.
+Programmet avgör om året är ett skottår.
+Ett årtal som inte är delbart med 4 är inte ett skottår. Är
+årtalet dessutom delbart 100 måste det också vara delbart med
+400 för att vara ett skottår.
+
+
+:::{.callout-note appearance="minimal"}
+
+```      
+# Exempelkörning 1
+Ange ett årtal ->  2020
+År 2020 är ett skottår
+
+# Exempelkörning 2
+Ange ett årtal ->  2021
+År 2021 är inte ett skottår
+
+# Exempelkörning 3
+Ange ett årtal ->  1800
+År 1800 är inte ett skottår
+
+# Exempelkörning 4
+Ange ett årtal ->  2000
+År 2000 är ett skottår
+```
+:::
+
+:::{.callout-note title="Tips"}
+
+Modulooperatorn (`%`) ger resultatet **noll** om ett tal är jämnt
+delbart med ett annat.
+
+```
+# Exempel 1, delbart
+# (21 är delbart med 3)
+21 % 3
+0
+```
+
+```
+# Exempel 2, ej delbart
+# (21 är ej delbart med 2)
+21 % 2
+1
+```
+:::
+
+<p>
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 11"}
+
+**Variant 1**, med sammansättande and-sats och villkor
+som skrivs ut i sin helhet:
+```python
+# Program som avgör om ett år är skottår.
+# Programmet demonstrerar villkor där modulooperatorn
+# används. Här används egenskapen att om tal a är jämnt
+# delbart med tal b så gäller att a % b är noll.
+# Denna version använder en sammansättande boolesk
+# operator (and) istället för nästlad if-sats.
+
+årtal = int(input("Ange ett årtal -> "))
+if årtal % 400 == 0:                         # Årtal jämnt delbart med 400
+    print(f"År {årtal} är ett skottår")
+elif årtal % 4 == 0 and årtal % 100 == 0:    # Årtal jämnt delbart med 4 och 100 men inte med 400
+    print(f"År {årtal} är inte ett skottår")
+elif årtal % 4 == 0:                         # Årtal jämnt delbart med 4, men inte med 100
+    print(f"År {årtal} är ett skottår")
+else:                                        # Årtal inte jämnt delbart med 4
+    print(f"År {årtal} är inte ett skottår")
+```
+
+**Variant 2**, samma uppbyggnad som Variant 1. Istället
+för att jämföra resultatet resultatet av modulo med noll
+med hjälp av jämförelseoperatorn `==` så används den booleska
+operatorn `not`. 
+
+```python
+# Program som avgör om ett år är skottår.
+# Programmet demonstrerar villkor där modulooperatorn
+# används. Här används egenskapen att om tal a är jämnt
+# delbart med tal b så gäller att a % b är noll (eller False).
+# Denna version använder en sammansättande boolesk
+# operator istället för nästlad if-sats. Istället för
+# skriva ut nolljämförelsen så används `not`-operatorn.
+
+årtal = int(input("Ange ett årtal -> "))
+if not årtal % 400:                      # Årtal jämnt delbart med 400
+    print(f"År {årtal} är ett skottår")
+elif not årtal % 4 and not årtal % 100:  # Årtal jämnt delbart med 4 och 100 men inte med 400
+    print(f"År {årtal} är inte ett skottår")
+elif not årtal % 4:                      # Årtal jämnt delbart med 4, men inte med 100
+    print(f"År {årtal} är ett skottår")
+else:                                    # Årtal inte jämnt delbart med 4
+    print(f"År {årtal} är inte ett skottår")
+```
+
+**Variant 3**, uppbyggnad av programmet med nästlade `if`-satser istället för
+booleska operatorer och jämförelseoperatorer.
+
+```python
+# Program som avgör om ett år är skottår.
+# Programmet demonstrerar villkor där modulooperatorn
+# används. Här används egenskapen att om tal a är jämnt
+# delbart med tal b så gäller att a % b är noll (eller False).
+# Istället för booleska operatorer så använder programmet
+# nästlade if-sats.
+
+årtal = int(input("Ange ett årtal -> "))
+
+if årtal % 4:           # Årtal är inte jämnt delbart med 4
+    print(f"År {årtal} är inte ett skottår")
+else:                   # Årtal är jämnt delbart med 4
+    if årtal % 100:     # Årtal jämnt delbart med 4, men inte med 100
+        print(f"År {årtal} är ett skottår")
+    else:               # Årtal jämnt delbart med 4 och med 100
+        if årtal % 400: # Årtal jämnt delbart med 4 och 100, men inte med 400
+            print(f"År {årtal} är inte ett skottår")
+        else:           # Årtal jämnt delbart med 4, 100 och 400
+            print(f"År {årtal} är ett skottår")
+```
+
+:::
+
+## Uppgifter utan lösningsförslag
+
+### Uppgift 12
+
+Du ska formatera ett (typ) kassakvitto enligt nedan:
+
+```{python}
+#| echo: false
+
+avskiljare = "-"
+tab_rub_1 = "Vara"
+tab_rub_2 = "Pris per kg"
+tab_rub_3 = "Vikt [kg]"
+tab_rub_4 = "Belopp [kr]"
+frukt_1 = "Äpple"
+frukt_2 = "Papaya"
+frukt_3 = "Vattenmelon"
+vikt_1 = 1.2
+vikt_2 = 0.72
+vikt_3 = 3.51
+pris_1 = 25.0
+pris_2 = 139.9
+pris_3 = 19.99
+belopp_1 = pris_1 * vikt_1
+belopp_2 = pris_2 * vikt_2
+belopp_3 = pris_3 * vikt_3
+sum_str = "Summa:"
+
+"""
+Vara          Pris per kg   Vikt   Belopp
+-----------------------------------------
+Äpple           25.00       1.20    30.00
+Papaya         139.90       0.72   100.73
+Vattenmelon     19.99       3.51    70.17
+-----------------------------------------
+                           Summa:  200.89
+"""
+
+print(tab_rub_1.rjust(11), tab_rub_2.rjust(15), tab_rub_3.rjust(11), tab_rub_4.rjust(13))
+print(55*"-")
+print(frukt_1.rjust(11), f"{pris_1:12.2f}", f"{vikt_1:11.2f}", f"{belopp_1:13.2f}")
+print(frukt_2.rjust(11), f"{pris_2:12.2f}", f"{vikt_2:11.2f}", f"{belopp_2:13.2f}")
+print(frukt_3.rjust(11), f"{pris_3:12.2f}", f"{vikt_3:11.2f}", f"{belopp_3:13.2f}")
+print(55*"-")
+print(sum_str.rjust(41), f"{(belopp_1 + belopp_2 + belopp_3):8.2f}")
+```
+Detta ska göras med enbart följande deklarerade variabler:
+```python
+avskiljare = "-"
+tab_rub_1 = "Vara"
+tab_rub_2 = "Pris per kg"
+tab_rub_3 = "Vikt [kg]"
+tab_rub_4 = "Belopp [kr]"
+frukt_1 = "Äpple"
+frukt_2 = "Papaya"
+frukt_3 = "Vattenmelon"
+vikt_1 = 1.2
+vikt_2 = 0.72
+vikt_3 = 3.51
+pris_1 = 25.0
+pris_2 = 139.9
+pris_3 = 19.99
+belopp_1 = pris_1 * vikt_1
+belopp_2 = pris_2 * vikt_2
+belopp_3 = pris_3 * vikt_3
+sum_str = "Summa:"
+```
+Du ska alltså inte använda mellanslag eller upprepade tecken (t ex
+flera "`-`" för radmarkeringar). Ett tips är att titta slajden om
+[formaterad utskrift](../../intro/pres-version-installerad-python/intro-pres.qmd#/formaterad-utskrift).
+
+### Uppgift 13
+
+Denna uppgift bygger på [Uppgift 7](#uppgift-7).
+Förbättra  programmet så att det skriver ut det maximala antalet smycken av
+respektive sort smycke som du kan köpa för ett angivet belopp.
+Programmet ska prioritera de dyraste smyckena.
+
+:::{.callout-note appearance="minimal"}
+
+```         
+# Exempelkörning
+Ange belopp (i kr.) att handla för -> 2950
+Beloppet räcker till:
+Antal guldsmycken:  2
+Antal silvermycken: 1
+Antal järnsmycken:  2
+Belopp kvar: 50 kr
+```
+
+Siffrorna som anger antalet ska vara högerjusterade!
+
+```{python}
+#| echo: false
+# Detta program beräknar hur många smycken av järn,
+# silver respektive guld med ett givet pris som kan
+# köpas för ett givet belopp. Programmet demonstrerar
+# heltalsdivision och ändring av variabelvärde, men
+# även hur ett heltal kan matas in och användning av
+# f-string.
+
+pris_järn = 200
+pris_silver = 500
+pris_guld = 1000
+
+# belopp = int(input("Ange belopp att handla för -> "))
+belopp = 2950
+belopp_kvar = belopp
+
+# Hantering av guldsmycken
+antal_guld = belopp_kvar // pris_guld     # Variabeln antal_guld skapas och tilldelas ett värde
+belopp_kvar -= antal_guld * pris_guld     # Här ändras variabelvärdet belopp_kvar
+
+# Hantering av silversmycken
+antal_silver = belopp_kvar // pris_silver # Variabeln antal_silver skapas och tilldelas ett värde
+belopp_kvar -= antal_silver * pris_silver # Här ändras variabelvärdet belopp_kvar
+
+# Hantering av järnsmycken
+antal_järn = belopp_kvar // pris_järn     # Variabeln antal_järn skapas och tilldelas ett värde
+belopp_kvar -= antal_järn * pris_järn     # Här ändras variabelvärdet belopp_kvar
+
+#print("Beloppet räcker till:")
+#print(f"Antal guldsmycken: {antal_guld}")
+#print(f"Antal silversmycken: {antal_silver}")
+#print(f"Antal järnsmycken: {antal_järn}")
+
+#print(f"Belopp kvar: {belopp_kvar} kr")
+
+#print("Programmet avslutas")
+```
+
+:::
+
+:::{.callout-note title="Tips"}
+
+Använd heltalsdivision, den ger **heltalsdelen**
+vid division. Exempel:
+
+```
+15 // 7 # Ger resultatet 2
+20 // 7 # Ger resultatet 2
+```
+:::

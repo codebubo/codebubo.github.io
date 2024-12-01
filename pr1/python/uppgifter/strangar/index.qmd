@@ -1,0 +1,137 @@
+---
+title: "Uppgifter: Strängar"
+format:
+  html:
+    fontsize: 1em
+    css: style.css
+---
+
+# Strängar
+
+## Uppgifter med kommentarer och lösningsförslag
+
+### Uppgift 1
+
+Skriv ett program som räknar antalet förekomster av bokstaven "p" i strängen
+`"Packa pappas kappsäck"`.
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 1"}
+
+```python
+my_str = "Packa pappas kappsäck"
+p = 0
+for char in my_str:
+  if char.lower() == "p":
+    p += 1
+print(p)
+```
+:::
+
+### Uppgift 2
+
+Deklarera strängen `vowels = "aeiouyåäö"`, och använd denna för att räkna
+antalet konsonanter i `"Packa pappas kappsäck"`.
+
+Tips: Du kan ha nytta av strängmetoden `isalnum()`, se
+[Cheat Sheet](../../cheat_sheet_python.html#strängar-och-strängmetoder).
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 2"}
+
+```python
+vowels = "aeiouyåäö"
+my_str = "Packa pappas kappsäck"
+cons = 0
+for char in my_str:
+    if not(char in vowels) and char.isalnum():
+        cons += 1
+print(cons)
+```
+:::
+
+### Uppgift 3
+
+Skriv ett program som skriver ut strängen `"Packa pappas kappsäck"` baklänges.
+
+Tips: Du kan ha nytta av funktionen `len`, som fungerar på samma sätt som för
+listor, se [Cheat Sheet](../../cheat_sheet_python.html#antal-element-i-en-lista)
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 3"}
+
+**Variant 1, med loop**
+
+```python
+my_str = "Packa pappas kappsäck"
+for i in range(len(my_str) - 1, -1, -1):
+    print(my_str[i], end="")
+```
+
+**Variant 2, med "baklänges delsträng"**
+
+```python
+my_str = "Packa pappas kappsäck"
+rev_str = my_str[::-1]
+print(rev_str)
+```
+
+:::
+
+### Uppgift 4
+
+Skriv ett program som frågar användaren efter en mening. Programmet ska sedan
+avgöra om meningen är en palindrom. En palindrom är ett ord eller en mening
+som blir likadan när den läses baklänges. T ex är `"Sirap i Paris`,
+`"Ni talar bra latin"` och `"Was it a car or a cat I saw?"` palindromer.
+Observera att mellanslagen inte räknas!
+
+Tips: Omvandla först strängen till en sträng utan mellanslag och skiljetecken!
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 4"}
+
+Metoden går ut på att skapa två strängar med gemena bokstäver utan
+skiljetecken: en framlänges och en baklänges.
+
+```python
+src_raw = input("Ange en sträng som ska testas som palindrom -> ")
+src_comp = ""
+rev_comp = ""
+
+max_index = len(src_raw) - 1
+
+# Skapa strängen med gemena bokstäver och utan skiljetecken
+for i in range(0, max_index+1):
+    if src_raw[i].isalnum():
+        src_comp += src_raw[i].lower()
+    
+# Skapa baklänges-strängen
+for i in range(max_index, -1, -1):
+    if src_raw[i].isalnum():
+        rev_comp += src_raw[i].lower()
+
+# Jämför strängarna med varandra
+if src_comp == rev_comp:
+    print(f"\"{src_raw}\" är en palindrom")
+else:
+    print(f"\"{src_raw}\" är inte en palindrom")
+```
+:::
+
+### Uppgift 5
+
+I rövarspråket så blir varje så ska varje konsonant upprepas med bokstaven "o"
+mellan. T ex översätts ordet "KAFFE" till "KOKAFOFFOFE".
+
+Skapa ett program som översätter en valfri sträng till rövarspråket.
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 5"}
+
+```python
+source = input("Ange en sträng för översättning till rövarspråket -> ")
+target = ""
+consonants = "bcdfghjklmnpqrstvwxz"
+for char in source:
+    target += char
+    if char.lower() in consonants:
+        target += "o" + char
+print(target)     
+```
+:::

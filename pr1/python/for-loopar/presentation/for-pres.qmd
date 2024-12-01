@@ -1,0 +1,161 @@
+---
+title: for-loopar i Python
+from: markdown+emoji
+title-slide-attributes:
+  data-background-image: https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/for-loopar/frame-3083868_1280.png
+  data-background-opacity: "1"
+  data-background-color: "black"
+author: "Nikodemus Karlsson"
+format:
+  revealjs:
+    mermaid: 
+      theme: dark
+    theme: dark
+    transition: slide
+    background-transition: slide
+    slide-number: true
+    controls: true
+    controls-layout: edges
+    date-format: "DD MMM YYYY"
+    css: style.css
+execute: 
+  echo: false
+---
+
+## Dagens mål
+
+* Att känna till vad en `for`-loop är
+* Att kunna använda `range`-funktionen
+* Att känna till skillnaden mellan `while`- och `for`-loopar
+* Att kunna skriva egna små program som innehåller en `for`-loop.
+
+## Likheter och skillnader mellan `while`- och `for`-loopar
+
+:::{.v-space}
+:::
+
+:::{.blue-bg-small-padding }
+Ofta används `while`-loopar när antalet varv avgörs under programkörningens
+gång, medan `for`-loopar används då det är ett känt antal varv. I vissa fall
+går den ena typen av loop lika bra som den andra.
+
+En `for`-loop använder sig av en **lista** som loopas igenom.
+:::
+
+## Enklast möjliga `for`-loop
+
+:::{.double-v-space}
+:::
+
+```{python}
+# | echo: true
+lista = [10, 20, 30]
+for element in lista:
+    print(element, end=" ")
+print(f"Loopen avslutas eftersom listan är slut")
+```
+
+:::{.v-space}
+:::
+
+Variabeln `element` antar respektive värde i listan i tur och ordning.
+
+## Längre listor
+
+Listorna behöver inte skrivas in manuellt, det är bra då loopen behöver snurra
+många varv. Här används `range` för att skapa en lista från ett värde till
+ett annat värde.
+
+:::{.v-space}
+:::
+
+```{python}
+#| echo: true
+for i in range(3, 8):   # Här skapas listan
+    print(i, end=" ")
+```
+
+:::{.v-space}
+:::
+
+Funktionen `range(3, 8)` skapar listan `[3, 4, 5, 6, 7]`
+
+Om det hade varit en `while`-loop som skulle snurra fem varav skulle ett
+villkor och en räknare behövt sättas upp.
+
+## Funktionen `range`
+
+Exempel på hur parametrar påverkar resultatet av `range`
+
+```{python}
+#| echo: true
+lista_A = list(range(10))
+lista_B = list(range(-5, 5))
+lista_C = list(range(0, 10, 2))
+lista_D = list(range(10, 0, -1))
+print(f"lista_A = {lista_A}")
+print(f"lista_B = {lista_B}")
+print(f"lista_C = {lista_C}")
+print(f"lista_D = {lista_D}")
+```
+
+## Exempel: Multiplikationstabell
+
+```{python}
+#| echo: true
+# Detta program beräknar och skriver ut "tolvans tabell"
+for i in range(1, 13):
+    print(f"{i:2.0f} * 12 = {i*12:3.0f}")
+```
+
+## Andra listelement än tal
+
+En lista kan innehålla andra element än tal.
+
+:::{.v-space}
+:::
+
+```{python}
+#| echo: true
+items = ["Klocka", "Kikare", "Termometer"]
+print("Du har tillgång till:", end=" ")
+for item in items:
+    print(item, end=" ")
+```
+
+:::{.v-space}
+:::
+
+Vi kommer senare att titta på hur element kan läggas till, tas bort och
+sorteras i listor. Det är användbart t ex i spel.
+
+## Ett tänkt exempel
+
+:::{.v-space}
+:::
+
+```python
+items = ["Klocka", "Kikare", "Termometer"]
+for item in items:
+    if item.is_boostable:
+      item.boost()
+      print(f"Din {item} är nu boostad ✅")
+    else:
+      print(f"{item} gick inte att boosta ❌")
+```
+
+Sekvensen ovan skulle kunna ingå i ett spelprogram. Här är `is_boostable` en
+*egenskap* hos *objektet* `item` och `boost` är en *metod* som tillämpas. Dessa
+saker måste programmeraren designa själv; det är inte inbyggt i Python.
+
+Senare i kursen kommer vi att komma till klasser, och koppla objekt, egenskaper
+och metoder till dessa.
+
+## Sammanfattning
+
+* `for`-loopar används antingen när något ska göras ett förutbestämt antal
+gånger...
+* ... eller när någon funktion ska tillämpas på ett element i taget i en lista
+* Funktionen `range` kan användas för att skapa listor
+* Funktionen `range` ger olika utdata beroende på vilka parametrar som används
+

@@ -1,0 +1,339 @@
+---
+title: "Uppgifter: Funktioner"
+format:
+  html:
+    fontsize: 1em
+    css: style.css
+---
+
+# Funktioner i Python
+
+## Uppgifter med lösningsförslag
+
+### Uppgift 1
+
+Skriv en funktion `print_hypotenusa`. Funktionen ska ta emot värden på de båda
+kateternas längd i en rätvinklig triangel, och skriva ut längden av
+hypotenusan.
+
+Du behöver inte mata in värden under programkörning, funktionen kan anropas
+direkt med givna värden på kateterna.
+
+Körningsexempel:
+
+:::{.callout-note appearance="minimal"}
+
+```{python}
+#| echo: false
+def print_hypotenusa(a, b):
+    hypotenusa = (a**2 + b**2)**0.5
+    print("Denna utskrift sker från funktionen print_hypotenusa")
+    print(f"Funktionen tog emot parametrarna {a} och {b}")
+    print(f"Hypotenusans längd beräknas till {hypotenusa}")
+
+print_hypotenusa(3, 4)
+```
+:::
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 1"}
+```python
+def print_hypotenusa(a, b):
+    hypotenusa = (a**2 + b**2)**0.5
+    print("Denna utskrift sker från funktionen print_hypotenusa")
+    print(f"Funktionen tog emot parametrarna {a} och {b}")
+    print(f"Hypotenusans längd beräknas till {hypotenusa}")
+
+print_hypotenusa(3, 4)
+```
+:::
+
+### Uppgift 2
+
+Skriv en funktion `beräkna_hypotenusa`. Till skillnad från funktionen i
+[uppgift 1](#uppgift-1) så ska denna funktion **returnera** värdet på
+hypotenusans längd och det är huvudprogrammets uppgift (inte funktionens)
+att skriva ut längden.
+
+Körningsexempel:
+
+:::{.callout-note appearance="minimal"}
+
+```{python}
+#| echo: false
+def beräkna_hypotenusa(a, b):
+    hypotenusa = (a**2 + b**2)**0.5
+    return hypotenusa
+
+katet_1 = 3
+katet_2 = 4
+hypotenusa = beräkna_hypotenusa(katet_1, katet_2)
+print("Denna utskrift sker från huvudprogrammet")
+print(f"Huvudprogrammet skickar argumenten {katet_1} och {katet_2} till funktionen")
+print(f"Funtkionen beräknar hypotenusans längd till {hypotenusa}")
+```
+:::
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 2"}
+```python
+def beräkna_hypotenusa(a, b):
+    hypotenusa = (a**2 + b**2)**0.5
+    return hypotenusa
+
+katet_1 = 3
+katet_2 = 4
+hypotenusa = beräkna_hypotenusa(katet_1, katet_2)
+print("Denna utskrift sker från huvudprogrammet")
+print(f"Huvudprogrammet skickar argumenten {katet_1} och {katet_2} till funktionen")
+print(f"Funtkionen beräknar hypotenusans längd till {hypotenusa}")
+```
+:::
+
+### Uppgift 3
+
+Skriv ett program som ber användaren om en temperatur given antingen i grader
+Celsius eller grader Fahrenheit, och sedan omvandlar temperaturen till den
+andra av dessa enheter. Beroende på vilken enhet som temperaturen ges i ska
+en funktion väljas. Funktionerna, som du ska skriva, kan heta `till_fahr`
+respektive `till_celsius`. Var och en av dessa funktioner ska ta en temperatur
+som parameter och returnera temperaturen uttryckt i den andra enheten.
+
+Huvudprogrammet kan se ut enligt nedan. Här finns också rutiner för en
+''säker inmatning'' av heltal respektive strängar. Detta kan du använda som
+referens för senare program.
+
+```python
+# Huvudprogram, omvandling av temperatur mellan olika enheter
+
+# Nedanstående kod ger en säker inmatning av heltal
+while True:
+    try:
+        temp =  int(input("Ange mätvärdet på temperaturen -> "))
+        break
+    except ValueError:
+        print("Felaktig inmatning, försök igen")
+
+# Nedanstående kod ger en säker inmatning av enheten
+# och dirigerar värdet till aktuell funktion
+while True:
+    enhet = input("Ange enheten som detta mätvärde är angivet i [C / F] -> ")
+    if enhet in {"C", "c"}:
+        fahr = till_fahr(temp)
+        print(f"Temperaturen i grader Fahrenheit är {fahr}")
+        break
+    elif enhet in {"F", "f"}:
+        celsius = till_celsius(temp)
+        print(f"Temperaturen i grader Celsius är {celsius}")
+        break
+    print("Felaktig inmatning, försök igen")
+```
+
+Sambandet mellan temperatur angivet i grader Celsius och gradet Fahrenheit
+är givet i [Uppgift 9 i avsnittet om loopar](../loopar/index.qmd#uppgift-9)
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 3"}
+```python
+def till_celsius(F):
+    C = 5/9 * F - 160/9
+    return C
+
+def till_fahr(C):
+    F = 9/5 * C + 32
+    return F
+
+# Huvudprogram, omvandling av temperatur mellan olika enheter
+
+# Nedanstående kod ger en säker inmatning av heltal
+while True:
+    try:
+        temp =  int(input("Ange mätvärdet på temperaturen -> "))
+        break
+    except ValueError:
+        print("Felaktig inmatning, försök igen")
+
+# Nedanstående kod ger en säker inmatning av enheten
+# och dirigerar värdet till aktuell funktion
+while True:
+    enhet = input("Ange enheten som detta mätvärde är angivet i [C / F] -> ")
+    if enhet in {"C", "c"}:
+        fahr = till_fahr(temp)
+        print(f"Temperaturen i grader Fahrenheit är {fahr}")
+        break
+    elif enhet in {"F", "f"}:
+        celsius = till_celsius(temp)
+        print(f"Temperaturen i grader Celsius är {celsius}")
+        break
+    print("Felaktig inmatning, försök igen")
+```
+:::
+
+### Uppgift 4
+
+Även om programmet i [Uppgift 3](#uppgift-3) gör sitt jobb, så är
+huvudprogrammet lite väl långt. Det är eftersträvansvärt att huvudprogrammet
+ger en klar bild av strukturen, och det mesta utlokaliseras till funktioner.
+
+Exempel på hur ett kortare huvudprogram kan se ut:
+
+```python
+# Huvudprogram, omvandling av temperatur mellan olika enheter
+
+temp = ange_mätvärde()
+enhet = ange_enhet()
+skriv_mätvärde_i_andra_enheten(temp, enhet)
+```
+
+Huvudprogrammet består alltså av tre funktionsanrop, och funktionen
+`skriv_mätvärde_i_andra_enheten` består dessutom av två möjliga funktionsanrop
+där ett av dessa väljs.
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 4"}
+```python
+def till_celsius(F):
+    C = 5/9 * F - 160/9
+    return C
+
+def till_fahr(C):
+    F = 9/5 * C + 32
+    return F
+
+def ange_mätvärde():
+    # Nedanstående kod ger en säker inmatning av heltal
+    while True:
+        try:
+            temp =  int(input("Ange mätvärdet på temperaturen -> "))
+            return temp
+        except ValueError:
+            print("Felaktig inmatning, försök igen")
+
+def ange_enhet():
+    # Nedanstående kod ger en säker inmatning av enheten
+    # och dirigerar värdet till aktuell funktion
+    while True:
+        enhet = input("Ange enheten som detta mätvärde är angivet i [C / F] -> ")
+        if enhet in {"C", "c"}:
+            return "C"
+        elif enhet in {"F", "f"}:
+            celsius = till_celsius(temp)
+            return "F"
+        print("Felaktig inmatning, försök igen")
+
+def skriv_mätvärde_i_andra_enheten(temp, enhet):
+    if enhet == "C":
+        fahr = till_fahr(temp)
+        print(f"Temperaturen i grader Fahrenheit är {fahr}")
+    else:
+        celsius = till_celsius(temp)
+        print(f"Temperaturen i grader Celsius är {celsius}")
+        
+    
+    
+# Huvudprogram, omvandling av temperatur mellan olika enheter
+
+temp = ange_mätvärde()
+enhet = ange_enhet()
+skriv_mätvärde_i_andra_enheten(temp, enhet)
+```
+:::
+
+### Uppgift 5
+
+Du har tidigare [skrivit ett program](../loopar/index.qmd#uppgift-4) där du
+låter en spelare gissa på ett framslumpat tal.
+
+Skriv **en funktion** som slumpar fram talet och håller reda på antalet
+gissningar innan talet gissas rätt. Funktionen ska returnera antalet
+gissningar, vilka skrivs ut i huvudprogrammet.
+
+Programmet ska ha följande struktur:
+
+
+```python
+def spela():
+  # Här skriver du funktionen...
+  # ...och returnerar antalet försök
+
+# Huvudprogram
+antal_försök = spela()
+print("RÄTT GISSAT!")
+print(f"Du klarade spelet på gissning nr. {antal_försök}.")
+```
+
+Formulera också en lämplig **docstring** till funktionen `spela`. Försök att
+göra gissningarna inmatningssäkra, och att enbart giltiga gissningar räknas.
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 5"}
+
+Detta gissningsspel är lite mer utvecklat än det förra som gjordes.
+Här finns en inmatningskontroll så att enbart tal mellan (och inklusive)
+1 och 10 kommer att godtas som inmatning.
+
+```python
+import random as rand
+
+def spela():
+    '''
+    I denna funktion så får användaren gissa på
+    ett tal som datorn slumpat fram.
+    Feedback till användaren i form av ledtråd
+    om det inmatade talet var för stort eller för litet.
+    Parametrar: inga
+    Returvärde: antal gissningar som behövdes
+    '''
+    datorns_tal = rand.randint(1, 10)
+    antal_gissningar = 0
+    while True:
+        gissning = input("Gissa ett tal mellan 1 och 10 -> ")
+        try:
+            gissning = int(gissning)
+        except ValueError:
+            print("Du måste ange ett heltal mellan 1 och 10")
+            continue
+        if (1 <= gissning <= 10):
+            antal_gissningar += 1
+            if gissning > datorns_tal:
+                print("Din gissning var för stor")
+            elif gissning < datorns_tal:
+                print("Din gissning var för liten")
+            else:
+                return antal_gissningar
+        else:
+            print("Du måste ange ett heltal mellan 1 och 10")
+
+# Huvudprogram
+antal_försök = spela()
+print("RÄTT GISSAT!")
+print(f"Du klarade spelet på gissning nr. {antal_försök}.")
+```
+:::
+
+## Uppgifter utan lösningsförslag
+
+### Uppgift 6
+
+Fakulteten på talet $x$ skrivs som $x!$. T ex gäller att
+$5!$ antar värdet $5\cdot 4\cdot 3\cdot 2\cdot 1$.
+
+Skriv en funktion `fac` som tar emot ett tal $x$, som är ett icke-negativt
+heltal, och returnerar värdet på $x!$. Värdet på $0!$ är definierat till 1.
+ 
+### Uppgift 7
+
+Ett primtal är ett positivt heltal som är 2 eller större, där 2 är det minsta
+primtalet. Ett primtal är enbart delbart med sig självt och 1. T ex är talet 13
+ett primtal därför att det uppfyller allt detta.
+
+Skriv en funktion `is_prime(number)` som returnerar `True` om parametern
+`number` är ett primtal, och annars `False`.
+
+Jämn delbarhet kan testas med **modulo-operatorn**, `%`. T ex gäller att talet
+`12` är jämnt delbart med `4`, varför uttrycket `12 % 4` antar värdet `0`.
+Talet `13` är inte jämnt delbart med `4`, varför uttrycket `13 % 4` får ett
+annat värde än noll (i nuläget spelar det inte någon roll vilket annat värde,
+testa enbart på noll och nollskilda värden).
+
+Jämn delbarhet behöver också enbart testas upp till kvadratroten ur talet
+ifråga. T ex så gäller att $\sqrt{29}\approx 5.38$, varför det räcker med att
+pröva om talet 29 är jämnt delbart med 2, 3, 4 och 5 för att avgöra om det
+är ett primtal (och det är det).
+
+Tänk på att $\sqrt{x}=x^{0.5}$. Det skrivs i Python som `x**0.5`.

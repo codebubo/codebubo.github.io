@@ -1,0 +1,183 @@
+---
+title: "Uppgifter: Egna datatyper"
+format:
+  html:
+    fontsize: 1em
+    css: style.css
+---
+
+# Egna datatyper i Python
+
+## Uppgifter med lösningsförslag
+
+### Uppgift 1
+
+Deklarera en datatyp `Avatar`. Datatypen ska ha attributen `namn`, `färg`,
+`ålder`, `styrka` och `snabbhet`. 
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 1"}
+```{python}
+#| echo: true
+class Avatar:
+    namn = ""
+    färg = ""
+    ålder = 0
+    styrka = 0
+    snabbhet = 0
+```
+
+:::
+
+### Uppgift 2
+
+Deklarera två instanser av `Avatar` från [uppgift 1](#uppgift-1),
+nämligen `player_1` och `player_2`. Här ska alla attribut på respektive avatar,
+**utom snabbhet** sättas till lämpliga värden (`styrka` kan variera mellan
+0 och 10).
+
+Bekräfta med utskrifter att attributen blivit korrekt satta.
+
+Körningsexempel:
+
+:::{.callout-note appearance="minimal"}
+
+```{python}
+#| echo: false
+player_1 = Avatar()
+player_2 = Avatar()
+
+player_1.namn = "Efelia"
+player_1.färg = "Gul"
+player_1.ålder = 120
+player_1.styrka = 6
+
+player_2.namn = "Castor"
+player_2.färg = "Blå"
+player_2.ålder = 430
+player_2.styrka = 3
+
+print("Presentation av player_1")
+print("========================")
+print(f"Namn: {player_1.namn}")
+print(f"Färg: {player_1.färg}")
+print(f"Ålder: {player_1.ålder}")
+print(f"Styrka: {player_1.styrka}")
+print()
+print("Presentation av player_2")
+print("========================")
+print(f"Namn: {player_2.namn}")
+print(f"Färg: {player_2.färg}")
+print(f"Ålder: {player_2.ålder}")
+print(f"Styrka: {player_2.styrka}")
+```
+:::
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 2"}
+```python
+player_1 = Avatar()
+player_2 = Avatar()
+
+player_1.namn = "Efelia"
+player_1.färg = "Gul"
+player_1.ålder = 120
+player_1.styrka = 6
+
+player_2.namn = "Castor"
+player_2.färg = "Blå"
+player_2.ålder = 430
+player_2.styrka = 3
+
+print("Presentation av player_1")
+print("========================")
+print(f"Namn: {player_1.namn}")
+print(f"Färg: {player_1.färg}")
+print(f"Ålder: {player_1.ålder}")
+print(f"Styrka: {player_1.styrka}")
+print()
+print("Presentation av player_2")
+print("========================")
+print(f"Namn: {player_2.namn}")
+print(f"Färg: {player_2.färg}")
+print(f"Ålder: {player_2.ålder}")
+print(f"Styrka: {player_2.styrka}")
+```
+:::
+
+### Uppgift 3
+
+Skapa funktionen `beräkna_snabbhet` som ska ta emot ett objekt av typen
+`Avatar`. Funktionens uppgift är att beräkna och sätta ett värde på attributet
+`snabbhet` hos den aktuella avataren. Snabbheten ska beräknas enligt
+formeln $10-\text{styrka}$.
+
+Efter anropet till funktionen ska huvudprogrammet skriva ut styrkan och
+snabbheten respektive avatar.
+
+Körningsexempel
+
+:::{.callout-note appearance="minimal"}
+```{python}
+#| echo: false
+def beräkna_snabbhet(avatar):
+    avatar.snabbhet = 10 - avatar.styrka
+
+beräkna_snabbhet(player_1)
+beräkna_snabbhet(player_2)
+
+print(f"{player_1.namn} har styrkan {player_1.styrka} snabbheten {player_1.snabbhet}")
+print(f"{player_2.namn} har styrkan {player_2.styrka} snabbheten {player_2.snabbhet}")
+```
+:::
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 3"}
+```python
+def beräkna_snabbhet(avatar):
+    avatar.snabbhet = 10 - avatar.styrka
+
+beräkna_snabbhet(player_1)
+beräkna_snabbhet(player_2)
+
+print(f"{player_1.namn} har styrkan {player_1.styrka} snabbheten {player_1.snabbhet}")
+print(f"{player_2.namn} har styrkan {player_2.styrka} snabbheten {player_2.snabbhet}")
+```
+:::
+
+## Uppgift utan lösningsförslag
+
+### Uppgift 4
+
+Deklarera en datatyp Bil i Python. Denna datatyp ska innehålla attributen
+`märke`, `årsmodell`, `färg`, `pris` och `miltal`.
+Skapa minst tio olika instanser av denna datatyp (de kan heta `a_bil`, `b_bil`,
+`c_bil` osv). Dessa instanser ska läggas in i en lista, denna lista kan heta
+`bilar`. För sammanhangets skull kan vi tänka oss att det är en bilhandlare
+av begagnade bilar som har listan över bilar som är till salu.
+
+a. Skriv en funktion som tar emot en sådan lista med bilar som parameter
+och skriver ut all information om respektive bil på ett strukturerat sätt.
+
+b. Skriv tre funktioner, `välj_märke`, `välj_pris` och `välj_max_miltal`
+som skriver ut information om de bilar som uppfyller *ett* krav (t ex alla
+Volvo-bilar i listan eller alla bilar som gått max $3\,000$ mil). Funktionerna
+måste förstås ta emot lämpliga parametrar och hantera dessa.
+
+c. Lägg till en meny i programmet där en användare får ange önskemål om vilka
+bilar som ska skrivas ut.
+
+d. Skriv en funktion som sorterar utskriften med avseende på ett valt attribut.
+Det kan vara att bilarna skrivs ut sorterat efter hur många mil som de gått
+(den med lägst miltal först och den med högst miltal sist), efter färg, efter
+pris eller efter märke. Här är en mall till hur en sådan sortering kan gå till:
+
+```python
+# Antag att du har en lista med objekt där varje objekt har ett attribut 'attribut'
+din_lista = [...]
+# Sortera listan baserat på 'attribut'
+din_lista.sort(key=lambda x: x.attribut)
+```
+
+e. Utöka programmet med funktionalitet för att söka på bilar efter specifika
+önskemål baserat på *två* av ovanstående attribut. T ex alla Volvobilar
+med ett maximalt miltal eller alla bilar som gått under ett visst antal mil med
+ett visst maximalt pris.
+

@@ -1,0 +1,141 @@
+---
+title: Spara data till fil i Python
+from: markdown+emoji
+title-slide-attributes:
+  data-background-image: https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/for-loopar/frame-3083868_1280.png
+  data-background-opacity: "1"
+  data-background-color: "black"
+author: "Nikodemus Karlsson"
+format:
+  revealjs:
+    mermaid: 
+      theme: dark
+    theme: dark
+    transition: slide
+    background-transition: slide
+    slide-number: true
+    controls: true
+    controls-layout: edges
+    date-format: "DD MMM YYYY"
+    css: style.css
+execute: 
+  echo: false
+---
+
+## Dagens mål
+
+* Att kunna läsa in och skriva data från instanser av en egendefinierad datatyp
+på fil.
+
+## JSON-format
+
+:::{.v-space}
+:::
+
+Vi kommer att spara datan på fil i `JSON`-format (JavaScript Object Notation).
+Det är ett vanligt sätt att representera data på i många sammanhang.
+
+```
+{
+    "namn": "Anna",
+    "ålder": 30,
+    "stad": "Stockholm"
+}
+```
+
+För att använda `JSON` i Python behövs importeras en modul:
+```python
+import json
+```
+
+## Skapa en egen datatyp
+
+:::{.double-v-space}
+:::
+
+Vi kan deklarera en variabeltyp `Car` på det här sättet:
+
+```{python}
+# | echo: true
+class Car:
+    def __init__(self, brand, price, mileage):
+        self.brand = brand
+        self.price = price
+        self.mileage = mileage
+```
+
+:::{.v-space}
+:::
+
+*Instanser* av denna datatyp kan skapas enligt
+
+```python
+car1 = Car("Volvo", 200000, 10000)
+car2 = Car("BMW", 300000, 5000)
+cars = [car1, car2]
+```
+
+## Konvertera instanserna till JSON
+
+* JSON kan inte direkt hantera Python-objekt, så vi behöver konvertera våra
+objekt till en Python-datatypes som JSON kan serialisera, som en dict.
+* Använda `__dict__` för att konvertera objekt till dict.
+
+```python
+cars_dict = [car.__dict__ for car in cars]
+```
+
+Detta sätt att skapa en lista på kallas för *listomfattning* eller
+*list comprehension*. `cars_dict` är alltså en lista. 
+
+## Instansen på fil
+
+:::{.double-v-space}
+:::
+
+Vi använder `json.dump()` för att spara till fil:
+
+```python
+with open('cars.json', 'w') as f:
+    json.dump(cars_dict, f)
+
+```
+
+
+:::{.double-v-space}
+:::
+
+Vi använder `json.load()` för att läsa från fil:
+```python
+with open('cars.json', 'r') as f:
+    loaded_cars_dict = json.load(f)
+```
+
+## Konvertera tillbaka till objekt
+
+:::{.v-space}
+:::
+Konvertera `dict` tillbaka till `Car`-objekt.
+
+```python
+loaded_cars = [Car(**car_dict) for car_dict in loaded_cars_dict]
+```
+
+:::{.double-v-space}
+:::
+
+Nu innehåller listan de båda bilarna; t ex det första objektets bilmärke är
+```python
+loaded_cars[0].brand # Volvo
+```
+
+## Sammanfattning
+
+* Instanser av egendefinierade datatyper kan lagras på fil
+* Ett vanligt format är `JSON`; filen är läsbar och förståelig
+för människor
+* För att lagra instansen som `JSON` måste den omvandlas till en `dict`
+(*dictionary*) i Python, som lagrar datan i samma format
+* För att skriva till filen används metoden `json.dump()`
+* För att läsa från filen används metoden `json.load()`
+* Efter inläsning kan datan lagras i en lista i programmet

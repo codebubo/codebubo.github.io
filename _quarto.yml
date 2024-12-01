@@ -1,0 +1,79 @@
+project:
+  type: website
+  preview:
+    port: 4200
+    browser: false
+
+website:
+  google-analytics: "G-FFXVNM3K2N"
+  title: "CodeBubo"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+    background: secondary
+  search:
+    location: navbar
+    type: overlay
+
+  sidebar:
+    collapse-level: 1
+    style: "docked"
+    contents:
+      - text: "Programmeringsrelaterat"
+      - text: "---"
+      - section: "Programmering 1"
+        contents:
+          - pr1/python/cheat_sheet_python.qmd
+          - section: "Presentationer, Python"
+            contents:
+              - pr1/python/intro/pres-version-installerad-python/index.qmd
+              - pr1/python/intro/pres-version-online-python/index.qmd
+              - pr1/python/villkor/presentation/index.qmd
+              - pr1/python/while-loopar/presentation/index.qmd
+              - pr1/python/for-loopar/presentation/index.qmd
+              - pr1/python/funktioner/presentation/index.qmd
+              - pr1/python/listor/presentation/index.qmd
+              - pr1/python/strangar/presentation/index.qmd
+              - pr1/python/egna-datatyper/presentation/index.qmd
+              - pr1/python/spara-data-pa-fil/presentation/index.qmd
+              - pr1/python/klasser-och-metoder/presentation/index.qmd
+          - section: "Uppgifter, Python"
+            contents:
+              - pr1/python/uppgifter/utskrift-och-villkor/index.qmd
+              - pr1/python/uppgifter/loopar/index.qmd
+              - pr1/python/uppgifter/funktioner/index.qmd
+              - pr1/python/uppgifter/listor/index.qmd
+              - pr1/python/uppgifter/strangar/index.qmd
+              - pr1/python/uppgifter/egna-datatyper/index.qmd
+              - pr1/python/uppgifter/binarsokning/index.qmd
+              - pr1/python/uppgifter/sortering/index.qmd
+              - pr1/python/uppgifter/bilregister/index.qmd
+              - pr1/python/uppgifter/klasser-och-metoder/index.qmd
+      - section: "Programmering i matematik"
+        contents:
+          - section: "MatSpec"
+            contents:
+              - section: "Teori och övningar"
+                contents:
+                  - ma/ma-spec/programmering/teori-och-ovningar/octave-som-kalkylator/index.qmd
+                  - ma/ma-spec/programmering/teori-och-ovningar/funktioner-villkor-och-loopar/index.qmd
+                  - ma/ma-spec/programmering/teori-och-ovningar/lin-ekvationssystem-med-octave/index.qmd
+      - section: Matematikrelaterat
+      - text: "---"
+      - section: "Matematik 5"
+        contents:
+          - ma/ma-5/kombinatorik/index.qmd
+      - section: "Matematik specialisering"
+
+        contents:
+          - ma/ma-spec/ovningar/matrisinvertering/index.qmd
+          - ma/ma-spec/komp-mat/determinant/index.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    backgroundcolor: floralwhite
+    toc: true

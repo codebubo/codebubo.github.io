@@ -1,0 +1,200 @@
+---
+title: While-loopar i Python
+from: markdown+emoji
+title-slide-attributes:
+  data-background-image: https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/while-loopar/peacock-1302721_1280.png
+  data-background-opacity: "1"
+  data-background-color: "black"
+author: "Nikodemus Karlsson"
+format:
+  revealjs:
+    mermaid: 
+      theme: dark
+    theme: dark
+    transition: slide
+    background-transition: slide
+    slide-number: true
+    controls: true
+    controls-layout: edges
+    date-format: "DD MMM YYYY"
+    css: style.css
+execute: 
+  echo: false
+---
+
+## Dagens mål
+
+* Att känna till innebörden av en loopstruktur.
+* Att skriva enkla program som innehåller en eller flera `while`-loopar.
+* Att kunna använda styrsatserna `break` och `continue`.
+* På högre nivå: Att skriva program som innehåller nästlade loopar.
+
+## Varför loopar?
+
+:::{.blue-bg-small-padding }
+Loopar används när en del i ett program ska upprepas ett bestämt eller obestämt
+antal gånger. Det kan t ex vara ett gissningsspel: Så länge som spelaren gissar
+fel ska det finnas möjlighet att gissa igen.
+
+Vi vet inte hur många gissningar som behövs, men det ska finnas ett **villkor**
+som anger när loopen ska avslutas. Programmet kan även hålla koll på hur många
+gissningar som behövdes.
+:::
+
+## Enklast möjliga while-loop
+
+```{mermaid}
+flowchart LR
+    A((Start)) --> B("Tilldela\ni = 1")
+    B --> C{"Är i ≤ 5?"}
+    C -->|Ja| D[/Skriv ut i/]
+    D --> G(Öka i med 1)
+    G --> C 
+    C -->|Nej| F((Avsluta))
+```
+
+:::{.v-space}
+:::
+
+```{python}
+# | echo: true
+i = 1
+while i <= 5:
+    print(i, end=" ")
+    i += 1  # i ökar med 1
+print(f"\nProgrammet avslutas eftersom i = {i}")
+```
+
+:::{.v-space}
+:::
+Villkoret är på rad 2. Allt som omfattas av loopen är
+*radindraget*.
+
+## Beräkning av summa -- ver. 1
+
+```python
+# Detta program beräknar summan av ett antal tal
+avsluta = False
+summa = 0
+while not avsluta:
+    tal = int(input("Ange ett valfritt tal, noll avslutar -> "))
+    if tal == 0:
+        avsluta = True
+    summa += tal
+print(f"Summan är {summa}")
+
+```
+
+:::{.fragment .fade-right}
+
+::::{.v-space}
+::::
+
+Ett problem här är även det sista inmatade talet ingår i summan,
+ett annat villkor för avslut skulle ge en felaktig summa.
+:::
+
+## Beräkning av summa -- ver. 2
+
+```python
+# Detta program beräknar summan av ett antal tal
+summa = 0
+while True:
+    tal = int(input("Ange ett valfritt tal, noll avslutar -> "))
+    if tal == 0:
+        break
+    summa += tal
+print(f"Summan är {summa}")
+```
+
+:::{.fragment .fade-right}
+
+::::{.v-space}
+::::
+
+Här används styrsatsen `break` för att avbryta loopen då
+ett villkor uppfylls. Det gör att det sista talet inte kommer att ingå
+i summan.
+
+Själva loopvillkoret är **alltid** sant, det är innebörden av <br>`while True` på rad 3.
+:::
+
+## Summan av positiva tal
+
+```python
+# Detta program beräknar summan av ett antal positiva tal
+summa = 0
+while True:
+    tal = int(input("Ange ett valfritt tal, noll avslutar -> "))
+    if tal == 0:
+        break
+    if tal < 0:
+        continue
+    summa += tal
+print(f"Summan av de inmatade positiva talen är {summa}")
+```
+
+:::{.fragment .fade-right}
+
+::::{.v-space}
+::::
+
+Styrsatsen `continue` används för att hoppa över resten av loopen och börja
+om från dess början.
+:::
+
+## Nästlad loop -- flödesschema
+
+:::{.double-v-space}
+```{mermaid}
+flowchart LR
+    A((Start)) --> B("Ansätt i = 0")
+    B --> C{"i ≤  3?"}
+    C --> |"Ja"| D("Ansätt j = 0")
+    D --> E{"j ≤  3?"}
+    E -->  |"Ja"| F[/Skriv ut i och j/]
+    F --> G(Öka j med 1)
+    G --> E
+    E --> |"Nej"|H("Öka i med 1")
+    H --> C
+    C --> |"Nej"|I(("Avsluta"))
+```
+:::
+
+:::{.fragment .fade-right}
+
+::::{.v-space}
+::::
+
+Här finns en "loop i en loop". För varje varv som den yttre loopen gör så kommer
+den inre loopen att gå ett givet antal varv.
+:::
+
+## Nästlad loop -- kodexempel
+
+```python
+# Detta program demonstrerar nästlade loopar
+i = 0
+while i < 3: # Start yttre loop
+    j = 0
+    while j < 3: # Start inre loop
+        print(f"i = {i}, j = {j}")
+        j += 1
+    i += 1
+print("Programmet avslutas")
+```
+
+::::{.v-space}
+::::
+
+Denna kod motsvarar det ritade flödesschemat på förra slajden.
+
+## Sammanfattning
+
+* En loop är en kontrollstruktur som upprepar kod.
+* Det finns flera typer av loopar, idag har vi gått igenom `while`-loopen.
+* `while`-loopen löper så länge ett villkor är uppfyllt...
+* ...eller tills den stöter på en `break`-sats.
+* Styrsatsen `continue` gör att koden går tillbaka till loopens start.
+* I nästlade loopar går koden igenom alla kombinationer av värden i den yttre
+och inre loopen.

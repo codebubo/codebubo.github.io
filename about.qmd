@@ -1,0 +1,25 @@
+---
+title: "About"
+---
+
+## Vem skriver på denna sajt?
+
+Jag heter Nikodemus Karlsson, och är verksam gymnasielärare i matematik, fysik
+och programmering. Syftet med sajten är att samla mycket av det
+undervisningsmaterial som jag använder.
+
+## Verktyg som används för uppbyggnad
+
+Sajten är byggd med publiceringssystemet [Quarto](https://quarto.org/)
+och publicerad på [GitHub Pages](https://pages.github.com/).
+Det jag framförallt gillar med Quarto är att man skriver i Markdown och att det
+är enkelt att integrera text, bilder, kod samt matematiska formler på såväl
+vanliga webbsidor och i presentationer. Quarto är byggd på öppen källkod och
+finns såväl till Windows, Linux och macOS.
+
+## Användning av materialet
+
+Den som vill får gärna använda, kopiera och sprida material från sajten.
+Källkod till sidorna och presentationerna finns
+[i denna repo på GitHub](https://github.com/codebubo/codebubo.github.io).
+

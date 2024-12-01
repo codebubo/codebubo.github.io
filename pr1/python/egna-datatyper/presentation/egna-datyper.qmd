@@ -1,0 +1,170 @@
+---
+title: Egna datatyper i Python
+from: markdown+emoji
+title-slide-attributes:
+  data-background-image: https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/for-loopar/frame-3083868_1280.png
+  data-background-opacity: "1"
+  data-background-color: "black"
+author: "Nikodemus Karlsson"
+format:
+  revealjs:
+    mermaid: 
+      theme: dark
+    theme: dark
+    transition: slide
+    background-transition: slide
+    slide-number: true
+    controls: true
+    controls-layout: edges
+    date-format: "DD MMM YYYY"
+    css: style.css
+execute: 
+  echo: false
+---
+
+## Dagens mål
+
+* Att kunna skapa egna datatyper
+* Att känna till skillnaden mellan datatyp och objekt
+* Att läsa och tilldela datatypen attribut
+* Att kunna skicka objekt för vidare process i funktioner
+
+## Grundläggande datatyper
+
+:::{.v-space}
+:::
+
+:::{.blue-bg-small-padding }
+Vi har tidigare använt datatyperna heltal, flyttal, listor mm.
+
+Dessa deklareras t ex som
+
+`my_int = 5 # Heltal`
+
+`my_str = "Hello, world" # sträng`
+
+I programmering behövs ofta variabler som representerar något ''riktigt'',
+t ex en bil, en person eller en avatar som har olika egenskaper.
+:::
+
+## Deklarera en egen datatyp
+
+:::{.double-v-space}
+:::
+
+Vi kan deklarera en variabeltyp `Car` på det här sättet:
+
+```{python}
+# | echo: true
+class Car:
+    brand = ""  # Tom sträng för bilmärket, så länge
+    color = ""  # Tom sträng för färgen, så länge
+    model_year = 0  # Aktuell årsmodell sätts senare
+```
+
+:::{.v-space}
+:::
+
+Nu har vi tillgång till datatypen `Car`, och kan skapa variabler av
+denna typ. I var och en av dessa variabler ingår de olika *attributen*
+(`brand`, `color` och `model_year`).
+
+## Skapa objekt
+
+När en variabel skapas av en viss datatyp kallas det för att ett *objekt*, 
+eller en *instans* av denna typ skapas.
+
+```{python}
+# | echo: true
+# Här skaps objekten a_car och b_car
+a_car = Car()
+b_car = Car()
+```
+
+Nu kan vi sätta respektive objekts attribut.
+
+```{python}
+#|  echo: true
+a_car.brand = "Volvo"
+a_car.color = "Blue"
+a_car.model_year = 2005
+b_car.brand = "Tesla"
+b_car.color = "White"
+b_car.model_year = 2020
+```
+
+Nu innehåller `a_car` och `b_car` sin aktuella information.
+
+
+
+## Använda attribut
+
+Vi använder samma syntax för att extrahera information från ett objekt som
+vi gjorde när vi satte det.
+
+```{python}
+#| echo: true
+print(f"a_car årsmodell: {a_car.model_year}")
+print(f"a_car märke: {a_car.brand}")
+print(f"b_car årsmodell: {b_car.model_year}")
+print("a_car är älde än b_car") if b_car.model_year > a_car.model_year else print("a_car är äldre än b_car")
+```
+
+På det här sättet kan många variabler skapas av en och samma typ, som alla
+innehåller sin unika information. Det är användbart i t ex register och spel.
+
+## Exempel: en spelares position
+
+```{python}
+#| echo: true
+import random as rand
+class Player():
+  position_x = 0
+  position_y = 0
+
+def set_position(current_player): # En funktion som slumpar fram ett läge
+  x = rand.randint(0, 10)
+  y = rand.randint(0, 10)
+  current_player.position_x = x   # Sätt den aktuella instansens läge
+  current_player.position_y = y
+
+player_1 = Player() # Skapar två instanser av Player
+player_2 = Player()
+
+set_position(player_1) # Sätter ett slumpvis valt läge för player_1
+set_position(player_2) # Sätter ett slumpvis valt läge för player_2
+print(f"Player 1 at ({player_1.position_x}, {player_1.position_y})")
+print(f"Player 2 at ({player_2.position_x}, {player_2.position_y})")
+
+```
+
+## Referenser
+
+Vi tittar på funktionen `set_position(player)` igen
+
+```{python}
+#| echo: true
+def set_position(current_player): # En funktion som slumpar fram ett läge
+  x = rand.randint(0, 10)
+  y = rand.randint(0, 10)
+  player.position_x = x   # Sätt den aktuella instansens läge
+  player.position_y = y
+```
+
+När `current_player` är av en egendefinierad datatyp, som t ex `Player`,
+så opererar funktionen på just detta objekt. Man säger att `current_player` är
+en *referens*, ett alias, till det objekt som funktionen anropas med.
+
+När en funktion tar emot t ex ett tal så kommer istället en *kopia* av den
+variabeln att skapas i funktionen, och det ursprungliga värdet ändras inte.
+
+## Sammanfattning
+
+* Egendefinierade datatyper deklareras med hjälp av nyckelordet `class`
+* Variablerna i klassen kallas för attribut
+* En instans av en sådan datyp skapas enligt syntaxen `my_var = My_type()`
+* Attribut kan kommas åt med punkt-operatorn, enligt syntaxen
+`my_var.x`
+* När en funktion tar emot en egendefinierad datatyp så opererar den på
+originalobjektet
+

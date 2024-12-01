@@ -1,0 +1,242 @@
+---
+title: "Uppgifter: Sortering"
+format:
+  html:
+    fontsize: 1em
+    css: style.css
+---
+
+# En sorteringsalgoritm i Python
+
+## Exempel och uppgifter
+
+### Beskrivning av en algoritm
+
+Sorteringsalgoritm börjar med att att jämföra det **första** elementets storlek
+i tur och ordning med alla andra element i listan. Så fort som jämförelsen ger
+att något element är mindre än det första, så byts plats på dessa.
+
+Därefter så fortsätter sorteringen genom att ha det **andra** elementet som
+referens, och jämföra det med vart och ett av de element som har högre index.
+När ett element som är mindre än referenselementets position så byter dessa
+element plats.
+
+På så sätt fortskrider sorteringen tills alla element, utom det sista, har
+varit referenselement.
+
+Här är en illustration över processen när listan 
+
+Steg 1: [**7**, 5, 4, 6] -> [**5**, 7, 4, 6] ->
+[**4**, 7, 5, 6] (Talen 7 och 5 byter plats med varandra, följt av att talen
+5 och 4 byter plats med varandra)
+
+Steg 2: [4, **7**, 5, 6] -> [4, **5**, 7, 6] ) (Talen 7 och 5 byter plats
+med varandra)
+
+Steg 3: [4, 5, **7**, 6] -> [4, 5, **6**, 7] (Slutligen byter talen 6 och 7
+plats med varandra, det sista talet måste nu vara det största)
+
+Sorterad lista: [4, 5, 6, 7]
+
+### Uppgift 1
+
+Som vi såg i beskrivningen av algoritm så bygger sorteringen på att byta plats
+på elementen parvis. Skriv en funktion `swap(lst, i, j)`, där `lst` är en
+lista och `i` och `j` är de index vars tal ska byta plats. Eftersom `lst` är
+en lista, som funktionen hanterar som en *referens* så behöver inget returneras,
+listan i funktionen är samma lista som den utanför funktionen.
+
+**Körningsexempel**
+```{python}
+# | echo: false
+def swap(lst, i, j):
+    tmp = lst[i]
+    lst[i] = lst[j]
+    lst[j] = tmp
+```
+
+```{python}
+# | echo: true
+lst = [7, 5, 4, 6]
+print(f"Listan före platsbytet: {lst}")
+swap(lst, 1, 2)
+print(f"Listan efter platsbytet: {lst}")
+```
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 1"}
+
+Nedanstående lösning är en generell lösningsmtod, själva metoden fungerar i
+många programeringsspråk:
+```python
+def swap(lst, i, j):
+    tmp = lst[i]
+    lst[i] = lst[j]
+    lst[j] = tmp
+```
+Nedanstående lösning är en lösning i lösning som fungerar i Python, men metoden
+fungerar i allmänhet inte i övriga programmeringsspråk.
+
+```python
+def swap(lst, i, j):
+    lst[i], lst[j] = lst[j], lst[i]
+```
+
+Det som är typiskt för Python, och även många andra programspråk, är att listor
+skickas som *referens* till funktioner. Det betyder att funktionen verkar på
+den lista som faktiskt skickades till den, inte på en kopia.
+
+Vidare skickas även alla egendefinierade datatyper som referens till funktioner,
+däremot inte andra variabeltyper (som t ex `int`, `str` m.fl.); där måste ett
+värde returneras för att den del av programmet som anropade funktionen ska få
+del av resultatet.
+:::
+
+### Uppgift 2
+
+Skriv nu en funktion `sortera` som implementerar algoritm som är beskriven ovan.
+Denna funktion kommer att behöva anropa funktionen `swap`.
+
+Av samma orsak som funktionen `swap` inte returnerade något, ska heller inte
+`sortera` returnera något.
+
+**Körningsexempel**
+```{python}
+# | echo: false
+def sortera(lst):
+    for i in range(len(lst)):
+        for j in range(i + 1, len(lst)):
+            if lst[i] > lst[j]:
+                swap(lst, i, j)    
+```
+
+```{python}
+# | echo: true
+lst = [7, 5, 4, 6]
+print(f"Listan före sortering: {lst}")
+sortera(lst)
+print(f"Listan efter sortering: {lst}")
+```
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 2"}
+```python
+def sortera(lst):
+    for i in range(len(lst)):
+        for j in range(i+1, len(lst)):
+            if lst[i] > lst[j]:
+                swap(lst, i, j)
+```
+:::
+
+### Uppgift 3
+
+Emellanåt kan behövas en funktion som kontrollerar om en lista är sorterad.
+Implementera en sådan funktion `is_sorted`; funktionen ska returnera det
+booleska värdet `True` om listan är sorterad och `False` om den inte är det.
+
+**Körningsexempel**
+```{python}
+#| echo: false
+def is_sorted(lst):
+    for i in range(len(lst) - 1):
+        if lst[i] > lst[i + 1]:
+            return False
+    return True
+```
+
+
+
+```{python}
+# | echo: true
+lst = [7, 4, 5, 6]
+print(f"Är listan sorterad? {is_sorted(lst)}")
+sortera(lst)
+print(f"Är listan sorterad nu då? {is_sorted(lst)}")
+```
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 3"}
+```python
+def is_sorted(lst):
+    for i in range(len(lst) - 1):
+        if lst[i] > lst[i + 1]:
+            return False
+    return True
+```
+
+Kommentar: Det går direkt att jämföra listor med avseende på likhet enligt
+`list_1 == list_2`; det ger resultatet `True` om listorna är lika och annars
+`False`. Detta fungerar i allmänhet inte i andra programmeringsspråk, men
+ovanstående lösningsförslag gör det.
+:::
+
+### Uppgift 4
+
+Det går att mäta tiden det tar för en funktion att köra. Nedanstående exempel
+visar hur det kan göras (här mäts tiden för en loop som snurrar 1000 varv)
+
+**Exempel tidsmätning**
+```{python}
+# | echo: true
+import time
+
+start_time = time.perf_counter()
+n = 0
+for i in range(1000):
+    n += 1
+end_time = time.perf_counter()
+
+print(f"Antalet sekunder som krävdes för loopen: {end_time - start_time}")
+```
+
+Skapa en lista `lst` och lägg in ett antal heltal mellan $1$ och $10\,000$ i
+slumpvis ordning. Mät tiden det tar för listan att sorteras med hjälp av din
+funktion `sortera` ovan om antalet element är
+
+a. $100$
+b. $1\,000$
+c. $10\,000$
+d. $100\,000$
+
+Gör samma sak med Pythons metod `sort` för att få en jämförelse av
+effektiviteten mellan vår algoritm och Pythons algoritm.
+
+**Exempel på användning av `sort`**
+
+```{python}
+# | echo: true
+lst = [7, 5, 4, 6]
+print(lst)
+lst.sort()  # Pythons inbyggda sorteringsmetod tillämpas
+print(lst)
+```
+
+### Uppgift 5
+
+Skriv en funktion `custom_sort` som sorterar listan så att de jämna talen
+sorteras i storleksordning före de uddas dito sortering. Funktionen ska inte
+använda någon av Pythons inbyggda list-funktioner, utan enbart bygga på loopar
+och platsbyten som är illustrerat i tidigare uppgifter.
+
+```{python}
+#| echo: false
+def custom_sort(lst):
+    for i in range(len(lst)):
+        for j in range(i+1, len(lst)):
+            if lst[i] % 2 == 1 and lst[j] % 2 == 0:
+                swap(lst, i, j)
+    for i in range(len(lst)):
+        for j in range(i+1, len(lst)):
+            if lst[i] % 2 == 0 and lst[j] % 2 == 0 and lst[j] < lst[i]:
+                swap(lst, i, j)
+    for i in range(len(lst)):
+        for j in range(i+1, len(lst)):
+            if lst[i] % 2 == 1 and lst[j] % 2 == 1 and lst[j] < lst[i]:
+                swap(lst, i, j)
+```
+
+Körningsexempel:
+```{python}
+#| echo: true
+lst = [-5, 2, -8, 7, 9, 6]
+custom_sort(lst)
+print(lst) # Ska visa [-8, 2, 6, -5, 7, 9]
+```

@@ -1,0 +1,398 @@
+---
+title: "Kombinatorik: Extra övningar"
+from: markdown+emoji
+format:
+  html:
+    fontsize: 1em
+    css: style.css
+execute: 
+  echo: false
+---
+
+## Några kompletterande övningar
+
+### Kodlåset
+
+Ett kodlås har en kod bestående av fyra siffror, där varje siffra
+kan väljas bland de tio siffrorna 0 -- 9.
+
+Hur många olika koder finns det om
+
+a. det inte finns någon begränsning i hur siffrorna i koden får väljas?
+b. ingen siffra får upprepas?
+c. ingen siffra får får upprepas, och den tredje siffran är en $8$?
+d. ingen siffra får upprepas, och koden måste vara i stigande nummerföljd?
+e. ingen siffra får upprepas, och såväl siffran $2$ som siffran $5$ måste ingå?
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag"}
+
+a. Respektive siffra ($0$ -- $9$) kan väljas på varje plats i koden.
+Det gör att det totala antalet koder blir $10\cdot 10\cdot 10\cdot 10=10^4$
+
+b. Den första siffran kan väljas på tio sätt, den andra på nio sätt, den
+tredje på åtta sätt och den fjärde på sju sätt. Det ger antalet koder
+till $P(10,4)=10\cdot 9\cdot 8\cdot 7=5040$.
+
+c. Den första siffran kan väljas på nio sätt, den andra på åtta sätt, den
+tredje på ett sätt och den fjärde på sju sätt. Det ger antalet koder
+till $P(10,4)=9\cdot 8\cdot 1\cdot 7=504$.
+
+d. Här ska vi räkna antalet *oordnade* urval på fyra siffror av tio. Eftersom
+ingen siffra får upprepas, och eftersom det därmed enbart finns en enda
+godtagbar nummerföljd per urval, så kommer antalet oordnade urval att ge det
+sökta antalet koder. Det blir $C(10,4)=210$ st.
+
+e. Här väljer vi först de två siffror som ska ingå (utöver siffrorna 2 och 5).
+Det kan göras på $C(8,2)=28$ olika sätt. Därefter ska de båda positionerna på
+dessa siffror väljas, det kan göras på $C(4,2)=6$ sätt. Därefter ska
+*placeringen* av dessa siffror i de valda lägena bestämmas, det kan ske på
+$2!=2$ sätt. Slutligen så ska placeringen i de kvarvarande lägena väljas för
+siffrorna $2$ och $5$, det kan också göras på $2!=2$ sätt.
+Multiplikationsprincipen ger nu att det totala antalet koder blir
+$28\cdot 6\cdot 2\cdot 2=672$ stycken.
+
+:::
+
+---
+
+### Kortleken
+
+En kortlek består av 52 kort. På hur många sätt kan en blandning falla ut om
+
+a. alla blandningar är tillåtna?
+b. enbart de blandningar där :clubs:3 ligger direkt ovanpå :diamonds:4 räknas?
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag"}
+a. Eftersom alla kort är olika gäller att det översta kortet i en blandad
+lek kan vara $1$ av $52$, kortet under detta $1$ av $51$ osv. Det innebär att
+antalet blandningar kan vara $52\cdot 51\cdot 50\cdot\ldots\cdot 1=52!$.
+Multiplikationsprincipen ska tillämpas eftersom antalet möjligheter på en given
+plats i leken inte påverkas av vilka kort som ligger på andra platser.
+
+b. Här kan man tänka att det är $51$ kort som ska blandas, t ex så tar vi bort
+:clubs:3 ur leken. För varje utfall så tänker vi oss vidare att vi "manuellt"
+lägger in detta :clubs:3 ovanpå :diamonds:4. \newline\
+Antalet sådana utfall blir alltså $51!$.
+
+:::
+
+---
+
+### Bokstavsföljden
+
+En sträng består av bokstäverna `a, a, b, b, c, c, d, d`.
+Hur många olika "ord" kan bildas om
+
+a. bokstäverna i strängen får blandas utan någon begränsning?
+b. inget `a` får stå till höger om ett `c`?
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag"}
+
+a. Vi tänker oss till en början att vi har strängen med två olika `a`, `b`
+och `c`; nämligen `a1, a2, b1, b2, c1, c2`. Dessa kommer förstås att kunna
+permuteras på $6!$ olika sätt. Men nu låter vi `a1` och `a2` förenas till två
+identiska `a`:n, varför vi får strängen `a, a, b1, b2, c1, c2`. Eftersom `a`
+kan permuteras på $2!$ olika sätt så blir antalet permutationer $6!/2!$ (där
+det alltså inte spelar någon roll vilket `a` som står på respektive plats). Vi
+fortsätter resonemanget på samma sätt med `b`, `c` och `d`, och landar i att
+antalet permutationer blir $8!/(2!\cdot 2!\cdot 2!\cdot 2!)=2\,520$.
+
+b. Här får vi tänka på ett annat sätt. Vi börjar med att välja lägena för
+respektive bokstav `b, b, d, d`. Därefter väljer vi platserna för respektive 
+bokstav `a, a, c, c` "manuellt" så att ordningen uppfylls; det kan ses som att
+`a, a, c, c` är identiska bokstäver som ska placeras. Antalet sätt blir då
+$8!/(2!\cdot 2!\cdot 4!)=420$. 
+
+:::
+
+---
+
+### Basketbollarna
+
+Tio basketbollar ska placeras i fyra burar. På hur många sätt kan det ske
+om
+
+a. ingen begränsning av antalet bollar görs per bur (dvs en bur kan vara
+alltifrån tom till att den innehåller alla tio bollar)?
+
+b. varje bur måste innehålla minst en boll?
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag"}
+
+a. Här kan metoden "Stars and Bars" tillämpas, där bollarna är "stars"
+och burarna är de mellanrum som bildas mellan "bars". Ett exempel på utfall
+är `**|****||****`, vilket visar två bollar i bur $1$, fyra bollar i bur $2$,
+inga bollar i bur $3$ och fyra bollar i bur $4$. Vi har totalt tretton element
+(tio "stars" och tre "bars") och antalet bollar i respektive mellanrum kan
+förändras genom att vi flyttar på "bars". Eftersom det är tre "bars" (vilket
+ju ger fyra burar) blir antalet sätt
+$$
+\binom{10+4-1}{4-1}=\binom{13}{3}=286
+$$
+
+b. Här måste vi redan från början tänka oss att en boll ligger i respektive bur.
+Då blir det sex bollar (eller "stars") kvar att fördela på de fyra burarna.
+Analogt med a-uppgiften så blir antalet sätt
+
+$$
+\binom{6+4-1}{4-1}=\binom{9}{3}=84
+$$
+
+:::
+
+---
+
+### Ekvationen
+
+Hur många lösningar har ekvationen $x_1+x_2+x_3+x_4=10$ om
+
+a. alla ingående termer är icke-negativa heltal?
+b. var och en av de ingående termer är ett heltal som är minst 1?
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag"}
+
+a. Denna övnings lösning är exakt densamma som övningen med basketbollarna
+som skulle placeras i burarna, där varje bur får innehålla hur få eller hur
+många bollar som helst av det maximala antalet $10$.
+Varje *värde* på respektive $x$ är en "star". Det är *fyra stycken* $x$,
+vilket ger tre "bars" Lösningen blir
+$$
+\binom{10+4-1}{4-1}=\binom{13}{3}=286
+$$
+
+b. Denna övnings lösning är exakt densamma som övningen med basketbollarna
+som skulle placeras i burarna, där varje bur ska innehålla minst en boll.
+Lösningen blir
+$$
+\binom{6+4-1}{4-1}=\binom{9}{3}=84
+$$
+
+:::
+
+---
+
+### Schackproblemet
+
+Hur många torn kan maximalt placeras ut på ett schackbräde ($8\times 8$ rutor)
+om inget av tornen ska kunna "äta" något annat torn? Motivera svaret med
+lådprincipen.
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag"}
+
+Ett torn kan enbart gå i en enda rad och en enda kolumn. Det finns åtta rader
+och åtta kolumner på schackbrädet. Om det är fler än åtta torn så kommer minst
+en rad eller kolumn att innehålla fler än ett torn. (Tornen ska placeras ut
+diagonalt över brädet; det blir åtta stycken där inget av dem kan "äta" något
+annat torn.)
+
+:::
+
+---
+
+### YATZY
+
+Ett YATZY-kast är när fem stycken identiska, sexsidiga, tärningar slås.
+Hur många utfall finns det på ett sådant kast? Observera att ordningen saknar
+betydelse, t ex räknas utfallet `[1, 1, 3, 5, 6]` vara desamma som
+utfallet `[1, 3, 1, 6, 5]` om tärningarnas ordning räknas som
+`[T1, T2, T3, T4, T5]`.
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag"}
+
+Detta är, liksom problemet med basketbollarna ovan, ett problem där metoden
+"Stars and Bars" kan tillämpas. Vi tänker oss fem tärningar ("stars") och
+sex utfall (mellanrummen mellan "bars"), där varje tärnings visade tal ska
+placeras på ett av utfallen (ett utfall är t ex `**|*||*||*`, som
+representerar två ettor, en tvåa, en fyra och en sexa). Antalet utfall på ett
+kast blir
+$$
+\binom{5+6-1}{6-1}=252
+$$
+
+:::
+
+---
+
+### Binomialkoefficienten
+
+Ett binomuttryck är $(2x-3y)^{25}$. Beräkna koefficienten som faktorn som
+innehåller $x^{12}y^{13}$ multipliceras med.
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag"}
+
+Binomialsatsen ger direkt koefficienten
+$$
+\binom{25}{12}\cdot 2^{12}\cdot (-3)^{13}=-33\, 959\, 763\, 545\, 702\, 400
+$$
+
+:::
+
+---
+
+### Basketbollkasten
+
+Julias träffsäkerhet i ett kast mot mål i basket är $0.7$. Beräkna sannolikheten
+att hon får
+
+a. minst en träff när hon kastar tio gånger.
+b. precis fem träffar när hon kastar tio gånger.
+c. minst fem träffar när hon kastar tio gånger.
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag"}
+a. Minst en träff på tio kast är komplementhändelsen till *ingen träff* på tio
+kast. Detta ger sannolikheten för minst en träff till $1-0.3^{10}=99.999$ %.
+
+b. Antalet möjliga placeringar i följden om tio kast, som de fem träffarna kan
+"väljas ut" på, är $\binom{10}{5}$; resterande antal placeringar är missarna.
+Det ger sannolikheten för precis fem träffar till
+$$
+\binom{10}{5}0.7^5\cdot 0.3^5\approx 10.3\hspace{1mm}\mathrm{\%}
+$$
+
+c. Minst fem träffar ges av summan
+
+$$
+\begin{matrix*}[l]
+\hspace{3mm}
+\binom{10}{5}0.7^5\cdot 0.3^5 +
+\binom{10}{6}0.7^6\cdot 0.3^4 +
+\binom{10}{7}0.7^7\cdot 0.3^3\\[2mm] +
+\binom{10}{8}0.7^8\cdot 0.3^2 +
+\binom{10}{9}0.7^9\cdot 0.3^1\\[2mm] +
+\binom{10}{10}0.7^{10}\cdot 0.3^0
+\approx 95.3\hspace{1mm}\mathrm{\%}
+\end{matrix*}
+$$
+
+
+:::
+
+---
+
+### Födelsedagarna
+
+I en grupp som består av $23$ personer så är sannolikheten $50.7$ % att minst
+två personer har samma födelsedag på året. Visa detta.
+
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag"}
+
+Man kan tänka sig att personerna i gruppen är listade enligt
+`[P1, P2, P3,..., P23]`. Sannolikheten att `P2` *inte* har samma födelsedag
+som `P1` är $364/365$. Sannolikheten att `P3` *inte* har samma födelsedag som
+`P1` eller `P2` är $363/365$ osv. Slutligen erhålls att sannolikheten för att
+alla $23$ personer har *olika* födelsedagar är
+
+$$
+\frac{364}{365}\cdot\frac{363}{365}\cdot\frac{362}{365}\cdot
+\ldots\cdot\frac{343}{365}=\left(\frac{1}{365}\right)^{23}\cdot(365\cdot 364
+\cdot363\ldots\cdot343)\approx 0.493
+$$
+
+Sannolikheten för komplementhändelsen till att alla födelsedagar är olika,
+vilken är att minst en person har gemensam födelsedag med någon annan i
+gruppen, ges av beräkningen
+$1-0.493=0.507$, dvs $50.7$ %.
+
+Orsaken att sannolikheten blir så stor för en så förhållandevis liten grupp är
+att antalet par i gruppen blir stort. Vi gör ingen förutsägelse om *vilken*
+födelsedag som kan vara gemensam, enbart *att* någon födelsedag är gemensam med
+en viss sannolikhet.
+
+:::
+
+### Grupperingarna
+
+Sex personer, `a`, `b`, `c`, `d`, `e` och `f` ska bilda grupper om två och två.
+På hur många sätt kan detta ske om
+
+a. Person `a`, `b` och `c` är gruppledare för varsina grupper?
+b. Person `a` är gruppledare för en grupp, och de övriga grupperna saknar
+en given gruppledare?
+c. Ingen grupp har någon given gruppledare?
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag"}
+
+
+**a-uppgiften**
+
+Följande illustration ger en idé om hur grupperna formeras:
+
+```
+Grupp 1    Grupp 2    Grupp 3
+ ---        ---        --- 
+| a |      | b |      | c |
+|   |      |   |      |   |
+ ---        ---        --- 
+Valbara personer till grupperna:
+d, e och f
+```
+
+Grupp 1 kan välja en av tre personer, Grupp 2 en av två och till Grupp 3 kommer
+en enda person att kunna väljas  på precis ett sätt. Eftersom `a`, `b` och
+`c` är givna så kommer det inte att kunna bli några dubletter av grupper (som
+det blir i nästa deluppgift). Antalet grupper blir, enligt
+multiplikationsprincipen, $3\cdot 2\cdot 1 = 6$.
+
+**b-uppgiften**
+
+Följande illustration visar hur grupperna formeras. Observera att vi från
+början har två "tomma grupper" dit personer ska väljas in.
+
+```
+Grupp 1    Grupp 2    Grupp 3
+ ---        ---        --- 
+| a |      |   |      |   |
+|   |      |   |      |   |
+ ---        ---        --- 
+Valbara personer till grupperna:
+b, c, d, e och f
+```
+
+Grupp 1 ska välja en person, medan Grupp 2 och Grupp 3 ska välja två personer.
+Om vi enbart tecknar antalet konstellationer med multiplikationsprincipen,
+
+$$
+\binom{5}{1}\binom{4}{2}\binom{2}{2}=30
+$$
+
+så kommer det att finnas fall där Grupp 2 och Grupp 3 i en konstellation
+är densamma som Grupp 3 och Grupp 2 i en annan konstellation. Detta beroende
+på att Grupp 2 och Grupp 3 inte innehåller något på förhand givet element.
+Därför måste vi dividera med antalet permutationer av dessa grupper, vilket är
+$2!$. 
+
+Vi får det korrekta antalet grupper till
+
+$$
+\frac{\binom{5}{1}\binom{4}{2}\binom{2}{2}}{2!}=15
+$$
+
+Vi behöver inte räkna den grupp med en given person först, ett annat sätt
+är att välja två personer av fem till Grupp 2 först, och därefter
+två personer av tre till Grupp 3. Sedan är Grupp 1 given, eftersom det enbart
+finns en person kvar att välja. Givetvis kan vi även välja \mbox{t ex} Grupp
+3 först, därefter Grupp 1 och sist Grupp 2.
+
+$$
+\frac{\binom{5}{2}\binom{3}{2}\binom{1}{1}}{2!}
+=\frac{\binom{5}{2}\binom{3}{1}\binom{2}{2}}{2!}=15
+$$
+
+**c-uppgiften**
+
+Här resonerar vi på precis samma sätt som i b-uppgiften, men nu ska till
+**varje** grupp ska väljas två personer. Eftersom ingen person är given på
+förhand till någon grupp så kommer det att bli multipler av konstellationerna.
+Detta kompenseras genom att dividera med antalet permutationer av alla grupper,
+vilket är $3!$.
+
+$$
+\frac{\binom{6}{2}\binom{4}{2}\binom{2}{2}}{3!}=15
+$$
+
+
+Lustigt nog blir det samma resultat som i b-uppgiften. Det beror på att när
+två grupper är valda så finns det enbart en möjlighet att välja den sista
+gruppen.
+:::

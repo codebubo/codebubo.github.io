@@ -1,0 +1,162 @@
+---
+title: "Matrisinvertering: Extra övningar"
+from: markdown+emoji
+format:
+  html:
+    fontsize: 1em
+    css: style.css
+execute: 
+  echo: false
+---
+
+## Några kompletterande övningar
+
+### Reducerad trappstegsform
+
+Radreducera matrisen
+$$
+\begin{bmatrix*}[r]
+  1 & 3 & 5 & 7 \\ 3 & 5 & 7 & 9 \\ 5 & 7 & 9 & 1
+\end{bmatrix*}
+$$
+
+till reducerad trappstegsform och markera pivotkolonnerna.
+
+
+:::{.callout-tip collapse="true" icon="false" title="Svar"}
+Den reducerade trappstegsformen är
+
+$$
+\begin{bmatrix*}[r]
+1 & 0 & -1 & 0 \\ 0 & 1 & 2 & 0 \\ 0 & 0 & 0 & 1
+\end{bmatrix*}
+$$
+
+:::
+
+### Ekvationssystemet
+
+Vi har ekvationssystemet
+$$
+\left\{
+\begin{matrix}
+ x &+& 2y &+& z &=& -1 \\
+2x &+& 6y &&    &=& -2 \\
+x &+&  6y &+& z &=& \phantom{-}3
+\end{matrix}
+\right .
+$$
+
+Bestäm lösningen till detta genom att teckna en koefficientmatris $A$, en
+lösningsvektor $\vec{v}$  och en vektor för högerledet, $\vec{b}$. Invertera
+$A$ och bestäm lösningsvektorn genom operationen $A^{-1}A\vec{v}=A^{-1}\vec{b}$.
+
+
+:::{.callout-tip collapse="true" icon="false" title="Svar"}
+$x=-4$, $y=1$ och $z=1$. Observera att det är övningen med matrisinvertering
+samt matrismultiplikation som är syftet, inte själva ekvationslösningen.
+:::
+
+### Kodningsövning: Determinanten
+
+Om vi har en $2\times 2$-matris $A$ enligt
+$$
+A=\begin{bmatrix}
+a_{11} & a_{12} \\ a_{21} & a_{22}
+\end{bmatrix}
+$$
+så gäller att determinanten, $\det A$, beräknas enligt
+$$
+\det A = a_{11}a_{22}-a_{12}a_{21}
+$$
+
+För en $3\times3$-matris gäller följande formel för determinanten:
+
+$$
+A=\begin{bmatrix}
+a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}
+\end{bmatrix}
+\Rightarrow\det A=
+a_{11}\det\begin{bmatrix}
+a_{22} & a_{23} \\ a_{32} & a_{33}
+\end{bmatrix}
+-
+a_{12}\det\begin{bmatrix}
+a_{21} & a_{23} \\ a_{31} & a_{33}
+\end{bmatrix}
++
+a_{13}\det\begin{bmatrix}
+a_{21} & a_{22} \\ a_{31} & a_{32}
+\end{bmatrix}
+$$
+En av de saker determinanten berättar för oss är om en matris är singulär (och
+därmed inte går att invertera); determinanten är för dessa matriser noll.
+
+Skapa en Pythonfunktion som tar en $3\times 3$-matris som argument och
+returnerar dess determinant. Matrisen kan implementeras som en 2D-lista;
+exempel på anrop till funktionen `det([[1,2,3], [4,5,6], [7,8,9]])`.
+Jämför ditt svar med [Wolfram Alpha](https://bit.ly/4bGpviK)!
+
+### Kodningsövning: matrisinvertering
+
+Matrisinverteringar är ett tidskrävande arbete som kräver stor noggranhet, och
+som ligger till grund för ekvationssystemslösning. Det är mycket vanligt att
+datorer löser stora ekvationssystem, och därför behövs algoritmer för
+matrisinvertering kodas i program. Nedan visas pdeudokod för
+Gauss-Jordan-elimination. Skapa en Python-funktion som implementerar denna
+kod med listor.
+
+Tips: Börja med att skapa funktioner för att byta plats på två rader,
+att addera en multipel av en rad till en annan och för att multiplicera en rad
+med ett tal; dvs funktioner som implementerar de elementära radoperationerna!
+
+
+```
+Funktion INVERTERA(A):
+  # A är en nxn matris
+  # Returnerar A^-1 om den existerar, annars ett felmeddelande
+
+  # Skapa en förstorad matris [A|I]
+  I = Skapa en nxn identitetsmatris
+  AI = Skapa en nx2n matris genom att sätta ihop A och I horisontellt
+
+  # Applicera elementära radoperationer på [A|I] för att få den på formen [I|B]
+  För i från 1 till n:
+    # Hitta pivotelementet på rad i och kolumn i
+    pivot = AI[i][i]
+
+    # Kontrollera om pivotelementet är noll
+    Om pivot == 0:
+      # Hitta en annan rad j under rad i som har ett icke-noll element på kolumn i
+      j = i + 1
+      Medan j <= n och AI[j][i] == 0:
+        j = j + 1
+      
+      # Om ingen sådan rad hittades, så är A inte inverterbar
+      Om j > n:
+        Returnera "Matrisen A är inte inverterbar"
+      
+      # Annars, byt plats på rad i och rad j
+      Annars:
+        Byt rad i och rad j i AI
+    
+    # Dela rad i med pivotelementet för att få ett 1-tal på position i, i
+    För k från 1 till 2n:
+      AI[i][k] = AI[i][k] / pivot
+    
+    # Eliminera alla andra element på kolumn i genom att subtrahera lämpliga multipler av rad i från andra rader
+    För j från 1 till n:
+      Om j != i:
+        faktor = AI[j][i]
+        För k från 1 till 2n:
+          AI[j][k] = AI[j][k] - faktor * AI[i][k]
+  
+  # Extrahera matrisen B från den högra halvan av AI
+  B = Skapa en nxn matris
+  För i från 1 till n:
+    För j från 1 till n:
+      B[i][j] = AI[i][n+j]
+  
+  # Returnera B som är inversen av A
+  Returnera B
+```

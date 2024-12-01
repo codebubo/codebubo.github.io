@@ -1,0 +1,164 @@
+---
+title: "Octave: Lösning av linjära ekvationssystem"
+format:
+  html:
+    fontsize: 1em
+    css: style.css
+execute: 
+  echo: false
+---
+
+# Lösning av linjära ekvationssystem
+
+## Teori
+
+Ett sätt att lösa ett linjära ekvationssystem i Octave är att först deklarera
+det som en koefficientmatris $A$ och en vektor $\vec{v}$ enligt
+$A\vec{x}=\vec{v}$ (här kommer vektorn $\vec{x}$ att utgöra den beräknade
+lösningsvektorn).
+
+För att lösa ekvationssystemet $A\vec{x}=\vec{v}$, där $A$ och $\vec{v}$ är
+deklarerade så används "backslash-operatorn" enligt `A \ v`.
+
+**Exempel**
+
+:::{.callout-note appearance="minimal"}
+Lös följande ekvationssystem med Octave
+
+$$
+\left \{
+\begin{matrix*}[r]
+x_1&+&2x_2&=&-1\\
+2x_1&-&3x_2&=&12
+\end{matrix*}
+\right .
+$$
+
+Vi deklarerar koefficientmatrisen $A$ och vektorn $\vec{v}$:
+
+```octave
+octave:1> A = [1 2 ; 2 -3];
+octave:2> v = [-1 ; 12];
+```
+
+Därefter så löses systemet:
+
+```octave
+octave:3> x = A \ v
+x =
+
+   3
+  -2
+
+```
+
+där utmatningen innebär att $x_1=3$ och $x_2=-2$.
+
+Just i det här fallet blev lösningen heltal, men det kan bli såväl rationella
+som irrationella lösningar; man får då ha i åtanke att Octave jobbar med
+avrundade närmevärden och inte exakta tal (som går att approximera till
+rationella tal).
+:::
+
+## Övningar
+
+### Övning 301
+
+Lös det linjära ekvationssystemet nedan med Octave.
+
+$$
+\left \{
+\begin{matrix*}[r]
+x&+&2y&+&3z&=&10\\
+x&+&y&-&z&=&4\\
+2x&-&y&+&z&=&5
+\end{matrix*}
+\right .
+$$
+
+Lagra koefficientmatrisen som `A` och den beräknade lösningen i vektorvariabeln
+`x` och verifiera den genom att exekvera `A*x`.
+
+### Övning 302
+
+Ställ in Octave i rationellt läge genom att exekverar `format rat`. Lös sedan
+det linjära ekvationssystemet
+
+$$
+\left \{
+  \begin{matrix}
+  5x_1&-&x_2&+&3x_3&=&\frac{1849}{1092}\\[3mm]
+  &x_1 &+&x_3& &=&\frac{119}{156}\\[3mm]
+  &x_3 &-&x_2& &=&\frac{38}{91}
+  \end{matrix}
+\right .
+$$
+
+Lagra koefficientmatrisen som `A` och den beräknade lösningen i vektorvariabeln
+`x` och verifiera den genom att exekvera `A*x`. Kommentera resultatet.
+
+### Övning 303
+
+En motorbåt färdas i en flod med strömt vatten. När den går med en given
+motorstyrka tar det fem timmar för den att färdas från punkt $A$ till $B$,
+vilket är en sträcka på 60 km *mot* strömmen. När den sedan åker tillbaka
+från $B$ till $A$, färdas den *med* strömmen; den färden tar fyra timmar med
+samma givna motorstyrka.
+
+Teckna ett ekvationssystem, som du löser med hjälp av Octave, som bestämmer
+dels båtens fart i vatten som inte är strömt (med den givna motorstyrkan)
+och dels vattenströmmens fart.
+
+:::{.callout-tip collapse="true" icon="false" title="Svar övning 303"}
+
+Båtens fart i oströmt vatten: $13.5$ km/h
+
+Strömmens fart: $1.5$ km/h
+:::
+
+### Övning 304
+
+**Octave-koden i denna övning ska köras från en fil, och inte från konsolen**
+
+Det går att skapa matriser av en godtycklig storlek med slumpade element.
+T ex så skapar `randi([-100 100], 5, 5)` en slumpad $5\times 5$-matris med
+heltal mellan $-100$ och $100$:
+
+```
+octave:1> randi([-100 100], 5, 5)
+ans =
+
+  -56   64   70   69  -17
+   30   98  -82   76  -61
+   10  -41   41  -59   63
+   93   12  -26   24  -45
+   84  -64  -73   49   93
+```
+
+a. Skapa en $5\times 5$-matris på detta sätt, och en tillhörande vektor av rätt
+storlek, med slumpade heltal mellan $-100$ och $100$. Låt Octave lösa det
+linjära ekvationssystem som matrisen och vektorn representerar.
+
+b. Skapa en en matris med tillhörande vektor som representerar ett linjärt
+ekvationssystem med $100$ obekanta och $100$ ekvationer. Tiden kan mätas med
+funktionerna `tic` och `toc` enligt följande:
+
+```octave
+# Skapa matris och vektor
+tic();
+# Lös det linjära ekvationssystem matrisen och vektorn representerar.
+# OBS! Se till att resultatet INTE skrivs ut då den processen tar lång tid!
+toc();
+# Tiden det tog att lösa systemet skrivs ut i konsolen automatiskt efter toc()
+```
+
+Hur lång tid tar det att lösa detta system av linjära ekvationer?
+
+c. Ungefär hur stort ekvationssystem (lika många obekanta som ekvationer) kan
+lösas på
+  
+    i. 1 sekund?
+    ii. 5 sekunder?
+    iii. 10 sekunder?
+  
+    Pröva dig fram!

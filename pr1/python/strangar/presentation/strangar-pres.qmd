@@ -1,0 +1,179 @@
+---
+title: Strängar i Python
+from: markdown+emoji
+title-slide-attributes:
+  data-background-image: https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/listor/pattern-3177396_1280.png
+  data-background-opacity: "1"
+  data-background-color: "black"
+author: "Nikodemus Karlsson"
+format:
+  revealjs:
+    mermaid: 
+      theme: dark
+    theme: dark
+    transition: slide
+    background-transition: slide
+    slide-number: true
+    controls: true
+    controls-layout: edges
+    date-format: "DD MMM YYYY"
+    css: style.css
+execute: 
+  echo: false
+---
+
+## Dagens mål
+
+* Att känna till datatypen `str`
+* Att kunna komma åt enskilda tecken i en sträng
+* Att kunna applicera olika *metoder* på en sträng
+
+
+## Vad är en sträng?
+
+:::{.v-space}
+:::
+
+:::{.blue-bg-small-padding }
+En sträng är en följd av tecken. Ofta används dessa för någon form av utmatning
+i programmet.
+
+Den datatyp som representerar en sträng i Python kallas `str`.
+
+Strängar har vissa saker gemensamt med listor; t ex så har varje tecken ett
+index, som gör att det kan adresseras.
+:::
+
+## Exempel på en sträng
+
+:::{.double-v-space}
+:::
+
+```python
+my_string = "Hello, world"
+```
+Texten `Hello, world` kallas för en *strängkonstant* eller *strängliteral*.
+Denna strängkonstant måste vara given inom citationstecken.
+
+## Strängar jämfört med listor
+
+Varje teckenläge i en sträng har ett *index*. Det går att nå ett tecken
+med hjälp av detta index.
+
+```{python}
+# | echo: true
+my_string = "Hello, world"
+print(f"Strängkonstanten är: {my_string}")
+print(f"Strängkonstantens första tecken är: {my_string[0]}")
+print(f"Tecknet \"o\" finns första gången på index: {my_string.index('o')}")
+
+```
+
+En skillnad mot listor är att strängar inte går att förändra. Vi kan inte lägga
+till ett tecken med något som liknar `append()` eller ta bort ett tecken med
+något som liknar `remove()`.
+
+Innehållet i en sträng kallas som sagt
+**strängkonstant**.
+
+## Delsträngar
+
+:::{.v-space}
+:::
+
+På samma sätt som med listor går det att ta fram en delsträng enligt följande.
+
+```{python}
+#| echo: true
+my_str = "Detta är en sträng som består av 42 tecken"
+print(my_str[:8])
+print(my_str[19:29])
+print(my_str[33:])
+```
+
+## Loopa genom strängar
+
+:::{.v-space}
+:::
+
+Det går att loopa genom en sträng och på så sätt gå igenom tecken för tecken.
+I följande exempel skrivs vokalerna ut i en sträng samtidigt som övriga tecken
+maskeras.
+
+```{python}
+# | echo: true
+vowels = "aeiouyåäö"
+chars = "Hello, world"
+for char in chars:
+    if char.lower() in vowels:
+        print(char, end="")
+    else:
+        print("*", end="")
+```
+
+
+## Skapa en ny sträng utifrån ett original
+
+Exempel: skriva ut vokalerna i en sträng.
+
+```{python}
+# | echo: true
+vowels = "aeiouyåäö"
+source = "Hello, world"
+destination = ""
+for char in source:
+    if char.lower() in vowels:
+        destination += char
+    else:
+        destination += "*"
+print(destination)
+```
+
+Effekten är bl a att valda delar av `source` kopieras till `destination` med
+additionsoperatorn.
+
+## Strängmetoder
+
+Vi har redan sett exempel på *strängmetoder*: `.index()`, som returnerar
+indexnumret för första förekomsten av ett tecken i en sträng, och `.lower()`,
+vilken returnerar samma sträng som vi tillämpar metoden på, men alla
+alfanumeriska tecken blir gemener ("små bokstäver").
+
+Fler exempel på användbara strängmetoder finns på
+[detta "cheat sheet"](../../cheat_sheet_python.html#strängar-och-strängmetoder).
+
+## Fejka förändring
+
+Strängmetoder förändrar inte strängen.
+
+```{python}
+#| echo: true
+my_str = "Detta är en sträng som består av 42 tecken"
+my_upper_str = my_str.upper()
+print(my_str)
+print(my_upper_str)
+```
+
+:::{.v-space}
+:::
+
+Det går också att tilldela den gamla strängens namn det nya värdet.
+
+```{python}
+#| echo: true
+my_str = "Detta är en sträng som består av 42 tecken"
+my_str = my_str.upper()
+print(my_str)
+```
+
+
+## Sammanfattning
+
+* Strängar i ett datorprogram är en följd av tecken
+* På samma sätt som listor så kan enskilda tecken kommas åt med sitt
+indexnummer
+* Till skillnad från listor så kan strängen inte förändras...
+* ... men vi kan få en "effekt" av en förändring t ex genom användning av
+additionsoperatorn (den gamla strängen skrivs då över)
+* Det finns strängmetoder med vars hjälp det går att utföra olika operationer
+på strängar

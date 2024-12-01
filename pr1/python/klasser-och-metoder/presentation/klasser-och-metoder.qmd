@@ -1,0 +1,240 @@
+---
+title: Klasser och metoder i Python
+from: markdown+emoji
+title-slide-attributes:
+  data-background-image: https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/for-loopar/frame-3083868_1280.png
+  data-background-opacity: "1"
+  data-background-color: "black"
+author: "Nikodemus Karlsson"
+format:
+  revealjs:
+    mermaid: 
+      theme: dark
+    theme: dark
+    transition: slide
+    background-transition: slide
+    slide-number: true
+    controls: true
+    controls-layout: edges
+    date-format: "DD MMM YYYY"
+    css: style.css
+execute: 
+  echo: false
+---
+
+## Dagens mål
+
+* Att kunna skapa en klass och knyta några funktioner till denna
+* Att tillämpa metoder på objekt
+* Att känna till vad `self`-parametern är 
+* Att kunna skicka objekt för vidare process i funktioner
+
+## Klasser i Python
+
+:::{.v-space}
+:::
+
+:::{.blue-bg-small-padding }
+Vi har tidigare gått igenom hur egna datatyper (*klasser*) kan skapas.
+Till dessa knöt vi variabler, t ex ett namn eller ett pris. 
+
+Det går även att knyta *funktioner* till dessa datatyper. Det gör att
+objektet kan "göra" saker, t ex ett objekt `bil` tutar, eller att någon
+egenskap förändras, t ex hastigheten, förändras.
+
+:::
+
+## Deklarera en metod
+
+Vi kan deklarera och använda en klass `Car` på det här sättet:
+
+```{python}
+# | echo: true
+# |output: false
+class Car:
+  speed = 0
+  
+  # Metod
+  def set_speed(self, new_speed):
+    self.speed = new_speed
+    
+my_car = Car()
+your_car = Car()
+my_car.set_speed(100)
+your_car.set_speed(70)
+
+print(f"my_car speed: {my_car.speed}, your_car speed: {your_car.speed}")
+
+```
+
+
+```{python}
+#|echo: false
+# Definiera variabel för att visa i text nedan
+out_str = str(f"my_car speed: {my_car.speed}, your_car speed: {your_car.speed}")
+```
+
+Sista raden skriver ut<br> <span class="code-out">`{python} out_str`</span>
+
+## Parametern `self`
+
+Som vi såg så håller Python reda på respektive bils fart.
+
+Detta vet Python pga parametern `self` i metoden:
+
+`def set_speed(self, new_speed):`
+
+Varje instans har ett ID-nummer. Detta
+skickas till metoderna som en *referens* för identifiering.
+
+```python
+def set_speed(self, new_speed):
+    self.speed = new_speed
+
+my_car = Car()
+my_car.set_speed(100)
+``` 
+ID-numret skickas till metoden som ett osynligt argument. Alla metoder måste
+ha parametern `self` som första parameter. 
+
+## Exempel
+
+:::{.double-v-space}
+:::
+
+I en [tidigare presentation](../../for-loopar/presentation/for-pres.qmd#8)
+fanns exempel på en tänkt spelkod:
+
+
+```python
+items = ["Klocka", "Kikare", "Termometer"]
+for item in items:
+    if item.is_boostable:
+      item.boost()
+      print(f"Din {item} är nu boostad ✅")
+    else:
+      print(f"{item} gick inte att boosta ❌")
+```
+
+## Exempel
+
+Implementationen skulle kunna se ut så här:
+
+
+```python
+class Item:
+  is_boostable = False
+  is_boosted = False
+
+  def boost(self):
+    if self.is_boostable:
+      self.is_boosted = True
+
+klocka = Item()  # Skapa på samma sätt kikare och termometer
+kikare.boostable = True
+items = [klocka, kikare, termometer]
+
+for item in items:
+    if item.is_boostable:
+      item.boost()
+      print(f"Din {item} är nu boostad ✅")     # För att `item` ska skriva
+    else:                                       # något vettigt måste sådan
+      print(f"{item} gick inte att boosta ❌")  # funktionalitet läggas in.
+```
+
+## Metoden `__init__`
+
+För att tilldela värden till en instans i samband med att den skapas
+så kan man använda en metod som heter `__init__`
+
+```{python}
+#|echo: true
+#|output: false
+class Car:
+  def __init__(self, brand, mileage):
+    self.brand = brand
+    self.mileage = mileage
+
+my_car = Car("Volvo", 1200)
+print(f"Märke: {my_car.brand}, Miltal: {my_car.mileage}")
+```
+
+```{python}
+#|echo: false
+# Definiera variabel för att visa i text nedan
+out_str = f"Märke: {my_car.brand}, Miltal: {my_car.mileage}"
+```
+:::{.double-v-space}
+:::
+
+Skriver ut: <span class="code-out">`{python} out_str`</span>,
+vi har alltså initierat ett `Car`-objekt med dessa värden med hjälp av
+den fördefinierade metoden `__init__`
+
+
+## Metoden `__str__`
+
+Ibland vill man kunna skriva ut information om objekt med en kort
+`print`-sats, t ex `print(my_car)`. Då kan metoden `__str__` användas.  
+
+```{python}
+#|echo: true
+#|output: false
+class Car:
+  def __init__(self, brand, mileage):
+    self.brand = brand
+    self.mileage = mileage
+
+  def __str__(self):
+    return (f"Märke: {self.brand}, Miltal: {self.mileage}")
+
+my_car = Car("Volvo", 1200)
+print(my_car)
+```
+
+```{python}
+#|echo: false
+# Definiera variabel för att visa i text nedan
+car_str = str(my_car)
+```
+Sista raden skriver ut <span class="code-out">`{python} car_str`</span>
+
+Utskriftssträngen definieras av `__str__`-metoden. 
+
+
+## Statiska metoder {.scrollable}
+
+En statisk metod är en funktion som är knuten till en klass, men inte
+till ett objekt. 
+
+```{python}
+#| echo: true
+#| output: true
+class Age:
+  def __init__(self, age):
+    self.age = age
+  
+  def __str__(self):
+    return str(self.age)
+  
+  @staticmethod # En funktion som hör till klassen, men inte till ett objekt
+  def create_from_birthyear(year):
+    age = 2024 - year
+    return Age(age)
+
+age_Kalle = Age(18)
+age_Linda = Age.create_from_birthyear(2002)
+print(f"Kalle: {age_Kalle}, Linda: {age_Linda}")
+
+```
+
+
+## Sammanfattning
+
+* Funktioner till en klass kallas för metoder
+* Metoderna anropas på samma sätt som funktioner i allmänhet, men föregås
+av namnet på instansen som tillämpar den. (t ex `my_item.boost()`)
+* Metoderna tar en "osynlig referens" till instansen i form av `self`.
+Detta `self` måste finnas först i parameterlistan.
+* En statisk metod är en funktion som är organiserad till en klass, men
+inte är knuten till ett objekt. Den skapas med `@staticmethod`

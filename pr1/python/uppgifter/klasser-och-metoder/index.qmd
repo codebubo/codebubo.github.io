@@ -1,0 +1,161 @@
+---
+title: "Uppgifter: Klasser och metoder"
+format:
+  html:
+    fontsize: 1em
+    css: style.css
+---
+
+# Klasser och metoder i Python
+
+## Uppgift 1
+
+Deklarera en klass `Avatar`. Klassen ska ha attributen `namn`, `styrka`
+`snabbhet` och position. Snabbhet och styrka är tal mellan 0 och 10; deras
+summa ska bli 10 (så om styrkan anges till 7 så blir snabbheten 3).
+Positionen är en koordinat i $xy$-planet; den består av två heltal. I samband
+med att avataren skapas så ska värdena på dessa attribut anges (det måste
+alltså finnas en `__init__`-metod).
+
+Det ska finnas en metod, `uppdatera_position`, som flyttar avataren från
+ett läge till ett annat (alltså uppdaterar koordinaterna). Det ska också
+finnas en *statisk metod* som tar två instanser av `Avatar` och returnerar
+avståndet mellan dem. 
+
+Man ska också kunna skriva ut information om en avatar med `print(avatar)`,
+det måste alltså finnas en `__str__`-metod.
+
+När klassen är klar skulle användandet av den kunna se ut så här
+(se också utskrifterna under koden):
+
+```{python}
+#| echo: false
+class Avatar:
+	def __init__(self, namn, styrka, xpos, ypos):
+		self.namn = namn
+		self.styrka = styrka
+		self.snabbhet = 10 - styrka
+		self.xpos = xpos
+		self.ypos = ypos
+
+	def __str__(self):
+		ret_str1 = f"Det här är {self.namn} med styrkan {self.styrka}. "
+		ret_str2 = f"Snabbheten är {self.snabbhet}. "
+		ret_str3 = f"Positionen är ({self.xpos}, {self.ypos})."
+		ret_str = ret_str1 + ret_str2 + ret_str3
+		return str(ret_str)
+
+	@staticmethod
+	def dist(a1, a2):
+		return ((a1.xpos - a2.xpos)**2 + (a1.ypos - a2.ypos)**2)**0.5 
+
+	def uppdatera_position(self, x, y):
+		print(f"{self.namn} byter läge till ({x}, {y})")
+		self.xpos = x
+		self.ypos = y
+```
+
+```{python}
+#| echo: true
+#| output: true
+
+avatar1 = Avatar("Efelia", 4, 2, 3)
+avatar2 = Avatar("Zmille", 8, 1, 4)
+
+print(avatar1)
+print(avatar2)
+
+distance = Avatar.dist(avatar1, avatar2)
+print(f"Avståndet mellan {avatar1.namn} och {avatar2.namn} är ", end="")
+print(f"{distance:.2f} enheter.")
+
+avatar1.uppdatera_position(-2, 4)
+print(avatar1)
+```
+
+## Uppgift 2
+
+Deklarera en klass `Dice`, som ska vara en mall för en tärning. Ett 
+`Dice`-objekt (en tärning alltså) ska kunna initieras med det antal
+sidor som tärningen ska ha, t ex `dice = Dice(6)`. 
+
+Det ska finnas en metod, `roll`, som slår tärningen. Denna ska ta emot
+en parameter som anger hur många gånger som tärningen ska slås. Den kan
+användas enligt `dice.roll(5)`, vilket alltså indikerar att tärningen slås
+fem gånger.
+
+Det ska finnas en metod `get_results`, som returnerar en lista med
+utfallshistorik. Vidare ska det finnas en metod `print_frequencies`
+som skriver ut en frekvenstabell med kolumner för absolut frekvens
+och relativ frekvens. 
+
+Slutligen ska `__str__` implementeras så att `print(dice)` ger information
+om det senaste utfallet. 
+
+```{python}
+#| echo: false
+#| output: false
+
+from random import randint, seed
+
+seed(0xB1A2D865)
+
+
+class Dice:
+    def __init__(self, number_of_faces=6):
+        self.num_of_faces = number_of_faces
+        self.face_up = randint(1, self.num_of_faces)
+        self.num_of_rolls = 0
+        self.result_list = []
+        self.freq_table = {}
+        # self.roll()
+
+    def __str__(self):
+        str1 = "Tärningen visar "
+        str2 = str(self.face_up)
+        return str1 + str2
+
+    def roll(self, number_of_times=1):
+        print(f"Slår tärning, antal kast: {number_of_times}")
+        for i in range(0, number_of_times):
+            self.num_of_rolls += 1
+            self.result_list.append(randint(1, self.num_of_faces))
+        self.face_up = self.result_list[-1]
+
+    def get_results(self):
+        return self.result_list
+
+    def print_frequencies(self):
+        for i in range(1, self.num_of_faces + 1):
+            self.freq_table[i] = self.result_list.count(i)
+        print(f" Utfall{'Frekvens'.rjust(14)}{'Relativ frekvens'.rjust(21)}")
+        for i in range(45):
+            print("=", end="")
+        print()
+        for i in range(1, self.num_of_faces + 1):
+            print(f"{i:4}{'|'.rjust(6)}{self.freq_table[i]:7}", end="")
+            print(f"{'|'.rjust(7)}", end="")
+            print(f"{(self.freq_table[i] / self.num_of_rolls * 100):10.2f} %")
+
+```
+
+Se nedanstående deklarationer och utmatningar:
+
+```{python}
+#| echo: true
+#| output: true
+dice = Dice()
+dice.roll(3)
+print(f"Utfallshistoriken är nu: {dice.get_results()}\n")
+dice.print_frequencies()
+print()
+dice.roll(8)
+print(f"Utfallshistoriken är nu: {dice.get_results()}\n")
+dice.print_frequencies()
+print()
+dice.roll(100)
+print()
+dice.print_frequencies()
+print()
+print(dice)
+```

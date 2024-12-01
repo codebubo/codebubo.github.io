@@ -1,0 +1,377 @@
+---
+title: "Introduktion Programmering 1"
+subtitle: ""
+from: markdown+emoji
+title-slide-attributes:
+  data-background-image: https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/intro/bg-front.jpg
+  data-background-color: "black"
+author: "Nikodemus Karlsson"
+date: ""
+format:
+  revealjs:
+    theme: dark
+    transition: slide
+    background-transition: slide
+    slide-number: true
+    controls: true
+    controls-layout: edges
+    date-format: "DD MMM YYYY"
+    css: style.css
+execute: 
+  echo: true
+---
+
+## Klipsk som en dator?
+
+{{< video https://www.youtube.com/watch?v=FN2RM-CHkuI&ab_channel=JoshDarnit width="1000" height="600">}}
+
+## Förkunskaper?
+
+:::{.double-v-space}
+:::
+
+![](https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/intro/pr1-survey-2024.png){height=300}
+
+[https://tinyurl.com/37n7zry2](https://tinyurl.com/37n7zry2)
+
+## Vad är ett datorprogram?
+
+::: {.smaller-font}
+
+:::: {.fragment .fade-in-then-semi-out}
+* Ett datorprogram är som en uppsättning instruktioner eller regler som berättar för datorn vad den ska göra.
+::::
+
+:::: {.fragment .fade-in-then-semi-out}
+* Precis som vi människor använder oss av instruktioner för att utföra olika uppgifter, använder sig också en dator av programmet för att lösa problem och utföra specifika arbetsuppgifter.
+::::
+
+:::: {.fragment .fade-in-then-semi-out}
+* Dessa instruktioner i ett datorprogram skrivs vanligtvis i ett programmeringsspråk, vilket är ett särskilt språk som både människor och datorer kan förstå.
+::::
+
+:::: {.fragment .fade-in-then-semi-out}
+* När programmet körs på en dator läser den stegvis igenom varje instruktion och utför de angivna operationerna.
+::::
+:::
+
+## Vad är ett datorprogram? (forts.)
+
+:::{.smaller-font}
+
+:::: {.fragment .fade-right .fade-in-then-semi-out}
+* Genom att kombinera olika instruktionssekvenser kan man bygga upp mer komplexa program som kan hantera allt från matematiska beräkningar till grafikrendering eller datahantering.
+::::
+
+:::: {.fragment .fade-right .fade-in-then-semi-out}
+* Människor skapar dessa program för att automatisera processer, lösa problem eller utveckla nya teknologier och applikationer som används inom allt från spelutveckling till medicinsk forskning och affärsverksamhet.
+::::
+
+:::: {.fragment .fade-up}
+Sammanfattningsvis kan man säga att ett datorprogram är en samling av instruktioner skrivna i programmeringsspråk, vilket ger möjlighet att styra hur en dators hårdvara fungerar och får den att utföra specifika uppgifter.
+::::
+:::
+
+## Utvecklingsmiljö
+
+Vi kommer att arbeta med Pythons miljö **Idle** under första halvan av höstterminen
+
+::: columns
+
+:::: {.column width="50%"}
+&nbsp;
+![[https://www.python.org/downloads]](https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/intro/idle-image.png){width=100% fig-align="left"}
+::::
+
+:::: {.column width="50%"}
+Miljön består av en **konsol** där kortare "kodsnuttar" kan skrivas in och
+en **editor** där program kan skrivas och sparas.
+::::
+:::
+
+[Ladda ned från <span style="font-size: 85%;">`https://www.python.org/downloads`</span>](https://www.python.org/downloads)
+
+## Dagens mål
+
+* Installera Python på datorn
+* Bekanta sig med konsol och editor genom arbete med
+   * Variabler
+   * Formaterad utskrift
+
+## Variabler
+
+En variabel är ett "namn" på ett värde. Kan även kallas för en identifierare.
+
+```{python}
+# Detta program skrivs i en fil som sparas.
+# Filen skapas i Idle: File -> New File
+# och namnges till fartberäkning
+sträcka = 103  # Sträckan i meter
+tid = 13.2     # Tiden i sekunder
+fart = sträcka / tid
+
+print(f"Fart = {fart:.1f} m/s")
+# Skriver ut Fart = 7.8 m/s
+```
+
+::: {.fragment .fade-right}
+Variabler kan innehålla andra saker än tal; man säger att även detta är värden.
+:::
+
+## Variabeltyper
+
+:::{.v-space}
+
+Några vanliga **typer** av variabler är
+<span style="font-size: 85%;"> `string`</span> (sträng),
+<span style="font-size: 85%;">`int`</span> (heltal) och
+<span style="font-size: 85%;">`float`</span> (tal med decimaler).
+:::
+
+:::{.v-space}
+Python kan skriva ut variabeltypen för en given variabel.
+:::
+
+:::{.v-space}
+```{python}
+ett_heltal = 5
+ett_flyttal = 2.9
+en_sträng = "En sträng"
+print(type(ett_heltal))
+print(type(ett_flyttal))
+print(type(en_sträng))
+```
+:::
+
+## Variabler i datorminnet
+
+:::{.blue-bg-small-padding}
+När en variabel tilldelas ett värde kommer detta värde att sparas på en plats i
+datorns minne. När variabeln adresseras kommer namnet att hänvisa till denna
+minnesplats.
+:::
+
+## Några regler för variabelnamn
+
+:::{.fragment .fade-right}
+* Alla bokstavstecken och siffror får användas
+:::
+
+:::{.fragment .fade-right}
+* Python gör skillnad på versaler och gemener
+:::
+
+:::{.fragment .fade-right}
+* Variabelnamn kan inte börja med en siffra
+:::
+
+:::{.fragment .fade-right}
+* Variabelnamn kan inte innehålla mellanslag
+:::
+
+:::{.fragment .fade-right}
+* Variabelnamn kan inte innehålla bindestreck
+:::
+
+## Några regler för variabelnamn (forts.)
+
+:::{.v-space}
+:::
+
+:::{.fragment .fade-right}
+* Variabelnamn bör inledas med en gemen ("liten") bokstav
+:::
+
+:::{.fragment .fade-right}
+* Variabelnamn bör vara uttrycksfulla, dvs beskriva vad de står för
+:::
+
+:::{.fragment .fade-right}
+* Ord separeras, t ex
+<span style="font-size: 85%;">`längd_rekt = 5`</span>
+:::
+
+:::{.fragment .fade-right}
+:::: {style="background-color: yellow; width: 100%; height: 70px; padding: 10px; margin-top: 20px;"}
+[Länk: Tillåtna namn på variabler](https://www.w3schools.com/python/gloss_python_variable_names.asp)
+::::
+:::
+
+## Utskrifter i Python
+
+::: columns
+:::: {.column width="55%"}
+::::: {.fragment .fade-right fragment-index=1}
+Utskrift av sträng
+
+```{python}
+hello_string = "Hello, world"
+print(hello_string)
+```
+:::::
+
+::::{.new-line}
+::::
+
+::::: {.fragment .fade-right fragment-index=3}
+Utskrift av sträng och tal
+
+```{python}
+pris = 10
+print(f"Priset är {pris} kr.")
+```
+:::::
+::::
+
+:::: {.column width="45%"}
+::::: {.fragment .fade-left fragment-index=2}
+Utskrift av heltal
+
+```{python}
+pris = 10
+print(pris)
+```
+:::::
+
+::::{.new-line}
+::::
+
+::::: {.fragment .fade-left fragment-index=4}
+Avrundning
+
+```{python}
+my_float = 2/3
+print(f"{my_float:.2f}")
+```
+:::::
+::::
+:::
+
+::: {.v-space .fragment .fade-up fragment-index=5}
+När "fast" text ska skrivas ut tillsammans med en variabel används en s.k f-string. Det står för *formatted string literal*.
+:::
+
+## Formaterad utskrift
+
+En teckensträng har en en given *textbredd*. Det tydliggörs med utfyllnadstecken.
+
+```{python}
+#| output-location: fragment
+s1 = "Kalle"
+s2 = "Anka"
+print(f"{s1:*<13}")      # Textbredd 13, vänsterjusterat
+print(f"{s1:*>13}")      # Textbredd 13, högerjusterat
+print(f"{s1:*^13}")      # Textbredd 13, centrerat
+print(s1.rjust(13, "*")) # Finns även ljust och center
+print(s1.ljust(13) + s2) # Inget utfyllnadstecken!
+```
+
+::: {.fragment .fade-up}
+På rad 7 syns att vi kan slå ihop (*konkatenera*) två strängar med
+operatorn <span style="font-size: 85%;">`+`</span>.
+:::
+
+## Sträng med radbrytning
+För att skriva ut en sträng på flera används ett s.k "flykttecken" (*escape character*).
+
+```{python}
+print("Här är en text\npå två rader")
+```
+
+::: {.fragment .fade-right}
+Detta kan användas tillsammans med textbredden.
+
+```{python}
+print(f"Detta är en högerjusterad text\n{'på flera rader':*>30}")
+```
+:::
+
+:::{.new-line}
+:::
+
+::: {.fragment .fade-up}
+:::: {style="background-color: yellow; width: 100%; height: 75px; padding: 10px;"}
+[Det finns flera exempel på *escape characters* på denna länk](https://www.w3schools.com/python/gloss_python_escape_characters.asp).
+::::
+:::
+
+## Justering av tal
+
+:::{.v-space}
+Tabeller blir mer lättlästa om ental står under ental, tiondel under tiondel osv.
+:::
+
+:::{.v-space}
+```{python}
+a = 10.5; b = 2.38
+c = 2.3;  d = 0.1
+print(f"{a:6.2f}\t\t{c:6.2f}\n{b:6.2f}\t\t{d:6.2f}")
+print("----------------------");
+print(f"{(a+b):6.2f}\t\t{(c+d):6.2f}")
+```
+:::
+
+:::{.v-space}
+Observera att beräkningarna sker mellan måsvingarna!
+:::
+
+## Sammanfattning
+
+::: {.smaller-font}
+
+:::: {.fragment .fade-right}
+* Ett datorprogram är en följd av instruktioner.
+::::
+
+::: {.fragment .fade-right}
+* Dessa instruktioner skrivs i ett programmeringsspråk.
+::::
+
+:::: {.fragment .fade-right}
+* I Python kan korta kodavsnitt skrivas i **konsolen**,
+medan en **editor** används för att skriva och spara program.
+::::
+
+:::: {.fragment .fade-right}
+* I datorprogram kan användas kommentarer för att det ska bli mer
+lättläst. För Python gäller tecknet
+<span style="font-size: 85%;">`#`</span> inleder kommentaren
+<span style="font-size: 85%;">`# Kommentar`</span>
+::::
+
+:::: {.fragment .fade-right}
+* För att lagra värden i ett program används variabler.
+::::
+
+:::: {.fragment .fade-right}
+* Variabelns **typ** beror på vilket sorts värde som lagras.
+::::
+
+:::
+
+## Sammanfattning (forts.)
+
+::: {style="font-size: 95%"}
+
+:::: {.fragment .fade-right}
+* Det finns regler och konventioner för namngivning av variabler.
+::::
+
+:::: {.fragment .fade-right}
+* För att skriva ut variabler i Python används en **funktion** som heter
+<span style="font-size: 85%;">`print`</span>.
+::::
+
+:::: {.fragment .fade-right}
+* Med <span style="font-size: 85%;">`print`</span>
+går det att styra hur utskriften sker, t ex med avseende
+på radbrytning, textjustering och antal decimaler för ett tal.
+::::
+
+:::: {.fragment .fade-right}
+* Uttryck kan evalueras i en sträng i Python med f-string.
+   * <span style="font-size: 85%;">`print(f"Talet är {2+2}") # Talet är 4`
+   </span>
+::::
+:::
+

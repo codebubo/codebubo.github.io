@@ -1,0 +1,175 @@
+---
+title: Listor i Python
+from: markdown+emoji
+title-slide-attributes:
+  data-background-image: https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/listor/pattern-3177396_1280.png
+  data-background-opacity: "1"
+  data-background-color: "black"
+author: "Nikodemus Karlsson"
+format:
+  revealjs:
+    mermaid: 
+      theme: dark
+    theme: dark
+    transition: slide
+    background-transition: slide
+    slide-number: true
+    controls: true
+    controls-layout: edges
+    date-format: "DD MMM YYYY"
+    css: style.css
+execute: 
+  echo: false
+---
+
+## Dagens mål
+
+* Att känna till datatypen `list`
+* Att kunna skapa listor med element av olika datatyper
+* Att kunna komma åt enskilda element i en lista
+
+
+## Vad är en lista?
+
+:::{.v-space}
+:::
+
+:::{.blue-bg-small-padding }
+En lista är en s.k *datastruktur* som organiserar värden i en följd.
+Listan är också en variabel, som alltså består av en *samling* värden.
+Dessa värden kan man komma åt ett och ett, men istället för att ha ett
+stort antal variabler kan man alltså ha *en enda* lista som innehåller
+många värden.
+
+Ett exempel som kan motivera en lista i programmeringen är då ett namnregister
+ska hanteras. 
+:::
+
+## Exempel på en lista
+
+:::{.double-v-space}
+:::
+
+Exempel på en lista som lagrar temperaturer:
+
+```
+           -----------------------
+Innehåll   | 10 | 12 | 8 | 9 | 7 |   <- Här är temperaturerna
+           -----------------------
+Indexnr.     0    1    2   3   4     <- Ett index är ett ordningstal
+```
+
+:::{.v-space}
+:::
+
+Variabeldeklaration:
+```{python}
+#| echo: true
+temperaturer = [10, 12, 8, 9, 7] # EN variabel för FEM temperaturer
+```
+
+:::{.v-space}
+:::
+
+```{python}
+#| echo: true
+print(temperaturer[0]) # Skriver ut innehållet av index 0
+print(temperaturer[4]) # Skriver ut innehållet av index 4
+```
+
+## Vad var nu en lista?
+
+:::{.blue-bg-small-padding }
+
+En lista är alltså en variabel som innehåller flera olika värden. Värdena finns
+i "fack", vart och ett med ett index (ordningsnummer).
+
+Indexet börjar med 0. Om det t ex finns 10 värden i en lista kommer man åt
+innehållet i "facken" genom index 0 - 9.
+
+Alla olika typer av variabler är tillåtna i en lista.
+:::
+
+
+## Att skapa listor
+
+:::{.v-space}
+:::
+
+Om du vet vilka värden som ska vara med från början:
+
+```oython
+min_lista = [10, -2, 6, 3]
+```
+
+:::{.v-space}
+:::
+
+Om du behöver lägga till värden i efterhand:
+
+```python
+scores = []       # Skapar en tom lista
+scores.append(42) # Lägger till talet 42 i den från början tomma listan
+```
+
+:::{.v-space}
+:::
+
+Även om listan inte är tom går det att lägga till värden med hjälp av `append`.
+
+## Att skapa listor (forts)
+
+:::{.double-v-space}
+:::
+
+Vi har redan tidigare gått igenom funktionen `range`. Här skapas en lista
+med talen `-4`, `-1`, `2` och `5`:
+
+:::{.v-space}
+:::
+
+```{python}
+#| echo: true
+lst = list(range(-4, 6, 3))
+print(lst)
+```
+
+## Loopa genom listor
+
+:::{.v-space}
+:::
+
+Vi har också tidigare gått igenom `for`-loopar, som kan användas då man
+behöver gå igenom ett listelement i taget.
+
+Följande exempel fanns i [presentationen om `for`-loopar](../../for-loopar/presentation/).
+
+:::{.v-space}
+:::
+
+```python
+items = ["Klocka", "Kikare", "Termometer"]
+for item in items:
+    if item.is_boostable:
+      item.boost()
+      print(f"Din {item} är nu boostad ✅")
+    else:
+      print(f"{item} gick inte att boosta ❌")
+```
+
+## Listors funktioner och metoder
+
+:::{.blue-bg-small-padding }
+
+Det finns många funktioner för att hantera listor. Det går bl.a att sortera
+element, ta bort element, räkna antalet element, reversera listan, summera
+element och välja ut en delmängd av elementen. Exempel på detta påvisas
+i övningarna.
+:::
+
+## Sammanfattning
+
+* Listor används för att samla flera värden under ett enda variabelnamn
+* Man kommer åt de enskilda elementen med dess index
+* Index-räkningen börjar på noll
+* Det finns funktionalitet för att göra olika operationer på en lista

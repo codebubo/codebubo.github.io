@@ -1,0 +1,782 @@
+---
+title: "Uppgifter: Loopar"
+format:
+  html:
+    fontsize: 1em
+    css: style.css
+---
+
+# Loopar i Python
+## while-loopar
+
+**I uppgift 1 -- 7 ska du använda `while`-loopar i din lösning**.
+---
+
+### Uppgift 1
+
+Skapa ett program som beräknar och skriver ut "tolvans
+multiplikatikonstabell" rad för rad enligt
+nedan:
+
+:::{.callout-note appearance="minimal"}
+
+```{python}
+#| echo: false
+i = 1
+while i <= 12:
+   print(f"{i:2.0f} * 12 = {(i * 12):3.0f}")
+   i += 1
+```
+:::
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 1"}
+Ett program som inte gör någon snygg formatering av tabellen ser ut så här:
+
+```python
+i = 1
+while i <= 12:
+   print(f"{i} * 12 = {i * 12}")
+   i += 1
+```
+
+Ett program som ger en utmatning enligt uppgiften, dvs som ställer ental över ental och tiotal över tiotal, ser ut så här:
+
+```python
+i = 1
+while i <= 12:
+   print(f"{i:2.0f} * 12 = {(i * 12):3.0f}")
+   i += 1
+```
+:::
+
+### Uppgift 2
+
+I spelet <span class="small-caps">lotto</span> ska man tippa 7 olika nummer
+mellan  1 och 35. Skriv ett program som slumpar fram 7 heltal mellan 1 och
+35 under en körning.
+
+:::{#slumptalstips .callout-note}
+# Tips {#slumptalstips}
+För att skapa ett slumptal i Python behövs importeras slumptalsbiblioteket.
+Detta görs överst i koden, varpå ett slumpmässigt heltal skapas enligt
+följande:
+
+```python
+import random as rand
+slumptal = rand.randint(1, 100) # Skapar ett slumptal mellan, och inklusive, 1 och 100
+```
+:::
+
+I nuläget får vi acceptera att det kan uppstå flera nummer av samma värde, t ex
+två st. sjuor. Detta kommer att kunna undvikas efter att vi gått igenom listor
+i Python; då kommer vi också att sortera numren i storleksordning.
+
+Körningsexempel:
+
+:::{.callout-note appearance="minimal"}
+```{python}
+#| echo: false
+import random as rand
+rand.seed (782974)
+i = 1
+print("Din LOTTO-rad:", end=" ")
+while i <= 7:
+    print(rand.randint(1,35), end=" ")
+    i += 1
+```
+:::
+
+:::{.callout-tip collapse="true" icon="false"}
+## Lösningsförslag uppgift 2
+```python
+import random as rand
+i = 1
+print("Din LOTTO-rad:", end=" ")
+while i <= 7:
+    print(rand.randint(1,35), end=" ")
+    i += 1
+```
+
+`print`-satsen tar en s.k parameter, `end`, vilken gör att radslutet blir det eller de tecken
+som anges i den tilldelande strängen (i det här fallet ett mellanslag). Utelämnas `end`-satsen
+så skapas en ny rad.
+:::
+
+### Uppgift 3
+
+I stryktipset är det 13 matcher som ska tippas med 1, X eller 2.
+Skriv ett program som slumpar fram 13 st. 1, X och 2 under en körning.
+
+Körningsexempel:
+
+:::{.callout-note appearance="minimal"}
+```{python}
+#| echo: false
+import random as rand
+i = 1
+print(f"{'Match nr':>10}. {'Resultat':>11}")
+print("==========================")
+while i <= 13:
+    res = rand.randint(1, 3)
+    if res == 1:
+        res = "1"
+    elif res == 2:
+        res = "X"
+    else:
+        res = "2"
+    print(f"{i:6.0f} {res:>12}")
+    print("--------------------------")
+    i += 1
+```
+:::
+
+Tips: Formatera utskriften först efter att du vet hur du gör för att få
+slumpvis 1, X eller 2.
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 3"}
+Metoden går ut på att skapa ett slumptal 1, 2 eller 3, för att sedan skriva ut
+1, X eller 2 beroende på utfallet.
+
+```python
+import random as rand
+i = 1
+print(f"{'Match nr':>10}. {'Resultat':>11}")
+print("==========================")
+while i <= 13:
+    res = rand.randint(1, 3)
+    if res == 1:
+        res = "1"
+    elif res == 2:
+        res = "X"
+    else:
+        res = "2"
+    print(f"{i:6.0f} {res:>12}")
+    print("--------------------------")
+    i += 1
+```
+:::
+
+### Uppgift 4
+
+Skriv ett program där man ska gissa ett heltal mellan, och inklusive, 1 och 10.
+Gissningarna ska göras tills man gissar rätt. Efter en gissning ska
+programmet säga om det gissade talet var för stort eller för litet. När rätt tal
+gissats så ska det skriva ut hur många gissningar som behövdes.
+
+Körningsexempel:
+
+:::{.callout-note appearance="minimal"}
+```
+Gissa ett heltal mellan 1 och 10 -> 5
+Talet 5 är för stort.
+Gissa ett heltal mellan 1 och 10 -> 3
+Talet 3 är för stort.
+Gissa ett heltal mellan 1 och 10 -> 1
+Talet 1 är för litet.
+Gissa ett heltal mellan 1 och 10 -> 2
+RÄTT GISSAT!
+
+Du klarade spelet på gissning nr. 4.
+```
+:::
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 4"}
+```python
+import random as rand
+
+hemligt_tal = rand.randint(1, 10)
+antal_gissningar = 0
+
+while True:
+    gissning = int(input("Gissa ett tal mellan 1 och 10 ->"))
+    antal_gissningar += 1
+    if gissning > hemligt_tal:
+        print(f"Talet {gissning} är för stort.")
+    elif gissning < hemligt_tal:
+        print(f"Talet {gissning} är för litet.")
+    else:
+        print("RÄTT GISSAT!")
+        break
+print(f"Du klarade spelet på gissning nr. {antal_gissningar}.")
+```
+
+Metoden är att gissningarna sker i en loop vars enda villkor är `True` (en "oändlig" loop).
+När spelaren har gissat rätt så avbryts loopen med `break`.
+:::
+
+### Uppgift 5
+
+Skriv ett program som beräknar och skriver ut alla heltalslösningar till
+ekvationen $2x+3y=120$ i intervallet $-50 \leq x,y \leq 50$. T ex gäller att
+$x=30$ och $y=20$ är en lösning.
+
+Tips: Låt programmet testa olika värden på $x$ och $y$ i en nästlad loop.
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 5"}
+Observera att det är viktigt att uppdatera variablerna `x` och `y` på rätt ställen i
+den nästlade loopen.
+
+```python
+x = -50
+
+while x <= 50:
+    y = -50
+    while y <= 50:
+        if 2*x + 3*y == 120:
+            print(f"En lösning: (x, y) = ({x}, {y})")
+        y += 1
+    x += 1
+```
+:::
+
+### Uppgift 6
+
+Försök att skapa följande figurer med hjälp av nästlade loopar:
+
+:::{.callout-note appearance="minimal"}
+```{python}
+#| echo: false
+print("Figur A\n")
+max_rows = 6
+max_cols = max_rows
+current_row = 0
+while current_row <= max_rows:
+    current_col = 0
+    while current_col <= max_cols:
+        print("* ", end=" ")
+        current_col += 1
+    print()
+    current_row += 1
+print()
+```
+:::
+
+:::{.callout-note appearance="minimal"}
+```{python}
+#| echo: false
+print("Figur B\n")
+max_rows = 6
+max_cols = max_rows
+current_row = 0
+while current_row <= max_rows:
+    current_col = 0
+    while current_col <= max_cols:
+        if current_col % 2 != 0 and current_row % 2 != 0:
+            print("  ", end = " ")
+        else:
+            print("* ", end=" ")
+        current_col += 1
+    print()
+    current_row += 1
+print()
+```
+:::
+
+:::{.callout-note appearance="minimal"}
+
+```{python}
+#| echo: false
+print("Figur C\n")
+max_rows = 6
+max_cols = max_rows
+current_row = 0
+while current_row <= max_rows:
+    current_col = 0
+    while current_col <= max_cols:
+        if current_row % 2 == 0:
+            if current_col % 2 == 0:
+                print("* ", end = " ")
+            else:
+                print("  ", end=" ")
+        elif current_row % 2 != 0:
+            if current_col % 2 != 0:
+                print("* ", end = " ")
+            else:
+                print("  ", end=" ")
+        current_col += 1
+    print()
+    current_row += 1
+```
+:::
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 6"}
+**Figur A**, en yttre loop skriver ut raderna (x-koordinaterna) och en
+inre loop skriver ut kolumnerna (y-koordinaterna).
+
+```python
+print("Figur A\n")
+max_rows = 6
+max_cols = max_rows
+current_row = 0
+while current_row <= max_rows:
+    current_col = 0
+    while current_col <= max_cols:
+        print("*", end=" ")
+        current_col += 1
+    print()
+    current_row += 1
+print()
+```
+
+**Figur B**, om såväl rad- och kolumnnumret är udda så ska det inte
+skrivas ut en `*` (utan ett mellanslag istället).
+
+```python
+max_rows = 6
+max_cols = max_rows
+current_row = 0
+while current_row <= max_rows:
+    current_col = 0
+    while current_col <= max_cols:
+        if current_col % 2 != 0 and current_row % 2 != 0:
+            print(" ", end = " ")
+        else:
+            print("*", end=" ")
+        current_col += 1
+    print()
+    current_row += 1
+print()
+```
+
+**Figur C**, här blir villkoren olika beroende på om radnumret är jämnt eller udda:
+
+* Om både rad- och kolumnnumret är jämnt så ska en `*` skrivas ut
+* Om radnumret är jämnt och kolumnnumret är udda så ska ett mellanslag skrivas ut
+* Om både rad- och kolumnnummer är udda så ska en `*` skrivas ut
+* Om radnumret är udda och kolumnnumret är jämnt så ska ett mellanslag skrivas ut
+
+```python
+max_rows = 6
+max_cols = max_rows
+current_row = 0
+while current_row <= max_rows:
+    current_col = 0
+    while current_col <= max_cols:
+        if current_row % 2 == 0:
+            if current_col % 2 == 0:
+                print("*", end = " ")
+            else:
+                print(" ", end=" ")
+        elif current_row % 2 != 0:
+            if current_col % 2 != 0:
+                print("*", end = " ")
+            else:
+                print(" ", end=" ")
+        current_col += 1
+    print()
+    current_row += 1
+```
+:::
+
+### Uppgift 7
+Skriv ett program som genom en meny ger en avatar tre egenskaper plus ett namn:
+
+* Namn, ska kunna sättas till godtycklig sträng
+* Färg, ska kunna väljas gul (g), blå (b) eller röd (r)
+* Styrka, ska kunna väljas som ett heltal mellan 1 och 10
+* Pronomen, ska kunna väljas han, hon eller hen
+* Menyn ska vara inmatningssäker, dvs om användaren anger ett otillåtet värde
+så ska denna inmatning (och enbart denna inmatning) göras om.
+
+Exempelkörning:
+
+:::{.callout-note appearance="minimal"}
+```
+Ange avatarens namn -> Efelia
+Ange färgen för Efelia: Gul (g), Blå (b) eller Röd (r) -> s
+Otillåtet val! Ange färgen Gul (g), Blå (b) eller Röd (r) -> r
+Ange styrka (heltal 1 - 10) -> 7
+Ange tilltalspronomen (han/hon/hen) -> hon
+
+# Datorn skriver ut
+Det här är Efelia, hon är en röd avatar med styrkan 7.
+Snabbheten beräknas till 3.
+```
+:::
+
+Snabbheten är det som saknas upp till 10 från  den angivna styrkan.
+
+:::{.callout-note title="Tips"}
+&#9432; **Tips 1 -- fritextval**
+
+Om det finns flera olika giltiga alternativ och man önskar filtrera bort
+ogiltiga inmatningar bland dessa alternativ, kan Pythons
+`in`-operator användas. Om vi vill att användaren ska skriva in
+"ÄPPLE" eller "BANAN" som ett svar på en fråga så kan vi deklarera en
+variabel enligt följande:
+
+```python
+frukter = {"ÄPPLE", "BANAN"}
+frukt = input("Ange antingen ÄPPLE eller BANAN -> ")
+if frukt in frukter:
+    print("Tack för ditt val!")
+else:
+    print("Ogiltigt val")
+```
+
+&#9432; **Tips 2 -- versaler och gemener**
+
+Python gör ju skillnad på versaler och gemener ("stora" och "små" bokstäver),
+det gör att en inmatning t ex "hon", "Hon" eller "HON" kommer att tolkas på
+olika sätt. Det kan man sätta villkor för, men det kan bli många varianter att
+hantera. Ett vanligare sätt är att göra om inmatningen till versaler, och sedan
+göra jämförelsen mot versaler. Det görs med den s.k *strängmetoden* `upper`.
+
+Ex:
+```{python}
+#| echo: true
+my_str = "abc"
+my_upper_str = my_str.upper()
+print(my_upper_str)
+```
+
+Då kan en jämförelse bli:
+```{python}
+#| echo: true
+# Testar om användaren matar in abc, oberoende av skiftläge
+if my_upper_str == "ABC":
+    print("Du matade in rätt bokstäver i rätt ordning!")
+    # Det spelar ingen roll om användaren matade in abc, aBc
+    # eller någon annan kombination av skiftlägen.
+```
+
+Det finns även en strängmetod som heter `lower` (vilken skriver ut en sträng
+med gemener, "små bokstäver"). Den kan användas enligt
+`my_lower_str = my_str.lower()` 
+
+::::{.v-space}
+::::
+&#9432; **Tips 3 -- tal i strängar**
+
+För att testa om en inmatning är ett positivt heltal kan strängmetoden
+`isdigit` användas (minns att `input` alltid ger en sträng). Om strängen
+utgörs av ett heltal går det att konvertera till typen `int`.
+Men om strängen inte utgörs av ett heltal kommer ett försök till konvertering
+att krascha programmet. Därför ska konvertering ske först efter att programmet
+har försäkrat sig om att det är möjligt med en konvertering.
+
+Ex:
+
+```{python}
+#| echo: true
+# Testar om en sträng utgörs av ett heltal, och konverterar det till i så fall
+# till heltalstyp varpå det multipliceras med 2.
+my_str = "123" # Ett tal i en sträng
+if my_str.isdigit():
+    my_number = int(my_str)
+    print(2*my_number)
+else:
+    print("Strängen var inte ett heltal, och aritmetiken blir nonsens!")
+```
+
+:::
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 7"}
+Detta Python-program fungerar som en sorts meny där användaren måste göra giltiga val. Om valet är ogiltigt
+kommer användaren att komma tillbaka till samma läge för att välja om.
+Här ser vi exempel på "oändliga loopar" och hur programmet kan avgöra om ett alternativ bland flera är
+giltigt.
+
+```python
+# Detta program ger egenskaper till en avatar.
+# Egenskaperna sparas i variabler, vars värden
+# redovisas i slutet av programmet.
+# Varje egenskap har en egen inmatningsloop
+# som i sin tur hanterar angivna alternativ
+# som inte finns i menyn.
+
+namn = input("Ange avatarens namn -> ")
+while True:
+    färg = input(f"Ange färgen för {namn}: Gul [g], Blå [b] eller Röd [r] -> ")
+    if färg in {"g", "b", "r", "G", "B", "R"}:
+        # Nedanstående konstruktion med if-sats kan skrivas snyggare med
+        # en s.k uppslagstabell; vi kommer att gå igenom detta senare i kursen.
+        if färg in {"g", "G"}:
+            färg = "gul"
+        elif färg in {"b", "B"}:
+            färg = "blå"
+        else:
+            färg = "röd"
+        break
+    print("Felaktigt val")
+
+while True:
+    styrka = input("Ange styrka (heltal 1 - 10) -> ")
+    if styrka.isnumeric():
+        styrka = int(styrka)
+        if (1 <= styrka <= 10):
+            break
+    print("Felaktigt val")
+
+while True:
+    pronomen = input("Ange tilltalspronomen (han/hon/hen) -> ")
+    # Oavsett skiftläge kommer pronomet att göras om till
+    # gemener ("små bokstäver")
+    pronomen = pronomen.lower()
+    if pronomen in {"han", "hon", "hen"}:
+        break
+    print("Felaktigt val")
+
+print(f"Det här är {namn}, {pronomen} är en {färg} avatar med styrkan {styrka}.")
+print(f"Snabbheten beräknas till {10 - styrka}.")
+
+```
+:::
+
+## for-loopar
+
+**I uppgift 8 -- 10 ska du använda `for`-loopar i din lösning**.
+---
+
+### Uppgift 8
+Skapa program, med hjälp av en eller flera loopar, som ger följande respektive
+utskrift:
+
+Figur A
+
+```{python}
+#| echo: false
+for i in range(1, 9):
+    print(i*"* ")
+```
+:::
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 8A"}
+```python
+for i in range(1, 9):
+    print(i * "*")
+```
+:::
+
+:::{.callout-note appearance="minimal"}
+Figur B
+```{python}
+#| echo: false
+for i in range(8, 0, -1):
+    print(i*"* ")
+```
+:::
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 8B"}
+```python
+for i in range(8, 0, -1):
+    print(i * "*")
+```
+:::
+
+:::{.callout-note appearance="minimal"}
+
+
+Figur C
+
+```{python}
+#| echo: false
+print()
+for i in range(1, 8):
+    print(i*"* ")
+for i in range(8, 0, -1):
+    print(i*"* ")
+```
+:::
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 8C"}
+```python
+for i in range(1, 8):
+    print(i * "*")
+for i in range(8, 0, -1):
+    print(i * "*")
+```
+:::
+
+:::{.callout-note appearance="minimal"}
+
+Figur D
+
+```{python}
+#| echo: false
+print()
+for i in range(1, 9):
+    print(f"{(2*i-1)*'* ':^30}")
+for i in range(7, 0, -1):
+    print(f"{(2*i-1)*'* ':^30}")
+```
+
+:::
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 8D"}
+Här måste dels rätt antal tecken tas i anspråk (15 st per rad), dels måste
+dessa tecken centreras och slutligen måste en formel hittas för att beräkna
+antalet stjärnor på nästföljande rad.
+```python
+for i in range(1, 9):
+    print(f"{(2*i-1) * '*':^15}")
+for i in range(7, 0, -1):
+    print(f"{(2*i-1) * '*':^15}")
+```
+:::
+
+### Uppgift 9
+Skapa en tabell som gör om en temperatur given &deg;F till motsvarande
+temperatur i &deg;C. Tabellen ska vara stegad i tiogradersintervall, se exempel
+nedan. Formeln för konvertering mellan &deg;C och &deg;F är
+$$
+C = \frac{5}{9}F-\frac{160}{9}
+$$
+
+:::{.callout-note appearance="minimal"}
+
+
+```{python}
+#| echo: false
+print("Grader F".ljust(13), end=" ")
+print("Grader C")
+print("=======================")
+
+for F in range(-10, 120, 10):
+    C = 5/9 * F - 160/9
+    print(f"{F:5.0f}", end=" ")
+    print(f"{C:14.1f}")
+```
+
+:::
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 9"}
+```python
+print("Grader F".ljust(13), end=" ")
+print("Grader C")
+print("=======================")
+
+for F in range(-10, 120, 10):
+    C = 5/9 * F - 160/9
+    print(f"{F:5.0f}", end=" ")
+    print(f"{C:14.1f}")
+
+```
+:::
+
+### Uppgift 10
+I [uppgift 4](#uppgift-4) skapade du ett program som lät en spelare gissa ett tal från 1
+t o m 10. Modifiera detta program så att det startar om efter att spelaren har
+lyckats lista ut talet. Programmet ska totalt köras tre gånger, och när den
+tredje omgången är över ska det avslutas med att skriva ut medelvärdet på
+antalet gissningar som behövdes avrundat till en decimal. Använd en `for`-loop
+som kontrollstruktur för omstarten av programmet.
+
+Körningsexempel:
+
+:::{.callout-note appearance="minimal"}
+```
+SPELOMGÅNG 1
+----------------
+Gissa ett tal mellan 1 och 10 -> 5
+Talet 5 är för litet.
+Gissa ett tal mellan 1 och 10 -> 7
+Talet 7 är för litet.
+Gissa ett tal mellan 1 och 10 -> 9
+Talet 9 är för litet.
+Gissa ett tal mellan 1 och 10 -> 10
+RÄTT GISSAT!
+Du klarade spelet på gissning nr. 4.
+
+SPELOMGÅNG 2
+----------------
+Gissa ett tal mellan 1 och 10 -> 5
+Talet 5 är för stort.
+Gissa ett tal mellan 1 och 10 -> 3
+Talet 3 är för litet.
+Gissa ett tal mellan 1 och 10 -> 4
+RÄTT GISSAT!
+Du klarade spelet på gissning nr. 3.
+
+SPELOMGÅNG 3
+----------------
+Gissa ett tal mellan 1 och 10 -> 5
+Talet 5 är för stort.
+Gissa ett tal mellan 1 och 10 -> 2
+Talet 2 är för stort.
+Gissa ett tal mellan 1 och 10 -> 1
+RÄTT GISSAT!
+Du klarade spelet på gissning nr. 3.
+
+Medelvärdet för antalet gissningar per tal: 3.3
+```
+:::
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 10"}
+Lösningen görs med en yttre `for`-loop (där vi känner till antalet varv från början) och en inre
+`while`-loop (där antalet varv beror på hur många gissningar som krävs).
+
+```python
+import random as rand
+totalt_antal_gissningar = 0
+
+for i in range(1, 4):
+    print(f"SPELOMGÅNG {i}")
+    print("----------------")
+    hemligt_tal = rand.randint(1, 10)
+    antal_gissningar = 0
+
+    while True:
+        gissning = int(input("Gissa ett tal mellan 1 och 10 -> "))
+        antal_gissningar += 1
+        if gissning > hemligt_tal:
+            print(f"Talet {gissning} är för stort.")
+        elif gissning < hemligt_tal:
+            print(f"Talet {gissning} är för litet.")
+        else:
+            print("RÄTT GISSAT!")
+            break
+    print(f"Du klarade spelet på gissning nr. {antal_gissningar}.")
+    print()
+    totalt_antal_gissningar += antal_gissningar
+print(f"Medelvärdet för antalet gissningar per tal: {(totalt_antal_gissningar / 3):.1f}")
+```
+:::
+
+## Uppgifter utan lösningsförslag
+
+**Dessa uppgifter är tänkta för att på egen hand testa förståelsen för
+loopar, och ska kunna lösas enbart med information från presentationer
+och information kring tidigare uppgifter.**
+---
+
+### Uppgift 11
+
+Skriv ett program som simulerar hundra tärningskast med en sexsidig tärning.
+Innan programmet avslutas ska det på lämpligt sätt skriva ut antalet utfall av
+respektive sort (dvs antalet ettor, antalet tvåor osv) samt medelvärdet med
+en decimals noggrannhet.
+
+Kanske går det också att vara kreativ och grafiskt visa antalet utfall av
+respektive sort som ett liggande stapeldiagram, där staplarna utgörs av ett
+antal stjärnor (`*`).
+
+Se [tipset till Uppgift 2 ovan](#slumptalstips) för att skapa slumpvisa
+heltal i ett intervall.
+
+### Uppgift 12
+
+I en lek som kan användas när man lär sig division sitter deltagarna i en
+ring. Den första personen i ringen säger "Ett" och den andra "Två".
+När en person ska säga ett tal som är jämnt delbart med tre, så säger den
+"Fizz". Den tredje personen säger alltså "Fizz" istället för tre, eftersom
+tre är jämnt delbart med tre, detsamma gäller den person som skulle säga "Sex"
+och "Nio" osv. När en person ska säga ett tal som är jämnt delbart med fem
+så ska den istället säga "Buzz". När talet femton ska uttalas så ska den
+personen som står på tur säga "FizzBuzz", eftersom femton är jämnt delbart
+med både tre och fem. I ringleken så åker personer som säger fel ut, och spelet
+går vidare med en mindre ring.
+
+Skriv ett program som gör en uppräkning av heltal från 1 till 100, och på
+lämpligt sätt skriver ut talen (när de ska skrivas ut), Fizz (istället för tal
+som är jämnt delbara med tre), Buzz (istället för tal som är jämnt delbara med
+fem) och FizzBuzz (istället för tal som är jämnt delbara med såväl tre som fem).
+
+Försök att skriva två varianter på lösning:
+
+* En som innehåller booleska operatorer i villkoren
+* En som inte innehåller booleska operatorer i villkoren
+
+Se lösningsförslag till
+[uppgift 11 på sidan Utskrifter och villkor](../utskrift-och-villkor/index.qmd#uppgift-11)
+för att få en idé om uppbyggnaden.

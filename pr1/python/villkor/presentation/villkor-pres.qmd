@@ -1,0 +1,308 @@
+---
+title: Villkor i Python
+from: markdown+emoji
+title-slide-attributes:
+  data-background-image: https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/villkor/banner-1090830_1280.jpg
+  data-background-color: "white"
+author: "Nikodemus Karlsson"
+format:
+  revealjs:
+    theme: dark
+    transition: slide
+    background-transition: slide
+    slide-number: true
+    controls: true
+    controls-layout: edges
+    date-format: "DD MMM YYYY"
+    css: style.css
+execute: 
+  echo: true
+---
+
+## Vad är ett villkor?
+
+:::{.blue-bg-small-padding }
+Ett datorprogram är en följd av instruktioner.
+Dessa instruktioner kan baseras på indata.
+Beroende på vilka indata som ges kan programmet behöva ta olika vägar.
+
+Det som avgör vilken väg programmet ska ta ka kallas villkor.
+:::
+
+## Dagens mål
+
+* Att förstå hur villkor tecknas i Python med hjälp av
+<span style="font-size: 85%;">`if`</span>-satser och kunna skriva egna, enkla
+sådana villkor i kod.
+
+* Att kunna använda jämförelsoperatorerna.
+
+* Att känna till innebörden av booleska variabler och kunna använda sådana. 
+
+* Att börja lära sig att tolka, och även skapa egna, flödesscheman för
+program som innehåller villkor.
+
+## Ett enkelt villkor
+
+I Python så avgörs ett villkor med hjälp av det reserverade ordet
+<span style="font-size: 85%;">`if`</span>.
+
+:::{.new-line}
+:::
+
+```{python}
+a = 1
+if a > 0:
+   print("a är större än 0")
+``` 
+
+:::{.new-line}
+:::
+
+```{python}
+a = -1
+if a > 0:
+   print("a är större än noll")
+else:
+   print("a är inte större än noll")
+``` 
+## Exempel: Godkänt?
+
+```{mermaid}
+%%| echo: false
+flowchart LR
+    start[/Inmatning\n poäng/]
+    cond{Är poäng över\nE-gräns?}
+    ja[/Skriv ut\nGodkänt/]
+    nej(Programmet\navslutas)
+    start-->cond
+    cond-->|Ja|ja
+    cond-->|Nej|nej
+    ja-->nej
+```
+
+:::{.v-space}
+```python
+e_gräns = 15
+poäng = int(input('Ange din provpoäng -> '))
+if poäng >= e_gräns:
+   print('Godkänt')
+print('Programmet avslutas')
+```
+:::
+
+:::{.v-space}
+Resultatet av <span style="font-size: 85%;">`input`</span>
+är en sträng; denna kan göras om till ett heltal med
+<span style="font-size: 85%;">`int`</span> enligt rad 2 ovan.
+:::
+
+## Exempel: Godkänt eller ej?
+```{mermaid}
+%%| echo: false
+flowchart LR
+    start[/Inmatning\n poäng/]
+    cond{Är poäng över\nE-gräns?}
+    ja[/Skriv ut\nGodkänt/]
+    nej[/Skriv ut\nEj godkänt/]
+    slut(Programmet\navslutas)
+    start-->cond
+    cond-->|Ja|ja
+    cond-->|Nej|nej
+    ja-->slut
+    nej-->slut
+```
+
+:::{.v-space}
+
+```python
+e_gräns = 15
+poäng = int(input('Ange din provpoäng -> '))
+if poäng >= e_gräns:
+   print('Godkänt')
+else:
+  print('Ej godkänt')
+print('Programmet avslutas')
+```
+:::
+
+## Jämförelseoperatorer
+
+::: {style="font-size: 85%"}
+
+:::: columns
+::::: {.column width="7%"}
+`>`
+
+`<`
+
+`>=`
+
+`<=`
+
+`==`
+
+`!=`
+:::::
+
+::::: {.column width="45%"}
+Större än
+
+Mindre än
+
+Större än eller lika med
+
+Mindre än eller lika med
+
+Lika med
+
+Skilt från
+:::::
+
+::::: {.column width="48%"}
+::::::{.blue-bg-large-padding}
+Observera skillnaden mellan tilldelande likhetstecken och
+jämförande likhetstecken!
+::::::
+:::::
+::::
+
+:::: columns
+::::: {.column width="52%"}
+```{python}
+print(3 == 3)
+print(3 <= 3)
+print(3 != 3)
+print(3 != 4)
+```
+:::::
+
+::::: {.column width="48%"}
+```python
+a = 3  # Tilldelande
+b = 8  # Tilldelande
+a == b # Jämförande
+# Rad 3 evalueras till False
+```
+Tilldelning sker från höger till vänster.
+:::::
+::::
+:::
+
+## Booleska värden
+
+Värdena <span style="font-size: 85%;">`True`</span> och
+<span style="font-size: 85%;"> `False`</span> kallas för **booleska** värden
+(efter George Boole, 1815 -- 1864).
+
+Variabler som antar denna typ av värden kallas för **booleska
+variabler**.
+
+:::{.v-space}
+```{python}
+my_boolean = True
+if (my_boolean):
+   print("Den booleska variabelns värde var True")
+```
+:::
+
+:::{.v-space}
+```{python}
+my_second_boolean = False
+if (not my_second_boolean):
+   print("Den booleska variabelns värde var inte True")
+```
+:::
+
+## Sammansättning av booleska värden
+
+Booleska värden går att ''sätta ihop'' med operatorerna
+<span style="font-size: 85%;">`or`</span> och
+<span style="font-size: 85%;"> `and` </span>.
+
+:::{.v-space}
+```{python}
+a = True
+b = False
+print(a and b)
+print(a or b)
+print((a or b) and a)
+print(not a)
+print(not b)
+```
+:::
+
+## Vilket betyg? {.scrollable visibility="hidden"}
+
+```{mermaid}
+%%| echo: false
+%%| fig-width: 10
+flowchart LR
+    start[/Inmatning\npoäng/]
+    condA{Över\nA-gräns?}
+    condC{Över\nC-gräns?}
+    condE{Över\nE-gräns?}
+    slut(Programmet avslutas)
+    F[/Skriv\n ut F/]
+    E[/Skriv\n ut E/]
+    C[/Skriv\n ut C/]
+    A[/Skriv\n ut A/]
+    slut(Programmet\navslutas)
+    start-->condA
+    condA-->|Ja|A
+    A-->slut
+    condA-->|Nej|condC
+    condC-->|Ja|C
+    C-->slut
+    condC-->|Nej|condE
+    condE-->|Ja|E
+    condE-->|Nej|F
+    E-->slut
+    F-->slut
+```
+
+```python
+e_gräns = 15; c_gräns = 25; a_gräns = 35
+poäng = int(input('Ange din provpoäng -> '))
+if poäng >= a_gräns:
+   print('A')
+elif poäng >= c_gräns:
+   print('C')
+elif poäng >= e_gräns:
+   print('E')
+else:
+   print('F')
+print('Programmet avslutas')
+```
+
+## Exempel: Kategorisera talet
+
+```{mermaid}
+%%| echo: false
+flowchart LR
+start[/Inmatning\n av tal/]
+slut(Programmet\navslutas)
+condGeq0{"Tal ≥ 0?"}
+condNoll{"Är talet 0?"}
+neg[/Skriv ut\n negativt/]
+noll[/Skriv ut\n noll/]
+pos[/Skriv ut\n positivt/]
+start-->condGeq0
+condGeq0-->|Ja|condNoll
+condGeq0-->|Nej|neg-->slut
+condNoll-->|Ja|noll-->slut
+condNoll-->|Nej|pos-->slut
+```
+
+```python
+tal = int(input('Ange valfritt heltal ->'))
+if tal >= 0:
+   if tal == 0:
+      print('Noll')
+   else:
+      print('Positivt')
+else:
+   print('Negativt')
+
+print('Programmet avslutas')
+```
