@@ -577,7 +577,7 @@ window.Quarto = {
 <p>Skriv en funktion som implementerar binärsökning enligt algoritm ovan. Till en början, gör inte en loop som upprepar sökningen, utan testa dig fram steg för steg och kontrollera att du får rätt index i retur.</p>
 <p>Som det står i beskrivningen av algoritm så ska funktionen returnera tre tal. Exempel på hur detta går till:</p>
 <p><strong>Exempel</strong></p>
-<div id="28850ef8" class="cell" data-execution_count="1">
+<div id="00737837" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calc(a, b):</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">sum</span> <span class="op">=</span> a <span class="op">+</span> b</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    diff <span class="op">=</span> a <span class="op">-</span> b</span>
@@ -593,7 +593,7 @@ window.Quarto = {
 </div>
 </div>
 <p>Vidare så används <em>heltalsdivision</em> för att ta reda på mittenindex. Denna resulterar alltid i heltaldelen av divisionens resultat. Exempel:</p>
-<div id="25830cfe" class="cell" data-execution_count="2">
+<div id="bafaa3b0" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">21</span> <span class="op">//</span> <span class="dv">2</span>)  <span class="co"># Ger resultatet 10 (se nedan)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>10</code></pre>
@@ -611,7 +611,7 @@ Lösningsförslag
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="46871c17" class="cell" data-execution_count="3">
+<div id="3adfa1e4" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> binary_search(lst, key, lower, upper):</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Tar emot en lista lst,</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># en söknyckel key,</span></span>
@@ -641,7 +641,7 @@ Lösningsförslag
 <span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>, <span class="va">False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Exempel på använding av funktionen för att söka efter talet <code>12</code> i en lista:</p>
-<div id="54a0185d" class="cell" data-execution_count="4">
+<div id="2f283bbb" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">12</span>, <span class="dv">14</span>]</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>lower <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>upper <span class="op">=</span> <span class="bu">len</span>(lst) <span class="op">-</span> <span class="dv">1</span></span>
@@ -659,7 +659,7 @@ Lösningsförslag
 <h3 class="anchored" data-anchor-id="uppgift-2">Uppgift 2</h3>
 <p>Slutför programmet med en loop som under en körning avgör om, och i så fall på vilket index, som det sökta talet finns alternativt saknas.</p>
 <p><strong>Körningsexempel</strong></p>
-<div id="cacf6594" class="cell" data-execution_count="5">
+<div id="66307c4c" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-stdout">
 <pre><code>Listan som ska sökas igenom
 [-1, 2, 4, 5, 8, 12, 15, 16, 20]
@@ -683,7 +683,7 @@ Partiellt lösningsförslag
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="0b8a0e66" class="cell" data-execution_count="6">
+<div id="dd60f103" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Huvudprogram där funktionen i Uppgift 1 testas</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ----------------------------------------------</span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -715,7 +715,7 @@ Partiellt lösningsförslag
 <section id="uppgift-3" class="level3">
 <h3 class="anchored" data-anchor-id="uppgift-3">Uppgift 3</h3>
 <p>Undersök antalet sökningar som behöver göras för ett antal tal. Här är utmatningsexempel på några sökningar i listan:</p>
-<div id="b46a9798" class="cell" data-execution_count="7">
+<div id="28d5d7f1" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-stdout">
 <pre><code>Listan som ska sökas igenom
 [-1, 2, 4, 5, 8, 12, 15, 16, 20]
