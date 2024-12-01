@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Octave: Octave som kalkylator – CodeBubo</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../../../">
+<script src="../../../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../../../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../../../site_libs/bootstrap/bootstrap-7274c99d359db3f6908a26b1e6d051ec.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FFXVNM3K2N"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../../../styles.css">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../../../index.html">
+    <span class="navbar-title">CodeBubo</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Programmering i matematik</li><li class="breadcrumb-item">MatSpec</li><li class="breadcrumb-item"><a href="../../../../../ma/ma-spec/programmering/teori-och-ovningar/octave-som-kalkylator/index.html">Teori och övningar</a></li><li class="breadcrumb-item"><a href="../../../../../ma/ma-spec/programmering/teori-och-ovningar/octave-som-kalkylator/index.html">Octave: Octave som kalkylator</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+ <span class="menu-text">Programmeringsrelaterat</span>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Programmering 1</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../pr1/python/cheat_sheet_python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python Cheat Sheet</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Presentationer, Python</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../pr1/python/intro/pres-version-installerad-python/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduktion (PC)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../pr1/python/intro/pres-version-online-python/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduktion (Chromebook)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../pr1/python/villkor/presentation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentation: Villkor</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../pr1/python/while-loopar/presentation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentation: <code>while</code>-loopar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../pr1/python/for-loopar/presentation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentation: <code>for</code>-loopar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../pr1/python/funktioner/presentation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentation: Funktioner</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../pr1/python/listor/presentation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentation: Listor</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../pr1/python/strangar/presentation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentation: Strängar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../pr1/python/egna-datatyper/presentation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentation: Egna datatyper i Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../pr1/python/spara-data-pa-fil/presentation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentation: Spara data till fil</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../pr1/python/klasser-och-metoder/presentation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentation: Klasser och metoder</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Uppgifter, Python</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../pr1/python/uppgifter/utskrift-och-villkor/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uppgifter: Utskrift och villkor</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../pr1/python/uppgifter/loopar/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uppgifter: Loopar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../pr1/python/uppgifter/funktioner/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uppgifter: Funktioner</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../pr1/python/uppgifter/listor/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uppgifter: Listor</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../pr1/python/uppgifter/strangar/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uppgifter: Strängar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../pr1/python/uppgifter/egna-datatyper/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uppgifter: Egna datatyper</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../pr1/python/uppgifter/binarsokning/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uppgifter: Binärsökning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../pr1/python/uppgifter/sortering/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uppgifter: Sortering</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../pr1/python/uppgifter/bilregister/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uppgifter: Bilregister</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../pr1/python/uppgifter/klasser-och-metoder/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uppgifter: Klasser och metoder</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Programmering i matematik</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">MatSpec</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Teori och övningar</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth3 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../ma/ma-spec/programmering/teori-och-ovningar/octave-som-kalkylator/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Octave: Octave som kalkylator</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../ma/ma-spec/programmering/teori-och-ovningar/funktioner-villkor-och-loopar/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Octave: Funktioner, villkor och loopar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../ma/ma-spec/programmering/teori-och-ovningar/lin-ekvationssystem-med-octave/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Octave: Lösning av linjära ekvationssystem</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Matematikrelaterat</span></span>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">Matematik 5</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../ma/ma-5/kombinatorik/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Kombinatorik: Extra övningar</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">Matematik specialisering</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../ma/ma-spec/ovningar/matrisinvertering/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Matrisinvertering: Extra övningar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../../ma/ma-spec/komp-mat/determinant/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Determinant mm</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#octave-som-kalkylator" id="toc-octave-som-kalkylator" class="nav-link active" data-scroll-target="#octave-som-kalkylator">Octave som kalkylator</a>
+  <ul class="collapse">
+  <li><a href="#teori" id="toc-teori" class="nav-link" data-scroll-target="#teori">Teori</a></li>
+  <li><a href="#övningar" id="toc-övningar" class="nav-link" data-scroll-target="#övningar">Övningar</a>
+  <ul class="collapse">
+  <li><a href="#övning-101" id="toc-övning-101" class="nav-link" data-scroll-target="#övning-101">Övning 101</a></li>
+  <li><a href="#övning-102" id="toc-övning-102" class="nav-link" data-scroll-target="#övning-102">Övning 102</a></li>
+  <li><a href="#övning-103" id="toc-övning-103" class="nav-link" data-scroll-target="#övning-103">Övning 103</a></li>
+  <li><a href="#övning-104" id="toc-övning-104" class="nav-link" data-scroll-target="#övning-104">Övning 104</a></li>
+  <li><a href="#övning-105" id="toc-övning-105" class="nav-link" data-scroll-target="#övning-105">Övning 105</a></li>
+  <li><a href="#övning-106" id="toc-övning-106" class="nav-link" data-scroll-target="#övning-106">Övning 106</a></li>
+  <li><a href="#övning-107" id="toc-övning-107" class="nav-link" data-scroll-target="#övning-107">Övning 107</a></li>
+  <li><a href="#övning-108" id="toc-övning-108" class="nav-link" data-scroll-target="#övning-108">Övning 108</a></li>
+  <li><a href="#övning-109" id="toc-övning-109" class="nav-link" data-scroll-target="#övning-109">Övning 109</a></li>
+  <li><a href="#övning-110" id="toc-övning-110" class="nav-link" data-scroll-target="#övning-110">Övning 110</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Programmering i matematik</li><li class="breadcrumb-item">MatSpec</li><li class="breadcrumb-item"><a href="../../../../../ma/ma-spec/programmering/teori-och-ovningar/octave-som-kalkylator/index.html">Teori och övningar</a></li><li class="breadcrumb-item"><a href="../../../../../ma/ma-spec/programmering/teori-och-ovningar/octave-som-kalkylator/index.html">Octave: Octave som kalkylator</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Octave: Octave som kalkylator</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="octave-som-kalkylator" class="level1">
+<h1>Octave som kalkylator</h1>
+<section id="teori" class="level2">
+<h2 class="anchored" data-anchor-id="teori">Teori</h2>
+<p>Se kap. 1 i dokumentet <a href="https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/docs/linalg/ovningar-i-octave-kap-0-4.pdf">Teori och övningar i programmet Octave</a></p>
+</section>
+<section id="övningar" class="level2">
+<h2 class="anchored" data-anchor-id="övningar">Övningar</h2>
+<section id="övning-101" class="level3">
+<h3 class="anchored" data-anchor-id="övning-101">Övning 101</h3>
+<p>Beräkna <span class="math inline">\(\frac{1}{19} - \frac{1}{17} + \frac{1}{131}\)</span> med Octave. Svara med</p>
+<ol type="a">
+<li>Fyra decimaler</li>
+<li>I bråkform</li>
+<li>Med femton decimaler</li>
+</ol>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 101">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag övning 101
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Lösningarna är gjorda i <em>Command Window</em>; den text som står tillsammans med ett nummer, t ex <code>Octave:1&gt;</code>, ska inte matas in.</p>
+<p><strong>a-uppgiften</strong></p>
+<pre><code>octave:1&gt; 1/19 - 1/17 + 1/131
+ans = 1.4416e-03</code></pre>
+<p><strong>b-uppgiften</strong></p>
+<pre><code>octave:2&gt; format rat
+octave:3&gt; 1/19 - 1/17 + 1/131
+ans = 61/42313</code></pre>
+<p><strong>c-uppgiften</strong></p>
+<pre><code>octave:4&gt; format long
+octave:5&gt; 1/19 - 1/17 + 1/131
+ans = 1.441637321863255e-03</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="övning-102" class="level3">
+<h3 class="anchored" data-anchor-id="övning-102">Övning 102</h3>
+<p>Beräkna <span class="math inline">\(\frac{1}{19^2} - \frac{1}{17^2} + \frac{1}{131^2}\)</span> med Octave. Svara med</p>
+<ol type="a">
+<li>Femton decimaler</li>
+<li>I bråkform</li>
+</ol>
+<p>Jämför dina svar ovan med det du får om du anger samma uttryck i Wolfram Alpha. Kommentera resultatet.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 102">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag övning 102
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a-uppgiften</strong></p>
+<p>Kommentar: formatet med 15 decimaler är kvar från den tidigare inmatningen i övning 1c; formatet ändras inte tillbaka till standard per automatik.</p>
+<pre><code>octave:6&gt; 1/19^2 - 1/17^2 + 1/131^2
+ans = -6.318528474731418e-04</code></pre>
+<p><strong>b-uppgiften</strong></p>
+<pre><code>octave:7&gt; format rat
+octave:8&gt; 1/19^2 - 1/17^2 + 1/131^2
+ans = -17/26905</code></pre>
+<p>Kommentar: Med Wolfram Alpha kommer svaret att bli <span class="math inline">\(\frac{-1131263}{1790389969}\)</span>. Det vi ser är att Octave skapar ett rationellt tal av ett avrundat värde.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="övning-103" class="level3">
+<h3 class="anchored" data-anchor-id="övning-103">Övning 103</h3>
+<p>Beräkna värdet av uttrycket <span class="math display">\[
+\frac{\left (\frac{\sqrt{5} + 1}{2} \right )^{10} - \left (\frac{\sqrt{5} - 1}{2} \right )^{10}}{\sqrt{5}}
+\]</span> på en enda rad.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 103">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag övning 103
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<pre><code>octave:9&gt; format short
+octave:10&gt; (((sqrt(5) + 1) / 2)^10 - ((sqrt(5) - 1) / 2)^10) / sqrt(5)
+ans = 55.000</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="övning-104" class="level3">
+<h3 class="anchored" data-anchor-id="övning-104">Övning 104</h3>
+<p>Skapa en vektor <span class="math inline">\(\vec{v}\)</span> med tio jämnt fördelade vinklar i intervallet 0° – 360° (tips: slå upp funktionen <code>linspace</code> genom att skriva <code>help linspace</code> vid Octave-prompten). Verifiera med en beräkning att identiteten <span class="math inline">\(\sin^2v_j + \cos^2v_j\)</span> gäller, där <span class="math inline">\(v_j\)</span> är komponenten i <span class="math inline">\(\vec{v}\)</span> med indexet <span class="math inline">\(j\)</span>.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 104">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag övning 104
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<pre><code>octave:11&gt; v = linspace(0, 360, 10)
+v =
+
+     0    40    80   120   160   200   240   280   320   360
+
+octave:12&gt; (sin(v)).^2 + (cos(v)).^2
+ans =
+
+   1   1   1   1   1   1   1   1   1   1
+</code></pre>
+<p>vilket indikerar att respektive summa är 1.</p>
+<p>Observera punkten framför exponent-tecknet i uttrycket; den gör så att beräkningen sker komponentvis. Om punkten utelämnas kommer Octave att mata ut ett felmeddelande.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="övning-105" class="level3">
+<h3 class="anchored" data-anchor-id="övning-105">Övning 105</h3>
+<p>Evaluera följande uttryck i Octave, reflektera över resultatet.</p>
+<ol type="a">
+<li><code>1/0</code></li>
+<li><code>0/0</code></li>
+<li><code>tan(pi/2)</code></li>
+<li><code>inf + 1</code></li>
+<li><code>inf + 1e99</code></li>
+<li><code>inf + inf</code></li>
+<li><code>inf - inf</code></li>
+</ol>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 105">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag övning 105
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a-uppgiften</strong></p>
+<pre><code>octave:13&gt; 1/0
+ans = Inf</code></pre>
+<p><strong>Kommentar</strong>: <code>Inf</code> betyder “oändligheten”.</p>
+<p><strong>b-uppgiften</strong></p>
+<pre><code>octave:14&gt; 0/0
+ans = NaN</code></pre>
+<p><strong>Kommentar</strong>: <code>NaN</code> betyde Not a Number. Det är intressant att notera att Octave gör skillnad på uttrycken i a och b. I matematiken är såväl <span class="math inline">\(1/0\)</span> som <span class="math inline">\(0/0\)</span> odefinierat.</p>
+<p><strong>c-uppgiften</strong></p>
+<pre><code>octave:15&gt; tan(pi/2)
+ans = 1.6331e+16</code></pre>
+<p>Kommentar: Uttrycket <span class="math inline">\(\tan (\pi/2)\)</span> odefinierat i matematiken. Men eftersom Octave avrundar <code>pi</code> till ett ändligt antal decimaler så är inte Octave:s värde på <code>pi</code> detsamma som den matematiska konstanten <span class="math inline">\(\pi\)</span>. Ju närmare <span class="math inline">\(\pi/2\)</span> en vinkel kommer, desto större värde kommer <span class="math inline">\(\arctan(\pi/2)\)</span> att få. Därför så blir inte Octave:s svar <code>Inf</code> eller <code>NaN</code>, det blir helt enkelt ett stort tal.</p>
+<p><strong>d-uppgiften</strong></p>
+<pre><code>octave:16&gt; Inf + 1
+ans = Inf</code></pre>
+<p>Kommentar: Läggs 1 till “oändligheten” är det fortfarande “oändligheten”. Annars så skulle “oändligheten” ha varit ett tal, och det är det inte.</p>
+<p><strong>e-uppgiften</strong></p>
+<pre><code>octave:17&gt; Inf + 1e99
+ans = Inf</code></pre>
+<p>Kommentar: Även om ett väldigt stort tal läggs till oändligheten så är det fortfarande oändligheten, på samma sätt som i övning 105 d.</p>
+<p><strong>f-uppgiften</strong></p>
+<pre><code>octave:18&gt; Inf + Inf
+ans = Inf</code></pre>
+<p>Kommentar: Här kanske det är intressant att svaret inte blir “två oändligheter”. “Oändligheten” är inte kvantiserad.</p>
+<p><strong>g-uppgiften</strong></p>
+<pre><code>octave:19&gt; Inf - Inf
+ans = NaN</code></pre>
+<p>Kommentar: Eftersom oändligheten inte är kvantiserad så kan vad som helst tas bort från oändligheten utan att den förändras. Eftersom något som inte är kvantiserat tar bort från något som inte heller är kvantiserat så blir resultatet odefinierat.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="övning-106" class="level3">
+<h3 class="anchored" data-anchor-id="övning-106">Övning 106</h3>
+<p>Förenkla talet <span class="math inline">\(i^{95}\)</span> med Octave. Hur står sig svaret i förhållande till det värde som uttrycket faktiskt har? Kommentera.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 106">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag övning 106
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<pre><code>octave:20&gt; i^95
+ans =  -4.8800e-16 - 1.0000e+00i</code></pre>
+<p>Kommentar: Uttryckets värde är precis <span class="math inline">\(-i\)</span>. Eftersom Octave arbetar med närmevärden så kan svaret se ut att skilja sig lite från detta. Du bör dock vara uppmärksam när du ser exponenter som är negativa på ett stort avstånd från noll; det kan ofta vara en “matematisk nolla”.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="övning-107" class="level3">
+<h3 class="anchored" data-anchor-id="övning-107">Övning 107</h3>
+<p>Deklarera en vektor <span class="math inline">\(\vec{v}\)</span> som innehåller tio jämnt fördelade vinklar mellan <span class="math inline">\(0\)</span> och <span class="math inline">\(2\pi\)</span>. Skapa med hjälp av <span class="math inline">\(\vec{v}\)</span> en vektor <span class="math inline">\(\vec{z}\)</span>, vars komponenter <span class="math inline">\(z_j=e^{iv_j}\)</span>.</p>
+<ol type="a">
+<li>Verifiera att <span class="math inline">\(\mathrm{Re}(z_j)=\cos{v}\)</span>. Tips: skriv <code>help real</code> vid Octave-prompten.</li>
+<li>Verifiera att <span class="math inline">\(\mathrm{Im}(z_j)=\sin{v}\)</span>. Tips: skriv <code>help imag</code> vid Octave-prompten.</li>
+</ol>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 107">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag övning 107
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Arbetsgång: Först skapas vektorn med vinklar, därefter utförs respektive beräkningar vars resultat läggs i varsin resultatsvektor. Slutligen subtraheras dessa resultatsvektorer med varandra. Om likhet gäller ska respektive komponent i denna differensvektor vara noll.</p>
+<pre><code>octave:21&gt; v = linspace(0, 2*pi, 10);
+octave:22&gt; z = e.^(i.*v);
+octave:23&gt; trigres_cos  = cos(v);
+octave:24&gt; trigres_sin  = sin(v);
+octave:25&gt; real(z) - trigres_cos # Detta är a-uppgiften
+ans =
+
+   0   0   0   0   0   0   0   0   0   0
+
+octave:26&gt; imag(z) - trigres_sin # Detta är b-uppgiften
+ans =
+
+   0   0   0   0   0   0   0   0   0   0</code></pre>
+<p>Eftersom differensen av respektive par av vektorkomponenter blir noll så är de lika!</p>
+</div>
+</div>
+</div>
+</section>
+<section id="övning-108" class="level3">
+<h3 class="anchored" data-anchor-id="övning-108">Övning 108</h3>
+<p>I ett annat programspråk så finns en funktion som heter <code>append</code>, vilken används till att lägga till element i listor. Octave har inte den funktionen, istället så kan en komponent <code>a</code> läggas till en vektor v genom <code>v(end+1) = a</code>.</p>
+<p>Skapa en vektor <code>v = [1 2 3]</code> och lägg till talet 4 sist med hjälp av denna metod.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 108">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag övning 108
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<pre><code>octave:27&gt; v = 1:3
+v =
+
+   1   2   3
+
+octave:28&gt; v(end+1) = 4
+v =
+
+   1   2   3   4</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="övning-109" class="level3">
+<h3 class="anchored" data-anchor-id="övning-109">Övning 109</h3>
+<p>Skapa en vektor <span class="math inline">\(\vec{v}\)</span> med talen <span class="math inline">\(0, 0.25, 0.5, 0.75, \ldots 3\)</span> i Octave. Med hjälp av denna vektor ska du skapa en vektor <span class="math inline">\(\vec{x}\)</span>, där <span class="math inline">\(x_i=\log_3 v_i\)</span> (observera att <span class="math inline">\(i\)</span> är index, inte den imaginära enheten!). Kommentera resultatet, speciellt utdatan för <code>x(1)</code>, <code>x(5)</code> och <code>x(end)</code>.</p>
+<p>Tips för beräkningen: skriv om <span class="math inline">\(x=\log_3 v_i\)</span> som en ekvation med <span class="math inline">\(x\)</span> som exponent.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 109">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag övning 109
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Först måste logaritmen med basen 3 kunna beräknas; Octave har ingen inbyggd funktion för detta. Nedanstående ekvation, vars lösning dels skrivs med logaritmen med basen 3 och dels med hjälp av omskrivning med logaritmlag, är till hjälp.</p>
+<p><span class="math display">\[
+\begin{matrix}
+3^x &amp;=&amp; v_i &amp;\Leftrightarrow&amp; x &amp;=&amp; \log_3 v_i \\[5mm]
+3^x &amp;=&amp; v_i &amp;\Leftrightarrow&amp; x &amp;=&amp; \frac{\log{v_i}}{\log{3}}
+\end{matrix}
+\hspace{5mm} \Rightarrow \log_3{v_i} = \frac{\log{v_i}}{\log{3}}
+\]</span></p>
+<p>Här är <span class="math inline">\(\log v_i\)</span> och <span class="math inline">\(\log 3\)</span> av godtycklig (men samma) bas. Därför kan funktionen <code>log</code> i Octave användas (som ger logaritm med basen <span class="math inline">\(e\)</span>).</p>
+<p>Koden blir</p>
+<pre><code>octave:29&gt; v = 0:0.25:3;
+octave:30&gt; x = log(v) / log(3);
+octave:31&gt; x(1)
+ans = -Inf
+octave:32&gt; x(5)
+ans = 0
+octave:33&gt; x(end)
+ans = 1</code></pre>
+<p><strong>Kommentarer</strong>: <code>x(1)</code> antar “värdet” <code>-Inf</code> eftersom vi önskar lösa ekvationen <span class="math inline">\(3^x = 0\)</span>. Ju längre avstånd från noll utefter den negativa delen på tallinjen, desto närmare noll kommer resultatet att bli. Men det kommer aldrig att <strong>bli</strong> noll. Vi kan se i vektorn <code>v</code> att den första komponenten är noll:</p>
+<pre><code>octave:34&gt; v(1)
+ans = 0</code></pre>
+<p>Att <code>x(5)</code> antar värdet noll måste betyda att <span class="math inline">\(\log_3 1\)</span> beräknas, eftersom <span class="math inline">\(3^0\)</span> är 1. En koll visar också att det är den beräkningen som gjorts:</p>
+<pre><code>octave:35&gt; v(5)
+ans = 1</code></pre>
+<p>Slutligen gäller att <code>x(end)</code> antar värdet 1 eftersom <span class="math inline">\(3^1=3\)</span>. Vi kontrollerar att så är fallet:</p>
+<pre><code>octave:36&gt; v(end)
+ans = 3</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="övning-110" class="level3">
+<h3 class="anchored" data-anchor-id="övning-110">Övning 110</h3>
+<p>I den här övningen ska du undersöka funktionen <code>diff</code> och <code>logspace</code>.</p>
+<ol type="a">
+<li>Mata in <code>diff([1 4 6 5.5 10])</code>. Baserat på resultatet, hur tror du att funktionen <code>diff</code> verkar på en vektor?</li>
+<li>Skapa en vektor med hjälp av funktionen <code>logspace</code> enligt <code>logspace(1, 3, 8)</code>. Betrakta vektorn och förklara resultatet.</li>
+<li>Eftersom resultatet av övning 110b automatiskt har lagrats i variabeln <code>ans</code> så kan funktionen <code>diff</code> tillämpas på svaret genom att skriva <code>diff(ans)</code>. Gör det, och lagra resultatet av detta i variabeln <code>expdiff</code>. Betrakta och reflektera över resultatet.</li>
+<li>Logaritmera <code>expdiff</code> från övning 110c.</li>
+<li>Tillämpa nu funktionen <code>diff</code> på resultatet i övning 110d. Kommentera.</li>
+<li>Gör om övningarna 110d och 110e, men logaritmera med basen 2 och 10 i tur och ordning. Kommentera resultatet.</li>
+</ol>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 110">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag övning 110
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a-uppgiften</strong></p>
+<pre><code>octave:37&gt; diff([1 4 6 5.5 10])
+ans =
+
+   3.0000   2.0000  -0.5000   4.5000</code></pre>
+<p>Kommentar: Funktionen <code>diff</code> tar parvis differensen mellan två närliggande tal i vektorn som den verkar på.</p>
+<p><strong>b-uppgiften</strong></p>
+<pre><code>octave:38&gt; logspace(1, 3, 8)
+ans =
+
+     10.000     19.307     37.276     71.969    138.950    268.270    517.947   1000.000</code></pre>
+<p>Kommentar: Detta anrop till funktionen <code>logspace</code> skapar åtta tal mellan (och inklusive) <span class="math inline">\(10^1\)</span> och <span class="math inline">\(10^3\)</span>. Talens <strong>exponenter</strong> är linjärt fördelade, men det blir inte själva talen (som kommer att synas i nästa övning).</p>
+<p><strong>c-uppgiften</strong></p>
+<pre><code>octave:39&gt; expdiff = diff(ans)
+ans =
+
+     9.3070    17.9690    34.6926    66.9810   129.3200   249.6779   482.0525</code></pre>
+<p><strong>Kommentar</strong>: Här syns att differensen ökar.</p>
+<p><strong>d-uppgiften</strong></p>
+<pre><code>octave:40&gt; log(expdiff) 
+ans =
+
+   2.2308   2.8886   3.5465   4.2044   4.8623   5.5202   6.1781</code></pre>
+<p><strong>Kommentar</strong>: Är de logaritmerade differenserna möjligen desamma? Det kommer att visa sig i …</p>
+<p><strong>e-uppgiften</strong></p>
+<pre><code>octave:41&gt; diff(ans)
+ans =
+
+   0.6579   0.6579   0.6579   0.6579   0.6579   0.6579</code></pre>
+<p><strong>Kommentar</strong>: Japp, de logaritmerade differenserna är desamma!</p>
+<p><strong>f-uppgiften</strong></p>
+<p>Vi logaritmerar i tur och ordning med baserna 2 och 10, och sparar resultaten i <code>log2expdiff</code> respektive <code>log10expdiff</code>.</p>
+<pre><code>octave:42&gt; log2expdiff = log2(expdiff)
+log2expdiff =
+
+   3.2183   4.1674   5.1166   6.0657   7.0148   7.9639   8.9130
+octave:43&gt; log10expdiff = log10(expdiff)
+log10expdiff =
+
+   0.9688   1.2545   1.5402   1.8260   2.1117   2.3974   2.6831</code></pre>
+<p>Vi ser att resultaten blir olika beroende på vilken logaritmbas som används. Nu tar vi differensen mellan två närliggande komponenter i respektive vektor:</p>
+<pre><code>octave:44&gt; diff(log2expdiff)
+ans =
+
+   0.9491   0.9491   0.9491   0.9491   0.9491   0.9491
+octave:45&gt; diff(log10expdiff)
+ans =
+
+   0.2857   0.2857   0.2857   0.2857   0.2857   0.2857</code></pre>
+<p>Det syns att differensen mellan komponenternas värden inte förändras, men vilken differens som det blir beror på logaritmbasen.</p>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("git@github-codebubo:codebubo\/codebubo\.github\.io\.git");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

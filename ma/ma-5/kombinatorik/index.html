@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Kombinatorik: Extra övningar – CodeBubo</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-7274c99d359db3f6908a26b1e6d051ec.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FFXVNM3K2N"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">CodeBubo</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../ma/ma-5/kombinatorik/index.html">Matematik 5</a></li><li class="breadcrumb-item"><a href="../../../ma/ma-5/kombinatorik/index.html">Kombinatorik: Extra övningar</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+ <span class="menu-text">Programmeringsrelaterat</span>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Programmering 1</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../pr1/python/cheat_sheet_python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python Cheat Sheet</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Presentationer, Python</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../pr1/python/intro/pres-version-installerad-python/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduktion (PC)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../pr1/python/intro/pres-version-online-python/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduktion (Chromebook)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../pr1/python/villkor/presentation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentation: Villkor</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../pr1/python/while-loopar/presentation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentation: <code>while</code>-loopar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../pr1/python/for-loopar/presentation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentation: <code>for</code>-loopar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../pr1/python/funktioner/presentation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentation: Funktioner</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../pr1/python/listor/presentation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentation: Listor</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../pr1/python/strangar/presentation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentation: Strängar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../pr1/python/egna-datatyper/presentation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentation: Egna datatyper i Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../pr1/python/spara-data-pa-fil/presentation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentation: Spara data till fil</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../pr1/python/klasser-och-metoder/presentation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentation: Klasser och metoder</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Uppgifter, Python</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../pr1/python/uppgifter/utskrift-och-villkor/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uppgifter: Utskrift och villkor</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../pr1/python/uppgifter/loopar/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uppgifter: Loopar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../pr1/python/uppgifter/funktioner/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uppgifter: Funktioner</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../pr1/python/uppgifter/listor/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uppgifter: Listor</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../pr1/python/uppgifter/strangar/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uppgifter: Strängar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../pr1/python/uppgifter/egna-datatyper/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uppgifter: Egna datatyper</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../pr1/python/uppgifter/binarsokning/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uppgifter: Binärsökning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../pr1/python/uppgifter/sortering/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uppgifter: Sortering</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../pr1/python/uppgifter/bilregister/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uppgifter: Bilregister</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../pr1/python/uppgifter/klasser-och-metoder/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uppgifter: Klasser och metoder</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Programmering i matematik</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">MatSpec</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Teori och övningar</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../ma/ma-spec/programmering/teori-och-ovningar/octave-som-kalkylator/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Octave: Octave som kalkylator</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../ma/ma-spec/programmering/teori-och-ovningar/funktioner-villkor-och-loopar/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Octave: Funktioner, villkor och loopar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../ma/ma-spec/programmering/teori-och-ovningar/lin-ekvationssystem-med-octave/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Octave: Lösning av linjära ekvationssystem</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Matematikrelaterat</span></span>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">Matematik 5</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../ma/ma-5/kombinatorik/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Kombinatorik: Extra övningar</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">Matematik specialisering</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../ma/ma-spec/ovningar/matrisinvertering/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Matrisinvertering: Extra övningar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../ma/ma-spec/komp-mat/determinant/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Determinant mm</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#några-kompletterande-övningar" id="toc-några-kompletterande-övningar" class="nav-link active" data-scroll-target="#några-kompletterande-övningar">Några kompletterande övningar</a>
+  <ul class="collapse">
+  <li><a href="#kodlåset" id="toc-kodlåset" class="nav-link" data-scroll-target="#kodlåset">Kodlåset</a></li>
+  <li><a href="#kortleken" id="toc-kortleken" class="nav-link" data-scroll-target="#kortleken">Kortleken</a></li>
+  <li><a href="#bokstavsföljden" id="toc-bokstavsföljden" class="nav-link" data-scroll-target="#bokstavsföljden">Bokstavsföljden</a></li>
+  <li><a href="#basketbollarna" id="toc-basketbollarna" class="nav-link" data-scroll-target="#basketbollarna">Basketbollarna</a></li>
+  <li><a href="#ekvationen" id="toc-ekvationen" class="nav-link" data-scroll-target="#ekvationen">Ekvationen</a></li>
+  <li><a href="#schackproblemet" id="toc-schackproblemet" class="nav-link" data-scroll-target="#schackproblemet">Schackproblemet</a></li>
+  <li><a href="#yatzy" id="toc-yatzy" class="nav-link" data-scroll-target="#yatzy">YATZY</a></li>
+  <li><a href="#binomialkoefficienten" id="toc-binomialkoefficienten" class="nav-link" data-scroll-target="#binomialkoefficienten">Binomialkoefficienten</a></li>
+  <li><a href="#basketbollkasten" id="toc-basketbollkasten" class="nav-link" data-scroll-target="#basketbollkasten">Basketbollkasten</a></li>
+  <li><a href="#födelsedagarna" id="toc-födelsedagarna" class="nav-link" data-scroll-target="#födelsedagarna">Födelsedagarna</a></li>
+  <li><a href="#grupperingarna" id="toc-grupperingarna" class="nav-link" data-scroll-target="#grupperingarna">Grupperingarna</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../ma/ma-5/kombinatorik/index.html">Matematik 5</a></li><li class="breadcrumb-item"><a href="../../../ma/ma-5/kombinatorik/index.html">Kombinatorik: Extra övningar</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Kombinatorik: Extra övningar</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="några-kompletterande-övningar" class="level2">
+<h2 class="anchored" data-anchor-id="några-kompletterande-övningar">Några kompletterande övningar</h2>
+<section id="kodlåset" class="level3">
+<h3 class="anchored" data-anchor-id="kodlåset">Kodlåset</h3>
+<p>Ett kodlås har en kod bestående av fyra siffror, där varje siffra kan väljas bland de tio siffrorna 0 – 9.</p>
+<p>Hur många olika koder finns det om</p>
+<ol type="a">
+<li>det inte finns någon begränsning i hur siffrorna i koden får väljas?</li>
+<li>ingen siffra får upprepas?</li>
+<li>ingen siffra får får upprepas, och den tredje siffran är en <span class="math inline">\(8\)</span>?</li>
+<li>ingen siffra får upprepas, och koden måste vara i stigande nummerföljd?</li>
+<li>ingen siffra får upprepas, och såväl siffran <span class="math inline">\(2\)</span> som siffran <span class="math inline">\(5\)</span> måste ingå?</li>
+</ol>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Respektive siffra (<span class="math inline">\(0\)</span> – <span class="math inline">\(9\)</span>) kan väljas på varje plats i koden. Det gör att det totala antalet koder blir <span class="math inline">\(10\cdot 10\cdot 10\cdot 10=10^4\)</span></p></li>
+<li><p>Den första siffran kan väljas på tio sätt, den andra på nio sätt, den tredje på åtta sätt och den fjärde på sju sätt. Det ger antalet koder till <span class="math inline">\(P(10,4)=10\cdot 9\cdot 8\cdot 7=5040\)</span>.</p></li>
+<li><p>Den första siffran kan väljas på nio sätt, den andra på åtta sätt, den tredje på ett sätt och den fjärde på sju sätt. Det ger antalet koder till <span class="math inline">\(P(10,4)=9\cdot 8\cdot 1\cdot 7=504\)</span>.</p></li>
+<li><p>Här ska vi räkna antalet <em>oordnade</em> urval på fyra siffror av tio. Eftersom ingen siffra får upprepas, och eftersom det därmed enbart finns en enda godtagbar nummerföljd per urval, så kommer antalet oordnade urval att ge det sökta antalet koder. Det blir <span class="math inline">\(C(10,4)=210\)</span> st.</p></li>
+<li><p>Här väljer vi först de två siffror som ska ingå (utöver siffrorna 2 och 5). Det kan göras på <span class="math inline">\(C(8,2)=28\)</span> olika sätt. Därefter ska de båda positionerna på dessa siffror väljas, det kan göras på <span class="math inline">\(C(4,2)=6\)</span> sätt. Därefter ska <em>placeringen</em> av dessa siffror i de valda lägena bestämmas, det kan ske på <span class="math inline">\(2!=2\)</span> sätt. Slutligen så ska placeringen i de kvarvarande lägena väljas för siffrorna <span class="math inline">\(2\)</span> och <span class="math inline">\(5\)</span>, det kan också göras på <span class="math inline">\(2!=2\)</span> sätt. Multiplikationsprincipen ger nu att det totala antalet koder blir <span class="math inline">\(28\cdot 6\cdot 2\cdot 2=672\)</span> stycken.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="kortleken" class="level3">
+<h3 class="anchored" data-anchor-id="kortleken">Kortleken</h3>
+<p>En kortlek består av 52 kort. På hur många sätt kan en blandning falla ut om</p>
+<ol type="a">
+<li>alla blandningar är tillåtna?</li>
+<li>enbart de blandningar där <span class="emoji" data-emoji="clubs">♣️</span>3 ligger direkt ovanpå <span class="emoji" data-emoji="diamonds">♦️</span>4 räknas?</li>
+</ol>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Eftersom alla kort är olika gäller att det översta kortet i en blandad lek kan vara <span class="math inline">\(1\)</span> av <span class="math inline">\(52\)</span>, kortet under detta <span class="math inline">\(1\)</span> av <span class="math inline">\(51\)</span> osv. Det innebär att antalet blandningar kan vara <span class="math inline">\(52\cdot 51\cdot 50\cdot\ldots\cdot 1=52!\)</span>. Multiplikationsprincipen ska tillämpas eftersom antalet möjligheter på en given plats i leken inte påverkas av vilka kort som ligger på andra platser.</p></li>
+<li><p>Här kan man tänka att det är <span class="math inline">\(51\)</span> kort som ska blandas, t ex så tar vi bort <span class="emoji" data-emoji="clubs">♣️</span>3 ur leken. För varje utfall så tänker vi oss vidare att vi “manuellt” lägger in detta <span class="emoji" data-emoji="clubs">♣️</span>3 ovanpå <span class="emoji" data-emoji="diamonds">♦️</span>4. <br>
+Antalet sådana utfall blir alltså <span class="math inline">\(51!\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="bokstavsföljden" class="level3">
+<h3 class="anchored" data-anchor-id="bokstavsföljden">Bokstavsföljden</h3>
+<p>En sträng består av bokstäverna <code>a, a, b, b, c, c, d, d</code>. Hur många olika “ord” kan bildas om</p>
+<ol type="a">
+<li>bokstäverna i strängen får blandas utan någon begränsning?</li>
+<li>inget <code>a</code> får stå till höger om ett <code>c</code>?</li>
+</ol>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Vi tänker oss till en början att vi har strängen med två olika <code>a</code>, <code>b</code> och <code>c</code>; nämligen <code>a1, a2, b1, b2, c1, c2</code>. Dessa kommer förstås att kunna permuteras på <span class="math inline">\(6!\)</span> olika sätt. Men nu låter vi <code>a1</code> och <code>a2</code> förenas till två identiska <code>a</code>:n, varför vi får strängen <code>a, a, b1, b2, c1, c2</code>. Eftersom <code>a</code> kan permuteras på <span class="math inline">\(2!\)</span> olika sätt så blir antalet permutationer <span class="math inline">\(6!/2!\)</span> (där det alltså inte spelar någon roll vilket <code>a</code> som står på respektive plats). Vi fortsätter resonemanget på samma sätt med <code>b</code>, <code>c</code> och <code>d</code>, och landar i att antalet permutationer blir <span class="math inline">\(8!/(2!\cdot 2!\cdot 2!\cdot 2!)=2\,520\)</span>.</p></li>
+<li><p>Här får vi tänka på ett annat sätt. Vi börjar med att välja lägena för respektive bokstav <code>b, b, d, d</code>. Därefter väljer vi platserna för respektive bokstav <code>a, a, c, c</code> “manuellt” så att ordningen uppfylls; det kan ses som att <code>a, a, c, c</code> är identiska bokstäver som ska placeras. Antalet sätt blir då <span class="math inline">\(8!/(2!\cdot 2!\cdot 4!)=420\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="basketbollarna" class="level3">
+<h3 class="anchored" data-anchor-id="basketbollarna">Basketbollarna</h3>
+<p>Tio basketbollar ska placeras i fyra burar. På hur många sätt kan det ske om</p>
+<ol type="a">
+<li><p>ingen begränsning av antalet bollar görs per bur (dvs en bur kan vara alltifrån tom till att den innehåller alla tio bollar)?</p></li>
+<li><p>varje bur måste innehålla minst en boll?</p></li>
+</ol>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Här kan metoden “Stars and Bars” tillämpas, där bollarna är “stars” och burarna är de mellanrum som bildas mellan “bars”. Ett exempel på utfall är <code>**|****||****</code>, vilket visar två bollar i bur <span class="math inline">\(1\)</span>, fyra bollar i bur <span class="math inline">\(2\)</span>, inga bollar i bur <span class="math inline">\(3\)</span> och fyra bollar i bur <span class="math inline">\(4\)</span>. Vi har totalt tretton element (tio “stars” och tre “bars”) och antalet bollar i respektive mellanrum kan förändras genom att vi flyttar på “bars”. Eftersom det är tre “bars” (vilket ju ger fyra burar) blir antalet sätt <span class="math display">\[
+\binom{10+4-1}{4-1}=\binom{13}{3}=286
+\]</span></p></li>
+<li><p>Här måste vi redan från början tänka oss att en boll ligger i respektive bur. Då blir det sex bollar (eller “stars”) kvar att fördela på de fyra burarna. Analogt med a-uppgiften så blir antalet sätt</p></li>
+</ol>
+<p><span class="math display">\[
+\binom{6+4-1}{4-1}=\binom{9}{3}=84
+\]</span></p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="ekvationen" class="level3">
+<h3 class="anchored" data-anchor-id="ekvationen">Ekvationen</h3>
+<p>Hur många lösningar har ekvationen <span class="math inline">\(x_1+x_2+x_3+x_4=10\)</span> om</p>
+<ol type="a">
+<li>alla ingående termer är icke-negativa heltal?</li>
+<li>var och en av de ingående termer är ett heltal som är minst 1?</li>
+</ol>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Denna övnings lösning är exakt densamma som övningen med basketbollarna som skulle placeras i burarna, där varje bur får innehålla hur få eller hur många bollar som helst av det maximala antalet <span class="math inline">\(10\)</span>. Varje <em>värde</em> på respektive <span class="math inline">\(x\)</span> är en “star”. Det är <em>fyra stycken</em> <span class="math inline">\(x\)</span>, vilket ger tre “bars” Lösningen blir <span class="math display">\[
+\binom{10+4-1}{4-1}=\binom{13}{3}=286
+\]</span></p></li>
+<li><p>Denna övnings lösning är exakt densamma som övningen med basketbollarna som skulle placeras i burarna, där varje bur ska innehålla minst en boll. Lösningen blir <span class="math display">\[
+\binom{6+4-1}{4-1}=\binom{9}{3}=84
+\]</span></p></li>
+</ol>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="schackproblemet" class="level3">
+<h3 class="anchored" data-anchor-id="schackproblemet">Schackproblemet</h3>
+<p>Hur många torn kan maximalt placeras ut på ett schackbräde (<span class="math inline">\(8\times 8\)</span> rutor) om inget av tornen ska kunna “äta” något annat torn? Motivera svaret med lådprincipen.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Ett torn kan enbart gå i en enda rad och en enda kolumn. Det finns åtta rader och åtta kolumner på schackbrädet. Om det är fler än åtta torn så kommer minst en rad eller kolumn att innehålla fler än ett torn. (Tornen ska placeras ut diagonalt över brädet; det blir åtta stycken där inget av dem kan “äta” något annat torn.)</p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="yatzy" class="level3">
+<h3 class="anchored" data-anchor-id="yatzy">YATZY</h3>
+<p>Ett YATZY-kast är när fem stycken identiska, sexsidiga, tärningar slås. Hur många utfall finns det på ett sådant kast? Observera att ordningen saknar betydelse, t ex räknas utfallet <code>[1, 1, 3, 5, 6]</code> vara desamma som utfallet <code>[1, 3, 1, 6, 5]</code> om tärningarnas ordning räknas som <code>[T1, T2, T3, T4, T5]</code>.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Detta är, liksom problemet med basketbollarna ovan, ett problem där metoden “Stars and Bars” kan tillämpas. Vi tänker oss fem tärningar (“stars”) och sex utfall (mellanrummen mellan “bars”), där varje tärnings visade tal ska placeras på ett av utfallen (ett utfall är t ex <code>**|*||*||*</code>, som representerar två ettor, en tvåa, en fyra och en sexa). Antalet utfall på ett kast blir <span class="math display">\[
+\binom{5+6-1}{6-1}=252
+\]</span></p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="binomialkoefficienten" class="level3">
+<h3 class="anchored" data-anchor-id="binomialkoefficienten">Binomialkoefficienten</h3>
+<p>Ett binomuttryck är <span class="math inline">\((2x-3y)^{25}\)</span>. Beräkna koefficienten som faktorn som innehåller <span class="math inline">\(x^{12}y^{13}\)</span> multipliceras med.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Binomialsatsen ger direkt koefficienten <span class="math display">\[
+\binom{25}{12}\cdot 2^{12}\cdot (-3)^{13}=-33\, 959\, 763\, 545\, 702\, 400
+\]</span></p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="basketbollkasten" class="level3">
+<h3 class="anchored" data-anchor-id="basketbollkasten">Basketbollkasten</h3>
+<p>Julias träffsäkerhet i ett kast mot mål i basket är <span class="math inline">\(0.7\)</span>. Beräkna sannolikheten att hon får</p>
+<ol type="a">
+<li>minst en träff när hon kastar tio gånger.</li>
+<li>precis fem träffar när hon kastar tio gånger.</li>
+<li>minst fem träffar när hon kastar tio gånger.</li>
+</ol>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Minst en träff på tio kast är komplementhändelsen till <em>ingen träff</em> på tio kast. Detta ger sannolikheten för minst en träff till <span class="math inline">\(1-0.3^{10}=99.999\)</span> %.</p></li>
+<li><p>Antalet möjliga placeringar i följden om tio kast, som de fem träffarna kan “väljas ut” på, är <span class="math inline">\(\binom{10}{5}\)</span>; resterande antal placeringar är missarna. Det ger sannolikheten för precis fem träffar till <span class="math display">\[
+\binom{10}{5}0.7^5\cdot 0.3^5\approx 10.3\hspace{1mm}\mathrm{\%}
+\]</span></p></li>
+<li><p>Minst fem träffar ges av summan</p></li>
+</ol>
+<p><span class="math display">\[
+\begin{matrix*}[l]
+\hspace{3mm}
+\binom{10}{5}0.7^5\cdot 0.3^5 +
+\binom{10}{6}0.7^6\cdot 0.3^4 +
+\binom{10}{7}0.7^7\cdot 0.3^3\\[2mm] +
+\binom{10}{8}0.7^8\cdot 0.3^2 +
+\binom{10}{9}0.7^9\cdot 0.3^1\\[2mm] +
+\binom{10}{10}0.7^{10}\cdot 0.3^0
+\approx 95.3\hspace{1mm}\mathrm{\%}
+\end{matrix*}
+\]</span></p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="födelsedagarna" class="level3">
+<h3 class="anchored" data-anchor-id="födelsedagarna">Födelsedagarna</h3>
+<p>I en grupp som består av <span class="math inline">\(23\)</span> personer så är sannolikheten <span class="math inline">\(50.7\)</span> % att minst två personer har samma födelsedag på året. Visa detta.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Man kan tänka sig att personerna i gruppen är listade enligt <code>[P1, P2, P3,..., P23]</code>. Sannolikheten att <code>P2</code> <em>inte</em> har samma födelsedag som <code>P1</code> är <span class="math inline">\(364/365\)</span>. Sannolikheten att <code>P3</code> <em>inte</em> har samma födelsedag som <code>P1</code> eller <code>P2</code> är <span class="math inline">\(363/365\)</span> osv. Slutligen erhålls att sannolikheten för att alla <span class="math inline">\(23\)</span> personer har <em>olika</em> födelsedagar är</p>
+<p><span class="math display">\[
+\frac{364}{365}\cdot\frac{363}{365}\cdot\frac{362}{365}\cdot
+\ldots\cdot\frac{343}{365}=\left(\frac{1}{365}\right)^{23}\cdot(365\cdot 364
+\cdot363\ldots\cdot343)\approx 0.493
+\]</span></p>
+<p>Sannolikheten för komplementhändelsen till att alla födelsedagar är olika, vilken är att minst en person har gemensam födelsedag med någon annan i gruppen, ges av beräkningen <span class="math inline">\(1-0.493=0.507\)</span>, dvs <span class="math inline">\(50.7\)</span> %.</p>
+<p>Orsaken att sannolikheten blir så stor för en så förhållandevis liten grupp är att antalet par i gruppen blir stort. Vi gör ingen förutsägelse om <em>vilken</em> födelsedag som kan vara gemensam, enbart <em>att</em> någon födelsedag är gemensam med en viss sannolikhet.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="grupperingarna" class="level3">
+<h3 class="anchored" data-anchor-id="grupperingarna">Grupperingarna</h3>
+<p>Sex personer, <code>a</code>, <code>b</code>, <code>c</code>, <code>d</code>, <code>e</code> och <code>f</code> ska bilda grupper om två och två. På hur många sätt kan detta ske om</p>
+<ol type="a">
+<li>Person <code>a</code>, <code>b</code> och <code>c</code> är gruppledare för varsina grupper?</li>
+<li>Person <code>a</code> är gruppledare för en grupp, och de övriga grupperna saknar en given gruppledare?</li>
+<li>Ingen grupp har någon given gruppledare?</li>
+</ol>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>a-uppgiften</strong></p>
+<p>Följande illustration ger en idé om hur grupperna formeras:</p>
+<pre><code>Grupp 1    Grupp 2    Grupp 3
+ ---        ---        --- 
+| a |      | b |      | c |
+|   |      |   |      |   |
+ ---        ---        --- 
+Valbara personer till grupperna:
+d, e och f</code></pre>
+<p>Grupp 1 kan välja en av tre personer, Grupp 2 en av två och till Grupp 3 kommer en enda person att kunna väljas på precis ett sätt. Eftersom <code>a</code>, <code>b</code> och <code>c</code> är givna så kommer det inte att kunna bli några dubletter av grupper (som det blir i nästa deluppgift). Antalet grupper blir, enligt multiplikationsprincipen, <span class="math inline">\(3\cdot 2\cdot 1 = 6\)</span>.</p>
+<p><strong>b-uppgiften</strong></p>
+<p>Följande illustration visar hur grupperna formeras. Observera att vi från början har två “tomma grupper” dit personer ska väljas in.</p>
+<pre><code>Grupp 1    Grupp 2    Grupp 3
+ ---        ---        --- 
+| a |      |   |      |   |
+|   |      |   |      |   |
+ ---        ---        --- 
+Valbara personer till grupperna:
+b, c, d, e och f</code></pre>
+<p>Grupp 1 ska välja en person, medan Grupp 2 och Grupp 3 ska välja två personer. Om vi enbart tecknar antalet konstellationer med multiplikationsprincipen,</p>
+<p><span class="math display">\[
+\binom{5}{1}\binom{4}{2}\binom{2}{2}=30
+\]</span></p>
+<p>så kommer det att finnas fall där Grupp 2 och Grupp 3 i en konstellation är densamma som Grupp 3 och Grupp 2 i en annan konstellation. Detta beroende på att Grupp 2 och Grupp 3 inte innehåller något på förhand givet element. Därför måste vi dividera med antalet permutationer av dessa grupper, vilket är <span class="math inline">\(2!\)</span>.</p>
+<p>Vi får det korrekta antalet grupper till</p>
+<p><span class="math display">\[
+\frac{\binom{5}{1}\binom{4}{2}\binom{2}{2}}{2!}=15
+\]</span></p>
+<p>Vi behöver inte räkna den grupp med en given person först, ett annat sätt är att välja två personer av fem till Grupp 2 först, och därefter två personer av tre till Grupp 3. Sedan är Grupp 1 given, eftersom det enbart finns en person kvar att välja. Givetvis kan vi även välja Grupp 3 först, därefter Grupp 1 och sist Grupp 2.</p>
+<p><span class="math display">\[
+\frac{\binom{5}{2}\binom{3}{2}\binom{1}{1}}{2!}
+=\frac{\binom{5}{2}\binom{3}{1}\binom{2}{2}}{2!}=15
+\]</span></p>
+<p><strong>c-uppgiften</strong></p>
+<p>Här resonerar vi på precis samma sätt som i b-uppgiften, men nu ska till <strong>varje</strong> grupp ska väljas två personer. Eftersom ingen person är given på förhand till någon grupp så kommer det att bli multipler av konstellationerna. Detta kompenseras genom att dividera med antalet permutationer av alla grupper, vilket är <span class="math inline">\(3!\)</span>.</p>
+<p><span class="math display">\[
+\frac{\binom{6}{2}\binom{4}{2}\binom{2}{2}}{3!}=15
+\]</span></p>
+<p>Lustigt nog blir det samma resultat som i b-uppgiften. Det beror på att när två grupper är valda så finns det enbart en möjlighet att välja den sista gruppen.</p>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("git@github-codebubo:codebubo\/codebubo\.github\.io\.git");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

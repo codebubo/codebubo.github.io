@@ -1,0 +1,1861 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Uppgifter: Loopar – CodeBubo</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../../">
+<script src="../../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../../site_libs/bootstrap/bootstrap-7274c99d359db3f6908a26b1e6d051ec.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FFXVNM3K2N"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../../styles.css">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../../index.html">
+    <span class="navbar-title">CodeBubo</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../../pr1/python/cheat_sheet_python.html">Programmering 1</a></li><li class="breadcrumb-item"><a href="../../../../pr1/python/uppgifter/utskrift-och-villkor/index.html">Uppgifter, Python</a></li><li class="breadcrumb-item"><a href="../../../../pr1/python/uppgifter/loopar/index.html">Uppgifter: Loopar</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+ <span class="menu-text">Programmeringsrelaterat</span>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Programmering 1</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../pr1/python/cheat_sheet_python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python Cheat Sheet</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Presentationer, Python</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../pr1/python/intro/pres-version-installerad-python/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduktion (PC)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../pr1/python/intro/pres-version-online-python/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduktion (Chromebook)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../pr1/python/villkor/presentation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentation: Villkor</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../pr1/python/while-loopar/presentation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentation: <code>while</code>-loopar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../pr1/python/for-loopar/presentation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentation: <code>for</code>-loopar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../pr1/python/funktioner/presentation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentation: Funktioner</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../pr1/python/listor/presentation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentation: Listor</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../pr1/python/strangar/presentation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentation: Strängar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../pr1/python/egna-datatyper/presentation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentation: Egna datatyper i Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../pr1/python/spara-data-pa-fil/presentation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentation: Spara data till fil</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../pr1/python/klasser-och-metoder/presentation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentation: Klasser och metoder</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Uppgifter, Python</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../pr1/python/uppgifter/utskrift-och-villkor/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uppgifter: Utskrift och villkor</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../pr1/python/uppgifter/loopar/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Uppgifter: Loopar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../pr1/python/uppgifter/funktioner/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uppgifter: Funktioner</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../pr1/python/uppgifter/listor/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uppgifter: Listor</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../pr1/python/uppgifter/strangar/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uppgifter: Strängar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../pr1/python/uppgifter/egna-datatyper/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uppgifter: Egna datatyper</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../pr1/python/uppgifter/binarsokning/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uppgifter: Binärsökning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../pr1/python/uppgifter/sortering/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uppgifter: Sortering</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../pr1/python/uppgifter/bilregister/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uppgifter: Bilregister</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../pr1/python/uppgifter/klasser-och-metoder/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uppgifter: Klasser och metoder</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Programmering i matematik</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">MatSpec</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Teori och övningar</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../ma/ma-spec/programmering/teori-och-ovningar/octave-som-kalkylator/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Octave: Octave som kalkylator</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../ma/ma-spec/programmering/teori-och-ovningar/funktioner-villkor-och-loopar/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Octave: Funktioner, villkor och loopar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../ma/ma-spec/programmering/teori-och-ovningar/lin-ekvationssystem-med-octave/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Octave: Lösning av linjära ekvationssystem</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Matematikrelaterat</span></span>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">Matematik 5</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../ma/ma-5/kombinatorik/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Kombinatorik: Extra övningar</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">Matematik specialisering</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../ma/ma-spec/ovningar/matrisinvertering/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Matrisinvertering: Extra övningar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../ma/ma-spec/komp-mat/determinant/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Determinant mm</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#loopar-i-python" id="toc-loopar-i-python" class="nav-link active" data-scroll-target="#loopar-i-python">Loopar i Python</a>
+  <ul class="collapse">
+  <li><a href="#while-loopar" id="toc-while-loopar" class="nav-link" data-scroll-target="#while-loopar">while-loopar</a>
+  <ul class="collapse">
+  <li><a href="#uppgift-1" id="toc-uppgift-1" class="nav-link" data-scroll-target="#uppgift-1">Uppgift 1</a></li>
+  <li><a href="#uppgift-2" id="toc-uppgift-2" class="nav-link" data-scroll-target="#uppgift-2">Uppgift 2</a></li>
+  <li><a href="#uppgift-3" id="toc-uppgift-3" class="nav-link" data-scroll-target="#uppgift-3">Uppgift 3</a></li>
+  <li><a href="#uppgift-4" id="toc-uppgift-4" class="nav-link" data-scroll-target="#uppgift-4">Uppgift 4</a></li>
+  <li><a href="#uppgift-5" id="toc-uppgift-5" class="nav-link" data-scroll-target="#uppgift-5">Uppgift 5</a></li>
+  <li><a href="#uppgift-6" id="toc-uppgift-6" class="nav-link" data-scroll-target="#uppgift-6">Uppgift 6</a></li>
+  <li><a href="#uppgift-7" id="toc-uppgift-7" class="nav-link" data-scroll-target="#uppgift-7">Uppgift 7</a></li>
+  </ul></li>
+  <li><a href="#for-loopar" id="toc-for-loopar" class="nav-link" data-scroll-target="#for-loopar">for-loopar</a>
+  <ul class="collapse">
+  <li><a href="#uppgift-8" id="toc-uppgift-8" class="nav-link" data-scroll-target="#uppgift-8">Uppgift 8</a></li>
+  <li><a href="#uppgift-9" id="toc-uppgift-9" class="nav-link" data-scroll-target="#uppgift-9">Uppgift 9</a></li>
+  <li><a href="#uppgift-10" id="toc-uppgift-10" class="nav-link" data-scroll-target="#uppgift-10">Uppgift 10</a></li>
+  </ul></li>
+  <li><a href="#uppgifter-utan-lösningsförslag" id="toc-uppgifter-utan-lösningsförslag" class="nav-link" data-scroll-target="#uppgifter-utan-lösningsförslag">Uppgifter utan lösningsförslag</a>
+  <ul class="collapse">
+  <li><a href="#uppgift-11" id="toc-uppgift-11" class="nav-link" data-scroll-target="#uppgift-11">Uppgift 11</a></li>
+  <li><a href="#uppgift-12" id="toc-uppgift-12" class="nav-link" data-scroll-target="#uppgift-12">Uppgift 12</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../../pr1/python/cheat_sheet_python.html">Programmering 1</a></li><li class="breadcrumb-item"><a href="../../../../pr1/python/uppgifter/utskrift-och-villkor/index.html">Uppgifter, Python</a></li><li class="breadcrumb-item"><a href="../../../../pr1/python/uppgifter/loopar/index.html">Uppgifter: Loopar</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Uppgifter: Loopar</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="loopar-i-python" class="level1">
+<h1>Loopar i Python</h1>
+<section id="while-loopar" class="level2">
+<h2 class="anchored" data-anchor-id="while-loopar">while-loopar</h2>
+<p><strong>I uppgift 1 – 7 ska du använda <code>while</code>-loopar i din lösning</strong>.</p>
+<hr>
+<section id="uppgift-1" class="level3">
+<h3 class="anchored" data-anchor-id="uppgift-1">Uppgift 1</h3>
+<p>Skapa ett program som beräknar och skriver ut “tolvans multiplikatikonstabell” rad för rad enligt nedan:</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="2c53ed17" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-stdout">
+<pre><code> 1 * 12 =  12
+ 2 * 12 =  24
+ 3 * 12 =  36
+ 4 * 12 =  48
+ 5 * 12 =  60
+ 6 * 12 =  72
+ 7 * 12 =  84
+ 8 * 12 =  96
+ 9 * 12 = 108
+10 * 12 = 120
+11 * 12 = 132
+12 * 12 = 144</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag uppgift 1">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag uppgift 1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Ett program som inte gör någon snygg formatering av tabellen ser ut så här:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i <span class="op">&lt;=</span> <span class="dv">12</span>:</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss"> * 12 = </span><span class="sc">{</span>i <span class="op">*</span> <span class="dv">12</span><span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>   i <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ett program som ger en utmatning enligt uppgiften, dvs som ställer ental över ental och tiotal över tiotal, ser ut så här:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i <span class="op">&lt;=</span> <span class="dv">12</span>:</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">:2.0f}</span><span class="ss"> * 12 = </span><span class="sc">{</span>(i <span class="op">*</span> <span class="dv">12</span>)<span class="sc">:3.0f}</span><span class="ss">"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>   i <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="uppgift-2" class="level3">
+<h3 class="anchored" data-anchor-id="uppgift-2">Uppgift 2</h3>
+<p>I spelet <span class="small-caps">lotto</span> ska man tippa 7 olika nummer mellan &nbsp;1 och 35. Skriv ett program som slumpar fram 7 heltal mellan 1 och 35 under en körning.</p>
+<div id="slumptalstips" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tips
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>För att skapa ett slumptal i Python behövs importeras slumptalsbiblioteket. Detta görs överst i koden, varpå ett slumpmässigt heltal skapas enligt följande:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random <span class="im">as</span> rand</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>slumptal <span class="op">=</span> rand.randint(<span class="dv">1</span>, <span class="dv">100</span>) <span class="co"># Skapar ett slumptal mellan, och inklusive, 1 och 100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>I nuläget får vi acceptera att det kan uppstå flera nummer av samma värde, t ex två st. sjuor. Detta kommer att kunna undvikas efter att vi gått igenom listor i Python; då kommer vi också att sortera numren i storleksordning.</p>
+<p>Körningsexempel:</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="fa4acc6a" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-stdout">
+<pre><code>Din LOTTO-rad: 12 33 5 18 19 1 24 </code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag uppgift 2
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random <span class="im">as</span> rand</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Din LOTTO-rad:"</span>, end<span class="op">=</span><span class="st">" "</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i <span class="op">&lt;=</span> <span class="dv">7</span>:</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(rand.randint(<span class="dv">1</span>,<span class="dv">35</span>), end<span class="op">=</span><span class="st">" "</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    i <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>print</code>-satsen tar en s.k parameter, <code>end</code>, vilken gör att radslutet blir det eller de tecken som anges i den tilldelande strängen (i det här fallet ett mellanslag). Utelämnas <code>end</code>-satsen så skapas en ny rad.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="uppgift-3" class="level3">
+<h3 class="anchored" data-anchor-id="uppgift-3">Uppgift 3</h3>
+<p>I stryktipset är det 13 matcher som ska tippas med 1, X eller 2. Skriv ett program som slumpar fram 13 st. 1, X och 2 under en körning.</p>
+<p>Körningsexempel:</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="6054047c" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-stdout">
+<pre><code>  Match nr.    Resultat
+==========================
+     1            1
+--------------------------
+     2            X
+--------------------------
+     3            2
+--------------------------
+     4            1
+--------------------------
+     5            2
+--------------------------
+     6            2
+--------------------------
+     7            1
+--------------------------
+     8            X
+--------------------------
+     9            1
+--------------------------
+    10            2
+--------------------------
+    11            1
+--------------------------
+    12            2
+--------------------------
+    13            1
+--------------------------</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Tips: Formatera utskriften först efter att du vet hur du gör för att få slumpvis 1, X eller 2.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag uppgift 3">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag uppgift 3
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Metoden går ut på att skapa ett slumptal 1, 2 eller 3, för att sedan skriva ut 1, X eller 2 beroende på utfallet.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random <span class="im">as</span> rand</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="st">'Match nr'</span><span class="sc">:&gt;10}</span><span class="ss">. </span><span class="sc">{</span><span class="st">'Resultat'</span><span class="sc">:&gt;11}</span><span class="ss">"</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"=========================="</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i <span class="op">&lt;=</span> <span class="dv">13</span>:</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    res <span class="op">=</span> rand.randint(<span class="dv">1</span>, <span class="dv">3</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> res <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>        res <span class="op">=</span> <span class="st">"1"</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> res <span class="op">==</span> <span class="dv">2</span>:</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>        res <span class="op">=</span> <span class="st">"X"</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>        res <span class="op">=</span> <span class="st">"2"</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">:6.0f}</span><span class="ss"> </span><span class="sc">{</span>res<span class="sc">:&gt;12}</span><span class="ss">"</span>)</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"--------------------------"</span>)</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    i <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="uppgift-4" class="level3">
+<h3 class="anchored" data-anchor-id="uppgift-4">Uppgift 4</h3>
+<p>Skriv ett program där man ska gissa ett heltal mellan, och inklusive, 1 och 10. Gissningarna ska göras tills man gissar rätt. Efter en gissning ska programmet säga om det gissade talet var för stort eller för litet. När rätt tal gissats så ska det skriva ut hur många gissningar som behövdes.</p>
+<p>Körningsexempel:</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<pre><code>Gissa ett heltal mellan 1 och 10 -&gt; 5
+Talet 5 är för stort.
+Gissa ett heltal mellan 1 och 10 -&gt; 3
+Talet 3 är för stort.
+Gissa ett heltal mellan 1 och 10 -&gt; 1
+Talet 1 är för litet.
+Gissa ett heltal mellan 1 och 10 -&gt; 2
+RÄTT GISSAT!
+
+Du klarade spelet på gissning nr. 4.</code></pre>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag uppgift 4">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag uppgift 4
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random <span class="im">as</span> rand</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>hemligt_tal <span class="op">=</span> rand.randint(<span class="dv">1</span>, <span class="dv">10</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>antal_gissningar <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    gissning <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Gissa ett tal mellan 1 och 10 -&gt;"</span>))</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    antal_gissningar <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> gissning <span class="op">&gt;</span> hemligt_tal:</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Talet </span><span class="sc">{</span>gissning<span class="sc">}</span><span class="ss"> är för stort."</span>)</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> gissning <span class="op">&lt;</span> hemligt_tal:</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Talet </span><span class="sc">{</span>gissning<span class="sc">}</span><span class="ss"> är för litet."</span>)</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"RÄTT GISSAT!"</span>)</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Du klarade spelet på gissning nr. </span><span class="sc">{</span>antal_gissningar<span class="sc">}</span><span class="ss">."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Metoden är att gissningarna sker i en loop vars enda villkor är <code>True</code> (en “oändlig” loop). När spelaren har gissat rätt så avbryts loopen med <code>break</code>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="uppgift-5" class="level3">
+<h3 class="anchored" data-anchor-id="uppgift-5">Uppgift 5</h3>
+<p>Skriv ett program som beräknar och skriver ut alla heltalslösningar till ekvationen <span class="math inline">\(2x+3y=120\)</span> i intervallet <span class="math inline">\(-50 \leq x,y \leq 50\)</span>. T ex gäller att <span class="math inline">\(x=30\)</span> och <span class="math inline">\(y=20\)</span> är en lösning.</p>
+<p>Tips: Låt programmet testa olika värden på <span class="math inline">\(x\)</span> och <span class="math inline">\(y\)</span> i en nästlad loop.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag uppgift 5">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag uppgift 5
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Observera att det är viktigt att uppdatera variablerna <code>x</code> och <code>y</code> på rätt ställen i den nästlade loopen.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="op">-</span><span class="dv">50</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> x <span class="op">&lt;=</span> <span class="dv">50</span>:</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> <span class="op">-</span><span class="dv">50</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> y <span class="op">&lt;=</span> <span class="dv">50</span>:</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="dv">2</span><span class="op">*</span>x <span class="op">+</span> <span class="dv">3</span><span class="op">*</span>y <span class="op">==</span> <span class="dv">120</span>:</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"En lösning: (x, y) = (</span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>y<span class="sc">}</span><span class="ss">)"</span>)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>        y <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    x <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="uppgift-6" class="level3">
+<h3 class="anchored" data-anchor-id="uppgift-6">Uppgift 6</h3>
+<p>Försök att skapa följande figurer med hjälp av nästlade loopar:</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="41be660d" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-stdout">
+<pre><code>Figur A
+
+*  *  *  *  *  *  *  
+*  *  *  *  *  *  *  
+*  *  *  *  *  *  *  
+*  *  *  *  *  *  *  
+*  *  *  *  *  *  *  
+*  *  *  *  *  *  *  
+*  *  *  *  *  *  *  
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="3b6f750d" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-stdout">
+<pre><code>Figur B
+
+*  *  *  *  *  *  *  
+*     *     *     *  
+*  *  *  *  *  *  *  
+*     *     *     *  
+*  *  *  *  *  *  *  
+*     *     *     *  
+*  *  *  *  *  *  *  
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="22d7f5a3" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-stdout">
+<pre><code>Figur C
+
+*     *     *     *  
+   *     *     *     
+*     *     *     *  
+   *     *     *     
+*     *     *     *  
+   *     *     *     
+*     *     *     *  </code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag uppgift 6">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag uppgift 6
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Figur A</strong>, en yttre loop skriver ut raderna (x-koordinaterna) och en inre loop skriver ut kolumnerna (y-koordinaterna).</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Figur A</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>max_rows <span class="op">=</span> <span class="dv">6</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>max_cols <span class="op">=</span> max_rows</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>current_row <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> current_row <span class="op">&lt;=</span> max_rows:</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    current_col <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> current_col <span class="op">&lt;=</span> max_cols:</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"*"</span>, end<span class="op">=</span><span class="st">" "</span>)</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>        current_col <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>()</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    current_row <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Figur B</strong>, om såväl rad- och kolumnnumret är udda så ska det inte skrivas ut en <code>*</code> (utan ett mellanslag istället).</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>max_rows <span class="op">=</span> <span class="dv">6</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>max_cols <span class="op">=</span> max_rows</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>current_row <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> current_row <span class="op">&lt;=</span> max_rows:</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    current_col <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> current_col <span class="op">&lt;=</span> max_cols:</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> current_col <span class="op">%</span> <span class="dv">2</span> <span class="op">!=</span> <span class="dv">0</span> <span class="kw">and</span> current_row <span class="op">%</span> <span class="dv">2</span> <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">" "</span>, end <span class="op">=</span> <span class="st">" "</span>)</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"*"</span>, end<span class="op">=</span><span class="st">" "</span>)</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>        current_col <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>()</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>    current_row <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Figur C</strong>, här blir villkoren olika beroende på om radnumret är jämnt eller udda:</p>
+<ul>
+<li>Om både rad- och kolumnnumret är jämnt så ska en <code>*</code> skrivas ut</li>
+<li>Om radnumret är jämnt och kolumnnumret är udda så ska ett mellanslag skrivas ut</li>
+<li>Om både rad- och kolumnnummer är udda så ska en <code>*</code> skrivas ut</li>
+<li>Om radnumret är udda och kolumnnumret är jämnt så ska ett mellanslag skrivas ut</li>
+</ul>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>max_rows <span class="op">=</span> <span class="dv">6</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>max_cols <span class="op">=</span> max_rows</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>current_row <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> current_row <span class="op">&lt;=</span> max_rows:</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    current_col <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> current_col <span class="op">&lt;=</span> max_cols:</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> current_row <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> current_col <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>                <span class="bu">print</span>(<span class="st">"*"</span>, end <span class="op">=</span> <span class="st">" "</span>)</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>                <span class="bu">print</span>(<span class="st">" "</span>, end<span class="op">=</span><span class="st">" "</span>)</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> current_row <span class="op">%</span> <span class="dv">2</span> <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> current_col <span class="op">%</span> <span class="dv">2</span> <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>                <span class="bu">print</span>(<span class="st">"*"</span>, end <span class="op">=</span> <span class="st">" "</span>)</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>                <span class="bu">print</span>(<span class="st">" "</span>, end<span class="op">=</span><span class="st">" "</span>)</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>        current_col <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>()</span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>    current_row <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="uppgift-7" class="level3">
+<h3 class="anchored" data-anchor-id="uppgift-7">Uppgift 7</h3>
+<p>Skriv ett program som genom en meny ger en avatar tre egenskaper plus ett namn:</p>
+<ul>
+<li>Namn, ska kunna sättas till godtycklig sträng</li>
+<li>Färg, ska kunna väljas gul (g), blå (b) eller röd (r)</li>
+<li>Styrka, ska kunna väljas som ett heltal mellan 1 och 10</li>
+<li>Pronomen, ska kunna väljas han, hon eller hen</li>
+<li>Menyn ska vara inmatningssäker, dvs om användaren anger ett otillåtet värde så ska denna inmatning (och enbart denna inmatning) göras om.</li>
+</ul>
+<p>Exempelkörning:</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<pre><code>Ange avatarens namn -&gt; Efelia
+Ange färgen för Efelia: Gul (g), Blå (b) eller Röd (r) -&gt; s
+Otillåtet val! Ange färgen Gul (g), Blå (b) eller Röd (r) -&gt; r
+Ange styrka (heltal 1 - 10) -&gt; 7
+Ange tilltalspronomen (han/hon/hen) -&gt; hon
+
+# Datorn skriver ut
+Det här är Efelia, hon är en röd avatar med styrkan 7.
+Snabbheten beräknas till 3.</code></pre>
+</div>
+</div>
+</div>
+<p>Snabbheten är det som saknas upp till 10 från den angivna styrkan.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Tips">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tips
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ⓘ <strong>Tips 1 – fritextval</strong></p>
+<p>Om det finns flera olika giltiga alternativ och man önskar filtrera bort ogiltiga inmatningar bland dessa alternativ, kan Pythons <code>in</code>-operator användas. Om vi vill att användaren ska skriva in “ÄPPLE” eller “BANAN” som ett svar på en fråga så kan vi deklarera en variabel enligt följande:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>frukter <span class="op">=</span> {<span class="st">"ÄPPLE"</span>, <span class="st">"BANAN"</span>}</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>frukt <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Ange antingen ÄPPLE eller BANAN -&gt; "</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> frukt <span class="kw">in</span> frukter:</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Tack för ditt val!"</span>)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Ogiltigt val"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>ⓘ <strong>Tips 2 – versaler och gemener</strong></p>
+<p>Python gör ju skillnad på versaler och gemener (“stora” och “små” bokstäver), det gör att en inmatning t ex “hon”, “Hon” eller “HON” kommer att tolkas på olika sätt. Det kan man sätta villkor för, men det kan bli många varianter att hantera. Ett vanligare sätt är att göra om inmatningen till versaler, och sedan göra jämförelsen mot versaler. Det görs med den s.k <em>strängmetoden</em> <code>upper</code>.</p>
+<p>Ex:</p>
+<div id="9bad0b56" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>my_str <span class="op">=</span> <span class="st">"abc"</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>my_upper_str <span class="op">=</span> my_str.upper()</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_upper_str)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>ABC</code></pre>
+</div>
+</div>
+<p>Då kan en jämförelse bli:</p>
+<div id="9489ad65" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Testar om användaren matar in abc, oberoende av skiftläge</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> my_upper_str <span class="op">==</span> <span class="st">"ABC"</span>:</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Du matade in rätt bokstäver i rätt ordning!"</span>)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Det spelar ingen roll om användaren matade in abc, aBc</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># eller någon annan kombination av skiftlägen.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Du matade in rätt bokstäver i rätt ordning!</code></pre>
+</div>
+</div>
+<p>Det finns även en strängmetod som heter <code>lower</code> (vilken skriver ut en sträng med gemener, “små bokstäver”). Den kan användas enligt <code>my_lower_str = my_str.lower()</code></p>
+<div class="v-space">
+
+</div>
+<p>ⓘ <strong>Tips 3 – tal i strängar</strong></p>
+<p>För att testa om en inmatning är ett positivt heltal kan strängmetoden <code>isdigit</code> användas (minns att <code>input</code> alltid ger en sträng). Om strängen utgörs av ett heltal går det att konvertera till typen <code>int</code>. Men om strängen inte utgörs av ett heltal kommer ett försök till konvertering att krascha programmet. Därför ska konvertering ske först efter att programmet har försäkrat sig om att det är möjligt med en konvertering.</p>
+<p>Ex:</p>
+<div id="2a8baf91" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Testar om en sträng utgörs av ett heltal, och konverterar det till i så fall</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># till heltalstyp varpå det multipliceras med 2.</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>my_str <span class="op">=</span> <span class="st">"123"</span> <span class="co"># Ett tal i en sträng</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> my_str.isdigit():</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    my_number <span class="op">=</span> <span class="bu">int</span>(my_str)</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="dv">2</span><span class="op">*</span>my_number)</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Strängen var inte ett heltal, och aritmetiken blir nonsens!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>246</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag uppgift 7">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag uppgift 7
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Detta Python-program fungerar som en sorts meny där användaren måste göra giltiga val. Om valet är ogiltigt kommer användaren att komma tillbaka till samma läge för att välja om. Här ser vi exempel på “oändliga loopar” och hur programmet kan avgöra om ett alternativ bland flera är giltigt.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Detta program ger egenskaper till en avatar.</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Egenskaperna sparas i variabler, vars värden</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co"># redovisas i slutet av programmet.</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Varje egenskap har en egen inmatningsloop</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="co"># som i sin tur hanterar angivna alternativ</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="co"># som inte finns i menyn.</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>namn <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Ange avatarens namn -&gt; "</span>)</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>    färg <span class="op">=</span> <span class="bu">input</span>(<span class="ss">f"Ange färgen för </span><span class="sc">{</span>namn<span class="sc">}</span><span class="ss">: Gul [g], Blå [b] eller Röd [r] -&gt; "</span>)</span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> färg <span class="kw">in</span> {<span class="st">"g"</span>, <span class="st">"b"</span>, <span class="st">"r"</span>, <span class="st">"G"</span>, <span class="st">"B"</span>, <span class="st">"R"</span>}:</span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Nedanstående konstruktion med if-sats kan skrivas snyggare med</span></span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>        <span class="co"># en s.k uppslagstabell; vi kommer att gå igenom detta senare i kursen.</span></span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> färg <span class="kw">in</span> {<span class="st">"g"</span>, <span class="st">"G"</span>}:</span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>            färg <span class="op">=</span> <span class="st">"gul"</span></span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> färg <span class="kw">in</span> {<span class="st">"b"</span>, <span class="st">"B"</span>}:</span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>            färg <span class="op">=</span> <span class="st">"blå"</span></span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a>            färg <span class="op">=</span> <span class="st">"röd"</span></span>
+<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
+<span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Felaktigt val"</span>)</span>
+<span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb26-24"><a href="#cb26-24" aria-hidden="true" tabindex="-1"></a>    styrka <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Ange styrka (heltal 1 - 10) -&gt; "</span>)</span>
+<span id="cb26-25"><a href="#cb26-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> styrka.isnumeric():</span>
+<span id="cb26-26"><a href="#cb26-26" aria-hidden="true" tabindex="-1"></a>        styrka <span class="op">=</span> <span class="bu">int</span>(styrka)</span>
+<span id="cb26-27"><a href="#cb26-27" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (<span class="dv">1</span> <span class="op">&lt;=</span> styrka <span class="op">&lt;=</span> <span class="dv">10</span>):</span>
+<span id="cb26-28"><a href="#cb26-28" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
+<span id="cb26-29"><a href="#cb26-29" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Felaktigt val"</span>)</span>
+<span id="cb26-30"><a href="#cb26-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-31"><a href="#cb26-31" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb26-32"><a href="#cb26-32" aria-hidden="true" tabindex="-1"></a>    pronomen <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Ange tilltalspronomen (han/hon/hen) -&gt; "</span>)</span>
+<span id="cb26-33"><a href="#cb26-33" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Oavsett skiftläge kommer pronomet att göras om till</span></span>
+<span id="cb26-34"><a href="#cb26-34" aria-hidden="true" tabindex="-1"></a>    <span class="co"># gemener ("små bokstäver")</span></span>
+<span id="cb26-35"><a href="#cb26-35" aria-hidden="true" tabindex="-1"></a>    pronomen <span class="op">=</span> pronomen.lower()</span>
+<span id="cb26-36"><a href="#cb26-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> pronomen <span class="kw">in</span> {<span class="st">"han"</span>, <span class="st">"hon"</span>, <span class="st">"hen"</span>}:</span>
+<span id="cb26-37"><a href="#cb26-37" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
+<span id="cb26-38"><a href="#cb26-38" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Felaktigt val"</span>)</span>
+<span id="cb26-39"><a href="#cb26-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-40"><a href="#cb26-40" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Det här är </span><span class="sc">{</span>namn<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>pronomen<span class="sc">}</span><span class="ss"> är en </span><span class="sc">{</span>f<span class="sc">ä</span>rg<span class="sc">}</span><span class="ss"> avatar med styrkan </span><span class="sc">{</span>styrka<span class="sc">}</span><span class="ss">."</span>)</span>
+<span id="cb26-41"><a href="#cb26-41" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Snabbheten beräknas till </span><span class="sc">{</span><span class="dv">10</span> <span class="op">-</span> styrka<span class="sc">}</span><span class="ss">."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="for-loopar" class="level2">
+<h2 class="anchored" data-anchor-id="for-loopar">for-loopar</h2>
+<p><strong>I uppgift 8 – 10 ska du använda <code>for</code>-loopar i din lösning</strong>.</p>
+<hr>
+<section id="uppgift-8" class="level3">
+<h3 class="anchored" data-anchor-id="uppgift-8">Uppgift 8</h3>
+<p>Skapa program, med hjälp av en eller flera loopar, som ger följande respektive utskrift:</p>
+<p>Figur A</p>
+<div id="50260d30" class="cell" data-execution_count="10">
+<div class="cell-output cell-output-stdout">
+<pre><code>* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+* * * * * * 
+* * * * * * * 
+* * * * * * * * </code></pre>
+</div>
+</div>
+<p>:::</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag uppgift 8A">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag uppgift 8A
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">9</span>):</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i <span class="op">*</span> <span class="st">"*"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Figur B</p>
+<div id="121810ff" class="cell" data-execution_count="11">
+<div class="cell-output cell-output-stdout">
+<pre><code>* * * * * * * * 
+* * * * * * * 
+* * * * * * 
+* * * * * 
+* * * * 
+* * * 
+* * 
+* </code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag uppgift 8B">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag uppgift 8B
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">8</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>):</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i <span class="op">*</span> <span class="st">"*"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Figur C</p>
+<div id="639ce2df" class="cell" data-execution_count="12">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+* * * * * * 
+* * * * * * * 
+* * * * * * * * 
+* * * * * * * 
+* * * * * * 
+* * * * * 
+* * * * 
+* * * 
+* * 
+* </code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag uppgift 8C">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag uppgift 8C
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">8</span>):</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i <span class="op">*</span> <span class="st">"*"</span>)</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">8</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>):</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i <span class="op">*</span> <span class="st">"*"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Figur D</p>
+<div id="99738b32" class="cell" data-execution_count="13">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+              *               
+            * * *             
+          * * * * *           
+        * * * * * * *         
+      * * * * * * * * *       
+    * * * * * * * * * * *     
+  * * * * * * * * * * * * *   
+* * * * * * * * * * * * * * * 
+  * * * * * * * * * * * * *   
+    * * * * * * * * * * *     
+      * * * * * * * * *       
+        * * * * * * *         
+          * * * * *           
+            * * *             
+              *               </code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag uppgift 8D">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag uppgift 8D
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Här måste dels rätt antal tecken tas i anspråk (15 st per rad), dels måste dessa tecken centreras och slutligen måste en formel hittas för att beräkna antalet stjärnor på nästföljande rad.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">9</span>):</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>(<span class="dv">2</span><span class="op">*</span>i<span class="op">-</span><span class="dv">1</span>) <span class="op">*</span> <span class="st">'*'</span><span class="sc">:^15}</span><span class="ss">"</span>)</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">7</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>):</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>(<span class="dv">2</span><span class="op">*</span>i<span class="op">-</span><span class="dv">1</span>) <span class="op">*</span> <span class="st">'*'</span><span class="sc">:^15}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="uppgift-9" class="level3">
+<h3 class="anchored" data-anchor-id="uppgift-9">Uppgift 9</h3>
+<p>Skapa en tabell som gör om en temperatur given °F till motsvarande temperatur i °C. Tabellen ska vara stegad i tiogradersintervall, se exempel nedan. Formeln för konvertering mellan °C och °F är <span class="math display">\[
+C = \frac{5}{9}F-\frac{160}{9}
+\]</span></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="a1ec0923" class="cell" data-execution_count="14">
+<div class="cell-output cell-output-stdout">
+<pre><code>Grader F      Grader C
+=======================
+  -10          -23.3
+    0          -17.8
+   10          -12.2
+   20           -6.7
+   30           -1.1
+   40            4.4
+   50           10.0
+   60           15.6
+   70           21.1
+   80           26.7
+   90           32.2
+  100           37.8
+  110           43.3</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag uppgift 9">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag uppgift 9
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Grader F"</span>.ljust(<span class="dv">13</span>), end<span class="op">=</span><span class="st">" "</span>)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Grader C"</span>)</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"======================="</span>)</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> F <span class="kw">in</span> <span class="bu">range</span>(<span class="op">-</span><span class="dv">10</span>, <span class="dv">120</span>, <span class="dv">10</span>):</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>    C <span class="op">=</span> <span class="dv">5</span><span class="op">/</span><span class="dv">9</span> <span class="op">*</span> F <span class="op">-</span> <span class="dv">160</span><span class="op">/</span><span class="dv">9</span></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>F<span class="sc">:5.0f}</span><span class="ss">"</span>, end<span class="op">=</span><span class="st">" "</span>)</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>C<span class="sc">:14.1f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="uppgift-10" class="level3">
+<h3 class="anchored" data-anchor-id="uppgift-10">Uppgift 10</h3>
+<p>I <a href="#uppgift-4">uppgift 4</a> skapade du ett program som lät en spelare gissa ett tal från 1 t o m 10. Modifiera detta program så att det startar om efter att spelaren har lyckats lista ut talet. Programmet ska totalt köras tre gånger, och när den tredje omgången är över ska det avslutas med att skriva ut medelvärdet på antalet gissningar som behövdes avrundat till en decimal. Använd en <code>for</code>-loop som kontrollstruktur för omstarten av programmet.</p>
+<p>Körningsexempel:</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<pre><code>SPELOMGÅNG 1
+----------------
+Gissa ett tal mellan 1 och 10 -&gt; 5
+Talet 5 är för litet.
+Gissa ett tal mellan 1 och 10 -&gt; 7
+Talet 7 är för litet.
+Gissa ett tal mellan 1 och 10 -&gt; 9
+Talet 9 är för litet.
+Gissa ett tal mellan 1 och 10 -&gt; 10
+RÄTT GISSAT!
+Du klarade spelet på gissning nr. 4.
+
+SPELOMGÅNG 2
+----------------
+Gissa ett tal mellan 1 och 10 -&gt; 5
+Talet 5 är för stort.
+Gissa ett tal mellan 1 och 10 -&gt; 3
+Talet 3 är för litet.
+Gissa ett tal mellan 1 och 10 -&gt; 4
+RÄTT GISSAT!
+Du klarade spelet på gissning nr. 3.
+
+SPELOMGÅNG 3
+----------------
+Gissa ett tal mellan 1 och 10 -&gt; 5
+Talet 5 är för stort.
+Gissa ett tal mellan 1 och 10 -&gt; 2
+Talet 2 är för stort.
+Gissa ett tal mellan 1 och 10 -&gt; 1
+RÄTT GISSAT!
+Du klarade spelet på gissning nr. 3.
+
+Medelvärdet för antalet gissningar per tal: 3.3</code></pre>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag uppgift 10">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösningsförslag uppgift 10
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Lösningen görs med en yttre <code>for</code>-loop (där vi känner till antalet varv från början) och en inre <code>while</code>-loop (där antalet varv beror på hur många gissningar som krävs).</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random <span class="im">as</span> rand</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>totalt_antal_gissningar <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">4</span>):</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"SPELOMGÅNG </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"----------------"</span>)</span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>    hemligt_tal <span class="op">=</span> rand.randint(<span class="dv">1</span>, <span class="dv">10</span>)</span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>    antal_gissningar <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a>        gissning <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Gissa ett tal mellan 1 och 10 -&gt; "</span>))</span>
+<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a>        antal_gissningar <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> gissning <span class="op">&gt;</span> hemligt_tal:</span>
+<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"Talet </span><span class="sc">{</span>gissning<span class="sc">}</span><span class="ss"> är för stort."</span>)</span>
+<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> gissning <span class="op">&lt;</span> hemligt_tal:</span>
+<span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"Talet </span><span class="sc">{</span>gissning<span class="sc">}</span><span class="ss"> är för litet."</span>)</span>
+<span id="cb38-17"><a href="#cb38-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb38-18"><a href="#cb38-18" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"RÄTT GISSAT!"</span>)</span>
+<span id="cb38-19"><a href="#cb38-19" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
+<span id="cb38-20"><a href="#cb38-20" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Du klarade spelet på gissning nr. </span><span class="sc">{</span>antal_gissningar<span class="sc">}</span><span class="ss">."</span>)</span>
+<span id="cb38-21"><a href="#cb38-21" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>()</span>
+<span id="cb38-22"><a href="#cb38-22" aria-hidden="true" tabindex="-1"></a>    totalt_antal_gissningar <span class="op">+=</span> antal_gissningar</span>
+<span id="cb38-23"><a href="#cb38-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Medelvärdet för antalet gissningar per tal: </span><span class="sc">{</span>(totalt_antal_gissningar <span class="op">/</span> <span class="dv">3</span>)<span class="sc">:.1f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="uppgifter-utan-lösningsförslag" class="level2">
+<h2 class="anchored" data-anchor-id="uppgifter-utan-lösningsförslag">Uppgifter utan lösningsförslag</h2>
+<p><strong>Dessa uppgifter är tänkta för att på egen hand testa förståelsen för loopar, och ska kunna lösas enbart med information från presentationer och information kring tidigare uppgifter.</strong></p>
+<hr>
+<section id="uppgift-11" class="level3">
+<h3 class="anchored" data-anchor-id="uppgift-11">Uppgift 11</h3>
+<p>Skriv ett program som simulerar hundra tärningskast med en sexsidig tärning. Innan programmet avslutas ska det på lämpligt sätt skriva ut antalet utfall av respektive sort (dvs antalet ettor, antalet tvåor osv) samt medelvärdet med en decimals noggrannhet.</p>
+<p>Kanske går det också att vara kreativ och grafiskt visa antalet utfall av respektive sort som ett liggande stapeldiagram, där staplarna utgörs av ett antal stjärnor (<code>*</code>).</p>
+<p>Se <a href="#slumptalstips">tipset till Uppgift 2 ovan</a> för att skapa slumpvisa heltal i ett intervall.</p>
+</section>
+<section id="uppgift-12" class="level3">
+<h3 class="anchored" data-anchor-id="uppgift-12">Uppgift 12</h3>
+<p>I en lek som kan användas när man lär sig division sitter deltagarna i en ring. Den första personen i ringen säger “Ett” och den andra “Två”. När en person ska säga ett tal som är jämnt delbart med tre, så säger den “Fizz”. Den tredje personen säger alltså “Fizz” istället för tre, eftersom tre är jämnt delbart med tre, detsamma gäller den person som skulle säga “Sex” och “Nio” osv. När en person ska säga ett tal som är jämnt delbart med fem så ska den istället säga “Buzz”. När talet femton ska uttalas så ska den personen som står på tur säga “FizzBuzz”, eftersom femton är jämnt delbart med både tre och fem. I ringleken så åker personer som säger fel ut, och spelet går vidare med en mindre ring.</p>
+<p>Skriv ett program som gör en uppräkning av heltal från 1 till 100, och på lämpligt sätt skriver ut talen (när de ska skrivas ut), Fizz (istället för tal som är jämnt delbara med tre), Buzz (istället för tal som är jämnt delbara med fem) och FizzBuzz (istället för tal som är jämnt delbara med såväl tre som fem).</p>
+<p>Försök att skriva två varianter på lösning:</p>
+<ul>
+<li>En som innehåller booleska operatorer i villkoren</li>
+<li>En som inte innehåller booleska operatorer i villkoren</li>
+</ul>
+<p>Se lösningsförslag till <a href="../../../../pr1/python/uppgifter/utskrift-och-villkor/index.html#uppgift-11">uppgift 11 på sidan Utskrifter och villkor</a> för att få en idé om uppbyggnaden.</p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("git@github-codebubo:codebubo\/codebubo\.github\.io\.git");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
