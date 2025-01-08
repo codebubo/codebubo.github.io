@@ -1,0 +1,121 @@
+---
+title: "Uppgifter: Diverse"
+format:
+  html:
+    fontsize: 1em
+    css: style.css
+---
+
+# Repetition och uppvärmning
+
+## Villkor och loopar
+
+### Uppgift 1 (Favorit i repris!)
+
+I en lek som kan användas när man lär sig division sitter deltagarna i en
+ring. Den första personen i ringen säger "Ett" och den andra "Två".
+När en person ska säga ett tal som är jämnt delbart med tre, så säger den
+"Fizz". Den tredje personen säger alltså "Fizz" istället för tre, eftersom
+tre är jämnt delbart med tre, detsamma gäller den person som skulle säga "Sex"
+och "Nio" osv. När en person ska säga ett tal som är jämnt delbart med fem
+så ska den istället säga "Buzz". När talet femton ska uttalas så ska den
+personen som står på tur säga "FizzBuzz", eftersom femton är jämnt delbart
+med både tre och fem. I ringleken så åker personer som säger fel ut, och spelet
+går vidare med en mindre ring.
+
+Skriv ett program som gör en uppräkning av heltal från 1 till 100, och på
+lämpligt sätt skriver ut talen (när de ska skrivas ut), Fizz (istället för tal
+som är jämnt delbara med tre), Buzz (istället för tal som är jämnt delbara med
+fem) och FizzBuzz (istället för tal som är jämnt delbara med såväl tre som fem).
+
+Försök att skriva två varianter på lösning:
+
+* En som innehåller booleska operatorer i villkoren
+* En som inte innehåller booleska operatorer i villkoren
+
+Se lösningsförslag till
+[uppgift 11 på sidan Utskrifter och villkor](../utskrift-och-villkor/index.qmd#uppgift-11)
+för att få en idé om uppbyggnaden.
+
+## Listor
+
+### Uppgift 2
+
+När matematikern **Leonardo Pisano Fibonacci** på 1200-talet skulle beskriva
+tillväxten hos kaniner, så kom han fram till talföljden
+$1, 1, 2, 3, 5, 8, 13,..., n$ (denna följd kallas för Fibonaccis talföljd).
+Varje tal beskriver antalet kaninpar efter $n$ månader enligt följande
+förutsättningar:
+
+* det endast finns ett par nyfödda kaniner den första månaden.
+* nyfödda kaniner blir könsmogna vid två månaders ålder.
+* det inte uppstår genetiska problem på grund av inavel.
+* det varje månad föds en unge per könsmogen kanin.
+* ingen av kaninerna dör.
+![](https://upload.wikimedia.org/wikipedia/commons/7/7a/FibonacciRabbit.svg)
+
+Skriv en funktion `fib(n)` som *returnerar* en lista med följden av fibonaccital
+för ett givet värde på $n$. Exempel:
+
+```{python}
+#| echo: false
+def fib(n):
+    fib = [1, 1]
+    for i in range(n - 2):
+        fib.append(fib[i] + fib[i+1])
+    return fib
+```
+
+T ex ska `print(fib(10))` ge utskriften `{python} fib(10)`
+
+Det finns mer intressant information om fibonaccitalen på
+[denna Wikipediasida](https://sv.wikipedia.org/wiki/Fibonaccital).
+
+### Uppgift 3
+
+Matematikern och fysikern **Blaise Pascal** (1623 -- 1662) skapade ett
+triangelmönster av tal som är användbara i vissa sammanhang:
+
+```
+         1
+       1   1
+     1   2   1
+   1   3   3   1
+ 1   4   6   4   1
+```
+Detta mönster kallas för *Pascals triangel*, och varje rad byggs upp med hjälp
+av summan av två tal i raden ovanför (respektive yttre talen i varje rad är
+alltid en etta).
+
+Skapa en funktion `pascal(n)` som returnerar *en lista av listor* innehållande
+talen i Pascals triangel t.o.m rad $n$.
+
+```{python}
+#| echo: false
+def pascal(n):
+    rows = []
+    row = []
+    rows.append([1])
+    rows.append([1, 1])
+    for r in range(2, n):       # Each row
+        row = [1]               # First 1 in row
+        for c in range(1, r+1): # Each column
+            if c == r:
+                row.append(1)   # Last 1 in row
+                rows.append(row)
+                break
+            else:
+                row.append(rows[r-1][c-1] + rows[r-1][c])
+    return rows
+
+```
+
+Exempel: `print(pascal(6))` ska ge utskriften `{python} pascal(6)`.
+
+Det finns flera sätt att lösa denna uppgift på (den är inte helt enkel). En
+metod är att skapa listorna `row` och `rows`, där listan `row` innehåller en
+rad (som skrivs om om vartannat) och listan `rows` är listan som innehåller alla
+`row`. Det går att lägga till en `row` i `rows` med hjälp av metoden `append`.
+
+När själva algoritmen är klar så kan man gå vidare med att skriva ut de
+beräknade talen på triangelform.
