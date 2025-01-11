@@ -1,5 +1,5 @@
 ---
-title: "Uppgifter: Binärsökning"
+title: "Binärsökning"
 format:
   html:
     fontsize: 1em
@@ -8,311 +8,230 @@ format:
 
 # Binärsökning i Python
 
-## Exempel och uppgifter
+## Beskrivning av algoritmen
 
-### Beskrivning av algoritm
+1. **Förstå problemet**: Binärsökning är en effektiv algoritm för att hitta ett
+specifikt element i en sorterad lista. Den fungerar genom att kontinuerligt
+dela listan i hälften tills det sökta elementet hittas eller tills det inte
+finns några element kvar att söka igenom.
 
-1. **Förstå problemet**: Binärsökning är en effektiv algoritm för att hitta ett specifikt element i en sorterad lista. Den fungerar genom att kontinuerligt dela listan i hälften tills det sökta elementet hittas eller tills det inte finns några element kvar att söka igenom.
+2. **Identifiera indata**: Funktionen behöver fyra indata: en sorterad lista,
+ett sökt tal och två index som representerar den undre och övre gränsen för
+sökningen.
 
-2. **Identifiera indata**: Funktionen behöver fyra indata: en sorterad lista, ett sökt tal och två index som representerar de nedre och övre gränserna för sökningen.
+3. **Beräkna mitten**: För varje sökning, beräkna mitten av listan (eller den
+aktuella delen av listan) genom att addera det undre och övre indexet och dela
+med två.
 
-3. **Beräkna mitten**: För varje sökning, beräkna mitten av listan (eller den aktuella delen av listan) genom att addera det nedre och övre indexet och dela med två.
+4. **Jämför mitten med målet**: Kontrollera om det sökta talet är lika med,
+mindre än eller större än elementet i mitten av listan. Om det är lika,
+returnera index för mitten av den aktuella delen av listan.
 
-4. **Jämför mitten med målet**: Kontrollera om det sökta talet är lika med, mindre än eller större än elementet i mitten av listan.
+5. **Uppdatera gränserna**: Om det sökta talet är mindre än elementet i mitten,
+uppdatera det övre indexet till att vara ett mindre än mittenindex. Om det sökta
+talet är större, uppdatera det undre indexet till att vara ett större än
+mittenindex.
 
-5. **Uppdatera gränserna**: Om det sökta talet är mindre än elementet i mitten, uppdatera det övre indexet till att vara ett steg mindre än mitten. Om det sökta talet är större, uppdatera det nedre indexet till att vara ett steg större än mitten.
+6. **Upprepa sökningen med den mindre listan**, dvs gå tillbaka till punkt 3.
+Om det övre indexet är ett tal som är mindre än det undre indexet finns inte
+talet i listan; returnera då `None`.
 
-6. **Returnera resultatet**: Resultatet returneras i form av tre tal; de båda
-indexen som är beräknade samt en boolesk flagga `True` om talet är hittat eller
-`False` om talet ännu inte är hittat eller saknas.
 
-7. **Iterera**: Använd en loop för att upprepa dessa steg tills det sökta talet hittas eller tills det inte finns några element kvar att söka igenom. Denna loop ska vara utanför funktionen och anropa funktionen vid varje iteration.
+## Exempel
 
-Kom ihåg att binärsökning endast fungerar på sorterade listor, så om listan inte är sorterad måste du sortera den innan du använder denna funktion. Lycka till med programmeringen! 😊
-
-### Exempel
-
-Här är en lista med tal. Låt oss söka efter ett tal med hjälp av algoritm.
-
-```
-2 4 6 8 10 12 14 16 18 20
-```
-
-**Fall 1: Söker efter talet `14` som finns i listan**
-
-1. Först beräknar vi mitten av listan. I det här fallet är mittenindexet `5` (värdet `12`).
-
-```
-2 4 6 8 10 [12] 14 16 18 20
-```
-
-2. Eftersom `14` är större än `12`, fortsätter vi att söka i den högra halvan av listan.
+Här är en lista med tal. Låt oss söka efter ett tal med hjälp av algoritmen.
 
 ```
-14 16 18 20
+  Tal: 2  4  6  8  10 12 14 16 18 20
+       |  |  |  |  |  |  |  |  |  |
+Index: 0  1  2  3  4  5  6  7  8  9
 ```
 
-3. Vi beräknar mitten av den nya listan, vilket är index `1` (värdet `16`).
+### Fall 1: Söker efter talet `14` som finns i listan
+
+1. Först beräknar vi mitten av listan. I det här fallet är mittenindexet `4`
+(värdet `10`).
 
 ```
-14 [16] 18 20
+        2 4 6 8 [10] 12 14 16 18 20
 ```
 
-4. Eftersom `14` är mindre än `16`, fortsätter vi att söka i den vänstra halvan av listan.
+2. Eftersom `14` är större än `10`, fortsätter vi att söka i den högra halvan av listan. Det undre index sätts till 1 mer än mittenindex (`4 + 1 = 5`) och det
+övre indexet står kvar (`9`).
 
 ```
-14
+        12 14 16 18 20
 ```
 
-5. Nu är det bara ett element kvar i listan och det är det sökta talet `14`. Så vi har hittat talet vi letade efter!
-
-**Fall 2: Söker efter talet `11` som inte finns i listan**
-
-1. Först beräknar vi mitten av listan. I det här fallet är mittenindexet `5` (värdet `12`).
+3. Vi beräknar mitten av den nya listan, vilket är index `7` (värdet `16`).
 
 ```
-2 4 6 8 10 [12] 14 16 18 20
+        12 14 [16] 18 20
 ```
 
-2. Eftersom `11` är mindre än `12`, fortsätter vi att söka i den vänstra halvan av listan.
+4. Eftersom `14` är mindre än `16`, fortsätter vi att söka i den vänstra halvan
+av den kvarvarande listan. Det undre indexet ändras då inte (`5`) och det övre
+indexet blir 1 mindre än mittenindex (`7 - 1 = 6`)
 
 ```
-2 4 6 8 10
+        12 14
 ```
 
-3. Vi beräknar mitten av den nya listan, vilket är index `2` (värdet `6`).
+5. Mitten på denna lista är index `5` (värdet `12`).
+
+6. Eftersom `14` är mindre än `12` så fortsätter sökningen till höger om mitten
+i den ytterligare reducerade listan. Det undre indexet blir 1 mer än
+mittenindexet (`5 + 1 = 6`) och det övre indexet står kvar (`6`).
+
+7.  Eftersom det sökta värdet finns på mittenindexet så returnerar funktionen
+detta index.
+
+### Fall 2: Söker efter talet `11` som inte finns i listan
+
+1. Först beräknar vi mitten av listan. I det här fallet är mittenindexet `4`
+(värdet `12`).
 
 ```
-2 4 [6] 8 10
+        2 4 6 8 [10] 12 14 16 18 20
 ```
 
-4. Eftersom `11` är större än `6`, fortsätter vi att söka i den högra halvan av listan.
+2. Eftersom `11` är större än `10`, fortsätter vi att söka i den högra halvan
+av listan. Undre index: `5` (mittenindex + 1). Övre index: `9` (tidigare
+slutindex).
 
 ```
-8 10
+        12 14 16 18 20
 ```
 
-5. Vi beräknar mitten av den nya listan, vilket är index `0` (värdet `8`).
+3. Vi beräknar mitten av den nya listan, vilket är index `7` (värdet `16`).
 
 ```
-[8] 10
+        12 14 [16] 18 20
 ```
 
-6. Eftersom `11` är större än `8`, fortsätter vi att söka i den högra halvan av listan.
+4. Eftersom `11` är mindre än `16`, fortsätter vi att söka i den vänstra halvan
+av listan. Undre index: `5` (tidigare startindex), övre index: `6`
+(mittenindex - 1).
 
 ```
-10
+        12 14
 ```
 
-7. Nu är det bara ett element kvar i listan och det är inte det sökta talet `11`. Så vi har inte hittat talet vi letade efter!
+5. Vi beräknar mitten av den nya listan, vilket är index `5` (värdet `12`).
 
+```
+        [12] 14
+```
+
+6. Eftersom `11` är mindre än `12`, fortsätter vi att söka i den vänstra halvan
+av listan. Då sökningen ska ske till vänster ska det lägre indexet (`5`) stå
+kvar och det övre indexet ska vara 1 under mittenindex (`5 - 1 = 4`). Det gör
+att **det övre indexet är lägre än det undre**. När det läget är nått så har
+algoritmen visat att det sökta talet inte finns i listan.
+
+## Algoritmen i pseudokod
+
+```
+def bin_search(lst, item, lower_i, upper_i):
+    # lst är den sorterade listan som sökningen sker i
+    # item är det som söks
+    # lower_i är det index där sökningen börjar
+    # upper_i är det index där sökningen slutar
+    
+    # LOOPA under villkoret upper_i >= lower_i:
+        # SKAPA en variabel mid_i, som utgör indexet i mitten
+        # (avrundat nedåt). Använd heltalsdivision för denna beräkning.
+
+        # OM talet på indexet mid_i är det sökta talet
+            # returnera mid_i.
+        
+        # ANNARS OM talet på indexet mid_i är större än item
+            # ändra upper_i till mid_i - 1 (vänster del av lista ska sökas)
+        
+        # ANNARS, ändra lower_i till mid_i + 1 (höger del av lista ska sökas)
+    
+    # Returnera None (talet finns inte i listan)
+```
+
+
+```{python}
+#| echo: false
+def bin_search(lst, item, lower_i, upper_i):
+    n = 0
+    while upper_i >= lower_i:
+        print(f"Söker efter talet {item} i listan {lst[lower_i:upper_i+1]}")
+        n += 1
+        mid = (lower_i + upper_i) // 2
+        if lst[mid] == item:
+            return mid, n
+        elif lst[mid] > item:
+            upper_i = mid - 1
+        else:
+            lower_i = mid + 1
+    return None, n
+
+```
+
+## Uppgifter
 
 ### Uppgift 1
 
-Skriv en funktion som implementerar binärsökning enligt algoritm ovan.
-Till en början, gör inte en loop som upprepar sökningen, utan testa dig fram
-steg för steg och kontrollera att du får rätt index i retur.
+Skapa funktionen `bin_search` enligt pseudokoden ovan. Testa den med några olika
+listor. Exempel på testprogram till funktionen:
 
-Som det står i beskrivningen av algoritm så ska funktionen returnera tre tal.
-Exempel på hur detta går till:
+```python
+lst = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
 
-**Exempel**
-```{python}
-# | echo: true
-def calc(a, b):
-    sum = a + b
-    diff = a - b
-    prod = a * b
-    return sum, diff, prod
+val_1 = 12 # Ett värde som finns i listan
+val_2 = 25 # Ett värde som saknas i listan
 
+result_1 = bin_search(lst, val_1, lower_i=0, upper_i=len(lst)-1)
+result_2 = bin_search(lst, val_2, lower_i=0, upper_i=len(lst)-1)
 
-# Anropa funktionen
-summa, differens, produkt = calc(5, 8)
-print(summa, differens, produkt)
+print(result_1) # 5 (dvs värdet 12 finns på index 5)
+print(result_2) # None (dvs värdet 5 saknas i listan)
 ```
 
-Vidare så används *heltalsdivision* för att ta reda på mittenindex. Denna
-resulterar alltid i heltaldelen av divisionens resultat. Exempel:
-
-```{python}
-# | echo: true
-print(21 // 2)  # Ger resultatet 10 (se nedan)
-```
-
-:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag"}
-```{python}
-# | echo: true
-def binary_search(lst, key, lower, upper):
-    # Tar emot en lista lst,
-    # en söknyckel key,
-    # ett undre index för sökning i listan,
-    # ett övre index för sökning i listan
-
-    # mi är mittenindex
-    mi = (lower + upper) // 2
-
-    if upper >= lower:
-        # Nyckeln hittades
-        if key == lst[mi]:
-            return mi, mi, True
-
-        # Nyckeln är mindre än värdet på mittenindex
-        if key < lst[mi]:
-            upper = mi - 1
-            return lower, upper, False
-
-        # Nyckeln är större än värdet på mittenindex
-        if key > lst[mi]:
-            lower = mi + 1
-            return lower, upper, False
-
-    # Om inget av ovanstående, nyckeln saknas
-    # i listan
-    return -1, -1, False
-```
-
-Exempel på använding av funktionen för att söka efter talet `12` i en lista:
-```{python}
-# | echo: true
-lst = [2, 4, 5, 7, 9, 12, 14]
-lower = 0
-upper = len(lst) - 1
-print(binary_search(lst, 12, lower, upper))
-```
-
-Innebörden av resultatet `(4, 6, False)` är att **om**  talet `12` finns i
-listan så gäller att det måste ligga mellan (och inklusive) index 4 och 6 i
-listan och att talets befintlighet i listan varken har konstaterats eller
-uteslutits.
-:::
 
 ### Uppgift 2
 
-Slutför programmet med en loop som under en körning avgör om, och i så fall
-på vilket index, som det sökta talet finns alternativt saknas.
-
-**Körningsexempel**
-```{python}
-# | echo: false
-def binary_search(arr, target, low, high):
-    if high >= low:
-        mid = (high + low) // 2
-
-        # Om elementet finns i mitten
-        if arr[mid] == target:
-            return mid, mid, True
-
-        # Om elementet är mindre än mitten, då är det bara i vänstra delen
-        elif arr[mid] > target:
-            return low, mid - 1, False
-
-        # Annars är elementet i högra delen
-        else:
-            return mid + 1, high, False
-
-    else:
-        # Elementet finns inte i listan
-        return -1, -1, False
-
-
-a_list = [-1, 2, 4, 5, 8, 12, 15, 16, 20]
-# index: 0  1  2  3  4   5   6   7   8
-key = 5
-counter = 0
-verbose = True
-print("Listan som ska sökas igenom")
-print(a_list)
-print(f"Talet som söks: {key}")
-for key in range(key, key + 1):
-    a = 0
-    b = len(a_list) - 1
-    res = False
-    counter = 0
-    while a <= b and not res:
-        counter += 1
-        if verbose:
-            print(
-                f"Ska söka mellan (och inklusive) index {a} och {b} (med mitt på {(a+b)//2})"
-            )
-        a, b, res = binary_search(a_list, key, a, b)
-
-    if res:
-        print(f"Talet {key} hittades på index {a} på {counter} sökningar")
-    else:
-        print(
-            f"Talet {key} finns inte i listan, konstaterades efter {counter} sökningar"
-        )
-
-```
-
-:::{.callout-tip collapse="true" icon="false" title="Partiellt lösningsförslag"}
+Utveckla programmet så att det skriver ut i vilken partition av listan som
+genomsöks och antalet sökningar som gjorts. Exempel på utmatning:
 
 ```{python}
-# | echo: true
-# Huvudprogram där funktionen i Uppgift 1 testas
-# ----------------------------------------------
-
-# En lista definieras
-lst = [2, 4, 5, 7, 9, 12, 14]
-
-# Ett tal att söka efter samt listindexen för denna sökning
-key = 12
-lower = 0
-upper = len(lst) - 1
-
-# Funktionen anropas flera gånger i en loop
-while True:
-    lower, upper, flag = binary_search(lst, key, lower, upper)
-    if flag == True or lower == upper == -1:
-        break
-if flag == True:
-    print(f"Talet {key} hittades på index {lower}")
+#| echo: false
+lst = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+val_1 = 12
+val_2 = 25
+result_1, num = bin_search(lst, val_1, lower_i=0, upper_i=len(lst)-1)
+print(f"Talet {val_1} finns på index {result_1}, hittades efter {num} sökningar")
+print()
+result_2, num = bin_search(lst, val_2, lower_i=0, upper_i=len(lst)-1)
+if result_2 != None:
+    print(f"Talet {val_2} finns på index {result_2}")
 else:
-    print(f"Talet {key} finns inte i listan")
-
+    print (f"Talet {val_2} saknas i listan, konstaterades efter {num} sökningar")
 ```
-:::
 
 
 ### Uppgift 3
 
-Undersök antalet sökningar som behöver göras för ett antal tal. Här är
-utmatningsexempel på några sökningar i listan:
-
-```{python}
-# | echo: false
-verbose = False
-print("Listan som ska sökas igenom")
-print(a_list)
-for key in range(-2, 20 + 1):
-    a = 0
-    b = len(a_list) - 1
-    res = False
-    counter = 0
-    while a != -1 and not res:
-        counter += 1
-        if verbose:
-            print(
-                f"Söker mellan (och inklusive) index {a} och {b} (med mitt på {(a+b)//2})"
-            )
-        a, b, res = binary_search(a_list, key, a, b)
-
-    if res:
-        print(f"Talet {key} hittades på index {a} på {counter} sökningar")
-    else:
-        print(
-            f"Talet {key} finns inte i listan, konstaterades efter {counter} sökningar"
-        )
-```
-
 Skapa en (sorterad) lista med $1\,000$ element med spridda heltalsvärden mellan
-$0$ och $2\,000$. Hur många sökningar måste
+$1$ och $2\,000$. Ta reda på med hjälp av funktionen hur många sökningar det
 
-a. maximalt göras
-b. i genomsnitt göras
+a. maximalt verkar vara tvunget att göras
+b. i genomsnitt görs
 
 för att hitta ett tal som finns i listan alternativt utesluta förekomsten av
-det?
+det? (Här bör du söka efter vart och ett av alla tal mellan $1$ och $2\,000$
+för att få ett tillförlitligt resultat; vissa tal kommer att hittas medan andra
+naturligtvis saknas i listan.)
 
-Gör om samma undesökning med en lista på $10\,000$ element (med spridda
-heltalsvärden mellan 0 och $20\,000$). Kommentera resultatet.
+Gör sedan om samma undesökning med en lista på $10\,000$ element (med spridda
+heltalsvärden mellan 1 och $20\,000$). Kommentera resultatet (antalet element
+har ökat med en faktor 10, men med vilken faktor har det genomsnittliga antalet
+sökningar förändrats?).
+
+Tips: En lista `lst` kan sorteras med hjälp av metoden `sort` enligt
+`lst.sort()`. Det går alltså att skapa en lista med slumpmässiga heltal och
+därefter sortera den. 
