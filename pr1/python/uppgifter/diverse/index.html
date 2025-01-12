@@ -509,7 +509,7 @@ window.Quarto = {
      1   2   1
    1   3   3   1
  1   4   6   4   1</code></pre>
-<p>Detta mönster kallas för <em>Pascals triangel</em>, och varje rad byggs upp med hjälp av summan av två tal i raden ovanför (respektive yttre talen i varje rad är alltid en etta).</p>
+<p>Detta mönster kallas för <em>Pascals triangel</em>, och varje rad byggs upp med hjälp av summan av två tal i raden ovanför (respektive yttre tal i varje rad är alltid en etta).</p>
 <p>Skapa en funktion <code>pascal(n)</code> som returnerar <em>en lista av listor</em> innehållande talen i Pascals triangel t.o.m rad <span class="math inline">\(n\)</span>.</p>
 <p>Exempel: <code>print(pascal(6))</code> ska ge utskriften [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1], [1, 5, 10, 10, 5, 1]].</p>
 <p>Det finns flera sätt att lösa denna uppgift på (den är inte helt enkel). En metod är att skapa listorna <code>row</code> och <code>rows</code>, där listan <code>row</code> innehåller en rad (som skrivs om om vartannat) och listan <code>rows</code> är listan som innehåller alla <code>row</code>. Det går att lägga till en <code>row</code> i <code>rows</code> med hjälp av metoden <code>append</code>.</p>
