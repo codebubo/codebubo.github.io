@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Uppgifter: Binärsökning – CodeBubo</title>
+<title>Binärsökning – CodeBubo</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -179,7 +179,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../../pr1/python/cheat_sheet_python.html">Programmering 1</a></li><li class="breadcrumb-item"><a href="../../../../pr1/python/uppgifter/utskrift-och-villkor/index.html">Uppgifter, Python</a></li><li class="breadcrumb-item"><a href="../../../../pr1/python/uppgifter/binarsokning/index.html">Uppgifter: Binärsökning</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../../pr1/python/cheat_sheet_python.html">Programmering 1</a></li><li class="breadcrumb-item"><a href="../../../../pr1/python/uppgifter/utskrift-och-villkor/index.html">Uppgifter, Python</a></li><li class="breadcrumb-item"><a href="../../../../pr1/python/uppgifter/binarsokning/index.html">Binärsökning</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -335,7 +335,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../pr1/python/uppgifter/binarsokning/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Uppgifter: Binärsökning</span></a>
+ <span class="menu-text">Binärsökning</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -468,10 +468,15 @@ window.Quarto = {
   <ul>
   <li><a href="#binärsökning-i-python" id="toc-binärsökning-i-python" class="nav-link active" data-scroll-target="#binärsökning-i-python">Binärsökning i Python</a>
   <ul class="collapse">
-  <li><a href="#exempel-och-uppgifter" id="toc-exempel-och-uppgifter" class="nav-link" data-scroll-target="#exempel-och-uppgifter">Exempel och uppgifter</a>
+  <li><a href="#beskrivning-av-algoritmen" id="toc-beskrivning-av-algoritmen" class="nav-link" data-scroll-target="#beskrivning-av-algoritmen">Beskrivning av algoritmen</a></li>
+  <li><a href="#exempel" id="toc-exempel" class="nav-link" data-scroll-target="#exempel">Exempel</a>
   <ul class="collapse">
-  <li><a href="#beskrivning-av-algoritm" id="toc-beskrivning-av-algoritm" class="nav-link" data-scroll-target="#beskrivning-av-algoritm">Beskrivning av algoritm</a></li>
-  <li><a href="#exempel" id="toc-exempel" class="nav-link" data-scroll-target="#exempel">Exempel</a></li>
+  <li><a href="#fall-1-söker-efter-talet-14-som-finns-i-listan" id="toc-fall-1-söker-efter-talet-14-som-finns-i-listan" class="nav-link" data-scroll-target="#fall-1-söker-efter-talet-14-som-finns-i-listan">Fall 1: Söker efter talet <code>14</code> som finns i listan</a></li>
+  <li><a href="#fall-2-söker-efter-talet-11-som-inte-finns-i-listan" id="toc-fall-2-söker-efter-talet-11-som-inte-finns-i-listan" class="nav-link" data-scroll-target="#fall-2-söker-efter-talet-11-som-inte-finns-i-listan">Fall 2: Söker efter talet <code>11</code> som inte finns i listan</a></li>
+  </ul></li>
+  <li><a href="#algoritmen-i-pseudokod" id="toc-algoritmen-i-pseudokod" class="nav-link" data-scroll-target="#algoritmen-i-pseudokod">Algoritmen i pseudokod</a></li>
+  <li><a href="#uppgifter" id="toc-uppgifter" class="nav-link" data-scroll-target="#uppgifter">Uppgifter</a>
+  <ul class="collapse">
   <li><a href="#uppgift-1" id="toc-uppgift-1" class="nav-link" data-scroll-target="#uppgift-1">Uppgift 1</a></li>
   <li><a href="#uppgift-2" id="toc-uppgift-2" class="nav-link" data-scroll-target="#uppgift-2">Uppgift 2</a></li>
   <li><a href="#uppgift-3" id="toc-uppgift-3" class="nav-link" data-scroll-target="#uppgift-3">Uppgift 3</a></li>
@@ -483,9 +488,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../../pr1/python/cheat_sheet_python.html">Programmering 1</a></li><li class="breadcrumb-item"><a href="../../../../pr1/python/uppgifter/utskrift-och-villkor/index.html">Uppgifter, Python</a></li><li class="breadcrumb-item"><a href="../../../../pr1/python/uppgifter/binarsokning/index.html">Uppgifter: Binärsökning</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../../pr1/python/cheat_sheet_python.html">Programmering 1</a></li><li class="breadcrumb-item"><a href="../../../../pr1/python/uppgifter/utskrift-och-villkor/index.html">Uppgifter, Python</a></li><li class="breadcrumb-item"><a href="../../../../pr1/python/uppgifter/binarsokning/index.html">Binärsökning</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Uppgifter: Binärsökning</h1>
+<h1 class="title">Binärsökning</h1>
 </div>
 
 
@@ -504,253 +509,156 @@ window.Quarto = {
 
 <section id="binärsökning-i-python" class="level1">
 <h1>Binärsökning i Python</h1>
-<section id="exempel-och-uppgifter" class="level2">
-<h2 class="anchored" data-anchor-id="exempel-och-uppgifter">Exempel och uppgifter</h2>
-<section id="beskrivning-av-algoritm" class="level3">
-<h3 class="anchored" data-anchor-id="beskrivning-av-algoritm">Beskrivning av algoritm</h3>
+<section id="beskrivning-av-algoritmen" class="level2">
+<h2 class="anchored" data-anchor-id="beskrivning-av-algoritmen">Beskrivning av algoritmen</h2>
 <ol type="1">
 <li><p><strong>Förstå problemet</strong>: Binärsökning är en effektiv algoritm för att hitta ett specifikt element i en sorterad lista. Den fungerar genom att kontinuerligt dela listan i hälften tills det sökta elementet hittas eller tills det inte finns några element kvar att söka igenom.</p></li>
-<li><p><strong>Identifiera indata</strong>: Funktionen behöver fyra indata: en sorterad lista, ett sökt tal och två index som representerar de nedre och övre gränserna för sökningen.</p></li>
-<li><p><strong>Beräkna mitten</strong>: För varje sökning, beräkna mitten av listan (eller den aktuella delen av listan) genom att addera det nedre och övre indexet och dela med två.</p></li>
-<li><p><strong>Jämför mitten med målet</strong>: Kontrollera om det sökta talet är lika med, mindre än eller större än elementet i mitten av listan.</p></li>
-<li><p><strong>Uppdatera gränserna</strong>: Om det sökta talet är mindre än elementet i mitten, uppdatera det övre indexet till att vara ett steg mindre än mitten. Om det sökta talet är större, uppdatera det nedre indexet till att vara ett steg större än mitten.</p></li>
-<li><p><strong>Returnera resultatet</strong>: Resultatet returneras i form av tre tal; de båda indexen som är beräknade samt en boolesk flagga <code>True</code> om talet är hittat eller <code>False</code> om talet ännu inte är hittat eller saknas.</p></li>
-<li><p><strong>Iterera</strong>: Använd en loop för att upprepa dessa steg tills det sökta talet hittas eller tills det inte finns några element kvar att söka igenom. Denna loop ska vara utanför funktionen och anropa funktionen vid varje iteration.</p></li>
+<li><p><strong>Identifiera indata</strong>: Funktionen behöver fyra indata: en sorterad lista, ett sökt tal och två index som representerar den undre och övre gränsen för sökningen.</p></li>
+<li><p><strong>Beräkna mitten</strong>: För varje sökning, beräkna mitten av listan (eller den aktuella delen av listan) genom att addera det undre och övre indexet och dela med två.</p></li>
+<li><p><strong>Jämför mitten med målet</strong>: Kontrollera om det sökta talet är lika med, mindre än eller större än elementet i mitten av listan. Om det är lika, returnera index för mitten av den aktuella delen av listan.</p></li>
+<li><p><strong>Uppdatera gränserna</strong>: Om det sökta talet är mindre än elementet i mitten, uppdatera det övre indexet till att vara ett mindre än mittenindex. Om det sökta talet är större, uppdatera det undre indexet till att vara ett större än mittenindex.</p></li>
+<li><p><strong>Upprepa sökningen med den mindre listan</strong>, dvs gå tillbaka till punkt 3. Om det övre indexet är ett tal som är mindre än det undre indexet finns inte talet i listan; returnera då <code>None</code>.</p></li>
 </ol>
-<p>Kom ihåg att binärsökning endast fungerar på sorterade listor, så om listan inte är sorterad måste du sortera den innan du använder denna funktion. Lycka till med programmeringen! 😊</p>
 </section>
-<section id="exempel" class="level3">
-<h3 class="anchored" data-anchor-id="exempel">Exempel</h3>
-<p>Här är en lista med tal. Låt oss söka efter ett tal med hjälp av algoritm.</p>
-<pre><code>2 4 6 8 10 12 14 16 18 20</code></pre>
-<p><strong>Fall 1: Söker efter talet <code>14</code> som finns i listan</strong></p>
+<section id="exempel" class="level2">
+<h2 class="anchored" data-anchor-id="exempel">Exempel</h2>
+<p>Här är en lista med tal. Låt oss söka efter ett tal med hjälp av algoritmen.</p>
+<pre><code>  Tal: 2  4  6  8  10 12 14 16 18 20
+       |  |  |  |  |  |  |  |  |  |
+Index: 0  1  2  3  4  5  6  7  8  9</code></pre>
+<section id="fall-1-söker-efter-talet-14-som-finns-i-listan" class="level3">
+<h3 class="anchored" data-anchor-id="fall-1-söker-efter-talet-14-som-finns-i-listan">Fall 1: Söker efter talet <code>14</code> som finns i listan</h3>
 <ol type="1">
-<li>Först beräknar vi mitten av listan. I det här fallet är mittenindexet <code>5</code> (värdet <code>12</code>).</li>
+<li>Först beräknar vi mitten av listan. I det här fallet är mittenindexet <code>4</code> (värdet <code>10</code>).</li>
 </ol>
-<pre><code>2 4 6 8 10 [12] 14 16 18 20</code></pre>
+<pre><code>        2 4 6 8 [10] 12 14 16 18 20</code></pre>
 <ol start="2" type="1">
-<li>Eftersom <code>14</code> är större än <code>12</code>, fortsätter vi att söka i den högra halvan av listan.</li>
+<li>Eftersom <code>14</code> är större än <code>10</code>, fortsätter vi att söka i den högra halvan av listan. Det undre index sätts till 1 mer än mittenindex (<code>4 + 1 = 5</code>) och det övre indexet står kvar (<code>9</code>).</li>
 </ol>
-<pre><code>14 16 18 20</code></pre>
+<pre><code>        12 14 16 18 20</code></pre>
 <ol start="3" type="1">
-<li>Vi beräknar mitten av den nya listan, vilket är index <code>1</code> (värdet <code>16</code>).</li>
+<li>Vi beräknar mitten av den nya listan, vilket är index <code>7</code> (värdet <code>16</code>).</li>
 </ol>
-<pre><code>14 [16] 18 20</code></pre>
+<pre><code>        12 14 [16] 18 20</code></pre>
 <ol start="4" type="1">
-<li>Eftersom <code>14</code> är mindre än <code>16</code>, fortsätter vi att söka i den vänstra halvan av listan.</li>
+<li>Eftersom <code>14</code> är mindre än <code>16</code>, fortsätter vi att söka i den vänstra halvan av den kvarvarande listan. Det undre indexet ändras då inte (<code>5</code>) och det övre indexet blir 1 mindre än mittenindex (<code>7 - 1 = 6</code>)</li>
 </ol>
-<pre><code>14</code></pre>
+<pre><code>        12 14</code></pre>
 <ol start="5" type="1">
-<li>Nu är det bara ett element kvar i listan och det är det sökta talet <code>14</code>. Så vi har hittat talet vi letade efter!</li>
+<li><p>Mitten på denna lista är index <code>5</code> (värdet <code>12</code>).</p></li>
+<li><p>Eftersom <code>14</code> är mindre än <code>12</code> så fortsätter sökningen till höger om mitten i den ytterligare reducerade listan. Det undre indexet blir 1 mer än mittenindexet (<code>5 + 1 = 6</code>) och det övre indexet står kvar (<code>6</code>).</p></li>
+<li><p>Eftersom det sökta värdet finns på mittenindexet så returnerar funktionen detta index.</p></li>
 </ol>
-<p><strong>Fall 2: Söker efter talet <code>11</code> som inte finns i listan</strong></p>
+</section>
+<section id="fall-2-söker-efter-talet-11-som-inte-finns-i-listan" class="level3">
+<h3 class="anchored" data-anchor-id="fall-2-söker-efter-talet-11-som-inte-finns-i-listan">Fall 2: Söker efter talet <code>11</code> som inte finns i listan</h3>
 <ol type="1">
-<li>Först beräknar vi mitten av listan. I det här fallet är mittenindexet <code>5</code> (värdet <code>12</code>).</li>
+<li>Först beräknar vi mitten av listan. I det här fallet är mittenindexet <code>4</code> (värdet <code>12</code>).</li>
 </ol>
-<pre><code>2 4 6 8 10 [12] 14 16 18 20</code></pre>
+<pre><code>        2 4 6 8 [10] 12 14 16 18 20</code></pre>
 <ol start="2" type="1">
-<li>Eftersom <code>11</code> är mindre än <code>12</code>, fortsätter vi att söka i den vänstra halvan av listan.</li>
+<li>Eftersom <code>11</code> är större än <code>10</code>, fortsätter vi att söka i den högra halvan av listan. Undre index: <code>5</code> (mittenindex + 1). Övre index: <code>9</code> (tidigare slutindex).</li>
 </ol>
-<pre><code>2 4 6 8 10</code></pre>
+<pre><code>        12 14 16 18 20</code></pre>
 <ol start="3" type="1">
-<li>Vi beräknar mitten av den nya listan, vilket är index <code>2</code> (värdet <code>6</code>).</li>
+<li>Vi beräknar mitten av den nya listan, vilket är index <code>7</code> (värdet <code>16</code>).</li>
 </ol>
-<pre><code>2 4 [6] 8 10</code></pre>
+<pre><code>        12 14 [16] 18 20</code></pre>
 <ol start="4" type="1">
-<li>Eftersom <code>11</code> är större än <code>6</code>, fortsätter vi att söka i den högra halvan av listan.</li>
+<li>Eftersom <code>11</code> är mindre än <code>16</code>, fortsätter vi att söka i den vänstra halvan av listan. Undre index: <code>5</code> (tidigare startindex), övre index: <code>6</code> (mittenindex - 1).</li>
 </ol>
-<pre><code>8 10</code></pre>
+<pre><code>        12 14</code></pre>
 <ol start="5" type="1">
-<li>Vi beräknar mitten av den nya listan, vilket är index <code>0</code> (värdet <code>8</code>).</li>
+<li>Vi beräknar mitten av den nya listan, vilket är index <code>5</code> (värdet <code>12</code>).</li>
 </ol>
-<pre><code>[8] 10</code></pre>
+<pre><code>        [12] 14</code></pre>
 <ol start="6" type="1">
-<li>Eftersom <code>11</code> är större än <code>8</code>, fortsätter vi att söka i den högra halvan av listan.</li>
-</ol>
-<pre><code>10</code></pre>
-<ol start="7" type="1">
-<li>Nu är det bara ett element kvar i listan och det är inte det sökta talet <code>11</code>. Så vi har inte hittat talet vi letade efter!</li>
+<li>Eftersom <code>11</code> är mindre än <code>12</code>, fortsätter vi att söka i den vänstra halvan av listan. Då sökningen ska ske till vänster ska det lägre indexet (<code>5</code>) stå kvar och det övre indexet ska vara 1 under mittenindex (<code>5 - 1 = 4</code>). Det gör att <strong>det övre indexet är lägre än det undre</strong>. När det läget är nått så har algoritmen visat att det sökta talet inte finns i listan.</li>
 </ol>
 </section>
+</section>
+<section id="algoritmen-i-pseudokod" class="level2">
+<h2 class="anchored" data-anchor-id="algoritmen-i-pseudokod">Algoritmen i pseudokod</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> bin_search(lst, item, lower_i, upper_i):</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># lst är den sorterade listan som sökningen sker i</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># item är det som söks</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># lower_i är det index där sökningen börjar</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># upper_i är det index där sökningen slutar</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># LOOPA under villkoret upper_i &gt;= lower_i:</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>        <span class="co"># SKAPA en variabel mid_i, som utgör indexet i mitten</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>        <span class="co"># (avrundat nedåt). Använd heltalsdivision för denna beräkning.</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>        <span class="co"># OM talet på indexet mid_i är det sökta talet</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>            <span class="co"># returnera mid_i.</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>        <span class="co"># ANNARS OM talet på indexet mid_i är större än item</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>            <span class="co"># ändra upper_i till mid_i - 1 (vänster del av lista ska sökas)</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>        <span class="co"># ANNARS, ändra lower_i till mid_i + 1 (höger del av lista ska sökas)</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Returnera None (talet finns inte i listan)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="uppgifter" class="level2">
+<h2 class="anchored" data-anchor-id="uppgifter">Uppgifter</h2>
 <section id="uppgift-1" class="level3">
 <h3 class="anchored" data-anchor-id="uppgift-1">Uppgift 1</h3>
-<p>Skriv en funktion som implementerar binärsökning enligt algoritm ovan. Till en början, gör inte en loop som upprepar sökningen, utan testa dig fram steg för steg och kontrollera att du får rätt index i retur.</p>
-<p>Som det står i beskrivningen av algoritm så ska funktionen returnera tre tal. Exempel på hur detta går till:</p>
-<p><strong>Exempel</strong></p>
-<div id="8d94eb38" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calc(a, b):</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">sum</span> <span class="op">=</span> a <span class="op">+</span> b</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    diff <span class="op">=</span> a <span class="op">-</span> b</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    prod <span class="op">=</span> a <span class="op">*</span> b</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">sum</span>, diff, prod</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Anropa funktionen</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>summa, differens, produkt <span class="op">=</span> calc(<span class="dv">5</span>, <span class="dv">8</span>)</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(summa, differens, produkt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>13 -3 40</code></pre>
-</div>
-</div>
-<p>Vidare så används <em>heltalsdivision</em> för att ta reda på mittenindex. Denna resulterar alltid i heltaldelen av divisionens resultat. Exempel:</p>
-<div id="d68f80a1" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">21</span> <span class="op">//</span> <span class="dv">2</span>)  <span class="co"># Ger resultatet 10 (se nedan)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>10</code></pre>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Lösningsförslag
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div id="6dfd277d" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> binary_search(lst, key, lower, upper):</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Tar emot en lista lst,</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># en söknyckel key,</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ett undre index för sökning i listan,</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ett övre index för sökning i listan</span></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># mi är mittenindex</span></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    mi <span class="op">=</span> (lower <span class="op">+</span> upper) <span class="op">//</span> <span class="dv">2</span></span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> upper <span class="op">&gt;=</span> lower:</span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Nyckeln hittades</span></span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> key <span class="op">==</span> lst[mi]:</span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> mi, mi, <span class="va">True</span></span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Nyckeln är mindre än värdet på mittenindex</span></span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> key <span class="op">&lt;</span> lst[mi]:</span>
-<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>            upper <span class="op">=</span> mi <span class="op">-</span> <span class="dv">1</span></span>
-<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> lower, upper, <span class="va">False</span></span>
-<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Nyckeln är större än värdet på mittenindex</span></span>
-<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> key <span class="op">&gt;</span> lst[mi]:</span>
-<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>            lower <span class="op">=</span> mi <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> lower, upper, <span class="va">False</span></span>
-<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Om inget av ovanstående, nyckeln saknas</span></span>
-<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># i listan</span></span>
-<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>, <span class="va">False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Exempel på använding av funktionen för att söka efter talet <code>12</code> i en lista:</p>
-<div id="f5d0bfdf" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">12</span>, <span class="dv">14</span>]</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>lower <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>upper <span class="op">=</span> <span class="bu">len</span>(lst) <span class="op">-</span> <span class="dv">1</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(binary_search(lst, <span class="dv">12</span>, lower, upper))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>(4, 6, False)</code></pre>
-</div>
-</div>
-<p>Innebörden av resultatet <code>(4, 6, False)</code> är att <strong>om</strong> talet <code>12</code> finns i listan så gäller att det måste ligga mellan (och inklusive) index 4 och 6 i listan och att talets befintlighet i listan varken har konstaterats eller uteslutits.</p>
-</div>
-</div>
-</div>
+<p>Skapa funktionen <code>bin_search</code> enligt pseudokoden ovan. Testa den med några olika listor. Exempel på testprogram till funktionen:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">14</span>, <span class="dv">16</span>, <span class="dv">18</span>, <span class="dv">20</span>]</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>val_1 <span class="op">=</span> <span class="dv">12</span> <span class="co"># Ett värde som finns i listan</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>val_2 <span class="op">=</span> <span class="dv">25</span> <span class="co"># Ett värde som saknas i listan</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>result_1 <span class="op">=</span> bin_search(lst, val_1, lower_i<span class="op">=</span><span class="dv">0</span>, upper_i<span class="op">=</span><span class="bu">len</span>(lst)<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>result_2 <span class="op">=</span> bin_search(lst, val_2, lower_i<span class="op">=</span><span class="dv">0</span>, upper_i<span class="op">=</span><span class="bu">len</span>(lst)<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result_1) <span class="co"># 5 (dvs värdet 12 finns på index 5)</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result_2) <span class="co"># None (dvs värdet 5 saknas i listan)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="uppgift-2" class="level3">
 <h3 class="anchored" data-anchor-id="uppgift-2">Uppgift 2</h3>
-<p>Slutför programmet med en loop som under en körning avgör om, och i så fall på vilket index, som det sökta talet finns alternativt saknas.</p>
-<p><strong>Körningsexempel</strong></p>
-<div id="517358d8" class="cell" data-execution_count="5">
+<p>Utveckla programmet så att det skriver ut i vilken partition av listan som genomsöks och antalet sökningar som gjorts. Exempel på utmatning:</p>
+<div id="83ef9db3" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-stdout">
-<pre><code>Listan som ska sökas igenom
-[-1, 2, 4, 5, 8, 12, 15, 16, 20]
-Talet som söks: 5
-Ska söka mellan (och inklusive) index 0 och 8 (med mitt på 4)
-Ska söka mellan (och inklusive) index 0 och 3 (med mitt på 1)
-Ska söka mellan (och inklusive) index 2 och 3 (med mitt på 2)
-Ska söka mellan (och inklusive) index 3 och 3 (med mitt på 3)
-Talet 5 hittades på index 3 på 4 sökningar</code></pre>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Partiellt lösningsförslag">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Partiellt lösningsförslag
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div id="85634343" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Huvudprogram där funktionen i Uppgift 1 testas</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ----------------------------------------------</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># En lista definieras</span></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">12</span>, <span class="dv">14</span>]</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Ett tal att söka efter samt listindexen för denna sökning</span></span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>key <span class="op">=</span> <span class="dv">12</span></span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>lower <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>upper <span class="op">=</span> <span class="bu">len</span>(lst) <span class="op">-</span> <span class="dv">1</span></span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Funktionen anropas flera gånger i en loop</span></span>
-<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>    lower, upper, flag <span class="op">=</span> binary_search(lst, key, lower, upper)</span>
-<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> flag <span class="op">==</span> <span class="va">True</span> <span class="kw">or</span> lower <span class="op">==</span> upper <span class="op">==</span> <span class="op">-</span><span class="dv">1</span>:</span>
-<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
-<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> flag <span class="op">==</span> <span class="va">True</span>:</span>
-<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Talet </span><span class="sc">{</span>key<span class="sc">}</span><span class="ss"> hittades på index </span><span class="sc">{</span>lower<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Talet </span><span class="sc">{</span>key<span class="sc">}</span><span class="ss"> finns inte i listan"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Talet 12 hittades på index 5</code></pre>
-</div>
-</div>
-</div>
+<pre><code>Söker efter talet 12 i listan [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+Söker efter talet 12 i listan [12, 14, 16, 18, 20]
+Söker efter talet 12 i listan [12, 14]
+Talet 12 finns på index 5, hittades efter 3 sökningar
+
+Söker efter talet 25 i listan [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+Söker efter talet 25 i listan [12, 14, 16, 18, 20]
+Söker efter talet 25 i listan [18, 20]
+Söker efter talet 25 i listan [20]
+Talet 25 saknas i listan, konstaterades efter 4 sökningar</code></pre>
 </div>
 </div>
 </section>
 <section id="uppgift-3" class="level3">
 <h3 class="anchored" data-anchor-id="uppgift-3">Uppgift 3</h3>
-<p>Undersök antalet sökningar som behöver göras för ett antal tal. Här är utmatningsexempel på några sökningar i listan:</p>
-<div id="10db3240" class="cell" data-execution_count="7">
-<div class="cell-output cell-output-stdout">
-<pre><code>Listan som ska sökas igenom
-[-1, 2, 4, 5, 8, 12, 15, 16, 20]
-Talet -2 finns inte i listan, konstaterades efter 4 sökningar
-Talet -1 hittades på index 0 på 3 sökningar
-Talet 0 finns inte i listan, konstaterades efter 4 sökningar
-Talet 1 finns inte i listan, konstaterades efter 4 sökningar
-Talet 2 hittades på index 1 på 2 sökningar
-Talet 3 finns inte i listan, konstaterades efter 4 sökningar
-Talet 4 hittades på index 2 på 3 sökningar
-Talet 5 hittades på index 3 på 4 sökningar
-Talet 6 finns inte i listan, konstaterades efter 5 sökningar
-Talet 7 finns inte i listan, konstaterades efter 5 sökningar
-Talet 8 hittades på index 4 på 1 sökningar
-Talet 9 finns inte i listan, konstaterades efter 4 sökningar
-Talet 10 finns inte i listan, konstaterades efter 4 sökningar
-Talet 11 finns inte i listan, konstaterades efter 4 sökningar
-Talet 12 hittades på index 5 på 3 sökningar
-Talet 13 finns inte i listan, konstaterades efter 4 sökningar
-Talet 14 finns inte i listan, konstaterades efter 4 sökningar
-Talet 15 hittades på index 6 på 2 sökningar
-Talet 16 hittades på index 7 på 3 sökningar
-Talet 17 finns inte i listan, konstaterades efter 5 sökningar
-Talet 18 finns inte i listan, konstaterades efter 5 sökningar
-Talet 19 finns inte i listan, konstaterades efter 5 sökningar
-Talet 20 hittades på index 8 på 4 sökningar</code></pre>
-</div>
-</div>
-<p>Skapa en (sorterad) lista med <span class="math inline">\(1\,000\)</span> element med spridda heltalsvärden mellan <span class="math inline">\(0\)</span> och <span class="math inline">\(2\,000\)</span>. Hur många sökningar måste</p>
+<p>Skapa en (sorterad) lista med <span class="math inline">\(1\,000\)</span> element med spridda heltalsvärden mellan <span class="math inline">\(1\)</span> och <span class="math inline">\(2\,000\)</span>. Ta reda på med hjälp av funktionen hur många sökningar det</p>
 <ol type="a">
-<li>maximalt göras</li>
-<li>i genomsnitt göras</li>
+<li>maximalt verkar vara tvunget att göras</li>
+<li>i genomsnitt görs (såväl i de fall när talet saknas i listan och de fall där talet finns, se exemplet nedan).</li>
 </ol>
-<p>för att hitta ett tal som finns i listan alternativt utesluta förekomsten av det?</p>
-<p>Gör om samma undesökning med en lista på <span class="math inline">\(10\,000\)</span> element (med spridda heltalsvärden mellan 0 och <span class="math inline">\(20\,000\)</span>). Kommentera resultatet.</p>
+<p>för att hitta ett tal som finns i listan alternativt utesluta förekomsten av det? (Här bör du söka efter vart och ett av alla tal mellan <span class="math inline">\(1\)</span> och <span class="math inline">\(2\,000\)</span> för att få ett tillförlitligt resultat; vissa tal kommer att hittas medan andra naturligtvis saknas i listan.)</p>
+<p>Gör sedan om samma undesökning med en lista på <span class="math inline">\(10\,000\)</span> element (med spridda heltalsvärden mellan 1 och <span class="math inline">\(20\,000\)</span>). Kommentera resultatet (antalet element har ökat med en faktor 10, men med vilken faktor har det genomsnittliga antalet sökningar förändrats?).</p>
+<p>Tips: En lista <code>lst</code> kan sorteras med hjälp av metoden <code>sort</code> enligt <code>lst.sort()</code>. Det går alltså att skapa en lista med slumpmässiga heltal och därefter sortera den.</p>
+<p>Nedan finns ett exempel. Antalet sökningar som gjorts i exemplet är dubbelt så många som listans storlek. T ex så baserar sig den första raden på att söka igenom en lista på 100 heltal mellan 1 och 200, där vart och ett av talen <code>1, 2, 3,..., 200</code> eftersöks.</p>
+<div id="8a6f546c" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-stdout">
+<pre><code>Listans    Antal iterationer    Antal iterationer    Maximalt antal
+storlek    vid bom              vid träff            iterationer
+-------------------------------------------------------------------
+  100        6.84                   5.56                   7
+  200        7.77                   6.55                   8
+  300        8.30                   7.11                   9
+  400        8.78                   7.50                   9
+-------------------------------------------------------------------
+Antalet iterationer vid bom respektive träff är det genomsnittliga
+antalet för att konstatera att talet saknas i listan respektive
+hitta det index som det återfinns på.</code></pre>
+</div>
+</div>
 
 
 </section>
