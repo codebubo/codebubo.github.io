@@ -131,7 +131,7 @@ algoritmen visat att det sökta talet inte finns i listan.
 
 ## Algoritmen i pseudokod
 
-```
+```python
 def bin_search(lst, item, lower_i, upper_i):
     # lst är den sorterade listan som sökningen sker i
     # item är det som söks
@@ -152,7 +152,6 @@ def bin_search(lst, item, lower_i, upper_i):
     
     # Returnera None (talet finns inte i listan)
 ```
-
 
 ```{python}
 #| echo: false
@@ -213,14 +212,14 @@ else:
     print (f"Talet {val_2} saknas i listan, konstaterades efter {num} sökningar")
 ```
 
-
 ### Uppgift 3
 
 Skapa en (sorterad) lista med $1\,000$ element med spridda heltalsvärden mellan
 $1$ och $2\,000$. Ta reda på med hjälp av funktionen hur många sökningar det
 
 a. maximalt verkar vara tvunget att göras
-b. i genomsnitt görs
+b. i genomsnitt görs (såväl i de fall när talet saknas i listan och de fall där
+talet finns, se exemplet nedan).
 
 för att hitta ett tal som finns i listan alternativt utesluta förekomsten av
 det? (Här bör du söka efter vart och ett av alla tal mellan $1$ och $2\,000$
@@ -234,4 +233,76 @@ sökningar förändrats?).
 
 Tips: En lista `lst` kan sorteras med hjälp av metoden `sort` enligt
 `lst.sort()`. Det går alltså att skapa en lista med slumpmässiga heltal och
-därefter sortera den. 
+därefter sortera den.
+
+Nedan finns ett exempel. Antalet sökningar som gjorts i exemplet är dubbelt
+så många som listans storlek. T ex så baserar sig den första raden på att
+söka igenom en lista på 100 heltal mellan 1 och 200, där vart och ett av talen
+`1, 2, 3,..., 200` eftersöks.
+
+
+```{python}
+#| echo: false
+import random as rand
+rand.seed(0xABCD1234)
+SIZES = [100, 200, 300, 400]
+avs_it_not_found = []
+avs_it_found = []
+avs_it_total = []
+max_it = 0 
+
+print("""Listans    Antal iterationer    Antal iterationer    Maximalt antal
+storlek    vid bom              vid träff            iterationer""")
+print(67*"-")
+
+def search_it(lst, item, lower_i, upper_i):
+    n = 0
+    while upper_i >= lower_i:
+        n += 1
+        mid = (lower_i + upper_i) // 2
+        if lst[mid] == item:
+            return n, mid
+        elif lst[mid] > item:
+            upper_i = mid - 1
+        else:
+            lower_i = mid + 1
+    return n, None
+
+for i in SIZES:
+    list_size = i
+    lst = []
+    iterations_not_found = []
+    iterations_found = []
+    max_it = 0
+    
+    for _ in range(list_size):
+        lst.append(rand.randint(1, 2 * list_size))
+    lst = sorted(lst)
+
+    val_range = range(1, 2*list_size+1)
+
+    for val in val_range:
+        n, index = search_it(lst, val, 0, len(lst)-1)
+        if index == None:
+            iterations_not_found.append(n)
+        else:
+            iterations_found.append(n)
+        if n > max_it:
+            max_it = n
+            
+    iterations_tot = iterations_not_found + iterations_found
+
+    av_it_found = sum(iterations_found) / len(iterations_found)
+    av_it_not_found = sum(iterations_not_found) / len(iterations_not_found)
+    av_it_tot = sum(iterations_tot) / len(iterations_tot)
+    
+    print(f"{list_size:5.0f}", end="")
+    print(f"{av_it_not_found:12.2f}", end="")
+    print(f"{av_it_found:23.2f}", end="")
+    print(f"{max_it:20.0f}")
+print(67*"-")
+print("Antalet iterationer vid bom respektive träff är det genomsnittliga")
+print("antalet för att konstatera att talet saknas i listan respektive")
+print("hitta det index som det återfinns på.")
+
+```
