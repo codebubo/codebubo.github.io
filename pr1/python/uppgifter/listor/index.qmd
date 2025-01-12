@@ -101,6 +101,7 @@ for i in lst:
   sum += i
 print(sum)
 ```
+
 :::
 
 ### Uppgift 3
@@ -168,6 +169,7 @@ detta måste förstås ske i en loop eftersom det är flera tal som ska läggas 
 Förmodligen är det bästa sättet att använda två separata loopar: en loop för
 att skapa innehållet i listan `heltal`, och en annan loop för att skapa
 innehållet i listan `jämna` respektive `udda`.
+
 :::
 
 :::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 3"}
@@ -241,8 +243,6 @@ print(f"Buggfri LOTTO-rad: {sorted(lottorad)}")
 
 :::
 
-
-
 :::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 4"}
 ```python
 import random as rand
@@ -256,6 +256,7 @@ for i in range(0, 7):
     lottorad.append(lottotal)
 print(f"Buggfri LOTTO-rad: {sorted(lottorad)}")
 ```
+
 :::
 
 ## Uppgift utan lösningsförslag

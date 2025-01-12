@@ -153,6 +153,51 @@ def bin_search(lst, item, lower_i, upper_i):
     # Returnera None (talet finns inte i listan)
 ```
 
+## Uppgifter
+
+### Uppgift 1
+
+Skapa funktionen `bin_search` enligt pseudokoden ovan. Testa den med några olika
+listor. Exempel på testprogram till funktionen:
+
+<!---Non verbose function------------------------------------------------------>
+```{python}
+#| echo: false
+def bin_search(lst, item, lower_i, upper_i):
+    while upper_i >= lower_i:
+        mid = (lower_i + upper_i) // 2
+        if lst[mid] == item:
+            return mid
+        elif lst[mid] > item:
+            upper_i = mid - 1
+        else:
+            lower_i = mid + 1
+    return None
+```
+<!----------------------------------------------------------------------------->
+
+<!---Using the algoritm above-------------------------------------------------->
+```{python}
+#| echo: true
+lst = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+
+val_1 = 12 # Ett värde som finns i listan
+val_2 = 25 # Ett värde som saknas i listan
+
+result_1 = bin_search(lst, val_1, lower_i=0, upper_i=len(lst)-1)
+result_2 = bin_search(lst, val_2, lower_i=0, upper_i=len(lst)-1)
+
+print(result_1) # 5 (dvs värdet 12 finns på index 5)
+print(result_2) # None (dvs värdet 5 saknas i listan)
+```
+<!----------------------------------------------------------------------------->
+
+### Uppgift 2
+
+Utveckla programmet så att det skriver ut i vilken partition av listan som
+genomsöks och antalet sökningar som gjorts. Exempel på utmatning:
+
+<!--Verbose function----------------------------------------------------------->
 ```{python}
 #| echo: false
 def bin_search(lst, item, lower_i, upper_i):
@@ -169,36 +214,6 @@ def bin_search(lst, item, lower_i, upper_i):
             lower_i = mid + 1
     return None, n
 
-```
-
-## Uppgifter
-
-### Uppgift 1
-
-Skapa funktionen `bin_search` enligt pseudokoden ovan. Testa den med några olika
-listor. Exempel på testprogram till funktionen:
-
-```python
-lst = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
-
-val_1 = 12 # Ett värde som finns i listan
-val_2 = 25 # Ett värde som saknas i listan
-
-result_1 = bin_search(lst, val_1, lower_i=0, upper_i=len(lst)-1)
-result_2 = bin_search(lst, val_2, lower_i=0, upper_i=len(lst)-1)
-
-print(result_1) # 5 (dvs värdet 12 finns på index 5)
-print(result_2) # None (dvs värdet 5 saknas i listan)
-```
-
-
-### Uppgift 2
-
-Utveckla programmet så att det skriver ut i vilken partition av listan som
-genomsöks och antalet sökningar som gjorts. Exempel på utmatning:
-
-```{python}
-#| echo: false
 lst = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
 val_1 = 12
 val_2 = 25
@@ -211,13 +226,14 @@ if result_2 != None:
 else:
     print (f"Talet {val_2} saknas i listan, konstaterades efter {num} sökningar")
 ```
+<!----------------------------------------------------------------------------->
 
 ### Uppgift 3
 
 Skapa en (sorterad) lista med $1\,000$ element med spridda heltalsvärden mellan
-$1$ och $2\,000$. Ta reda på med hjälp av funktionen hur många sökningar det
+$1$ och $2\,000$. Ta reda på med hjälp av funktionen hur många iterationer det
 
-a. maximalt verkar vara tvunget att göras
+a. maximalt som är tvunget att göras
 b. i genomsnitt görs (såväl i de fall när talet saknas i listan och de fall där
 talet finns, se exemplet nedan).
 
@@ -236,11 +252,11 @@ Tips: En lista `lst` kan sorteras med hjälp av metoden `sort` enligt
 därefter sortera den.
 
 Nedan finns ett exempel. Antalet sökningar som gjorts i exemplet är dubbelt
-så många som listans storlek. T ex så baserar sig den första raden på att
-söka igenom en lista på 100 heltal mellan 1 och 200, där vart och ett av talen
+så många som listans storlek. T ex så baserar sig den första raden på en sökning
+i en lista på 100 slumpade heltal mellan 1 och 200, där vart och ett av talen
 `1, 2, 3,..., 200` eftersöks.
 
-
+<!--Explorer function---------------------------------------------------------->
 ```{python}
 #| echo: false
 import random as rand
@@ -304,5 +320,5 @@ print(67*"-")
 print("Antalet iterationer vid bom respektive träff är det genomsnittliga")
 print("antalet för att konstatera att talet saknas i listan respektive")
 print("hitta det index som det återfinns på.")
-
 ```
+<!----------------------------------------------------------------------------->

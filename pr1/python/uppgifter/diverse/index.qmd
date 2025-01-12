@@ -84,7 +84,7 @@ triangelmönster av tal som är användbara i vissa sammanhang:
  1   4   6   4   1
 ```
 Detta mönster kallas för *Pascals triangel*, och varje rad byggs upp med hjälp
-av summan av två tal i raden ovanför (respektive yttre talen i varje rad är
+av summan av två tal i raden ovanför (respektive yttre tal i varje rad är
 alltid en etta).
 
 Skapa en funktion `pascal(n)` som returnerar *en lista av listor* innehållande
