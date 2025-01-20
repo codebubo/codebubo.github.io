@@ -509,24 +509,61 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="exempel-och-uppgifter">Exempel och uppgifter</h2>
 <section id="beskrivning-av-en-algoritm" class="level3">
 <h3 class="anchored" data-anchor-id="beskrivning-av-en-algoritm">Beskrivning av en algoritm</h3>
-<p>Sorteringsalgoritm börjar med att att jämföra det <strong>första</strong> elementets storlek i tur och ordning med alla andra element i listan. Så fort som jämförelsen ger att något element är mindre än det första, så byts plats på dessa.</p>
-<p>Därefter så fortsätter sorteringen genom att ha det <strong>andra</strong> elementet som referens, och jämföra det med vart och ett av de element som har högre index. När ett element som är mindre än referenselementets position så byter dessa element plats.</p>
-<p>På så sätt fortskrider sorteringen tills alla element, utom det sista, har varit referenselement.</p>
-<p>Här är en illustration över processen när listan</p>
-<p>Steg 1: [<strong>7</strong>, 5, 4, 6] -&gt; [<strong>5</strong>, 7, 4, 6] -&gt; [<strong>4</strong>, 7, 5, 6] (Talen 7 och 5 byter plats med varandra, följt av att talen 5 och 4 byter plats med varandra)</p>
-<p>Steg 2: [4, <strong>7</strong>, 5, 6] -&gt; [4, <strong>5</strong>, 7, 6] ) (Talen 7 och 5 byter plats med varandra)</p>
-<p>Steg 3: [4, 5, <strong>7</strong>, 6] -&gt; [4, 5, <strong>6</strong>, 7] (Slutligen byter talen 6 och 7 plats med varandra, det sista talet måste nu vara det största)</p>
-<p>Sorterad lista: [4, 5, 6, 7]</p>
+<p>Det finns flera olika sorteringsalgoritmer, här ska vi titta på en som heter <strong>Bubble sort</strong>. Den går ut på att listan som ska sorteras itereras flera gånger och närliggande tal i den jämförs parvis. När två närliggande tal står i en följd som inte motsvarar storleksordning så byts plats på dessa tal.</p>
+<p>Här följer en illustration över av sortering av en specifik lista.</p>
+<pre><code>Listan [5, 7, 3, 6] ska sorteras i stigande nummerordning.
+Det görs genom listan gås igenom tal för tal flera gånger
+och att tal bredvid varandra byter plats om de inte står i
+rätt ordning. Det kräver två loopar: en yttre loop (loop-
+variabel i) och en inre loop (loopvariabel j). I den inre
+loopen jämförs två närliggande tal parvis och den yttre
+loopen håller reda på antalet omstarter av den inre.
+Efter det första yttre varvet kommer det största talet att
+vara på rätt plats.
+
+Lista, där index
+j och (j+1) jämförs    Kommentar
+----------------------------------------------------------
+5    7    3    6    |  i=0, j=0.
+^    ^              |  Jämför 5 och 7. Rätt ordning.
+j  (j+1)            |  
+----------------------------------------------------------
+5    7    3    6    |  i=0, j=1.
+     ^    ^         |  Jämför 7 och 3. Platsbyte ger
+     j  (j+1)       |  5    3    7    6
+----------------------------------------------------------
+                    |  i=0, j=2.
+5    3    7    6&gt;   |  Jämför 7 och 6. Platsbyte ger
+          ^    ^    |  5    3    6    7
+          j   (j+1) |  När det sista talet ingått i jäm-
+                    |  förelsen är det störst i listan.
+----------------------------------------------------------
+5    3    6    7    |  i=1, j=0. Omstart av inre loop.
+^    ^              |  Jämför 5 och 3. Platsbyte ger
+j  (j+1)            |  3    5    6    7
+----------------------------------------------------------
+                    |  i=1, j=1
+3    5    6&gt;    7   |  Jämför 5 och 6. Rätt ordning.
+     ^    ^         |  Det största talet står redan
+     j  (j+1)       |  sist. Nu är det näst största
+                    |  talet på rätt plats.
+----------------------------------------------------------
+3    5&gt;    6    7   |  i=2, j=0.
+^    ^              |  Jämför 3 och 5. Rätt ordning.
+j  (j+1)            |  När de båda första talen är på
+                    |  rätt plats är algoritmen klar.
+----------------------------------------------------------</code></pre>
+<p>Orsaken till att denna algoritm kallas för Bubble sort är att de större talen “bubblar upp” mot slutet av listan. Efter den första iterationen så står det största talet sist, i nästa iteration ska alltså inte detta tal ingå i någon jämförelse.</p>
 </section>
 <section id="uppgift-1" class="level3">
 <h3 class="anchored" data-anchor-id="uppgift-1">Uppgift 1</h3>
 <p>Som vi såg i beskrivningen av algoritm så bygger sorteringen på att byta plats på elementen parvis. Skriv en funktion <code>swap(lst, i, j)</code>, där <code>lst</code> är en lista och <code>i</code> och <code>j</code> är de index vars tal ska byta plats. Eftersom <code>lst</code> är en lista, som funktionen hanterar som en <em>referens</em> så behöver inget returneras, listan i funktionen är samma lista som den utanför funktionen.</p>
 <p><strong>Körningsexempel</strong></p>
-<div id="61cec9d0" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [<span class="dv">7</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">6</span>]</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Listan före platsbytet: </span><span class="sc">{</span>lst<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>swap(lst, <span class="dv">1</span>, <span class="dv">2</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Listan efter platsbytet: </span><span class="sc">{</span>lst<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="1c6bfbf9" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [<span class="dv">7</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">6</span>]</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Listan före platsbytet: </span><span class="sc">{</span>lst<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>swap(lst, <span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Listan efter platsbytet: </span><span class="sc">{</span>lst<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Listan före platsbytet: [7, 5, 4, 6]
 Listan efter platsbytet: [7, 4, 5, 6]</code></pre>
@@ -545,13 +582,13 @@ Lösningsförslag uppgift 1
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Nedanstående lösning är en generell lösningsmtod, själva metoden fungerar i många programeringsspråk:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> swap(lst, i, j):</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    tmp <span class="op">=</span> lst[i]</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    lst[i] <span class="op">=</span> lst[j]</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    lst[j] <span class="op">=</span> tmp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Nedanstående lösning är en lösning i lösning som fungerar i Python, men metoden fungerar i allmänhet inte i övriga programmeringsspråk.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> swap(lst, i, j):</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    lst[i], lst[j] <span class="op">=</span> lst[j], lst[i]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    tmp <span class="op">=</span> lst[i]</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    lst[i] <span class="op">=</span> lst[j]</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    lst[j] <span class="op">=</span> tmp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Nedanstående lösning är en lösning i lösning som fungerar i Python, men metoden fungerar i allmänhet inte i övriga programmeringsspråk.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> swap(lst, i, j):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    lst[i], lst[j] <span class="op">=</span> lst[j], lst[i]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Det som är typiskt för Python, och även många andra programspråk, är att listor skickas som <em>referens</em> till funktioner. Det betyder att funktionen verkar på den lista som faktiskt skickades till den, inte på en kopia.</p>
 <p>Vidare skickas även alla egendefinierade datatyper som referens till funktioner, däremot inte andra variabeltyper (som t ex <code>int</code>, <code>str</code> m.fl.); där måste ett värde returneras för att den del av programmet som anropade funktionen ska få del av resultatet.</p>
 </div>
@@ -563,11 +600,11 @@ Lösningsförslag uppgift 1
 <p>Skriv nu en funktion <code>sortera</code> som implementerar algoritm som är beskriven ovan. Denna funktion kommer att behöva anropa funktionen <code>swap</code>.</p>
 <p>Av samma orsak som funktionen <code>swap</code> inte returnerade något, ska heller inte <code>sortera</code> returnera något.</p>
 <p><strong>Körningsexempel</strong></p>
-<div id="206cee7f" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [<span class="dv">7</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">6</span>]</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Listan före sortering: </span><span class="sc">{</span>lst<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>sortera(lst)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Listan efter sortering: </span><span class="sc">{</span>lst<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="43adc18f" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [<span class="dv">7</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">6</span>]</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Listan före sortering: </span><span class="sc">{</span>lst<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>sortera(lst)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Listan efter sortering: </span><span class="sc">{</span>lst<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Listan före sortering: [7, 5, 4, 6]
 Listan efter sortering: [4, 5, 6, 7]</code></pre>
@@ -585,11 +622,12 @@ Lösningsförslag uppgift 2
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sortera(lst):</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(lst)):</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(i<span class="op">+</span><span class="dv">1</span>, <span class="bu">len</span>(lst)):</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> lst[i] <span class="op">&gt;</span> lst[j]:</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>                swap(lst, i, j)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sortera(lst):</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> <span class="bu">len</span>(lst)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n):</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(n<span class="op">-</span>i<span class="op">-</span><span class="dv">1</span>):</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> lst[j] <span class="op">&gt;</span> lst[j<span class="op">+</span><span class="dv">1</span>]:</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>                swap(lst, j, j<span class="op">+</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -598,11 +636,11 @@ Lösningsförslag uppgift 2
 <h3 class="anchored" data-anchor-id="uppgift-3">Uppgift 3</h3>
 <p>Emellanåt kan behövas en funktion som kontrollerar om en lista är sorterad. Implementera en sådan funktion <code>is_sorted</code>; funktionen ska returnera det booleska värdet <code>True</code> om listan är sorterad och <code>False</code> om den inte är det.</p>
 <p><strong>Körningsexempel</strong></p>
-<div id="63e01b03" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [<span class="dv">7</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Är listan sorterad? </span><span class="sc">{</span>is_sorted(lst)<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>sortera(lst)</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Är listan sorterad nu då? </span><span class="sc">{</span>is_sorted(lst)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="e45390f6" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [<span class="dv">7</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Är listan sorterad? </span><span class="sc">{</span>is_sorted(lst)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>sortera(lst)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Är listan sorterad nu då? </span><span class="sc">{</span>is_sorted(lst)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Är listan sorterad? False
 Är listan sorterad nu då? True</code></pre>
@@ -620,11 +658,11 @@ Lösningsförslag uppgift 3
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_sorted(lst):</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(lst) <span class="op">-</span> <span class="dv">1</span>):</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> lst[i] <span class="op">&gt;</span> lst[i <span class="op">+</span> <span class="dv">1</span>]:</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">False</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_sorted(lst):</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(lst) <span class="op">-</span> <span class="dv">1</span>):</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> lst[i] <span class="op">&gt;</span> lst[i <span class="op">+</span> <span class="dv">1</span>]:</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Kommentar: Det går direkt att jämföra listor med avseende på likhet enligt <code>list_1 == list_2</code>; det ger resultatet <code>True</code> om listorna är lika och annars <code>False</code>. Detta fungerar i allmänhet inte i andra programmeringsspråk, men ovanstående lösningsförslag gör det.</p>
 </div>
 </div>
@@ -634,18 +672,18 @@ Lösningsförslag uppgift 3
 <h3 class="anchored" data-anchor-id="uppgift-4">Uppgift 4</h3>
 <p>Det går att mäta tiden det tar för en funktion att köra. Nedanstående exempel visar hur det kan göras (här mäts tiden för en loop som snurrar 1000 varv)</p>
 <p><strong>Exempel tidsmätning</strong></p>
-<div id="de2d19cb" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>start_time <span class="op">=</span> time.perf_counter()</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1000</span>):</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    n <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>end_time <span class="op">=</span> time.perf_counter()</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Antalet sekunder som krävdes för loopen: </span><span class="sc">{</span>end_time <span class="op">-</span> start_time<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="6f67e95a" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>start_time <span class="op">=</span> time.perf_counter()</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1000</span>):</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    n <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>end_time <span class="op">=</span> time.perf_counter()</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Antalet sekunder som krävdes för loopen: </span><span class="sc">{</span>(end_time <span class="op">-</span> start_time)<span class="sc">:.2e}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Antalet sekunder som krävdes för loopen: 5.2540970500558615e-05</code></pre>
+<pre><code>Antalet sekunder som krävdes för loopen: 5.40e-05</code></pre>
 </div>
 </div>
 <p>Skapa en lista <code>lst</code> och lägg in ett antal heltal mellan <span class="math inline">\(1\)</span> och <span class="math inline">\(10\,000\)</span> i slumpvis ordning. Mät tiden det tar för listan att sorteras med hjälp av din funktion <code>sortera</code> ovan om antalet element är</p>
@@ -657,11 +695,11 @@ Lösningsförslag uppgift 3
 </ol>
 <p>Gör samma sak med Pythons metod <code>sort</code> för att få en jämförelse av effektiviteten mellan vår algoritm och Pythons algoritm.</p>
 <p><strong>Exempel på användning av <code>sort</code></strong></p>
-<div id="0481ff9b" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [<span class="dv">7</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">6</span>]</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lst)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>lst.sort()  <span class="co"># Pythons inbyggda sorteringsmetod tillämpas</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lst)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="924fa569" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [<span class="dv">7</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">6</span>]</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lst)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>lst.sort()  <span class="co"># Pythons inbyggda sorteringsmetod tillämpas</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lst)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[7, 5, 4, 6]
 [4, 5, 6, 7]</code></pre>
@@ -672,10 +710,10 @@ Lösningsförslag uppgift 3
 <h3 class="anchored" data-anchor-id="uppgift-5">Uppgift 5</h3>
 <p>Skriv en funktion <code>custom_sort</code> som sorterar listan så att de jämna talen sorteras i storleksordning före de uddas dito sortering. Funktionen ska inte använda någon av Pythons inbyggda list-funktioner, utan enbart bygga på loopar och platsbyten som är illustrerat i tidigare uppgifter.</p>
 <p>Körningsexempel:</p>
-<div id="7e78dfac" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [<span class="op">-</span><span class="dv">5</span>, <span class="dv">2</span>, <span class="op">-</span><span class="dv">8</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">6</span>]</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>custom_sort(lst)</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lst) <span class="co"># Ska visa [-8, 2, 6, -5, 7, 9]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="88355a8d" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [<span class="op">-</span><span class="dv">5</span>, <span class="dv">2</span>, <span class="op">-</span><span class="dv">8</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">6</span>]</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>custom_sort(lst)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lst) <span class="co"># Ska visa [-8, 2, 6, -5, 7, 9]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[-8, 2, 6, -5, 7, 9]</code></pre>
 </div>

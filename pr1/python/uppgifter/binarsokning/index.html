@@ -546,7 +546,7 @@ Index: 0  1  2  3  4  5  6  7  8  9</code></pre>
 <pre><code>        12 14</code></pre>
 <ol start="5" type="1">
 <li><p>Mitten på denna lista är index <code>5</code> (värdet <code>12</code>).</p></li>
-<li><p>Eftersom <code>14</code> är mindre än <code>12</code> så fortsätter sökningen till höger om mitten i den ytterligare reducerade listan. Det undre indexet blir 1 mer än mittenindexet (<code>5 + 1 = 6</code>) och det övre indexet står kvar (<code>6</code>).</p></li>
+<li><p>Eftersom <code>14</code> är större än <code>12</code> så fortsätter sökningen till höger om mitten i den ytterligare reducerade listan. Det undre indexet blir 1 mer än mittenindexet (<code>5 + 1 = 6</code>) och det övre indexet står kvar (<code>6</code>).</p></li>
 <li><p>Eftersom det sökta värdet finns på mittenindexet så returnerar funktionen detta index.</p></li>
 </ol>
 </section>
@@ -607,7 +607,7 @@ Index: 0  1  2  3  4  5  6  7  8  9</code></pre>
 <!---Non verbose function------------------------------------------------------>
 <!----------------------------------------------------------------------------->
 <!---Using the algoritm above-------------------------------------------------->
-<div id="486d1184" class="cell" data-execution_count="2">
+<div id="07d55530" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">14</span>, <span class="dv">16</span>, <span class="dv">18</span>, <span class="dv">20</span>]</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>val_1 <span class="op">=</span> <span class="dv">12</span> <span class="co"># Ett värde som finns i listan</span></span>
@@ -629,7 +629,7 @@ None</code></pre>
 <h3 class="anchored" data-anchor-id="uppgift-2">Uppgift 2</h3>
 <p>Utveckla programmet så att det skriver ut i vilken partition av listan som genomsöks och antalet sökningar som gjorts. Exempel på utmatning:</p>
 <!--Verbose function----------------------------------------------------------->
-<div id="96040c8a" class="cell" data-execution_count="3">
+<div id="d2549e0f" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-stdout">
 <pre><code>Söker efter talet 12 i listan [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
 Söker efter talet 12 i listan [12, 14, 16, 18, 20]
@@ -657,7 +657,7 @@ Talet 25 saknas i listan, konstaterades efter 4 sökningar</code></pre>
 <p>Tips: En lista <code>lst</code> kan sorteras med hjälp av metoden <code>sort</code> enligt <code>lst.sort()</code>. Det går alltså att skapa en lista med slumpmässiga heltal och därefter sortera den.</p>
 <p>Nedan finns ett exempel. Antalet sökningar som gjorts i exemplet är dubbelt så många som listans storlek. T ex så baserar sig den första raden på en sökning i en lista på 100 slumpade heltal mellan 1 och 200, där vart och ett av talen <code>1, 2, 3,..., 200</code> eftersöks.</p>
 <!--Explorer function---------------------------------------------------------->
-<div id="f84d6f78" class="cell" data-execution_count="4">
+<div id="6945d2b0" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-stdout">
 <pre><code>Listans    Antal iterationer    Antal iterationer    Maximalt antal
 storlek    vid bom              vid träff            iterationer
