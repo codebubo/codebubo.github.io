@@ -12,31 +12,63 @@ format:
 
 ### Beskrivning av en algoritm
 
-Sorteringsalgoritm börjar med att att jämföra det **första** elementets storlek
-i tur och ordning med alla andra element i listan. Så fort som jämförelsen ger
-att något element är mindre än det första, så byts plats på dessa.
+Det finns flera olika sorteringsalgoritmer, här ska vi titta på en som heter
+**Bubble sort**. Den går ut på att listan som ska sorteras itereras flera gånger
+och närliggande tal i den jämförs parvis. När två närliggande tal står i en
+följd som inte motsvarar storleksordning så byts plats på dessa tal.
 
-Därefter så fortsätter sorteringen genom att ha det **andra** elementet som
-referens, och jämföra det med vart och ett av de element som har högre index.
-När ett element som är mindre än referenselementets position så byter dessa
-element plats.
 
-På så sätt fortskrider sorteringen tills alla element, utom det sista, har
-varit referenselement.
+Här följer en illustration över av sortering av en specifik lista.
 
-Här är en illustration över processen när listan 
+```
+Listan [5, 7, 3, 6] ska sorteras i stigande nummerordning.
+Det görs genom listan gås igenom tal för tal flera gånger
+och att tal bredvid varandra byter plats om de inte står i
+rätt ordning. Det kräver två loopar: en yttre loop (loop-
+variabel i) och en inre loop (loopvariabel j). I den inre
+loopen jämförs två närliggande tal parvis och den yttre
+loopen håller reda på antalet omstarter av den inre.
+Efter det första yttre varvet kommer det största talet att
+vara på rätt plats.
 
-Steg 1: [**7**, 5, 4, 6] -> [**5**, 7, 4, 6] ->
-[**4**, 7, 5, 6] (Talen 7 och 5 byter plats med varandra, följt av att talen
-5 och 4 byter plats med varandra)
+Lista, där index
+j och (j+1) jämförs    Kommentar
+----------------------------------------------------------
+5    7    3    6    |  i=0, j=0.
+^    ^              |  Jämför 5 och 7. Rätt ordning.
+j  (j+1)            |  
+----------------------------------------------------------
+5    7    3    6    |  i=0, j=1.
+     ^    ^         |  Jämför 7 och 3. Platsbyte ger
+     j  (j+1)       |  5    3    7    6
+----------------------------------------------------------
+                    |  i=0, j=2.
+5    3    7    6>   |  Jämför 7 och 6. Platsbyte ger
+          ^    ^    |  5    3    6    7
+          j   (j+1) |  När det sista talet ingått i jäm-
+                    |  förelsen är det störst i listan.
+----------------------------------------------------------
+5    3    6    7    |  i=1, j=0. Omstart av inre loop.
+^    ^              |  Jämför 5 och 3. Platsbyte ger
+j  (j+1)            |  3    5    6    7
+----------------------------------------------------------
+                    |  i=1, j=1
+3    5    6>    7   |  Jämför 5 och 6. Rätt ordning.
+     ^    ^         |  Det största talet står redan
+     j  (j+1)       |  sist. Nu är det näst största
+                    |  talet på rätt plats.
+----------------------------------------------------------
+3    5>    6    7   |  i=2, j=0.
+^    ^              |  Jämför 3 och 5. Rätt ordning.
+j  (j+1)            |  När de båda första talen är på
+                    |  rätt plats är algoritmen klar.
+----------------------------------------------------------
+```
 
-Steg 2: [4, **7**, 5, 6] -> [4, **5**, 7, 6] ) (Talen 7 och 5 byter plats
-med varandra)
-
-Steg 3: [4, 5, **7**, 6] -> [4, 5, **6**, 7] (Slutligen byter talen 6 och 7
-plats med varandra, det sista talet måste nu vara det största)
-
-Sorterad lista: [4, 5, 6, 7]
+Orsaken till att denna algoritm kallas för Bubble sort är att de större talen
+"bubblar upp" mot slutet av listan. Efter den första iterationen så står det
+största talet sist, i nästa iteration ska alltså inte detta tal ingå i någon
+jämförelse.
 
 ### Uppgift 1
 
@@ -103,10 +135,12 @@ Av samma orsak som funktionen `swap` inte returnerade något, ska heller inte
 ```{python}
 # | echo: false
 def sortera(lst):
-    for i in range(len(lst)):
-        for j in range(i + 1, len(lst)):
-            if lst[i] > lst[j]:
-                swap(lst, i, j)    
+    n = len(lst)
+    for i in range(n):
+        for j in range(n-i-1):
+            if lst[j] > lst[j+1]:
+                swap(lst, j, j+1)
+
 ```
 
 ```{python}
@@ -120,10 +154,11 @@ print(f"Listan efter sortering: {lst}")
 :::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 2"}
 ```python
 def sortera(lst):
-    for i in range(len(lst)):
-        for j in range(i+1, len(lst)):
-            if lst[i] > lst[j]:
-                swap(lst, i, j)
+    n = len(lst)
+    for i in range(n):
+        for j in range(n-i-1):
+            if lst[j] > lst[j+1]:
+                swap(lst, j, j+1)
 ```
 :::
 
@@ -184,7 +219,7 @@ for i in range(1000):
     n += 1
 end_time = time.perf_counter()
 
-print(f"Antalet sekunder som krävdes för loopen: {end_time - start_time}")
+print(f"Antalet sekunder som krävdes för loopen: {(end_time - start_time):.2e}")
 ```
 
 Skapa en lista `lst` och lägg in ett antal heltal mellan $1$ och $10\,000$ i

@@ -56,7 +56,8 @@ Index: 0  1  2  3  4  5  6  7  8  9
         2 4 6 8 [10] 12 14 16 18 20
 ```
 
-2. Eftersom `14` är större än `10`, fortsätter vi att söka i den högra halvan av listan. Det undre index sätts till 1 mer än mittenindex (`4 + 1 = 5`) och det
+2. Eftersom `14` är större än `10`, fortsätter vi att söka i den högra halvan av
+listan. Det undre index sätts till 1 mer än mittenindex (`4 + 1 = 5`) och det
 övre indexet står kvar (`9`).
 
 ```
@@ -79,7 +80,7 @@ indexet blir 1 mindre än mittenindex (`7 - 1 = 6`)
 
 5. Mitten på denna lista är index `5` (värdet `12`).
 
-6. Eftersom `14` är mindre än `12` så fortsätter sökningen till höger om mitten
+6. Eftersom `14` är större än `12` så fortsätter sökningen till höger om mitten
 i den ytterligare reducerade listan. Det undre indexet blir 1 mer än
 mittenindexet (`5 + 1 = 6`) och det övre indexet står kvar (`6`).
 
