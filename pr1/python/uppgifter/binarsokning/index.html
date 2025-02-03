@@ -345,8 +345,11 @@ window.Quarto = {
   </div>
 </li>
           <li class="sidebar-item">
- <span class="menu-text">pr1/python/uppgifter/bilregister/index.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../../../../pr1/python/uppgifter/spara_objekt/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Spara objekt på fil</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../pr1/python/uppgifter/klasser-och-metoder/index.html" class="sidebar-item-text sidebar-link">
@@ -604,7 +607,7 @@ Index: 0  1  2  3  4  5  6  7  8  9</code></pre>
 <!---Non verbose function------------------------------------------------------>
 <!----------------------------------------------------------------------------->
 <!---Using the algoritm above-------------------------------------------------->
-<div id="5e2c6de7" class="cell" data-execution_count="2">
+<div id="3a8da828" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">14</span>, <span class="dv">16</span>, <span class="dv">18</span>, <span class="dv">20</span>]</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>val_1 <span class="op">=</span> <span class="dv">12</span> <span class="co"># Ett värde som finns i listan</span></span>
@@ -626,7 +629,7 @@ None</code></pre>
 <h3 class="anchored" data-anchor-id="uppgift-2">Uppgift 2</h3>
 <p>Utveckla programmet så att det skriver ut i vilken partition av listan som genomsöks och antalet sökningar som gjorts. Exempel på utmatning:</p>
 <!--Verbose function----------------------------------------------------------->
-<div id="54dd6b93" class="cell" data-execution_count="3">
+<div id="e7e9c0d3" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-stdout">
 <pre><code>Söker efter talet 12 i listan [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
 Söker efter talet 12 i listan [12, 14, 16, 18, 20]
@@ -654,7 +657,7 @@ Talet 25 saknas i listan, konstaterades efter 4 sökningar</code></pre>
 <p>Tips: En lista <code>lst</code> kan sorteras med hjälp av metoden <code>sort</code> enligt <code>lst.sort()</code>. Det går alltså att skapa en lista med slumpmässiga heltal och därefter sortera den.</p>
 <p>Nedan finns ett exempel. Antalet sökningar som gjorts i exemplet är dubbelt så många som listans storlek. T ex så baserar sig den första raden på en sökning i en lista på 100 slumpade heltal mellan 1 och 200, där vart och ett av talen <code>1, 2, 3,..., 200</code> eftersöks.</p>
 <!--Explorer function---------------------------------------------------------->
-<div id="0b7c06e6" class="cell" data-execution_count="4">
+<div id="82130a9d" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-stdout">
 <pre><code>Listans    Antal iterationer    Antal iterationer    Maximalt antal
 storlek    vid bom              vid träff            iterationer
