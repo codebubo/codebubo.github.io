@@ -12,4 +12,4 @@ editor: visual
 
 ## Uppgifter
 
-Uppgifterna i dokumentet [Uppgifter Pr1, Bilregister](../../uppgifter/bilregister/index.qmd)
+Uppgifterna i dokumentet [Uppgifter Pr1, Spara objekt](../../uppgifter/spara_objekt/index.qmd)
