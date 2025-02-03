@@ -1,0 +1,114 @@
+---
+title: "Spara objekt på fil"
+format:
+  html:
+    fontsize: 1em
+    css: style.css
+    code-line-numbers: true
+---
+
+## Kodexempel
+
+Nedanstående kodexempel visar hur objekt kan sparas till fil, ändras på filen
+och läsas in från filen i programmet igen.
+
+```{python}
+import json
+FILENAME = "saved_avatars.json"
+
+# Detta program kommer att läsa in några objekt av en egendefinierad datatyp i
+# en lista. Denna lista ska sparas på en fil som är läsbar för människor.
+# För att detta ska kunna göras måste respektive objekt konverterteras till
+# ett format som går att hantera på fil (serialiseras).
+# När datan i filen ska användas så läses den in i det serialiserade formatet,
+# varpå den återställs till objekt som datorn kan hantera (t ex göra
+# beräkningar på).
+
+class Avatar:
+    def __init__(self, name, strength):
+        self.name = name
+        self.strength = strength
+
+av_1 = Avatar("Efelia", 4)
+av_2 = Avatar("Ironfist", 8)
+av_3 = Avatar("Mistwalker", 2)
+
+avatars = []
+avatar_dicts = []
+
+# Lägg till avatarer i en lista
+avatars.append(av_1)
+avatars.append(av_2)
+avatars.append(av_3)
+
+# Serialisera respektive objekt
+for avatar in avatars:
+    avatar_dicts.append(avatar.__dict__)
+
+print("Objekten representeras så här:")
+print(avatars)
+print("(De är som synes ej läsbara för människor)")
+print()
+print("De serialiserade objekten representeras så här:")
+print(avatar_dicts)
+print("(Dessa går att få ut något av, och det är detta som sparas i filen)")
+print()
+
+# Skriv de serialiserade objekten på fil
+with open(FILENAME, "w") as f:
+    json.dump(avatar_dicts, f)
+
+# Uppdatera. Listan med avatar-objekten förändras. Serialiseringen görs om. 
+avatars[0].strength = 6
+avatar_dicts = []
+
+# Här gås alla objekten igenom igen, och skrivs om på filen. I det här fallet
+# så är Efelias styrka uppdaterad.
+for avatar in avatars:
+    avatar_dicts.append(avatar.__dict__)
+with open(FILENAME, "w") as f:
+    json.dump(avatar_dicts, f)
+
+# Töm listan med avatarobjekt och listan med de serialiserade objekten.
+# Snart ska de läsas tillbaka från filen.
+
+avatars = []
+avatar_dicts = {}
+
+# Läs in de serialiserade objekten från filen
+with open(FILENAME, "r") as f:
+    avatar_dicts = json.load(f)
+
+# Återskapa listan med objekt av typen `Avatar`
+for avatar in avatar_dicts:
+    avatars.append(Avatar(**avatar))
+
+# Nu kan listan `avatars` användas som vanligt i Pythonprogrammet!
+print("Denna data har nu laddats i programmet:")
+for avatar in avatars:
+    print(f"Namn: {avatar.name}. Styrka: {avatar.strength}")
+print("(Denna data går att hantera i programmet, t ex utföra beräkningar)")
+```
+
+## Uppgifter
+**Nedanstående är förslag till uppgifter kring ovanstående kod. Syftet är att
+bli bekant med den typ av filhantering som demonstreras.**
+
+1. Lägg till fler egenskaper: Utveckla Avatar-klassen genom att lägga till
+fler attribut, till exempel level, skills (som en lista), och health.
+
+2. Spara flera olika typer av objekt: Skapa en ny klass, exempelvis Enemy, och
+implementera funktionalitet för att spara både Avatar och Enemy i olika
+JSON-filer.
+
+3. Läsa från flera filer: Skapa en funktion som läser in både Avatar- och
+Enemy-objekt och skriver ut en sammanställning av alla objekt som laddats in.
+
+4. Interaktiv användning: Utveckla en konsolapplikation där användaren kan
+skapa nya avatarer genom att ange namn och styrka. Dessa avatarer ska sparas
+automatiskt i filen.
+5. Menynavigering: Implementera en meny där användaren kan välja att:
+    * Visa alla sparade avatarer
+    * Lägga till en ny avatar
+    * Uppdatera en befintlig avatar
+    * Ta bort en avatar
