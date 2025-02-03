@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Matrisinvertering: Extra övningar – CodeBubo</title>
+<title>Spara objekt på fil – CodeBubo</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -75,35 +109,6 @@ gtag('js', new Date());
 gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../../../../styles.css">
 <link rel="stylesheet" href="style.css">
@@ -145,7 +150,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../../ma/ma-spec/ovningar/matrisinvertering/index.html">Matematik specialisering</a></li><li class="breadcrumb-item"><a href="../../../../ma/ma-spec/ovningar/matrisinvertering/index.html">Matrisinvertering: Extra övningar</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Spara objekt på fil</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -398,16 +403,16 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
  <span class="menu-text">Matematik specialisering</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../ma/ma-spec/ovningar/matrisinvertering/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../../ma/ma-spec/ovningar/matrisinvertering/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Matrisinvertering: Extra övningar</span></a>
   </div>
 </li>
@@ -429,22 +434,17 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#några-kompletterande-övningar" id="toc-några-kompletterande-övningar" class="nav-link active" data-scroll-target="#några-kompletterande-övningar">Några kompletterande övningar</a>
-  <ul class="collapse">
-  <li><a href="#reducerad-trappstegsform" id="toc-reducerad-trappstegsform" class="nav-link" data-scroll-target="#reducerad-trappstegsform">Reducerad trappstegsform</a></li>
-  <li><a href="#ekvationssystemet" id="toc-ekvationssystemet" class="nav-link" data-scroll-target="#ekvationssystemet">Ekvationssystemet</a></li>
-  <li><a href="#kodningsövning-determinanten" id="toc-kodningsövning-determinanten" class="nav-link" data-scroll-target="#kodningsövning-determinanten">Kodningsövning: Determinanten</a></li>
-  <li><a href="#kodningsövning-matrisinvertering" id="toc-kodningsövning-matrisinvertering" class="nav-link" data-scroll-target="#kodningsövning-matrisinvertering">Kodningsövning: matrisinvertering</a></li>
-  </ul></li>
+  <li><a href="#kodexempel" id="toc-kodexempel" class="nav-link active" data-scroll-target="#kodexempel">Kodexempel</a></li>
+  <li><a href="#uppgifter" id="toc-uppgifter" class="nav-link" data-scroll-target="#uppgifter">Uppgifter</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../../ma/ma-spec/ovningar/matrisinvertering/index.html">Matematik specialisering</a></li><li class="breadcrumb-item"><a href="../../../../ma/ma-spec/ovningar/matrisinvertering/index.html">Matrisinvertering: Extra övningar</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Matrisinvertering: Extra övningar</h1>
+<h1 class="title">Spara objekt på fil</h1>
 </div>
 
 
@@ -461,150 +461,120 @@ window.Quarto = {
 </header>
 
 
-<section id="några-kompletterande-övningar" class="level2">
-<h2 class="anchored" data-anchor-id="några-kompletterande-övningar">Några kompletterande övningar</h2>
-<section id="reducerad-trappstegsform" class="level3">
-<h3 class="anchored" data-anchor-id="reducerad-trappstegsform">Reducerad trappstegsform</h3>
-<p>Radreducera matrisen <span class="math display">\[
-\begin{bmatrix*}[r]
-  1 &amp; 3 &amp; 5 &amp; 7 \\ 3 &amp; 5 &amp; 7 &amp; 9 \\ 5 &amp; 7 &amp; 9 &amp; 1
-\end{bmatrix*}
-\]</span></p>
-<p>till reducerad trappstegsform och markera pivotkolonnerna.</p>
-<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Svar">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Svar
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Den reducerade trappstegsformen är</p>
-<p><span class="math display">\[
-\begin{bmatrix*}[r]
-1 &amp; 0 &amp; -1 &amp; 0 \\ 0 &amp; 1 &amp; 2 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1
-\end{bmatrix*}
-\]</span></p>
-</div>
+<section id="kodexempel" class="level2">
+<h2 class="anchored" data-anchor-id="kodexempel">Kodexempel</h2>
+<p>Nedanstående kodexempel visar hur objekt kan sparas till fil, ändras på filen och läsas in från filen i programmet igen.</p>
+<div id="8fdf0d1c" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> json</span>
+<span id="cb1-2"><a href="#cb1-2"></a>FILENAME <span class="op">=</span> <span class="st">"saved_avatars.json"</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="co"># Detta program kommer att läsa in några objekt av en egendefinierad datatyp i</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="co"># en lista. Denna lista ska sparas på en fil som är läsbar för människor.</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="co"># För att detta ska kunna göras måste respektive objekt konverterteras till</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="co"># ett format som går att hantera på fil (serialiseras).</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="co"># När datan i filen ska användas så läses den in i det serialiserade formatet,</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="co"># varpå den återställs till objekt som datorn kan hantera (t ex göra</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="co"># beräkningar på).</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a></span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="kw">class</span> Avatar:</span>
+<span id="cb1-13"><a href="#cb1-13"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, strength):</span>
+<span id="cb1-14"><a href="#cb1-14"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb1-15"><a href="#cb1-15"></a>        <span class="va">self</span>.strength <span class="op">=</span> strength</span>
+<span id="cb1-16"><a href="#cb1-16"></a></span>
+<span id="cb1-17"><a href="#cb1-17"></a>av_1 <span class="op">=</span> Avatar(<span class="st">"Efelia"</span>, <span class="dv">4</span>)</span>
+<span id="cb1-18"><a href="#cb1-18"></a>av_2 <span class="op">=</span> Avatar(<span class="st">"Ironfist"</span>, <span class="dv">8</span>)</span>
+<span id="cb1-19"><a href="#cb1-19"></a>av_3 <span class="op">=</span> Avatar(<span class="st">"Mistwalker"</span>, <span class="dv">2</span>)</span>
+<span id="cb1-20"><a href="#cb1-20"></a></span>
+<span id="cb1-21"><a href="#cb1-21"></a>avatars <span class="op">=</span> []</span>
+<span id="cb1-22"><a href="#cb1-22"></a>avatar_dicts <span class="op">=</span> []</span>
+<span id="cb1-23"><a href="#cb1-23"></a></span>
+<span id="cb1-24"><a href="#cb1-24"></a><span class="co"># Lägg till avatarer i en lista</span></span>
+<span id="cb1-25"><a href="#cb1-25"></a>avatars.append(av_1)</span>
+<span id="cb1-26"><a href="#cb1-26"></a>avatars.append(av_2)</span>
+<span id="cb1-27"><a href="#cb1-27"></a>avatars.append(av_3)</span>
+<span id="cb1-28"><a href="#cb1-28"></a></span>
+<span id="cb1-29"><a href="#cb1-29"></a><span class="co"># Serialisera respektive objekt</span></span>
+<span id="cb1-30"><a href="#cb1-30"></a><span class="cf">for</span> avatar <span class="kw">in</span> avatars:</span>
+<span id="cb1-31"><a href="#cb1-31"></a>    avatar_dicts.append(avatar.__dict__)</span>
+<span id="cb1-32"><a href="#cb1-32"></a></span>
+<span id="cb1-33"><a href="#cb1-33"></a><span class="bu">print</span>(<span class="st">"Objekten representeras så här:"</span>)</span>
+<span id="cb1-34"><a href="#cb1-34"></a><span class="bu">print</span>(avatars)</span>
+<span id="cb1-35"><a href="#cb1-35"></a><span class="bu">print</span>(<span class="st">"(De är som synes ej läsbara för människor)"</span>)</span>
+<span id="cb1-36"><a href="#cb1-36"></a><span class="bu">print</span>()</span>
+<span id="cb1-37"><a href="#cb1-37"></a><span class="bu">print</span>(<span class="st">"De serialiserade objekten representeras så här:"</span>)</span>
+<span id="cb1-38"><a href="#cb1-38"></a><span class="bu">print</span>(avatar_dicts)</span>
+<span id="cb1-39"><a href="#cb1-39"></a><span class="bu">print</span>(<span class="st">"(Dessa går att få ut något av, och det är detta som sparas i filen)"</span>)</span>
+<span id="cb1-40"><a href="#cb1-40"></a><span class="bu">print</span>()</span>
+<span id="cb1-41"><a href="#cb1-41"></a></span>
+<span id="cb1-42"><a href="#cb1-42"></a><span class="co"># Skriv de serialiserade objekten på fil</span></span>
+<span id="cb1-43"><a href="#cb1-43"></a><span class="cf">with</span> <span class="bu">open</span>(FILENAME, <span class="st">"w"</span>) <span class="im">as</span> f:</span>
+<span id="cb1-44"><a href="#cb1-44"></a>    json.dump(avatar_dicts, f)</span>
+<span id="cb1-45"><a href="#cb1-45"></a></span>
+<span id="cb1-46"><a href="#cb1-46"></a><span class="co"># Uppdatera. Listan med avatar-objekten förändras. Serialiseringen görs om. </span></span>
+<span id="cb1-47"><a href="#cb1-47"></a>avatars[<span class="dv">0</span>].strength <span class="op">=</span> <span class="dv">6</span></span>
+<span id="cb1-48"><a href="#cb1-48"></a>avatar_dicts <span class="op">=</span> []</span>
+<span id="cb1-49"><a href="#cb1-49"></a></span>
+<span id="cb1-50"><a href="#cb1-50"></a><span class="co"># Här gås alla objekten igenom igen, och skrivs om på filen. I det här fallet</span></span>
+<span id="cb1-51"><a href="#cb1-51"></a><span class="co"># så är Efelias styrka uppdaterad.</span></span>
+<span id="cb1-52"><a href="#cb1-52"></a><span class="cf">for</span> avatar <span class="kw">in</span> avatars:</span>
+<span id="cb1-53"><a href="#cb1-53"></a>    avatar_dicts.append(avatar.__dict__)</span>
+<span id="cb1-54"><a href="#cb1-54"></a><span class="cf">with</span> <span class="bu">open</span>(FILENAME, <span class="st">"w"</span>) <span class="im">as</span> f:</span>
+<span id="cb1-55"><a href="#cb1-55"></a>    json.dump(avatar_dicts, f)</span>
+<span id="cb1-56"><a href="#cb1-56"></a></span>
+<span id="cb1-57"><a href="#cb1-57"></a><span class="co"># Töm listan med avatarobjekt och listan med de serialiserade objekten.</span></span>
+<span id="cb1-58"><a href="#cb1-58"></a><span class="co"># Snart ska de läsas tillbaka från filen.</span></span>
+<span id="cb1-59"><a href="#cb1-59"></a></span>
+<span id="cb1-60"><a href="#cb1-60"></a>avatars <span class="op">=</span> []</span>
+<span id="cb1-61"><a href="#cb1-61"></a>avatar_dicts <span class="op">=</span> {}</span>
+<span id="cb1-62"><a href="#cb1-62"></a></span>
+<span id="cb1-63"><a href="#cb1-63"></a><span class="co"># Läs in de serialiserade objekten från filen</span></span>
+<span id="cb1-64"><a href="#cb1-64"></a><span class="cf">with</span> <span class="bu">open</span>(FILENAME, <span class="st">"r"</span>) <span class="im">as</span> f:</span>
+<span id="cb1-65"><a href="#cb1-65"></a>    avatar_dicts <span class="op">=</span> json.load(f)</span>
+<span id="cb1-66"><a href="#cb1-66"></a></span>
+<span id="cb1-67"><a href="#cb1-67"></a><span class="co"># Återskapa listan med objekt av typen `Avatar`</span></span>
+<span id="cb1-68"><a href="#cb1-68"></a><span class="cf">for</span> avatar <span class="kw">in</span> avatar_dicts:</span>
+<span id="cb1-69"><a href="#cb1-69"></a>    avatars.append(Avatar(<span class="op">**</span>avatar))</span>
+<span id="cb1-70"><a href="#cb1-70"></a></span>
+<span id="cb1-71"><a href="#cb1-71"></a><span class="co"># Nu kan listan `avatars` användas som vanligt i Pythonprogrammet!</span></span>
+<span id="cb1-72"><a href="#cb1-72"></a><span class="bu">print</span>(<span class="st">"Denna data har nu laddats i programmet:"</span>)</span>
+<span id="cb1-73"><a href="#cb1-73"></a><span class="cf">for</span> avatar <span class="kw">in</span> avatars:</span>
+<span id="cb1-74"><a href="#cb1-74"></a>    <span class="bu">print</span>(<span class="ss">f"Namn: </span><span class="sc">{</span>avatar<span class="sc">.</span>name<span class="sc">}</span><span class="ss">. Styrka: </span><span class="sc">{</span>avatar<span class="sc">.</span>strength<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-75"><a href="#cb1-75"></a><span class="bu">print</span>(<span class="st">"(Denna data går att hantera i programmet, t ex utföra beräkningar)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Objekten representeras så här:
+[&lt;__main__.Avatar object at 0x108f8aa50&gt;, &lt;__main__.Avatar object at 0x108f79950&gt;, &lt;__main__.Avatar object at 0x108f79a90&gt;]
+(De är som synes ej läsbara för människor)
+
+De serialiserade objekten representeras så här:
+[{'name': 'Efelia', 'strength': 4}, {'name': 'Ironfist', 'strength': 8}, {'name': 'Mistwalker', 'strength': 2}]
+(Dessa går att få ut något av, och det är detta som sparas i filen)
+
+Denna data har nu laddats i programmet:
+Namn: Efelia. Styrka: 6
+Namn: Ironfist. Styrka: 8
+Namn: Mistwalker. Styrka: 2
+(Denna data går att hantera i programmet, t ex utföra beräkningar)</code></pre>
 </div>
 </div>
 </section>
-<section id="ekvationssystemet" class="level3">
-<h3 class="anchored" data-anchor-id="ekvationssystemet">Ekvationssystemet</h3>
-<p>Vi har ekvationssystemet <span class="math display">\[
-\left\{
-\begin{matrix}
-x &amp;+&amp; 2y &amp;+&amp; z &amp;=&amp; -1 \\
-2x &amp;+&amp; 6y &amp;&amp;    &amp;=&amp; -2 \\
-x &amp;+&amp;  6y &amp;+&amp; z &amp;=&amp; \phantom{-}3
-\end{matrix}
-\right .
-\]</span></p>
-<p>Bestäm lösningen till detta genom att teckna en koefficientmatris <span class="math inline">\(A\)</span>, en lösningsvektor <span class="math inline">\(\vec{v}\)</span> och en vektor för högerledet, <span class="math inline">\(\vec{b}\)</span>. Invertera <span class="math inline">\(A\)</span> och bestäm lösningsvektorn genom operationen <span class="math inline">\(A^{-1}A\vec{v}=A^{-1}\vec{b}\)</span>.</p>
-<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Svar">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Svar
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><span class="math inline">\(x=-4\)</span>, <span class="math inline">\(y=1\)</span> och <span class="math inline">\(z=1\)</span>. Observera att det är övningen med matrisinvertering samt matrismultiplikation som är syftet, inte själva ekvationslösningen.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="kodningsövning-determinanten" class="level3">
-<h3 class="anchored" data-anchor-id="kodningsövning-determinanten">Kodningsövning: Determinanten</h3>
-<p>Om vi har en <span class="math inline">\(2\times 2\)</span>-matris <span class="math inline">\(A\)</span> enligt <span class="math display">\[
-A=\begin{bmatrix}
-a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22}
-\end{bmatrix}
-\]</span> så gäller att determinanten, <span class="math inline">\(\det A\)</span>, beräknas enligt <span class="math display">\[
-\det A = a_{11}a_{22}-a_{12}a_{21}
-\]</span></p>
-<p>För en <span class="math inline">\(3\times3\)</span>-matris gäller följande formel för determinanten:</p>
-<p><span class="math display">\[
-A=\begin{bmatrix}
-a_{11} &amp; a_{12} &amp; a_{13} \\ a_{21} &amp; a_{22} &amp; a_{23} \\ a_{31} &amp; a_{32} &amp; a_{33}
-\end{bmatrix}
-\Rightarrow\det A=
-a_{11}\det\begin{bmatrix}
-a_{22} &amp; a_{23} \\ a_{32} &amp; a_{33}
-\end{bmatrix}
--
-a_{12}\det\begin{bmatrix}
-a_{21} &amp; a_{23} \\ a_{31} &amp; a_{33}
-\end{bmatrix}
-+
-a_{13}\det\begin{bmatrix}
-a_{21} &amp; a_{22} \\ a_{31} &amp; a_{32}
-\end{bmatrix}
-\]</span> En av de saker determinanten berättar för oss är om en matris är singulär (och därmed inte går att invertera); determinanten är för dessa matriser noll.</p>
-<p>Skapa en Pythonfunktion som tar en <span class="math inline">\(3\times 3\)</span>-matris som argument och returnerar dess determinant. Matrisen kan implementeras som en 2D-lista; exempel på anrop till funktionen <code>det([[1,2,3], [4,5,6], [7,8,9]])</code>. Jämför ditt svar med <a href="https://bit.ly/4bGpviK">Wolfram Alpha</a>!</p>
-</section>
-<section id="kodningsövning-matrisinvertering" class="level3">
-<h3 class="anchored" data-anchor-id="kodningsövning-matrisinvertering">Kodningsövning: matrisinvertering</h3>
-<p>Matrisinverteringar är ett tidskrävande arbete som kräver stor noggranhet, och som ligger till grund för ekvationssystemslösning. Det är mycket vanligt att datorer löser stora ekvationssystem, och därför behövs algoritmer för matrisinvertering kodas i program. Nedan visas pdeudokod för Gauss-Jordan-elimination. Skapa en Python-funktion som implementerar denna kod med listor.</p>
-<p>Tips: Börja med att skapa funktioner för att byta plats på två rader, att addera en multipel av en rad till en annan och för att multiplicera en rad med ett tal; dvs funktioner som implementerar de elementära radoperationerna!</p>
-<pre><code>Funktion INVERTERA(A):
-  # A är en nxn matris
-  # Returnerar A^-1 om den existerar, annars ett felmeddelande
-
-  # Skapa en förstorad matris [A|I]
-  I = Skapa en nxn identitetsmatris
-  AI = Skapa en nx2n matris genom att sätta ihop A och I horisontellt
-
-  # Applicera elementära radoperationer på [A|I] för att få den på formen [I|B]
-  För i från 1 till n:
-    # Hitta pivotelementet på rad i och kolumn i
-    pivot = AI[i][i]
-
-    # Kontrollera om pivotelementet är noll
-    Om pivot == 0:
-      # Hitta en annan rad j under rad i som har ett icke-noll element på kolumn i
-      j = i + 1
-      Medan j &lt;= n och AI[j][i] == 0:
-        j = j + 1
-      
-      # Om ingen sådan rad hittades, så är A inte inverterbar
-      Om j &gt; n:
-        Returnera "Matrisen A är inte inverterbar"
-      
-      # Annars, byt plats på rad i och rad j
-      Annars:
-        Byt rad i och rad j i AI
-    
-    # Dela rad i med pivotelementet för att få ett 1-tal på position i, i
-    För k från 1 till 2n:
-      AI[i][k] = AI[i][k] / pivot
-    
-    # Eliminera alla andra element på kolumn i genom att subtrahera lämpliga multipler av rad i från andra rader
-    För j från 1 till n:
-      Om j != i:
-        faktor = AI[j][i]
-        För k från 1 till 2n:
-          AI[j][k] = AI[j][k] - faktor * AI[i][k]
-  
-  # Extrahera matrisen B från den högra halvan av AI
-  B = Skapa en nxn matris
-  För i från 1 till n:
-    För j från 1 till n:
-      B[i][j] = AI[i][n+j]
-  
-  # Returnera B som är inversen av A
-  Returnera B</code></pre>
+<section id="uppgifter" class="level2">
+<h2 class="anchored" data-anchor-id="uppgifter">Uppgifter</h2>
+<p><strong>Nedanstående är förslag till uppgifter kring ovanstående kod. Syftet är att bli bekant med den typ av filhantering som demonstreras.</strong></p>
+<ol type="1">
+<li><p>Lägg till fler egenskaper: Utveckla Avatar-klassen genom att lägga till fler attribut, till exempel level, skills (som en lista), och health.</p></li>
+<li><p>Spara flera olika typer av objekt: Skapa en ny klass, exempelvis Enemy, och implementera funktionalitet för att spara både Avatar och Enemy i olika JSON-filer.</p></li>
+<li><p>Läsa från flera filer: Skapa en funktion som läser in både Avatar- och Enemy-objekt och skriver ut en sammanställning av alla objekt som laddats in.</p></li>
+<li><p>Interaktiv användning: Utveckla en konsolapplikation där användaren kan skapa nya avatarer genom att ange namn och styrka. Dessa avatarer ska sparas automatiskt i filen.</p></li>
+<li><p>Menynavigering: Implementera en meny där användaren kan välja att:</p>
+<ul>
+<li>Visa alla sparade avatarer</li>
+<li>Lägga till en ny avatar</li>
+<li>Uppdatera en befintlig avatar</li>
+<li>Ta bort en avatar</li>
+</ul></li>
+</ol>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
