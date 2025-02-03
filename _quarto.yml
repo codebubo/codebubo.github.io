@@ -49,7 +49,7 @@ website:
               - pr1/python/uppgifter/egna-datatyper/index.qmd
               - pr1/python/uppgifter/binarsokning/index.qmd
               - pr1/python/uppgifter/sortering/index.qmd
-              - pr1/python/uppgifter/bilregister/index.qmd
+              - pr1/python/uppgifter/spara_objekt/index.qmd
               - pr1/python/uppgifter/klasser-och-metoder/index.qmd
       - section: "Programmering i matematik"
         contents:
