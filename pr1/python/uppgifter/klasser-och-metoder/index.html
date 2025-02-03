@@ -504,7 +504,7 @@ window.Quarto = {
 <p>Det ska finnas en metod, <code>uppdatera_position</code>, som flyttar avataren från ett läge till ett annat (alltså uppdaterar koordinaterna). Det ska också finnas en <em>statisk metod</em> som tar två instanser av <code>Avatar</code> och returnerar avståndet mellan dem.</p>
 <p>Man ska också kunna skriva ut information om en avatar med <code>print(avatar)</code>, det måste alltså finnas en <code>__str__</code>-metod.</p>
 <p>När klassen är klar skulle användandet av den kunna se ut så här (se också utskrifterna under koden):</p>
-<div id="7003d3b3" class="cell" data-execution_count="2">
+<div id="3dbb46b9" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>avatar1 <span class="op">=</span> Avatar(<span class="st">"Efelia"</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>avatar2 <span class="op">=</span> Avatar(<span class="st">"Zmille"</span>, <span class="dv">8</span>, <span class="dv">1</span>, <span class="dv">4</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -533,7 +533,7 @@ Det här är Efelia med styrkan 4. Snabbheten är 6. Positionen är (-2, 4).</co
 <p>Det ska finnas en metod <code>get_results</code>, som returnerar en lista med utfallshistorik. Vidare ska det finnas en metod <code>print_frequencies</code> som skriver ut en frekvenstabell med kolumner för absolut frekvens och relativ frekvens.</p>
 <p>Slutligen ska <code>__str__</code> implementeras så att <code>print(dice)</code> ger information om det senaste utfallet.</p>
 <p>Se nedanstående deklarationer och utmatningar:</p>
-<div id="8092e2f4" class="cell" data-execution_count="4">
+<div id="b9ad7b45" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>dice <span class="op">=</span> Dice()</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>dice.roll(<span class="dv">3</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Utfallshistoriken är nu: </span><span class="sc">{</span>dice<span class="sc">.</span>get_results()<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
