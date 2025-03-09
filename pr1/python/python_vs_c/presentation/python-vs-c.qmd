@@ -1,0 +1,197 @@
+---
+title: Strängar i Python
+from: markdown+emoji
+title-slide-attributes:
+  data-background-image: https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/listor/pattern-3177396_1280.png
+  data-background-opacity: "1"
+  data-background-color: "black"
+author: "Nikodemus Karlsson"
+format:
+  revealjs:
+    mermaid: 
+      theme: dark
+    theme: dark
+    transition: slide
+    background-transition: slide
+    slide-number: true
+    controls: true
+    controls-layout: edges
+    date-format: "DD MMM YYYY"
+    css: style.css
+execute: 
+  echo: false
+---
+
+## Dagens mål
+
+* Att känna till några övergripande skillnader mellan Python och C
+* Att känna till några variabeltyper i C
+* Att skriva ett program i C som hanterar en inmatning och en utmatning
+
+
+## En stor skillnad mellan Python och C
+
+:::{.v-space}
+:::
+
+:::{.blue-bg-small-padding }
+Python är ett **interpreterat** språk. Det för att köra ett Pythonprogram
+krävs att Python är installerat på datorn.
+
+C är ett **kompilerat** språk. Programmet körs direkt av operativsystemet (t ex
+Windows). 
+
+Pythonprogram har ett extra "lager" mellan program och operativsystem. Det gör
+att de körs långsammare.
+:::
+
+## Variabler i C
+
+I Python behöver vi ofta inte tänka så mycket på datatypen som en variabel har.
+
+```python
+my_number = 42
+my_other_number = 3.14
+my_number = 42.1 # Funkar fint
+```
+
+:::{.double-v-space}
+:::
+
+I C så måste datatypen specificeras vid deklarationen, därefter kan den inte
+ändras.
+
+```C
+int my_number;
+my_number = 42;
+float my_other_number;
+my_other_number = 3.14;
+
+my_number = 42.1; // Otillåtet, eftersom 42.1 är inte ett heltal
+
+```
+
+## Utmatning i C
+
+I C används ofta funktionen `printf` för textutmatning. Exempel:
+
+```C
+int my_int = 42;
+float my_float = 3.14;
+printf("Mitt heltal är: %d\n", my_int);
+printf("Mitt flyttal är: %f\n", my_float);
+```
+
+:::{.double-v-space}
+:::
+
+Tecknen `%d` och `%f` är *formatangivare*, som anger vilken typ av variabel som
+ska skrivas ut. Vi måste även lägga till radframmatning manuellt i
+`printf`-satsen i form av `\n` (detta fungerar även i Python).
+
+## Ett program
+
+Ett Pythonprogram kan bestå av en enda rad, t ex `print("Hello, world")`. I C,
+däremot, måste man inkludera vilka bibliotek som ska ingå i programmet och
+dessutom deklarera en funktion som programmet startar i. Den funktion som ett
+program startar i är alltid `main`.
+
+
+```C
+#include <stdio.h> // I detta bibliotek finns t ex `printf`
+
+// Här deklareras main, som är av typen `int`,
+// som inte tar någon parameter:
+int main(void) {
+	float pi = 3.14;
+	printf("Hello, my favourite number is %f\n", pi);
+	return 0;
+}
+```
+
+## Loopa genom strängar
+
+:::{.v-space}
+:::
+
+Det går att loopa genom en sträng och på så sätt gå igenom tecken för tecken.
+I följande exempel skrivs vokalerna ut i en sträng samtidigt som övriga tecken
+maskeras.
+
+```{python}
+# | echo: true
+vowels = "aeiouyåäö"
+chars = "Hello, world"
+for char in chars:
+    if char.lower() in vowels:
+        print(char, end="")
+    else:
+        print("*", end="")
+```
+
+
+## Skapa en ny sträng utifrån ett original
+
+Exempel: skriva ut vokalerna i en sträng.
+
+```{python}
+# | echo: true
+vowels = "aeiouyåäö"
+source = "Hello, world"
+destination = ""
+for char in source:
+    if char.lower() in vowels:
+        destination += char
+    else:
+        destination += "*"
+print(destination)
+```
+
+Effekten är bl a att valda delar av `source` kopieras till `destination` med
+additionsoperatorn.
+
+## Strängmetoder
+
+Vi har redan sett exempel på *strängmetoder*: `.index()`, som returnerar
+indexnumret för första förekomsten av ett tecken i en sträng, och `.lower()`,
+vilken returnerar samma sträng som vi tillämpar metoden på, men alla
+alfanumeriska tecken blir gemener ("små bokstäver").
+
+Fler exempel på användbara strängmetoder finns på
+[detta "cheat sheet"](../../cheat_sheet_python.html#strängar-och-strängmetoder).
+
+## Fejka förändring
+
+Strängmetoder förändrar inte strängen.
+
+```{python}
+#| echo: true
+my_str = "Detta är en sträng som består av 42 tecken"
+my_upper_str = my_str.upper()
+print(my_str)
+print(my_upper_str)
+```
+
+:::{.v-space}
+:::
+
+Det går också att tilldela den gamla strängens namn det nya värdet.
+
+```{python}
+#| echo: true
+my_str = "Detta är en sträng som består av 42 tecken"
+my_str = my_str.upper()
+print(my_str)
+```
+
+
+## Sammanfattning
+
+* Strängar i ett datorprogram är en följd av tecken
+* På samma sätt som listor så kan enskilda tecken kommas åt med sitt
+indexnummer
+* Till skillnad från listor så kan strängen inte förändras...
+* ... men vi kan få en "effekt" av en förändring t ex genom användning av
+additionsoperatorn (den gamla strängen skrivs då över)
+* Det finns strängmetoder med vars hjälp det går att utföra olika operationer
+på strängar
