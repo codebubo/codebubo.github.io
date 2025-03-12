@@ -1,0 +1,16 @@
+---
+title: "Presentation: En utblick till C"
+format:
+  html:
+    fontsize: 1em
+editor: visual
+---
+
+:::{.double-v-space}
+:::
+<iframe src="./python-vs-c.html" width="800" height="550"></iframe>
+
+## Uppgifter
+
+Uppgifterna i dokumentet
+[Uppgifter Pr1, En utblick till C](../../uppgifter/en-utblick-till-c/index.qmd)

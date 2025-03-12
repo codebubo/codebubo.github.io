@@ -1,10 +1,11 @@
 ---
-title: Strängar i Python
+title: En utblick till C
 from: markdown+emoji
 title-slide-attributes:
-  data-background-image: https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/listor/pattern-3177396_1280.png
-  data-background-opacity: "1"
+  data-background-image: https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/C_Programming_Language.svg/695px-C_Programming_Language.svg.png
+  data-background-opacity: "0.75"
   data-background-color: "black"
+  data-title-color: "black"
 author: "Nikodemus Karlsson"
 format:
   revealjs:
@@ -18,6 +19,7 @@ format:
     controls-layout: edges
     date-format: "DD MMM YYYY"
     css: style.css
+	
 execute: 
   echo: false
 ---
@@ -27,6 +29,7 @@ execute:
 * Att känna till några övergripande skillnader mellan Python och C
 * Att känna till några variabeltyper i C
 * Att skriva ett program i C som hanterar en inmatning och en utmatning
+* Att hantera enkla villkor i C
 
 
 ## En stor skillnad mellan Python och C
@@ -89,7 +92,7 @@ Tecknen `%d` och `%f` är *formatangivare*, som anger vilken typ av variabel som
 ska skrivas ut. Vi måste även lägga till radframmatning manuellt i
 `printf`-satsen i form av `\n` (detta fungerar även i Python).
 
-## Ett program
+## Ett C-program
 
 Ett Pythonprogram kan bestå av en enda rad, t ex `print("Hello, world")`. I C,
 däremot, måste man inkludera vilka bibliotek som ska ingå i programmet och
@@ -109,89 +112,100 @@ int main(void) {
 }
 ```
 
-## Loopa genom strängar
+## Inmatning
 
-:::{.v-space}
-:::
+Inmatning av data kan ske med funktionen `scanf`. Även den använder
+formatangivare för att avgöra vilken typ av data som förväntas.
 
-Det går att loopa genom en sträng och på så sätt gå igenom tecken för tecken.
-I följande exempel skrivs vokalerna ut i en sträng samtidigt som övriga tecken
-maskeras.
+```C
+// In function main
+int a;
+float b;
+printf("Enter two numbers separated by a space -> ");
+scanf("%d %f", &a, &b);
+printf("You entered %d and %f\n", a, b);
+// ... Function continous
+```
 
-```{python}
-# | echo: true
-vowels = "aeiouyåäö"
-chars = "Hello, world"
-for char in chars:
-    if char.lower() in vowels:
-        print(char, end="")
-    else:
-        print("*", end="")
+Tecknet `&`, en *ampersand*, används här för att skicka variablerna `a` och `b`
+som *referenser* till `scanf`. Det betyder att `scanf` får mandat att ändra
+dem, alltså tilldela dem värden.
+
+## Division
+
+I Python används `/` för division och `//` för heltalsdivision. I C så ger
+division (`/`) med heltal ett heltal, och division med flyttal ett flyttal.
+
+```C
+int a = 15;
+int b = 5;
+int c = 6;
+printf("Heltal: %d / %d = %d\n", a, b, a / b);
+printf("Heltal: %d / %d = %d\n", a, c, a / c);
+printf("Flyttal: %d / %d = %f\n", a, c, (float)a / (float)c);
+```
+
+```
+Heltal: 15 / 5 = 3
+Heltal: 15 / 6 = 2
+Flyttal: 15 / 6 = 2.500000
+```
+
+Formatangivaren måste matcha variabeltypen.
+Det som görs på rad 6 kallas för en *typkonvertering*.
+
+## Villkor
+
+
+Precis som i Python finns `if`-satser för att styra programmet med hjälp av
+jämförelser.
+
+```C
+int a = 10, b = 20;
+if (a>b) {
+	printf("a > b");
+} else if (a < b) {
+	printf("b < a");
+}
+  else {
+	printf("a är lika med b");
+}
+```
+
+I Python så används radindrag för att markera vad som hör till `if`-satsen,
+i C används "måsvingar" (braces). Radindragen är enbart estetiska.
+
+## Lite matematik
+
+I biblioteket `math.h` finns många matematiska funktioner och konstanter
+definierade.
+
+```C
+#include <math.h>
+#include <stdio.h>
+
+int main(void) {
+	int a = 2, b = 3;
+	int c = pow(a, b);   // 8
+	float d = sqrt(a);   // 1.414214
+	float e = sin(M_PI); // 0.000000
+	int r = b % a;       // 1 (resten vid heltalsdivision)
+	return 0;
+}
 ```
 
 
-## Skapa en ny sträng utifrån ett original
+En lista på ingående funktioner och konstanter finns
+[här](https://en.wikibooks.org/wiki/C_Programming/math.h).
 
-Exempel: skriva ut vokalerna i en sträng.
+## Det finns mycket mer ...
 
-```{python}
-# | echo: true
-vowels = "aeiouyåäö"
-source = "Hello, world"
-destination = ""
-for char in source:
-    if char.lower() in vowels:
-        destination += char
-    else:
-        destination += "*"
-print(destination)
-```
+* Loopar
+* Funktioner
+* Arrayer
+* Strängar
+* Egendefinierade datatyper
+* Läsning och skrivning till fil
+* Pekare och manuell minneshantering
 
-Effekten är bl a att valda delar av `source` kopieras till `destination` med
-additionsoperatorn.
-
-## Strängmetoder
-
-Vi har redan sett exempel på *strängmetoder*: `.index()`, som returnerar
-indexnumret för första förekomsten av ett tecken i en sträng, och `.lower()`,
-vilken returnerar samma sträng som vi tillämpar metoden på, men alla
-alfanumeriska tecken blir gemener ("små bokstäver").
-
-Fler exempel på användbara strängmetoder finns på
-[detta "cheat sheet"](../../cheat_sheet_python.html#strängar-och-strängmetoder).
-
-## Fejka förändring
-
-Strängmetoder förändrar inte strängen.
-
-```{python}
-#| echo: true
-my_str = "Detta är en sträng som består av 42 tecken"
-my_upper_str = my_str.upper()
-print(my_str)
-print(my_upper_str)
-```
-
-:::{.v-space}
-:::
-
-Det går också att tilldela den gamla strängens namn det nya värdet.
-
-```{python}
-#| echo: true
-my_str = "Detta är en sträng som består av 42 tecken"
-my_str = my_str.upper()
-print(my_str)
-```
-
-
-## Sammanfattning
-
-* Strängar i ett datorprogram är en följd av tecken
-* På samma sätt som listor så kan enskilda tecken kommas åt med sitt
-indexnummer
-* Till skillnad från listor så kan strängen inte förändras...
-* ... men vi kan få en "effekt" av en förändring t ex genom användning av
-additionsoperatorn (den gamla strängen skrivs då över)
-* Det finns strängmetoder med vars hjälp det går att utföra olika operationer
-på strängar
+En del av detta kommer att tas upp, annat inte!

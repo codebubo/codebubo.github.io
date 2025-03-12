@@ -39,6 +39,7 @@ website:
               - pr1/python/egna-datatyper/presentation/index.qmd
               - pr1/python/spara-data-pa-fil/presentation/index.qmd
               - pr1/python/klasser-och-metoder/presentation/index.qmd
+              - pr1/python/en-utblick-till-c/presentation/index.qmd
           - section: "Uppgifter, Python"
             contents:
               - pr1/python/uppgifter/utskrift-och-villkor/index.qmd
@@ -51,6 +52,7 @@ website:
               - pr1/python/uppgifter/sortering/index.qmd
               - pr1/python/uppgifter/spara_objekt/index.qmd
               - pr1/python/uppgifter/klasser-och-metoder/index.qmd
+              - pr1/python/uppgifter/python-vs-c/index.qmd
       - section: "Programmering i matematik"
         contents:
           - section: "MatSpec"

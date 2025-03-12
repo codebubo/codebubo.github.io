@@ -1,0 +1,93 @@
+---
+title: "Uppgifter: En utblick till C"
+format:
+  html:
+    fontsize: 1em
+    css: style.css
+---
+
+# In- och utmatning via terminal
+
+## Uppgift 1
+
+Skapa ett program som innehåller en heltalsvariabel `my_int` och en
+flyttalsvariabel `my_float`. Ansätt ett valfritt värde till var och en av dessa
+(direkt i programmet, du ska inte ange några värden under körning) och skriv ut
+dessa värden.
+
+**Exempel på utmatning:**
+
+```
+Värdet på my_int: 42
+Värdet på my_float: 3.14
+```
+
+## Uppgift 2
+
+Skapa ett program som tar emot två heltal från en inmatning. Programmet ska
+skriva ut summan, differensen, produkten och kvoten av dessa.
+
+**Exempel på en programkörning (pröva även att ansätta det tal som blir nämnare
+i divisionen till noll):**
+
+```
+Ange tal 1-> 10
+Ange tal 2-> 20
+---------------------
+Talens summa: 30
+Talens differens: -10
+Talens produkt: 200
+Talens kvot: 0.500000
+```
+
+## Uppgift 3
+
+Förr i tiden så handlade de flesta kunder i butikerna med kontanter. Hade inte
+kunden jämna pengar så utgavs växel. Växeln kunde ges i olika valörer, t ex
+tiokronor, femkronor och enkronor. Skriv ett program som tar emot två
+inmatningar: ett pris och en betalning. Därefter ska programmet ange växeln
+och förslag på valörer i växeln, förslaget ska prioritera så höga valörer som
+möjligt. Valörerna i denna övning begränsas till enkronor, femmor och tior.
+Endast de valörer som ingår i växeln ska skrivas ut.
+
+**Exempel på tre programkörningar:**
+
+```
+Ange pris i kronor-> 63                Ange pris i kronor-> 91
+Ange belopp som kunden ger-> 100       Ange belopp som kunden ger-> 100
+---------------------------------      ---------------------------------
+Växel: 37 kr.                          Växel: 9 kr.
+Valörer i växeln                       Valörer i växeln
+Antal tior: 3                          Antal femmor: 1
+Antal femmor: 1                        Antal enkronor: 4
+Antal enkronor: 2
+
+
+Ange pris i kronor-> 45
+Ange belopp som kunden ger-> 45
+---------------------------------
+Jämna pengar, tackar :-)
+```
+
+## Uppgift 4
+
+Formeln för att lösa en allmän andragradsekvation lyder
+
+$$
+ax^2+bx+c=0\Leftrightarrow x_1=\frac{-b-\sqrt{b^2-4ac}}{2a},\hspace{5mm}
+x_2=\frac{-b+\sqrt{b^2-4ac}}{2a}
+$$
+
+Skriv ett program som tar emot de tre parametrarna $a,b$ och $c$ och skriver ut
+lösningarna till ekvationen *förutsatt att de är reella*.
+
+**Exempelkörningar:**
+
+```
+Ange parametrarna a, b och c separerade med mellanslag-> 2 4 -6
+x1 = -3.000000
+x2 = 1.000000
+
+Ange parametrarna a, b och c separerade med mellanslag-> 1 2 3
+Reella lösningar saknas.
+```
