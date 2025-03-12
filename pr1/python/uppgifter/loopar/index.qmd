@@ -30,6 +30,7 @@ while i <= 12:
 :::
 
 :::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 1"}
+
 Ett program som inte gör någon snygg formatering av tabellen ser ut så här:
 
 ```python
@@ -56,6 +57,7 @@ mellan  1 och 35. Skriv ett program som slumpar fram 7 heltal mellan 1 och
 35 under en körning.
 
 :::{#slumptalstips .callout-note}
+
 # Tips {#slumptalstips}
 För att skapa ett slumptal i Python behövs importeras slumptalsbiblioteket.
 Detta görs överst i koden, varpå ett slumpmässigt heltal skapas enligt
@@ -74,6 +76,7 @@ i Python; då kommer vi också att sortera numren i storleksordning.
 Körningsexempel:
 
 :::{.callout-note appearance="minimal"}
+
 ```{python}
 #| echo: false
 import random as rand
@@ -87,6 +90,7 @@ while i <= 7:
 :::
 
 :::{.callout-tip collapse="true" icon="false"}
+
 ## Lösningsförslag uppgift 2
 ```python
 import random as rand
@@ -110,6 +114,7 @@ Skriv ett program som slumpar fram 13 st. 1, X och 2 under en körning.
 Körningsexempel:
 
 :::{.callout-note appearance="minimal"}
+
 ```{python}
 #| echo: false
 import random as rand
@@ -134,6 +139,7 @@ Tips: Formatera utskriften först efter att du vet hur du gör för att få
 slumpvis 1, X eller 2.
 
 :::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 3"}
+
 Metoden går ut på att skapa ett slumptal 1, 2 eller 3, för att sedan skriva ut
 1, X eller 2 beroende på utfallet.
 
@@ -166,6 +172,7 @@ gissats så ska det skriva ut hur många gissningar som behövdes.
 Körningsexempel:
 
 :::{.callout-note appearance="minimal"}
+
 ```
 Gissa ett heltal mellan 1 och 10 -> 5
 Talet 5 är för stort.
@@ -181,6 +188,7 @@ Du klarade spelet på gissning nr. 4.
 :::
 
 :::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 4"}
+
 ```python
 import random as rand
 
@@ -213,6 +221,7 @@ $x=30$ och $y=20$ är en lösning.
 Tips: Låt programmet testa olika värden på $x$ och $y$ i en nästlad loop.
 
 :::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 5"}
+
 Observera att det är viktigt att uppdatera variablerna `x` och `y` på rätt ställen i
 den nästlade loopen.
 
@@ -234,6 +243,7 @@ while x <= 50:
 Försök att skapa följande figurer med hjälp av nästlade loopar:
 
 :::{.callout-note appearance="minimal"}
+
 ```{python}
 #| echo: false
 print("Figur A\n")
@@ -252,6 +262,7 @@ print()
 :::
 
 :::{.callout-note appearance="minimal"}
+
 ```{python}
 #| echo: false
 print("Figur B\n")
@@ -300,6 +311,7 @@ while current_row <= max_rows:
 :::
 
 :::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 6"}
+
 **Figur A**, en yttre loop skriver ut raderna (x-koordinaterna) och en
 inre loop skriver ut kolumnerna (y-koordinaterna).
 
@@ -381,6 +393,7 @@ så ska denna inmatning (och enbart denna inmatning) göras om.
 Exempelkörning:
 
 :::{.callout-note appearance="minimal"}
+
 ```
 Ange avatarens namn -> Efelia
 Ange färgen för Efelia: Gul (g), Blå (b) eller Röd (r) -> s
@@ -397,6 +410,7 @@ Snabbheten beräknas till 3.
 Snabbheten är det som saknas upp till 10 från  den angivna styrkan.
 
 :::{.callout-note title="Tips"}
+
 &#9432; **Tips 1 -- fritextval**
 
 Om det finns flera olika giltiga alternativ och man önskar filtrera bort
@@ -446,6 +460,7 @@ med gemener, "små bokstäver"). Den kan användas enligt
 
 ::::{.v-space}
 ::::
+
 &#9432; **Tips 3 -- tal i strängar**
 
 För att testa om en inmatning är ett positivt heltal kan strängmetoden
@@ -472,6 +487,7 @@ else:
 :::
 
 :::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 7"}
+
 Detta Python-program fungerar som en sorts meny där användaren måste göra giltiga val. Om valet är ogiltigt
 kommer användaren att komma tillbaka till samma läge för att välja om.
 Här ser vi exempel på "oändliga loopar" och hur programmet kan avgöra om ett alternativ bland flera är
@@ -539,9 +555,9 @@ Figur A
 for i in range(1, 9):
     print(i*"* ")
 ```
-:::
 
 :::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 8A"}
+
 ```python
 for i in range(1, 9):
     print(i * "*")
@@ -549,6 +565,7 @@ for i in range(1, 9):
 :::
 
 :::{.callout-note appearance="minimal"}
+
 Figur B
 ```{python}
 #| echo: false
@@ -558,6 +575,7 @@ for i in range(8, 0, -1):
 :::
 
 :::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 8B"}
+
 ```python
 for i in range(8, 0, -1):
     print(i * "*")
@@ -565,7 +583,6 @@ for i in range(8, 0, -1):
 :::
 
 :::{.callout-note appearance="minimal"}
-
 
 Figur C
 
@@ -580,6 +597,7 @@ for i in range(8, 0, -1):
 :::
 
 :::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 8C"}
+
 ```python
 for i in range(1, 8):
     print(i * "*")
@@ -604,6 +622,7 @@ for i in range(7, 0, -1):
 :::
 
 :::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 8D"}
+
 Här måste dels rätt antal tecken tas i anspråk (15 st per rad), dels måste
 dessa tecken centreras och slutligen måste en formel hittas för att beräkna
 antalet stjärnor på nästföljande rad.
@@ -641,6 +660,7 @@ for F in range(-10, 120, 10):
 :::
 
 :::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 9"}
+
 ```python
 print("Grader F".ljust(13), end=" ")
 print("Grader C")
@@ -665,6 +685,7 @@ som kontrollstruktur för omstarten av programmet.
 Körningsexempel:
 
 :::{.callout-note appearance="minimal"}
+
 ```
 SPELOMGÅNG 1
 ----------------
@@ -703,6 +724,7 @@ Medelvärdet för antalet gissningar per tal: 3.3
 :::
 
 :::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 10"}
+
 Lösningen görs med en yttre `for`-loop (där vi känner till antalet varv från början) och en inre
 `while`-loop (där antalet varv beror på hur många gissningar som krävs).
 
