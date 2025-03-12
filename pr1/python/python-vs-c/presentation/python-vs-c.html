@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.6.40">
 
   <meta name="author" content="Nikodemus Karlsson">
-  <title>CodeBubo – Funktioner i Python</title>
+  <title>CodeBubo – En utblick till C</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -201,8 +201,8 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-color="black" data-background-image="https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/funktioner/technology-3762546_1280.jpg" data-background-opacity="1" class="quarto-title-block center">
-  <h1 class="title">Funktioner i Python</h1>
+<section id="title-slide" data-background-color="black" data-background-image="https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/listor/pattern-3177396_1280.png" data-background-opacity="1" class="quarto-title-block center">
+  <h1 class="title">En utblick till C</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -216,176 +216,133 @@ Nikodemus Karlsson
 <section id="dagens-mål" class="slide level2">
 <h2>Dagens mål</h2>
 <ul>
-<li>Att känna till vad en funktion är för något</li>
-<li>Att känna till hur en funktion anropas</li>
-<li>Att kunna läsa ut vilka parametrar en funktion tar</li>
-<li>Att känna till skillnaden mellan funktioner som har …</li>
-<li>… respektive saknar <code>return</code>-sats</li>
-<li>Att kunna tilldela en variabel ett värde från en funktion</li>
-<li>Att kunna skriva enkla funktioner …</li>
-<li>… såväl med som utan <code>return</code></li>
+<li>Att känna till några övergripande skillnader mellan Python och C</li>
+<li>Att känna till några variabeltyper i C</li>
+<li>Att skriva ett program i C som hanterar en inmatning och en utmatning</li>
+<li>Att hantera enkla villkor i C</li>
 </ul>
 </section>
-<section id="vad-är-en-funktion-i-programmering" class="slide level2">
-<h2>Vad är en funktion i programmering?</h2>
+<section id="en-stor-skillnad-mellan-python-och-c" class="slide level2">
+<h2>En stor skillnad mellan Python och C</h2>
 <div class="v-space">
 
 </div>
 <div class="blue-bg-small-padding">
-<p>Funktioner används för att dela upp ett program i mindre delar. En funktion <em>anropas</em> från det ställe man vill den ska utföras.</p>
-<p>Vi har redan träffat på funktioner i form av <code>print</code>, <code>input</code> och <code>range</code>. Nu ska vi titta på hur egna funktioner skapas.</p>
+<p>Python är ett <strong>interpreterat</strong> språk. Det för att köra ett Pythonprogram krävs att Python är installerat på datorn.</p>
+<p>C är ett <strong>kompilerat</strong> språk. Programmet körs direkt av operativsystemet (t ex Windows).</p>
+<p>Pythonprogram har ett extra “lager” mellan program och operativsystem. Det gör att de körs långsammare.</p>
 </div>
 </section>
-<section id="användning-av-en-enkel-funktion" class="slide level2">
-<h2>Användning av en enkel funktion</h2>
+<section id="variabler-i-c" class="slide level2">
+<h2>Variabler i C</h2>
+<p>I Python behöver vi ofta inte tänka så mycket på datatypen som en variabel har.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>my_number <span class="op">=</span> <span class="dv">42</span></span>
+<span id="cb1-2"><a></a>my_other_number <span class="op">=</span> <span class="fl">3.14</span></span>
+<span id="cb1-3"><a></a>my_number <span class="op">=</span> <span class="fl">42.1</span> <span class="co"># Funkar fint</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="double-v-space">
 
 </div>
-<p>Exempel: En funktion som adderar två tal:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>tal_1 <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb1-2"><a></a>tal_2 <span class="op">=</span> <span class="dv">20</span></span>
-<span id="cb1-3"><a></a>summa <span class="op">=</span> add(tal_1, tal_2)</span>
-<span id="cb1-4"><a></a><span class="bu">print</span>(<span class="ss">f"Summan av </span><span class="sc">{</span>tal_1<span class="sc">}</span><span class="ss"> och </span><span class="sc">{</span>tal_2<span class="sc">}</span><span class="ss"> är </span><span class="sc">{</span>summa<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="v-space">
-
-</div>
-<p>Funktionen <code>add</code> finns inte fördefinierad i Python, den måste vi skapa själva!</p>
+<p>I C så måste datatypen specificeras vid deklarationen, därefter kan den inte ändras.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource c number-lines code-with-copy"><code class="sourceCode c"><span id="cb2-1"><a></a><span class="dt">int</span> my_number<span class="op">;</span></span>
+<span id="cb2-2"><a></a>my_number <span class="op">=</span> <span class="dv">42</span><span class="op">;</span></span>
+<span id="cb2-3"><a></a><span class="dt">float</span> my_other_number<span class="op">;</span></span>
+<span id="cb2-4"><a></a>my_other_number <span class="op">=</span> <span class="fl">3.14</span><span class="op">;</span></span>
+<span id="cb2-5"><a></a></span>
+<span id="cb2-6"><a></a>my_number <span class="op">=</span> <span class="fl">42.1</span><span class="op">;</span> <span class="co">// Otillåtet, eftersom 42.1 är inte ett heltal</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="implementering" class="slide level2">
-<h2>Implementering</h2>
-<p>Vi kan skapa och använda funktionen <code>add</code> enligt följande:</p>
-<div class="v-space">
+<section id="utmatning-i-c" class="slide level2">
+<h2>Utmatning i C</h2>
+<p>I C används ofta funktionen <code>printf</code> för textutmatning. Exempel:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource c number-lines code-with-copy"><code class="sourceCode c"><span id="cb3-1"><a></a><span class="dt">int</span> my_int <span class="op">=</span> <span class="dv">42</span><span class="op">;</span></span>
+<span id="cb3-2"><a></a><span class="dt">float</span> my_float <span class="op">=</span> <span class="fl">3.14</span><span class="op">;</span></span>
+<span id="cb3-3"><a></a>printf<span class="op">(</span><span class="st">"Mitt heltal är: </span><span class="sc">%d\n</span><span class="st">"</span><span class="op">,</span> my_int<span class="op">);</span></span>
+<span id="cb3-4"><a></a>printf<span class="op">(</span><span class="st">"Mitt flyttal är: </span><span class="sc">%f\n</span><span class="st">"</span><span class="op">,</span> my_float<span class="op">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="double-v-space">
 
 </div>
-<div id="52d7f88a" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="kw">def</span> add(a, b):     <span class="co"># Här</span></span>
-<span id="cb2-2"><a></a>  the_sum <span class="op">=</span> a <span class="op">+</span> b  <span class="co"># skapas</span></span>
-<span id="cb2-3"><a></a>  <span class="cf">return</span> the_sum   <span class="co"># funktionen</span></span>
-<span id="cb2-4"><a></a></span>
-<span id="cb2-5"><a></a><span class="co"># Huvudprogram nedan</span></span>
-<span id="cb2-6"><a></a>tal_1 <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb2-7"><a></a>tal_2 <span class="op">=</span> <span class="dv">20</span></span>
-<span id="cb2-8"><a></a>summa <span class="op">=</span> add(tal_1, tal_2) <span class="co"># Här anropas funktionen</span></span>
-<span id="cb2-9"><a></a></span>
-<span id="cb2-10"><a></a><span class="bu">print</span>(<span class="ss">f"Summan av </span><span class="sc">{</span>tal_1<span class="sc">}</span><span class="ss"> och </span><span class="sc">{</span>tal_2<span class="sc">}</span><span class="ss"> är </span><span class="sc">{</span>summa<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Summan av 10 och 20 är 30</code></pre>
-</div>
-</div>
-<div class="v-space">
-
-</div>
+<p>Tecknen <code>%d</code> och <code>%f</code> är <em>formatangivare</em>, som anger vilken typ av variabel som ska skrivas ut. Vi måste även lägga till radframmatning manuellt i <code>printf</code>-satsen i form av <code>\n</code> (detta fungerar även i Python).</p>
 </section>
-<section id="funktioners-anatomi" class="slide level2">
-<h2>Funktioners anatomi</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="kw">def</span> add(a, b):</span>
-<span id="cb4-2"><a></a>  the_sum <span class="op">=</span> a <span class="op">+</span> b</span>
-<span id="cb4-3"><a></a>  <span class="cf">return</span> the_sum</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="ett-c-program" class="slide level2">
+<h2>Ett C-program</h2>
+<p>Ett Pythonprogram kan bestå av en enda rad, t ex <code>print("Hello, world")</code>. I C, däremot, måste man inkludera vilka bibliotek som ska ingå i programmet och dessutom deklarera en funktion som programmet startar i. Den funktion som ett program startar i är alltid <code>main</code>.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource c number-lines code-with-copy"><code class="sourceCode c"><span id="cb4-1"><a></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span><span class="pp"> </span><span class="co">// I detta bibliotek finns t ex `printf`</span></span>
+<span id="cb4-2"><a></a></span>
+<span id="cb4-3"><a></a><span class="co">// Här deklareras main, som är av typen `int`,</span></span>
+<span id="cb4-4"><a></a><span class="co">// som inte tar någon parameter:</span></span>
+<span id="cb4-5"><a></a><span class="dt">int</span> main<span class="op">(</span><span class="dt">void</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb4-6"><a></a>    <span class="dt">float</span> pi <span class="op">=</span> <span class="fl">3.14</span><span class="op">;</span></span>
+<span id="cb4-7"><a></a>    printf<span class="op">(</span><span class="st">"Hello, my favourite number is </span><span class="sc">%f\n</span><span class="st">"</span><span class="op">,</span> pi<span class="op">);</span></span>
+<span id="cb4-8"><a></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb4-9"><a></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="inmatning" class="slide level2">
+<h2>Inmatning</h2>
+<p>Inmatning av data kan ske med funktionen <code>scanf</code>. Även den använder formatangivare för att avgöra vilken typ av data som förväntas.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource c number-lines code-with-copy"><code class="sourceCode c"><span id="cb5-1"><a></a><span class="co">// In function main</span></span>
+<span id="cb5-2"><a></a><span class="dt">int</span> a<span class="op">;</span></span>
+<span id="cb5-3"><a></a><span class="dt">float</span> b<span class="op">;</span></span>
+<span id="cb5-4"><a></a>printf<span class="op">(</span><span class="st">"Enter two numbers separated by a space -&gt; "</span><span class="op">);</span></span>
+<span id="cb5-5"><a></a>scanf<span class="op">(</span><span class="st">"</span><span class="sc">%d</span><span class="st"> </span><span class="sc">%f</span><span class="st">"</span><span class="op">,</span> <span class="op">&amp;</span>a<span class="op">,</span> <span class="op">&amp;</span>b<span class="op">);</span></span>
+<span id="cb5-6"><a></a>printf<span class="op">(</span><span class="st">"You entered </span><span class="sc">%d</span><span class="st"> and </span><span class="sc">%f\n</span><span class="st">"</span><span class="op">,</span> a<span class="op">,</span> b<span class="op">);</span></span>
+<span id="cb5-7"><a></a><span class="co">// ... Function continous</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Tecknet <code>&amp;</code>, en <em>ampersand</em>, används här för att skicka variablerna <code>a</code> och <code>b</code> som <em>referenser</em> till <code>scanf</code>. Det betyder att <code>scanf</code> får mandat att ändra dem, alltså tilldela dem värden.</p>
+</section>
+<section id="division" class="slide level2">
+<h2>Division</h2>
+<p>I Python används <code>/</code> för division och <code>//</code> för heltalsdivision. I C så ger division (<code>/</code>) med heltal ett heltal, och division med flyttal ett flyttal.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource c number-lines code-with-copy"><code class="sourceCode c"><span id="cb6-1"><a></a><span class="dt">int</span> a <span class="op">=</span> <span class="dv">15</span><span class="op">;</span></span>
+<span id="cb6-2"><a></a><span class="dt">int</span> b <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb6-3"><a></a><span class="dt">int</span> c <span class="op">=</span> <span class="dv">6</span><span class="op">;</span></span>
+<span id="cb6-4"><a></a>printf<span class="op">(</span><span class="st">"Heltal: </span><span class="sc">%d</span><span class="st"> / </span><span class="sc">%d</span><span class="st"> = </span><span class="sc">%d\n</span><span class="st">"</span><span class="op">,</span> a<span class="op">,</span> b<span class="op">,</span> a <span class="op">/</span> b<span class="op">);</span></span>
+<span id="cb6-5"><a></a>printf<span class="op">(</span><span class="st">"Heltal: </span><span class="sc">%d</span><span class="st"> / </span><span class="sc">%d</span><span class="st"> = </span><span class="sc">%d\n</span><span class="st">"</span><span class="op">,</span> a<span class="op">,</span> c<span class="op">,</span> a <span class="op">/</span> c<span class="op">);</span></span>
+<span id="cb6-6"><a></a>printf<span class="op">(</span><span class="st">"Flyttal: </span><span class="sc">%d</span><span class="st"> / </span><span class="sc">%d</span><span class="st"> = </span><span class="sc">%f\n</span><span class="st">"</span><span class="op">,</span> a<span class="op">,</span> c<span class="op">,</span> <span class="op">(</span><span class="dt">float</span><span class="op">)</span>a <span class="op">/</span> <span class="op">(</span><span class="dt">float</span><span class="op">)</span>c<span class="op">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>Heltal: 15 / 5 = 3
+Heltal: 15 / 6 = 2
+Flyttal: 15 / 6 = 2.500000</code></pre>
+<p>Formatangivaren måste matcha variabeltypen. Det som görs på rad 6 kallas för en <em>typkonvertering</em>.</p>
+</section>
+<section id="villkor" class="slide level2">
+<h2>Villkor</h2>
+<p>Precis som i Python finns <code>if</code>-satser för att styra programmet med hjälp av jämförelser.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource c number-lines code-with-copy"><code class="sourceCode c"><span id="cb8-1"><a></a><span class="dt">int</span> a <span class="op">=</span> <span class="dv">10</span><span class="op">,</span> b <span class="op">=</span> <span class="dv">20</span><span class="op">;</span></span>
+<span id="cb8-2"><a></a><span class="cf">if</span> <span class="op">(</span>a<span class="op">&gt;</span>b<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb8-3"><a></a>    printf<span class="op">(</span><span class="st">"a &gt; b"</span><span class="op">);</span></span>
+<span id="cb8-4"><a></a><span class="op">}</span> <span class="cf">else</span> <span class="cf">if</span> <span class="op">(</span>a <span class="op">&lt;</span> b<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb8-5"><a></a>    printf<span class="op">(</span><span class="st">"b &lt; a"</span><span class="op">);</span></span>
+<span id="cb8-6"><a></a><span class="op">}</span></span>
+<span id="cb8-7"><a></a>  <span class="cf">else</span> <span class="op">{</span></span>
+<span id="cb8-8"><a></a>    printf<span class="op">(</span><span class="st">"a är lika med b"</span><span class="op">);</span></span>
+<span id="cb8-9"><a></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>I Python så används radindrag för att markera vad som hör till <code>if</code>-satsen, i C används “måsvingar” (braces). Radindragen är enbart estetiska.</p>
+</section>
+<section id="lite-matematik" class="slide level2">
+<h2>Lite matematik</h2>
+<p>I biblioteket <code>math.h</code> finns många matematiska funktioner och konstanter definierade.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource c number-lines code-with-copy"><code class="sourceCode c"><span id="cb9-1"><a></a><span class="pp">#include </span><span class="im">&lt;math.h&gt;</span></span>
+<span id="cb9-2"><a></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
+<span id="cb9-3"><a></a></span>
+<span id="cb9-4"><a></a><span class="dt">int</span> main<span class="op">(</span><span class="dt">void</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb9-5"><a></a>    <span class="dt">int</span> a <span class="op">=</span> <span class="dv">2</span><span class="op">,</span> b <span class="op">=</span> <span class="dv">3</span><span class="op">;</span></span>
+<span id="cb9-6"><a></a>    <span class="dt">int</span> c <span class="op">=</span> pow<span class="op">(</span>a<span class="op">,</span> b<span class="op">);</span>   <span class="co">// 8</span></span>
+<span id="cb9-7"><a></a>    <span class="dt">float</span> d <span class="op">=</span> sqrt<span class="op">(</span>a<span class="op">);</span>   <span class="co">// 1.414214</span></span>
+<span id="cb9-8"><a></a>    <span class="dt">float</span> e <span class="op">=</span> sin<span class="op">(</span>M_PI<span class="op">);</span> <span class="co">// 0.000000</span></span>
+<span id="cb9-9"><a></a>    <span class="dt">int</span> r <span class="op">=</span> b <span class="op">%</span> a<span class="op">;</span>       <span class="co">// 1 (resten vid heltalsdivision)</span></span>
+<span id="cb9-10"><a></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb9-11"><a></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En lista på ingående funktioner och konstanter finns <a href="https://en.wikibooks.org/wiki/C_Programming/math.h">här</a>.</p>
+</section>
+<section id="det-finns-mycket-mer" class="slide level2">
+<h2>Det finns mycket mer …</h2>
 <ul>
-<li><code>add</code>: Funktionens namn</li>
-<li><code>a</code> och <code>b</code>: Funktionens <em>parametrar</em></li>
-<li><code>return</code>: Det värde som funktionen lämnar som resultat</li>
+<li>Loopar</li>
+<li>Funktioner</li>
+<li>Arrayer</li>
+<li>Strängar</li>
+<li>Egendefinierade datatyper</li>
+<li>Läsning och skrivning till fil</li>
+<li>Pekare och manuell minneshantering</li>
 </ul>
-<p>Funktionen anropas t ex enligt <code>summa = add(1, 2)</code>. Här kallas talen <code>1</code> och <code>2</code> i anropet för <em>argument</em>.</p>
-<p>Variabeln <code>summa</code> antar det värde som <code>return</code> skickar tillbaka.</p>
-</section>
-<section id="variabler-i-funktioner" class="slide level2">
-<h2>Variabler i funktioner</h2>
-<p>Variablerna som är deklarerade i funktioner är <em>lokala</em>. Det innebär att de inte är tillgängliga utanför funktionen.</p>
-<p>T ex är variablerna <code>a</code>, <code>b</code> och <code>the_sum</code> enbart tillgängliga inuti funktionen <code>add</code> nedan.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="kw">def</span> add(a, b):</span>
-<span id="cb5-2"><a></a>  the_sum <span class="op">=</span> a <span class="op">+</span> b</span>
-<span id="cb5-3"><a></a>  <span class="cf">return</span> the_sum</span>
-<span id="cb5-4"><a></a></span>
-<span id="cb5-5"><a></a><span class="co"># Huvudprogram</span></span>
-<span id="cb5-6"><a></a>add(<span class="dv">1</span>, <span class="dv">2</span>)</span>
-<span id="cb5-7"><a></a><span class="co"># Nedanstående ger ett felmeddelande eftersom</span></span>
-<span id="cb5-8"><a></a><span class="co"># giltighetsområdet (omfattningen) för variabeln</span></span>
-<span id="cb5-9"><a></a><span class="co"># the_sum inte räcker till denna nivå i programmet.</span></span>
-<span id="cb5-10"><a></a><span class="bu">print</span>(the_sum)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="funktioners-returvärden" class="slide level2">
-<h2>Funktioners returvärden</h2>
-<p>Ibland saknas behov av <code>return</code>-värde.</p>
-<div id="4d01e240" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="kw">def</span> print_multabell(n):</span>
-<span id="cb6-2"><a></a>  <span class="co"># Skriver ut fem rader i multiplikationstabell n</span></span>
-<span id="cb6-3"><a></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>):</span>
-<span id="cb6-4"><a></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">:2.0f}</span><span class="ss"> * </span><span class="sc">{</span>n<span class="sc">}</span><span class="ss"> = </span><span class="sc">{</span>i<span class="op">*</span>n<span class="sc">:3.0f}</span><span class="ss">"</span>)</span>
-<span id="cb6-5"><a></a></span>
-<span id="cb6-6"><a></a>print_multabell(<span class="dv">12</span>) <span class="co"># Ange önskad tabell att skriva ut här</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> 1 * 12 =  12
- 2 * 12 =  24
- 3 * 12 =  36
- 4 * 12 =  48
- 5 * 12 =  60</code></pre>
-</div>
-</div>
-<p>Här ser syns att en valfri multiplikationstabell kan skrivas ut, men det finns ingen variabel utanför funktionen som känner till något om multiplikationen.</p>
-</section>
-<section id="alla-funktioner-har-ett-returvärde" class="slide level2">
-<h2>Alla funktioner har ett returvärde</h2>
-<div id="7fadeb7d" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="kw">def</span> print_multabell(n):</span>
-<span id="cb8-2"><a></a>  <span class="co"># Skriver ut fem rader i multiplikationstabell n</span></span>
-<span id="cb8-3"><a></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>):</span>
-<span id="cb8-4"><a></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">:2.0f}</span><span class="ss"> * </span><span class="sc">{</span>n<span class="sc">}</span><span class="ss"> = </span><span class="sc">{</span>i<span class="op">*</span>n<span class="sc">:3.0f}</span><span class="ss">"</span>)</span>
-<span id="cb8-5"><a></a></span>
-<span id="cb8-6"><a></a><span class="bu">print</span>(print_multabell(<span class="dv">12</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> 1 * 12 =  12
- 2 * 12 =  24
- 3 * 12 =  36
- 4 * 12 =  48
- 5 * 12 =  60
-None</code></pre>
-</div>
-</div>
-<p>Här anropas funktionen, och <em>skriver ut resultatet</em> av den på rad 6. Vi ser att resultatet blir <code>None</code>.</p>
-</section>
-<section id="dokumentation-av-funktioner" class="slide level2">
-<h2>Dokumentation av funktioner</h2>
-<p>Funktioner bör dokumenteras. Python använder s.k docstrings för detta. Ej att förväxla med kommentarer för kodrader eller andra sekvenser i programmet!</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a><span class="kw">def</span> add(a, b):</span>
-<span id="cb10-2"><a></a>  <span class="co">'''</span></span>
-<span id="cb10-3"><a></a><span class="co">  Funktionen adderar två tal. Ingen typkontroll sker.</span></span>
-<span id="cb10-4"><a></a><span class="co">  Parameter 1: a | ett tal (int eller float)</span></span>
-<span id="cb10-5"><a></a><span class="co">  Parameter 2: b | ett tal (int eller float)</span></span>
-<span id="cb10-6"><a></a><span class="co">  Returvärde: summan av talen (int eller float)</span></span>
-<span id="cb10-7"><a></a><span class="co">  '''</span></span>
-<span id="cb10-8"><a></a>  the_sum <span class="op">=</span> a <span class="op">+</span> b</span>
-<span id="cb10-9"><a></a>  <span class="cf">return</span> the_sum</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Docstrings kan användas av editorn när man skriver kod, eller i konsolen när man skriver <code>help(add)</code>.</p>
-</section>
-<section id="lämna-funktionen" class="slide level2">
-<h2>Lämna funktionen</h2>
-<p>En funktion lämnas när den når sista raden eller <code>return</code>.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="kw">def</span> maximum(a, b):</span>
-<span id="cb11-2"><a></a>  <span class="co">'''</span></span>
-<span id="cb11-3"><a></a><span class="co">  Funktionen returnerar det största av två tal</span></span>
-<span id="cb11-4"><a></a><span class="co">  Parameter 1: a | ett tal (int eller float)</span></span>
-<span id="cb11-5"><a></a><span class="co">  Parameter 2: b | ett tal (int eller float)</span></span>
-<span id="cb11-6"><a></a><span class="co">  Returvärde: Det största av talen. Vid likhet returneras None.</span></span>
-<span id="cb11-7"><a></a><span class="co">  '''</span></span>
-<span id="cb11-8"><a></a></span>
-<span id="cb11-9"><a></a>  <span class="cf">if</span> a <span class="op">&gt;</span> b:</span>
-<span id="cb11-10"><a></a>    <span class="cf">return</span> a</span>
-<span id="cb11-11"><a></a>  <span class="cf">elif</span> b <span class="op">&gt;</span> a:</span>
-<span id="cb11-12"><a></a>    <span class="cf">return</span> b</span>
-<span id="cb11-13"><a></a>  <span class="cf">return</span> <span class="va">None</span> <span class="co"># Onödig rad, utan return-sats returneras None ändå</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="sammanfattning" class="slide level2">
-<h2>Sammanfattning</h2>
-<ul>
-<li>Funktioner är byggstenar i program …</li>
-<li>… vilket ger programmet en enklare struktur</li>
-<li>Variablerna i en funktion är lokala</li>
-<li>En funktion lämnas vid <code>return</code>-sats</li>
-<li>Om ingen <code>return</code>-sats finns returneras <code>None</code></li>
-<li>En variabel bör tilldelas ett returnerat värde</li>
-<li>En funktion bör dokumenteras med en docstring</li>
-</ul>
+<p>En del av detta kommer att tas upp, annat inte!</p>
 
 
 </section>
@@ -691,7 +648,7 @@ None</code></pre>
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp("git@github-codebubo:codebubo\/codebubo\.github\.io\.git");
+          var filterRegex = new RegExp('/' + window.location.host + '/');
         var isInternal = (href) => {
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }
