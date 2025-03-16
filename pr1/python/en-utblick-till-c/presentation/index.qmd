@@ -10,7 +10,11 @@ editor: visual
 :::
 <iframe src="./python-vs-c.html" width="800" height="550"></iframe>
 
+<!-- https://quarto.org/docs/authoring/conditional.html -->
+
+::: {.content-hidden when-format="html"}
 ## Uppgifter
 
 Uppgifterna i dokumentet
 [Uppgifter Pr1, En utblick till C](../../uppgifter/en-utblick-till-c/index.qmd)
+:::

@@ -9,6 +9,7 @@ title-slide-attributes:
 author: "Nikodemus Karlsson"
 format:
   revealjs:
+    code-block-height: 490px
     mermaid: 
       theme: dark
     theme: dark
@@ -145,14 +146,29 @@ printf("Heltal: %d / %d = %d\n", a, c, a / c);
 printf("Flyttal: %d / %d = %f\n", a, c, (float)a / (float)c);
 ```
 
+::::{.columns}
+
+:::{.column width="36%"}
+
+
+:::{.code-output-frame}
+
 ```
 Heltal: 15 / 5 = 3
 Heltal: 15 / 6 = 2
 Flyttal: 15 / 6 = 2.500000
 ```
+:::
+:::
 
+:::{.column width="10%"}
+:::
+
+:::{.column width="54%"}
 Formatangivaren måste matcha variabeltypen.
-Det som görs på rad 6 kallas för en *typkonvertering*.
+Det som görs på rad 6 kallas för en *typkonver-tering*.
+:::
+::::
 
 ## Villkor
 
@@ -162,10 +178,10 @@ jämförelser.
 
 ```C
 int a = 10, b = 20;
-if (a>b) {
+if (a > b) {
 	printf("a > b");
 } else if (a < b) {
-	printf("b < a");
+	printf("b > a");
 }
   else {
 	printf("a är lika med b");
@@ -198,7 +214,7 @@ int main(void) {
 En lista på ingående funktioner och konstanter finns
 [här](https://en.wikibooks.org/wiki/C_Programming/math.h).
 
-## Det finns mycket mer ...
+## Det finns mycket mer ... {visibility="hidden"}
 
 * Loopar
 * Funktioner
@@ -209,3 +225,237 @@ En lista på ingående funktioner och konstanter finns
 * Pekare och manuell minneshantering
 
 En del av detta kommer att tas upp, annat inte!
+
+## Loopar
+
+Det finns tre varianter loopar i C:
+
+* `while`-loopar
+* `do while`-loopar
+* `for`-loopar
+
+Till alla loopar finns styrsatsatserna `break` och `continue`, vilka verkar på
+på liknande sätt som i Python.
+
+## `while`-loopen
+
+Strukturmässigt så fungerar den på samma sätt som i Python, koden i loopen
+körs tills så länge ett villkor uppfylls.
+
+Exempel:
+
+```C
+int i = 0;
+
+// Skriver ut 0 1 2 3 4
+while (i < 5) {
+	printf("%d ", i);
+	i++; // Ökar i med 1
+}
+```
+
+Även här ser vi "måsvingarna" runt det som ska utföras. Vi ser också
+inkrementeringsoperatorn, `++`, den ökar talet i fråga med 1.
+
+
+## `do while`-loopen
+
+Denna loop har ingen direkt motsvarighet i Python, men fungerar ungefär som
+`while`-loopen. Medan `while`-loopen testar villkoret i början av
+varje varv, kommer `do while`-loopen att testa det i slutet.
+
+```C
+int i = 0;
+do {
+	printf("%d ", i);
+	i++;
+} while (i < 5);
+```
+
+Det innebär att koden alltid kommer att köras minst en gång.
+
+## `for`-loopen
+
+I Python kan en `for`-loop användas för att iterera över en lista, men den
+egenskapen har inte `for`-loopar i C.
+
+```C
+int sum = 0;
+for (int i = 0; i < 5; i++) {
+  sum += i;
+  printf("i: %d\t Summa: %2d\n", i, sum);
+}
+```
+
+::::{.columns}
+
+:::{.column width="25%"}
+
+:::{.code-output-frame}
+
+```
+i: 0	Summa:  0
+i: 1	Summa:  1
+i: 2	Summa:  3
+i: 3	Summa:  6
+i: 4	Summa: 10
+```
+:::
+
+:::
+::: {.column width="10%"}
+<!-- empty column to create gap -->
+:::
+
+::: {.column width="65%"}
+Loopvariabeln i C är typiskt ett heltal (`int`), till skillnad från i Python där
+den kan vara vilket objekt som helst från en itererbar sekvens. `for`-loopen
+används ofta för att iterera över index i arrayer.
+:::
+
+::::
+
+## Arrayer
+
+* I Python: listor. Elementen kan vara av olika datatyper.
+
+* I C: Arrayer. Elementen måste vara av samma datatyp. Måste dessutom ange
+storlek i deklarationen.
+
+Exempel på deklaration av array:
+
+```C
+int arr[5] = {0, 1, 2, 3, 4}; // Valfri initiering
+arr[0] = 42;
+for (int i = 0; i < 5; i++) {
+	printf("%d ", arr[i]);
+} 
+```
+
+::::{.columns}
+
+:::{.column width="25%"}
+
+:::{.code-output-frame}
+```
+42 1 2 3 4
+```
+:::
+
+:::
+
+:::{.column width="10%"}
+:::
+
+:::{.column width="65%"}
+Arrayen manipuleras med sina index, det finns t ex inget `append`.
+:::
+::::
+
+## Funktioner i C
+
+* Funktioner i C används för att organisera kod och återanvända logik,
+precis som i Python.
+
+* Två viktiga skillnader mot Python:
+	- Funktionen måste **deklareras** innan den anropas i koden.
+	- Man måste ange **vilken datatyp** som funktionen returnerar (eller
+	`void` om inget returneras).
+* I **funktionsdefinitionen** finns koden för vad funktionen gör.
+
+## Exempel på funktioner
+
+
+```C
+#include <stdio.h>
+
+void say_hi();         // Funktionerna
+int add(int a, int b); // deklareras
+
+int main(void) {
+	say_hi();                    // Funktionerna
+	int s = add(2, 3);           // anropas
+	printf("Summan är %d\n", s); // Returvärdet används
+	return 0;
+}
+
+void say_hi(void) {        // Implementering av say_hi
+	printf("Hi!\n");       // Inget returvärde
+}
+
+int add(int a, int b) {    // Implementering av add
+	int sum = a + b;
+	return sum;            // Returnerar ett värde
+}
+```
+
+::::{.columns}
+
+:::{.column width="25%"}
+
+:::{.code-output-frame}
+```
+Hi!
+Summan är 5
+```
+:::
+::::
+:::
+
+## Strängar
+
+I C så finns ingen strängdatatyp, utan en sträng är en `array` av datatypen
+`char`. 
+
+```C
+char str[13] = "Hello, world"; // Strängdeklaration
+printf("%s\n", str);           // Utskrift av sträng
+// str = "C rules!\n";         // Otillåtet!
+```
+
+Att **ändra** en sträng genom en tilldelning, som i rad 3 ovan, är inte tillåtet
+i C. Istället så kan funktionen `strcpy` användas.
+
+```C
+strcpy(str, "C rules!\n"); // Nu är str ändrad
+```
+
+Strängen får inte överskrida 12 tecken plus nollterminatorn `'\0'`.
+
+`strcpy` finns i `string.h`, som alltså måste inkluderas.
+
+## Strängar i funktioner
+
+```C
+#include <stdio.h>
+#include <string.h> // För strcpy
+
+void greet(char name[]) { // Notera parametern för strängen!
+    printf("Hej, %s!\n", name);
+}
+
+int main(void) {
+    char my_name[10] = "Anna"; // Initial tilldelning
+    strcpy(my_name, "Kalle");  // Kopierar ny sträng
+    greet(my_name);
+    return 0;
+}
+```
+
+::::{.columns}
+
+:::{.column width="16%"}
+::::{.code-output-frame}
+```
+Hej, Kalle!
+```
+::::
+:::
+
+:::{.column width="4%"}
+:::
+
+:::{.column width="80%"}
+
+Strängen tas emot som parameter, och funktionen definieras direkt utan separat
+deklaration.
