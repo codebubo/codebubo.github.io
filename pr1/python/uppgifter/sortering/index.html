@@ -571,7 +571,7 @@ j  (j+1)            |  När de båda första talen är på
 <h3 class="anchored" data-anchor-id="uppgift-1">Uppgift 1</h3>
 <p>Som vi såg i beskrivningen av algoritm så bygger sorteringen på att byta plats på elementen parvis. Skriv en funktion <code>swap(lst, i, j)</code>, där <code>lst</code> är en lista och <code>i</code> och <code>j</code> är de index vars tal ska byta plats. Eftersom <code>lst</code> är en lista, som funktionen hanterar som en <em>referens</em> så behöver inget returneras, listan i funktionen är samma lista som den utanför funktionen.</p>
 <p><strong>Körningsexempel</strong></p>
-<div id="f8b0b885" class="cell" data-execution_count="2">
+<div id="8846ce8d" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [<span class="dv">7</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">6</span>]</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Listan före platsbytet: </span><span class="sc">{</span>lst<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>swap(lst, <span class="dv">1</span>, <span class="dv">2</span>)</span>
@@ -612,7 +612,7 @@ Lösningsförslag uppgift 1
 <p>Skriv nu en funktion <code>sortera</code> som implementerar algoritm som är beskriven ovan. Denna funktion kommer att behöva anropa funktionen <code>swap</code>.</p>
 <p>Av samma orsak som funktionen <code>swap</code> inte returnerade något, ska heller inte <code>sortera</code> returnera något.</p>
 <p><strong>Körningsexempel</strong></p>
-<div id="d16559e6" class="cell" data-execution_count="4">
+<div id="638d07c3" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [<span class="dv">7</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">6</span>]</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Listan före sortering: </span><span class="sc">{</span>lst<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>sortera(lst)</span>
@@ -648,7 +648,7 @@ Lösningsförslag uppgift 2
 <h3 class="anchored" data-anchor-id="uppgift-3">Uppgift 3</h3>
 <p>Emellanåt kan behövas en funktion som kontrollerar om en lista är sorterad. Implementera en sådan funktion <code>is_sorted</code>; funktionen ska returnera det booleska värdet <code>True</code> om listan är sorterad och <code>False</code> om den inte är det.</p>
 <p><strong>Körningsexempel</strong></p>
-<div id="7d918135" class="cell" data-execution_count="6">
+<div id="c13d11ea" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [<span class="dv">7</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Är listan sorterad? </span><span class="sc">{</span>is_sorted(lst)<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>sortera(lst)</span>
@@ -684,7 +684,7 @@ Lösningsförslag uppgift 3
 <h3 class="anchored" data-anchor-id="uppgift-4">Uppgift 4</h3>
 <p>Det går att mäta tiden det tar för en funktion att köra. Nedanstående exempel visar hur det kan göras (här mäts tiden för en loop som snurrar 1000 varv)</p>
 <p><strong>Exempel tidsmätning</strong></p>
-<div id="62d11a56" class="cell" data-execution_count="7">
+<div id="03a78ae6" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>start_time <span class="op">=</span> time.perf_counter()</span>
@@ -695,7 +695,7 @@ Lösningsförslag uppgift 3
 <span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Antalet sekunder som krävdes för loopen: </span><span class="sc">{</span>(end_time <span class="op">-</span> start_time)<span class="sc">:.2e}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Antalet sekunder som krävdes för loopen: 5.20e-05</code></pre>
+<pre><code>Antalet sekunder som krävdes för loopen: 4.52e-05</code></pre>
 </div>
 </div>
 <p>Skapa en lista <code>lst</code> och lägg in ett antal heltal mellan <span class="math inline">\(1\)</span> och <span class="math inline">\(10\,000\)</span> i slumpvis ordning. Mät tiden det tar för listan att sorteras med hjälp av din funktion <code>sortera</code> ovan om antalet element är</p>
@@ -707,7 +707,7 @@ Lösningsförslag uppgift 3
 </ol>
 <p>Gör samma sak med Pythons metod <code>sort</code> för att få en jämförelse av effektiviteten mellan vår algoritm och Pythons algoritm.</p>
 <p><strong>Exempel på användning av <code>sort</code></strong></p>
-<div id="d293c29f" class="cell" data-execution_count="8">
+<div id="4ca3a8a2" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [<span class="dv">7</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">6</span>]</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lst)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>lst.sort()  <span class="co"># Pythons inbyggda sorteringsmetod tillämpas</span></span>
@@ -722,7 +722,7 @@ Lösningsförslag uppgift 3
 <h3 class="anchored" data-anchor-id="uppgift-5">Uppgift 5</h3>
 <p>Skriv en funktion <code>custom_sort</code> som sorterar listan så att de jämna talen sorteras i storleksordning före de uddas dito sortering. Funktionen ska inte använda någon av Pythons inbyggda list-funktioner, utan enbart bygga på loopar och platsbyten som är illustrerat i tidigare uppgifter.</p>
 <p>Körningsexempel:</p>
-<div id="b17106ea" class="cell" data-execution_count="10">
+<div id="8b842c33" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [<span class="op">-</span><span class="dv">5</span>, <span class="dv">2</span>, <span class="op">-</span><span class="dv">8</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">6</span>]</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>custom_sort(lst)</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lst) <span class="co"># Ska visa [-8, 2, 6, -5, 7, 9]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
