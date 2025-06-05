@@ -246,29 +246,38 @@ lst.sort(reverse=True) # lst är nu [10, 8, 5, 3, -1]
 ### Uppslagstabeller
 
 En uppslagstabell fungerar som en lista, men istället för numrerade index
-så har den `nyckel:värde`-par. Nyckeln kan vara tal eller strängar, värdet
-kan vara vilken  variabeltyp som helst. Exempel:
+så har den `nyckel:värde`-par. Nyckeln kan vara vara av vilken immuterbar,
+datatyp som helst (t ex en sträng eller ett tal), värdet
+kan vara av vilken datatyp som helst, inklusive egendefinierade datatyper.
+Exempel:
 
 ```python
-    
-my_dict = {"sträng":"Banan", "heltal":10}
+my_dict = {"namn": "Anna",
+           "ålder": 25,
+           "längd": 1.75}
 
 # Loopar genom uppslagstabellen
 for key, value in my_dict.items():
-    print(f"{key} -> {value}", end=", ")
-    # Skriver ut "sträng -> Banan, heltal -> 10, "
+    print(f"{key}: {value}", end=", ")
+    # Skriver ut "namn: Anna, ålder:25, längd:1.75, "
 
-print()
-my_dict["värden"] = [1, 2, 3] # Lägger till en ny nyckel
+# Lägger till en ny nyckel med värde i form av en lista
+my_dict["värden"] = [1, 2, 3] 
 
-del my_dict["heltal"] # Raderar nyckeln "heltal"
+# Raderar nyckeln "längd"
+del my_dict["längd"]
 
-# Alternativ loop genom uppslagstabellen
+# Alternativ loop genom uppslagstabellens nycklar
 for key in my_dict.keys():
-    print(f"{key} -> {my_dict[key]}")
+    print(f"{key}: {my_dict[key]}")
     # Skriver ut:
-    # sträng -> Banan
-    # värden -> [1, 2, 3]
+    # namn: Anna
+    # ålder: 25
+    # värden: [1, 2, 3]
+
+# Kontroll av förekomsten av en nyckel:
+"värden" in my_dict # Returnerar True
+"längd" in my_dict  # Returnerar False
 ``` 
 
 ## Strängar och strängmetoder
