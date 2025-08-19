@@ -12,14 +12,16 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
-    background: secondary
+    background: primary
   search:
     location: navbar
     type: overlay
 
+  # Left sidebar
   sidebar:
     collapse-level: 1
     style: "docked"
+    # background: azure
     contents:
       - text: "Programmeringsrelaterat"
       - text: "---"
@@ -72,10 +74,15 @@ website:
         contents:
           - ma/ma-spec/ovningar/matrisinvertering/index.qmd
           - ma/ma-spec/komp-mat/determinant/index.qmd
+      - text: "---"
+      - section: Fysikrelaterat
+        contents:
+          - fy/simuleringar/waves/index.qmd
 
 format:
   html:
     theme: cosmo
+    #theme: minty
     css: styles.css
-    backgroundcolor: floralwhite
+    #backgroundcolor: floralwhite
     toc: true

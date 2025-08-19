@@ -1,0 +1,48 @@
+---
+title: "Simuleringar vågrörelse"
+format:
+  html:
+    fontsize: 1em
+    css: style.css
+---
+
+<link rel="stylesheet" href="style.css">
+
+# Gående och stående vågor
+
+## Gående vågor
+
+### Gående transversella vågor
+
+En **gående våg** (*travelling wave*) består av partiklar som svänger med en
+viss fasförskjutning i förhållande till varandra. Nedan visas en
+**transversell** våg, där varje partikel rör sig vinkelrätt mot vågens
+utbredningsriktning. Svängningen är **harmonisk**, vilket innebär att varje
+partikel rör sig enligt en sinusfunktion över tid — och vågen får därmed en
+**sinusformad profil**.
+
+I den här animeringen sker **utbredningen åt höger**, vilket innebär att vågens
+form förflyttar sig i den riktningen, även om varje enskild partikel bara rör
+sig upp och ner.
+
+<script src="https://cdn.jsdelivr.net/npm/p5@2.0.3/lib/p5.min.js"></script>
+
+<script src="trans_wave.js"></script>
+
+::: {.sketch-container}
+<div class="sketch-holder" id="trans-wave"></div>
+:::
+
+### Gående longitudinella vågor
+
+<script src="long.js"></script>
+
+::: {.sketch-container}
+<div class="sketch-holder" id="sketch-holder-2"></div>
+:::
+
+## Stående våg
+
+
+Under konstruktion.
+

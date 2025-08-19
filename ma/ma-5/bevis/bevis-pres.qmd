@@ -1,0 +1,135 @@
+---
+title: Grunderna i matematisk bevisföring
+subtitle: En introduktion till logik och bevis
+from: markdown+emoji
+title-slide-attributes:
+  data-background-image: https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/slidesimages/backgrounds/wavy_background.png
+  data-background-opacity: "1"
+  data-background-color: "black"
+author: ""
+format:
+  revealjs:
+    theme: dark
+    transition: slide
+    background-transition: slide
+    slide-number: true
+    controls: true
+    controls-layout: edges
+    date-format: "DD MMM YYYY"
+    css: style.css
+execute: 
+  echo: false
+---
+
+## Dagens mål
+
+* Känna till några relevanta begrepp inom matematisk bevisföring
+* Känna till vad ett direkt bevis är
+* Kunna genomföra grundläggande bevis
+
+
+## Axiom
+
+:::{.double-v-space}
+:::
+
+Grundläggande påstående som accepteras utan bevis.
+
+:::{.v-space}
+:::
+**Exempel**: Om $A=B$ så gäller att $B=A$.
+
+**Exempel**: Om $A=B$ och $A=C$ så gäller att $B=C$.
+
+:::{.v-space}
+:::
+Detta är två av nio axiom som den italienske matematikern Giuseppe Peano
+(1858 -- 1932) ställde upp som ett slags fundament inom logiken.
+
+## Definition
+
+:::{.double-v-space}
+:::
+En exakt beskrivning av ett begrepp.
+
+:::{.v-space}
+:::
+**Exempel**: Ett rationellt tal är ett tal $\frac{a}{b}$, där $a$ och $b$ är
+heltal.
+
+:::{.v-space}
+:::
+**Exempel**: $\sqrt{x^2} = |x|$
+
+:::{.v-space}
+:::
+**Exempel**: $|x|= \left\{\begin{matrix}x,\hspace{5mm}&x\geq 0&\\
+-x,\hspace{5mm}&x<0&\end{matrix}\right .$
+
+## Påstående
+
+:::{.double-v-space}
+:::
+**Exempel**: Talet $21$ är delbart med $3$ eftersom $21=3\cdot 7$ (Sant).
+
+:::{.v-space}
+:::
+**Exempel**: Ekvationen $$a^n+b^n=c^n$$ har heltalslösningar $a,b$ och $c$ för alla $n$ som
+är positiva heltal (Falskt).
+
+Ett påstående i matematiken behöver alltså inte vara sant för att klassificeras
+som påstående.
+
+## Bevis
+
+:::{.double-v-space}
+:::
+Matematisk argumentation för att ett resultat ska accepteras. Bygger på axiom
+eller tidigare bevis.
+
+:::{.v-space}
+:::
+**Exempel**: Visa att $$\frac{1}{2}(a+b)>\sqrt{ab}$$
+för alla tal $a,b>0$.
+
+## Direkta bevis
+
+:::{.double-v-space}
+:::
+Man utgår från givna antaganden eller axiom och med logiska steg visar att
+slutsatsen måste vara sann.
+
+:::{.v-space}
+:::
+Beviset som vi genomförde i förra slajden var ett exempel på ett direkt bevis.
+
+Det finns andra typer av bevis: Indirekta bevis, motsägelsebevis och
+induktionsbevis. Dessa tas upp senare i kursen.
+
+## Falsifikation
+
+:::{.v-space}
+:::
+Att visa att något är sant inom en viss ram kräver att alla fall täcks med
+logiska resonemang. Att visa att något är falskt kräver endast ett motexempel.
+
+:::{.vspace}
+:::
+**Exempel**: Produkten av ett jämnt tal och ett udda tal är alltid ett jämnt
+tal (visa det!). Gäller det att varje jämnt tal kan skrivas som en produkt av
+ett jämnt och ett udda tal?
+
+Nej, visserligen så vet vi t ex att $12=3\cdot 4$, men även att $16=2\cdot 8$.
+Detta motsäger påståendet att varje jämnt tal är en produkt av ett jämnt och
+ett udda tal.
+
+## Slutnot
+
+* Utgå aldrig från att det som ska visas gäller! Försök istället att med logik
+och räkneregler gå från påståendet till slutmålet.
+
+* Det kan vara tålamodskrävande att genomföra ett korrekt bevis. Man kanske inte
+omdelbart ser någon angreppsmetod. Övning ger färdighet!
+
+* Ett bevis avslutas lämpligen med V.S.B, V.S.V eller Q.E.D.
+

@@ -156,3 +156,5 @@ Anropa funktionen från `main` och skriv ut resultatet därifrån.
 ```
 Summan är: 16
 ```
+
+
