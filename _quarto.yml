@@ -68,6 +68,7 @@ website:
       - text: "---"
       - section: "Matematik 5"
         contents:
+          - ma/ma-5/bevis/index.qmd
           - ma/ma-5/kombinatorik/index.qmd
       - section: "Matematik specialisering"
 

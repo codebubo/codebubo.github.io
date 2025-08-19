@@ -55,7 +55,7 @@ En exakt beskrivning av ett begrepp.
 :::{.v-space}
 :::
 **Exempel**: Ett rationellt tal är ett tal $\frac{a}{b}$, där $a$ och $b$ är
-heltal.
+heltal och $b\neq 0$.
 
 :::{.v-space}
 :::
@@ -74,8 +74,8 @@ heltal.
 
 :::{.v-space}
 :::
-**Exempel**: Ekvationen $$a^n+b^n=c^n$$ har heltalslösningar $a,b$ och $c$ för alla $n$ som
-är positiva heltal (Falskt).
+**Exempel**: Ekvationen $$a^n+b^n=c^n$$ har heltalslösningar $a,b$ och $c$ för
+alla $n$ som är positiva heltal (Falskt).
 
 Ett påstående i matematiken behöver alltså inte vara sant för att klassificeras
 som påstående.
@@ -89,7 +89,7 @@ eller tidigare bevis.
 
 :::{.v-space}
 :::
-**Exempel**: Visa att $$\frac{1}{2}(a+b)>\sqrt{ab}$$
+**Exempel**: Visa att $$\frac{1}{2}(a+b)\geq\sqrt{ab}$$
 för alla tal $a,b>0$.
 
 ## Direkta bevis
@@ -129,7 +129,7 @@ ett udda tal.
 och räkneregler gå från påståendet till slutmålet.
 
 * Det kan vara tålamodskrävande att genomföra ett korrekt bevis. Man kanske inte
-omdelbart ser någon angreppsmetod. Övning ger färdighet!
+omedelbart ser någon angreppsmetod, men övning ger färdighet!
 
 * Ett bevis avslutas lämpligen med V.S.B, V.S.V eller Q.E.D.
 
