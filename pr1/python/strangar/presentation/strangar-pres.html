@@ -244,7 +244,7 @@ Nikodemus Karlsson
 <section id="strängar-jämfört-med-listor" class="slide level2">
 <h2>Strängar jämfört med listor</h2>
 <p>Varje teckenläge i en sträng har ett <em>index</em>. Det går att nå ett tecken med hjälp av detta index.</p>
-<div id="df6732fe" class="cell" data-execution_count="1">
+<div id="ef8e1d02" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>my_string <span class="op">=</span> <span class="st">"Hello, world"</span></span>
 <span id="cb2-2"><a></a><span class="bu">print</span>(<span class="ss">f"Strängkonstanten är: </span><span class="sc">{</span>my_string<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb2-3"><a></a><span class="bu">print</span>(<span class="ss">f"Strängkonstantens första tecken är: </span><span class="sc">{</span>my_string[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
@@ -264,7 +264,7 @@ Tecknet "o" finns första gången på index: 4</code></pre>
 
 </div>
 <p>På samma sätt som med listor går det att ta fram en delsträng enligt följande.</p>
-<div id="9d6f907d" class="cell" data-execution_count="2">
+<div id="89219603" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>my_str <span class="op">=</span> <span class="st">"Detta är en sträng som består av 42 tecken"</span></span>
 <span id="cb4-2"><a></a><span class="bu">print</span>(my_str[:<span class="dv">8</span>])</span>
 <span id="cb4-3"><a></a><span class="bu">print</span>(my_str[<span class="dv">19</span>:<span class="dv">29</span>])</span>
@@ -282,7 +282,7 @@ som består
 
 </div>
 <p>Det går att loopa genom en sträng och på så sätt gå igenom tecken för tecken. I följande exempel skrivs vokalerna ut i en sträng samtidigt som övriga tecken maskeras.</p>
-<div id="820f06e6" class="cell" data-execution_count="3">
+<div id="16b2e2c8" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>vowels <span class="op">=</span> <span class="st">"aeiouyåäö"</span></span>
 <span id="cb6-2"><a></a>chars <span class="op">=</span> <span class="st">"Hello, world"</span></span>
 <span id="cb6-3"><a></a><span class="cf">for</span> char <span class="kw">in</span> chars:</span>
@@ -298,7 +298,7 @@ som består
 <section id="skapa-en-ny-sträng-utifrån-ett-original" class="slide level2">
 <h2>Skapa en ny sträng utifrån ett original</h2>
 <p>Exempel: skriva ut vokalerna i en sträng.</p>
-<div id="1ebd4f99" class="cell" data-execution_count="4">
+<div id="b4bf10a8" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a>vowels <span class="op">=</span> <span class="st">"aeiouyåäö"</span></span>
 <span id="cb8-2"><a></a>source <span class="op">=</span> <span class="st">"Hello, world"</span></span>
 <span id="cb8-3"><a></a>destination <span class="op">=</span> <span class="st">""</span></span>
@@ -322,7 +322,7 @@ som består
 <section id="fejka-förändring" class="slide level2">
 <h2>Fejka förändring</h2>
 <p>Strängmetoder förändrar inte strängen.</p>
-<div id="0e72a110" class="cell" data-execution_count="5">
+<div id="97c09ec8" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a>my_str <span class="op">=</span> <span class="st">"Detta är en sträng som består av 42 tecken"</span></span>
 <span id="cb10-2"><a></a>my_upper_str <span class="op">=</span> my_str.upper()</span>
 <span id="cb10-3"><a></a><span class="bu">print</span>(my_str)</span>
@@ -336,7 +336,7 @@ DETTA ÄR EN STRÄNG SOM BESTÅR AV 42 TECKEN</code></pre>
 
 </div>
 <p>Det går också att tilldela den gamla strängens namn det nya värdet.</p>
-<div id="c501905f" class="cell" data-execution_count="6">
+<div id="17794909" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a>my_str <span class="op">=</span> <span class="st">"Detta är en sträng som består av 42 tecken"</span></span>
 <span id="cb12-2"><a></a>my_str <span class="op">=</span> my_str.upper()</span>
 <span id="cb12-3"><a></a><span class="bu">print</span>(my_str)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
