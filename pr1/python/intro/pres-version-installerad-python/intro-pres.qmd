@@ -5,7 +5,7 @@ from: markdown+emoji
 title-slide-attributes:
   data-background-image: https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/intro/bg-front.jpg
   data-background-color: "black"
-author: "Nikodemus Karlsson"
+author: ""
 date: ""
 format:
   revealjs:
@@ -23,16 +23,18 @@ execute:
 
 ## Klipsk som en dator?
 
-{{< video https://www.youtube.com/watch?v=FN2RM-CHkuI&ab_channel=JoshDarnit width="1000" height="600">}}
+<div style="text-align: center;">
+{{< video https://www.youtube.com/watch?v=FN2RM-CHkuI&ab_channel=JoshDarnit width="900" height="540">}}
+</div>
 
 ## Förkunskaper?
 
 :::{.double-v-space}
 :::
 
-![](https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/intro/pr1-survey-2024.png){height=300}
+![](survey_te24a.png){height=300}
 
-[https://tinyurl.com/37n7zry2](https://tinyurl.com/37n7zry2)
+[https://tinyurl.com/5yf4z7hd](https://tinyurl.com/5yf4z7hd)
 
 ## Vad är ett datorprogram?
 
@@ -210,7 +212,7 @@ print(hello_string)
 ```
 :::::
 
-::::{.new-line}
+::::{.v-space}
 ::::
 
 ::::: {.fragment .fade-right fragment-index=3}
@@ -233,7 +235,7 @@ print(pris)
 ```
 :::::
 
-::::{.new-line}
+::::{.v-space}
 ::::
 
 ::::: {.fragment .fade-left fragment-index=4}

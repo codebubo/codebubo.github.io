@@ -5,7 +5,7 @@ from: markdown+emoji
 title-slide-attributes:
   data-background-image: https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/intro/bg-front.jpg
   data-background-color: "black"
-author: "Nikodemus Karlsson"
+author: ""
 date: ""
 format:
   revealjs:
@@ -23,15 +23,18 @@ execute:
 
 ## Klipsk som en dator?
 
-{{< video https://www.youtube.com/watch?v=FN2RM-CHkuI&ab_channel=JoshDarnit width="1000" height="550">}}
+<div style="text-align: center;">
+{{< video https://www.youtube.com/watch?v=FN2RM-CHkuI&ab_channel=JoshDarnit width="900" height="540">}}
+</div>
 
 ## Förkunskaper?
 :::{.double-v-space}
 :::
 
-![](https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/intro/enkat-indval.png){height=300}
 
-[https://shorturl.at/fhBG5](https://shorturl.at/fhBG5)
+![](survey_indval.png){height=300}
+
+[https://tinyurl.com/muj67m4j](https://tinyurl.com/muj67m4j)
 
 ## Vad är ett datorprogram?
 
@@ -81,8 +84,9 @@ Vi kommer att arbeta i online-miljön **Replit** under kursen.
 ::: columns
 
 :::: {.column width="50%"}
-&nbsp;
-![[https://replit.com/]](https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/intro/replit-image.png){width=100% fig-align="left"}
+::::{.double-v-space}
+::::
+![](python-anywhere-banner.png)
 ::::
 
 :::: {.column width="50%"}
@@ -91,8 +95,8 @@ en **editor** där program kan skrivas och sparas.
 ::::
 :::
 
-Registrera dig på [https://replit.com/](https://replit.com/) med din
-"skol-Google".
+Registrera dig på [https://www.pythonanywhere.com/](https://www.pythonanywhere.com)
+med din "skol-Google".
 
 ## Dagens mål
 
@@ -213,7 +217,7 @@ print(hello_string)
 ```
 :::::
 
-::::{.new-line}
+::::{.double-v-space}
 ::::
 
 ::::: {.fragment .fade-right fragment-index=3}
@@ -236,7 +240,7 @@ print(pris)
 ```
 :::::
 
-::::{.new-line}
+::::{.double-v-space}
 ::::
 
 ::::: {.fragment .fade-left fragment-index=4}
@@ -305,6 +309,7 @@ Tabeller blir mer lättlästa om ental står under ental, tiondel under tiondel 
 :::
 
 :::{.v-space}
+:::
 ```{python}
 a = 10.5; b = 2.38
 c = 2.3;  d = 0.1
@@ -312,7 +317,6 @@ print(f"{a:6.2f}\t\t{c:6.2f}\n{b:6.2f}\t\t{d:6.2f}")
 print("----------------------");
 print(f"{(a+b):6.2f}\t\t{(c+d):6.2f}")
 ```
-:::
 
 :::{.v-space}
 Observera att beräkningarna sker mellan måsvingarna!
