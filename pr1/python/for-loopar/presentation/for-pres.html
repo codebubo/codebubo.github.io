@@ -9,7 +9,7 @@
 <link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.32">
 
-  <meta name="author" content="Nikodemus Karlsson">
+  <meta name="author" content="">
   <title>CodeBubo – for-loopar i Python</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -206,11 +206,6 @@
   <h1 class="title">for-loopar i Python</h1>
 
 <div class="quarto-title-authors">
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-Nikodemus Karlsson 
-</div>
-</div>
 </div>
 
 </section>
@@ -238,7 +233,7 @@ Nikodemus Karlsson
 <div class="double-v-space">
 
 </div>
-<div id="e5cb700d" class="cell" data-execution_count="1">
+<div id="bb1fa42f" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>lista <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>]</span>
 <span id="cb1-2"><a></a><span class="cf">for</span> element <span class="kw">in</span> lista:</span>
 <span id="cb1-3"><a></a>    <span class="bu">print</span>(element, end<span class="op">=</span><span class="st">" "</span>)</span>
@@ -258,7 +253,7 @@ Nikodemus Karlsson
 <div class="v-space">
 
 </div>
-<div id="f2e96118" class="cell" data-execution_count="2">
+<div id="9e29bfe2" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>, <span class="dv">8</span>):   <span class="co"># Här skapas listan</span></span>
 <span id="cb3-2"><a></a>    <span class="bu">print</span>(i, end<span class="op">=</span><span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -269,12 +264,15 @@ Nikodemus Karlsson
 
 </div>
 <p>Funktionen <code>range(3, 8)</code> skapar listan <code>[3, 4, 5, 6, 7]</code></p>
-<p>Om det hade varit en <code>while</code>-loop som skulle snurra fem varav skulle ett villkor och en räknare behövt sättas upp.</p>
+<p>Om det hade varit en <code>while</code>-loop som skulle snurra fem varv skulle ett villkor och en räknare behövt sättas upp.</p>
 </section>
 <section id="funktionen-range" class="slide level2">
 <h2>Funktionen <code>range</code></h2>
+<div class="double-v-space">
+
+</div>
 <p>Exempel på hur parametrar påverkar resultatet av <code>range</code></p>
-<div id="14e0a5a5" class="cell" data-execution_count="3">
+<div id="78f86d29" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>lista_A <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">10</span>))</span>
 <span id="cb5-2"><a></a>lista_B <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>))</span>
 <span id="cb5-3"><a></a>lista_C <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">2</span>))</span>
@@ -293,7 +291,10 @@ lista_D = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]</code></pre>
 </section>
 <section id="exempel-multiplikationstabell" class="slide level2">
 <h2>Exempel: Multiplikationstabell</h2>
-<div id="31f50c3a" class="cell" data-execution_count="4">
+<div class="v-space">
+
+</div>
+<div id="e6662505" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="co"># Detta program beräknar och skriver ut "tolvans tabell"</span></span>
 <span id="cb7-2"><a></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">13</span>):</span>
 <span id="cb7-3"><a></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">:2.0f}</span><span class="ss"> * 12 = </span><span class="sc">{</span>i<span class="op">*</span><span class="dv">12</span><span class="sc">:3.0f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -315,11 +316,14 @@ lista_D = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]</code></pre>
 </section>
 <section id="andra-listelement-än-tal" class="slide level2">
 <h2>Andra listelement än tal</h2>
+<div class="double-v-space">
+
+</div>
 <p>En lista kan innehålla andra element än tal.</p>
 <div class="v-space">
 
 </div>
-<div id="9dcd4ce1" class="cell" data-execution_count="5">
+<div id="a791e7cb" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>items <span class="op">=</span> [<span class="st">"Klocka"</span>, <span class="st">"Kikare"</span>, <span class="st">"Termometer"</span>]</span>
 <span id="cb9-2"><a></a><span class="bu">print</span>(<span class="st">"Du har tillgång till:"</span>, end<span class="op">=</span><span class="st">" "</span>)</span>
 <span id="cb9-3"><a></a><span class="cf">for</span> item <span class="kw">in</span> items:</span>
