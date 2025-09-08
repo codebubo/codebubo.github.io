@@ -5,7 +5,7 @@ title-slide-attributes:
   data-background-image: https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/while-loopar/peacock-1302721_1280.png
   data-background-opacity: "1"
   data-background-color: "black"
-author: "Nikodemus Karlsson"
+author: ""
 format:
   revealjs:
     mermaid: 
@@ -43,18 +43,7 @@ gissningar som behövdes.
 
 ## Enklast möjliga while-loop
 
-```{mermaid}
-flowchart LR
-    A((Start)) --> B("Tilldela\ni = 1")
-    B --> C{"Är i ≤ 5?"}
-    C -->|Ja| D[/Skriv ut i/]
-    D --> G(Öka i med 1)
-    G --> C 
-    C -->|Nej| F((Avsluta))
-```
-
-:::{.v-space}
-:::
+![](charts/chart1.svg)
 
 ```{python}
 # | echo: true
@@ -65,12 +54,14 @@ while i <= 5:
 print(f"\nProgrammet avslutas eftersom i = {i}")
 ```
 
-:::{.v-space}
-:::
+<span style="font-size: 0.8em">
 Villkoret är på rad 2. Allt som omfattas av loopen är
-*radindraget*.
+*radindraget*.</span>
 
 ## Beräkning av summa -- ver. 1
+
+:::{.double-v-space}
+:::
 
 ```python
 # Detta program beräknar summan av ett antal tal
@@ -95,6 +86,9 @@ ett annat villkor för avslut skulle ge en felaktig summa.
 :::
 
 ## Beräkning av summa -- ver. 2
+
+:::{.v-space}
+:::
 
 ```python
 # Detta program beräknar summan av ett antal tal
@@ -121,6 +115,9 @@ Själva loopvillkoret är **alltid** sant, det är innebörden av <br>`while Tru
 
 ## Summan av positiva tal
 
+:::{.double-v-space}
+:::
+
 ```python
 # Detta program beräknar summan av ett antal positiva tal
 summa = 0
@@ -145,21 +142,7 @@ om från dess början.
 
 ## Nästlad loop -- flödesschema
 
-:::{.double-v-space}
-```{mermaid}
-flowchart LR
-    A((Start)) --> B("Ansätt i = 0")
-    B --> C{"i ≤  3?"}
-    C --> |"Ja"| D("Ansätt j = 0")
-    D --> E{"j ≤  3?"}
-    E -->  |"Ja"| F[/Skriv ut i och j/]
-    F --> G(Öka j med 1)
-    G --> E
-    E --> |"Nej"|H("Öka i med 1")
-    H --> C
-    C --> |"Nej"|I(("Avsluta"))
-```
-:::
+![](charts/chart2.svg)
 
 :::{.fragment .fade-right}
 
@@ -171,6 +154,9 @@ den inre loopen att gå ett givet antal varv.
 :::
 
 ## Nästlad loop -- kodexempel
+
+:::{.double-v-space}
+:::
 
 ```python
 # Detta program demonstrerar nästlade loopar

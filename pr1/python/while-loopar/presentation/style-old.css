@@ -32,7 +32,7 @@
   bottom: 0.25em;
   left: 0.25em;
   color: grey;
-  content: "Pr1, NIKA-25/26";
+  content: "Pr1, TE22C + Ind.val";
 }
 
 .smaller-font {
@@ -59,8 +59,8 @@
 }
 
 .slides .title {
-  font-size: 72px;
-  color: rgb(255, 255, 255);
+  font-size: 96px;
+  color: #FFFFFF;
   font-family: Fredoka;
   text-transform: uppercase;
 }
@@ -74,7 +74,8 @@
 
 .quarto-title-author-name {
   font-size: 60px;
-  color: rgb(225, 248, 151);
+  color: rgb(28, 22, 222);
+  color: #FF0000;
   font-family: Fredoka;
   text-transform: uppercase;
 }

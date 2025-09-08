@@ -4,7 +4,7 @@ from: markdown+emoji
 title-slide-attributes:
   data-background-image: https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/villkor/banner-1090830_1280.jpg
   data-background-color: "white"
-author: "Nikodemus Karlsson"
+author: ""
 format:
   revealjs:
     theme: dark
@@ -47,9 +47,6 @@ program som innehåller villkor.
 I Python så avgörs ett villkor med hjälp av det reserverade ordet
 <span style="font-size: 85%;">`if`</span>.
 
-:::{.new-line}
-:::
-
 ```{python}
 a = 1
 if a > 0:
@@ -68,18 +65,7 @@ else:
 ``` 
 ## Exempel: Godkänt?
 
-```{mermaid}
-%%| echo: false
-flowchart LR
-    start[/Inmatning\n poäng/]
-    cond{Är poäng över\nE-gräns?}
-    ja[/Skriv ut\nGodkänt/]
-    nej(Programmet\navslutas)
-    start-->cond
-    cond-->|Ja|ja
-    cond-->|Nej|nej
-    ja-->nej
-```
+![](charts/chart1.svg)
 
 :::{.v-space}
 ```python
@@ -98,20 +84,8 @@ Resultatet av <span style="font-size: 85%;">`input`</span>
 :::
 
 ## Exempel: Godkänt eller ej?
-```{mermaid}
-%%| echo: false
-flowchart LR
-    start[/Inmatning\n poäng/]
-    cond{Är poäng över\nE-gräns?}
-    ja[/Skriv ut\nGodkänt/]
-    nej[/Skriv ut\nEj godkänt/]
-    slut(Programmet\navslutas)
-    start-->cond
-    cond-->|Ja|ja
-    cond-->|Nej|nej
-    ja-->slut
-    nej-->slut
-```
+
+![](charts/chart2.svg)
 
 :::{.v-space}
 
@@ -169,11 +143,11 @@ jämförande likhetstecken!
 
 :::: columns
 ::::: {.column width="52%"}
-```{python}
-print(3 == 3)
-print(3 <= 3)
-print(3 != 3)
-print(3 != 4)
+```python
+print(3 == 3) # True
+print(3 <= 3) # True
+print(3 != 3) # False
+print(3 != 4) # True
 ```
 :::::
 
@@ -191,12 +165,16 @@ Tilldelning sker från höger till vänster.
 
 ## Booleska värden
 
+<span style="font-size: 0.8em">
 Värdena <span style="font-size: 85%;">`True`</span> och
 <span style="font-size: 85%;"> `False`</span> kallas för **booleska** värden
 (efter George Boole, 1815 -- 1864).
+</span>
 
+<span style="font-size: 0.8em">
 Variabler som antar denna typ av värden kallas för **booleska
 variabler**.
+</span>
 
 :::{.v-space}
 ```{python}
@@ -215,20 +193,22 @@ if (not my_second_boolean):
 :::
 
 ## Sammansättning av booleska värden
+::: {.double-v-space}
+:::
 
-Booleska värden går att ''sätta ihop'' med operatorerna
+Booleska värden går att kombinera med operatorerna
 <span style="font-size: 85%;">`or`</span> och
 <span style="font-size: 85%;"> `and` </span>.
 
 :::{.v-space}
-```{python}
+```python
 a = True
 b = False
-print(a and b)
-print(a or b)
-print((a or b) and a)
-print(not a)
-print(not b)
+print(a and b)         # False
+print(a or b)          # True
+print((a or b) and a)  # True
+print(not a)           # False
+print(not b)           # True
 ```
 :::
 
@@ -238,15 +218,15 @@ print(not b)
 %%| echo: false
 %%| fig-width: 10
 flowchart LR
-    start[/Inmatning\npoäng/]
-    condA{Över\nA-gräns?}
-    condC{Över\nC-gräns?}
-    condE{Över\nE-gräns?}
+    start[/Inmatning<br>poäng/]
+    condA{Över<br>A-gräns?}
+    condC{Över<br>C-gräns?}
+    condE{Över<br>E-gräns?}
     slut(Programmet avslutas)
-    F[/Skriv\n ut F/]
-    E[/Skriv\n ut E/]
-    C[/Skriv\n ut C/]
-    A[/Skriv\n ut A/]
+    F[/Skriv<br>ut F/]
+    E[/Skriv<br>ut E/]
+    C[/Skriv<br>ut C/]
+    A[/Skriv<br>ut A/]
     slut(Programmet\navslutas)
     start-->condA
     condA-->|Ja|A
@@ -277,23 +257,13 @@ print('Programmet avslutas')
 
 ## Exempel: Kategorisera talet
 
-```{mermaid}
-%%| echo: false
-flowchart LR
-start[/Inmatning\n av tal/]
-slut(Programmet\navslutas)
-condGeq0{"Tal ≥ 0?"}
-condNoll{"Är talet 0?"}
-neg[/Skriv ut\n negativt/]
-noll[/Skriv ut\n noll/]
-pos[/Skriv ut\n positivt/]
-start-->condGeq0
-condGeq0-->|Ja|condNoll
-condGeq0-->|Nej|neg-->slut
-condNoll-->|Ja|noll-->slut
-condNoll-->|Nej|pos-->slut
-```
 
+![](charts/chart4.svg)
+
+:::{}
+:::
+
+:::{.small-code}
 ```python
 tal = int(input('Ange valfritt heltal ->'))
 if tal >= 0:
@@ -306,3 +276,4 @@ else:
 
 print('Programmet avslutas')
 ```
+:::

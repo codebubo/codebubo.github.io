@@ -82,6 +82,8 @@ website:
 
 format:
   html:
+    filters:
+      - ./_extensions/font-size/font-size.lua
     theme: cosmo
     #theme: minty
     css: styles.css

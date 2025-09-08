@@ -1,0 +1,23 @@
+%% Byggs med mmdc -i chart1.mmd -o chart1.svg -t dark -b transparentfg
+%%{init: {
+    "flowchart": {
+        "curve": "linear"
+    },
+    "theme": "base",
+    "themeVariables": {
+        "primaryTextColor": "#FFFFFF",
+        "lineColor": "#FFFFFF",
+        "fontFamily": "Times New Roman, serif",
+        "primaryColor": "transparent",
+        "primaryBorderColor": "#FFFFFF",
+        "edgeLabelBackground": "#000000",
+        "labelTextColor": "#FFFFFF"
+    }
+}}%%
+flowchart LR
+    A((Start)) --> B("Tilldela<br>i = 1")
+    B --> C{"Är i ≤ 5?"}
+    C -->|Ja| D[/Skriv ut i/]
+    D --> G(Öka i med 1)
+    G --> C 
+    C -->|Nej| F((Avsluta))

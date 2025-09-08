@@ -5,7 +5,7 @@ title-slide-attributes:
   data-background-image: https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/for-loopar/frame-3083868_1280.png
   data-background-opacity: "1"
   data-background-color: "black"
-author: "Nikodemus Karlsson"
+author: ""
 format:
   revealjs:
     mermaid: 
@@ -47,6 +47,7 @@ En `for`-loop använder sig av en **lista** som loopas igenom.
 :::{.double-v-space}
 :::
 
+
 ```{python}
 # | echo: true
 lista = [10, 20, 30]
@@ -80,10 +81,13 @@ for i in range(3, 8):   # Här skapas listan
 
 Funktionen `range(3, 8)` skapar listan `[3, 4, 5, 6, 7]`
 
-Om det hade varit en `while`-loop som skulle snurra fem varav skulle ett
+Om det hade varit en `while`-loop som skulle snurra fem varv skulle ett
 villkor och en räknare behövt sättas upp.
 
 ## Funktionen `range`
+
+:::{.double-v-space}
+:::
 
 Exempel på hur parametrar påverkar resultatet av `range`
 
@@ -101,6 +105,10 @@ print(f"lista_D = {lista_D}")
 
 ## Exempel: Multiplikationstabell
 
+:::{.v-space}
+:::
+
+
 ```{python}
 #| echo: true
 # Detta program beräknar och skriver ut "tolvans tabell"
@@ -109,6 +117,9 @@ for i in range(1, 13):
 ```
 
 ## Andra listelement än tal
+
+:::{.double-v-space}
+:::
 
 En lista kan innehålla andra element än tal.
 
