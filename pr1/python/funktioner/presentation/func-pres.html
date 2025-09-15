@@ -9,7 +9,7 @@
 <link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.32">
 
-  <meta name="author" content="Nikodemus Karlsson">
+  <meta name="author" content="">
   <title>CodeBubo – Funktioner i Python</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -206,11 +206,6 @@
   <h1 class="title">Funktioner i Python</h1>
 
 <div class="quarto-title-authors">
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-Nikodemus Karlsson 
-</div>
-</div>
 </div>
 
 </section>
@@ -245,7 +240,7 @@ Nikodemus Karlsson
 <p>Exempel: En funktion som adderar två tal:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>tal_1 <span class="op">=</span> <span class="dv">10</span></span>
 <span id="cb1-2"><a></a>tal_2 <span class="op">=</span> <span class="dv">20</span></span>
-<span id="cb1-3"><a></a>summa <span class="op">=</span> add(tal_1, tal_2)</span>
+<span id="cb1-3"><a></a>summa <span class="op">=</span> add(tal_1, tal_2) <span class="co"># Här kommer programmet att ge ett felmeddelande!</span></span>
 <span id="cb1-4"><a></a><span class="bu">print</span>(<span class="ss">f"Summan av </span><span class="sc">{</span>tal_1<span class="sc">}</span><span class="ss"> och </span><span class="sc">{</span>tal_2<span class="sc">}</span><span class="ss"> är </span><span class="sc">{</span>summa<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="v-space">
 
@@ -258,7 +253,7 @@ Nikodemus Karlsson
 <div class="v-space">
 
 </div>
-<div id="d423040d" class="cell" data-execution_count="1">
+<div id="0cd1cb81" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="kw">def</span> add(a, b):     <span class="co"># Här</span></span>
 <span id="cb2-2"><a></a>  the_sum <span class="op">=</span> a <span class="op">+</span> b  <span class="co"># skapas</span></span>
 <span id="cb2-3"><a></a>  <span class="cf">return</span> the_sum   <span class="co"># funktionen</span></span>
@@ -308,7 +303,7 @@ Nikodemus Karlsson
 <section id="funktioners-returvärden" class="slide level2">
 <h2>Funktioners returvärden</h2>
 <p>Ibland saknas behov av <code>return</code>-värde.</p>
-<div id="3f1503e6" class="cell" data-execution_count="2">
+<div id="aeb4ed69" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="kw">def</span> print_multabell(n):</span>
 <span id="cb6-2"><a></a>  <span class="co"># Skriver ut fem rader i multiplikationstabell n</span></span>
 <span id="cb6-3"><a></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>):</span>
@@ -327,7 +322,7 @@ Nikodemus Karlsson
 </section>
 <section id="alla-funktioner-har-ett-returvärde" class="slide level2">
 <h2>Alla funktioner har ett returvärde</h2>
-<div id="e0ad47c6" class="cell" data-execution_count="3">
+<div id="cee98fd2" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="kw">def</span> print_multabell(n):</span>
 <span id="cb8-2"><a></a>  <span class="co"># Skriver ut fem rader i multiplikationstabell n</span></span>
 <span id="cb8-3"><a></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>):</span>
