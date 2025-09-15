@@ -69,7 +69,7 @@ katet_2 = 4
 hypotenusa = beräkna_hypotenusa(katet_1, katet_2)
 print("Denna utskrift sker från huvudprogrammet")
 print(f"Huvudprogrammet skickar argumenten {katet_1} och {katet_2} till funktionen")
-print(f"Funtkionen beräknar hypotenusans längd till {hypotenusa}")
+print(f"Funktionen beräknar hypotenusans längd till {hypotenusa}")
 ```
 :::
 

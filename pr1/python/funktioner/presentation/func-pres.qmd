@@ -5,7 +5,7 @@ title-slide-attributes:
   data-background-image: https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/funktioner/technology-3762546_1280.jpg
   data-background-opacity: "1"
   data-background-color: "black"
-author: "Nikodemus Karlsson"
+author: ""
 format:
   revealjs:
     mermaid: 
@@ -57,7 +57,7 @@ Exempel: En funktion som adderar två tal:
 ```python
 tal_1 = 10
 tal_2 = 20
-summa = add(tal_1, tal_2)
+summa = add(tal_1, tal_2) # Här kommer programmet att ge ett felmeddelande!
 print(f"Summan av {tal_1} och {tal_2} är {summa}")
 ```
 
