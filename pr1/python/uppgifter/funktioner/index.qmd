@@ -337,3 +337,41 @@ pröva om talet 29 är jämnt delbart med 2, 3, 4 och 5 för att avgöra om det
 är ett primtal (och det är det).
 
 Tänk på att $\sqrt{x}=x^{0.5}$. Det skrivs i Python som `x**0.5`.
+
+### Uppgift 8
+
+Differenskvoten av en matematisk funktion tecknas enligt
+$\frac{f(x+h)-f(x)}{h}$, där $h$ ofta är ett tal i närheten av noll.
+
+Skriv en funktion `diff(x, h)` som returnerar differenskvoten för den
+matematiska funktionen $y=2x^3 - 5x^2+8x-1$ för givna värden på `x` och `h`.
+
+Använd sedan funktionen i ett program som gör en tabell över värden på
+differenskvoten för ett givet värde på `x` och olika värden på `h`.
+Utmatningen av en körning kan se ut enligt nedan:
+
+:::{.callout-note appearance="minimal"}
+
+```{python}
+#| echo: false
+def diff(x, h):
+    term_1 = 2*(x+h)**3 - 5*(x+h)**2 + 8*(x+h) - 1
+    term_2 = 2*x**3 - 5*x**2 + 8*x - 1
+    ret_val = (term_1 - term_2) / h
+    return ret_val
+
+print("x".rjust(3), end="")
+print("h".rjust(13), end="")
+print("Differenskvot".rjust(23), end="\n")
+print(40*"-")
+h = 0.1 # Initial value of h
+k = 0 # Counter for adjustment in table
+x = 2 # Current value of x
+while h > 0.00001:
+    diffkvot = diff(x, h)
+    print(f"{x:.1f}".rjust(4), end="")
+    print(f"{h}".rjust(13 + k), end="")
+    print(f"{diffkvot:.3f}".rjust(18 - k))
+    h /= 10
+    k += 1
+```
