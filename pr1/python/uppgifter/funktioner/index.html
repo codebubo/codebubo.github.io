@@ -518,6 +518,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#uppgift-6" id="toc-uppgift-6" class="nav-link" data-scroll-target="#uppgift-6">Uppgift 6</a></li>
   <li><a href="#uppgift-7" id="toc-uppgift-7" class="nav-link" data-scroll-target="#uppgift-7">Uppgift 7</a></li>
+  <li><a href="#uppgift-8" id="toc-uppgift-8" class="nav-link" data-scroll-target="#uppgift-8">Uppgift 8</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -560,7 +561,7 @@ window.Quarto = {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<div id="c0e4dfbf" class="cell" data-execution_count="1">
+<div id="8c46a04c" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-stdout">
 <pre><code>Denna utskrift sker från funktionen print_hypotenusa
 Funktionen tog emot parametrarna 3 och 4
@@ -603,7 +604,7 @@ Lösningsförslag uppgift 1
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<div id="6a0adf73" class="cell" data-execution_count="2">
+<div id="e6b85b70" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-stdout">
 <pre><code>Denna utskrift sker från huvudprogrammet
 Huvudprogrammet skickar argumenten 3 och 4 till funktionen
@@ -865,8 +866,33 @@ Lösningsförslag uppgift 5
 <p>Jämn delbarhet kan testas med <strong>modulo-operatorn</strong>, <code>%</code>. T ex gäller att talet <code>12</code> är jämnt delbart med <code>4</code>, varför uttrycket <code>12 % 4</code> antar värdet <code>0</code>. Talet <code>13</code> är inte jämnt delbart med <code>4</code>, varför uttrycket <code>13 % 4</code> får ett annat värde än noll (i nuläget spelar det inte någon roll vilket annat värde, testa enbart på noll och nollskilda värden).</p>
 <p>Jämn delbarhet behöver också enbart testas upp till kvadratroten ur talet ifråga. T ex så gäller att <span class="math inline">\(\sqrt{29}\approx 5.38\)</span>, varför det räcker med att pröva om talet 29 är jämnt delbart med 2, 3, 4 och 5 för att avgöra om det är ett primtal (och det är det).</p>
 <p>Tänk på att <span class="math inline">\(\sqrt{x}=x^{0.5}\)</span>. Det skrivs i Python som <code>x**0.5</code>.</p>
+</section>
+<section id="uppgift-8" class="level3">
+<h3 class="anchored" data-anchor-id="uppgift-8">Uppgift 8</h3>
+<p>Differenskvoten av en matematisk funktion tecknas enligt <span class="math inline">\(\frac{f(x+h)-f(x)}{h}\)</span>, där <span class="math inline">\(h\)</span> ofta är ett tal i närheten av noll.</p>
+<p>Skriv en funktion <code>diff(x, h)</code> som returnerar differenskvoten för den matematiska funktionen <span class="math inline">\(y=2x^3 - 5x^2+8x-1\)</span> för givna värden på <code>x</code> och <code>h</code>.</p>
+<p>Använd sedan funktionen i ett program som gör en tabell över värden på differenskvoten för ett givet värde på <code>x</code> och olika värden på <code>h</code>. Utmatningen av en körning kan se ut enligt nedan:</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="b1308f73" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-stdout">
+<pre><code>  x            h          Differenskvot
+----------------------------------------
+ 2.0          0.1            12.720
+ 2.0          0.01           12.070
+ 2.0          0.001          12.007
+ 2.0          0.0001         12.001</code></pre>
+</div>
+</div>
 
 
+</div>
+</div>
+</div>
 </section>
 </section>
 </section>
