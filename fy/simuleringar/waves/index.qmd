@@ -35,7 +35,9 @@ sig upp och ner.
 
 ### Gående longitudinella vågor
 
-<script src="long.js"></script>
+Under konstruktion.
+
+<!-- <script src="long.js"></script> -->
 
 ::: {.sketch-container}
 <div class="sketch-holder" id="sketch-holder-2"></div>
