@@ -5,7 +5,7 @@ title-slide-attributes:
   data-background-image: https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/listor/pattern-3177396_1280.png
   data-background-opacity: "1"
   data-background-color: "black"
-author: "Nikodemus Karlsson"
+author: ""
 format:
   revealjs:
     mermaid: 
