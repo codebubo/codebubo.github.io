@@ -1,9 +1,0 @@
----
-title: "Font-size Example"
----
-
-## Heading
-
-{{< font-size >}}
-
-
