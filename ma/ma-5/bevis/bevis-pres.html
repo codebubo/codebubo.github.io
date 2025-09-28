@@ -235,16 +235,98 @@
 <p><strong>Exempel</strong>: Produkten av ett jämnt tal och ett udda tal är alltid ett jämnt tal (visa det!). Gäller det att varje jämnt tal kan skrivas som en produkt av ett jämnt och ett udda tal?</p>
 <p>Nej, visserligen så vet vi t ex att <span class="math inline">\(12=3\cdot 4\)</span>, men även att <span class="math inline">\(16=2\cdot 8\)</span>. Detta motsäger påståendet att varje jämnt tal är en produkt av ett jämnt och ett udda tal.</p>
 </section>
-<section id="slutnot" class="slide level2">
-<h2>Slutnot</h2>
+<section id="indirekta-bevismetoder" class="slide level2">
+<h2>Indirekta bevismetoder</h2>
+<p>De indirekta bevismetoderna omfattar <strong>motsägelsebevis</strong> och <strong>bevis med kontrapositiv metod</strong></p>
+<p>Det finns ett antal klassiska bevis som använder indirekta metoder, t ex för att visa</p>
 <ul>
-<li><p>Utgå aldrig från att det som ska visas gäller! Försök istället att med logik och räkneregler gå från påståendet till slutmålet.</p></li>
-<li><p>Det kan vara tålamodskrävande att genomföra ett korrekt bevis. Man kanske inte omedelbart ser någon angreppsmetod, men övning ger färdighet!</p></li>
-<li><p>Ett bevis avslutas lämpligen med V.S.B, V.S.V eller Q.E.D.</p></li>
+<li>att <span class="math inline">\(\sqrt 2\)</span> är irrationellt,</li>
+<li>att det finns oändligt många primtal,</li>
+<li>att ekvationen <span class="math inline">\(x^2+1=0\)</span> saknar rationella lösningar.</li>
 </ul>
-
-
+<p>Några viktiga begrepp är innebörden av <strong>implikation</strong> samt vad <strong>negation</strong> av utsagor betyder.</p>
 </section>
+<section id="implikation" class="slide level2">
+<h2>Implikation</h2>
+<p>Innebörd av <span class="math inline">\(P\Rightarrow Q\)</span></p>
+<ul>
+<li>Om <span class="math inline">\(P\)</span> är sant så måste också <span class="math inline">\(Q\)</span> vara sant.</li>
+<li>Det är nödvändigt att <span class="math inline">\(Q\)</span> gäller om <span class="math inline">\(P\)</span> gäller.</li>
+</ul>
+<p><strong>Exempel</strong></p>
+<ul>
+<li>Det regnar <span class="math inline">\(\Rightarrow\)</span> Jag tar paraplyet.</li>
+<li><span class="math inline">\(x=2 \Rightarrow x-2 = 0\)</span> (även det omvända gäller, <span class="math inline">\(\Leftarrow\)</span>).</li>
+<li><span class="math inline">\(x=2 \Rightarrow x^2=4\)</span> (dock gäller inte det omvända).</li>
+<li><span class="math inline">\(1+1=3 \Rightarrow\)</span> Månen är en gul ost.</li>
+</ul>
+</section>
+<section id="negationer-av-utsagor" class="slide level2">
+<h2>Negationer av utsagor</h2>
+<div class="double-v-space">
+
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="math inline">\(P\)</span>: Det regnar.</p>
+<p><span class="math inline">\(P\)</span>: <span class="math inline">\(1+1=2\)</span>.</p>
+<p><span class="math inline">\(P\)</span>: Vissa elever läser Ma5.</p>
+<p><span class="math inline">\(P\)</span>: Alla fåglar kan flyga.</p>
+</div><div class="column" style="width:50%;">
+<p><span class="math inline">\(\neg P\)</span>: Det regnar inte.</p>
+<p><span class="math inline">\(\neg P\)</span>: <span class="math inline">\(1+1\neq 2\)</span>.</p>
+<p><span class="math inline">\(\neg P\)</span>: Inga elever läser Ma5.</p>
+<p><span class="math inline">\(\neg P\)</span>: Det finns minst en fågel som inte kan flyga.</p>
+</div></div>
+</section>
+<section id="motsägelsebevis" class="slide level2">
+<h2>Motsägelsebevis</h2>
+<p>Om <span class="math inline">\(P\Rightarrow Q\)</span> ska visas kan motsatsen till <span class="math inline">\(Q\)</span> antas. Om det leder till en motsägelse så måste <span class="math inline">\(Q\)</span> gälla.</p>
+<p><strong>Exempel</strong></p>
+<p><span class="math inline">\(P\)</span>: <span class="math inline">\(n^2\)</span> udda.</p>
+<p><span class="math inline">\(Q\)</span>: <span class="math inline">\(n\)</span> udda.</p>
+<p>Visa <span class="math inline">\(P\Rightarrow Q\)</span> med motsägelsebevis.</p>
+<p>Anta att <span class="math inline">\(P\)</span> gäller men inte <span class="math inline">\(Q\)</span>, dvs <span class="math inline">\(n^2\)</span> udda och <span class="math inline">\(n=2k\)</span> (jämn). Då blir <span class="math inline">\(n^2=4k^2\)</span>, vilket är jämnt och motsäger <span class="math inline">\(P\)</span>.</p>
+<p>Alltså är <span class="math inline">\(P\Rightarrow Q\)</span> sant.</p>
+</section>
+<section id="kontrapositiv-bevismetod" class="slide level2">
+<h2>Kontrapositiv bevismetod</h2>
+<div class="double-v-space">
+
+</div>
+<p>Om <span class="math inline">\(P\Rightarrow Q\)</span> så gäller <span class="math inline">\(\neg Q \Rightarrow \neg P\)</span></p>
+<p><strong>Exempel</strong>:</p>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><span class="math inline">\(P\)</span>: Det regnar.</p>
+<p><span class="math inline">\(Q\)</span>: Marken är våt</p>
+</div><div class="column" style="width:70%;">
+<p><span class="math inline">\(\neg P\)</span>: Det regnar inte.</p>
+<p><span class="math inline">\(\neg Q\)</span>: Marken är inte våt.</p>
+</div></div>
+<p>Om <span class="math inline">\(P\Rightarrow Q\)</span> så är det ekvivalent med <span class="math inline">\(\neg Q\Rightarrow\neg P\)</span></p>
+<p>dvs “Marken är inte våt” leder till att “Det regnar inte”.</p>
+</section>
+<section id="ex.-med-kontrapositiv-metod" class="slide level2">
+<h2>Ex. med kontrapositiv metod</h2>
+<p><strong>Påstående</strong>: Om <span class="math inline">\(4n+1\)</span> är jämnt, så är <span class="math inline">\(n\)</span> jämn.</p>
+<p><strong>Kontrapositiv</strong>: Om <span class="math inline">\(n\)</span> är udda, så är <span class="math inline">\(4n+1\)</span> udda.</p>
+<div class="columns">
+<div class="column" style="width:35%;">
+<p><span class="math inline">\(P\)</span>: <span class="math inline">\(4n+1\)</span> jämn.</p>
+<p><span class="math inline">\(Q\)</span>: <span class="math inline">\(n\)</span> jämn.</p>
+</div><div class="column" style="width:65%;">
+<p><span class="math inline">\(\neg P\)</span>: <span class="math inline">\(4n+1\)</span> udda.</p>
+<p><span class="math inline">\(\neg Q\)</span>: <span class="math inline">\(n\)</span> udda.</p>
+</div></div>
+<p><strong>Bevisa</strong> <span class="math inline">\(P\Rightarrow Q\)</span> medelst <span class="math inline">\(\neg Q \Rightarrow \neg P\)</span> (kontrapositiv metod).</p>
+<ul>
+<li>Anta att <span class="math inline">\(n\)</span> är udda: <span class="math inline">\(n=2k+1\)</span>.</li>
+<li><span class="math inline">\(4n+1=4(2k+1)+1=2(4k+2)+1\)</span> (udda).</li>
+<li>Så: om <span class="math inline">\(n\)</span> är udda så är <span class="math inline">\(4n+1\)</span> udda. Alltså är <span class="math inline">\(P\Rightarrow Q\)</span> sant.</li>
+</ul>
+</section>
+
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
