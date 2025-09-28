@@ -123,7 +123,145 @@ Nej, visserligen så vet vi t ex att $12=3\cdot 4$, men även att $16=2\cdot 8$.
 Detta motsäger påståendet att varje jämnt tal är en produkt av ett jämnt och
 ett udda tal.
 
-## Slutnot
+## Indirekta bevismetoder
+
+De indirekta bevismetoderna omfattar **motsägelsebevis** och **bevis med
+kontrapositiv metod**
+
+Det finns ett antal klassiska bevis som använder indirekta metoder, t ex för att
+visa
+
+  * att $\sqrt 2$ är irrationellt,
+  * att det finns oändligt många primtal,
+  * att ekvationen $x^2+1=0$ saknar rationella lösningar.
+
+Några viktiga begrepp är innebörden av **implikation** samt vad **negation** av
+utsagor betyder.
+
+## Implikation
+
+Innebörd av $P\Rightarrow Q$
+
+  * Om $P$ är sant så måste också $Q$ vara sant.
+  * Det är nödvändigt att $Q$ gäller om $P$ gäller.
+
+**Exempel**
+
+  * Det regnar $\Rightarrow$ Jag tar paraplyet.
+  * $x=2 \Rightarrow x-2 = 0$ (även det omvända gäller, $\Leftarrow$).
+  * $x=2 \Rightarrow x^2=4$ (dock gäller inte det omvända).
+  * $1+1=3 \Rightarrow$ Månen är en gul ost.
+
+## Negationer av utsagor
+
+:::{.double-v-space}
+:::
+
+:::: {.columns}
+
+:::{.column width="50%"}
+$P$: Det regnar.
+
+$P$: $1+1=2$.
+
+$P$: Vissa elever läser Ma5.
+
+$P$: Alla fåglar kan flyga.
+:::
+
+:::{.column width="50%"}
+$\neg P$: Det regnar inte.
+
+$\neg P$: $1+1\neq 2$.
+
+$\neg P$: Inga elever läser Ma5.
+
+$\neg P$: Det finns minst en fågel som inte kan flyga.
+:::
+
+::::
+
+## Motsägelsebevis
+
+Om $P\Rightarrow Q$ ska visas kan motsatsen till $Q$ antas. Om det leder till
+en motsägelse så måste $Q$ gälla.
+
+
+**Exempel**
+
+$P$: $n^2$ udda.
+
+$Q$: $n$ udda.
+
+Visa $P\Rightarrow Q$ med motsägelsebevis.
+
+Anta att $P$ gäller men inte $Q$, dvs $n^2$ udda och $n=2k$ (jämn).
+Då blir $n^2=4k^2$, vilket är jämnt och motsäger $P$.
+
+Alltså är $P\Rightarrow Q$ sant.
+
+
+## Kontrapositiv bevismetod
+
+:::{.double-v-space}
+:::
+
+Om $P\Rightarrow Q$ så gäller $\neg Q \Rightarrow \neg P$
+
+
+**Exempel**:
+
+::::{.columns}
+
+:::{.column width="30%"}
+$P$: Det regnar.
+
+$Q$: Marken är våt
+:::
+
+:::{.column width="70%"}
+$\neg P$: Det regnar inte.
+
+$\neg Q$: Marken är inte våt.
+:::
+
+::::
+
+Om $P\Rightarrow Q$ så är det ekvivalent med $\neg Q\Rightarrow\neg P$
+
+dvs
+"Marken är inte våt" leder till att "Det regnar inte".
+
+##  Ex. med kontrapositiv metod
+
+**Påstående**: Om $4n+1$ är jämnt, så är $n$ jämn.
+
+**Kontrapositiv**: Om $n$ är udda, så är $4n+1$ udda.
+
+:::: {.columns}
+
+::: {.column width="35%"}
+$P$: $4n+1$ jämn.
+
+$Q$: $n$ jämn. 
+:::
+
+:::{.column width="65%"}
+$\neg P$: $4n+1$ udda.
+
+$\neg Q$: $n$ udda.
+:::
+
+::::
+
+**Bevisa** $P\Rightarrow Q$ medelst $\neg Q \Rightarrow \neg P$
+(kontrapositiv metod).
+
+  * Anta att $n$ är udda: $n=2k+1$.
+  * $4n+1=4(2k+1)+1=2(4k+2)+1$ (udda).
+  * Så: om $n$ är udda så är $4n+1$ udda. Alltså är $P\Rightarrow Q$ sant.
+
+## Slutnot {visibility="hidden"}
 
 * Utgå aldrig från att det som ska visas gäller! Försök istället att med logik
 och räkneregler gå från påståendet till slutmålet.
