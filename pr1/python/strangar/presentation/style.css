@@ -32,7 +32,7 @@
   bottom: 0.25em;
   left: 0.25em;
   color: grey;
-  content: "Pr1, TE22C + Ind.val";
+  content: "Pr1, NIKA-25/26";
 }
 
 .smaller-font {
@@ -41,7 +41,6 @@
 
 .navigate-right .controls-arrow {
   font-size: 20px;
-  color: white;
 }
 
 .controls button {
@@ -61,7 +60,7 @@
 
 .slides .title {
   font-size: 96px;
-  color: #FFFFFF;
+  color: rgb(255, 255, 255);
   font-family: Fredoka;
   text-transform: uppercase;
 }
@@ -76,7 +75,6 @@
 .quarto-title-author-name {
   font-size: 60px;
   color: rgb(28, 22, 222);
-  color: #FF0000;
   font-family: Fredoka;
   text-transform: uppercase;
 }
@@ -97,3 +95,18 @@
   font-size: 10px;
   color: red;
 }
+
+.small-code .sourceCode pre code {
+    font-size: 0.55em;
+}
+
+ .cell-output-stdout pre, .cell-output-stdout pre code {
+    background-color: #4a4a4a; /* Gul bakgrund */
+    color: #e0e0e0; /* Svart text */
+    padding: 4px; /* Valfri padding för bättre utseende */
+    border-radius: 4px; /* Valfri rundning av kanter */
+    font-size: 0.65em;
+    margin-top: 0.8em;
+    width: 99%;
+} 
+
