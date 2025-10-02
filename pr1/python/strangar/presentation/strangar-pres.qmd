@@ -2,10 +2,10 @@
 title: Strängar i Python
 from: markdown+emoji
 title-slide-attributes:
-  data-background-image: https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/listor/pattern-3177396_1280.png
+  data-background-image: ./background-1086840_1280.png
   data-background-opacity: "1"
   data-background-color: "black"
-author: "Nikodemus Karlsson"
+  author: ""
 format:
   revealjs:
     mermaid: 
@@ -52,8 +52,8 @@ index, som gör att det kan adresseras.
 ```python
 my_string = "Hello, world"
 ```
-Texten `Hello, world` kallas för en *strängkonstant* eller *strängliteral*.
-Denna strängkonstant måste vara given inom citationstecken.
+Texten `"Hello, world"` kallas för en *strängkonstant* eller *strängliteral*.
+Denna strängkonstant måste vara given med citationstecken.
 
 ## Strängar jämfört med listor
 
@@ -112,7 +112,7 @@ for char in chars:
 ```
 
 
-## Skapa en ny sträng utifrån ett original
+## Bygg ny sträng från original
 
 Exempel: skriva ut vokalerna i en sträng.
 
@@ -142,7 +142,7 @@ alfanumeriska tecken blir gemener ("små bokstäver").
 Fler exempel på användbara strängmetoder finns på
 [detta "cheat sheet"](../../cheat_sheet_python.html#strängar-och-strängmetoder).
 
-## Fejka förändring
+## Modifiering genom tilldelning
 
 Strängmetoder förändrar inte strängen.
 
