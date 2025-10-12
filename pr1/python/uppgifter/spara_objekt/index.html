@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -67,14 +67,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../../../../">
 <script src="../../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../../site_libs/bootstrap/bootstrap-c9b8a734d4e2728b376c5c7df1b58788.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../../site_libs/bootstrap/bootstrap-0dbb5278e3a55edda07080799b0b306e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -123,6 +124,8 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../../../../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="../../../../index.html">
     <span class="navbar-title">CodeBubo</span>
     </a>
@@ -134,7 +137,7 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../../index.html"> 
+    <a class="nav-link active" href="../../../../index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -162,6 +165,10 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../../../../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -505,8 +512,8 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
 <section id="kodexempel" class="level2">
 <h2 class="anchored" data-anchor-id="kodexempel">Kodexempel</h2>
 <p>Nedanstående kodexempel visar hur objekt kan sparas till fil, ändras på filen och läsas in från filen i programmet igen.</p>
-<div id="0ef76eff" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> json</span>
+<div id="1eae2142" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> json</span>
 <span id="cb1-2"><a href="#cb1-2"></a>FILENAME <span class="op">=</span> <span class="st">"saved_avatars.json"</span></span>
 <span id="cb1-3"><a href="#cb1-3"></a></span>
 <span id="cb1-4"><a href="#cb1-4"></a><span class="co"># Detta program kommer att läsa in några objekt av en egendefinierad datatyp i</span></span>
@@ -580,10 +587,10 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
 <span id="cb1-72"><a href="#cb1-72"></a><span class="bu">print</span>(<span class="st">"Denna data har nu laddats i programmet:"</span>)</span>
 <span id="cb1-73"><a href="#cb1-73"></a><span class="cf">for</span> avatar <span class="kw">in</span> avatars:</span>
 <span id="cb1-74"><a href="#cb1-74"></a>    <span class="bu">print</span>(<span class="ss">f"Namn: </span><span class="sc">{</span>avatar<span class="sc">.</span>name<span class="sc">}</span><span class="ss">. Styrka: </span><span class="sc">{</span>avatar<span class="sc">.</span>strength<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb1-75"><a href="#cb1-75"></a><span class="bu">print</span>(<span class="st">"(Denna data går att hantera i programmet, t ex utföra beräkningar)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-75"><a href="#cb1-75"></a><span class="bu">print</span>(<span class="st">"(Denna data går att hantera i programmet, t ex utföra beräkningar)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Objekten representeras så här:
-[&lt;__main__.Avatar object at 0x110537620&gt;, &lt;__main__.Avatar object at 0x1108934d0&gt;, &lt;__main__.Avatar object at 0x110893610&gt;]
+[&lt;__main__.Avatar object at 0x10c45b620&gt;, &lt;__main__.Avatar object at 0x10c7b74d0&gt;, &lt;__main__.Avatar object at 0x10c7b7610&gt;]
 (De är som synes ej läsbara för människor)
 
 De serialiserade objekten representeras så här:
@@ -670,13 +677,14 @@ Namn: Mistwalker. Styrka: 2
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

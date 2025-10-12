@@ -6,8 +6,8 @@
 <script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.25">
 
   <meta name="author" content="Nikodemus Karlsson">
   <title>CodeBubo – Spara data till fil i Python</title>
@@ -95,7 +95,7 @@
     code span.vs { color: #abe338; } /* VerbatimString */
     code span.wa { color: #dcc6e0; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/theme/quarto-091ebfb71d12db7fc524ec91495e1509.css">
+  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/theme/quarto-327cab17de08e4a17faa7d61f48ae591.css">
   <link rel="stylesheet" href="style.css">
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FFXVNM3K2N"></script>
 
@@ -232,7 +232,7 @@ Nikodemus Karlsson
     "stad": "Stockholm"
 }</code></pre>
 <p>För att använda <code>JSON</code> i Python behövs importeras en modul:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="im">import</span> json</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="im">import</span> json</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="skapa-en-egen-datatyp" class="slide level2">
 <h2>Skapa en egen datatyp</h2>
@@ -240,20 +240,20 @@ Nikodemus Karlsson
 
 </div>
 <p>Vi kan deklarera en variabeltyp <code>Car</code> på det här sättet:</p>
-<div id="5620e658" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="kw">class</span> Car:</span>
+<div id="4e006143" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="kw">class</span> Car:</span>
 <span id="cb3-2"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, brand, price, mileage):</span>
 <span id="cb3-3"><a></a>        <span class="va">self</span>.brand <span class="op">=</span> brand</span>
 <span id="cb3-4"><a></a>        <span class="va">self</span>.price <span class="op">=</span> price</span>
-<span id="cb3-5"><a></a>        <span class="va">self</span>.mileage <span class="op">=</span> mileage</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-5"><a></a>        <span class="va">self</span>.mileage <span class="op">=</span> mileage</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="v-space">
 
 </div>
 <p><em>Instanser</em> av denna datatyp kan skapas enligt</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>car1 <span class="op">=</span> Car(<span class="st">"Volvo"</span>, <span class="dv">200000</span>, <span class="dv">10000</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>car1 <span class="op">=</span> Car(<span class="st">"Volvo"</span>, <span class="dv">200000</span>, <span class="dv">10000</span>)</span>
 <span id="cb4-2"><a></a>car2 <span class="op">=</span> Car(<span class="st">"BMW"</span>, <span class="dv">300000</span>, <span class="dv">5000</span>)</span>
-<span id="cb4-3"><a></a>cars <span class="op">=</span> [car1, car2]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-3"><a></a>cars <span class="op">=</span> [car1, car2]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="konvertera-instanserna-till-json" class="slide level2">
 <h2>Konvertera instanserna till JSON</h2>
@@ -261,7 +261,7 @@ Nikodemus Karlsson
 <li>JSON kan inte direkt hantera Python-objekt, så vi behöver konvertera våra objekt till en Python-datatypes som JSON kan serialisera, som en dict.</li>
 <li>Använda <code>__dict__</code> för att konvertera objekt till dict.</li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>cars_dict <span class="op">=</span> [car.__dict__ <span class="cf">for</span> car <span class="kw">in</span> cars]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>cars_dict <span class="op">=</span> [car.__dict__ <span class="cf">for</span> car <span class="kw">in</span> cars]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Detta sätt att skapa en lista på kallas för <em>listomfattning</em> eller <em>list comprehension</em>. <code>cars_dict</code> är alltså en lista.</p>
 </section>
 <section id="instansen-på-fil" class="slide level2">
@@ -270,14 +270,14 @@ Nikodemus Karlsson
 
 </div>
 <p>Vi använder <code>json.dump()</code> för att spara till fil:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'cars.json'</span>, <span class="st">'w'</span>) <span class="im">as</span> f:</span>
-<span id="cb6-2"><a></a>    json.dump(cars_dict, f)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'cars.json'</span>, <span class="st">'w'</span>) <span class="im">as</span> f:</span>
+<span id="cb6-2"><a></a>    json.dump(cars_dict, f)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="double-v-space">
 
 </div>
 <p>Vi använder <code>json.load()</code> för att läsa från fil:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'cars.json'</span>, <span class="st">'r'</span>) <span class="im">as</span> f:</span>
-<span id="cb7-2"><a></a>    loaded_cars_dict <span class="op">=</span> json.load(f)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'cars.json'</span>, <span class="st">'r'</span>) <span class="im">as</span> f:</span>
+<span id="cb7-2"><a></a>    loaded_cars_dict <span class="op">=</span> json.load(f)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="konvertera-tillbaka-till-objekt" class="slide level2">
 <h2>Konvertera tillbaka till objekt</h2>
@@ -285,12 +285,12 @@ Nikodemus Karlsson
 
 </div>
 <p>Konvertera <code>dict</code> tillbaka till <code>Car</code>-objekt.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a>loaded_cars <span class="op">=</span> [Car(<span class="op">**</span>car_dict) <span class="cf">for</span> car_dict <span class="kw">in</span> loaded_cars_dict]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a>loaded_cars <span class="op">=</span> [Car(<span class="op">**</span>car_dict) <span class="cf">for</span> car_dict <span class="kw">in</span> loaded_cars_dict]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="double-v-space">
 
 </div>
 <p>Nu innehåller listan de båda bilarna; t ex det första objektets bilmärke är</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>loaded_cars[<span class="dv">0</span>].brand <span class="co"># Volvo</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>loaded_cars[<span class="dv">0</span>].brand <span class="co"># Volvo</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="sammanfattning" class="slide level2">
 <h2>Sammanfattning</h2>
@@ -494,7 +494,7 @@ Nikodemus Karlsson
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -568,13 +568,14 @@ Nikodemus Karlsson
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

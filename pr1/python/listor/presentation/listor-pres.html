@@ -6,8 +6,8 @@
 <script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.25">
 
   <meta name="author" content="">
   <title>CodeBubo – Listor i Python</title>
@@ -95,7 +95,7 @@
     code span.vs { color: #abe338; } /* VerbatimString */
     code span.wa { color: #dcc6e0; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/theme/quarto-091ebfb71d12db7fc524ec91495e1509.css">
+  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/theme/quarto-327cab17de08e4a17faa7d61f48ae591.css">
   <link rel="stylesheet" href="style.css">
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FFXVNM3K2N"></script>
 
@@ -241,15 +241,15 @@ Indexnr.     0    1    2   3   4     &lt;- Ett index är ett ordningstal</code><
 
 </div>
 <p>Variabeldeklaration:</p>
-<div id="48a50264" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>temperaturer <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">7</span>] <span class="co"># EN variabel för FEM temperaturer</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="0ddf97f8" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>temperaturer <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">7</span>] <span class="co"># EN variabel för FEM temperaturer</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="v-space">
 
 </div>
-<div id="4c9ff6e0" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="bu">print</span>(temperaturer[<span class="dv">0</span>]) <span class="co"># Skriver ut innehållet av index 0</span></span>
-<span id="cb3-2"><a></a><span class="bu">print</span>(temperaturer[<span class="dv">4</span>]) <span class="co"># Skriver ut innehållet av index 4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="ac78dacf" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="bu">print</span>(temperaturer[<span class="dv">0</span>]) <span class="co"># Skriver ut innehållet av index 0</span></span>
+<span id="cb3-2"><a></a><span class="bu">print</span>(temperaturer[<span class="dv">4</span>]) <span class="co"># Skriver ut innehållet av index 4</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>10
 7</code></pre>
@@ -270,13 +270,13 @@ Indexnr.     0    1    2   3   4     &lt;- Ett index är ett ordningstal</code><
 
 </div>
 <p>Om du vet vilka värden som ska vara med från början:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource oython number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a></a>min_lista = [10, -2, 6, 3]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource oython number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a></a>min_lista = [10, -2, 6, 3]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="v-space">
 
 </div>
 <p>Om du behöver lägga till värden i efterhand:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>scores <span class="op">=</span> []       <span class="co"># Skapar en tom lista</span></span>
-<span id="cb6-2"><a></a>scores.append(<span class="dv">42</span>) <span class="co"># Lägger till talet 42 i den från början tomma listan</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>scores <span class="op">=</span> []       <span class="co"># Skapar en tom lista</span></span>
+<span id="cb6-2"><a></a>scores.append(<span class="dv">42</span>) <span class="co"># Lägger till talet 42 i den från början tomma listan</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="v-space">
 
 </div>
@@ -291,9 +291,9 @@ Indexnr.     0    1    2   3   4     &lt;- Ett index är ett ordningstal</code><
 <div class="v-space">
 
 </div>
-<div id="56f56bd4" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>lst <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="op">-</span><span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">3</span>))</span>
-<span id="cb7-2"><a></a><span class="bu">print</span>(lst)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="1d162fa7" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>lst <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="op">-</span><span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">3</span>))</span>
+<span id="cb7-2"><a></a><span class="bu">print</span>(lst)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[-4, -1, 2, 5]</code></pre>
 </div>
@@ -309,13 +309,13 @@ Indexnr.     0    1    2   3   4     &lt;- Ett index är ett ordningstal</code><
 <div class="v-space">
 
 </div>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>items <span class="op">=</span> [<span class="st">"Klocka"</span>, <span class="st">"Kikare"</span>, <span class="st">"Termometer"</span>]</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>items <span class="op">=</span> [<span class="st">"Klocka"</span>, <span class="st">"Kikare"</span>, <span class="st">"Termometer"</span>]</span>
 <span id="cb9-2"><a></a><span class="cf">for</span> item <span class="kw">in</span> items:</span>
 <span id="cb9-3"><a></a>    <span class="cf">if</span> item.is_boostable:</span>
 <span id="cb9-4"><a></a>      item.boost()</span>
 <span id="cb9-5"><a></a>      <span class="bu">print</span>(<span class="ss">f"Din </span><span class="sc">{</span>item<span class="sc">}</span><span class="ss"> är nu boostad ✅"</span>)</span>
 <span id="cb9-6"><a></a>    <span class="cf">else</span>:</span>
-<span id="cb9-7"><a></a>      <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>item<span class="sc">}</span><span class="ss"> gick inte att boosta ❌"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-7"><a></a>      <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>item<span class="sc">}</span><span class="ss"> gick inte att boosta ❌"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="listors-funktioner-och-metoder" class="slide level2">
 <h2>Listors funktioner och metoder</h2>
@@ -523,7 +523,7 @@ Indexnr.     0    1    2   3   4     &lt;- Ett index är ett ordningstal</code><
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -597,13 +597,14 @@ Indexnr.     0    1    2   3   4     &lt;- Ett index är ett ordningstal</code><
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

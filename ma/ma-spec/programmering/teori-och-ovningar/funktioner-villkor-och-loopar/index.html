@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -67,14 +67,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../../../../../">
 <script src="../../../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../../../site_libs/bootstrap/bootstrap-c9b8a734d4e2728b376c5c7df1b58788.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../../../site_libs/bootstrap/bootstrap-0dbb5278e3a55edda07080799b0b306e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -125,7 +126,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -152,6 +153,8 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../../../../../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="../../../../../index.html">
     <span class="navbar-title">CodeBubo</span>
     </a>
@@ -163,7 +166,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../../../index.html"> 
+    <a class="nav-link active" href="../../../../../index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -191,6 +194,10 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../../../../../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -555,22 +562,22 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="övning-201">Övning 201</h3>
 <p>Skapa en anonym funktion som adderar två tal med varandra och returnerar resultatet. Funktionen ska ges handtaget <code>add</code>.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 201">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Lösningsförslag övning 201
+<span class="screen-reader-only">Tip</span>Lösningsförslag övning 201
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Övningen kan antingen göras i <em>Command Window</em> eller genom att skapa en fil i Octave.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode octave code-with-copy"><code class="sourceCode octave"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Koden sparas under valfritt filnamn</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode octave code-with-copy"><code class="sourceCode octave"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Koden sparas under valfritt filnamn</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>add <span class="op">=</span> @(a<span class="op">,</span> b) a <span class="op">+</span> b<span class="op">;</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>add(<span class="fl">2</span><span class="op">,</span> <span class="fl">3</span>) <span class="co"># Skriver ut 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>add(<span class="fl">2</span><span class="op">,</span> <span class="fl">3</span>) <span class="co"># Skriver ut 5</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -582,21 +589,21 @@ Lösningsförslag övning 201
 <pre><code>octave:1&gt; elementmul([1 2 3], [4 5 6])
 ans = 4 10 18</code></pre>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 202">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Lösningsförslag övning 202
+<span class="screen-reader-only">Tip</span>Lösningsförslag övning 202
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb3"><pre class="sourceCode octave code-with-copy"><code class="sourceCode octave"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Koden sparas under valfritt filnamn</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode octave code-with-copy"><code class="sourceCode octave"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Koden sparas under valfritt filnamn</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>elementmul <span class="op">=</span> @(u<span class="op">,</span> v) u <span class="op">.*</span> v<span class="op">;</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>elementmul([<span class="fl">1</span> <span class="fl">2</span> <span class="fl">3</span>]<span class="op">,</span> [<span class="fl">4</span> <span class="fl">5</span> <span class="fl">6</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>elementmul([<span class="fl">1</span> <span class="fl">2</span> <span class="fl">3</span>]<span class="op">,</span> [<span class="fl">4</span> <span class="fl">5</span> <span class="fl">6</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -612,12 +619,12 @@ ans =
 
    0   1   2   3   4</code></pre>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 203">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Lösningsförslag övning 203
+<span class="screen-reader-only">Tip</span>Lösningsförslag övning 203
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -633,9 +640,9 @@ n^y &amp;=&amp; x &amp;\Leftrightarrow&amp; y &amp;=&amp; \frac{\log{x}}{\log{n}
 \]</span></p>
 <p>där <code>log</code> är logaritmen med en godtycklig bas (i Octave ger funktionen <code>log</code> logaritmen givet basen <span class="math inline">\(e\)</span>).</p>
 <p>Funktionen kan då kodas</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode octave code-with-copy"><code class="sourceCode octave"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Koden sparas under valfritt filnamn</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode octave code-with-copy"><code class="sourceCode octave"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Koden sparas under valfritt filnamn</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>logn <span class="op">=</span> @(x<span class="op">,</span> n) <span class="fu">log</span>(x) <span class="op">./</span> <span class="fu">log</span>(n)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>logn <span class="op">=</span> @(x<span class="op">,</span> n) <span class="fu">log</span>(x) <span class="op">./</span> <span class="fu">log</span>(n)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -647,25 +654,25 @@ n^y &amp;=&amp; x &amp;\Leftrightarrow&amp; y &amp;=&amp; \frac{\log{x}}{\log{n}
 <pre><code>octave:4&gt; dotmul([1 2 3], [4 5 6])
 ans = 32</code></pre>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 204">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Lösningsförslag övning 204
+<span class="screen-reader-only">Tip</span>Lösningsförslag övning 204
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb7"><pre class="sourceCode octave code-with-copy"><code class="sourceCode octave"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Denna kod sparas i filen dotmul.m</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode octave code-with-copy"><code class="sourceCode octave"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Denna kod sparas i filen dotmul.m</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">function</span> retval <span class="op">=</span> dotmul(u<span class="op">,</span> v)</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  retval <span class="op">=</span> <span class="fl">0</span><span class="op">;</span></span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> <span class="fu">i</span> <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fu">length</span>(u)</span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    retval <span class="op">+=</span> u(<span class="fu">i</span>) <span class="op">*</span> v(<span class="fu">i</span>)<span class="op">;</span></span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">endfor</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="cf">endfunction</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="cf">endfunction</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>För att de skript som använder <code>dotmul</code> ska hitta funktionen måste sökvägen till filen läggas till. Detta görs på menyn <code>Edit -&gt; Set Path</code>.</p>
 </div>
 </div>
@@ -686,18 +693,18 @@ h_ang = 37.250
 m_ang = 177
 s_ang = 270</code></pre>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 205">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Lösningsförslag övning 205
+<span class="screen-reader-only">Tip</span>Lösningsförslag övning 205
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb10"><pre class="sourceCode octave code-with-copy"><code class="sourceCode octave"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Denna kod sparas i filen clock_hands_angles.m</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode octave code-with-copy"><code class="sourceCode octave"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Denna kod sparas i filen clock_hands_angles.m</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="cf">function</span> [hv mv sv] <span class="op">=</span> clock_hands_angles (h<span class="op">,</span> m<span class="op">,</span> s)</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  secs <span class="op">=</span> s <span class="op">+</span> <span class="fl">60</span><span class="op">*</span>m <span class="op">+</span> <span class="fl">3600</span><span class="op">*</span>h<span class="op">;</span></span>
@@ -706,7 +713,7 @@ Lösningsförslag övning 205
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  mv <span class="op">=</span> <span class="fu">mod</span>(<span class="fl">90</span><span class="op">-</span><span class="fl">1</span><span class="op">/</span><span class="fl">10</span><span class="op">*</span>secs<span class="op">,</span> <span class="fl">360</span>)<span class="op">;</span>  <span class="co"># varvet.</span></span>
 <span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Timvisare: 30° på 3600 sek.</span></span>
 <span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  hv <span class="op">=</span> <span class="fu">mod</span>(<span class="fl">90</span><span class="op">-</span><span class="fl">1</span><span class="op">/</span><span class="fl">120</span><span class="op">*</span>secs<span class="op">,</span> <span class="fl">360</span>)<span class="op">;</span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="cf">endfunction</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="cf">endfunction</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -723,18 +730,18 @@ Antal rätt:        2</code></pre>
 <p>Inga utskrifter ska göras från funktionen <code>lottoeval</code>, dessa ska göras från skriptet <code>lotto</code>. Funktionen <code>lottoeval</code> måste alltså returnera det som behövs för utskrift.</p>
 <p>Tips: använd funktionen <code>randperm</code>, t ex skapar <code>randperm(35, 7)</code> en vektor med sju slumpade heltal mellan 1 och 35.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 206">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Lösningsförslag övning 206
+<span class="screen-reader-only">Tip</span>Lösningsförslag övning 206
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb12"><pre class="sourceCode octave code-with-copy"><code class="sourceCode octave"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Denna kod sparas i filen lottoeval.m</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode octave code-with-copy"><code class="sourceCode octave"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Denna kod sparas i filen lottoeval.m</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="cf">function</span> [correct_nums result matches] <span class="op">=</span> lottoeval(guesses)</span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Inparameter:   guesses, en vektor med spelarens sju gissade nummer</span></span>
@@ -757,9 +764,9 @@ Lösningsförslag övning 206
 <span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">endfor</span><span class="op">;</span></span>
 <span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>  <span class="cf">endfor</span><span class="op">;</span></span>
 <span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>  result <span class="op">=</span> correct_guesses<span class="op">;</span></span>
-<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a><span class="cf">endfunction</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a><span class="cf">endfunction</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Nedan följer skriptet <code>lotto</code>:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode octave code-with-copy"><code class="sourceCode octave"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Koden sparas under valfritt filnamn</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode octave code-with-copy"><code class="sourceCode octave"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Koden sparas under valfritt filnamn</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Raden som spelaren tippar slumpas fram</span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>tippad_rad <span class="op">=</span> <span class="fu">randperm</span>(<span class="fl">35</span><span class="op">,</span> <span class="fl">7</span>)<span class="op">;</span></span>
@@ -776,7 +783,7 @@ Lösningsförslag övning 206
 <span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="fu">printf</span>(<span class="st">'Tippad rad:      %s\n'</span><span class="op">,</span> f)<span class="op">;</span></span>
 <span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="fu">printf</span>(<span class="st">'Vinnande rad:    %s\n'</span><span class="op">,</span> g)<span class="op">;</span></span>
 <span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="fu">printf</span>(<span class="st">'Matchande nummer:%s\n'</span><span class="op">,</span> h)<span class="op">;</span></span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a><span class="fu">printf</span>(<span class="st">'Antal rätt:        %d\n'</span><span class="op">,</span> antal_ratt)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a><span class="fu">printf</span>(<span class="st">'Antal rätt:        %d\n'</span><span class="op">,</span> antal_ratt)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -800,18 +807,18 @@ antal_dragningar = 1331
 antal_ratt = 5
 Elapsed time is 0.948647 seconds.</code></pre>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 207">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Lösningsförslag övning 207
+<span class="screen-reader-only">Tip</span>Lösningsförslag övning 207
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb17"><pre class="sourceCode octave code-with-copy"><code class="sourceCode octave"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Denna kod sparas i filen lottovinst.m</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode octave code-with-copy"><code class="sourceCode octave"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Denna kod sparas i filen lottovinst.m</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="cf">function</span> lottovinst(minst_antal_ratt)</span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Här skapas en rad som ska tippas gång på gång tills antalet</span></span>
@@ -832,7 +839,7 @@ Lösningsförslag övning 207
 <span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Här sker utskriften av resultatet</span></span>
 <span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>  antal_dragningar<span class="op">,</span> antal_ratt </span>
-<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a><span class="cf">endfunction</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a><span class="cf">endfunction</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Nu kan <code>lottovinst</code> anropas antingen från ett skript eller från <em>Command Window</em>.</p>
 </div>
 </div>
@@ -895,13 +902,14 @@ Lösningsförslag övning 207
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

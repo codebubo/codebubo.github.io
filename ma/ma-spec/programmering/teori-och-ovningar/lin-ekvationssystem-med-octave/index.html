@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -67,14 +67,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../../../../../">
 <script src="../../../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../../../site_libs/bootstrap/bootstrap-c9b8a734d4e2728b376c5c7df1b58788.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../../../site_libs/bootstrap/bootstrap-0dbb5278e3a55edda07080799b0b306e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -125,7 +126,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -152,6 +153,8 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../../../../../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="../../../../../index.html">
     <span class="navbar-title">CodeBubo</span>
     </a>
@@ -163,7 +166,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../../../index.html"> 
+    <a class="nav-link active" href="../../../../../index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -191,6 +194,10 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../../../../../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -563,14 +570,14 @@ x_1&amp;+&amp;2x_2&amp;=&amp;-1\\
 \right .
 \]</span></p>
 <p>Vi deklarerar koefficientmatrisen <span class="math inline">\(A\)</span> och vektorn <span class="math inline">\(\vec{v}\)</span>:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode octave code-with-copy"><code class="sourceCode octave"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>octave<span class="op">:</span><span class="fl">1</span><span class="op">&gt;</span> A <span class="op">=</span> [<span class="fl">1</span> <span class="fl">2</span> <span class="op">;</span> <span class="fl">2</span> <span class="op">-</span><span class="fl">3</span>]<span class="op">;</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>octave<span class="op">:</span><span class="fl">2</span><span class="op">&gt;</span> v <span class="op">=</span> [<span class="op">-</span><span class="fl">1</span> <span class="op">;</span> <span class="fl">12</span>]<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode octave code-with-copy"><code class="sourceCode octave"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>octave<span class="op">:</span><span class="fl">1</span><span class="op">&gt;</span> A <span class="op">=</span> [<span class="fl">1</span> <span class="fl">2</span> <span class="op">;</span> <span class="fl">2</span> <span class="op">-</span><span class="fl">3</span>]<span class="op">;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>octave<span class="op">:</span><span class="fl">2</span><span class="op">&gt;</span> v <span class="op">=</span> [<span class="op">-</span><span class="fl">1</span> <span class="op">;</span> <span class="fl">12</span>]<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Därefter så löses systemet:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode octave code-with-copy"><code class="sourceCode octave"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>octave<span class="op">:</span><span class="fl">3</span><span class="op">&gt;</span> x <span class="op">=</span> A <span class="op">\</span> v</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode octave code-with-copy"><code class="sourceCode octave"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>octave<span class="op">:</span><span class="fl">3</span><span class="op">&gt;</span> x <span class="op">=</span> A <span class="op">\</span> v</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>   <span class="fl">3</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="op">-</span><span class="fl">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="op">-</span><span class="fl">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>där utmatningen innebär att <span class="math inline">\(x_1=3\)</span> och <span class="math inline">\(x_2=-2\)</span>.</p>
 <p>Just i det här fallet blev lösningen heltal, men det kan bli såväl rationella som irrationella lösningar; man får då ha i åtanke att Octave jobbar med avrundade närmevärden och inte exakta tal (som går att approximera till rationella tal).</p>
 </div>
@@ -612,12 +619,12 @@ x&amp;+&amp;y&amp;-&amp;z&amp;=&amp;4\\
 <p>En motorbåt färdas i en flod med strömt vatten. När den går med en given motorstyrka tar det fem timmar för den att färdas från punkt <span class="math inline">\(A\)</span> till <span class="math inline">\(B\)</span>, vilket är en sträcka på 60 km <em>mot</em> strömmen. När den sedan åker tillbaka från <span class="math inline">\(B\)</span> till <span class="math inline">\(A\)</span>, färdas den <em>med</em> strömmen; den färden tar fyra timmar med samma givna motorstyrka.</p>
 <p>Teckna ett ekvationssystem, som du löser med hjälp av Octave, som bestämmer dels båtens fart i vatten som inte är strömt (med den givna motorstyrkan) och dels vattenströmmens fart.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Svar övning 303">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Svar övning 303
+<span class="screen-reader-only">Tip</span>Svar övning 303
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -645,12 +652,12 @@ ans =
 <li><p>Skapa en <span class="math inline">\(5\times 5\)</span>-matris på detta sätt, och en tillhörande vektor av rätt storlek, med slumpade heltal mellan <span class="math inline">\(-100\)</span> och <span class="math inline">\(100\)</span>. Låt Octave lösa det linjära ekvationssystem som matrisen och vektorn representerar.</p></li>
 <li><p>Skapa en en matris med tillhörande vektor som representerar ett linjärt ekvationssystem med <span class="math inline">\(100\)</span> obekanta och <span class="math inline">\(100\)</span> ekvationer. Tiden kan mätas med funktionerna <code>tic</code> och <code>toc</code> enligt följande:</p></li>
 </ol>
-<div class="sourceCode" id="cb4"><pre class="sourceCode octave code-with-copy"><code class="sourceCode octave"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Skapa matris och vektor</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode octave code-with-copy"><code class="sourceCode octave"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Skapa matris och vektor</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tic</span>()<span class="op">;</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Lös det linjära ekvationssystem matrisen och vektorn representerar.</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># OBS! Se till att resultatet INTE skrivs ut då den processen tar lång tid!</span></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span>()<span class="op">;</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Tiden det tog att lösa systemet skrivs ut i konsolen automatiskt efter toc()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Tiden det tog att lösa systemet skrivs ut i konsolen automatiskt efter toc()</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Hur lång tid tar det att lösa detta system av linjära ekvationer?</p>
 <ol start="3" type="a">
 <li><p>Ungefär hur stort ekvationssystem (lika många obekanta som ekvationer) kan lösas på</p>
@@ -719,13 +726,14 @@ ans =
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

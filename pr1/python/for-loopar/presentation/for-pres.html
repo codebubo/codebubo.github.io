@@ -6,8 +6,8 @@
 <script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.25">
 
   <meta name="author" content="">
   <title>CodeBubo – for-loopar i Python</title>
@@ -95,7 +95,7 @@
     code span.vs { color: #abe338; } /* VerbatimString */
     code span.wa { color: #dcc6e0; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/theme/quarto-091ebfb71d12db7fc524ec91495e1509.css">
+  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/theme/quarto-327cab17de08e4a17faa7d61f48ae591.css">
   <link rel="stylesheet" href="style.css">
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FFXVNM3K2N"></script>
 
@@ -233,11 +233,11 @@
 <div class="double-v-space">
 
 </div>
-<div id="c23d4c63" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>lista <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>]</span>
+<div id="b31af3d4" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>lista <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>]</span>
 <span id="cb1-2"><a></a><span class="cf">for</span> element <span class="kw">in</span> lista:</span>
 <span id="cb1-3"><a></a>    <span class="bu">print</span>(element, end<span class="op">=</span><span class="st">" "</span>)</span>
-<span id="cb1-4"><a></a><span class="bu">print</span>(<span class="ss">f"Loopen avslutas eftersom listan är slut"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a></a><span class="bu">print</span>(<span class="ss">f"Loopen avslutas eftersom listan är slut"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>10 20 30 Loopen avslutas eftersom listan är slut</code></pre>
 </div>
@@ -253,9 +253,9 @@
 <div class="v-space">
 
 </div>
-<div id="8f6dae8a" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>, <span class="dv">8</span>):   <span class="co"># Här skapas listan</span></span>
-<span id="cb3-2"><a></a>    <span class="bu">print</span>(i, end<span class="op">=</span><span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="c5539fd8" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>, <span class="dv">8</span>):   <span class="co"># Här skapas listan</span></span>
+<span id="cb3-2"><a></a>    <span class="bu">print</span>(i, end<span class="op">=</span><span class="st">" "</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>3 4 5 6 7 </code></pre>
 </div>
@@ -272,15 +272,15 @@
 
 </div>
 <p>Exempel på hur parametrar påverkar resultatet av <code>range</code></p>
-<div id="24aefa80" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>lista_A <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">10</span>))</span>
+<div id="aed19299" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>lista_A <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">10</span>))</span>
 <span id="cb5-2"><a></a>lista_B <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>))</span>
 <span id="cb5-3"><a></a>lista_C <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">2</span>))</span>
 <span id="cb5-4"><a></a>lista_D <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">10</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>))</span>
 <span id="cb5-5"><a></a><span class="bu">print</span>(<span class="ss">f"lista_A = </span><span class="sc">{</span>lista_A<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb5-6"><a></a><span class="bu">print</span>(<span class="ss">f"lista_B = </span><span class="sc">{</span>lista_B<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb5-7"><a></a><span class="bu">print</span>(<span class="ss">f"lista_C = </span><span class="sc">{</span>lista_C<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb5-8"><a></a><span class="bu">print</span>(<span class="ss">f"lista_D = </span><span class="sc">{</span>lista_D<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-8"><a></a><span class="bu">print</span>(<span class="ss">f"lista_D = </span><span class="sc">{</span>lista_D<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>lista_A = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 lista_B = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4]
@@ -294,10 +294,10 @@ lista_D = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]</code></pre>
 <div class="v-space">
 
 </div>
-<div id="f454271d" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="co"># Detta program beräknar och skriver ut "tolvans tabell"</span></span>
+<div id="d15512f6" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="co"># Detta program beräknar och skriver ut "tolvans tabell"</span></span>
 <span id="cb7-2"><a></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">13</span>):</span>
-<span id="cb7-3"><a></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">:2.0f}</span><span class="ss"> * 12 = </span><span class="sc">{</span>i<span class="op">*</span><span class="dv">12</span><span class="sc">:3.0f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-3"><a></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">:2.0f}</span><span class="ss"> * 12 = </span><span class="sc">{</span>i<span class="op">*</span><span class="dv">12</span><span class="sc">:3.0f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> 1 * 12 =  12
  2 * 12 =  24
@@ -323,11 +323,11 @@ lista_D = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]</code></pre>
 <div class="v-space">
 
 </div>
-<div id="25a40b93" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>items <span class="op">=</span> [<span class="st">"Klocka"</span>, <span class="st">"Kikare"</span>, <span class="st">"Termometer"</span>]</span>
+<div id="2045bc69" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>items <span class="op">=</span> [<span class="st">"Klocka"</span>, <span class="st">"Kikare"</span>, <span class="st">"Termometer"</span>]</span>
 <span id="cb9-2"><a></a><span class="bu">print</span>(<span class="st">"Du har tillgång till:"</span>, end<span class="op">=</span><span class="st">" "</span>)</span>
 <span id="cb9-3"><a></a><span class="cf">for</span> item <span class="kw">in</span> items:</span>
-<span id="cb9-4"><a></a>    <span class="bu">print</span>(item, end<span class="op">=</span><span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-4"><a></a>    <span class="bu">print</span>(item, end<span class="op">=</span><span class="st">" "</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Du har tillgång till: Klocka Kikare Termometer </code></pre>
 </div>
@@ -342,13 +342,13 @@ lista_D = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]</code></pre>
 <div class="v-space">
 
 </div>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>items <span class="op">=</span> [<span class="st">"Klocka"</span>, <span class="st">"Kikare"</span>, <span class="st">"Termometer"</span>]</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>items <span class="op">=</span> [<span class="st">"Klocka"</span>, <span class="st">"Kikare"</span>, <span class="st">"Termometer"</span>]</span>
 <span id="cb11-2"><a></a><span class="cf">for</span> item <span class="kw">in</span> items:</span>
 <span id="cb11-3"><a></a>    <span class="cf">if</span> item.is_boostable:</span>
 <span id="cb11-4"><a></a>      item.boost()</span>
 <span id="cb11-5"><a></a>      <span class="bu">print</span>(<span class="ss">f"Din </span><span class="sc">{</span>item<span class="sc">}</span><span class="ss"> är nu boostad ✅"</span>)</span>
 <span id="cb11-6"><a></a>    <span class="cf">else</span>:</span>
-<span id="cb11-7"><a></a>      <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>item<span class="sc">}</span><span class="ss"> gick inte att boosta ❌"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-7"><a></a>      <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>item<span class="sc">}</span><span class="ss"> gick inte att boosta ❌"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Sekvensen ovan skulle kunna ingå i ett spelprogram. Här är <code>is_boostable</code> en <em>egenskap</em> hos <em>objektet</em> <code>item</code> och <code>boost</code> är en <em>metod</em> som tillämpas. Dessa saker måste programmeraren designa själv; det är inte inbyggt i Python.</p>
 <p>Senare i kursen kommer vi att komma till klasser, och koppla objekt, egenskaper och metoder till dessa.</p>
 </section>
@@ -552,7 +552,7 @@ lista_D = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]</code></pre>
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -626,13 +626,14 @@ lista_D = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]</code></pre>
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -67,14 +67,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../../../../">
 <script src="../../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../../site_libs/bootstrap/bootstrap-c9b8a734d4e2728b376c5c7df1b58788.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../../site_libs/bootstrap/bootstrap-0dbb5278e3a55edda07080799b0b306e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -125,7 +126,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -152,6 +153,8 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../../../../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="../../../../index.html">
     <span class="navbar-title">CodeBubo</span>
     </a>
@@ -163,7 +166,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../../index.html"> 
+    <a class="nav-link active" href="../../../../index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -191,6 +194,10 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../../../../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -561,7 +568,7 @@ window.Quarto = {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<div id="8ad1a462" class="cell" data-execution_count="1">
+<div id="69c81cd2" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-stdout">
 <pre><code>Denna utskrift sker från funktionen print_hypotenusa
 Funktionen tog emot parametrarna 3 och 4
@@ -572,24 +579,24 @@ Hypotenusans längd beräknas till 5.0</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag uppgift 1">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Lösningsförslag uppgift 1
+<span class="screen-reader-only">Tip</span>Lösningsförslag uppgift 1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_hypotenusa(a, b):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_hypotenusa(a, b):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    hypotenusa <span class="op">=</span> (a<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> b<span class="op">**</span><span class="dv">2</span>)<span class="op">**</span><span class="fl">0.5</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Denna utskrift sker från funktionen print_hypotenusa"</span>)</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Funktionen tog emot parametrarna </span><span class="sc">{</span>a<span class="sc">}</span><span class="ss"> och </span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Hypotenusans längd beräknas till </span><span class="sc">{</span>hypotenusa<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>print_hypotenusa(<span class="dv">3</span>, <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>print_hypotenusa(<span class="dv">3</span>, <span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -604,7 +611,7 @@ Lösningsförslag uppgift 1
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<div id="f377859d" class="cell" data-execution_count="2">
+<div id="7866a619" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-stdout">
 <pre><code>Denna utskrift sker från huvudprogrammet
 Huvudprogrammet skickar argumenten 3 och 4 till funktionen
@@ -615,18 +622,18 @@ Funktionen beräknar hypotenusans längd till 5.0</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag uppgift 2">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Lösningsförslag uppgift 2
+<span class="screen-reader-only">Tip</span>Lösningsförslag uppgift 2
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> beräkna_hypotenusa(a, b):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> beräkna_hypotenusa(a, b):</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    hypotenusa <span class="op">=</span> (a<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> b<span class="op">**</span><span class="dv">2</span>)<span class="op">**</span><span class="fl">0.5</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> hypotenusa</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -635,7 +642,7 @@ Lösningsförslag uppgift 2
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>hypotenusa <span class="op">=</span> beräkna_hypotenusa(katet_1, katet_2)</span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Denna utskrift sker från huvudprogrammet"</span>)</span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Huvudprogrammet skickar argumenten </span><span class="sc">{</span>katet_1<span class="sc">}</span><span class="ss"> och </span><span class="sc">{</span>katet_2<span class="sc">}</span><span class="ss"> till funktionen"</span>)</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Funtkionen beräknar hypotenusans längd till </span><span class="sc">{</span>hypotenusa<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Funtkionen beräknar hypotenusans längd till </span><span class="sc">{</span>hypotenusa<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -644,7 +651,7 @@ Lösningsförslag uppgift 2
 <h3 class="anchored" data-anchor-id="uppgift-3">Uppgift 3</h3>
 <p>Skriv ett program som ber användaren om en temperatur given antingen i grader Celsius eller grader Fahrenheit, och sedan omvandlar temperaturen till den andra av dessa enheter. Beroende på vilken enhet som temperaturen ges i ska en funktion väljas. Funktionerna, som du ska skriva, kan heta <code>till_fahr</code> respektive <code>till_celsius</code>. Var och en av dessa funktioner ska ta en temperatur som parameter och returnera temperaturen uttryckt i den andra enheten.</p>
 <p>Huvudprogrammet kan se ut enligt nedan. Här finns också rutiner för en ‘’säker inmatning’’ av heltal respektive strängar. Detta kan du använda som referens för senare program.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Huvudprogram, omvandling av temperatur mellan olika enheter</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Huvudprogram, omvandling av temperatur mellan olika enheter</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Nedanstående kod ger en säker inmatning av heltal</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
@@ -666,21 +673,21 @@ Lösningsförslag uppgift 2
 <span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>        celsius <span class="op">=</span> till_celsius(temp)</span>
 <span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Temperaturen i grader Celsius är </span><span class="sc">{</span>celsius<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Felaktig inmatning, försök igen"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Felaktig inmatning, försök igen"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Sambandet mellan temperatur angivet i grader Celsius och gradet Fahrenheit är givet i <a href="../../../../pr1/python/uppgifter/loopar/index.html#uppgift-9">Uppgift 9 i avsnittet om loopar</a></p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag uppgift 3">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Lösningsförslag uppgift 3
+<span class="screen-reader-only">Tip</span>Lösningsförslag uppgift 3
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> till_celsius(F):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> till_celsius(F):</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    C <span class="op">=</span> <span class="dv">5</span><span class="op">/</span><span class="dv">9</span> <span class="op">*</span> F <span class="op">-</span> <span class="dv">160</span><span class="op">/</span><span class="dv">9</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> C</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -710,7 +717,7 @@ Lösningsförslag uppgift 3
 <span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>        celsius <span class="op">=</span> till_celsius(temp)</span>
 <span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Temperaturen i grader Celsius är </span><span class="sc">{</span>celsius<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
-<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Felaktig inmatning, försök igen"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Felaktig inmatning, försök igen"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -719,25 +726,25 @@ Lösningsförslag uppgift 3
 <h3 class="anchored" data-anchor-id="uppgift-4">Uppgift 4</h3>
 <p>Även om programmet i <a href="#uppgift-3">Uppgift 3</a> gör sitt jobb, så är huvudprogrammet lite väl långt. Det är eftersträvansvärt att huvudprogrammet ger en klar bild av strukturen, och det mesta utlokaliseras till funktioner.</p>
 <p>Exempel på hur ett kortare huvudprogram kan se ut:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Huvudprogram, omvandling av temperatur mellan olika enheter</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Huvudprogram, omvandling av temperatur mellan olika enheter</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>temp <span class="op">=</span> ange_mätvärde()</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>enhet <span class="op">=</span> ange_enhet()</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>skriv_mätvärde_i_andra_enheten(temp, enhet)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>skriv_mätvärde_i_andra_enheten(temp, enhet)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Huvudprogrammet består alltså av tre funktionsanrop, och funktionen <code>skriv_mätvärde_i_andra_enheten</code> består dessutom av två möjliga funktionsanrop där ett av dessa väljs.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag uppgift 4">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Lösningsförslag uppgift 4
+<span class="screen-reader-only">Tip</span>Lösningsförslag uppgift 4
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> till_celsius(F):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> till_celsius(F):</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    C <span class="op">=</span> <span class="dv">5</span><span class="op">/</span><span class="dv">9</span> <span class="op">*</span> F <span class="op">-</span> <span class="dv">160</span><span class="op">/</span><span class="dv">9</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> C</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -780,7 +787,7 @@ Lösningsförslag uppgift 4
 <span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>temp <span class="op">=</span> ange_mätvärde()</span>
 <span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a>enhet <span class="op">=</span> ange_enhet()</span>
-<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>skriv_mätvärde_i_andra_enheten(temp, enhet)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>skriv_mätvärde_i_andra_enheten(temp, enhet)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -790,29 +797,29 @@ Lösningsförslag uppgift 4
 <p>Du har tidigare <a href="../../../../pr1/python/uppgifter/loopar/index.html#uppgift-4">skrivit ett program</a> där du låter en spelare gissa på ett framslumpat tal.</p>
 <p>Skriv <strong>en funktion</strong> som slumpar fram talet och håller reda på antalet gissningar innan talet gissas rätt. Funktionen ska returnera antalet gissningar, vilka skrivs ut i huvudprogrammet.</p>
 <p>Programmet ska ha följande struktur:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> spela():</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> spela():</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Här skriver du funktionen...</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ...och returnerar antalet försök</span></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Huvudprogram</span></span>
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>antal_försök <span class="op">=</span> spela()</span>
 <span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"RÄTT GISSAT!"</span>)</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Du klarade spelet på gissning nr. </span><span class="sc">{</span>antal_f<span class="sc">ö</span>rs<span class="sc">ö</span>k<span class="sc">}</span><span class="ss">."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Du klarade spelet på gissning nr. </span><span class="sc">{</span>antal_f<span class="sc">ö</span>rs<span class="sc">ö</span>k<span class="sc">}</span><span class="ss">."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Formulera också en lämplig <strong>docstring</strong> till funktionen <code>spela</code>. Försök att göra gissningarna inmatningssäkra, och att enbart giltiga gissningar räknas.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag uppgift 5">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Lösningsförslag uppgift 5
+<span class="screen-reader-only">Tip</span>Lösningsförslag uppgift 5
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Detta gissningsspel är lite mer utvecklat än det förra som gjordes. Här finns en inmatningskontroll så att enbart tal mellan (och inklusive) 1 och 10 kommer att godtas som inmatning.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random <span class="im">as</span> rand</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random <span class="im">as</span> rand</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> spela():</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">'''</span></span>
@@ -846,7 +853,7 @@ Lösningsförslag uppgift 5
 <span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Huvudprogram</span></span>
 <span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>antal_försök <span class="op">=</span> spela()</span>
 <span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"RÄTT GISSAT!"</span>)</span>
-<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Du klarade spelet på gissning nr. </span><span class="sc">{</span>antal_f<span class="sc">ö</span>rs<span class="sc">ö</span>k<span class="sc">}</span><span class="ss">."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Du klarade spelet på gissning nr. </span><span class="sc">{</span>antal_f<span class="sc">ö</span>rs<span class="sc">ö</span>k<span class="sc">}</span><span class="ss">."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -878,7 +885,7 @@ Lösningsförslag uppgift 5
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<div id="93054224" class="cell" data-execution_count="3">
+<div id="96cc3f2f" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-stdout">
 <pre><code>  x            h          Differenskvot
 ----------------------------------------
@@ -949,13 +956,14 @@ Lösningsförslag uppgift 5
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

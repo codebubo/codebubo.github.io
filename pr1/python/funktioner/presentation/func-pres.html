@@ -6,8 +6,8 @@
 <script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.25">
 
   <meta name="author" content="">
   <title>CodeBubo – Funktioner i Python</title>
@@ -95,7 +95,7 @@
     code span.vs { color: #abe338; } /* VerbatimString */
     code span.wa { color: #dcc6e0; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/theme/quarto-091ebfb71d12db7fc524ec91495e1509.css">
+  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/theme/quarto-327cab17de08e4a17faa7d61f48ae591.css">
   <link rel="stylesheet" href="style.css">
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FFXVNM3K2N"></script>
 
@@ -238,10 +238,10 @@
 
 </div>
 <p>Exempel: En funktion som adderar två tal:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>tal_1 <span class="op">=</span> <span class="dv">10</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>tal_1 <span class="op">=</span> <span class="dv">10</span></span>
 <span id="cb1-2"><a></a>tal_2 <span class="op">=</span> <span class="dv">20</span></span>
 <span id="cb1-3"><a></a>summa <span class="op">=</span> add(tal_1, tal_2) <span class="co"># Här kommer programmet att ge ett felmeddelande!</span></span>
-<span id="cb1-4"><a></a><span class="bu">print</span>(<span class="ss">f"Summan av </span><span class="sc">{</span>tal_1<span class="sc">}</span><span class="ss"> och </span><span class="sc">{</span>tal_2<span class="sc">}</span><span class="ss"> är </span><span class="sc">{</span>summa<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a></a><span class="bu">print</span>(<span class="ss">f"Summan av </span><span class="sc">{</span>tal_1<span class="sc">}</span><span class="ss"> och </span><span class="sc">{</span>tal_2<span class="sc">}</span><span class="ss"> är </span><span class="sc">{</span>summa<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="v-space">
 
 </div>
@@ -253,8 +253,8 @@
 <div class="v-space">
 
 </div>
-<div id="b66e92be" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="kw">def</span> add(a, b):     <span class="co"># Här</span></span>
+<div id="700a634a" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="kw">def</span> add(a, b):     <span class="co"># Här</span></span>
 <span id="cb2-2"><a></a>  the_sum <span class="op">=</span> a <span class="op">+</span> b  <span class="co"># skapas</span></span>
 <span id="cb2-3"><a></a>  <span class="cf">return</span> the_sum   <span class="co"># funktionen</span></span>
 <span id="cb2-4"><a></a></span>
@@ -263,7 +263,7 @@
 <span id="cb2-7"><a></a>tal_2 <span class="op">=</span> <span class="dv">20</span></span>
 <span id="cb2-8"><a></a>summa <span class="op">=</span> add(tal_1, tal_2) <span class="co"># Här anropas funktionen</span></span>
 <span id="cb2-9"><a></a></span>
-<span id="cb2-10"><a></a><span class="bu">print</span>(<span class="ss">f"Summan av </span><span class="sc">{</span>tal_1<span class="sc">}</span><span class="ss"> och </span><span class="sc">{</span>tal_2<span class="sc">}</span><span class="ss"> är </span><span class="sc">{</span>summa<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-10"><a></a><span class="bu">print</span>(<span class="ss">f"Summan av </span><span class="sc">{</span>tal_1<span class="sc">}</span><span class="ss"> och </span><span class="sc">{</span>tal_2<span class="sc">}</span><span class="ss"> är </span><span class="sc">{</span>summa<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Summan av 10 och 20 är 30</code></pre>
 </div>
@@ -274,9 +274,9 @@
 </section>
 <section id="funktioners-anatomi" class="slide level2">
 <h2>Funktioners anatomi</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="kw">def</span> add(a, b):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="kw">def</span> add(a, b):</span>
 <span id="cb4-2"><a></a>  the_sum <span class="op">=</span> a <span class="op">+</span> b</span>
-<span id="cb4-3"><a></a>  <span class="cf">return</span> the_sum</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-3"><a></a>  <span class="cf">return</span> the_sum</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><code>add</code>: Funktionens namn</li>
 <li><code>a</code> och <code>b</code>: Funktionens <em>parametrar</em></li>
@@ -289,7 +289,7 @@
 <h2>Variabler i funktioner</h2>
 <p>Variablerna som är deklarerade i funktioner är <em>lokala</em>. Det innebär att de inte är tillgängliga utanför funktionen.</p>
 <p>T ex är variablerna <code>a</code>, <code>b</code> och <code>the_sum</code> enbart tillgängliga inuti funktionen <code>add</code> nedan.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="kw">def</span> add(a, b):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="kw">def</span> add(a, b):</span>
 <span id="cb5-2"><a></a>  the_sum <span class="op">=</span> a <span class="op">+</span> b</span>
 <span id="cb5-3"><a></a>  <span class="cf">return</span> the_sum</span>
 <span id="cb5-4"><a></a></span>
@@ -298,18 +298,18 @@
 <span id="cb5-7"><a></a><span class="co"># Nedanstående ger ett felmeddelande eftersom</span></span>
 <span id="cb5-8"><a></a><span class="co"># giltighetsområdet (omfattningen) för variabeln</span></span>
 <span id="cb5-9"><a></a><span class="co"># the_sum inte räcker till denna nivå i programmet.</span></span>
-<span id="cb5-10"><a></a><span class="bu">print</span>(the_sum)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-10"><a></a><span class="bu">print</span>(the_sum)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="funktioners-returvärden" class="slide level2">
 <h2>Funktioners returvärden</h2>
 <p>Ibland saknas behov av <code>return</code>-värde.</p>
-<div id="2854f56d" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="kw">def</span> print_multabell(n):</span>
+<div id="1f5a8bda" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="kw">def</span> print_multabell(n):</span>
 <span id="cb6-2"><a></a>  <span class="co"># Skriver ut fem rader i multiplikationstabell n</span></span>
 <span id="cb6-3"><a></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>):</span>
 <span id="cb6-4"><a></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">:2.0f}</span><span class="ss"> * </span><span class="sc">{</span>n<span class="sc">}</span><span class="ss"> = </span><span class="sc">{</span>i<span class="op">*</span>n<span class="sc">:3.0f}</span><span class="ss">"</span>)</span>
 <span id="cb6-5"><a></a></span>
-<span id="cb6-6"><a></a>print_multabell(<span class="dv">12</span>) <span class="co"># Ange önskad tabell att skriva ut här</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-6"><a></a>print_multabell(<span class="dv">12</span>) <span class="co"># Ange önskad tabell att skriva ut här</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> 1 * 12 =  12
  2 * 12 =  24
@@ -322,13 +322,13 @@
 </section>
 <section id="alla-funktioner-har-ett-returvärde" class="slide level2">
 <h2>Alla funktioner har ett returvärde</h2>
-<div id="f540dfd4" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="kw">def</span> print_multabell(n):</span>
+<div id="a2c96a13" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="kw">def</span> print_multabell(n):</span>
 <span id="cb8-2"><a></a>  <span class="co"># Skriver ut fem rader i multiplikationstabell n</span></span>
 <span id="cb8-3"><a></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>):</span>
 <span id="cb8-4"><a></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">:2.0f}</span><span class="ss"> * </span><span class="sc">{</span>n<span class="sc">}</span><span class="ss"> = </span><span class="sc">{</span>i<span class="op">*</span>n<span class="sc">:3.0f}</span><span class="ss">"</span>)</span>
 <span id="cb8-5"><a></a></span>
-<span id="cb8-6"><a></a><span class="bu">print</span>(print_multabell(<span class="dv">12</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-6"><a></a><span class="bu">print</span>(print_multabell(<span class="dv">12</span>)) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> 1 * 12 =  12
  2 * 12 =  24
@@ -343,7 +343,7 @@ None</code></pre>
 <section id="dokumentation-av-funktioner" class="slide level2">
 <h2>Dokumentation av funktioner</h2>
 <p>Funktioner bör dokumenteras. Python använder s.k docstrings för detta. Ej att förväxla med kommentarer för kodrader eller andra sekvenser i programmet!</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a><span class="kw">def</span> add(a, b):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a><span class="kw">def</span> add(a, b):</span>
 <span id="cb10-2"><a></a>  <span class="co">'''</span></span>
 <span id="cb10-3"><a></a><span class="co">  Funktionen adderar två tal. Ingen typkontroll sker.</span></span>
 <span id="cb10-4"><a></a><span class="co">  Parameter 1: a | ett tal (int eller float)</span></span>
@@ -351,13 +351,13 @@ None</code></pre>
 <span id="cb10-6"><a></a><span class="co">  Returvärde: summan av talen (int eller float)</span></span>
 <span id="cb10-7"><a></a><span class="co">  '''</span></span>
 <span id="cb10-8"><a></a>  the_sum <span class="op">=</span> a <span class="op">+</span> b</span>
-<span id="cb10-9"><a></a>  <span class="cf">return</span> the_sum</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-9"><a></a>  <span class="cf">return</span> the_sum</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Docstrings kan användas av editorn när man skriver kod, eller i konsolen när man skriver <code>help(add)</code>.</p>
 </section>
 <section id="lämna-funktionen" class="slide level2">
 <h2>Lämna funktionen</h2>
 <p>En funktion lämnas när den når sista raden eller <code>return</code>.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="kw">def</span> maximum(a, b):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="kw">def</span> maximum(a, b):</span>
 <span id="cb11-2"><a></a>  <span class="co">'''</span></span>
 <span id="cb11-3"><a></a><span class="co">  Funktionen returnerar det största av två tal</span></span>
 <span id="cb11-4"><a></a><span class="co">  Parameter 1: a | ett tal (int eller float)</span></span>
@@ -369,7 +369,7 @@ None</code></pre>
 <span id="cb11-10"><a></a>    <span class="cf">return</span> a</span>
 <span id="cb11-11"><a></a>  <span class="cf">elif</span> b <span class="op">&gt;</span> a:</span>
 <span id="cb11-12"><a></a>    <span class="cf">return</span> b</span>
-<span id="cb11-13"><a></a>  <span class="cf">return</span> <span class="va">None</span> <span class="co"># Onödig rad, utan return-sats returneras None ändå</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-13"><a></a>  <span class="cf">return</span> <span class="va">None</span> <span class="co"># Onödig rad, utan return-sats returneras None ändå</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="sammanfattning" class="slide level2">
 <h2>Sammanfattning</h2>
@@ -574,7 +574,7 @@ None</code></pre>
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -648,13 +648,14 @@ None</code></pre>
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

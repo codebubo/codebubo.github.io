@@ -6,8 +6,8 @@
 <script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.25">
 
   <meta name="author" content="Nikodemus Karlsson">
   <title>CodeBubo – Klasser och metoder i Python</title>
@@ -95,7 +95,7 @@
     code span.vs { color: #abe338; } /* VerbatimString */
     code span.wa { color: #dcc6e0; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/theme/quarto-091ebfb71d12db7fc524ec91495e1509.css">
+  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/theme/quarto-327cab17de08e4a17faa7d61f48ae591.css">
   <link rel="stylesheet" href="style.css">
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FFXVNM3K2N"></script>
 
@@ -236,8 +236,8 @@ Nikodemus Karlsson
 <section id="deklarera-en-metod" class="slide level2">
 <h2>Deklarera en metod</h2>
 <p>Vi kan deklarera och använda en klass <code>Car</code> på det här sättet:</p>
-<div id="a4a5be1c" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="kw">class</span> Car:</span>
+<div id="f4a0193a" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="kw">class</span> Car:</span>
 <span id="cb1-2"><a></a>  speed <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb1-3"><a></a>  </span>
 <span id="cb1-4"><a></a>  <span class="co"># Metod</span></span>
@@ -249,7 +249,7 @@ Nikodemus Karlsson
 <span id="cb1-10"><a></a>my_car.set_speed(<span class="dv">100</span>)</span>
 <span id="cb1-11"><a></a>your_car.set_speed(<span class="dv">70</span>)</span>
 <span id="cb1-12"><a></a></span>
-<span id="cb1-13"><a></a><span class="bu">print</span>(<span class="ss">f"my_car speed: </span><span class="sc">{</span>my_car<span class="sc">.</span>speed<span class="sc">}</span><span class="ss">, your_car speed: </span><span class="sc">{</span>your_car<span class="sc">.</span>speed<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-13"><a></a><span class="bu">print</span>(<span class="ss">f"my_car speed: </span><span class="sc">{</span>my_car<span class="sc">.</span>speed<span class="sc">}</span><span class="ss">, your_car speed: </span><span class="sc">{</span>your_car<span class="sc">.</span>speed<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Sista raden skriver ut<br> <span class="code-out">my_car speed: 100, your_car speed: 70</span></p>
 </section>
@@ -259,11 +259,11 @@ Nikodemus Karlsson
 <p>Detta vet Python pga parametern <code>self</code> i metoden:</p>
 <p><code>def set_speed(self, new_speed):</code></p>
 <p>Varje instans har ett ID-nummer. Detta skickas till metoderna som en <em>referens</em> för identifiering.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="kw">def</span> set_speed(<span class="va">self</span>, new_speed):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="kw">def</span> set_speed(<span class="va">self</span>, new_speed):</span>
 <span id="cb2-2"><a></a>    <span class="va">self</span>.speed <span class="op">=</span> new_speed</span>
 <span id="cb2-3"><a></a></span>
 <span id="cb2-4"><a></a>my_car <span class="op">=</span> Car()</span>
-<span id="cb2-5"><a></a>my_car.set_speed(<span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-5"><a></a>my_car.set_speed(<span class="dv">100</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>ID-numret skickas till metoden som ett osynligt argument. Alla metoder måste ha parametern <code>self</code> som första parameter.</p>
 </section>
 <section id="exempel" class="slide level2">
@@ -272,18 +272,18 @@ Nikodemus Karlsson
 
 </div>
 <p>I en <a href="../../../../pr1/python/for-loopar/presentation/for-pres.html#8">tidigare presentation</a> fanns exempel på en tänkt spelkod:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>items <span class="op">=</span> [<span class="st">"Klocka"</span>, <span class="st">"Kikare"</span>, <span class="st">"Termometer"</span>]</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>items <span class="op">=</span> [<span class="st">"Klocka"</span>, <span class="st">"Kikare"</span>, <span class="st">"Termometer"</span>]</span>
 <span id="cb3-2"><a></a><span class="cf">for</span> item <span class="kw">in</span> items:</span>
 <span id="cb3-3"><a></a>    <span class="cf">if</span> item.is_boostable:</span>
 <span id="cb3-4"><a></a>      item.boost()</span>
 <span id="cb3-5"><a></a>      <span class="bu">print</span>(<span class="ss">f"Din </span><span class="sc">{</span>item<span class="sc">}</span><span class="ss"> är nu boostad ✅"</span>)</span>
 <span id="cb3-6"><a></a>    <span class="cf">else</span>:</span>
-<span id="cb3-7"><a></a>      <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>item<span class="sc">}</span><span class="ss"> gick inte att boosta ❌"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-7"><a></a>      <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>item<span class="sc">}</span><span class="ss"> gick inte att boosta ❌"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="exempel-1" class="slide level2">
 <h2>Exempel</h2>
 <p>Implementationen skulle kunna se ut så här:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="kw">class</span> Item:</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="kw">class</span> Item:</span>
 <span id="cb4-2"><a></a>  is_boostable <span class="op">=</span> <span class="va">False</span></span>
 <span id="cb4-3"><a></a>  is_boosted <span class="op">=</span> <span class="va">False</span></span>
 <span id="cb4-4"><a></a></span>
@@ -300,19 +300,19 @@ Nikodemus Karlsson
 <span id="cb4-15"><a></a>      item.boost()</span>
 <span id="cb4-16"><a></a>      <span class="bu">print</span>(<span class="ss">f"Din </span><span class="sc">{</span>item<span class="sc">}</span><span class="ss"> är nu boostad ✅"</span>)     <span class="co"># För att `item` ska skriva</span></span>
 <span id="cb4-17"><a></a>    <span class="cf">else</span>:                                       <span class="co"># något vettigt måste sådan</span></span>
-<span id="cb4-18"><a></a>      <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>item<span class="sc">}</span><span class="ss"> gick inte att boosta ❌"</span>)  <span class="co"># funktionalitet läggas in.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-18"><a></a>      <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>item<span class="sc">}</span><span class="ss"> gick inte att boosta ❌"</span>)  <span class="co"># funktionalitet läggas in.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="metoden-__init__" class="slide level2">
 <h2>Metoden <code>__init__</code></h2>
 <p>För att tilldela värden till en instans i samband med att den skapas så kan man använda en metod som heter <code>__init__</code></p>
-<div id="578cc717" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="kw">class</span> Car:</span>
+<div id="8ccd94e7" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="kw">class</span> Car:</span>
 <span id="cb5-2"><a></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, brand, mileage):</span>
 <span id="cb5-3"><a></a>    <span class="va">self</span>.brand <span class="op">=</span> brand</span>
 <span id="cb5-4"><a></a>    <span class="va">self</span>.mileage <span class="op">=</span> mileage</span>
 <span id="cb5-5"><a></a></span>
 <span id="cb5-6"><a></a>my_car <span class="op">=</span> Car(<span class="st">"Volvo"</span>, <span class="dv">1200</span>)</span>
-<span id="cb5-7"><a></a><span class="bu">print</span>(<span class="ss">f"Märke: </span><span class="sc">{</span>my_car<span class="sc">.</span>brand<span class="sc">}</span><span class="ss">, Miltal: </span><span class="sc">{</span>my_car<span class="sc">.</span>mileage<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-7"><a></a><span class="bu">print</span>(<span class="ss">f"Märke: </span><span class="sc">{</span>my_car<span class="sc">.</span>brand<span class="sc">}</span><span class="ss">, Miltal: </span><span class="sc">{</span>my_car<span class="sc">.</span>mileage<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="double-v-space">
 
@@ -322,8 +322,8 @@ Nikodemus Karlsson
 <section id="metoden-__str__" class="slide level2">
 <h2>Metoden <code>__str__</code></h2>
 <p>Ibland vill man kunna skriva ut information om objekt med en kort <code>print</code>-sats, t ex <code>print(my_car)</code>. Då kan metoden <code>__str__</code> användas.</p>
-<div id="6721713f" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="kw">class</span> Car:</span>
+<div id="9199d97b" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="kw">class</span> Car:</span>
 <span id="cb6-2"><a></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, brand, mileage):</span>
 <span id="cb6-3"><a></a>    <span class="va">self</span>.brand <span class="op">=</span> brand</span>
 <span id="cb6-4"><a></a>    <span class="va">self</span>.mileage <span class="op">=</span> mileage</span>
@@ -332,7 +332,7 @@ Nikodemus Karlsson
 <span id="cb6-7"><a></a>    <span class="cf">return</span> (<span class="ss">f"Märke: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>brand<span class="sc">}</span><span class="ss">, Miltal: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>mileage<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb6-8"><a></a></span>
 <span id="cb6-9"><a></a>my_car <span class="op">=</span> Car(<span class="st">"Volvo"</span>, <span class="dv">1200</span>)</span>
-<span id="cb6-10"><a></a><span class="bu">print</span>(my_car)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-10"><a></a><span class="bu">print</span>(my_car)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Sista raden skriver ut <span class="code-out">Märke: Volvo, Miltal: 1200</span></p>
 <p>Utskriftssträngen definieras av <code>__str__</code>-metoden.</p>
@@ -340,8 +340,8 @@ Nikodemus Karlsson
 <section id="statiska-metoder" class="slide level2 scrollable">
 <h2>Statiska metoder</h2>
 <p>En statisk metod är en funktion som är knuten till en klass, men inte till ett objekt.</p>
-<div id="697d67ad" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="kw">class</span> Age:</span>
+<div id="d471a1c1" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="kw">class</span> Age:</span>
 <span id="cb7-2"><a></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, age):</span>
 <span id="cb7-3"><a></a>    <span class="va">self</span>.age <span class="op">=</span> age</span>
 <span id="cb7-4"><a></a>  </span>
@@ -355,7 +355,7 @@ Nikodemus Karlsson
 <span id="cb7-12"><a></a></span>
 <span id="cb7-13"><a></a>age_Kalle <span class="op">=</span> Age(<span class="dv">18</span>)</span>
 <span id="cb7-14"><a></a>age_Linda <span class="op">=</span> Age.create_from_birthyear(<span class="dv">2002</span>)</span>
-<span id="cb7-15"><a></a><span class="bu">print</span>(<span class="ss">f"Kalle: </span><span class="sc">{</span>age_Kalle<span class="sc">}</span><span class="ss">, Linda: </span><span class="sc">{</span>age_Linda<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-15"><a></a><span class="bu">print</span>(<span class="ss">f"Kalle: </span><span class="sc">{</span>age_Kalle<span class="sc">}</span><span class="ss">, Linda: </span><span class="sc">{</span>age_Linda<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Kalle: 18, Linda: 22</code></pre>
 </div>
@@ -561,7 +561,7 @@ Nikodemus Karlsson
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -635,13 +635,14 @@ Nikodemus Karlsson
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

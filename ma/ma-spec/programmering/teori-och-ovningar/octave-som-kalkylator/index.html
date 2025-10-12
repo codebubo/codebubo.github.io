@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -32,14 +32,15 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="../../../../../">
 <script src="../../../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../../../site_libs/bootstrap/bootstrap-c9b8a734d4e2728b376c5c7df1b58788.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../../../site_libs/bootstrap/bootstrap-0dbb5278e3a55edda07080799b0b306e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -90,7 +91,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -117,6 +118,8 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../../../../../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="../../../../../index.html">
     <span class="navbar-title">CodeBubo</span>
     </a>
@@ -128,7 +131,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../../../index.html"> 
+    <a class="nav-link active" href="../../../../../index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -156,6 +159,10 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../../../../../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -528,12 +535,12 @@ window.Quarto = {
 <li>Med femton decimaler</li>
 </ol>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 101">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Lösningsförslag övning 101
+<span class="screen-reader-only">Tip</span>Lösningsförslag övning 101
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -564,12 +571,12 @@ ans = 1.441637321863255e-03</code></pre>
 </ol>
 <p>Jämför dina svar ovan med det du får om du anger samma uttryck i Wolfram Alpha. Kommentera resultatet.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 102">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Lösningsförslag övning 102
+<span class="screen-reader-only">Tip</span>Lösningsförslag övning 102
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -594,12 +601,12 @@ ans = -17/26905</code></pre>
 \frac{\left (\frac{\sqrt{5} + 1}{2} \right )^{10} - \left (\frac{\sqrt{5} - 1}{2} \right )^{10}}{\sqrt{5}}
 \]</span> på en enda rad.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 103">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Lösningsförslag övning 103
+<span class="screen-reader-only">Tip</span>Lösningsförslag övning 103
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -616,12 +623,12 @@ ans = 55.000</code></pre>
 <h3 class="anchored" data-anchor-id="övning-104">Övning 104</h3>
 <p>Skapa en vektor <span class="math inline">\(\vec{v}\)</span> med tio jämnt fördelade vinklar i intervallet 0° – 360° (tips: slå upp funktionen <code>linspace</code> genom att skriva <code>help linspace</code> vid Octave-prompten). Verifiera med en beräkning att identiteten <span class="math inline">\(\sin^2v_j + \cos^2v_j\)</span> gäller, där <span class="math inline">\(v_j\)</span> är komponenten i <span class="math inline">\(\vec{v}\)</span> med indexet <span class="math inline">\(j\)</span>.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 104">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Lösningsförslag övning 104
+<span class="screen-reader-only">Tip</span>Lösningsförslag övning 104
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -656,12 +663,12 @@ ans =
 <li><code>inf - inf</code></li>
 </ol>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 105">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Lösningsförslag övning 105
+<span class="screen-reader-only">Tip</span>Lösningsförslag övning 105
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -703,12 +710,12 @@ ans = NaN</code></pre>
 <h3 class="anchored" data-anchor-id="övning-106">Övning 106</h3>
 <p>Förenkla talet <span class="math inline">\(i^{95}\)</span> med Octave. Hur står sig svaret i förhållande till det värde som uttrycket faktiskt har? Kommentera.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 106">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Lösningsförslag övning 106
+<span class="screen-reader-only">Tip</span>Lösningsförslag övning 106
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -729,12 +736,12 @@ ans =  -4.8800e-16 - 1.0000e+00i</code></pre>
 <li>Verifiera att <span class="math inline">\(\mathrm{Im}(z_j)=\sin{v}\)</span>. Tips: skriv <code>help imag</code> vid Octave-prompten.</li>
 </ol>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 107">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Lösningsförslag övning 107
+<span class="screen-reader-only">Tip</span>Lösningsförslag övning 107
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -764,12 +771,12 @@ ans =
 <p>I ett annat programspråk så finns en funktion som heter <code>append</code>, vilken används till att lägga till element i listor. Octave har inte den funktionen, istället så kan en komponent <code>a</code> läggas till en vektor v genom <code>v(end+1) = a</code>.</p>
 <p>Skapa en vektor <code>v = [1 2 3]</code> och lägg till talet 4 sist med hjälp av denna metod.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 108">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Lösningsförslag övning 108
+<span class="screen-reader-only">Tip</span>Lösningsförslag övning 108
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -793,12 +800,12 @@ v =
 <p>Skapa en vektor <span class="math inline">\(\vec{v}\)</span> med talen <span class="math inline">\(0, 0.25, 0.5, 0.75, \ldots 3\)</span> i Octave. Med hjälp av denna vektor ska du skapa en vektor <span class="math inline">\(\vec{x}\)</span>, där <span class="math inline">\(x_i=\log_3 v_i\)</span> (observera att <span class="math inline">\(i\)</span> är index, inte den imaginära enheten!). Kommentera resultatet, speciellt utdatan för <code>x(1)</code>, <code>x(5)</code> och <code>x(end)</code>.</p>
 <p>Tips för beräkningen: skriv om <span class="math inline">\(x=\log_3 v_i\)</span> som en ekvation med <span class="math inline">\(x\)</span> som exponent.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 109">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Lösningsförslag övning 109
+<span class="screen-reader-only">Tip</span>Lösningsförslag övning 109
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -847,12 +854,12 @@ ans = 3</code></pre>
 <li>Gör om övningarna 110d och 110e, men logaritmera med basen 2 och 10 i tur och ordning. Kommentera resultatet.</li>
 </ol>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 110">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Lösningsförslag övning 110
+<span class="screen-reader-only">Tip</span>Lösningsförslag övning 110
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -969,13 +976,14 @@ ans =
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

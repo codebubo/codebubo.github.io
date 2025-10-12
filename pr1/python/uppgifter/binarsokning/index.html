@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -67,14 +67,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../../../../">
 <script src="../../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../../site_libs/bootstrap/bootstrap-c9b8a734d4e2728b376c5c7df1b58788.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../../site_libs/bootstrap/bootstrap-0dbb5278e3a55edda07080799b0b306e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -125,7 +126,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -152,6 +153,8 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../../../../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="../../../../index.html">
     <span class="navbar-title">CodeBubo</span>
     </a>
@@ -163,7 +166,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../../index.html"> 
+    <a class="nav-link active" href="../../../../index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -191,6 +194,10 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../../../../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -617,7 +624,7 @@ Index: 0  1  2  3  4  5  6  7  8  9</code></pre>
 </section>
 <section id="algoritmen-i-pseudokod" class="level2">
 <h2 class="anchored" data-anchor-id="algoritmen-i-pseudokod">Algoritmen i pseudokod</h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> bin_search(lst, item, lower_i, upper_i):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> bin_search(lst, item, lower_i, upper_i):</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># lst är den sorterade listan som sökningen sker i</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># item är det som söks</span></span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># lower_i är det index där sökningen börjar</span></span>
@@ -635,7 +642,7 @@ Index: 0  1  2  3  4  5  6  7  8  9</code></pre>
 <span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>        </span>
 <span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>        <span class="co"># ANNARS, ändra lower_i till mid_i + 1 (höger del av lista ska sökas)</span></span>
 <span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Returnera None (talet finns inte i listan)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Returnera None (talet finns inte i listan)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="uppgifter" class="level2">
 <h2 class="anchored" data-anchor-id="uppgifter">Uppgifter</h2>
@@ -645,8 +652,8 @@ Index: 0  1  2  3  4  5  6  7  8  9</code></pre>
 <!---Non verbose function------------------------------------------------------>
 <!----------------------------------------------------------------------------->
 <!---Using the algoritm above-------------------------------------------------->
-<div id="58f9e2e7" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">14</span>, <span class="dv">16</span>, <span class="dv">18</span>, <span class="dv">20</span>]</span>
+<div id="025718eb" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">14</span>, <span class="dv">16</span>, <span class="dv">18</span>, <span class="dv">20</span>]</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>val_1 <span class="op">=</span> <span class="dv">12</span> <span class="co"># Ett värde som finns i listan</span></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>val_2 <span class="op">=</span> <span class="dv">25</span> <span class="co"># Ett värde som saknas i listan</span></span>
@@ -655,7 +662,7 @@ Index: 0  1  2  3  4  5  6  7  8  9</code></pre>
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>result_2 <span class="op">=</span> bin_search(lst, val_2, lower_i<span class="op">=</span><span class="dv">0</span>, upper_i<span class="op">=</span><span class="bu">len</span>(lst)<span class="op">-</span><span class="dv">1</span>)</span>
 <span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result_1) <span class="co"># 5 (dvs värdet 12 finns på index 5)</span></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result_2) <span class="co"># None (dvs värdet 5 saknas i listan)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result_2) <span class="co"># None (dvs värdet 5 saknas i listan)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>5
 None</code></pre>
@@ -667,7 +674,7 @@ None</code></pre>
 <h3 class="anchored" data-anchor-id="uppgift-2">Uppgift 2</h3>
 <p>Utveckla programmet så att det skriver ut i vilken partition av listan som genomsöks och antalet sökningar som gjorts. Exempel på utmatning:</p>
 <!--Verbose function----------------------------------------------------------->
-<div id="d1fb84b1" class="cell" data-execution_count="3">
+<div id="6643f918" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-stdout">
 <pre><code>Söker efter talet 12 i listan [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
 Söker efter talet 12 i listan [12, 14, 16, 18, 20]
@@ -695,7 +702,7 @@ Talet 25 saknas i listan, konstaterades efter 4 sökningar</code></pre>
 <p>Tips: En lista <code>lst</code> kan sorteras med hjälp av metoden <code>sort</code> enligt <code>lst.sort()</code>. Det går alltså att skapa en lista med slumpmässiga heltal och därefter sortera den.</p>
 <p>Nedan finns ett exempel. Antalet sökningar som gjorts i exemplet är dubbelt så många som listans storlek. T ex så baserar sig den första raden på en sökning i en lista på 100 slumpade heltal mellan 1 och 200, där vart och ett av talen <code>1, 2, 3,..., 200</code> eftersöks.</p>
 <!--Explorer function---------------------------------------------------------->
-<div id="0391306f" class="cell" data-execution_count="4">
+<div id="01677613" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-stdout">
 <pre><code>Listans    Antal iterationer    Antal iterationer    Maximalt antal
 storlek    vid bom              vid träff            iterationer
@@ -769,13 +776,14 @@ hitta det index som det återfinns på.</code></pre>
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

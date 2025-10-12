@@ -6,8 +6,8 @@
 <script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.25">
 
   <meta name="author" content="">
   <title>CodeBubo – Villkor i Python</title>
@@ -95,7 +95,7 @@
     code span.vs { color: #abe338; } /* VerbatimString */
     code span.wa { color: #dcc6e0; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/theme/quarto-091ebfb71d12db7fc524ec91495e1509.css">
+  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/theme/quarto-327cab17de08e4a17faa7d61f48ae591.css">
   <link rel="stylesheet" href="style.css">
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FFXVNM3K2N"></script>
 
@@ -231,10 +231,10 @@
 <section id="ett-enkelt-villkor" class="slide level2">
 <h2>Ett enkelt villkor</h2>
 <p>I Python så avgörs ett villkor med hjälp av det reserverade ordet <span style="font-size: 85%;"><code>if</code></span>.</p>
-<div id="7a244bcb" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>a <span class="op">=</span> <span class="dv">1</span></span>
+<div id="6ec9e5c8" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>a <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb1-2"><a></a><span class="cf">if</span> a <span class="op">&gt;</span> <span class="dv">0</span>:</span>
-<span id="cb1-3"><a></a>   <span class="bu">print</span>(<span class="st">"a är större än 0"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a></a>   <span class="bu">print</span>(<span class="st">"a är större än 0"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>a är större än 0</code></pre>
 </div>
@@ -242,12 +242,12 @@
 <div class="new-line">
 
 </div>
-<div id="73d1c6b4" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>a <span class="op">=</span> <span class="op">-</span><span class="dv">1</span></span>
+<div id="db331fe9" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>a <span class="op">=</span> <span class="op">-</span><span class="dv">1</span></span>
 <span id="cb3-2"><a></a><span class="cf">if</span> a <span class="op">&gt;</span> <span class="dv">0</span>:</span>
 <span id="cb3-3"><a></a>   <span class="bu">print</span>(<span class="st">"a är större än noll"</span>)</span>
 <span id="cb3-4"><a></a><span class="cf">else</span>:</span>
-<span id="cb3-5"><a></a>   <span class="bu">print</span>(<span class="st">"a är inte större än noll"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-5"><a></a>   <span class="bu">print</span>(<span class="st">"a är inte större än noll"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>a är inte större än noll</code></pre>
 </div>
@@ -257,11 +257,11 @@
 <h2>Exempel: Godkänt?</h2>
 
 <img data-src="charts/chart1.svg" class="r-stretch"><div class="v-space">
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>e_gräns <span class="op">=</span> <span class="dv">15</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>e_gräns <span class="op">=</span> <span class="dv">15</span></span>
 <span id="cb5-2"><a></a>poäng <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">'Ange din provpoäng -&gt; '</span>))</span>
 <span id="cb5-3"><a></a><span class="cf">if</span> poäng <span class="op">&gt;=</span> e_gräns:</span>
 <span id="cb5-4"><a></a>   <span class="bu">print</span>(<span class="st">'Godkänt'</span>)</span>
-<span id="cb5-5"><a></a><span class="bu">print</span>(<span class="st">'Programmet avslutas'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-5"><a></a><span class="bu">print</span>(<span class="st">'Programmet avslutas'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="v-space">
 <p>Resultatet av <span style="font-size: 85%;"><code>input</code></span> är en sträng; denna kan göras om till ett heltal med <span style="font-size: 85%;"><code>int</code></span> enligt rad 2 ovan.</p>
@@ -271,13 +271,13 @@
 <h2>Exempel: Godkänt eller ej?</h2>
 
 <img data-src="charts/chart2.svg" class="r-stretch"><div class="v-space">
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>e_gräns <span class="op">=</span> <span class="dv">15</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>e_gräns <span class="op">=</span> <span class="dv">15</span></span>
 <span id="cb6-2"><a></a>poäng <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">'Ange din provpoäng -&gt; '</span>))</span>
 <span id="cb6-3"><a></a><span class="cf">if</span> poäng <span class="op">&gt;=</span> e_gräns:</span>
 <span id="cb6-4"><a></a>   <span class="bu">print</span>(<span class="st">'Godkänt'</span>)</span>
 <span id="cb6-5"><a></a><span class="cf">else</span>:</span>
 <span id="cb6-6"><a></a>  <span class="bu">print</span>(<span class="st">'Ej godkänt'</span>)</span>
-<span id="cb6-7"><a></a><span class="bu">print</span>(<span class="st">'Programmet avslutas'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-7"><a></a><span class="bu">print</span>(<span class="st">'Programmet avslutas'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="jämförelseoperatorer" class="slide level2">
@@ -305,15 +305,15 @@
 </div></div>
 <div class="columns">
 <div class="column" style="width:52%;">
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="bu">print</span>(<span class="dv">3</span> <span class="op">==</span> <span class="dv">3</span>) <span class="co"># True</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="bu">print</span>(<span class="dv">3</span> <span class="op">==</span> <span class="dv">3</span>) <span class="co"># True</span></span>
 <span id="cb7-2"><a></a><span class="bu">print</span>(<span class="dv">3</span> <span class="op">&lt;=</span> <span class="dv">3</span>) <span class="co"># True</span></span>
 <span id="cb7-3"><a></a><span class="bu">print</span>(<span class="dv">3</span> <span class="op">!=</span> <span class="dv">3</span>) <span class="co"># False</span></span>
-<span id="cb7-4"><a></a><span class="bu">print</span>(<span class="dv">3</span> <span class="op">!=</span> <span class="dv">4</span>) <span class="co"># True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-4"><a></a><span class="bu">print</span>(<span class="dv">3</span> <span class="op">!=</span> <span class="dv">4</span>) <span class="co"># True</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column" style="width:48%;">
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a>a <span class="op">=</span> <span class="dv">3</span>  <span class="co"># Tilldelande</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a>a <span class="op">=</span> <span class="dv">3</span>  <span class="co"># Tilldelande</span></span>
 <span id="cb8-2"><a></a>b <span class="op">=</span> <span class="dv">8</span>  <span class="co"># Tilldelande</span></span>
 <span id="cb8-3"><a></a>a <span class="op">==</span> b <span class="co"># Jämförande</span></span>
-<span id="cb8-4"><a></a><span class="co"># Rad 3 evalueras till False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-4"><a></a><span class="co"># Rad 3 evalueras till False</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Tilldelning sker från höger till vänster.</p>
 </div></div>
 </div>
@@ -323,20 +323,20 @@
 <p><span style="font-size: 0.8em"> Värdena <span style="font-size: 85%;"><code>True</code></span> och <span style="font-size: 85%;"> <code>False</code></span> kallas för <strong>booleska</strong> värden (efter George Boole, 1815 – 1864). </span></p>
 <p><span style="font-size: 0.8em"> Variabler som antar denna typ av värden kallas för <strong>booleska variabler</strong>. </span></p>
 <div class="v-space">
-<div id="ecfecbb5" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>my_boolean <span class="op">=</span> <span class="va">True</span></span>
+<div id="0486f0db" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>my_boolean <span class="op">=</span> <span class="va">True</span></span>
 <span id="cb9-2"><a></a><span class="cf">if</span> (my_boolean):</span>
-<span id="cb9-3"><a></a>   <span class="bu">print</span>(<span class="st">"Den booleska variabelns värde var True"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-3"><a></a>   <span class="bu">print</span>(<span class="st">"Den booleska variabelns värde var True"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Den booleska variabelns värde var True</code></pre>
 </div>
 </div>
 </div>
 <div class="v-space">
-<div id="2faf264d" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>my_second_boolean <span class="op">=</span> <span class="va">False</span></span>
+<div id="8a7a9af3" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>my_second_boolean <span class="op">=</span> <span class="va">False</span></span>
 <span id="cb11-2"><a></a><span class="cf">if</span> (<span class="kw">not</span> my_second_boolean):</span>
-<span id="cb11-3"><a></a>   <span class="bu">print</span>(<span class="st">"Den booleska variabelns värde var inte True"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-3"><a></a>   <span class="bu">print</span>(<span class="st">"Den booleska variabelns värde var inte True"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Den booleska variabelns värde var inte True</code></pre>
 </div>
@@ -350,13 +350,13 @@
 </div>
 <p>Booleska värden går att kombinera med operatorerna <span style="font-size: 85%;"><code>or</code></span> och <span style="font-size: 85%;"> <code>and</code> </span>.</p>
 <div class="v-space">
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>a <span class="op">=</span> <span class="va">True</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>a <span class="op">=</span> <span class="va">True</span></span>
 <span id="cb13-2"><a></a>b <span class="op">=</span> <span class="va">False</span></span>
 <span id="cb13-3"><a></a><span class="bu">print</span>(a <span class="kw">and</span> b)         <span class="co"># False</span></span>
 <span id="cb13-4"><a></a><span class="bu">print</span>(a <span class="kw">or</span> b)          <span class="co"># True</span></span>
 <span id="cb13-5"><a></a><span class="bu">print</span>((a <span class="kw">or</span> b) <span class="kw">and</span> a)  <span class="co"># True</span></span>
 <span id="cb13-6"><a></a><span class="bu">print</span>(<span class="kw">not</span> a)           <span class="co"># False</span></span>
-<span id="cb13-7"><a></a><span class="bu">print</span>(<span class="kw">not</span> b)           <span class="co"># True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-7"><a></a><span class="bu">print</span>(<span class="kw">not</span> b)           <span class="co"># True</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 
@@ -367,7 +367,7 @@
 
 </div>
 <div class="small-code">
-<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a>tal <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">'Ange valfritt heltal -&gt;'</span>))</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a>tal <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">'Ange valfritt heltal -&gt;'</span>))</span>
 <span id="cb15-2"><a></a><span class="cf">if</span> tal <span class="op">&gt;=</span> <span class="dv">0</span>:</span>
 <span id="cb15-3"><a></a>   <span class="cf">if</span> tal <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb15-4"><a></a>      <span class="bu">print</span>(<span class="st">'Noll'</span>)</span>
@@ -376,7 +376,7 @@
 <span id="cb15-7"><a></a><span class="cf">else</span>:</span>
 <span id="cb15-8"><a></a>   <span class="bu">print</span>(<span class="st">'Negativt'</span>)</span>
 <span id="cb15-9"><a></a></span>
-<span id="cb15-10"><a></a><span class="bu">print</span>(<span class="st">'Programmet avslutas'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-10"><a></a><span class="bu">print</span>(<span class="st">'Programmet avslutas'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 
@@ -570,7 +570,7 @@
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -644,13 +644,14 @@
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy
