@@ -14,17 +14,18 @@ format:
 # Python Cheat Sheet
 
 ## Matematiska operatorer
+
 | Operator | Operation | Exempel|
 | ------ | ------ | ------ |
-| `**` | Upphöjt till | `3 ** 2 # Resultat: 9`
-| `%` | Modulo | `9 % 2 # Resultat: 1`
-| `//` | Heltalsdivision | `9  // 2 # Resultat: 4`
-| `/` | Division | `9 / 2 # Resultat: 4.5`
-| `*` | Multiplikation  | `2 * 3 # Resultat: 6`
-| `-` | Subtraktion | `2 - 3 # Resultat: -1`
-| `+` | Addition | `2 + 3 # Resultat: 5`|
+| `**` | Upphöjt till | `3 ** 2 # Resultat: `{python} 3**2``
+| `%` | Modulo | `9 % 2 # Resultat: `{python} 9%2``
+| `//` | Heltalsdivision | `9  // 2 # Resultat: `{python} 9//2``
+| `/` | Division | `9 / 2 # Resultat: `{python} 9/2``
+| `*` | Multiplikation  | `2 * 3 # Resultat: `{python} 2*3``
+| `-` | Subtraktion | `2 - 3 # Resultat: `{python} 2-3``
+| `+` | Addition | `2 + 3 # Resultat: `{python} 2+3``|
 
-Operatorerna ovan är listade i prioriteringsordning.
+Operatorerna ovan är listade i fallande prioriteringsordning.
 
 ## Variabler och datatyper
 
@@ -34,95 +35,102 @@ En variabel är ett namn med ett värde knutet till sig. En variabel är av en
 specifik *datatyp*. Variabler *tilldelas* ett värde enligt följande exempel
 (datatyp inom parentes):
 
-```python
+```{python}
+#| echo: true
 pris    = 10                # Datatyp int (Heltal), utan decimalpunkt
 sträcka = 4.5               # Datayp float (flyttal), med decimalpunkt
 namn    = "Ada"             # Datatyp str (Sträng), teckenföljd
 is_game_on = True           # Datatyp bool (Boolesk variabel), kan anta värdena True och False
 even5   = [2, 4, 6, 8, 10]  # Datatyp list (Lista)
-uppslag = {"a":1, "b":2}    # Datatyp dict (Uppslagstabell)
+tabell = {"a":1, "b":2}     # Datatyp dict (Uppslagstabell)
 ```
 
-En variabel kan förändras med t ex `pris += 0.5` (nu kommer `pris` att ha
-värdet `10.5`, och således också ha bytt datatyp till `float`). Ett annat
-exempel är `namn += " Lovelace"`. Nu kommer `namn` att utgöras av strängen
-`"Ada Lovelace"`.
+En variabel kan skrivas över med t ex `pris += 0.5` (nu kommer `pris` att ha
+värdet ` `{python} pris+0.5``, och således också ha bytt datatyp till `float`).
+Ett annat exempel är `namn += " Lovelace"`. Nu kommer `namn` att utgöras av 
+strängen `"`{python} namn + " Lovelace"`"`.
+
+Av ovanstående datatyper så är det enbart `list` och `dict` som är *muterbara*,
+dvs att deras innehåll kan ändras. Operationer på övriga variabeltyper skapar 
+en ny variabel, eventuellt med samma namn, och nytt innehåll.
 
 Vissa datatyper går att konvertera till andra datatyper. T ex ger `str(3.14)`
-resultatet `"3.14"` (konvertering från `float` till `str`) och `int("9")` ger
-resultatet `9` (konvertering från `str` till `int`).
-
-### Egendefinierade datatyper
-
-En egendefinierad datatyp skapas med nyckelorden `class`. Den kan skapas och
-användas enligt följande:
-
-```python
-# Datatypen skapas
-class Bil:
-    märke = ""
-    årsmodell = -1
-
-# En instans skapas
-a_bil = Bil()
-a_bil.märke = "Volvo"
-a_bil.årsmodell = 2021
-
-# Informationen kan läsas enligt
-print(f"Variabeln a_bil är en bil av märket {a_bil.märke} ", end="")
-print(f"och årsmodell {a_bil.årsmodell}")
-```
+resultatet `'3.14'` (konvertering från `float` till `str`) och `int("9")` ger
+resultatet ` `{python} int("9")`` (konvertering från `str` till `int`).
 
 ## `print`-satsen
+
 För att skriva ut något till konsolen kan en `print`-sats användas. Exempel:
-```python
+```{python}
 print("Hello, world") # Skriver ut: Hello, world
 favorite_number = 42
 print(favorite_number) # Skriver ut: 42
 print(f"Mitt favorittal är {favorite_number}, förstås.")
 # Skriver ut: Mitt favorittal är 42, förstås.
 ```
+
 ## `input`-satsen
+
 Ett program kan vänta på indata från konsolen genom funktionen `input`. Denna
 funktion returnerar alltid en sträng (`str`). Exempel:
+
 ```python
 given_name = input("Ange ditt förnamn -> ")
 print(f"Hej, {given_name}!")
 ```
 
 ## Jämförelseoperatorer
-Följande tilldelningar görs: `a = -2`, `b = a` och `c = 0`. Då kan dessa
-variabler jämföras t ex enligt följande:
+
+Följande tilldelningar görs:
+
+```{python}
+#| echo: true
+a = -2
+b = a
+c = 0
+```
+
+Nu kan t ex följande jämförelser göras:
 
 | Operator | Operation | Resultat|
 | ------ | ------ | ------ |
-| Lika med | `a == b` | `True` |
-| Skilt från | `a != b` | `False` |
-| Större än | `a > b` | `False` |
-| Mindre än | `a < c` | `True` |
-|Större än eller lika med| `a >= b`| `True`|
-|Mindre än eller lika med| `a <= c`| `True`|
+| Lika med | `a == b` | ` `{python} a==b`` |
+| Skilt från | `a != b` | ` `{python} a!=b`` |
+| Större än | `a > b` | ` `{python} a>b`` |
+| Mindre än | `a < c` | ` `{python} a<c`` |
+|Större än eller lika med| `a >= b`| ` `{python} a>=b``|
+|Mindre än eller lika med| `a <= c`| ` `{python} a<=c``|
 
 Det går även att jämföra flera variabler i en följd, t ex `a == b < c`, vilket
-returnar `True`.
+returnar ` `{python} a==b<c``.
 
 ## Logiska operatorer
+
 Det finns tre inbyggda logiska operatorer i Python: `and`, `or` och `not`.
 Följande tilldelningar görs: `a = True`, `b = False`, `c = True` och `d = False`.
 
+```{python}
+#| echo: true
+a = True
+b = False
+c = True
+d = False
+```
+
 | Operator | Operation | Resultat|
 | ------ | ------ | ------ |
-| `and` | `a and c` | `True` |
-| `and` | `a and b` | `False` |
-| `or` | `a or b` | `True` |
-| `or` | `b or d` | `False` |
-| `not` | `not b` | `True` |
-| `not` | `not a` | `False` |
+| `and` | `a and c` | ` `{python} a and c`` |
+| `and` | `a and b` | ` `{python} a and b`` |
+| `or` | `a or b` | ` `{python} a or b`` |
+| `or` | `b or d` | ` `{python} b or d`` |
+| `not` | `not a` | ` `{python} not a`` |
+| `not` | `not b` | ` `{python} not b`` |
 
 Det går att tillämpa flera logiska operatorer i en följd, t ex `(a and not b)
-or (a and d)`, vilket returnerar `True`.
+or (a and d)`, vilket returnerar ` `{python} (a and not b) or (a and d)``.
 
 ## Villkor
+
 I Python prövas ett *villkor* med `if`-satser. Syntaxen är
 ```python
 if <booleskt_uttryck_1>:
@@ -135,7 +143,7 @@ else:
 ```
 
 Detta kan exemplifieras i följande program:
-```python
+```{python}
 my_number = 42
 if my_number > 100:
     print("Talet är större än hundra.")
@@ -147,9 +155,11 @@ else:
 ```
 
 ## Loopar
+
 ### `while`-loopar
+
 I en loop kan kod processas flera gånger. Exempel:
-```python
+```{python}
 a  = 0
 while a < 5:
     print(a, end=" ")
@@ -160,7 +170,7 @@ while a < 5:
 Det går att kontrollera hur loopen körs genom nyckelorden `break` (avbryter
 aktuell loop) och `continue` (startar om loopen från början). Exempel:
 
-```python
+```{python}
 a = 0
 while True:
     if a == 5:
@@ -172,47 +182,90 @@ while True:
     a += 1
 # Skriver ut: 0 1 2 3 4 7 8
 ```
+
 ### `for`-loopar
 Se avsnitt Listor, underavsnitt Loopa genom listor. Nyckelorden `break` och
 `continue` fungerar på samma sätt i `for`-loopar som i `while`-loopar.
 
 ## Dataföljder
-### Listor
-#### Åtkomst av element
-Låt `lst = [10, 20, 30, 40, 50]`. Då gäller att `lst[0]` har värdet `10` och
-`lst[1]` har värdet `20` osv. Det gäller också att `lst[-1]` har värdet `50`
-och `lst[-2]` har värdet `40` osv.
 
-Det går att komma åt delar av listan går det att göra
-```python
-lst[2:4]   # Resultat: [30, 40] (Elementen mellan två index)
-lst[2:]    # Resultat: [30, 40, 50] (Elementen fr o m index nr. 2)
-lst[:4]    # Resultat: [10, 20, 30, 40] (Elementen till index nr. 4 (men inte inklusive detta))
-lst[1:4:2] # Resultat: [20, 40] (Vartannat element mellan två index)
-lst[::-1]  # Resultat: [50, 40, 30, 20, 10] (Baklänges)
+### Listor
+
+En lista samlar olika värden eller objekt i en enda variabel. Vart och ett av
+dessa nås med ett *index*. 
+
+Vi deklarerar:
+
+```{python}
+lst = [10, 20, 30, 40, 50]
 ```
 
+#### Åtkomst av element samt delar av listor
+
+```{python}
+#| echo: false
+lst = [10, 20, 30, 40, 50]
+```
+
+| Adresserat index | Kod | Resultat|
+| ------ | ------ | ------ |
+| `0` | `lst[0]` | ` `{python} lst[0]`` |
+| `1` | `lst[1]` | ` `{python} lst[1]`` |
+| `-1` | `lst[-1]` | ` `{python} lst[-1]`` |
+| `-2` | `lst[-2]` | ` `{python} lst[-2]`` |
+| `2, 3` | `lst[2:4]` | ` `{python} lst[2:4]`` |
+| `0, 1, 2, 3` | `lst[:4]` | ` `{python} lst[:4]`` |
+| `2, 3, 4` | `lst[2:]` | ` `{python} lst[2:]`` |
+| `1, 3` | `lst[1:4:2]` | ` `{python} lst[1:4:2]`` |
+
+**Kommentarer**: Listans första element har index `0` och dess sista element har
+index `-1`. Med kolon-tecknet kan man få ut en del av en lista, t ex en lista
+med elementen med index `1, 2, 3` erhålls med `lst[1:4]` (till, men inte till
+och med, index 4). Det finns även en speciell notation som ger hela listan i
+omvänd ordning: `lst[::-1]` ger ` `{python} lst[::-1]``.
+
+En lista som innehåller t ex vartannat index av en given lista kan skapas med
+`lst[1:4:2]` (se tabellen ovan). Den innehåller vartannat index  från `1` till 
+(men inte till och med) index 4
+
 #### Skapa listor
+
 En lista kan skapas med den inbyggda funktionen `range`. T ex
 `long_list = list(range(100, 1000, 2))`. Detta kommer att skapa listan
 `[100, 102, 104,..., 998]`.
 
+Funktionen `range` returnerar inte en lista, den returnerar ett itererbart
+objekt. Detta objekt kan inte skrivas ut direkt, men det går att göra om till
+en lista med funktionen `list`.
+
+Det går även att skapa s.k *listomfattningar* enligt
+`lst = [2*i for i in range(5)]`, det ger listan
+` `{python} [2*i for i in range(5)]``.
+
 #### Antal element i en lista
+
 Antalet element i en lista erhålls med den inbyggda funktionen `len`. Exempel:
+```{python}
+#| echo: false
+long_list = list(range(100, 1000, 2))
+```
+
 ```python
-lst = list(range(100, 1000, 2))
-print(len(lst)) # Skriver ut antalet element: 450
+long_list = list(range(100, 1000, 2))
+print(len(long_list)) # Skriver ut antalet element: `{python} len(long_list)`
 ```
 
 #### Kontrollera om ett element finns i en lista
+
 Förekomsten av ett element i en lista kan kontrolleras enligt följande:
 ```python
 long_list = list(range(100, 1000, 2))
-500 in long_list # Returnerar True
-501 in long_list # Returnerar False
+500 in long_list # Returnerar `{python} 500 in long_list`
+501 in long_list # Returnerar `{python} 501 in long_list`
 ```
 
 #### Loopa genom listor
+
 En lista kan gås igenom element för element i en `for`-loop enligt fäljande:
 ```python
 lst = list(range(5, 0, -1)) # Skapar listan [5, 4, 3, 2, 1]
@@ -221,10 +274,14 @@ for i in lst:
 # Matar ut: 5 4 3 2 1
 ```
 
+Det behöver inte vara en lista som loopen iterar över. Det går t ex att loopa
+direkt över det objekt som `range` returnerar.
+
 #### Lägga till och ta bort element från en lista
 
 Följande exempel visar några tilläggs- och borttagningsoperationer:
-```python
+
+```{python}
 lst = [10, 20, 30, 40]
 lst.append(50) # lst är nu [10, 20, 30, 40, 50]
 lst.remove(30) # lst är nu [10, 20, 40, 50]
@@ -281,81 +338,218 @@ for key in my_dict.keys():
 ``` 
 
 ## Strängar och strängmetoder
+
+### Strängar kontra listor
+
 En sträng (datatyp `str`) kan i flera flera fall hanteras som en lista.
-Exempel: `str1 = "abc 123"`. Då gäller att `str1[1]` innehåller `"b"` och
-`str1[-1]` innehåller `"3"`. Däremot går det inte att utföra `str1[-1] = 4`;
-det ger ett felmeddelande eftersom strängar inte är muterbara. Antalet tecken i
-en sträng erhålls på samma sätt som antalet element i en lista med funktionen
-`len`; t ex ger `len(str1)` returvärdet `7`.
+
+Vi deklarerar
+
+```{python}
+#| echo: true
+#| output: false
+str1 = "ABC 123"
+```
+
+Nu gäller att `str1[1]` är `"`{python} str1[1]`"` och
+`str1[-1]` är `"`{python} str1[-1]`"`. Däremot går det inte att utföra
+`str1[-1] = 4`; det ger ett felmeddelande eftersom strängar inte är muterbara.
+Antalet tecken i en sträng erhålls på samma sätt som antalet element i en lista
+med funktionen `len`; t ex ger `len(str1)` returvärdet ` `{python} len(str1)``.
 
 **Delsträngar** fungerar på samma sätt som att komma åt delar av en lista; se
 rubriken Listor, underrubrik Åkomst av element ovan.
 
+### Justerade strängar med text
+
+En sträng kan högerjusteras eller centreras inom en given *fältbredd*. Exempel:
+Strängen `"ABC"` justeras så att den tar tio tecken i anspråk och högerjusteras.
+
+`"ABC".rjust(10)` ger  utskriften `"`{python} "ABC".rjust(10)`"`
+
+Samma sträng, men centrerad i fältet:
+
+`"ABC".center(10)` ger  utskriften `"`{python} "ABC".center(10)`"`
+
+Samma sträng, men vänsterjusterad i fältet:
+
+`"ABC".ljust(10)` ger  utskriften `"`{python} "ABC".ljust(10)`"`
+
+För att det ska bli någon effekt av justeringen måste fältbredden vara större
+än antalet tecken i strängen som skrivs ut.
+
+Om f-strängar används blir syntaxen:
+
+`f"{'ABC':>10}"` som ger `"`{python} f"{'ABC':>10}"`"`
+
+`f"{'ABC':^10}"` som ger `"`{python} f"{'ABC':^10}"`"`
+
+`f"{'ABC':<10}"` som ger `"`{python} f"{'ABC':<10}"`"`
+
+### Justerade strängar med tal
+
+För att presentera ett värde med decimaler så kan avrundning göras inne i
+strängen.
+
+```{python}
+#| echo: true
+#| out: true
+pi = 3.14159265358979
+print(f"Avrundat pi: {pi:.4f}")    # Fyra decimaler
+print(f"Avrundat pi: {pi:10.4f}")  # Fyra decimaler med fältbredden 10
+print(f"Avrundat pi: {pi:010.4f}") # Utfyllnadsnollor
+```
+
+Vi ser att avrundning har skett korrekt på fjärde decimalen.
+
 ### Strängmetoder
-I följande exempel är följande deklaration gjord: `str1 = "Detta är en sträng
-som består av 42 tecken"`
+
+I följande exempel är följande deklaration gjord:
+
+```{python}
+#| echo: true
+#| out: false
+str1 = "Detta är en sträng som består av 42 tecken"
+```
 
 | Metod | Exempel | Resultat| Kommentar|
 | ------ | ------ | ------ |------|
-|`.count()`| `str1.count("e")` |`2`|Ger antalet tecken av den specificerade sorten. Det går även att söka på en följd av tecken, då måste hela följden matchas för att räknas|
-|`.upper()`|`str1.upper()`|`"DETTA ÄR EN STRÄNG SOM BESTÅR AV 42 TECKEN"`|Returnerar strängen, där de alfanumeriska tecknen är versaler. `str1` är oförändrad.|
-|`.lower()`|`str1.lower()`|`"detta är en sträng som består av 42 tecken"`|Returnerar strängen, där de alfanumeriska tecknen är gemener. `str1` är oförändrad.|
-|`.title()`|`str1.title()`|`"Detta Är En Sträng Som Består Av 42 Tecken"`|Konverterar det första tecknet i varje ord till versal. `str1` är oförändrad.|
-|`.strip()`|`str1.strip()`|`"Detta är en sträng som består av 42 tecken"`|Tar bort mellanslag i början och i slutet av strängen (finns inga sådana i den aktuella strängen). `str1` är oförändrad.|
-|`.replace()`|`str1.replace("42", "många")`|`"Detta är en sträng som består av många tecken"`|Ersätter ett tecken, eller en följd av tecken, med andra tecken. `str1` är oförändrad.|
-|`.split()`|`str1.split()`|`['Detta', 'är', 'en', 'sträng', 'som', 'består', 'av', '42', 'tecken']`|Gör om strängen till ord i en lista. Separatortecknet är mellanslag som standard. `str1` är oförändrad.|
-|`.index()`|`str1.index("a")`|`4`|Returnerar första positionen av ett tecken eller en teckenföljd. `str1` är oförändrad.|
-|`.isalnum()`|`"abc123".isalnum()`|`True`|Returnerar `True` om alla tecken som kontrolleras är alfanumeriska, dvs bokstäver eller siffror; annars `False`.|
-|`.isalpha()`|`"abc123".isalpha()`|`False`|Returnerar `True` om alla tecken som kontrolleras är bokstäver, annars `False`.|
-|`.isdigit()`|`"42".isdigit()`|`True`|Returnerar `True` om alla tecken som kontrolleras är siffror, annars `False`.|
+|`.count()`| `str1.count("e")` |` `{python} str1.count('e')``|Ger antalet tecken av den specificerade sorten. Det går även att söka på en följd av tecken, då måste hela följden matchas för att räknas|
+|`.upper()`|`str1.upper()`|`"`{python} str1.upper()`"`|Returnerar strängen där de alfanumeriska tecknen är versaler. `str1` är oförändrad.|
+|`.lower()`|`str1.lower()`|`"`{python} str1.lower()`"`|Returnerar strängen där de alfanumeriska tecknen är gemener. `str1` är oförändrad.|
+|`.title()`|`str1.title()`|`"`{python} str1.title()`"`|Konverterar det första tecknet i varje ord till versal. `str1` är oförändrad.|
+|`.strip()`|`str1.strip()`|`"`{python} str1.strip()`"`|Tar bort mellanslag i början och i slutet av strängen (finns inga sådana i den aktuella strängen). `str1` är oförändrad.|
+|`.replace()`|`str1.replace("42", "många")`|`"`{python} str1.replace("42", "många")`"`)|Ersätter ett tecken, eller en följd av tecken, med andra tecken. `str1` är oförändrad.|
+|`.split()`|`str1.split()`|`"`{python} str1.split()`"`|Gör om strängen till ord i en lista. Separatortecknet är mellanslag som standard. `str1` är oförändrad.|
+|`.index()`|`str1.index("a")`|` `{python} str1.index("a")``|Returnerar första positionen av ett tecken eller en teckenföljd. `str1` är oförändrad.|
+|`.isalnum()`|`"abc123".isalnum()`|` `{python} "abc123".isalnum()``|Returnerar `True` om alla tecken som kontrolleras är alfanumeriska, dvs bokstäver eller siffror; annars `False`.|
+|`.isalpha()`|`"abc123".isalpha()`|` `{python} "abc123".isalpha()``|Returnerar `True` om alla tecken som kontrolleras är bokstäver, annars `False`.|
+|`.isdigit()`|`"42".isdigit()`|` `{python} "42".isdigit()``|Returnerar `True` om alla tecken som kontrolleras är siffror, annars `False`.|
+
+Att räkna det totala antalet tecken som finns i en sträng är inte en metod, det
+är en funktion:
+
+```{python}
+#| echo: true
+#| out: true
+num_chars = len(str1)
+print(f"Strängen innehåller {num_chars} tecken.")
+```
 
 ## Funktioner
-En funktion i är ett kodblock som kan anropas och processas som en separat del i programmet. Den kan, men behöver inte, returnera ett värde (tal, sträng, lista,...).
+
+En funktion i är ett kodblock som kan anropas och processas som en separat del
+i programmet. Den kan, men behöver inte, returnera ett explicit värde (tal,
+sträng, lista,...). Om funktionen inte har en `return`-sats så kommer `None`
+att returneras.
 
 ### Exempel på funktion utan returvärde
-```python
+
+```{python}
+#| output: true
 def greet(name):
     print(f"Hej {name}!")
+    
 greet("Alice") # Funktionen körs, och skriver ut Hej Alice!
 ```
 
-### Exempel på funktion med returvärde
-```python
+Denna funktion returnerar alltså `None`, vilket inte syns om resultet av
+funktionen inte skrivs ut.
+
+### Exempel på funktion med ett returvärde
+
+```{python}
+#|output: false 
 def divide(divisor, dividend):
     if dividend == 0:
-        return("Odefinierat!")
+        return None
     else:
         return divisor / dividend
+
 a = divide(10, 5) # a är nu 2.0
-a = divide(10, 0) # a är nu "Odefinierat!"
+a = divide(10, 0) # a är nu None 
 ```
 
+### Exempel på funktion med flera returvärden
+
+```{python}
+#| echo: true
+#| output: true
+pi = 3.14
+def circle(radius):
+	circ = pi * radius * 2
+	area = pi * radius ** 2
+	return (circ, area)
+
+circ, area = circle(1)
+print(f"Omkrets: {circ}, Area: {area}")
+```
+
+## Egendefinierade datatyper
+
+En egendefinierad datatyp skapas med nyckelorden `class`. Den kan skapas och
+användas enligt följande:
+
+```{python}
+# Datatypen skapas
+class Car:
+	'''
+	Datatyp som samlar information om en bil.
+	'''
+	def __init__(self, brand, model_year):
+		self.brand = brand
+		self.model_year = model_year
+
+# En instans skapas
+a_bil = Car("Volvo", 2021)
+
+# Informationen kan användas enligt
+print(f"Variabeln a_bil är en bil av märket {a_bil.brand} ", end="")
+print(f"med årsmodell {a_bil.model_year}")
+```
+
+Objekt av egendefinierade datatyper är muterbara, dvs de kan ändras.
+
 ## Slumptal
-Funktioner som har med slumptal att göra finns i en separat *modul*, nämligen `random`.
+
+Funktioner som har med slumptal att göra finns i en separat *modul*, nämligen
+`random`.
 
 ### Exempel på slumpmässigt heltal
-```python
+
+```{python}
+#| echo: true
+#|output: false 
 import random as rand
 random_int = rand.randint(0, 99)
 # random_int kommer nu att innehålla ett slumptal mellan, och inklusive, 0 och 99
 ```
 
 ### Exempel på slumpmässigt flyttal
-```python
+
+```{python}
+#| echo: true
+#| output: false 
 import random as rand
 random_float = rand.random()
 # random_float kommer nu att innehålla ett slumpmässigt flyttal mellan 0 och 1 (dock ej inklusive 1).
 ```
 
 ### Exempel på att blanda en lista
-```python
+
+```{python}
+#| echo: true
+#| output: false 
 import random as rand
 lst = list(range(0, 10)) 
 rand.shuffle(lst) # lst kommer nu att vara blandad
 ```
 
 ### Exempel på att plocka ut ett slumpmässigt tal från en lista
-```python
+
+```{python}
+#| echo: true
+#| output: false 
 import random as rand
 lst = list(range(0, 10))
 rand.choice(lst)
