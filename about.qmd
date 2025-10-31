@@ -19,7 +19,7 @@ byggd på öppen källkod och finns såväl till Windows, Linux och macOS.
 
 ## Användning av materialet
 
-Den som vill får gärna använda, kopiera och sprida material från sajten.
+Den som önskar får gärna använda, kopiera och sprida material från sajten.
 Källkod till sidorna och presentationerna finns
 [i denna repo på GitHub](https://github.com/codebubo/codebubo.github.io).
 
