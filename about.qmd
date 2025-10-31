@@ -14,8 +14,8 @@ Sajten är byggd med publiceringssystemet [Quarto](https://quarto.org/)
 och publicerad på [GitHub Pages](https://pages.github.com/).
 Det jag framförallt gillar med Quarto är att man skriver i Markdown och att det
 är enkelt att integrera text, bilder, kod samt matematiska formler på såväl
-vanliga webbsidor och i presentationer. Quarto är byggd på öppen källkod och
-finns såväl till Windows, Linux och macOS.
+vanliga webbsidor, presentationer och för export till pdf-dokument. Quarto är
+byggd på öppen källkod och finns såväl till Windows, Linux och macOS.
 
 ## Användning av materialet
 
