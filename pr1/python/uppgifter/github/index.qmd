@@ -1,0 +1,207 @@
+---
+title: "Kom igång med GitHub Desktop"
+format:
+  html:
+    fontsize: 1em
+---
+<!-- Skapa pdf med quarto render <filename> --to pdf -->
+
+I denna övning kommer du att
+
+* Skapa ett konto på GitHub
+* Skapa och klona ett repo
+* Skriva kod i två steg med commit och push
+* Dokumentera projektet i `README.md`
+
+---
+
+## Del 1: Skapa ett GitHub-konto
+
+1. Gå till GitHubs webbplats, [github.com](https://github.com)
+
+2. Klicka på Sign up, du hittar knappen längst upp till höger
+
+3. Fyll i dina uppgifter
+
+   * Ett användarnamn enligt mallen `edu-` följt av de tre första bokstäverna i
+   förnamnet och de tre första bokstäverna i efternamnet.
+
+	Exempel: Charlie Karlsson → `edu-chakar`
+
+	Denna namngivningsnorm är viktig eftersom det är där du kommer att lägga
+	material som ska bedömas.
+
+
+   * Din e-postadress
+
+   * Ett lösenord
+
+4. Verifiera att du är människa. GitHub visar en enkel test (t.ex. klicka på
+rätt bilder).
+
+5. Välj kontoinställningar. Du kan hoppa över frågor om hur du ska använda
+   GitHub (eller välja "Student")
+
+6. Bekräfta din e-post. GitHub skickar ett mejl till dig. Öppna mejlet och
+   klicka på **Verify email address**
+
+---
+
+## Del 2: Installera GitHub Desktop på Windows och koppla kontot
+
+1. Ladda ner GitHub Desktop
+
+	*  Gå till [desktop.github.com](https://desktop.github.com)
+
+	* Klicka på **Download for Windows**
+
+2. Installera programmet
+
+	* Öppna den nedladdade .exe-filen
+
+	* Följ instruktionerna för att installera
+
+3. Starta GitHub Desktop
+
+4. Logga in med ditt GitHub-konto
+
+	* Klicka på **Sign in to GitHub.com**
+
+	* Ett webbläsarfönster öppnas
+
+	* Logga in med samma e-post och lösenord som du använde när du skapade
+	  kontot (om det behövs)
+
+	* Klicka på **Authorize GitHub Desktop**
+
+5. Bekräfta inloggning i programmet
+
+	* GitHub Desktop visar nu ditt användarnamn
+
+	* Du är nu inloggad och redo att använda programmet
+
+6. Välj inställningar (valfritt)
+
+	* Du kan välja vilken editor du vill använda (Visual Studio Code är ett
+	  bra val)
+
+	* Standardinställningar fungerar bra för nybörjare
+
+---
+
+## Del 3: Skapa ett publikt repo på GitHub
+
+1. Logga in på [github.com](https://github.com) (om du inte redan är inloggad)
+
+2. Klicka på **+** uppe till höger → välj **New repository**
+
+3. Fyll i:
+   - **Repository name**: `hello-python`
+   - **Description**: *Första Pythonprojekt via GitHub Desktop*
+   - Kryssa i **Add a README file**
+   - Välj **Public**
+
+4. Klicka på **Create repository**
+
+---
+
+## 🔗 Del 4: Klona repot till Dokument-mappen
+
+1. Klicka på den gröna **Code**-knappen i repot
+
+2. Välj **HTTPS** och kopiera länken
+   (bör se ut som `https://github.com/ditt-namn/hello-python.git`)
+
+3. Öppna **GitHub Desktop**
+
+4. Välj **File → Clone repository**
+
+5. Klistra in länken under **URL**
+
+6. Välj **Local path**: `C:\Users\ditt-namn\Documents\hello-python`
+
+7. Klicka på **Clone**
+
+---
+
+## Del 5: Skapa och utveckla Pythonprogrammet
+
+1. Öppna mappen `hello-python` i valfri editor (t.ex. Notepad eller VS Code)
+
+2. Skapa en ny fil i din editor (t ex VS Code eller IDLE): `hello.py`
+
+#### Steg 1: Första versionen
+```python
+print("Hello, world!")
+```
+
+3. Spara filen
+
+4. Gå till GitHub Desktop
+
+5. Du ser att `hello.py` har lagts till
+
+6. Skriv commit-meddelande:  
+   `Lade till hello.py med Hello World`
+
+7. Klicka på **Commit to main**
+
+8. Klicka på **Push origin** för att synkronisera med GitHub
+
+---
+
+#### Steg 2: Utbyggd version
+
+Uppdatera `hello.py` till:
+
+```python
+print("Hello, world!")
+name = input("Vad heter du? ")
+print(f"Hej, {name}!")
+```
+
+9. Spara filen
+
+10. Gå till GitHub Desktop
+
+11. Skriv commit-meddelande:  
+    `Lade till namnfråga i hello.py`
+
+12. Klicka på **Commit to main**
+
+13. Klicka på **Push origin**
+
+---
+
+## Del 6: Uppdatera README.md med projektbeskrivning
+
+1. Öppna filen `README.md` i din editor (finns redan i repot)
+2. Ersätt innehållet med följande exempeltext:
+
+```markdown
+# Hello Python
+
+Detta är mitt första Pythonprojekt via GitHub Desktop.
+
+## Innehåll
+
+- `hello.py`: Ett enkelt program som först skriver ut "Hello, world!"
+  och sedan frågar efter användarens namn.
+
+## Syfte
+
+Att lära sig:
+- Skapa och klona ett GitHub-repo
+- Skriva och versionera kod i flera steg
+- Använda GitHub Desktop för commit och synkronisering
+- Uppdatera README för att dokumentera projektet
+```
+
+3. Spara filen
+4. Gå till **GitHub Desktop**
+5. Du ser att `README.md` har ändrats
+6. Skriv commit-meddelande:  
+   `Uppdaterade README med projektbeskrivning`
+7. Klicka på **Commit to main**
+8. Klicka på **Push origin**
+

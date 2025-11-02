@@ -1,0 +1,108 @@
+---
+title: GitHub 
+from: markdown+emoji
+title-slide-attributes:
+  data-background-image: "./background_1280.png"
+  data-background-opacity: "1"
+  data-background-color: "black"
+author: ""
+format:
+  revealjs:
+    mermaid: 
+      theme: dark
+    theme: dark
+    transition: slide
+    background-transition: slide
+    slide-number: true
+    controls: true
+    controls-layout: edges
+    date-format: "DD MMM YYYY"
+    css: style.css
+execute: 
+  echo: false
+---
+
+## Vad är GitHub?
+
+- GitHub är en plattform för samarbete kring kod och projekt.
+- Bygger på versionshanteringssystemet Git.
+- Används av utvecklare, designers, forskare – och studenter!
+
+---
+
+## Vad kan man göra på GitHub?
+
+- Lagra och dela kodfiler
+- Samarbeta med andra i realtid
+- Spåra ändringar och historik 
+
+---
+
+## Repositories (”repo”)
+
+- Ett repo är ett projekt eller en samling filer.
+- Kan vara privat eller publik.
+- Du kan klona, forka eller bidra till andras repos.
+
+---
+
+## Versionshantering i praktiken
+
+- Varje ändring sparas som en ”commit”.
+- Du (och andra) kan se vem som gjort vad – och när.
+- Möjlighet att gå tillbaka till tidigare versioner.
+
+### Exempel
+
+```
+
+Start
+  │
+  ├── Commit 1: Skapaden main.py med spelinstruktioner
+  │
+  ├── Commit 2: Lade till menyval
+  │
+  ├── Commit 3: Lade till felhantering för inmatning av val 
+  │
+  └── Commit 4: Lade till spellogik för Level 1
+
+```
+
+---
+
+## GitHub i undervisningen
+
+- *Individuella uppgifter*: Eleven skapar ett eget repo för sin kod, dokumentation och reflektion.
+- *Lärarfeedback*: Läraren kan kommentera direkt i koden via pull requests eller issues.
+- *Grupparbete*: Flera elever arbetar i samma repo, med tydlig ansvarsfördelning och commit-historik.
+
+---
+
+## Testning och kodgranskning
+
+-  *Automatiska tester*: GitHub Actions kan användas för att testa kod vid varje ändring.
+-  *Kodgranskning*: Elever granskar varandras kod och lär sig goda programmeringsprinciper.
+-  *Diskussioner*: Issues och kommentarer används för att diskutera problem och lösningar.
+
+---
+
+## Exempel på skolprojekt
+
+- Skapa en enkel webbplats med HTML/CSS/JavaScript.
+- Bygg ett spel i Python med Pygame.
+- Utveckla en app med React eller Flutter.
+- Automatisera en uppgift med ett Python-script.
+- Dokumentera projektet med README och screenshots.
+
+---
+
+## Tips för att lyckas
+
+- Skriv tydliga commit-meddelanden
+- Använd README-filen för att förklara projektet 
+- Dela projektet med andra – lär av varandra! 
+
+Se exempelprojekt här
+
+[https://github.com/edu-nikkar/SimpleCalculator](https://github.com/edu-nikkar/SimpleCalculator)
+
