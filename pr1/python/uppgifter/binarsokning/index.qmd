@@ -323,3 +323,82 @@ print("antalet för att konstatera att talet saknas i listan respektive")
 print("hitta det index som det återfinns på.")
 ```
 <!----------------------------------------------------------------------------->
+
+### Uppgift 4
+
+En sorterad lista har roterats, t.ex. `[6, 7, 1, 2, 3, 4, 5]`. Med hjälp av
+algoritmen för binärsökning, skriv en funktion som returnerar rotationspunkten
+(alltså det index där det minsta elementet finns). Funktionen ska enbart ta
+emot listan som parameter.
+
+**Tips:** Använd binärsökning, men istället för att söka efter ett specifikt
+värde, sök efter punkten där ordningen "bryts". Jämför mittenelementet med det
+sista elementet i aktuellt intervall – om mittenelementet är större, måste
+rotationspunkten vara till höger. Annars kan den vara vid mittenelementet eller
+till vänster.
+
+**Exempel:**
+```python
+lst = [6, 7, 1, 2, 3, 4, 5]
+result = find_rotation_point(lst)  # returnerar 2
+# Eftersom lst[2] = 1 är det minsta elementet
+```
+
+**Testfall att överväga:**
+- `[4, 5, 6, 7, 1, 2, 3]` → returnerar 4
+- `[1, 2, 3, 4, 5]` → returnerar 0 (ingen rotation)
+- `[3, 4, 5, 1, 2]` → returnerar 3
+
+### Uppgift 5
+Skriv en funktion `find_insert_position(lst, value)` som med hjälp av
+binärsökning returnerar det minsta index där ett givet värde kan infogas i en
+sorterad lista för att den ska förbli sorterad.
+
+Funktionen ska implementera logiken som motsvarar Python:s `bisect_left` -
+alltså returnera positionen före existerande lika värden.
+
+Specifikation:
+
+* Listan är garanterad sorterad i stigande ordning
+
+* Positionerna är 0-indexerade (som vanligt i Python)
+
+* Om värdet redan finns i listan, returnera positionen för den första förekomsten
+
+* Om värdet är större än alla element, returnera längden på listan
+
+**Exempel:**
+
+```python
+lst = [4, 6, 6, 8, 10]
+
+# Testfall:
+print(find_insert_position(lst, 7))   # 3  (infogas mellan 6 och 8)
+print(find_insert_position(lst, 6))   # 1  (första positionen där 6 finns/kan infogas)
+print(find_insert_position(lst, 3))   # 0  (infogas längst fram)
+print(find_insert_position(lst, 10))  # 4  (positionen för första 10:an)
+print(find_insert_position(lst, 15))  # 5  (infogas längst bak)
+```
+
+**Visualisering:**
+
+```python
+Index:    0   1   2   3   4
+Lista:   [4,  6,  6,  8,  10]
+
+Infogningspositioner:
+Värde 3  → index 0:  [3, 4, 6, 6, 8, 10]
+Värde 6  → index 1:  [4, 6, 6, 6, 8, 10]  # Infogas före existerande 6:or
+Värde 7  → index 3:  [4, 6, 6, 7, 8, 10]
+Värde 10 → index 4:  [4, 6, 6, 8, 10, ?]  # Infogas på samma plats som första 10:an
+Värde 15 → index 5:  [4, 6, 6, 8, 10, 15]
+```
+
+**Tips:** 
+
+* Använd binärsökningsprincipen: halvera sökområdet vid varje steg
+
+* Tänk på vad som händer när du hittar ett värde som är lika med value
+
+* Kom ihåg att hantera fallen när värdet är mindre än första elementet eller
+  större än sista
