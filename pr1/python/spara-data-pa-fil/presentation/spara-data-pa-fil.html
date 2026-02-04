@@ -9,7 +9,6 @@
 <link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.26">
 
-  <meta name="author" content="Nikodemus Karlsson">
   <title>CodeBubo – Spara data till fil i Python</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -202,21 +201,18 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-color="black" data-background-image="https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/for-loopar/frame-3083868_1280.png" data-background-opacity="1" class="quarto-title-block center">
+<section id="title-slide" data-background-color="black" data-background-image="./clker-free-vector-images-foler-29373_640.png" data-background-opacity="1" class="quarto-title-block center">
   <h1 class="title">Spara data till fil i Python</h1>
 
 <div class="quarto-title-authors">
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-Nikodemus Karlsson 
-</div>
-</div>
 </div>
 
 </section>
 <section id="dagens-mål" class="slide level2">
 <h2>Dagens mål</h2>
 <ul>
+<li>Att kunna öppna filer på datorns filsystem</li>
+<li>Att känna till JSON-formatet</li>
 <li>Att kunna läsa in och skriva data från instanser av en egendefinierad datatyp på fil.</li>
 </ul>
 </section>
@@ -240,7 +236,7 @@ Nikodemus Karlsson
 
 </div>
 <p>Vi kan deklarera en variabeltyp <code>Car</code> på det här sättet:</p>
-<div id="55c4d823" class="cell" data-execution_count="1">
+<div id="f631e831" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="kw">class</span> Car:</span>
 <span id="cb3-2"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, brand, price, mileage):</span>
 <span id="cb3-3"><a></a>        <span class="va">self</span>.brand <span class="op">=</span> brand</span>
