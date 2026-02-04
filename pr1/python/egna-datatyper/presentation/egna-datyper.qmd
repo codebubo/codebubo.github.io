@@ -2,10 +2,9 @@
 title: Egna datatyper i Python
 from: markdown+emoji
 title-slide-attributes:
-  data-background-image: https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/for-loopar/frame-3083868_1280.png
+  data-background-image: ./1117826-background-823673_1280.png
   data-background-opacity: "1"
   data-background-color: "black"
-author: "Nikodemus Karlsson"
 format:
   revealjs:
     mermaid: 
@@ -99,22 +98,37 @@ Nu innehåller `a_car` och `b_car` sin aktuella information.
 
 ## Använda attribut
 
+:::{.smaller-font}
 Vi använder samma syntax för att extrahera information från ett objekt som
 vi gjorde när vi satte det.
+:::
+
+:::{.small-code}
 
 ```{python}
 #| echo: true
-print(f"a_car årsmodell: {a_car.model_year}")
-print(f"a_car märke: {a_car.brand}")
-print(f"b_car årsmodell: {b_car.model_year}")
-print("a_car är älde än b_car") if b_car.model_year > a_car.model_year else print("a_car är äldre än b_car")
-```
+diff = b_car.model_year - a_car.model_year
 
+print(f"a_car årsmodell: {a_car.model_year}")
+print(f"b_car årsmodell: {b_car.model_year}")
+
+if diff == 0:
+    print("bilarna är lika gamla")
+elif diff > 0:
+    print(f"a_car är {diff} år äldre än b_car")
+else:
+    print(f"b_car är {-diff} år äldre än a_car")
+```
+:::
+
+:::{.smaller-font}
 På det här sättet kan många variabler skapas av en och samma typ, som alla
 innehåller sin unika information. Det är användbart i t ex register och spel.
+:::
 
 ## Exempel: en spelares position
 
+:::{.small-code}
 ```{python}
 #| echo: true
 import random as rand
@@ -135,36 +149,67 @@ set_position(player_1) # Sätter ett slumpvis valt läge för player_1
 set_position(player_2) # Sätter ett slumpvis valt läge för player_2
 print(f"Player 1 at ({player_1.position_x}, {player_1.position_y})")
 print(f"Player 2 at ({player_2.position_x}, {player_2.position_y})")
-
 ```
+
+:::
+
+## Konstruktor
+
+:::{.smaller-font}
+Ett smidigt sätt att skapa objekt är att använda en *konstruktor*. Då måste
+en konstruktormetod implementeras i klassen.
+:::
+
+```{python}
+#| echo: true
+class Player:
+  # Detta är konstruktormetoden
+  def __init__(self, x, y): 
+    self.x = x # x och y blir
+    self.y = y # attribut i typen
+
+a_player = Player(1, 2) # Här ges en position vid skapandet
+x = a_player.x
+y = a_player.y
+print(f"Spelarens position: ({x}, {y})")
+```
+
+:::{.smaller-font}
+I detta exempel ges spelaren en position direkt vid skapandet.
+:::
 
 ## Referenser
 
 Vi tittar på funktionen `set_position(player)` igen
-
 ```{python}
 #| echo: true
-def set_position(current_player): # En funktion som slumpar fram ett läge
+# En funktion som slumpar fram ett läge
+def set_position(current_player): 
   x = rand.randint(0, 10)
   y = rand.randint(0, 10)
   player.position_x = x   # Sätt den aktuella instansens läge
   player.position_y = y
 ```
 
+:::{.smaller-font}
 När `current_player` är av en egendefinierad datatyp, som t ex `Player`,
 så opererar funktionen på just detta objekt. Man säger att `current_player` är
 en *referens*, ett alias, till det objekt som funktionen anropas med.
 
 När en funktion tar emot t ex ett tal så kommer istället en *kopia* av den
 variabeln att skapas i funktionen, och det ursprungliga värdet ändras inte.
+:::
 
 ## Sammanfattning
 
-* Egendefinierade datatyper deklareras med hjälp av nyckelordet `class`
-* Variablerna i klassen kallas för attribut
-* En instans av en sådan datyp skapas enligt syntaxen `my_var = My_type()`
-* Attribut kan kommas åt med punkt-operatorn, enligt syntaxen
+:::{.smaller-font}
+* Egendefinierade datatyper deklareras med hjälp av nyckelordet `class`.
+* Variablerna i klassen kallas för attribut.
+* En instans av en sådan datyp skapas enligt syntaxen `my_var = My_type()`.
+* Med en konstruktor kan tilldelandet av attribut förenklas.
+* Attribut kan kommas åt med punkt-operatorn, enligt syntaxen.
 `my_var.x`
 * När en funktion tar emot en egendefinierad datatyp så opererar den på
-originalobjektet
+originalobjektet.
+:::
 
