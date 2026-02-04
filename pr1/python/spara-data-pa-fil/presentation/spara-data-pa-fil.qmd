@@ -2,10 +2,9 @@
 title: Spara data till fil i Python
 from: markdown+emoji
 title-slide-attributes:
-  data-background-image: https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/for-loopar/frame-3083868_1280.png
+  data-background-image: ./clker-free-vector-images-foler-29373_640.png
   data-background-opacity: "1"
   data-background-color: "black"
-author: "Nikodemus Karlsson"
 format:
   revealjs:
     mermaid: 
@@ -24,6 +23,8 @@ execute:
 
 ## Dagens mål
 
+* Att kunna öppna filer på datorns filsystem
+* Att känna till JSON-formatet
 * Att kunna läsa in och skriva data från instanser av en egendefinierad datatyp
 på fil.
 
