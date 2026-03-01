@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -72,10 +72,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../../site_libs/bootstrap/bootstrap-e84eaf8b1db4b03cb6812d58502d09f6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../../site_libs/bootstrap/bootstrap-0dbb5278e3a55edda07080799b0b306e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -153,6 +153,8 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../../../../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="../../../../index.html">
     <span class="navbar-title">CodeBubo</span>
     </a>
@@ -164,7 +166,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../../index.html"> 
+    <a class="nav-link active" href="../../../../index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -192,6 +194,10 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../../../../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -507,8 +513,16 @@ window.Quarto = {
   <ul>
   <li><a href="#klasser-och-metoder-i-python" id="toc-klasser-och-metoder-i-python" class="nav-link active" data-scroll-target="#klasser-och-metoder-i-python">Klasser och metoder i Python</a>
   <ul class="collapse">
+  <li><a href="#uppgifter-med-lösningsförslag" id="toc-uppgifter-med-lösningsförslag" class="nav-link" data-scroll-target="#uppgifter-med-lösningsförslag">Uppgifter med lösningsförslag</a>
+  <ul class="collapse">
   <li><a href="#uppgift-1" id="toc-uppgift-1" class="nav-link" data-scroll-target="#uppgift-1">Uppgift 1</a></li>
   <li><a href="#uppgift-2" id="toc-uppgift-2" class="nav-link" data-scroll-target="#uppgift-2">Uppgift 2</a></li>
+  <li><a href="#uppgift-3" id="toc-uppgift-3" class="nav-link" data-scroll-target="#uppgift-3">Uppgift 3</a></li>
+  </ul></li>
+  <li><a href="#uppgift-utan-lösningsförslag" id="toc-uppgift-utan-lösningsförslag" class="nav-link" data-scroll-target="#uppgift-utan-lösningsförslag">Uppgift utan lösningsförslag</a>
+  <ul class="collapse">
+  <li><a href="#uppgift-4" id="toc-uppgift-4" class="nav-link" data-scroll-target="#uppgift-4">Uppgift 4</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -537,25 +551,74 @@ window.Quarto = {
 
 <section id="klasser-och-metoder-i-python" class="level1">
 <h1>Klasser och metoder i Python</h1>
-<section id="uppgift-1" class="level2">
-<h2 class="anchored" data-anchor-id="uppgift-1">Uppgift 1</h2>
+<section id="uppgifter-med-lösningsförslag" class="level2">
+<h2 class="anchored" data-anchor-id="uppgifter-med-lösningsförslag">Uppgifter med lösningsförslag</h2>
+<section id="uppgift-1" class="level3">
+<h3 class="anchored" data-anchor-id="uppgift-1">Uppgift 1</h3>
+<ul>
+<li><p>Skapa en klass som heter Book.</p></li>
+<li><p>Klassen ska ha en <code>__init__</code>-metod som tar emot tre parametrar: <code>titel</code>, <code>författare</code> och <code>år</code>. Dessa ska sparas som objektets attribut.</p></li>
+<li><p>Skapa en metod som heter beskrivning. När metoden anropas (t.ex. <code>min_bok.beskrivning()</code>) ska den skriva ut en mening som: “Boken ‘Moby Dick’ skrevs av Herman Melville år 1851.” (använd objektets egna attribut).</p></li>
+<li><p>Skapa en statisk metod som heter <code>är_gammal</code>. Den ska ta emot ett årtal som parameter och returnera <code>True</code> om boken är från år 2000 eller tidigare, annars <code>False</code>.</p></li>
+<li><p>Implementera en <code>__str__</code>-metod så att man kan skriva <code>print(min_bok)</code> och få ut ett fint formaterat svar, till exempel: “‘Moby Dick’ av Herman Melville (1851)”.</p></li>
+</ul>
+<p><strong>Exempel på användning</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>bok1 <span class="op">=</span> Book(<span class="st">"Moby Dick"</span>, <span class="st">"Herman Melville"</span>, <span class="dv">1851</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>bok1.beskrivning()</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(bok1)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> Book.är_gammal(bok1.år):</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Den här boken är gammal!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag uppgift 1">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Lösningsförslag uppgift 1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Book:</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, titel, författare, år):</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.titel <span class="op">=</span> titel</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.författare <span class="op">=</span> författare</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.år <span class="op">=</span> år</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> beskrivning(<span class="va">self</span>):</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Boken '</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>titel<span class="sc">}</span><span class="ss">' skrevs av </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>f<span class="sc">ö</span>rfattare<span class="sc">}</span><span class="ss"> år </span><span class="sc">{</span><span class="va">self</span><span class="sc">.å</span>r<span class="sc">}</span><span class="ss">."</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">@staticmethod</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> är_gammal(år):</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> år <span class="op">&lt;=</span> <span class="dv">2000</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"'</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>titel<span class="sc">}</span><span class="ss">' av </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>f<span class="sc">ö</span>rfattare<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span><span class="va">self</span><span class="sc">.å</span>r<span class="sc">}</span><span class="ss">)"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</section>
+<section id="uppgift-2" class="level3">
+<h3 class="anchored" data-anchor-id="uppgift-2">Uppgift 2</h3>
 <p>Deklarera en klass <code>Avatar</code>. Klassen ska ha attributen <code>namn</code>, <code>styrka</code> <code>snabbhet</code> och position. Snabbhet och styrka är tal mellan 0 och 10; deras summa ska bli 10 (så om styrkan anges till 7 så blir snabbheten 3). Positionen är en koordinat i <span class="math inline">\(xy\)</span>-planet; den består av två heltal. I samband med att avataren skapas så ska värdena på dessa attribut anges (det måste alltså finnas en <code>__init__</code>-metod).</p>
 <p>Det ska finnas en metod, <code>uppdatera_position</code>, som flyttar avataren från ett läge till ett annat (alltså uppdaterar koordinaterna). Det ska också finnas en <em>statisk metod</em> som tar två instanser av <code>Avatar</code> och returnerar avståndet mellan dem.</p>
 <p>Man ska också kunna skriva ut information om en avatar med <code>print(avatar)</code>, det måste alltså finnas en <code>__str__</code>-metod.</p>
 <p>När klassen är klar skulle användandet av den kunna se ut så här (se också utskrifterna under koden):</p>
-<div id="476dd7a1" class="cell" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>avatar1 <span class="op">=</span> Avatar(<span class="st">"Efelia"</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>avatar2 <span class="op">=</span> Avatar(<span class="st">"Zmille"</span>, <span class="dv">8</span>, <span class="dv">1</span>, <span class="dv">4</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(avatar1)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(avatar2)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>distance <span class="op">=</span> Avatar.dist(avatar1, avatar2)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Avståndet mellan </span><span class="sc">{</span>avatar1<span class="sc">.</span>namn<span class="sc">}</span><span class="ss"> och </span><span class="sc">{</span>avatar2<span class="sc">.</span>namn<span class="sc">}</span><span class="ss"> är "</span>, end<span class="op">=</span><span class="st">""</span>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>distance<span class="sc">:.2f}</span><span class="ss"> enheter."</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>avatar1.uppdatera_position(<span class="op">-</span><span class="dv">2</span>, <span class="dv">4</span>)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(avatar1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="a7c93200" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>avatar1 <span class="op">=</span> Avatar(<span class="st">"Efelia"</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>avatar2 <span class="op">=</span> Avatar(<span class="st">"Zmille"</span>, <span class="dv">8</span>, <span class="dv">1</span>, <span class="dv">4</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(avatar1)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(avatar2)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>distance <span class="op">=</span> Avatar.dist(avatar1, avatar2)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Avståndet mellan </span><span class="sc">{</span>avatar1<span class="sc">.</span>namn<span class="sc">}</span><span class="ss"> och </span><span class="sc">{</span>avatar2<span class="sc">.</span>namn<span class="sc">}</span><span class="ss"> är "</span>, end<span class="op">=</span><span class="st">""</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>distance<span class="sc">:.2f}</span><span class="ss"> enheter."</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>avatar1.uppdatera_position(<span class="op">-</span><span class="dv">2</span>, <span class="dv">4</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(avatar1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Det här är Efelia med styrkan 4. Snabbheten är 6. Positionen är (2, 3).
 Det här är Zmille med styrkan 8. Snabbheten är 2. Positionen är (1, 4).
@@ -564,29 +627,171 @@ Efelia byter läge till (-2, 4)
 Det här är Efelia med styrkan 4. Snabbheten är 6. Positionen är (-2, 4).</code></pre>
 </div>
 </div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag uppgift 2">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Lösningsförslag uppgift 2
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Avatar:</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, namn, styrka, xpos, ypos):</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.namn <span class="op">=</span> namn</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.styrka <span class="op">=</span> styrka</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.snabbhet <span class="op">=</span> <span class="dv">10</span> <span class="op">-</span> styrka</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.xpos <span class="op">=</span> xpos</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.ypos <span class="op">=</span> ypos</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>        ret_str1 <span class="op">=</span> <span class="ss">f"Det här är </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>namn<span class="sc">}</span><span class="ss"> med styrkan </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>styrka<span class="sc">}</span><span class="ss">. "</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        ret_str2 <span class="op">=</span> <span class="ss">f"Snabbheten är </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>snabbhet<span class="sc">}</span><span class="ss">. "</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        ret_str3 <span class="op">=</span> <span class="ss">f"Positionen är (</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>xpos<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>ypos<span class="sc">}</span><span class="ss">)."</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>        ret_str <span class="op">=</span> ret_str1 <span class="op">+</span> ret_str2 <span class="op">+</span> ret_str3</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">str</span>(ret_str)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">@staticmethod</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> dist(a1, a2):</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> ((a1.xpos <span class="op">-</span> a2.xpos) <span class="op">**</span> <span class="dv">2</span> <span class="op">+</span> (a1.ypos <span class="op">-</span> a2.ypos) <span class="op">**</span> <span class="dv">2</span>) <span class="op">**</span> <span class="fl">0.5</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> uppdatera_position(<span class="va">self</span>, x, y):</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>namn<span class="sc">}</span><span class="ss"> byter läge till (</span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>y<span class="sc">}</span><span class="ss">)"</span>)</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.xpos <span class="op">=</span> x</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.ypos <span class="op">=</span> y</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
 </section>
-<section id="uppgift-2" class="level2">
-<h2 class="anchored" data-anchor-id="uppgift-2">Uppgift 2</h2>
+<section id="uppgift-3" class="level3">
+<h3 class="anchored" data-anchor-id="uppgift-3">Uppgift 3</h3>
+<p>Skapa en klass <code>SimpleDice</code> som representerar en enkel tärning.</p>
+<p>Klassen ska ha:</p>
+<ul>
+<li><p>En <code>__init__</code>-metod som sätter tärningens antal sidor (standardvärde 6). Inget annat behövs i konstruktorn.</p></li>
+<li><p>En metod <code>roll_once(self)</code> som slår tärningen en gång och returnerar resultatet (ett slumptal mellan 1 och antal sidor). Använd <code>random.randint(1,   self.sidor)</code>.</p></li>
+<li><p>En enkel historik: Spara det senaste slaget i ett attribut <code>senaste_resultat</code>. Uppdatera detta varje gång roll_once anropas.</p></li>
+<li><p>En metod <code>visa_senaste(self</code>) som skriver ut: “Senaste slag: 4” (eller det aktuella värdet).</p></li>
+<li><p>Implementera <code>__str__</code> så att print(tärning) ger: “Tärning med 6 sidor. Senaste slag: 4”</p></li>
+</ul>
+<p><strong>Exempel på användning</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"--- Skapa en tärning med 6 sidor ---"</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>tärning <span class="op">=</span> SimpleDice(<span class="dv">6</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"--- Testa visa_senaste() innan något slag ---"</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>tärning.visa_senaste()</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"--- Testa roll_once() och skriv ut resultatet ---"</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>första_slag <span class="op">=</span> tärning.roll_once()</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Första slaget blev: </span><span class="sc">{</span>f<span class="sc">ö</span>rsta_slag<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>tärning.visa_senaste()</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"--- Testa __str__ med print(tärning) ---"</span>)</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tärning)</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"--- Gör ett andra slag ---"</span>)</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>andra_slag <span class="op">=</span> tärning.roll_once()</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Andra slaget blev: </span><span class="sc">{</span>andra_slag<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tärning)</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"--- Skapa en tärning med 20 sidor (standardvärde används inte) ---"</span>)</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>tärning20 <span class="op">=</span> SimpleDice(<span class="dv">20</span>)</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>tärning20.roll_once()</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tärning20)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Detta kan t ex ge utmatningen</p>
+<pre><code>--- Skapa en tärning med 6 sidor ---
+--- Testa visa_senaste() innan något slag ---
+Inget slag har gjorts ännu.
+
+--- Testa roll_once() och skriv ut resultatet ---
+Första slaget blev: 4
+Senaste slag: 4
+
+--- Testa __str__ med print(tärning) ---
+Tärning med 6 sidor. Senaste slag: 4
+
+--- Gör ett andra slag ---
+Andra slaget blev: 1
+Tärning med 6 sidor. Senaste slag: 1
+
+--- Skapa en tärning med 20 sidor ---
+Tärning med 20 sidor. Senaste slag: 17</code></pre>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag uppgift 3">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Lösningsförslag uppgift 3
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> SimpleDice:</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""En enkel tärning med historik för senaste slaget."""</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, sidor<span class="op">=</span><span class="dv">6</span>):</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Skapar en tärning med angivet antal sidor (standard 6)."""</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.sidor <span class="op">=</span> sidor</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.senaste_resultat <span class="op">=</span> <span class="va">None</span>  <span class="co"># Inget slag har gjorts ännu</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> roll_once(<span class="va">self</span>):</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Slår tärningen en gång och sparar resultatet."""</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.senaste_resultat <span class="op">=</span> random.randint(<span class="dv">1</span>, <span class="va">self</span>.sidor)</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.senaste_resultat</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> visa_senaste(<span class="va">self</span>):</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Skriver ut det senaste slaget."""</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.senaste_resultat <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Inget slag har gjorts ännu."</span>)</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"Senaste slag: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>senaste_resultat<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Returnerar en sträng med information om tärningen."""</span></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.senaste_resultat <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="ss">f"Tärning med </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>sidor<span class="sc">}</span><span class="ss"> sidor. Inget slag gjort ännu."</span></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="ss">f"Tärning med </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>sidor<span class="sc">}</span><span class="ss"> sidor. Senaste slag: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>senaste_resultat<span class="sc">}</span><span class="ss">"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="uppgift-utan-lösningsförslag" class="level2">
+<h2 class="anchored" data-anchor-id="uppgift-utan-lösningsförslag">Uppgift utan lösningsförslag</h2>
+<section id="uppgift-4" class="level3">
+<h3 class="anchored" data-anchor-id="uppgift-4">Uppgift 4</h3>
 <p>Deklarera en klass <code>Dice</code>, som ska vara en mall för en tärning. Ett <code>Dice</code>-objekt (en tärning alltså) ska kunna initieras med det antal sidor som tärningen ska ha, t ex <code>dice = Dice(6)</code>.</p>
 <p>Det ska finnas en metod, <code>roll</code>, som slår tärningen. Denna ska ta emot en parameter som anger hur många gånger som tärningen ska slås. Den kan användas enligt <code>dice.roll(5)</code>, vilket alltså indikerar att tärningen slås fem gånger.</p>
 <p>Det ska finnas en metod <code>get_results</code>, som returnerar en lista med utfallshistorik. Vidare ska det finnas en metod <code>print_frequencies</code> som skriver ut en frekvenstabell med kolumner för absolut frekvens och relativ frekvens.</p>
 <p>Slutligen ska <code>__str__</code> implementeras så att <code>print(dice)</code> ger information om det senaste utfallet.</p>
 <p>Se nedanstående deklarationer och utmatningar:</p>
-<div id="c87d40b6" class="cell" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>dice <span class="op">=</span> Dice()</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>dice.roll(<span class="dv">3</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Utfallshistoriken är nu: </span><span class="sc">{</span>dice<span class="sc">.</span>get_results()<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>dice.print_frequencies()</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>dice.roll(<span class="dv">8</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Utfallshistoriken är nu: </span><span class="sc">{</span>dice<span class="sc">.</span>get_results()<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>dice.print_frequencies()</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>dice.roll(<span class="dv">100</span>)</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>dice.print_frequencies()</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dice)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="d1cd4344" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>dice <span class="op">=</span> Dice()</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>dice.roll(<span class="dv">3</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Utfallshistoriken är nu: </span><span class="sc">{</span>dice<span class="sc">.</span>get_results()<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>dice.print_frequencies()</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>dice.roll(<span class="dv">8</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Utfallshistoriken är nu: </span><span class="sc">{</span>dice<span class="sc">.</span>get_results()<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>dice.print_frequencies()</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>dice.roll(<span class="dv">100</span>)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>dice.print_frequencies()</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dice)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Slår tärning, antal kast: 3
 Utfallshistoriken är nu: [2, 2, 6]
@@ -628,6 +833,7 @@ Tärningen visar 5</code></pre>
 </div>
 
 
+</section>
 </section>
 </section>
 
