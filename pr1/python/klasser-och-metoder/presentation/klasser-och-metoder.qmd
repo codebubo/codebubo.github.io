@@ -2,10 +2,9 @@
 title: Klasser och metoder i Python
 from: markdown+emoji
 title-slide-attributes:
-  data-background-image: https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/for-loopar/frame-3083868_1280.png
+  data-background-image: ./1117826-background-823673_1280.png
   data-background-opacity: "1"
   data-background-color: "black"
-author: "Nikodemus Karlsson"
 format:
   revealjs:
     mermaid: 
@@ -40,64 +39,11 @@ Till dessa knöt vi variabler, t ex ett namn eller ett pris.
 
 Det går även att knyta *funktioner* till dessa datatyper. Det gör att
 objektet kan "göra" saker, t ex ett objekt `bil` tutar, eller att någon
-egenskap förändras, t ex hastigheten, förändras.
+egenskap, t ex hastigheten, förändras.
 
 :::
 
-## Deklarera en metod
-
-Vi kan deklarera och använda en klass `Car` på det här sättet:
-
-```{python}
-# | echo: true
-# |output: false
-class Car:
-  speed = 0
-  
-  # Metod
-  def set_speed(self, new_speed):
-    self.speed = new_speed
-    
-my_car = Car()
-your_car = Car()
-my_car.set_speed(100)
-your_car.set_speed(70)
-
-print(f"my_car speed: {my_car.speed}, your_car speed: {your_car.speed}")
-
-```
-
-
-```{python}
-#|echo: false
-# Definiera variabel för att visa i text nedan
-out_str = str(f"my_car speed: {my_car.speed}, your_car speed: {your_car.speed}")
-```
-
-Sista raden skriver ut<br> <span class="code-out">`{python} out_str`</span>
-
-## Parametern `self`
-
-Som vi såg så håller Python reda på respektive bils fart.
-
-Detta vet Python pga parametern `self` i metoden:
-
-`def set_speed(self, new_speed):`
-
-Varje instans har ett ID-nummer. Detta
-skickas till metoderna som en *referens* för identifiering.
-
-```python
-def set_speed(self, new_speed):
-    self.speed = new_speed
-
-my_car = Car()
-my_car.set_speed(100)
-``` 
-ID-numret skickas till metoden som ett osynligt argument. Alla metoder måste
-ha parametern `self` som första parameter. 
-
-## Exempel
+## Exempel {visibility="hidden"}
 
 :::{.double-v-space}
 :::
@@ -116,11 +62,11 @@ for item in items:
       print(f"{item} gick inte att boosta ❌")
 ```
 
-## Exempel
+## Exempel {visibility="hidden"}
 
 Implementationen skulle kunna se ut så här:
 
-
+:::{.small-code}
 ```python
 class Item:
   is_boostable = False
@@ -141,6 +87,7 @@ for item in items:
     else:                                       # något vettigt måste sådan
       print(f"{item} gick inte att boosta ❌")  # funktionalitet läggas in.
 ```
+:::
 
 ## Metoden `__init__`
 
@@ -201,16 +148,75 @@ Sista raden skriver ut <span class="code-out">`{python} car_str`</span>
 
 Utskriftssträngen definieras av `__str__`-metoden. 
 
+## Deklarera en metod
+
+Vi kan deklarera och använda en klass `Car` på det här sättet:
+
+```{python}
+# | echo: true
+# |output: false
+class Car:
+  speed = 0
+  
+  # Metod
+  def set_speed(self, new_speed):
+    self.speed = new_speed
+    
+my_car = Car()
+your_car = Car()
+my_car.set_speed(100)
+your_car.set_speed(70)
+
+print(f"my_car speed: {my_car.speed}, your_car speed: {your_car.speed}")
+
+```
+
+
+```{python}
+#|echo: false
+# Definiera variabel för att visa i text nedan
+out_str = str(f"my_car speed: {my_car.speed}, your_car speed: {your_car.speed}")
+```
+
+Sista raden skriver ut<br> <span class="code-out">`{python} out_str`</span>
+
+## Parametern `self`
+
+Som vi såg så håller Python reda på respektive bils fart.
+
+Detta vet Python pga parametern `self` i metoden:
+
+`def set_speed(self, new_speed):`
+
+Varje instans har ett ID-nummer. Detta
+skickas till metoderna som en *referens* för identifiering.
+
+:::{.hidden}
+```python
+def set_speed(self, new_speed):
+    self.speed = new_speed
+
+my_car = Car()
+my_car.set_speed(100)
+``` 
+:::
+
+Så det som görs med `self`, t ex `self.speed = new_speed`, görs alltså på det
+aktuella objekt.
+
+ID-numret skickas till metoden som ett osynligt argument. Alla metoder måste
+ha parametern `self` som första parameter. 
 
 ## Statiska metoder {.scrollable}
 
 En statisk metod är en funktion som är knuten till en klass, men inte
 till ett objekt. 
 
+:::{.small-code}
 ```{python}
 #| echo: true
 #| output: true
-class Age:
+class Person:
   def __init__(self, age):
     self.age = age
   
@@ -218,15 +224,16 @@ class Age:
     return str(self.age)
   
   @staticmethod # En funktion som hör till klassen, men inte till ett objekt
-  def create_from_birthyear(year):
-    age = 2024 - year
-    return Age(age)
+  def from_birthyear(year): # Här saknas self
+    age = 2026 - year
+    return Person(age)
 
-age_Kalle = Age(18)
-age_Linda = Age.create_from_birthyear(2002)
-print(f"Kalle: {age_Kalle}, Linda: {age_Linda}")
+person_Kalle = Person(18)
+person_Linda = Person.from_birthyear(2002)
+print(f"Kalle: {person_Kalle}, Linda: {person_Linda}")
 
 ```
+:::
 
 
 ## Sammanfattning

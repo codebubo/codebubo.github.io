@@ -8,7 +8,58 @@ format:
 
 # Klasser och metoder i Python
 
-## Uppgift 1
+## Uppgifter med lösningsförslag
+
+### Uppgift 1
+
+* Skapa en klass som heter Book.
+
+* Klassen ska ha en `__init__`-metod som tar emot tre parametrar: `titel`,
+  `författare` och `år`. Dessa ska sparas som objektets attribut.
+
+* Skapa en metod som heter beskrivning. När metoden anropas (t.ex.
+  `min_bok.beskrivning()`) ska den skriva ut en mening som: "Boken 'Moby Dick'
+  skrevs av Herman Melville år 1851." (använd objektets egna attribut).
+
+* Skapa en statisk metod som heter `är_gammal`. Den ska ta emot ett årtal som
+  parameter och returnera `True` om boken är från år 2000 eller tidigare,
+  annars `False`.
+
+* Implementera en `__str__`-metod så att man kan skriva `print(min_bok)` och få
+  ut ett fint formaterat svar, till exempel: "'Moby Dick' av Herman Melville
+  (1851)".
+
+**Exempel på användning**
+```python
+bok1 = Book("Moby Dick", "Herman Melville", 1851)
+bok1.beskrivning()
+print(bok1)
+
+if Book.är_gammal(bok1.år):
+    print("Den här boken är gammal!")
+```
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 1"}
+```python
+class Book:
+    def __init__(self, titel, författare, år):
+        self.titel = titel
+        self.författare = författare
+        self.år = år
+
+    def beskrivning(self):
+        print(f"Boken '{self.titel}' skrevs av {self.författare} år {self.år}.")
+
+    @staticmethod
+    def är_gammal(år):
+        return år <= 2000
+
+    def __str__(self):
+        return f"'{self.titel}' av {self.författare} ({self.år})"
+```
+:::
+
+### Uppgift 2
 
 Deklarera en klass `Avatar`. Klassen ska ha attributen `namn`, `styrka`
 `snabbhet` och position. Snabbhet och styrka är tal mellan 0 och 10; deras
@@ -73,7 +124,146 @@ avatar1.uppdatera_position(-2, 4)
 print(avatar1)
 ```
 
-## Uppgift 2
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 2"}
+```python
+class Avatar:
+    def __init__(self, namn, styrka, xpos, ypos):
+        self.namn = namn
+        self.styrka = styrka
+        self.snabbhet = 10 - styrka
+        self.xpos = xpos
+        self.ypos = ypos
+
+    def __str__(self):
+        ret_str1 = f"Det här är {self.namn} med styrkan {self.styrka}. "
+        ret_str2 = f"Snabbheten är {self.snabbhet}. "
+        ret_str3 = f"Positionen är ({self.xpos}, {self.ypos})."
+        ret_str = ret_str1 + ret_str2 + ret_str3
+        return str(ret_str)
+
+    @staticmethod
+    def dist(a1, a2):
+        return ((a1.xpos - a2.xpos) ** 2 + (a1.ypos - a2.ypos) ** 2) ** 0.5
+
+    def uppdatera_position(self, x, y):
+        print(f"{self.namn} byter läge till ({x}, {y})")
+        self.xpos = x
+        self.ypos = y
+```
+:::
+
+### Uppgift 3
+
+Skapa en klass `SimpleDice` som representerar en enkel tärning.
+
+Klassen ska ha:
+
+* En `__init__`-metod som sätter tärningens antal sidor (standardvärde 6).
+  Inget annat behövs i konstruktorn.
+
+* En metod `roll_once(self)` som slår tärningen en gång och returnerar
+  resultatet (ett slumptal mellan 1 och antal sidor). Använd `random.randint(1,
+  self.sidor)`.
+
+* En enkel historik: Spara det senaste slaget i ett attribut
+  `senaste_resultat`. Uppdatera detta varje gång roll_once anropas.
+
+* En metod `visa_senaste(self`) som skriver ut: "Senaste slag: 4" (eller det
+  aktuella värdet).
+
+* Implementera `__str__` så att print(tärning) ger: "Tärning med 6 sidor.
+  Senaste slag: 4"
+
+**Exempel på användning**
+
+```python
+print("--- Skapa en tärning med 6 sidor ---")
+tärning = SimpleDice(6)
+
+print("--- Testa visa_senaste() innan något slag ---")
+tärning.visa_senaste()
+print()
+
+print("--- Testa roll_once() och skriv ut resultatet ---")
+första_slag = tärning.roll_once()
+print(f"Första slaget blev: {första_slag}")
+tärning.visa_senaste()
+print()
+
+print("--- Testa __str__ med print(tärning) ---")
+print(tärning)
+print()
+
+print("--- Gör ett andra slag ---")
+andra_slag = tärning.roll_once()
+print(f"Andra slaget blev: {andra_slag}")
+print(tärning)
+print()
+
+print("--- Skapa en tärning med 20 sidor (standardvärde används inte) ---")
+tärning20 = SimpleDice(20)
+tärning20.roll_once()
+print(tärning20)
+```
+
+Detta kan t ex ge utmatningen
+
+```
+--- Skapa en tärning med 6 sidor ---
+--- Testa visa_senaste() innan något slag ---
+Inget slag har gjorts ännu.
+
+--- Testa roll_once() och skriv ut resultatet ---
+Första slaget blev: 4
+Senaste slag: 4
+
+--- Testa __str__ med print(tärning) ---
+Tärning med 6 sidor. Senaste slag: 4
+
+--- Gör ett andra slag ---
+Andra slaget blev: 1
+Tärning med 6 sidor. Senaste slag: 1
+
+--- Skapa en tärning med 20 sidor ---
+Tärning med 20 sidor. Senaste slag: 17
+```
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 3"}
+```python
+import random
+
+class SimpleDice:
+    """En enkel tärning med historik för senaste slaget."""
+    
+    def __init__(self, sidor=6):
+        """Skapar en tärning med angivet antal sidor (standard 6)."""
+        self.sidor = sidor
+        self.senaste_resultat = None  # Inget slag har gjorts ännu
+    
+    def roll_once(self):
+        """Slår tärningen en gång och sparar resultatet."""
+        self.senaste_resultat = random.randint(1, self.sidor)
+        return self.senaste_resultat
+    
+    def visa_senaste(self):
+        """Skriver ut det senaste slaget."""
+        if self.senaste_resultat is None:
+            print("Inget slag har gjorts ännu.")
+        else:
+            print(f"Senaste slag: {self.senaste_resultat}")
+    
+    def __str__(self):
+        """Returnerar en sträng med information om tärningen."""
+        if self.senaste_resultat is None:
+            return f"Tärning med {self.sidor} sidor. Inget slag gjort ännu."
+        else:
+            return f"Tärning med {self.sidor} sidor. Senaste slag: {self.senaste_resultat}"
+```
+:::
+
+## Uppgift utan lösningsförslag
+
+### Uppgift 4 
 
 Deklarera en klass `Dice`, som ska vara en mall för en tärning. Ett 
 `Dice`-objekt (en tärning alltså) ska kunna initieras med det antal
