@@ -8,7 +8,9 @@ format:
 
 # In- och utmatning via terminal
 
-## Uppgift 1
+## Uppgifter med lösningsförslag
+
+### Uppgift 1
 
 Skapa ett program som innehåller en heltalsvariabel `my_int` och en
 flyttalsvariabel `my_float`. Ansätt ett valfritt värde till var och en av dessa
@@ -22,7 +24,22 @@ Värdet på my_int: 42
 Värdet på my_float: 3.14
 ```
 
-## Uppgift 2
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 1"}
+```C
+#include <stdio.h>
+
+int main(void) {
+  int my_int = 42;
+  float my_float = 3.14;
+  printf("Värdet på my_int: %d\n", my_int);
+  printf("Värdet på my_float: %.2f\n", my_float);
+  return 0;
+}
+```
+
+:::
+
+### Uppgift 2
 
 Skapa ett program som tar emot två heltal från en inmatning. Programmet ska
 skriva ut summan, differensen, produkten och kvoten av dessa.
@@ -40,7 +57,28 @@ Talens produkt: 200
 Talens kvot: 0.500000
 ```
 
-## Uppgift 3
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 2"}
+```C
+#include <stdio.h>
+
+int main(void) {
+  int tal_1, tal_2;
+  printf("Ange tal 1 -> ");
+  scanf("%d", &tal_1);
+  printf("Ange tal 2 -> ");
+  scanf("%d", &tal_2);
+  printf("------------------\n");
+  printf("Talens summa: %d\n", tal_1 + tal_2);
+  printf("Talens differens: %d\n", tal_1 - tal_2);
+  printf("Talens produkt: %d\n", tal_1 * tal_2);
+  printf("Talens kvot: %f\n", (float)tal_1 / (float)tal_2);
+  return 0;
+}
+```
+:::
+
+
+### Uppgift 3
 
 Förr i tiden så handlade de flesta kunder i butikerna med kontanter. Hade inte
 kunden jämna pengar så utgavs växel. Växeln kunde ges i olika valörer, t ex
@@ -69,7 +107,39 @@ Ange belopp som kunden ger-> 45
 Jämna pengar, tackar :-)
 ```
 
-## Uppgift 4
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 3"}
+```C
+#include <stdio.h>
+
+int main(void) {
+  int pris;    // Varans pris
+  int belopp;  // Överräckt belopp
+  int vaxel, tior, femmor, enkronor;
+  printf("Ange pris i kronor -> ");
+  scanf("%d", &pris);
+  printf("Ange belopp som kunden ger -> ");
+  scanf("%d", &belopp);
+  if (belopp == pris) {
+    printf("Jämna pengar, tackar :-)\n");
+  } else {
+    vaxel = belopp - pris;
+    tior = vaxel / 10;           // Antal tior, ger heltal
+    vaxel = vaxel - 10 * tior;   // Uppdaterad växel
+    femmor = vaxel / 5;          // Antal femmor
+    vaxel = vaxel - 5 * femmor;  // Uppdaterad växel
+    enkronor = vaxel;            // Det som är kvar är maximalt fyra kronor
+    printf("Växel: %d\n", enkronor + 5 * femmor + 10 * tior);
+    printf("Antal tior: %d\n", tior);
+    printf("Antal femmor: %d\n", femmor);
+    printf("Antal enkronor: %d\n", enkronor);
+  }
+  return 0;
+}
+```
+:::
+
+
+### Uppgift 4
 
 Formeln för att lösa en allmän andragradsekvation lyder
 
@@ -90,9 +160,39 @@ x2 = 1.000000
 
 Ange parametrarna a, b och c separerade med mellanslag-> 1 2 3
 Reella lösningar saknas.
+
+Ange parametrarna a, b och c separerade med mellanslag -> 1 6 9
+Dubbelrot, x1 = x2 = -3.000000 
 ```
 
-## Uppgift 5
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 4"}
+```C
+#include <math.h>
+#include <stdio.h>
+
+int main(void) {
+  int a, b, c;   // Parametrarna
+  float x1, x2;  // Lösningarna
+  int disk;      // Uttrycket under rottecknet, kallas diskriminant
+  printf("Ange parametrarna a, b och c separerade med mellanslag -> ");
+  scanf("%d %d %d", &a, &b, &c);
+  disk = b * b - 4 * a * c;
+  if (disk < 0) {
+    printf("Reella lösningar saknas\n");
+  } else if (disk == 0) {
+    printf("Dubbelrot, x1 = x2 = %f \n", (float)-b / (float)(2 * a));
+  } else {
+    x1 = (-b - sqrt(disk)) / (2 * a);
+    x2 = (-b + sqrt(disk)) / (2 * a);
+    printf("x1 = %f\n", x1);
+    printf("x2 = %f\n", x2);
+  }
+  return 0;
+}
+```
+
+:::
+### Uppgift 5
 
 Skriv ett program som deklarerar en array med fem heltal, fyller den med värdena
 `10, 20, 30, 40, 50` och skriver ut dem i ordning och i omvänd ordning
@@ -105,7 +205,37 @@ Ursprunglig ordning: 10 20 30 40 50
 Omvänd ordning: 50 40 30 20 10
 ```
 
-## Uppgift 6
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 5"}
+
+```C
+#include <stdio.h>
+
+int main(void) {
+  int int_seq[5];
+
+  for (int i = 0; i < 5; i++) {  // Loop för att fylla array:en
+    int_seq[i] = (i + 1) * 10;
+  }
+
+  printf("Ursprunglig ordning: ");
+  for (int i = 0; i < 5; i++) {  // Loop för utskrift i ursprunglig ordning
+    printf("%d ", int_seq[i]);
+  }
+  printf("\n");
+
+  printf("Omvänd ordning: ");
+  for (int i = 4; i >= 0; i--) {  // Loop för utskrift i omvänd ordning
+    printf("%d ", int_seq[i]);
+  }
+  printf("\n");
+
+  return 0;
+}
+```
+:::
+
+
+### Uppgift 6
 
 Skriv en funktion `multiply` som tar två heltal som parametrar och returnerar
 deras produkt. Låt användaren ange talen i `main` och skriv ut resultatet
@@ -119,7 +249,30 @@ Ange andra faktorn: 5
 Produkten av 4 och 5 är 20
 ```
 
-## Uppgift 7
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 6"}
+```C
+#include <stdio.h>
+
+int multiply(int a, int b) {
+  int prod = a * b;
+  return prod;
+}
+
+int main(void) {
+  int multiplikator, multiplikand, produkt;
+  printf("Ange första faktorn -> ");
+  scanf("%d", &multiplikator);
+  printf("Ange andra faktorn -> ");
+  scanf("%d", &multiplikand);
+  produkt = multiply(multiplikator, multiplikand);
+  printf(
+      "Produkten av %d och %d är %d\n", multiplikator, multiplikand, produkt);
+  return 0;
+}
+```
+:::
+
+### Uppgift 7
 
 Deklarera en sträng med plats för minst tio tecken och tilldela den initialt
 värdet "Sol". Ändra sedan strängen till "Måne" med hjälp av funktionen `strcpy`
@@ -132,7 +285,22 @@ Ursprunglig sträng: Sol
 Uppdaterad sträng: Måne
 ```
 
-## Uppgift 8
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 7"}
+```C
+#include <stdio.h>
+#include <string.h>
+
+int main(void) {
+  char my_str[10] = "Sol";
+  printf("Ursprunglig sträng: %s\n", my_str);
+  strcpy(my_str, "Måne");
+  printf("Uppdaterad sträng: %s\n", my_str);
+  return 0;
+}
+```
+:::
+
+### Uppgift 8
 
 Skriv en funktion `welcome` som tar en sträng som parameter och skriver ut
 "Välkommen `sträng`!". Anropa funktionen med strängen "Staffan".
@@ -143,7 +311,28 @@ Skriv en funktion `welcome` som tar en sträng som parameter och skriver ut
 Välkommen Staffan!
 ``` 
 
-## Uppgift 9
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 8"}
+```C
+#include <stdio.h>
+#include <string.h>
+
+void welcome(const char namn[]) {
+  // Parametern namn är en sträng (en följd av tecken).
+  // Vi anger inte någon längd här. Det går att skriva t.ex. [10],
+  // men i en funktionsparameter används den längden ändå inte.
+  // Ordet const talar om att funktionen inte kommer att ändra strängen.
+  printf("Välkommen, %s!\n", namn);
+}
+
+int main(void) {
+  char namn[] = "Staffan";
+  welcome(namn);
+  return 0;
+}
+```
+:::
+
+### Uppgift 9
 
 I ett program deklareras en array med fyra heltal: `1, 3, 5, 7`. Skriv en
 funktion `sum_array` som tar en array och dess storlek som parametrar och
@@ -157,4 +346,102 @@ Anropa funktionen från `main` och skriv ut resultatet därifrån.
 Summan är: 16
 ```
 
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag uppgift 9"}
+```C
+#include <stdio.h>
 
+int sum_array(const int arr[], int length) {
+  int sum = 0;
+  for (int i = 0; i < length; i++) {
+    sum += arr[i];
+  }
+  return sum;
+}
+
+int main(void) {
+  int arr[] = {1, 3, 5, 7};
+  int length = sizeof(arr) / sizeof(int);
+  // Det finns inget inbyggt sätt i C att erhålla antalet element i en array
+  // (till skillnad från t ex Python). Det som kan göras är att dividera hela
+  // arrayens storlek med respektive elements storlek enligt ovan.
+  int sum = sum_array(arr, length);
+  printf("Summan är: %d\n", sum);
+  return 0;
+}
+```
+:::
+
+## Uppgifter utan lösningsförslag
+
+### Uppgift 10
+
+Skriv ett program som först frågar användaren hur många heltal som ska matas in
+(max 10). Därefter tar programmet emot så många heltal som användaren angav och
+lagrar dem i en array. Skriv sedan ut talen i den ordning de matades in, följt
+av medelvärdet av talen (som ett flyttal).
+
+Tips: Kom ihåg att kontrollera så att antalet inte överstiger 10.
+
+**Exempelkörning**
+```
+Hur många tal vill du mata in (max 10)? 5
+Ange tal 1: 3
+Ange tal 2: 7
+Ange tal 3: 2
+Ange tal 4: 8
+Ange tal 5: 5
+Inmatade tal: 3 7 2 8 5
+Medelvärde: 5.000000
+```
+
+### Uppgift 11
+
+Skapa en funktion `is_prime` som tar ett heltal som parameter och returnerar 1
+(sant) om talet är ett primtal, annars 0 (falskt). I `main`-funktionen, låt
+användaren ange ett positivt heltal och skriv ut om talet är ett primtal eller
+inte. Ett primtal är ett heltal större än 1 som endast är jämnt delbart med 1
+och sig självt.
+
+ **Exempelkörningar**
+```
+Ange ett positivt heltal: 17
+17 är ett primtal.
+
+Ange ett positivt heltal: 25
+25 är inte ett primtal.
+
+Ange ett positivt heltal: 1
+1 är inte ett primtal.
+
+Ange ett positivt heltal: 2
+2 är ett primtal.
+```
+
+### Uppgift 12
+
+Skriv ett program som simulerar en enkel lösenordskontroll. Skapa en sträng med
+ett fördefinierat lösenord, t.ex. "hemligt123". Användaren ska få tre försök på
+sig att ange rätt lösenord. För varje felaktigt försök ska programmet tala om
+hur många försök som återstår. Vid rätt lösenord skrivs "Välkommen!" ut och vid
+tre felaktiga försök skrivs "Åtkomst nekad." ut.
+
+Tips: Använd funktionen `strcmp` från `string.h` för att jämföra strängar.
+`strcmp(str1, str2)` returnerar 0 om strängarna är lika.
+
+**Exempelkörning (lyckad inloggning)**
+```
+Ange lösenord: test
+Fel lösenord, 2 försök kvar.
+Ange lösenord: hemligt123
+Välkommen!
+```
+
+**Exempelkörning (misslyckad inloggning)**
+```
+Ange lösenord: abc
+Fel lösenord, 2 försök kvar.
+Ange lösenord: 123
+Fel lösenord, 1 försök kvar.
+Ange lösenord: test
+Åtkomst nekad.
+```
