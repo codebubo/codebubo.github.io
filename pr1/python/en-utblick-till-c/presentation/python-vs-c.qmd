@@ -2,11 +2,11 @@
 title: En utblick till C
 from: markdown+emoji
 title-slide-attributes:
-  data-background-image: https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/C_Programming_Language.svg/695px-C_Programming_Language.svg.png
-  data-background-opacity: "0.75"
-  data-background-color: "black"
+  data-background-image: "./C-logo.png"
+  data-background-opacity: "1"
+  data-background-color: "deepskyblue"
   data-title-color: "black"
-author: "Nikodemus Karlsson"
+author: ""
 format:
   revealjs:
     code-block-height: 490px

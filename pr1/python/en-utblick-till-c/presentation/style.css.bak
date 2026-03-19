@@ -26,13 +26,29 @@
   padding-top: 8%;
 }
 
+.code-output-frame {
+  background-color: rgb(100, 100, 0);
+  padding: 1%;
+  padding-bottom: 1%;
+  padding-top: 1%;
+}
+
+.code_block1 {
+  height: 200px;
+  width: 300px;
+  background-color: #FF6F61 !important;
+  border:1px; 
+  border-style:solid;
+  font: italic 1.5em "Comic Sans";
+}
+
 .slides > section:before {
   font-size: 0.3em;
   position: absolute;
   bottom: 0.25em;
   left: 0.25em;
   color: grey;
-  content: "Pr1, NIKA-25/26";
+  content: "Pr1, TE23C";
 }
 
 .smaller-font {
@@ -41,6 +57,7 @@
 
 .navigate-right .controls-arrow {
   font-size: 20px;
+  color: white;
 }
 
 .controls button {
@@ -60,7 +77,7 @@
 
 .slides .title {
   font-size: 96px;
-  color: rgb(255, 255, 255);
+  color: #FFFFFF;
   font-family: Fredoka;
   text-transform: uppercase;
 }
@@ -75,6 +92,7 @@
 .quarto-title-author-name {
   font-size: 60px;
   color: rgb(28, 22, 222);
+  color: #FF0000;
   font-family: Fredoka;
   text-transform: uppercase;
 }
@@ -95,25 +113,3 @@
   font-size: 10px;
   color: red;
 }
-
-.small-code .sourceCode pre code {
-    font-size: 0.85em;
-}
-
-.code-out {
-  color: black;
-  font-family: "Courier New";
-  background-color: lightgrey;
-  /* font-size: 90%; */
-}
-
- .cell-output-stdout pre, .cell-output-stdout pre code {
-    background-color: #4a4a4a; /* Gul bakgrund */
-    color: #e0e0e0; /* Svart text */
-    padding: 4px; /* Valfri padding för bättre utseende */
-    border-radius: 4px; /* Valfri rundning av kanter */
-    font-size: 0.65em;
-    margin-top: 0.8em;
-    width: 99%;
-} 
-
