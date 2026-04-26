@@ -70,8 +70,9 @@ website:
         contents:
           - ma/ma-5/bevis/index.qmd
           - ma/ma-5/kombinatorik/index.qmd
-      - section: "Matematik specialisering"
+          - ma/ma-5/fordjupning//maclaurin/index.qmd
 
+      - section: "Matematik specialisering"
         contents:
           - ma/ma-spec/ovningar/matrisinvertering/index.qmd
           - ma/ma-spec/komp-mat/determinant/index.qmd

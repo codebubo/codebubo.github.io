@@ -2,7 +2,7 @@
 title: Maclaurin-utveckling
 from: markdown+emoji
 title-slide-attributes:
-  data-background-image: "./bg-image.png"
+  data-background-image: "kamonahira-abstract-7561992_1280.png"
   data-background-opacity: "1"
   data-background-color: "deepskyblue"
   data-title-color: "black"
@@ -117,33 +117,28 @@ plt.show()
 
 ##
 
-:::{.large-centered-text}
+:::{.medium-centered-text}
 Denna approximation byggde på att funktionsvärde och derivata för
 linjen var samma som för kurvan där $x=0$.
 :::
 
-##
+## Högre ~~krav~~ grad
 
-:::{.large-centered-text}
 Vad händer om vi anpassar ett polynom som har flera ordningens derivator som
 sammanfaller med kurvans i punkten?
-:::
-
-##
-
-:::{.large-centered-text}
-Till exempel
-:::
-
-::::{.double-v-space}
-::::
 
 :::{.r-stack}
 
-<!-- ::::{.fragment .fade-in-then-out} -->
-$p(x)=f(0)+f'(0)x+f''(0)x^2+f'''(0)x^3+f^{(4)}(0)x^4 + f^{(5)}(0)x^5$
+::::{.fragment .fade-in-then-out}
+$$
+\begin{aligned}
+p(x) &= f(0) + f'(0)x + f''(0)x^2 \\[2mm]
+     &\quad {}+ f'''(0)x^3 + f^{(4)}(0)x^4 + f^{(5)}(0)x^5
+\end{aligned}
+$$
+::::
+
 :::
-<!-- ::: -->
 
 ##
 
@@ -240,6 +235,22 @@ plt.show()
 
 ## Maclaurinpolynom
 
+Denna typ av polynom kallas Maclaurinpolynom (Colin Maclaurin, skotsk
+matematiker, 1698 - 1746).
+
+För en funktion $f(x)$ gäller att man kan göra en approximation i närheten av
+$x=0$ med ett polynom av grad $n$ enligt
+
+$$
+f(a)\approx f(0)+f'(0)a+\frac{f''(0)a^2}{2!}+\frac{f'''(0)a^3}{3!}+...
++\frac{f^{(n)}a^n}{n!}
+$$
+
+Ju närmare $a$ är noll, desto bättre blir approximationen för ett givet antal
+termer!
+
+## Arbetsgång
+
 
 | Steg | Vad gör man? | Exempel med $\sin(x)$, $n=3$ |
 |:----:|--------------|------------------------------|
@@ -283,14 +294,15 @@ $\sin(0.1)$: $0.0998334166$
 
 Felet: Mindre än $0.000000075$ - otroligt litet!
 ::::
+
 ::::{.fragment .fade-in-then-semi-out}
+
 :::::{.callout-note}
 1. Polynomet är inprogrammerat i dess minne
 2. Vid varje beräkning stoppas $x$ in i polynomet
 3. Bara addition och multiplikation – inget avancerat!
 :::::
 ::::
-
 :::
 
 ## Matematisk pendel
@@ -298,8 +310,11 @@ Felet: Mindre än $0.000000075$ - otroligt litet!
 :::{.r-stack}
 
 ::::{.fragment .fade-in-then-out}
+
 Pendelns rörelseekvation:
+
 $$\theta''(t)+\frac{g}{L}\sin{\theta{(t)}}=0$$
+
 Problemet: $\sin(\theta)$ gör ekvationen olösbar (den kan iallafall inte
 uttryckas med elementära funktioner)!
 ::::
@@ -308,12 +323,19 @@ uttryckas med elementära funktioner)!
 Fysikernas knep: För små vinklar gäller $\sin(\theta) \approx \theta$
 
 Ekvationen blir:
+
 $$\theta''(t)+\frac{g}{L}\theta{(t)}=0$$
+
 Detta är harmonisk svängning – enkel och lösbar!
+
+$$\theta(t) \approx C \sin\!\left(\sqrt{\frac{g}{L}}\,t + \varphi\right)$$
+
 ::::
 
 ::::{.fragment .fade-in-then-semi-out}
+
 :::::{.callout-note}
+
 | Vinkel | $\sin(\theta)$ | $\theta$ (rad) | Relativt fel |
 |:------:|---------------:|---------------:|-------------:|
 | $5^\circ$ (0.0873 rad) | 0.08716 | 0.08727 | 0.13% |
@@ -321,6 +343,7 @@ Detta är harmonisk svängning – enkel och lösbar!
 | $20^\circ$ (0.3491 rad) | 0.34202 | 0.34907 | 2.06% |
 | $30^\circ$ (0.5236 rad) | 0.50000 | 0.52360 | 4.72% |
 | $45^\circ$ (0.7854 rad) | 0.70711 | 0.78540 | 11.07% |
+
 :::::
 ::::
 :::
@@ -329,12 +352,13 @@ Detta är harmonisk svängning – enkel och lösbar!
 
 :::{.r-stack}
 
-:::{.fragment .fade-in-then-out}
+::::{.fragment .fade-in-then-out}
 Visste du att $\pi/4$ kan skrivas som en oändlig summa?
 
 Leibniz upptäckte 1673:
+
 $$\frac{\pi}{4}=1-\frac{1}{3}+\frac{1}{5}-\frac{1}{7}+\frac{1}{9}-...$$
-:::
+::::
 
 ::::{.fragment .fade-in-then-out}
 Var kommer denna formel ifrån?
@@ -344,13 +368,13 @@ Den är Maclaurinutvecklingen av $\arctan(x)$:
 $$\arctan{x}=x-\frac{x^3}{3}+\frac{x^5}{5}-\frac{x^7}{7}+...$$
 
 Sedan sätts $x=1$ in, varpå formeln erhålls ($\arctan{1}=\pi/4$). Den
-konvergerar långsamt eftersom
-den inte utvecklas runt $x=0$ dock. Med $1\,000$ termer får vi endast tre
-korrekta decimaler.
+konvergerar dock långsamt. Med $1\,000$ termer får vi endast tre korrekta
+decimaler.
 ::::
 
 ::::{.fragment .fade-in-then-out}
 Bättre formel (Machin, 1706): Använd
+
 $$
 \frac{\pi}{4}=\arctan\frac{1}{5}-\arctan\frac{1}{239}
 $$
@@ -358,6 +382,7 @@ $$
 Dessa tal är mycket närmare noll, och vi får tio korrekta decimaler
 med enbart fyra termer i Maclaurinutvecklingen!
 ::::
+
 :::
 
 ## Maclaurin i rymden (Apollo 11)
