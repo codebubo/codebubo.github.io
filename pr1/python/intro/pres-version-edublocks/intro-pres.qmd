@@ -3,7 +3,7 @@ title: "Introduktion Programmering"
 subtitle: "EduBlocks"
 from: markdown+emoji
 title-slide-attributes:
-  data-background-image: https://eu2.contabostorage.com/af70e3b52036469c80229e6ec67d4d95:nika-assets/images/pr1-pres/intro/bg-front.jpg
+  data-background-image: bg-front.jpg 
   data-background-color: "black"
 author: ""
 date: ""
@@ -175,6 +175,9 @@ en_sträng   = "En sträng"
 ```
 :::
 
+Stränginnehållet måste omgärdas av citationstecken!
+(<span style="font-size: 90%;">`"..."`</span>)
+
 ## Variabler i datorminnet
 
 :::{.blue-bg-small-padding}
@@ -229,6 +232,36 @@ minnesplats.
 :::{.fragment .fade-right}
 :::: {style="background-color: yellow; width: 100%; height: 70px; padding: 10px; margin-top: 20px;"}
 [Länk: Tillåtna namn på variabler](https://www.w3schools.com/python/gloss_python_variable_names.asp)
+::::
+:::
+
+## Övning
+
+::: columns
+<!-- Vänster kolumn -->
+:::: {.column width="55%"}
+* Gå in på [app.edublocks.org](https://app.edublocks.org)
+* Skapa fem variabelnamn: `namn`, `ålder`, `styrka`, `intresse_1` och
+  `intresse_2`
+* Ge variablerna värden för att presentera dig själv
+* Styrkan ska anges som ett heltal mellan 1 och 10, **men ska i presentationen
+  överdrivas med 20 %**
+::::
+
+<!-- Höger kolumn -->
+:::: {.column width="45%"}
+::::: {.fragment .fade-left fragment-index=1}
+::::::{.blue-bg-small-padding}
+
+**Exempel** (variabelvärden i gult)
+
+* Jag heter: <span class="yellow-text">Kalle</span>
+* Ålder i år: <span class="yellow-text">17</span>
+* Min styrka: <span class="yellow-text">8.4</span>
+* Jag gillar <span class="yellow-text">segling</span> och
+  <span class="yellow-text">matlagning</span>
+::::::
+:::::
 ::::
 :::
 
