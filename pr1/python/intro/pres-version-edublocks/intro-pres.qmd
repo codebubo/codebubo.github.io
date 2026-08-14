@@ -265,13 +265,25 @@ minnesplats.
 ::::
 :::
 
-## Dagens mål
+## Uppgift
 
-Skapa några småprogram i [EduBlocks](https://app.edublocks.org/)
+* Skapa mappen `Programmering`, som ska ligga under `Dokument` på din dator
+  (här ska du organisera dina filer under kursen).
 
-* Block
-* Variabler
-* Input / Output
+* Ladda ned och installera Pythonmiljön **Thonny** från
+  [https://thonny.org/](https://thonny.org/)
+
+* Kopiera koden som skapades från den föregående "block-övningen" till ett
+  dokument i Thonny och kör den.
+
+## Det du bör ha med dig efter lektionen
+
+* Kunna definiera ett datorprogram
+
+* Känna till vad en variabel är, hur de bör namnges och känna till några olika
+  typer av dessa
+
+* Kunna skriva ut strängar och tal från variabler i EduBlocks
 
 ## Utskrifter i Python
 
