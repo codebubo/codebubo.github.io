@@ -273,17 +273,19 @@ minnesplats.
 ::: columns
 <!-- Vänster kolumn -->
 :::: {.column width="55%"}
+::::: {.fragment .fade-in-then-semi-out fragment-index=1}
 * Gå in på [app.edublocks.org](https://app.edublocks.org)
 * Skapa fem variabelnamn: `namn`, `ålder`, `styrka`, `intresse_1` och
   `intresse_2`
 * Ge variablerna värden för att presentera dig själv
 * Styrkan ska anges som ett heltal mellan 1 och 10, **men ska i presentationen
   överdrivas med 20 %**
+:::::
 ::::
 
 <!-- Höger kolumn -->
 :::: {.column width="45%"}
-::::: {.fragment .fade-left fragment-index=1}
+::::: {.fragment .fade-left fragment-index=2}
 ::::::{.blue-bg-small-padding}
 
 **Exempel** (variabelvärden i gult)
@@ -318,181 +320,54 @@ minnesplats.
 
 * Kunna skriva ut strängar och tal från variabler i EduBlocks
 
-## Utskrifter i Python
+## Kursöversikt
 
 ::: columns
-:::: {.column width="55%"}
-::::: {.fragment .fade-right fragment-index=1}
-Utskrift av sträng
+:::: {.column width="50%"}
 
-```{python}
-hello_string = "Hello, world"
-print(hello_string)
-```
-:::::
+### Hösttermin
 
-::::{.v-space}
-::::
+::::: {.fragment .fade-in-then-semi-out fragment-index=1}
 
-::::: {.fragment .fade-right fragment-index=3}
-Utskrift av sträng och tal
-
-```{python}
-pris = 10
-print(f"Priset är {pris} kr.")
-```
+* Python med EduBlocks,<br>ca 1 vecka
+* Grunderna i Pythonkodning, ca 7 veckor
+* Några mindre projekt,<br>ca 2x3 veckor
+* GitHub
+* Övrigt innehåll enl. kursplan
 :::::
 ::::
-
 :::: {.column width="45%"}
-::::: {.fragment .fade-left fragment-index=2}
-Utskrift av heltal
 
-```{python}
-pris = 10
-print(pris)
-```
-:::::
+### Vårtermin
 
-::::{.v-space}
-::::
-
-::::: {.fragment .fade-left fragment-index=4}
-Avrundning
-
-```{python}
-my_float = 2/3
-print(f"{my_float:.2f}")
-```
+::::: {.fragment .fade-right fragment-index=2}
+* Några övriga pythonkoncept och algoritmer
+* JavaScript, grafiskt innehåll i webbläsare
+* Projekt
 :::::
 ::::
 :::
 
-::: {.v-space .fragment .fade-up fragment-index=5}
-När "fast" text ska skrivas ut tillsammans med en variabel används en s.k f-string. Det står för *formatted string literal*.
-:::
+## Några riktlinjer och tips
 
-## Formaterad utskrift
+:::{.smaller-font}
+* När vi kodar Python så görs det i Thonny
 
-En teckensträng har en en given *textbredd*. Det tydliggörs med utfyllnadstecken.
-
-```{python}
-#| output-location: fragment
-s1 = "Kalle"
-s2 = "Anka"
-print(f"{s1:*<13}")      # Textbredd 13, vänsterjusterat
-print(f"{s1:*>13}")      # Textbredd 13, högerjusterat
-print(f"{s1:*^13}")      # Textbredd 13, centrerat
-print(s1.rjust(13, "*")) # Finns även ljust och center
-print(s1.ljust(13) + s2) # Inget utfyllnadstecken!
-```
-
-::: {.fragment .fade-up}
-På rad 7 syns att vi kan slå ihop (*konkatenera*) två strängar med
-operatorn <span style="font-size: 85%;">`+`</span>.
-:::
-
-## Sträng med radbrytning
-För att skriva ut en sträng på flera används ett s.k "flykttecken" (*escape character*).
-
-```{python}
-print("Här är en text\npå två rader")
-```
-
-::: {.fragment .fade-right}
-Detta kan användas tillsammans med textbredden.
-
-```{python}
-print(f"Detta är en högerjusterad text\n{'på flera rader':*>30}")
-```
-:::
-
-:::{.new-line}
-:::
-
-::: {.fragment .fade-up}
-:::: {style="background-color: yellow; width: 100%; height: 75px; padding: 10px;"}
-[Det finns flera exempel på *escape characters* på denna länk](https://www.w3schools.com/python/gloss_python_escape_characters.asp).
+::::{.fragment .fade-in fragment-index=1}
+* Vi använder inte AI för att generera kod
 ::::
-:::
-
-## Justering av tal
-
-:::{.v-space}
-Tabeller blir mer lättlästa om ental står under ental, tiondel under tiondel osv.
-:::
-
-:::{.v-space}
-```{python}
-a = 10.5; b = 2.38
-c = 2.3;  d = 0.1
-print(f"{a:6.2f}\t\t{c:6.2f}\n{b:6.2f}\t\t{d:6.2f}")
-print("----------------------");
-print(f"{(a+b):6.2f}\t\t{(c+d):6.2f}")
-```
-:::
-
-:::{.v-space}
-Observera att beräkningarna sker mellan måsvingarna!
-:::
-
-## Sammanfattning
-
-::: {.smaller-font}
-
-:::: {.fragment .fade-right}
-* Ett datorprogram är en följd av instruktioner.
+::::{.fragment .fade-in fragment-index=2}
+* Vi kan däremot fråga AI om varför kod inte fungerar som tänkt
 ::::
-
-::: {.fragment .fade-right}
-* Dessa instruktioner skrivs i ett programmeringsspråk.
+::::{.fragment .fade-in fragment-index=3}
+* Koda gärna tillsammans
 ::::
-
-:::: {.fragment .fade-right}
-* I Python kan korta kodavsnitt skrivas i **konsolen**,
-medan en **editor** används för att skriva och spara program.
+::::{.fragment .fade-in fragment-index=4}
+* Att kunna skriva kod börjar ofta med att läsa kod
 ::::
-
-:::: {.fragment .fade-right}
-* I datorprogram kan användas kommentarer för att det ska bli mer
-lättläst. För Python gäller tecknet
-<span style="font-size: 85%;">`#`</span> inleder kommentaren
-<span style="font-size: 85%;">`# Kommentar`</span>
-::::
-
-:::: {.fragment .fade-right}
-* För att lagra värden i ett program används variabler.
-::::
-
-:::: {.fragment .fade-right}
-* Variabelns **typ** beror på vilket sorts värde som lagras.
-::::
-
-:::
-
-## Sammanfattning (forts.)
-
-::: {style="font-size: 95%"}
-
-:::: {.fragment .fade-right}
-* Det finns regler och konventioner för namngivning av variabler.
-::::
-
-:::: {.fragment .fade-right}
-* För att skriva ut variabler i Python används en **funktion** som heter
-<span style="font-size: 85%;">`print`</span>.
-::::
-
-:::: {.fragment .fade-right}
-* Med <span style="font-size: 85%;">`print`</span>
-går det att styra hur utskriften sker, t ex med avseende
-på radbrytning, textjustering och antal decimaler för ett tal.
-::::
-
-:::: {.fragment .fade-right}
-* Uttryck kan evalueras i en sträng i Python med f-string.
-   * <span style="font-size: 85%;">`print(f"Talet är {2+2}") # Talet är 4`
-   </span>
+::::{.fragment .fade-in fragment-index=5}
+* Dela upp problem i mindre problem, som i sin tur delas upp i ännu mindre
+  problem, osv
 ::::
 :::
 
