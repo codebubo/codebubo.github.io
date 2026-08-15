@@ -93,7 +93,9 @@ en dators hårdvara fungerar och får den att utföra specifika uppgifter.
 
 ## Variabler
 
-En variabel är ett "namn" på ett värde. Kan även kallas för en identifierare.
+En variabel är ett "namn" på ett värde. Detta värde kan uppdateras.
+
+<hr>
 
 ::: columns
 :::: {.column width="55%"}
@@ -177,6 +179,7 @@ en_sträng   = "En sträng"
 
 Stränginnehållet måste omgärdas av citationstecken!
 (<span style="font-size: 90%;">`"..."`</span>)
+Python är ett **löst typat** språk; variabler kan byta typ under körning.
 
 ## Variabler i datorminnet
 
@@ -184,6 +187,36 @@ Stränginnehållet måste omgärdas av citationstecken!
 När en variabel tilldelas ett värde kommer detta värde att sparas på en plats i
 datorns minne. När variabeln adresseras kommer namnet att hänvisa till denna
 minnesplats.
+
+<div class="memory-layout">
+
+<div class="variable score">
+  `score`
+<span class="arrow"></span>
+</div>
+
+<div class="variable speed">
+  `speed`
+<span class="arrow"></span>
+</div>
+
+<div class="variable name">
+  `name`
+<span class="arrow"></span>
+</div>
+
+<div class="memory-cells">
+<div class="memory-cell">`...`</div>
+<div class="memory-cell">`42`</div>
+<div class="memory-cell">`5.2`</div>
+<div class="memory-cell">`"Alice"`</div>
+<div class="memory-cell">`...`</div>
+</div>
+<div class="address-arrow"></div>
+<div class="address-label">Minnesadresser</div>
+
+</div>
+
 :::
 
 ## Några regler för variabelnamn
