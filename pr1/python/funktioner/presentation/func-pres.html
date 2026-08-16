@@ -6,8 +6,8 @@
 <script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.25">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.38">
 
   <meta name="author" content="">
   <title>CodeBubo – Funktioner i Python</title>
@@ -17,6 +17,9 @@
   <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/reveal.css">
   <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -95,7 +98,7 @@
     code span.vs { color: #abe338; } /* VerbatimString */
     code span.wa { color: #dcc6e0; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/theme/quarto-327cab17de08e4a17faa7d61f48ae591.css">
+  <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/theme/quarto-4df01d85d5cf19cc6202400f4f043f84.css">
   <link rel="stylesheet" href="style.css">
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FFXVNM3K2N"></script>
 
@@ -253,7 +256,7 @@
 <div class="v-space">
 
 </div>
-<div id="28a031fa" class="cell" data-execution_count="1">
+<div id="6acb6b96" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="kw">def</span> add(a, b):     <span class="co"># Här</span></span>
 <span id="cb2-2"><a></a>  the_sum <span class="op">=</span> a <span class="op">+</span> b  <span class="co"># skapas</span></span>
 <span id="cb2-3"><a></a>  <span class="cf">return</span> the_sum   <span class="co"># funktionen</span></span>
@@ -303,7 +306,7 @@
 <section id="funktioners-returvärden" class="slide level2">
 <h2>Funktioners returvärden</h2>
 <p>Ibland saknas behov av <code>return</code>-värde.</p>
-<div id="83149a4b" class="cell" data-execution_count="2">
+<div id="6e96e1e8" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="kw">def</span> print_multabell(n):</span>
 <span id="cb6-2"><a></a>  <span class="co"># Skriver ut fem rader i multiplikationstabell n</span></span>
 <span id="cb6-3"><a></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>):</span>
@@ -322,7 +325,7 @@
 </section>
 <section id="alla-funktioner-har-ett-returvärde" class="slide level2">
 <h2>Alla funktioner har ett returvärde</h2>
-<div id="d3fad070" class="cell" data-execution_count="3">
+<div id="3728c5ad" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="kw">def</span> print_multabell(n):</span>
 <span id="cb8-2"><a></a>  <span class="co"># Skriver ut fem rader i multiplikationstabell n</span></span>
 <span id="cb8-3"><a></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>):</span>
