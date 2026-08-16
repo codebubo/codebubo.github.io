@@ -1,0 +1,29 @@
+%% Byggs med mmdc -i chart4.mmd -o chart4.svg -t dark -b transparentfg
+%%{init: {
+    "flowchart": {
+        "curve": "linear"
+    },
+    "theme": "base",
+    "themeVariables": {
+        "primaryTextColor": "#FFFFFF",
+        "lineColor": "#FFFFFF",
+        "fontFamily": "Times New Roman, serif",
+        "primaryColor": "transparent",
+        "primaryBorderColor": "#FFFFFF",
+        "edgeLabelBackground": "#000000",
+        "labelTextColor": "#FFFFFF"
+    }
+}}%%
+flowchart LR
+start[/Inmatning<br>av tal/]
+slut(Programmet<br>avslutas)
+condGeq0{"Tal ≥ 0?"}
+condNoll{"Är talet 0?"}
+neg[/Skriv ut<br>negativt/]
+noll[/Skriv ut<br>noll/]
+pos[/Skriv ut<br>positivt/]
+start-->condGeq0
+condGeq0-->|Ja|condNoll
+condGeq0-->|Nej|neg-->slut
+condNoll-->|Ja|noll-->slut
+condNoll-->|Nej|pos-->slut

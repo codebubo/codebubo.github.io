@@ -1,5 +1,8 @@
 ---
 title: "Python Cheat Sheet"
+engine: jupyter
+execute:
+  enabled: true
 format:
   html:
     fontsize: 1em
