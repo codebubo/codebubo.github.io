@@ -6,8 +6,8 @@
 <script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.38">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="">
   <title>CodeBubo – Villkor i Python</title>
@@ -20,10 +20,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -234,10 +237,10 @@
 <section id="ett-enkelt-villkor" class="slide level2">
 <h2>Ett enkelt villkor</h2>
 <p>I Python så avgörs ett villkor med hjälp av det reserverade ordet <span style="font-size: 85%;"><code>if</code></span>.</p>
-<div id="28156856" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>a <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb1-2"><a></a><span class="cf">if</span> a <span class="op">&gt;</span> <span class="dv">0</span>:</span>
-<span id="cb1-3"><a></a>   <span class="bu">print</span>(<span class="st">"a är större än 0"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="2186e85f" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-label="1"></a>a <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb1-2"><a aria-label="2"></a><span class="cf">if</span> a <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb1-3"><a aria-label="3"></a>   <span class="bu">print</span>(<span class="st">"a är större än 0"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>a är större än 0</code></pre>
 </div>
@@ -245,12 +248,12 @@
 <div class="new-line">
 
 </div>
-<div id="7d731d57" class="cell" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>a <span class="op">=</span> <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb3-2"><a></a><span class="cf">if</span> a <span class="op">&gt;</span> <span class="dv">0</span>:</span>
-<span id="cb3-3"><a></a>   <span class="bu">print</span>(<span class="st">"a är större än noll"</span>)</span>
-<span id="cb3-4"><a></a><span class="cf">else</span>:</span>
-<span id="cb3-5"><a></a>   <span class="bu">print</span>(<span class="st">"a är inte större än noll"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="b43d8420" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-label="1"></a>a <span class="op">=</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb3-2"><a aria-label="2"></a><span class="cf">if</span> a <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb3-3"><a aria-label="3"></a>   <span class="bu">print</span>(<span class="st">"a är större än noll"</span>)</span>
+<span id="cb3-4"><a aria-label="4"></a><span class="cf">else</span>:</span>
+<span id="cb3-5"><a aria-label="5"></a>   <span class="bu">print</span>(<span class="st">"a är inte större än noll"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>a är inte större än noll</code></pre>
 </div>
@@ -260,11 +263,11 @@
 <h2>Exempel: Godkänt?</h2>
 
 <img data-src="charts/chart1.svg" class="r-stretch"><div class="v-space">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>e_gräns <span class="op">=</span> <span class="dv">15</span></span>
-<span id="cb5-2"><a></a>poäng <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">'Ange din provpoäng -&gt; '</span>))</span>
-<span id="cb5-3"><a></a><span class="cf">if</span> poäng <span class="op">&gt;=</span> e_gräns:</span>
-<span id="cb5-4"><a></a>   <span class="bu">print</span>(<span class="st">'Godkänt'</span>)</span>
-<span id="cb5-5"><a></a><span class="bu">print</span>(<span class="st">'Programmet avslutas'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-label="1"></a>e_gräns <span class="op">=</span> <span class="dv">15</span></span>
+<span id="cb5-2"><a aria-label="2"></a>poäng <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">'Ange din provpoäng -&gt; '</span>))</span>
+<span id="cb5-3"><a aria-label="3"></a><span class="cf">if</span> poäng <span class="op">&gt;=</span> e_gräns:</span>
+<span id="cb5-4"><a aria-label="4"></a>   <span class="bu">print</span>(<span class="st">'Godkänt'</span>)</span>
+<span id="cb5-5"><a aria-label="5"></a><span class="bu">print</span>(<span class="st">'Programmet avslutas'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="v-space">
 <p>Resultatet av <span style="font-size: 85%;"><code>input</code></span> är en sträng; denna kan göras om till ett heltal med <span style="font-size: 85%;"><code>int</code></span> enligt rad 2 ovan.</p>
@@ -274,13 +277,13 @@
 <h2>Exempel: Godkänt eller ej?</h2>
 
 <img data-src="charts/chart2.svg" class="r-stretch"><div class="v-space">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>e_gräns <span class="op">=</span> <span class="dv">15</span></span>
-<span id="cb6-2"><a></a>poäng <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">'Ange din provpoäng -&gt; '</span>))</span>
-<span id="cb6-3"><a></a><span class="cf">if</span> poäng <span class="op">&gt;=</span> e_gräns:</span>
-<span id="cb6-4"><a></a>   <span class="bu">print</span>(<span class="st">'Godkänt'</span>)</span>
-<span id="cb6-5"><a></a><span class="cf">else</span>:</span>
-<span id="cb6-6"><a></a>  <span class="bu">print</span>(<span class="st">'Ej godkänt'</span>)</span>
-<span id="cb6-7"><a></a><span class="bu">print</span>(<span class="st">'Programmet avslutas'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-label="1"></a>e_gräns <span class="op">=</span> <span class="dv">15</span></span>
+<span id="cb6-2"><a aria-label="2"></a>poäng <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">'Ange din provpoäng -&gt; '</span>))</span>
+<span id="cb6-3"><a aria-label="3"></a><span class="cf">if</span> poäng <span class="op">&gt;=</span> e_gräns:</span>
+<span id="cb6-4"><a aria-label="4"></a>   <span class="bu">print</span>(<span class="st">'Godkänt'</span>)</span>
+<span id="cb6-5"><a aria-label="5"></a><span class="cf">else</span>:</span>
+<span id="cb6-6"><a aria-label="6"></a>  <span class="bu">print</span>(<span class="st">'Ej godkänt'</span>)</span>
+<span id="cb6-7"><a aria-label="7"></a><span class="bu">print</span>(<span class="st">'Programmet avslutas'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="jämförelseoperatorer" class="slide level2">
@@ -308,15 +311,15 @@
 </div></div>
 <div class="columns">
 <div class="column" style="width:52%;">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="bu">print</span>(<span class="dv">3</span> <span class="op">==</span> <span class="dv">3</span>) <span class="co"># True</span></span>
-<span id="cb7-2"><a></a><span class="bu">print</span>(<span class="dv">3</span> <span class="op">&lt;=</span> <span class="dv">3</span>) <span class="co"># True</span></span>
-<span id="cb7-3"><a></a><span class="bu">print</span>(<span class="dv">3</span> <span class="op">!=</span> <span class="dv">3</span>) <span class="co"># False</span></span>
-<span id="cb7-4"><a></a><span class="bu">print</span>(<span class="dv">3</span> <span class="op">!=</span> <span class="dv">4</span>) <span class="co"># True</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-label="1"></a><span class="bu">print</span>(<span class="dv">3</span> <span class="op">==</span> <span class="dv">3</span>) <span class="co"># True</span></span>
+<span id="cb7-2"><a aria-label="2"></a><span class="bu">print</span>(<span class="dv">3</span> <span class="op">&lt;=</span> <span class="dv">3</span>) <span class="co"># True</span></span>
+<span id="cb7-3"><a aria-label="3"></a><span class="bu">print</span>(<span class="dv">3</span> <span class="op">!=</span> <span class="dv">3</span>) <span class="co"># False</span></span>
+<span id="cb7-4"><a aria-label="4"></a><span class="bu">print</span>(<span class="dv">3</span> <span class="op">!=</span> <span class="dv">4</span>) <span class="co"># True</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column" style="width:48%;">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a>a <span class="op">=</span> <span class="dv">3</span>  <span class="co"># Tilldelande</span></span>
-<span id="cb8-2"><a></a>b <span class="op">=</span> <span class="dv">8</span>  <span class="co"># Tilldelande</span></span>
-<span id="cb8-3"><a></a>a <span class="op">==</span> b <span class="co"># Jämförande</span></span>
-<span id="cb8-4"><a></a><span class="co"># Rad 3 evalueras till False</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-label="1"></a>a <span class="op">=</span> <span class="dv">3</span>  <span class="co"># Tilldelande</span></span>
+<span id="cb8-2"><a aria-label="2"></a>b <span class="op">=</span> <span class="dv">8</span>  <span class="co"># Tilldelande</span></span>
+<span id="cb8-3"><a aria-label="3"></a>a <span class="op">==</span> b <span class="co"># Jämförande</span></span>
+<span id="cb8-4"><a aria-label="4"></a><span class="co"># Rad 3 evalueras till False</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Tilldelning sker från höger till vänster.</p>
 </div></div>
 </div>
@@ -326,20 +329,20 @@
 <p><span style="font-size: 0.8em"> Värdena <span style="font-size: 85%;"><code>True</code></span> och <span style="font-size: 85%;"> <code>False</code></span> kallas för <strong>booleska</strong> värden (efter George Boole, 1815 – 1864). </span></p>
 <p><span style="font-size: 0.8em"> Variabler som antar denna typ av värden kallas för <strong>booleska variabler</strong>. </span></p>
 <div class="v-space">
-<div id="80203a13" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>my_boolean <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb9-2"><a></a><span class="cf">if</span> (my_boolean):</span>
-<span id="cb9-3"><a></a>   <span class="bu">print</span>(<span class="st">"Den booleska variabelns värde var True"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="5a20c5c6" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-label="1"></a>my_boolean <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb9-2"><a aria-label="2"></a><span class="cf">if</span> (my_boolean):</span>
+<span id="cb9-3"><a aria-label="3"></a>   <span class="bu">print</span>(<span class="st">"Den booleska variabelns värde var True"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Den booleska variabelns värde var True</code></pre>
 </div>
 </div>
 </div>
 <div class="v-space">
-<div id="3e044934" class="cell" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>my_second_boolean <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb11-2"><a></a><span class="cf">if</span> (<span class="kw">not</span> my_second_boolean):</span>
-<span id="cb11-3"><a></a>   <span class="bu">print</span>(<span class="st">"Den booleska variabelns värde var inte True"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="6dd026c9" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-label="1"></a>my_second_boolean <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb11-2"><a aria-label="2"></a><span class="cf">if</span> (<span class="kw">not</span> my_second_boolean):</span>
+<span id="cb11-3"><a aria-label="3"></a>   <span class="bu">print</span>(<span class="st">"Den booleska variabelns värde var inte True"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Den booleska variabelns värde var inte True</code></pre>
 </div>
@@ -353,13 +356,13 @@
 </div>
 <p>Booleska värden går att kombinera med operatorerna <span style="font-size: 85%;"><code>or</code></span> och <span style="font-size: 85%;"> <code>and</code> </span>.</p>
 <div class="v-space">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>a <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb13-2"><a></a>b <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb13-3"><a></a><span class="bu">print</span>(a <span class="kw">and</span> b)         <span class="co"># False</span></span>
-<span id="cb13-4"><a></a><span class="bu">print</span>(a <span class="kw">or</span> b)          <span class="co"># True</span></span>
-<span id="cb13-5"><a></a><span class="bu">print</span>((a <span class="kw">or</span> b) <span class="kw">and</span> a)  <span class="co"># True</span></span>
-<span id="cb13-6"><a></a><span class="bu">print</span>(<span class="kw">not</span> a)           <span class="co"># False</span></span>
-<span id="cb13-7"><a></a><span class="bu">print</span>(<span class="kw">not</span> b)           <span class="co"># True</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-label="1"></a>a <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb13-2"><a aria-label="2"></a>b <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb13-3"><a aria-label="3"></a><span class="bu">print</span>(a <span class="kw">and</span> b)         <span class="co"># False</span></span>
+<span id="cb13-4"><a aria-label="4"></a><span class="bu">print</span>(a <span class="kw">or</span> b)          <span class="co"># True</span></span>
+<span id="cb13-5"><a aria-label="5"></a><span class="bu">print</span>((a <span class="kw">or</span> b) <span class="kw">and</span> a)  <span class="co"># True</span></span>
+<span id="cb13-6"><a aria-label="6"></a><span class="bu">print</span>(<span class="kw">not</span> a)           <span class="co"># False</span></span>
+<span id="cb13-7"><a aria-label="7"></a><span class="bu">print</span>(<span class="kw">not</span> b)           <span class="co"># True</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 
@@ -370,16 +373,16 @@
 
 </div>
 <div class="small-code">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a>tal <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">'Ange valfritt heltal -&gt;'</span>))</span>
-<span id="cb15-2"><a></a><span class="cf">if</span> tal <span class="op">&gt;=</span> <span class="dv">0</span>:</span>
-<span id="cb15-3"><a></a>   <span class="cf">if</span> tal <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb15-4"><a></a>      <span class="bu">print</span>(<span class="st">'Noll'</span>)</span>
-<span id="cb15-5"><a></a>   <span class="cf">else</span>:</span>
-<span id="cb15-6"><a></a>      <span class="bu">print</span>(<span class="st">'Positivt'</span>)</span>
-<span id="cb15-7"><a></a><span class="cf">else</span>:</span>
-<span id="cb15-8"><a></a>   <span class="bu">print</span>(<span class="st">'Negativt'</span>)</span>
-<span id="cb15-9"><a></a></span>
-<span id="cb15-10"><a></a><span class="bu">print</span>(<span class="st">'Programmet avslutas'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a aria-label="1"></a>tal <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">'Ange valfritt heltal -&gt;'</span>))</span>
+<span id="cb15-2"><a aria-label="2"></a><span class="cf">if</span> tal <span class="op">&gt;=</span> <span class="dv">0</span>:</span>
+<span id="cb15-3"><a aria-label="3"></a>   <span class="cf">if</span> tal <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb15-4"><a aria-label="4"></a>      <span class="bu">print</span>(<span class="st">'Noll'</span>)</span>
+<span id="cb15-5"><a aria-label="5"></a>   <span class="cf">else</span>:</span>
+<span id="cb15-6"><a aria-label="6"></a>      <span class="bu">print</span>(<span class="st">'Positivt'</span>)</span>
+<span id="cb15-7"><a aria-label="7"></a><span class="cf">else</span>:</span>
+<span id="cb15-8"><a aria-label="8"></a>   <span class="bu">print</span>(<span class="st">'Negativt'</span>)</span>
+<span id="cb15-9"><a aria-label="9"></a></span>
+<span id="cb15-10"><a aria-label="10"></a><span class="bu">print</span>(<span class="st">'Programmet avslutas'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 

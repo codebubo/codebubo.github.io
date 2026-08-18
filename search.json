@@ -49,46 +49,11 @@
     "text": "Falsifikation\n\n\n\nAtt visa att något är sant inom en viss ram kräver att alla fall täcks med logiska resonemang. Att visa att något är falskt kräver endast ett motexempel.\n\n\n\nExempel: Produkten av ett jämnt tal och ett udda tal är alltid ett jämnt tal (visa det!). Gäller det att varje jämnt tal kan skrivas som en produkt av ett jämnt och ett udda tal?\nNej, visserligen så vet vi t ex att \\(12=3\\cdot 4\\), men även att \\(16=2\\cdot 8\\). Detta motsäger påståendet att varje jämnt tal är en produkt av ett jämnt och ett udda tal."
   },
   {
-    "objectID": "ma/ma-5/bevis/bevis-pres.html#indirekta-bevismetoder",
-    "href": "ma/ma-5/bevis/bevis-pres.html#indirekta-bevismetoder",
-    "title": "Grunderna i matematisk bevisföring",
-    "section": "Indirekta bevismetoder",
-    "text": "Indirekta bevismetoder\nDe indirekta bevismetoderna omfattar motsägelsebevis och bevis med kontrapositiv metod\nDet finns ett antal klassiska bevis som använder indirekta metoder, t ex för att visa\n\natt \\(\\sqrt 2\\) är irrationellt,\natt det finns oändligt många primtal,\natt ekvationen \\(x^2+1=0\\) saknar rationella lösningar.\n\nNågra viktiga begrepp är innebörden av implikation samt vad negation av utsagor betyder."
-  },
-  {
     "objectID": "ma/ma-5/bevis/bevis-pres.html#implikation",
     "href": "ma/ma-5/bevis/bevis-pres.html#implikation",
     "title": "Grunderna i matematisk bevisföring",
     "section": "Implikation",
     "text": "Implikation\nInnebörd av \\(P\\Rightarrow Q\\)\n\nOm \\(P\\) är sant så måste också \\(Q\\) vara sant.\nDet är nödvändigt att \\(Q\\) gäller om \\(P\\) gäller.\n\nExempel\n\nDet regnar \\(\\Rightarrow\\) Jag tar paraplyet.\n\\(x=2 \\Rightarrow x-2 = 0\\) (även det omvända gäller, \\(\\Leftarrow\\)).\n\\(x=2 \\Rightarrow x^2=4\\) (dock gäller inte det omvända).\n\\(1+1=3 \\Rightarrow\\) Månen är en gul ost."
-  },
-  {
-    "objectID": "ma/ma-5/bevis/bevis-pres.html#negationer-av-utsagor",
-    "href": "ma/ma-5/bevis/bevis-pres.html#negationer-av-utsagor",
-    "title": "Grunderna i matematisk bevisföring",
-    "section": "Negationer av utsagor",
-    "text": "Negationer av utsagor\n\n\n\n\n\n\\(P\\): Det regnar.\n\\(P\\): \\(1+1=2\\).\n\\(P\\): Vissa elever läser Ma5.\n\\(P\\): Alla fåglar kan flyga.\n\n\\(\\neg P\\): Det regnar inte.\n\\(\\neg P\\): \\(1+1\\neq 2\\).\n\\(\\neg P\\): Inga elever läser Ma5.\n\\(\\neg P\\): Det finns minst en fågel som inte kan flyga."
-  },
-  {
-    "objectID": "ma/ma-5/bevis/bevis-pres.html#motsägelsebevis",
-    "href": "ma/ma-5/bevis/bevis-pres.html#motsägelsebevis",
-    "title": "Grunderna i matematisk bevisföring",
-    "section": "Motsägelsebevis",
-    "text": "Motsägelsebevis\nOm \\(P\\Rightarrow Q\\) ska visas kan motsatsen till \\(Q\\) antas. Om det leder till en motsägelse så måste \\(Q\\) gälla.\nExempel\n\\(P\\): \\(n^2\\) udda.\n\\(Q\\): \\(n\\) udda.\nVisa \\(P\\Rightarrow Q\\) med motsägelsebevis.\nAnta att \\(P\\) gäller men inte \\(Q\\), dvs \\(n^2\\) udda och \\(n=2k\\) (jämn). Då blir \\(n^2=4k^2\\), vilket är jämnt och motsäger \\(P\\).\nAlltså är \\(P\\Rightarrow Q\\) sant."
-  },
-  {
-    "objectID": "ma/ma-5/bevis/bevis-pres.html#kontrapositiv-bevismetod",
-    "href": "ma/ma-5/bevis/bevis-pres.html#kontrapositiv-bevismetod",
-    "title": "Grunderna i matematisk bevisföring",
-    "section": "Kontrapositiv bevismetod",
-    "text": "Kontrapositiv bevismetod\n\n\n\nOm \\(P\\Rightarrow Q\\) så gäller \\(\\neg Q \\Rightarrow \\neg P\\)\nExempel:\n\n\n\\(P\\): Det regnar.\n\\(Q\\): Marken är våt\n\n\\(\\neg P\\): Det regnar inte.\n\\(\\neg Q\\): Marken är inte våt.\n\nOm \\(P\\Rightarrow Q\\) så är det ekvivalent med \\(\\neg Q\\Rightarrow\\neg P\\)\ndvs “Marken är inte våt” leder till att “Det regnar inte”."
-  },
-  {
-    "objectID": "ma/ma-5/bevis/bevis-pres.html#ex.-med-kontrapositiv-metod",
-    "href": "ma/ma-5/bevis/bevis-pres.html#ex.-med-kontrapositiv-metod",
-    "title": "Grunderna i matematisk bevisföring",
-    "section": "Ex. med kontrapositiv metod",
-    "text": "Ex. med kontrapositiv metod\nPåstående: Om \\(4n+1\\) är jämnt, så är \\(n\\) jämn.\nKontrapositiv: Om \\(n\\) är udda, så är \\(4n+1\\) udda.\n\n\n\\(P\\): \\(4n+1\\) jämn.\n\\(Q\\): \\(n\\) jämn.\n\n\\(\\neg P\\): \\(4n+1\\) udda.\n\\(\\neg Q\\): \\(n\\) udda.\n\nBevisa \\(P\\Rightarrow Q\\) medelst \\(\\neg Q \\Rightarrow \\neg P\\) (kontrapositiv metod).\n\nAnta att \\(n\\) är udda: \\(n=2k+1\\).\n\\(4n+1=4(2k+1)+1=2(4k+2)+1\\) (udda).\nSå: om \\(n\\) är udda så är \\(4n+1\\) udda. Alltså är \\(P\\Rightarrow Q\\) sant."
   },
   {
     "objectID": "ma/ma-5/fordjupning/maclaurin/maclaurin.html#back-to-basic",

@@ -6,8 +6,8 @@
 <script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.38">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <title>CodeBubo – Klasser och metoder i Python</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -19,10 +19,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -235,14 +238,14 @@
 <section id="metoden-__init__" class="slide level2">
 <h2>Metoden <code>__init__</code></h2>
 <p>För att tilldela värden till en instans i samband med att den skapas så kan man använda en metod som heter <code>__init__</code></p>
-<div id="5572c19f" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="kw">class</span> Car:</span>
-<span id="cb3-2"><a></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, brand, mileage):</span>
-<span id="cb3-3"><a></a>    <span class="va">self</span>.brand <span class="op">=</span> brand</span>
-<span id="cb3-4"><a></a>    <span class="va">self</span>.mileage <span class="op">=</span> mileage</span>
-<span id="cb3-5"><a></a></span>
-<span id="cb3-6"><a></a>my_car <span class="op">=</span> Car(<span class="st">"Volvo"</span>, <span class="dv">1200</span>)</span>
-<span id="cb3-7"><a></a><span class="bu">print</span>(<span class="ss">f"Märke: </span><span class="sc">{</span>my_car<span class="sc">.</span>brand<span class="sc">}</span><span class="ss">, Miltal: </span><span class="sc">{</span>my_car<span class="sc">.</span>mileage<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="0ce1df2a" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-label="1"></a><span class="kw">class</span> Car:</span>
+<span id="cb3-2"><a aria-label="2"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, brand, mileage):</span>
+<span id="cb3-3"><a aria-label="3"></a>    <span class="va">self</span>.brand <span class="op">=</span> brand</span>
+<span id="cb3-4"><a aria-label="4"></a>    <span class="va">self</span>.mileage <span class="op">=</span> mileage</span>
+<span id="cb3-5"><a aria-label="5"></a></span>
+<span id="cb3-6"><a aria-label="6"></a>my_car <span class="op">=</span> Car(<span class="st">"Volvo"</span>, <span class="dv">1200</span>)</span>
+<span id="cb3-7"><a aria-label="7"></a><span class="bu">print</span>(<span class="ss">f"Märke: </span><span class="sc">{</span>my_car<span class="sc">.</span>brand<span class="sc">}</span><span class="ss">, Miltal: </span><span class="sc">{</span>my_car<span class="sc">.</span>mileage<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="double-v-space">
 
@@ -252,17 +255,17 @@
 <section id="metoden-__str__" class="slide level2">
 <h2>Metoden <code>__str__</code></h2>
 <p>Ibland vill man kunna skriva ut information om objekt med en kort <code>print</code>-sats, t ex <code>print(my_car)</code>. Då kan metoden <code>__str__</code> användas.</p>
-<div id="42c2161a" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="kw">class</span> Car:</span>
-<span id="cb4-2"><a></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, brand, mileage):</span>
-<span id="cb4-3"><a></a>    <span class="va">self</span>.brand <span class="op">=</span> brand</span>
-<span id="cb4-4"><a></a>    <span class="va">self</span>.mileage <span class="op">=</span> mileage</span>
-<span id="cb4-5"><a></a></span>
-<span id="cb4-6"><a></a>  <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
-<span id="cb4-7"><a></a>    <span class="cf">return</span> (<span class="ss">f"Märke: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>brand<span class="sc">}</span><span class="ss">, Miltal: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>mileage<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb4-8"><a></a></span>
-<span id="cb4-9"><a></a>my_car <span class="op">=</span> Car(<span class="st">"Volvo"</span>, <span class="dv">1200</span>)</span>
-<span id="cb4-10"><a></a><span class="bu">print</span>(my_car)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="c31ab97b" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-label="1"></a><span class="kw">class</span> Car:</span>
+<span id="cb4-2"><a aria-label="2"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, brand, mileage):</span>
+<span id="cb4-3"><a aria-label="3"></a>    <span class="va">self</span>.brand <span class="op">=</span> brand</span>
+<span id="cb4-4"><a aria-label="4"></a>    <span class="va">self</span>.mileage <span class="op">=</span> mileage</span>
+<span id="cb4-5"><a aria-label="5"></a></span>
+<span id="cb4-6"><a aria-label="6"></a>  <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb4-7"><a aria-label="7"></a>    <span class="cf">return</span> (<span class="ss">f"Märke: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>brand<span class="sc">}</span><span class="ss">, Miltal: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>mileage<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-8"><a aria-label="8"></a></span>
+<span id="cb4-9"><a aria-label="9"></a>my_car <span class="op">=</span> Car(<span class="st">"Volvo"</span>, <span class="dv">1200</span>)</span>
+<span id="cb4-10"><a aria-label="10"></a><span class="bu">print</span>(my_car)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Sista raden skriver ut <span class="code-out">Märke: Volvo, Miltal: 1200</span></p>
 <p>Utskriftssträngen definieras av <code>__str__</code>-metoden.</p>
@@ -270,20 +273,20 @@
 <section id="deklarera-en-metod" class="slide level2">
 <h2>Deklarera en metod</h2>
 <p>Vi kan deklarera och använda en klass <code>Car</code> på det här sättet:</p>
-<div id="e1388ee8" class="cell" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="kw">class</span> Car:</span>
-<span id="cb5-2"><a></a>  speed <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb5-3"><a></a>  </span>
-<span id="cb5-4"><a></a>  <span class="co"># Metod</span></span>
-<span id="cb5-5"><a></a>  <span class="kw">def</span> set_speed(<span class="va">self</span>, new_speed):</span>
-<span id="cb5-6"><a></a>    <span class="va">self</span>.speed <span class="op">=</span> new_speed</span>
-<span id="cb5-7"><a></a>    </span>
-<span id="cb5-8"><a></a>my_car <span class="op">=</span> Car()</span>
-<span id="cb5-9"><a></a>your_car <span class="op">=</span> Car()</span>
-<span id="cb5-10"><a></a>my_car.set_speed(<span class="dv">100</span>)</span>
-<span id="cb5-11"><a></a>your_car.set_speed(<span class="dv">70</span>)</span>
-<span id="cb5-12"><a></a></span>
-<span id="cb5-13"><a></a><span class="bu">print</span>(<span class="ss">f"my_car speed: </span><span class="sc">{</span>my_car<span class="sc">.</span>speed<span class="sc">}</span><span class="ss">, your_car speed: </span><span class="sc">{</span>your_car<span class="sc">.</span>speed<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="4a657b52" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-label="1"></a><span class="kw">class</span> Car:</span>
+<span id="cb5-2"><a aria-label="2"></a>  speed <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb5-3"><a aria-label="3"></a>  </span>
+<span id="cb5-4"><a aria-label="4"></a>  <span class="co"># Metod</span></span>
+<span id="cb5-5"><a aria-label="5"></a>  <span class="kw">def</span> set_speed(<span class="va">self</span>, new_speed):</span>
+<span id="cb5-6"><a aria-label="6"></a>    <span class="va">self</span>.speed <span class="op">=</span> new_speed</span>
+<span id="cb5-7"><a aria-label="7"></a>    </span>
+<span id="cb5-8"><a aria-label="8"></a>my_car <span class="op">=</span> Car()</span>
+<span id="cb5-9"><a aria-label="9"></a>your_car <span class="op">=</span> Car()</span>
+<span id="cb5-10"><a aria-label="10"></a>my_car.set_speed(<span class="dv">100</span>)</span>
+<span id="cb5-11"><a aria-label="11"></a>your_car.set_speed(<span class="dv">70</span>)</span>
+<span id="cb5-12"><a aria-label="12"></a></span>
+<span id="cb5-13"><a aria-label="13"></a><span class="bu">print</span>(<span class="ss">f"my_car speed: </span><span class="sc">{</span>my_car<span class="sc">.</span>speed<span class="sc">}</span><span class="ss">, your_car speed: </span><span class="sc">{</span>your_car<span class="sc">.</span>speed<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Sista raden skriver ut<br> <span class="code-out">my_car speed: 100, your_car speed: 70</span></p>
 </section>
@@ -294,11 +297,11 @@
 <p><code>def set_speed(self, new_speed):</code></p>
 <p>Varje instans har ett ID-nummer. Detta skickas till metoderna som en <em>referens</em> för identifiering.</p>
 <div class="hidden">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="kw">def</span> set_speed(<span class="va">self</span>, new_speed):</span>
-<span id="cb6-2"><a></a>    <span class="va">self</span>.speed <span class="op">=</span> new_speed</span>
-<span id="cb6-3"><a></a></span>
-<span id="cb6-4"><a></a>my_car <span class="op">=</span> Car()</span>
-<span id="cb6-5"><a></a>my_car.set_speed(<span class="dv">100</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-label="1"></a><span class="kw">def</span> set_speed(<span class="va">self</span>, new_speed):</span>
+<span id="cb6-2"><a aria-label="2"></a>    <span class="va">self</span>.speed <span class="op">=</span> new_speed</span>
+<span id="cb6-3"><a aria-label="3"></a></span>
+<span id="cb6-4"><a aria-label="4"></a>my_car <span class="op">=</span> Car()</span>
+<span id="cb6-5"><a aria-label="5"></a>my_car.set_speed(<span class="dv">100</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Så det som görs med <code>self</code>, t ex <code>self.speed = new_speed</code>, görs alltså på det aktuella objekt.</p>
 <p>ID-numret skickas till metoden som ett osynligt argument. Alla metoder måste ha parametern <code>self</code> som första parameter.</p>
@@ -307,22 +310,22 @@
 <h2>Statiska metoder</h2>
 <p>En statisk metod är en funktion som är knuten till en klass, men inte till ett objekt.</p>
 <div class="small-code">
-<div id="de014bca" class="cell" data-execution_count="7">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="kw">class</span> Person:</span>
-<span id="cb7-2"><a></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, age):</span>
-<span id="cb7-3"><a></a>    <span class="va">self</span>.age <span class="op">=</span> age</span>
-<span id="cb7-4"><a></a>  </span>
-<span id="cb7-5"><a></a>  <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
-<span id="cb7-6"><a></a>    <span class="cf">return</span> <span class="bu">str</span>(<span class="va">self</span>.age)</span>
-<span id="cb7-7"><a></a>  </span>
-<span id="cb7-8"><a></a>  <span class="at">@staticmethod</span> <span class="co"># En funktion som hör till klassen, men inte till ett objekt</span></span>
-<span id="cb7-9"><a></a>  <span class="kw">def</span> from_birthyear(year): <span class="co"># Här saknas self</span></span>
-<span id="cb7-10"><a></a>    age <span class="op">=</span> <span class="dv">2026</span> <span class="op">-</span> year</span>
-<span id="cb7-11"><a></a>    <span class="cf">return</span> Person(age)</span>
-<span id="cb7-12"><a></a></span>
-<span id="cb7-13"><a></a>person_Kalle <span class="op">=</span> Person(<span class="dv">18</span>)</span>
-<span id="cb7-14"><a></a>person_Linda <span class="op">=</span> Person.from_birthyear(<span class="dv">2002</span>)</span>
-<span id="cb7-15"><a></a><span class="bu">print</span>(<span class="ss">f"Kalle: </span><span class="sc">{</span>person_Kalle<span class="sc">}</span><span class="ss">, Linda: </span><span class="sc">{</span>person_Linda<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="02618090" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-label="1"></a><span class="kw">class</span> Person:</span>
+<span id="cb7-2"><a aria-label="2"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, age):</span>
+<span id="cb7-3"><a aria-label="3"></a>    <span class="va">self</span>.age <span class="op">=</span> age</span>
+<span id="cb7-4"><a aria-label="4"></a>  </span>
+<span id="cb7-5"><a aria-label="5"></a>  <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb7-6"><a aria-label="6"></a>    <span class="cf">return</span> <span class="bu">str</span>(<span class="va">self</span>.age)</span>
+<span id="cb7-7"><a aria-label="7"></a>  </span>
+<span id="cb7-8"><a aria-label="8"></a>  <span class="at">@staticmethod</span> <span class="co"># En funktion som hör till klassen, men inte till ett objekt</span></span>
+<span id="cb7-9"><a aria-label="9"></a>  <span class="kw">def</span> from_birthyear(year): <span class="co"># Här saknas self</span></span>
+<span id="cb7-10"><a aria-label="10"></a>    age <span class="op">=</span> <span class="dv">2026</span> <span class="op">-</span> year</span>
+<span id="cb7-11"><a aria-label="11"></a>    <span class="cf">return</span> Person(age)</span>
+<span id="cb7-12"><a aria-label="12"></a></span>
+<span id="cb7-13"><a aria-label="13"></a>person_Kalle <span class="op">=</span> Person(<span class="dv">18</span>)</span>
+<span id="cb7-14"><a aria-label="14"></a>person_Linda <span class="op">=</span> Person.from_birthyear(<span class="dv">2002</span>)</span>
+<span id="cb7-15"><a aria-label="15"></a><span class="bu">print</span>(<span class="ss">f"Kalle: </span><span class="sc">{</span>person_Kalle<span class="sc">}</span><span class="ss">, Linda: </span><span class="sc">{</span>person_Linda<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Kalle: 18, Linda: 24</code></pre>
 </div>

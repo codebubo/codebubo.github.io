@@ -6,8 +6,8 @@
 <script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.38">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="">
   <title>CodeBubo – Introduktion Programmering 1, indval</title>
@@ -20,10 +20,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -300,16 +303,16 @@
 <section id="variabler" class="slide level2">
 <h2>Variabler</h2>
 <p>En variabel är ett “namn” på ett värde. Kan även kallas för en identifierare.</p>
-<div id="c75a274b" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="co"># Detta program skrivs i en fil som sparas.</span></span>
-<span id="cb1-2"><a></a><span class="co"># Filen skapas i Idle: File -&gt; New File</span></span>
-<span id="cb1-3"><a></a><span class="co"># och namnges till fartberäkning</span></span>
-<span id="cb1-4"><a></a>sträcka <span class="op">=</span> <span class="dv">103</span>  <span class="co"># Sträckan i meter</span></span>
-<span id="cb1-5"><a></a>tid <span class="op">=</span> <span class="fl">13.2</span>     <span class="co"># Tiden i sekunder</span></span>
-<span id="cb1-6"><a></a>fart <span class="op">=</span> sträcka <span class="op">/</span> tid</span>
-<span id="cb1-7"><a></a></span>
-<span id="cb1-8"><a></a><span class="bu">print</span>(<span class="ss">f"Fart = </span><span class="sc">{</span>fart<span class="sc">:.1f}</span><span class="ss"> m/s"</span>)</span>
-<span id="cb1-9"><a></a><span class="co"># Skriver ut Fart = 7.8 m/s</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="2477e2d6" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-label="1"></a><span class="co"># Detta program skrivs i en fil som sparas.</span></span>
+<span id="cb1-2"><a aria-label="2"></a><span class="co"># Filen skapas i Idle: File -&gt; New File</span></span>
+<span id="cb1-3"><a aria-label="3"></a><span class="co"># och namnges till fartberäkning</span></span>
+<span id="cb1-4"><a aria-label="4"></a>sträcka <span class="op">=</span> <span class="dv">103</span>  <span class="co"># Sträckan i meter</span></span>
+<span id="cb1-5"><a aria-label="5"></a>tid <span class="op">=</span> <span class="fl">13.2</span>     <span class="co"># Tiden i sekunder</span></span>
+<span id="cb1-6"><a aria-label="6"></a>fart <span class="op">=</span> sträcka <span class="op">/</span> tid</span>
+<span id="cb1-7"><a aria-label="7"></a></span>
+<span id="cb1-8"><a aria-label="8"></a><span class="bu">print</span>(<span class="ss">f"Fart = </span><span class="sc">{</span>fart<span class="sc">:.1f}</span><span class="ss"> m/s"</span>)</span>
+<span id="cb1-9"><a aria-label="9"></a><span class="co"># Skriver ut Fart = 7.8 m/s</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Fart = 7.8 m/s</code></pre>
 </div>
@@ -327,13 +330,13 @@
 <p>Python kan skriva ut variabeltypen för en given variabel.</p>
 </div>
 <div class="v-space">
-<div id="bcbd5ff8" class="cell" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>ett_heltal <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb3-2"><a></a>ett_flyttal <span class="op">=</span> <span class="fl">2.9</span></span>
-<span id="cb3-3"><a></a>en_sträng <span class="op">=</span> <span class="st">"En sträng"</span></span>
-<span id="cb3-4"><a></a><span class="bu">print</span>(<span class="bu">type</span>(ett_heltal))</span>
-<span id="cb3-5"><a></a><span class="bu">print</span>(<span class="bu">type</span>(ett_flyttal))</span>
-<span id="cb3-6"><a></a><span class="bu">print</span>(<span class="bu">type</span>(en_sträng))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="1f8fa447" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-label="1"></a>ett_heltal <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb3-2"><a aria-label="2"></a>ett_flyttal <span class="op">=</span> <span class="fl">2.9</span></span>
+<span id="cb3-3"><a aria-label="3"></a>en_sträng <span class="op">=</span> <span class="st">"En sträng"</span></span>
+<span id="cb3-4"><a aria-label="4"></a><span class="bu">print</span>(<span class="bu">type</span>(ett_heltal))</span>
+<span id="cb3-5"><a aria-label="5"></a><span class="bu">print</span>(<span class="bu">type</span>(ett_flyttal))</span>
+<span id="cb3-6"><a aria-label="6"></a><span class="bu">print</span>(<span class="bu">type</span>(en_sträng))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'int'&gt;
 &lt;class 'float'&gt;
@@ -408,9 +411,9 @@
 <div class="column" style="width:55%;">
 <div class="fragment fade-right" data-fragment-index="1">
 <p>Utskrift av sträng</p>
-<div id="9c4e60c7" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>hello_string <span class="op">=</span> <span class="st">"Hello, world"</span></span>
-<span id="cb5-2"><a></a><span class="bu">print</span>(hello_string)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="60ec52f1" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-label="1"></a>hello_string <span class="op">=</span> <span class="st">"Hello, world"</span></span>
+<span id="cb5-2"><a aria-label="2"></a><span class="bu">print</span>(hello_string)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hello, world</code></pre>
 </div>
@@ -421,9 +424,9 @@
 </div>
 <div class="fragment fade-right" data-fragment-index="3">
 <p>Utskrift av sträng och tal</p>
-<div id="6354f578" class="cell" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>pris <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb7-2"><a></a><span class="bu">print</span>(<span class="ss">f"Priset är </span><span class="sc">{</span>pris<span class="sc">}</span><span class="ss"> kr."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="022a358b" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-label="1"></a>pris <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb7-2"><a aria-label="2"></a><span class="bu">print</span>(<span class="ss">f"Priset är </span><span class="sc">{</span>pris<span class="sc">}</span><span class="ss"> kr."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Priset är 10 kr.</code></pre>
 </div>
@@ -432,9 +435,9 @@
 </div><div class="column" style="width:45%;">
 <div class="fragment fade-left" data-fragment-index="2">
 <p>Utskrift av heltal</p>
-<div id="156ccc4f" class="cell" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>pris <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb9-2"><a></a><span class="bu">print</span>(pris)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="2fe1c0a4" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-label="1"></a>pris <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb9-2"><a aria-label="2"></a><span class="bu">print</span>(pris)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>10</code></pre>
 </div>
@@ -445,9 +448,9 @@
 </div>
 <div class="fragment fade-left" data-fragment-index="4">
 <p>Avrundning</p>
-<div id="69c6b6d7" class="cell" data-execution_count="6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>my_float <span class="op">=</span> <span class="dv">2</span><span class="op">/</span><span class="dv">3</span></span>
-<span id="cb11-2"><a></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>my_float<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="3355220e" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-label="1"></a>my_float <span class="op">=</span> <span class="dv">2</span><span class="op">/</span><span class="dv">3</span></span>
+<span id="cb11-2"><a aria-label="2"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>my_float<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>0.67</code></pre>
 </div>
@@ -461,14 +464,14 @@
 <section id="formaterad-utskrift" class="slide level2">
 <h2>Formaterad utskrift</h2>
 <p>En teckensträng har en en given <em>textbredd</em>. Det tydliggörs med utfyllnadstecken.</p>
-<div id="9dbcd297" class="cell" data-execution_count="7">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>s1 <span class="op">=</span> <span class="st">"Kalle"</span></span>
-<span id="cb13-2"><a></a>s2 <span class="op">=</span> <span class="st">"Anka"</span></span>
-<span id="cb13-3"><a></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>s1<span class="sc">:*&lt;13}</span><span class="ss">"</span>)      <span class="co"># Textbredd 13, vänsterjusterat</span></span>
-<span id="cb13-4"><a></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>s1<span class="sc">:*&gt;13}</span><span class="ss">"</span>)      <span class="co"># Textbredd 13, högerjusterat</span></span>
-<span id="cb13-5"><a></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>s1<span class="sc">:*^13}</span><span class="ss">"</span>)      <span class="co"># Textbredd 13, centrerat</span></span>
-<span id="cb13-6"><a></a><span class="bu">print</span>(s1.rjust(<span class="dv">13</span>, <span class="st">"*"</span>)) <span class="co"># Finns även ljust och center</span></span>
-<span id="cb13-7"><a></a><span class="bu">print</span>(s1.ljust(<span class="dv">13</span>) <span class="op">+</span> s2) <span class="co"># Inget utfyllnadstecken!</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="2838fa63" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-label="1"></a>s1 <span class="op">=</span> <span class="st">"Kalle"</span></span>
+<span id="cb13-2"><a aria-label="2"></a>s2 <span class="op">=</span> <span class="st">"Anka"</span></span>
+<span id="cb13-3"><a aria-label="3"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>s1<span class="sc">:*&lt;13}</span><span class="ss">"</span>)      <span class="co"># Textbredd 13, vänsterjusterat</span></span>
+<span id="cb13-4"><a aria-label="4"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>s1<span class="sc">:*&gt;13}</span><span class="ss">"</span>)      <span class="co"># Textbredd 13, högerjusterat</span></span>
+<span id="cb13-5"><a aria-label="5"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>s1<span class="sc">:*^13}</span><span class="ss">"</span>)      <span class="co"># Textbredd 13, centrerat</span></span>
+<span id="cb13-6"><a aria-label="6"></a><span class="bu">print</span>(s1.rjust(<span class="dv">13</span>, <span class="st">"*"</span>)) <span class="co"># Finns även ljust och center</span></span>
+<span id="cb13-7"><a aria-label="7"></a><span class="bu">print</span>(s1.ljust(<span class="dv">13</span>) <span class="op">+</span> s2) <span class="co"># Inget utfyllnadstecken!</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell fragment" data-execution_count="7">
 <div class="cell-output cell-output-stdout">
@@ -486,8 +489,8 @@ Kalle        Anka</code></pre>
 <section id="sträng-med-radbrytning" class="slide level2">
 <h2>Sträng med radbrytning</h2>
 <p>För att skriva ut en sträng på flera används ett s.k “flykttecken” (<em>escape character</em>).</p>
-<div id="71e2d504" class="cell" data-execution_count="8">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a><span class="bu">print</span>(<span class="st">"Här är en text</span><span class="ch">\n</span><span class="st">på två rader"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="8afb1884" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a aria-label="1"></a><span class="bu">print</span>(<span class="st">"Här är en text</span><span class="ch">\n</span><span class="st">på två rader"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Här är en text
 på två rader</code></pre>
@@ -495,8 +498,8 @@ på två rader</code></pre>
 </div>
 <div class="fragment fade-right">
 <p>Detta kan användas tillsammans med textbredden.</p>
-<div id="9c8d1dba" class="cell" data-execution_count="9">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a></a><span class="bu">print</span>(<span class="ss">f"Detta är en högerjusterad text</span><span class="ch">\n</span><span class="sc">{</span><span class="st">'på flera rader'</span><span class="sc">:*&gt;30}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="bd297202" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a aria-label="1"></a><span class="bu">print</span>(<span class="ss">f"Detta är en högerjusterad text</span><span class="ch">\n</span><span class="sc">{</span><span class="st">'på flera rader'</span><span class="sc">:*&gt;30}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Detta är en högerjusterad text
 ****************på flera rader</code></pre>
@@ -520,12 +523,12 @@ på två rader</code></pre>
 <div class="v-space">
 
 </div>
-<div id="bf365fbe" class="cell" data-execution_count="10">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a></a>a <span class="op">=</span> <span class="fl">10.5</span><span class="op">;</span> b <span class="op">=</span> <span class="fl">2.38</span></span>
-<span id="cb19-2"><a></a>c <span class="op">=</span> <span class="fl">2.3</span><span class="op">;</span>  d <span class="op">=</span> <span class="fl">0.1</span></span>
-<span id="cb19-3"><a></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>a<span class="sc">:6.2f}</span><span class="ch">\t\t</span><span class="sc">{</span>c<span class="sc">:6.2f}</span><span class="ch">\n</span><span class="sc">{</span>b<span class="sc">:6.2f}</span><span class="ch">\t\t</span><span class="sc">{</span>d<span class="sc">:6.2f}</span><span class="ss">"</span>)</span>
-<span id="cb19-4"><a></a><span class="bu">print</span>(<span class="st">"----------------------"</span>)<span class="op">;</span></span>
-<span id="cb19-5"><a></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>(a<span class="op">+</span>b)<span class="sc">:6.2f}</span><span class="ch">\t\t</span><span class="sc">{</span>(c<span class="op">+</span>d)<span class="sc">:6.2f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="e0b08eb0" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a aria-label="1"></a>a <span class="op">=</span> <span class="fl">10.5</span><span class="op">;</span> b <span class="op">=</span> <span class="fl">2.38</span></span>
+<span id="cb19-2"><a aria-label="2"></a>c <span class="op">=</span> <span class="fl">2.3</span><span class="op">;</span>  d <span class="op">=</span> <span class="fl">0.1</span></span>
+<span id="cb19-3"><a aria-label="3"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>a<span class="sc">:6.2f}</span><span class="ch">\t\t</span><span class="sc">{</span>c<span class="sc">:6.2f}</span><span class="ch">\n</span><span class="sc">{</span>b<span class="sc">:6.2f}</span><span class="ch">\t\t</span><span class="sc">{</span>d<span class="sc">:6.2f}</span><span class="ss">"</span>)</span>
+<span id="cb19-4"><a aria-label="4"></a><span class="bu">print</span>(<span class="st">"----------------------"</span>)<span class="op">;</span></span>
+<span id="cb19-5"><a aria-label="5"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>(a<span class="op">+</span>b)<span class="sc">:6.2f}</span><span class="ch">\t\t</span><span class="sc">{</span>(c<span class="op">+</span>d)<span class="sc">:6.2f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> 10.50        2.30
   2.38        0.10
