@@ -123,21 +123,6 @@ Nej, visserligen så vet vi t ex att $12=3\cdot 4$, men även att $16=2\cdot 8$.
 Detta motsäger påståendet att varje jämnt tal är en produkt av ett jämnt och
 ett udda tal.
 
-## Indirekta bevismetoder
-
-De indirekta bevismetoderna omfattar **motsägelsebevis** och **bevis med
-kontrapositiv metod**
-
-Det finns ett antal klassiska bevis som använder indirekta metoder, t ex för att
-visa
-
-  * att $\sqrt 2$ är irrationellt,
-  * att det finns oändligt många primtal,
-  * att ekvationen $x^2+1=0$ saknar rationella lösningar.
-
-Några viktiga begrepp är innebörden av **implikation** samt vad **negation** av
-utsagor betyder.
-
 ## Implikation
 
 Innebörd av $P\Rightarrow Q$
@@ -152,7 +137,23 @@ Innebörd av $P\Rightarrow Q$
   * $x=2 \Rightarrow x^2=4$ (dock gäller inte det omvända).
   * $1+1=3 \Rightarrow$ Månen är en gul ost.
 
-## Negationer av utsagor
+## Indirekta bevismetoder {visibility="hidden"}
+
+De indirekta bevismetoderna omfattar **motsägelsebevis** och **bevis med
+kontrapositiv metod**
+
+Det finns ett antal klassiska bevis som använder indirekta metoder, t ex för att
+visa
+
+  * att $\sqrt 2$ är irrationellt,
+  * att det finns oändligt många primtal,
+  * att ekvationen $x^2+1=0$ saknar rationella lösningar.
+
+Några viktiga begrepp är innebörden av **implikation** samt vad **negation** av
+utsagor betyder.
+
+
+## Negationer av utsagor {visibility="hidden"}
 
 :::{.double-v-space}
 :::
@@ -181,7 +182,7 @@ $\neg P$: Det finns minst en fågel som inte kan flyga.
 
 ::::
 
-## Motsägelsebevis
+## Motsägelsebevis {visibility="hidden"}
 
 Om $P\Rightarrow Q$ ska visas kan motsatsen till $Q$ antas. Om det leder till
 en motsägelse så måste $Q$ gälla.
@@ -201,7 +202,7 @@ Då blir $n^2=4k^2$, vilket är jämnt och motsäger $P$.
 Alltså är $P\Rightarrow Q$ sant.
 
 
-## Kontrapositiv bevismetod
+## Kontrapositiv bevismetod {visibility="hidden"}
 
 :::{.double-v-space}
 :::
@@ -232,7 +233,7 @@ Om $P\Rightarrow Q$ så är det ekvivalent med $\neg Q\Rightarrow\neg P$
 dvs
 "Marken är inte våt" leder till att "Det regnar inte".
 
-##  Ex. med kontrapositiv metod
+##  Ex. med kontrapositiv metod {visibility="hidden"}
 
 **Påstående**: Om $4n+1$ är jämnt, så är $n$ jämn.
 
