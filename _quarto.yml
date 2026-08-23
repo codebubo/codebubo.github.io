@@ -34,6 +34,7 @@ website:
               # - pr1/python/intro/pres-version-online-python/index.qmd
               - prog1000x/python/presentationer/intro/index.qmd
               # - pr1/python/villkor/presentation/index.qmd
+              - prog1000x/python/presentationer/formatering/index.qmd
               - prog1000x/python/presentationer/villkor/index.qmd
               - pr1/python/while-loopar/presentation/index.qmd
               - pr1/python/for-loopar/presentation/index.qmd
@@ -47,6 +48,7 @@ website:
           - section: "Övningar, Python"
             contents:
               # - pr1/python/uppgifter/utskrift-och-villkor/index.qmd
+              - prog1000x/python/ovningar/formatering/index.qmd
               - prog1000x/python/ovningar/villkor/index.qmd
               - pr1/python/uppgifter/loopar/index.qmd
               - pr1/python/uppgifter/funktioner/index.qmd

@@ -4,6 +4,7 @@ format:
   html:
     fontsize: 1em
     css: style.css
+    title-block: false
 execute: 
   echo: false
 ---

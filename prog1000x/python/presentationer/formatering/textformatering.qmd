@@ -1,0 +1,195 @@
+---
+title: "Formaterad<br>text"
+subtitle: "&nbsp; &nbsp;&nbsp; &nbsp; ☆Att<br>fixa<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;till<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+layouten ☆"
+from: markdown+emoji
+title-slide-attributes:
+  data-background-image: ""
+  data-background-color: "black"
+  data-background-size: "700px"
+author: ""
+date: ""
+format:
+  revealjs:
+    theme: dark
+    transition: slide
+    background-transition: slide
+    slide-number: true
+    controls: true
+    controls-layout: edges
+    date-format: "DD MMM YYYY"
+    css: "../style.css"
+execute: 
+  echo: true
+  output: false
+filters:
+ - font-size
+---
+
+## Utskrifter i Python
+<!-- SLIDE #1 -->
+
+::: columns
+:::: {.column width="55%"}
+<span style="font-size: 0.8em;">Utskrift av sträng</span>
+
+:::{.no-line-numbers .output-black-on-white}
+```{python}
+#|output: true
+hello_string = "Hello, world"
+print(hello_string)
+```
+:::
+
+::::{.v-space}
+::::
+
+::::: {.fragment .fade-right fragment-index=3}
+<span style="font-size: 0.8em;">Utskrift av sträng och tal</span>
+
+:::{.no-line-numbers .output-black-on-white}
+```{python}
+#|output: true
+pris = 10
+print(f"Priset är {pris} kr.")
+```
+:::
+
+:::::
+::::
+
+:::: {.column width="45%"}
+::::: {.fragment .fade-left fragment-index=2}
+<span style="font-size: 0.8em;"> Utskrift av heltal</span>
+
+:::{.no-line-numbers .output-black-on-white}
+```{python}
+#|output: true
+pris = 10
+print(pris)
+```
+:::
+:::::
+
+::::{.v-space}
+::::
+
+::::: {.fragment .fade-left fragment-index=4}
+<span style="font-size: 0.8em;">Avrundning</span>
+
+:::{.no-line-numbers .output-black-on-white}
+```{python}
+#|output: true
+my_float = 2/3
+print(f"{my_float:.2f}")
+```
+:::
+
+:::::
+::::
+:::
+
+:::: {.fragment .fade-up fragment-index=5 .smaller-font}
+<span style="font-size: 0.8em;">
+När "fast" text ska skrivas ut tillsammans med en variabel används en s.k
+f-string. Det står för *formatted string literal*.
+</span>
+::::
+
+## Formatspecifikationer
+<!-- SLIDE #2 -->
+
+En teckensträng har en en given *fältbredd*. Det tydliggörs med utfyllnadstecken.
+
+```{python}
+s1 = "Kalle"
+s2 = "Anka"
+print(f"{s1:*<13}")      # A. Fältbredd 13, vänsterjusterat
+print(f"{s1:*>13}")      # B. Fältbredd 13, högerjusterat
+print(f"{s1:*^13}")      # C. Fältbredd 13, centrerat
+print(f"{s1:*<9}{s2}")   # D. Flera strängar
+print(f"{s1:<9}{s2}")    # E. Flera strängar, inget utfyllnadstecken
+```
+
+::::{.columns}
+:::{.column width="50%"}
+<span class="out-part">A.</span>
+<span class="code-out">`{python} f"{s1:*<13}"`</span><br>
+<span class="out-part">B.</span>
+<span class="code-out">`{python} f"{s1:*>13}"`</span><br>
+<span class="out-part">C.</span>
+<span class="code-out">`{python} f"{s1:*^13}"`</span><br>
+:::
+:::{.column width="50%"}
+<span class="out-part">D.</span>
+<span class="code-out">`{python} f"{s1:*<9}{s2}"`</span><br>
+<span class="out-part">E.</span>
+<span class="code-out">`{python} f"{s1}{4*'&nbsp;'}{s2}"`</span><br>
+:::
+::::
+
+## Upprepade tecken
+<!-- SLIDE #3 -->
+
+När många lika tecken ska skrivas ut så kan strängen multipliceras.
+
+:::{.output-black-on-white}
+```{python}
+#|output: true
+print(30 * "*")
+print("*" + 28 * " " + "*")
+print ("*" + f"{'Välkommen!':^28}" + "*")
+print("*" + 28 * " " + "*")
+print(30 * "*")
+```
+:::
+
+## Sträng med radbrytning
+<!-- SLIDE #4 -->
+
+För att skriva ut en sträng på flera används ett s.k "flykttecken" (*escape
+character*). Här används `\n` för att få radbrytning.
+
+```{python}
+#| classes: output-black-on-white
+#| code-line-numbers: false
+#| output: true
+print("Här är en text på\ntvå rader")
+```
+:::{.double-v-space}
+Detta kan användas tillsammans med fältbredden:
+:::
+
+```{python}
+#| classes: output-black-on-white
+#| code-line-numbers: false
+#| output: true
+print(f"Detta är en högerjusterad text\n{'på flera rader':*>30}")
+```
+
+## Justering av tal
+<!-- SLIDE #5 -->
+
+:::{.v-space}
+Tabeller blir mer lättlästa om ental står under ental, tiondel under tiondel
+osv.
+:::
+
+:::{.v-space}
+```{python}
+#| classes: output-black-on-white
+#| output: true
+a = 10.499; b = 2.38
+c = 123.4;  d = 9.1
+print(f"{a:6.2f}{c:12.2f}\n{b:6.2f}{d:12.2f}")
+print(22 * "-");
+print(f"{(a+b):6.2f}{(c+d):12.2f}")
+```
+:::
+
+:::{.v-space}
+Observera att beräkningarna sker mellan måsvingarna!
+:::
+

@@ -1,0 +1,334 @@
+---
+title: "Övningar: Textformatering"
+format:
+  html:
+    fontsize: 1em
+    css: style.css
+execute: 
+  echo: false
+---
+
+## Utskrifter
+
+### Övning 1
+
+Mata in följande rader i Thonnys Python-skal och reflektera över resultatet:
+
+-   `print("2 + 2")`
+-   `print("2" + "2")`
+-   `print(2 + 2)`
+-   `print(2.0 + 2)`
+-   `print(0.1 + 0.2)`
+
+:::{.callout-tip collapse="true" icon="false" title="Kommentarer övning 1"}
+
+1. Tecken inom citationstecken (`" "` ) skrivs ut precis som de är, det är
+ingenting som beräknas även om det är ett uttryck innanför citationstecknen.
+Det som står innanför citationstecken kallas för en **sträng**. Två strängar
+kan adderas, med resultatet att det blir en ny sträng som består av de båda
+ingående strängarna i en följd. Därav gäller att `"2" + "2"` blir `22`
+(där `22` är en sträng och inte ett tal). 
+
+2. Uttrycket `2` är ett heltal och `2.0` är ett flyttal. Om ett flyttal
+används i en beräkning kommer svaret att bli ett flyttal, även om det finns
+heltal med i andra delar av uttrycket.
+
+3. `0.1 + 0.2` beräknas inte till exakt `0.3` eftersom Python lagrar tal
+i binär form (basen 2 till skillnad från basen 10). I denna binära
+representation kommer termerna att vara avrundade, och summan blir ett
+närmevärde.
+
+:::
+
+### Övning 2
+
+Använd en enda `print`-sats som skriver ut följande (byt ut namnet mot ditt
+eget). Observera att utskriften är på två rader!
+
+:::{.callout-note appearance="minimal"}
+
+```{python}
+#|echo: false
+print("Jag heter\nAnders Andersson")
+```
+:::
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag övning 2"}
+
+```python
+print("Jag heter\nAnders Andersson")
+``` 
+:::
+
+### Övning 3
+
+Använd en enda `print`-sats som skriver ut följande (byt ut namnet mot ditt
+eget). Observera att utskriften innehåller citationstecken!
+
+:::{.callout-note appearance="minimal"}
+
+```{python}
+#|echo: false
+print("\"Python\" är ett programmeringsspråk.\nDet är roligt att programmera!")
+```
+:::
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag övning 3"}
+
+```python
+print("\"Python\" är ett programmeringsspråk.\nDet är roligt att programmera!")
+``` 
+:::
+
+
+### Övning 4 {#variabeldeklarationer}
+
+Skapa en Python-fil i Thonny där du deklarerar följande strängvariabler (som du
+kan själv kan anpassa innehållet i):
+
+```{python}
+#| echo: true
+fnamn = "Anders"
+enamn = "Andersson"
+adr = "Storgatan 1"
+postnr = "999 99"
+ort = "Storstad"
+ålder = 17
+```
+
+Använd en `print`-sats, där du skriver ut variablerna som en f-string, så att
+utskriften blir:
+
+:::{.callout-note appearance="minimal"}
+```{python}
+#|echo: false
+print(f"Hej, jag heter {fnamn} och är {ålder} år.")
+```
+:::
+
+(Resten av variablerna ska användas i en senare övning, så deklarera dessa
+även om de inte används här.)
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag övning 4"}
+```python
+fnamn = "Anders"
+enamn = "Andersson"
+adr = "Storgatan 1"
+postnr = "999 99"
+ort = "Storstad"
+ålder = 17
+
+print(f"Hej, jag heter {fnamn} och är {ålder} år")
+```
+:::
+
+### Övning 5
+
+Deklarera följande variabler, och **spara i en fil i Thonny**:
+
+```python
+sträcka = 103 # Sträcka i meter
+tid = 13.2    # Tiden i sekunder
+fart = sträcka / tid
+```
+
+Skapa en `print`-sats som skriver ut farten på det aktuella föremålet avrundat
+till en decimal.
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag övning 5"}
+```python
+sträcka = 103 # Sträcka i meter
+tid = 13.2    # Tiden i sekunder
+fart = sträcka / tid
+
+print(f"Farten är {(sträcka / tid):.1f} m/s")
+```
+:::
+
+### Övning 6
+
+Deklarera följande variabler i Thonny:
+
+```{python}
+#| echo: true
+a = 1.5
+b = 21.32
+```
+
+Använd därefter en (enda) `print`-sats med lämpliga formatspecifikationer för
+att skriva ut, och göra, följande beräkning. Du ska inte använda flera på
+varandra följande mellanslag inne i `print`-satsen.
+
+:::{.callout-note appearance="minimal"}
+
+```{python}
+#| echo: false
+print(f"{a:>7.2f}\n+{b:>6.2f}\n-------\n{(a+b):>7.2f}")
+```
+:::
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag övning
+6"}
+```python
+a = 1.5
+b = 21.32
+print(f"{a:>7.2f}\n+{b:>6.2f}\n{7*'-'}\n{(a+b):>7.2f}")
+```
+:::
+
+### Övning 7
+
+Använd filen med strängvariablerna från [Övning 4](#variabeldeklarationer)
+för att med en (enda) `print`-sats med lämpliga formatspecifikationer för att
+skriva ut strängarna, högerjusterade enligt nedan. Du ska inte använda flera på
+varandra följande mellanslag inne i `print`-satsen.
+
+:::{.callout-note appearance="minimal"}
+
+```{python}
+#| echo: false
+print(f"{fnamn:<6} {enamn}\n{adr:>16}\n{postnr :>7} {ort:>2}")
+```
+
+:::
+
+:::{.callout-tip collapse="true" icon="false" title="Lösningsförslag övning 7"}
+
+```python
+print(f"{fnamn:<6} {enamn}\n{adr:>16}\n{postnr :>7} {ort:>2}")
+```
+:::
+
+---
+
+**Till följande övningar finns inget lösningsförslag publicerat. I vissa fall
+finns tips på sökfraser, i andra fall så är lösningarna snarlika tidigare
+övningar på sidan.**
+
+---
+
+### Övning 8
+
+Variabeln `nummer` innehåller ett heltal. Skriv `nummer` så att det alltid
+visas med minst fem siffror. Är talet färre än fem siffror så skrivs det ut
+med inledande nollor, t ex `{python} f"{(42):05d}"`. Tips: sök reda på vilken
+formatspecifikation som ger inledande nollor vid utskrift av tal. Tips på
+sökfras: *python format specifier leading zeros*.
+
+### Övning 9
+
+Följande variabel deklareras: `andel = 0.735`. Skriv `andel` formaterad som
+ett tal i procentform med två decimaler, `{python} f"{0.735:.2%}"`. Tips på
+sökfras: *python format specifier percentage*.
+
+### Övning 10
+
+Deklarera följande variabler i Thonny:
+
+```{python}
+#| echo: true
+vara_1 = "Äpple"
+vara_2 = "Banan"
+vara_3 = "Apelsin"
+
+antal_1 = 3
+antal_2 = 12
+antal_3 = 5
+
+pris_1 = 12.5
+pris_2 = 2.9
+pris_3 = 5.5
+```
+
+Med hjälp av dessa variabler ska skriva ut följande tabell:
+
+:::{.callout-note appearance="minimal"}
+```{python}
+#| echo: false
+print(f"{'Vara'}{'Antal':>12}{'Pris':>10}")
+print(27 * "-")
+print(f"{vara_1}{antal_1:11.0f}{pris_1:10.2f}")
+print(f"{vara_2}{antal_2:11.0f}{pris_2:10.2f}")
+print(f"{vara_3}{antal_3:9.0f}{pris_3:10.2f}")
+```
+:::
+
+Använd f-strängar och formatspecifikationer. Du får inte använda flera på
+varandra följande mellanslag för att placera texten.
+
+## En mer utmanande övning
+
+### Övning 11
+
+Du ska formatera ett (typ) kassakvitto enligt nedan:
+
+```{python}
+#| echo: false
+
+avskiljare = "-"
+tab_rub_1 = "Vara"
+tab_rub_2 = "Pris per kg"
+tab_rub_3 = "Vikt [kg]"
+tab_rub_4 = "Belopp [kr]"
+frukt_1 = "Äpple"
+frukt_2 = "Papaya"
+frukt_3 = "Vattenmelon"
+vikt_1 = 1.2
+vikt_2 = 0.72
+vikt_3 = 3.51
+pris_1 = 25
+pris_2 = 139.9
+pris_3 = 19.99
+belopp_1 = pris_1 * vikt_1
+belopp_2 = pris_2 * vikt_2
+belopp_3 = pris_3 * vikt_3
+sum_str = "Summa:"
+
+rlst = []
+rlst.append(f"{tab_rub_1:>11}{tab_rub_2:>17}{tab_rub_3:>15}{tab_rub_4:>15}")
+rlst.append(f"{60 * avskiljare}")
+rlst.append(f"{frukt_1:>11}{pris_1:14.2f}{vikt_1:15.2f}{belopp_1:15.2f}")
+rlst.append(f"{frukt_2:>11}{pris_2:14.2f}{vikt_2:15.2f}{belopp_2:15.2f}")
+rlst.append(f"{frukt_3:>11}{pris_3:14.2f}{vikt_3:15.2f}{belopp_3:15.2f}")
+rlst.append(rlst[1])
+rlst.append(f"{sum_str:>46}{(belopp_1 + belopp_2 + belopp_3):9.2f}")
+```
+
+:::{.callout-note appearance="minimal"}
+```{python}
+#|echo: false
+for row in rlst:
+  print(row)
+```
+:::
+
+Detta ska göras enbart genom att använda `print`-satser och nedanstående
+variabler:
+
+```{python}
+#| echo: true
+#| code-line-numbers: true
+avskiljare = "-"
+tab_rub_1 = "Vara"
+tab_rub_2 = "Pris per kg"
+tab_rub_3 = "Vikt [kg]"
+tab_rub_4 = "Belopp [kr]"
+frukt_1 = "Äpple"
+frukt_2 = "Papaya"
+frukt_3 = "Vattenmelon"
+vikt_1 = 1.2
+vikt_2 = 0.72
+vikt_3 = 3.51
+pris_1 = 25
+pris_2 = 139.9
+pris_3 = 19.99
+belopp_1 = pris_1 * vikt_1
+belopp_2 = pris_2 * vikt_2
+belopp_3 = pris_3 * vikt_3
+sum_str = "Summa:"
+```
+
+Du ska alltså inte använda mellanslag eller upprepade tecken (t ex flera "`-`"
+för radmarkeringar). Ett tips är att titta presentationen om [formaterad
+utskrift](../../presentationer/formatering/).
+

@@ -100,12 +100,12 @@
     font-size: 0.55em;
 }
   
- .cell-output-stdout pre, .cell-output-stdout pre code {
-    background-color: #4a4a4a; /* Gul bakgrund */
-    color: #e0e0e0; /* Svart text */
-    padding: 4px; /* Valfri padding för bättre utseende */
-    border-radius: 4px; /* Valfri rundning av kanter */
-    font-size: 0.65em;
-    margin-top: 0.8em;
-    width: 99%;
-} 
+
+ .cell-output.cell-output-stdout > pre > code{
+  color: black;
+  font-family: "Courier New";
+  background-color: lightgray;
+  font-size: 120%;
+  padding: 0.5em;
+  margin-top: 0.5em;
+}
