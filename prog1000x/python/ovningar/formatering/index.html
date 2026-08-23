@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Matrisinvertering: Extra övningar – CodeBubo</title>
+<title>Övningar: Textformatering – CodeBubo</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -25,6 +25,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -82,35 +117,6 @@ gtag('js', new Date());
 gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../../../../styles.css">
 <link rel="stylesheet" href="style.css">
@@ -152,7 +158,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../../ma/ma-spec/ovningar/matrisinvertering/index.html">Matematik specialisering</a></li><li class="breadcrumb-item"><a href="../../../../ma/ma-spec/ovningar/matrisinvertering/index.html">Matrisinvertering: Extra övningar</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../../prog1000x/python/cheat_sheet_python.html">Programmering 1</a></li><li class="breadcrumb-item"><a href="../../../../prog1000x/python/ovningar/formatering/index.html">Övningar, Python</a></li><li class="breadcrumb-item"><a href="../../../../prog1000x/python/ovningar/formatering/index.html">Övningar: Textformatering</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -170,13 +176,13 @@ window.Quarto = {
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Programmering 1</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../prog1000x/python/cheat_sheet_python.html" class="sidebar-item-text sidebar-link">
@@ -214,16 +220,16 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Övningar, Python</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../prog1000x/python/ovningar/formatering/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../prog1000x/python/ovningar/formatering/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Övningar: Textformatering</span></a>
   </div>
 </li>
@@ -324,16 +330,16 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
  <span class="menu-text">Matematik specialisering</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../ma/ma-spec/ovningar/matrisinvertering/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../../ma/ma-spec/ovningar/matrisinvertering/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Matrisinvertering: Extra övningar</span></a>
   </div>
 </li>
@@ -373,12 +379,22 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#några-kompletterande-övningar" id="toc-några-kompletterande-övningar" class="nav-link active" data-scroll-target="#några-kompletterande-övningar">Några kompletterande övningar</a>
+  <li><a href="#utskrifter" id="toc-utskrifter" class="nav-link active" data-scroll-target="#utskrifter">Utskrifter</a>
   <ul class="collapse">
-  <li><a href="#reducerad-trappstegsform" id="toc-reducerad-trappstegsform" class="nav-link" data-scroll-target="#reducerad-trappstegsform">Reducerad trappstegsform</a></li>
-  <li><a href="#ekvationssystemet" id="toc-ekvationssystemet" class="nav-link" data-scroll-target="#ekvationssystemet">Ekvationssystemet</a></li>
-  <li><a href="#kodningsövning-determinanten" id="toc-kodningsövning-determinanten" class="nav-link" data-scroll-target="#kodningsövning-determinanten">Kodningsövning: Determinanten</a></li>
-  <li><a href="#kodningsövning-matrisinvertering" id="toc-kodningsövning-matrisinvertering" class="nav-link" data-scroll-target="#kodningsövning-matrisinvertering">Kodningsövning: matrisinvertering</a></li>
+  <li><a href="#övning-1" id="toc-övning-1" class="nav-link" data-scroll-target="#övning-1">Övning 1</a></li>
+  <li><a href="#övning-2" id="toc-övning-2" class="nav-link" data-scroll-target="#övning-2">Övning 2</a></li>
+  <li><a href="#övning-3" id="toc-övning-3" class="nav-link" data-scroll-target="#övning-3">Övning 3</a></li>
+  <li><a href="#variabeldeklarationer" id="toc-variabeldeklarationer" class="nav-link" data-scroll-target="#variabeldeklarationer">Övning 4</a></li>
+  <li><a href="#övning-5" id="toc-övning-5" class="nav-link" data-scroll-target="#övning-5">Övning 5</a></li>
+  <li><a href="#övning-6" id="toc-övning-6" class="nav-link" data-scroll-target="#övning-6">Övning 6</a></li>
+  <li><a href="#övning-7" id="toc-övning-7" class="nav-link" data-scroll-target="#övning-7">Övning 7</a></li>
+  <li><a href="#övning-8" id="toc-övning-8" class="nav-link" data-scroll-target="#övning-8">Övning 8</a></li>
+  <li><a href="#övning-9" id="toc-övning-9" class="nav-link" data-scroll-target="#övning-9">Övning 9</a></li>
+  <li><a href="#övning-10" id="toc-övning-10" class="nav-link" data-scroll-target="#övning-10">Övning 10</a></li>
+  </ul></li>
+  <li><a href="#en-mer-utmanande-övning" id="toc-en-mer-utmanande-övning" class="nav-link" data-scroll-target="#en-mer-utmanande-övning">En mer utmanande övning</a>
+  <ul class="collapse">
+  <li><a href="#övning-11" id="toc-övning-11" class="nav-link" data-scroll-target="#övning-11">Övning 11</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -386,9 +402,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../../ma/ma-spec/ovningar/matrisinvertering/index.html">Matematik specialisering</a></li><li class="breadcrumb-item"><a href="../../../../ma/ma-spec/ovningar/matrisinvertering/index.html">Matrisinvertering: Extra övningar</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../../prog1000x/python/cheat_sheet_python.html">Programmering 1</a></li><li class="breadcrumb-item"><a href="../../../../prog1000x/python/ovningar/formatering/index.html">Övningar, Python</a></li><li class="breadcrumb-item"><a href="../../../../prog1000x/python/ovningar/formatering/index.html">Övningar: Textformatering</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Matrisinvertering: Extra övningar</h1>
+<h1 class="title">Övningar: Textformatering</h1>
 </div>
 
 
@@ -405,147 +421,364 @@ window.Quarto = {
 </header>
 
 
-<section id="några-kompletterande-övningar" class="level2">
-<h2 class="anchored" data-anchor-id="några-kompletterande-övningar">Några kompletterande övningar</h2>
-<section id="reducerad-trappstegsform" class="level3">
-<h3 class="anchored" data-anchor-id="reducerad-trappstegsform">Reducerad trappstegsform</h3>
-<p>Radreducera matrisen <span class="math display">\[
-\begin{bmatrix*}[r]
-  1 &amp; 3 &amp; 5 &amp; 7 \\ 3 &amp; 5 &amp; 7 &amp; 9 \\ 5 &amp; 7 &amp; 9 &amp; 1
-\end{bmatrix*}
-\]</span></p>
-<p>till reducerad trappstegsform och markera pivotkolonnerna.</p>
-<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Svar">
+<section id="utskrifter" class="level2">
+<h2 class="anchored" data-anchor-id="utskrifter">Utskrifter</h2>
+<section id="övning-1" class="level3">
+<h3 class="anchored" data-anchor-id="övning-1">Övning 1</h3>
+<p>Mata in följande rader i Thonnys Python-skal och reflektera över resultatet:</p>
+<ul>
+<li><code>print("2 + 2")</code></li>
+<li><code>print("2" + "2")</code></li>
+<li><code>print(2 + 2)</code></li>
+<li><code>print(2.0 + 2)</code></li>
+<li><code>print(0.1 + 0.2)</code></li>
+</ul>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Kommentarer övning 1">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Svar
+<span class="screen-reader-only">Tip</span>Kommentarer övning 1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Den reducerade trappstegsformen är</p>
-<p><span class="math display">\[
-\begin{bmatrix*}[r]
-1 &amp; 0 &amp; -1 &amp; 0 \\ 0 &amp; 1 &amp; 2 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1
-\end{bmatrix*}
-\]</span></p>
+<ol type="1">
+<li><p>Tecken inom citationstecken (<code>" "</code> ) skrivs ut precis som de är, det är ingenting som beräknas även om det är ett uttryck innanför citationstecknen. Det som står innanför citationstecken kallas för en <strong>sträng</strong>. Två strängar kan adderas, med resultatet att det blir en ny sträng som består av de båda ingående strängarna i en följd. Därav gäller att <code>"2" + "2"</code> blir <code>22</code> (där <code>22</code> är en sträng och inte ett tal).</p></li>
+<li><p>Uttrycket <code>2</code> är ett heltal och <code>2.0</code> är ett flyttal. Om ett flyttal används i en beräkning kommer svaret att bli ett flyttal, även om det finns heltal med i andra delar av uttrycket.</p></li>
+<li><p><code>0.1 + 0.2</code> beräknas inte till exakt <code>0.3</code> eftersom Python lagrar tal i binär form (basen 2 till skillnad från basen 10). I denna binära representation kommer termerna att vara avrundade, och summan blir ett närmevärde.</p></li>
+</ol>
 </div>
 </div>
 </div>
 </section>
-<section id="ekvationssystemet" class="level3">
-<h3 class="anchored" data-anchor-id="ekvationssystemet">Ekvationssystemet</h3>
-<p>Vi har ekvationssystemet <span class="math display">\[
-\left\{
-\begin{matrix}
-x &amp;+&amp; 2y &amp;+&amp; z &amp;=&amp; -1 \\
-2x &amp;+&amp; 6y &amp;&amp;    &amp;=&amp; -2 \\
-x &amp;+&amp;  6y &amp;+&amp; z &amp;=&amp; \phantom{-}3
-\end{matrix}
-\right .
-\]</span></p>
-<p>Bestäm lösningen till detta genom att teckna en koefficientmatris <span class="math inline">\(A\)</span>, en lösningsvektor <span class="math inline">\(\vec{v}\)</span> och en vektor för högerledet, <span class="math inline">\(\vec{b}\)</span>. Invertera <span class="math inline">\(A\)</span> och bestäm lösningsvektorn genom operationen <span class="math inline">\(A^{-1}A\vec{v}=A^{-1}\vec{b}\)</span>.</p>
-<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Svar">
+<section id="övning-2" class="level3">
+<h3 class="anchored" data-anchor-id="övning-2">Övning 2</h3>
+<p>Använd en enda <code>print</code>-sats som skriver ut följande (byt ut namnet mot ditt eget). Observera att utskriften är på två rader!</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="eedc3fc9" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-stdout">
+<pre><code>Jag heter
+Anders Andersson</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 2">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Svar
+<span class="screen-reader-only">Tip</span>Lösningsförslag övning 2
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><span class="math inline">\(x=-4\)</span>, <span class="math inline">\(y=1\)</span> och <span class="math inline">\(z=1\)</span>. Observera att det är övningen med matrisinvertering samt matrismultiplikation som är syftet, inte själva ekvationslösningen.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Jag heter</span><span class="ch">\n</span><span class="st">Anders Andersson"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
 </section>
-<section id="kodningsövning-determinanten" class="level3">
-<h3 class="anchored" data-anchor-id="kodningsövning-determinanten">Kodningsövning: Determinanten</h3>
-<p>Om vi har en <span class="math inline">\(2\times 2\)</span>-matris <span class="math inline">\(A\)</span> enligt <span class="math display">\[
-A=\begin{bmatrix}
-a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22}
-\end{bmatrix}
-\]</span> så gäller att determinanten, <span class="math inline">\(\det A\)</span>, beräknas enligt <span class="math display">\[
-\det A = a_{11}a_{22}-a_{12}a_{21}
-\]</span></p>
-<p>För en <span class="math inline">\(3\times3\)</span>-matris gäller följande formel för determinanten:</p>
-<p><span class="math display">\[
-A=\begin{bmatrix}
-a_{11} &amp; a_{12} &amp; a_{13} \\ a_{21} &amp; a_{22} &amp; a_{23} \\ a_{31} &amp; a_{32} &amp; a_{33}
-\end{bmatrix}
-\Rightarrow\det A=
-a_{11}\det\begin{bmatrix}
-a_{22} &amp; a_{23} \\ a_{32} &amp; a_{33}
-\end{bmatrix}
--
-a_{12}\det\begin{bmatrix}
-a_{21} &amp; a_{23} \\ a_{31} &amp; a_{33}
-\end{bmatrix}
-+
-a_{13}\det\begin{bmatrix}
-a_{21} &amp; a_{22} \\ a_{31} &amp; a_{32}
-\end{bmatrix}
-\]</span> En av de saker determinanten berättar för oss är om en matris är singulär (och därmed inte går att invertera); determinanten är för dessa matriser noll.</p>
-<p>Skapa en Pythonfunktion som tar en <span class="math inline">\(3\times 3\)</span>-matris som argument och returnerar dess determinant. Matrisen kan implementeras som en 2D-lista; exempel på anrop till funktionen <code>det([[1,2,3], [4,5,6], [7,8,9]])</code>. Jämför ditt svar med <a href="https://bit.ly/4bGpviK">Wolfram Alpha</a>!</p>
+<section id="övning-3" class="level3">
+<h3 class="anchored" data-anchor-id="övning-3">Övning 3</h3>
+<p>Använd en enda <code>print</code>-sats som skriver ut följande (byt ut namnet mot ditt eget). Observera att utskriften innehåller citationstecken!</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="b4313fbd" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-stdout">
+<pre><code>"Python" är ett programmeringsspråk.
+Det är roligt att programmera!</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 3">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Lösningsförslag övning 3
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\"</span><span class="st">Python</span><span class="ch">\"</span><span class="st"> är ett programmeringsspråk.</span><span class="ch">\n</span><span class="st">Det är roligt att programmera!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
 </section>
-<section id="kodningsövning-matrisinvertering" class="level3">
-<h3 class="anchored" data-anchor-id="kodningsövning-matrisinvertering">Kodningsövning: matrisinvertering</h3>
-<p>Matrisinverteringar är ett tidskrävande arbete som kräver stor noggranhet, och som ligger till grund för ekvationssystemslösning. Det är mycket vanligt att datorer löser stora ekvationssystem, och därför behövs algoritmer för matrisinvertering kodas i program. Nedan visas pdeudokod för Gauss-Jordan-elimination. Skapa en Python-funktion som implementerar denna kod med listor.</p>
-<p>Tips: Börja med att skapa funktioner för att byta plats på två rader, att addera en multipel av en rad till en annan och för att multiplicera en rad med ett tal; dvs funktioner som implementerar de elementära radoperationerna!</p>
-<pre><code>Funktion INVERTERA(A):
-  # A är en nxn matris
-  # Returnerar A^-1 om den existerar, annars ett felmeddelande
-
-  # Skapa en förstorad matris [A|I]
-  I = Skapa en nxn identitetsmatris
-  AI = Skapa en nx2n matris genom att sätta ihop A och I horisontellt
-
-  # Applicera elementära radoperationer på [A|I] för att få den på formen [I|B]
-  För i från 1 till n:
-    # Hitta pivotelementet på rad i och kolumn i
-    pivot = AI[i][i]
-
-    # Kontrollera om pivotelementet är noll
-    Om pivot == 0:
-      # Hitta en annan rad j under rad i som har ett icke-noll element på kolumn i
-      j = i + 1
-      Medan j &lt;= n och AI[j][i] == 0:
-        j = j + 1
-      
-      # Om ingen sådan rad hittades, så är A inte inverterbar
-      Om j &gt; n:
-        Returnera "Matrisen A är inte inverterbar"
-      
-      # Annars, byt plats på rad i och rad j
-      Annars:
-        Byt rad i och rad j i AI
-    
-    # Dela rad i med pivotelementet för att få ett 1-tal på position i, i
-    För k från 1 till 2n:
-      AI[i][k] = AI[i][k] / pivot
-    
-    # Eliminera alla andra element på kolumn i genom att subtrahera lämpliga multipler av rad i från andra rader
-    För j från 1 till n:
-      Om j != i:
-        faktor = AI[j][i]
-        För k från 1 till 2n:
-          AI[j][k] = AI[j][k] - faktor * AI[i][k]
-  
-  # Extrahera matrisen B från den högra halvan av AI
-  B = Skapa en nxn matris
-  För i från 1 till n:
-    För j från 1 till n:
-      B[i][j] = AI[i][n+j]
-  
-  # Returnera B som är inversen av A
-  Returnera B</code></pre>
+<section id="variabeldeklarationer" class="level3">
+<h3 class="anchored" data-anchor-id="variabeldeklarationer">Övning 4</h3>
+<p>Skapa en Python-fil i Thonny där du deklarerar följande strängvariabler (som du kan själv kan anpassa innehållet i):</p>
+<div id="7031eb99" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fnamn <span class="op">=</span> <span class="st">"Anders"</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>enamn <span class="op">=</span> <span class="st">"Andersson"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>adr <span class="op">=</span> <span class="st">"Storgatan 1"</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>postnr <span class="op">=</span> <span class="st">"999 99"</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>ort <span class="op">=</span> <span class="st">"Storstad"</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>ålder <span class="op">=</span> <span class="dv">17</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Använd en <code>print</code>-sats, där du skriver ut variablerna som en f-string, så att utskriften blir:</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="21d276d8" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-stdout">
+<pre><code>Hej, jag heter Anders och är 17 år.</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>(Resten av variablerna ska användas i en senare övning, så deklarera dessa även om de inte används här.)</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 4">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Lösningsförslag övning 4
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>fnamn <span class="op">=</span> <span class="st">"Anders"</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>enamn <span class="op">=</span> <span class="st">"Andersson"</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>adr <span class="op">=</span> <span class="st">"Storgatan 1"</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>postnr <span class="op">=</span> <span class="st">"999 99"</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>ort <span class="op">=</span> <span class="st">"Storstad"</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>ålder <span class="op">=</span> <span class="dv">17</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Hej, jag heter </span><span class="sc">{</span>fnamn<span class="sc">}</span><span class="ss"> och är </span><span class="sc">{å</span>lder<span class="sc">}</span><span class="ss"> år"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</section>
+<section id="övning-5" class="level3">
+<h3 class="anchored" data-anchor-id="övning-5">Övning 5</h3>
+<p>Deklarera följande variabler, och <strong>spara i en fil i Thonny</strong>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>sträcka <span class="op">=</span> <span class="dv">103</span> <span class="co"># Sträcka i meter</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>tid <span class="op">=</span> <span class="fl">13.2</span>    <span class="co"># Tiden i sekunder</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>fart <span class="op">=</span> sträcka <span class="op">/</span> tid</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Skapa en <code>print</code>-sats som skriver ut farten på det aktuella föremålet avrundat till en decimal.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 5">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Lösningsförslag övning 5
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sträcka <span class="op">=</span> <span class="dv">103</span> <span class="co"># Sträcka i meter</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>tid <span class="op">=</span> <span class="fl">13.2</span>    <span class="co"># Tiden i sekunder</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>fart <span class="op">=</span> sträcka <span class="op">/</span> tid</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Farten är </span><span class="sc">{</span>(sträcka <span class="op">/</span> tid)<span class="sc">:.1f}</span><span class="ss"> m/s"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</section>
+<section id="övning-6" class="level3">
+<h3 class="anchored" data-anchor-id="övning-6">Övning 6</h3>
+<p>Deklarera följande variabler i Thonny:</p>
+<div id="b09bbdf0" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="fl">1.5</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="fl">21.32</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Använd därefter en (enda) <code>print</code>-sats med lämpliga formatspecifikationer för att skriva ut, och göra, följande beräkning. Du ska inte använda flera på varandra följande mellanslag inne i <code>print</code>-satsen.</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="79a9b9f6" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-stdout">
+<pre><code>   1.50
++ 21.32
+-------
+  22.82</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 6">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Lösningsförslag övning 6
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="fl">1.5</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="fl">21.32</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>a<span class="sc">:&gt;7.2f}</span><span class="ch">\n</span><span class="ss">+</span><span class="sc">{</span>b<span class="sc">:&gt;6.2f}</span><span class="ch">\n</span><span class="sc">{</span><span class="dv">7</span><span class="op">*</span><span class="st">'-'</span><span class="sc">}</span><span class="ch">\n</span><span class="sc">{</span>(a<span class="op">+</span>b)<span class="sc">:&gt;7.2f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</section>
+<section id="övning-7" class="level3">
+<h3 class="anchored" data-anchor-id="övning-7">Övning 7</h3>
+<p>Använd filen med strängvariablerna från <a href="#variabeldeklarationer">Övning 4</a> för att med en (enda) <code>print</code>-sats med lämpliga formatspecifikationer för att skriva ut strängarna, högerjusterade enligt nedan. Du ska inte använda flera på varandra följande mellanslag inne i <code>print</code>-satsen.</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="611840ca" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-stdout">
+<pre><code>Anders Andersson
+     Storgatan 1
+ 999 99 Storstad</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 7">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Lösningsförslag övning 7
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>fnamn<span class="sc">:&lt;6}</span><span class="ss"> </span><span class="sc">{</span>enamn<span class="sc">}</span><span class="ch">\n</span><span class="sc">{</span>adr<span class="sc">:&gt;16}</span><span class="ch">\n</span><span class="sc">{</span>postnr <span class="sc">:&gt;7}</span><span class="ss"> </span><span class="sc">{</span>ort<span class="sc">:&gt;2}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+<hr>
+<p><strong>Till följande övningar finns inget lösningsförslag publicerat. I vissa fall finns tips på sökfraser, i andra fall så är lösningarna snarlika tidigare övningar på sidan.</strong></p>
+<hr>
+</section>
+<section id="övning-8" class="level3">
+<h3 class="anchored" data-anchor-id="övning-8">Övning 8</h3>
+<p>Variabeln <code>nummer</code> innehåller ett heltal. Skriv <code>nummer</code> så att det alltid visas med minst fem siffror. Är talet färre än fem siffror så skrivs det ut med inledande nollor, t ex 00042. Tips: sök reda på vilken formatspecifikation som ger inledande nollor vid utskrift av tal. Tips på sökfras: <em>python format specifier leading zeros</em>.</p>
+</section>
+<section id="övning-9" class="level3">
+<h3 class="anchored" data-anchor-id="övning-9">Övning 9</h3>
+<p>Följande variabel deklareras: <code>andel = 0.735</code>. Skriv <code>andel</code> formaterad som ett tal i procentform med två decimaler, 73.50%. Tips på sökfras: <em>python format specifier percentage</em>.</p>
+</section>
+<section id="övning-10" class="level3">
+<h3 class="anchored" data-anchor-id="övning-10">Övning 10</h3>
+<p>Deklarera följande variabler i Thonny:</p>
+<div id="740bffe7" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>vara_1 <span class="op">=</span> <span class="st">"Äpple"</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>vara_2 <span class="op">=</span> <span class="st">"Banan"</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>vara_3 <span class="op">=</span> <span class="st">"Apelsin"</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>antal_1 <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>antal_2 <span class="op">=</span> <span class="dv">12</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>antal_3 <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>pris_1 <span class="op">=</span> <span class="fl">12.5</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>pris_2 <span class="op">=</span> <span class="fl">2.9</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>pris_3 <span class="op">=</span> <span class="fl">5.5</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Med hjälp av dessa variabler ska skriva ut följande tabell:</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="5be12528" class="cell" data-execution_count="9">
+<div class="cell-output cell-output-stdout">
+<pre><code>Vara       Antal      Pris
+---------------------------
+Äpple          3     12.50
+Banan         12      2.90
+Apelsin        5      5.50</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Använd f-strängar och formatspecifikationer. Du får inte använda flera på varandra följande mellanslag för att placera texten.</p>
+</section>
+</section>
+<section id="en-mer-utmanande-övning" class="level2">
+<h2 class="anchored" data-anchor-id="en-mer-utmanande-övning">En mer utmanande övning</h2>
+<section id="övning-11" class="level3">
+<h3 class="anchored" data-anchor-id="övning-11">Övning 11</h3>
+<p>Du ska formatera ett (typ) kassakvitto enligt nedan:</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="b476ff00" class="cell" data-execution_count="11">
+<div class="cell-output cell-output-stdout">
+<pre><code>       Vara      Pris per kg      Vikt [kg]    Belopp [kr]
+------------------------------------------------------------
+      Äpple         25.00           1.20          30.00
+     Papaya        139.90           0.72         100.73
+Vattenmelon         19.99           3.51          70.16
+------------------------------------------------------------
+                                        Summa:   200.89</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Detta ska göras enbart genom att använda <code>print</code>-satser och nedanstående variabler:</p>
+<div id="720537c7" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-label="1"></a>avskiljare <span class="op">=</span> <span class="st">"-"</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-label="2"></a>tab_rub_1 <span class="op">=</span> <span class="st">"Vara"</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-label="3"></a>tab_rub_2 <span class="op">=</span> <span class="st">"Pris per kg"</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-label="4"></a>tab_rub_3 <span class="op">=</span> <span class="st">"Vikt [kg]"</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-label="5"></a>tab_rub_4 <span class="op">=</span> <span class="st">"Belopp [kr]"</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-label="6"></a>frukt_1 <span class="op">=</span> <span class="st">"Äpple"</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-label="7"></a>frukt_2 <span class="op">=</span> <span class="st">"Papaya"</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-label="8"></a>frukt_3 <span class="op">=</span> <span class="st">"Vattenmelon"</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-label="9"></a>vikt_1 <span class="op">=</span> <span class="fl">1.2</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-label="10"></a>vikt_2 <span class="op">=</span> <span class="fl">0.72</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-label="11"></a>vikt_3 <span class="op">=</span> <span class="fl">3.51</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-label="12"></a>pris_1 <span class="op">=</span> <span class="dv">25</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-label="13"></a>pris_2 <span class="op">=</span> <span class="fl">139.9</span></span>
+<span id="cb18-14"><a href="#cb18-14" aria-label="14"></a>pris_3 <span class="op">=</span> <span class="fl">19.99</span></span>
+<span id="cb18-15"><a href="#cb18-15" aria-label="15"></a>belopp_1 <span class="op">=</span> pris_1 <span class="op">*</span> vikt_1</span>
+<span id="cb18-16"><a href="#cb18-16" aria-label="16"></a>belopp_2 <span class="op">=</span> pris_2 <span class="op">*</span> vikt_2</span>
+<span id="cb18-17"><a href="#cb18-17" aria-label="17"></a>belopp_3 <span class="op">=</span> pris_3 <span class="op">*</span> vikt_3</span>
+<span id="cb18-18"><a href="#cb18-18" aria-label="18"></a>sum_str <span class="op">=</span> <span class="st">"Summa:"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Du ska alltså inte använda mellanslag eller upprepade tecken (t ex flera “<code>-</code>” för radmarkeringar). Ett tips är att titta presentationen om <a href="../../presentationer/formatering/">formaterad utskrift</a>.</p>
 
 
 </section>
