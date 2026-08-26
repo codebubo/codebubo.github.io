@@ -27,9 +27,10 @@ d. `a and b or c`
 
 ### Övning 2 {#villkor-smycke}
 
-Skapa ett program i [EduBlocks](https://app.edublocks.org/) som ber dig mata
-ingett belopp med pengar. Programmet ska avgöra om det räcker till att köpa ett
-smycke av järn, silver eller guld. Skapa även ett flödesschema för programmet.
+Skapa ett program i [EduBlocks](https://app.edublocks.org/) eller i en
+Pythonmiljö som ber dig mata ingett belopp med pengar. Programmet ska avgöra om
+det räcker till att köpa ett smycke av järn, silver eller guld. Skapa även ett
+flödesschema för programmet.
 
 Priset för respektive typ av smycke deklareras som variabler, där ett järnmycke
 kostar 200 kr, ett silversmycke 500 kr och ett guldsmycke 1000 kr. Deklarera
@@ -85,9 +86,9 @@ print("Programmet avslutas")# Denna sats ligger utanför villkorssatsen
 
 ### Övning 3 {#villkor-trianglar}
 
-Skapa ett program i [EduBlocks](https://app.edublocks.org/) som läser in
-längderna på tre sidor. Programmet ska sedan avgöra om dessa sidor kan ingå i
-en rätvinklig triangel.
+Skapa ett program i [EduBlocks](https://app.edublocks.org/) eller i en
+Pythonmiljö som läser in längderna på tre sidor. Programmet ska sedan avgöra om
+dessa sidor kan ingå i en rätvinklig triangel.
 
 :::{.callout-note appearance="minimal"}
 
