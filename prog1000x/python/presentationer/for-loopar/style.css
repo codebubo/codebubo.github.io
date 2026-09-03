@@ -1,0 +1,14 @@
+@import url("../style.css");
+
+.slides .title {
+  text-align: center;
+}
+
+ .output-black-on-white .cell-output.cell-output-stdout > pre > code{
+  color: black;
+  font-family: "Courier New";
+  background-color: lightgray;
+  font-size: 100%;
+  padding: 0.5em;
+  margin-top: 0.5em;
+}

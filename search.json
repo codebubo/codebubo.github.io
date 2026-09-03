@@ -385,6 +385,19 @@
     "text": "Sammanfattning\n\nEn loop är en kontrollstruktur som upprepar kod.\nDet finns flera typer av loopar, idag har vi gått igenom while-loopen.\nwhile-loopen löper så länge ett villkor är uppfyllt…\n…eller tills den stöter på en break-sats.\nStyrsatsen continue gör att koden går tillbaka till loopens start.\nI nästlade loopar går koden igenom alla kombinationer av värden i den yttre och inre loopen."
   },
   {
+    "objectID": "prog1000x/python/presentationer/for-loopar/index.html#övningar",
+    "href": "prog1000x/python/presentationer/for-loopar/index.html#övningar",
+    "title": "Presentation: for-loopar",
+    "section": "Övningar",
+    "text": "Övningar\nÖvningarna 8 – 10 i dokumentet Övningar: loopar",
+    "crumbs": [
+      "Home",
+      "Programmering 1",
+      "Presentationer, Python",
+      "Presentation: `for`-loopar"
+    ]
+  },
+  {
     "objectID": "prog1000x/python/presentationer/formatering/index.html#övningar",
     "href": "prog1000x/python/presentationer/formatering/index.html#övningar",
     "title": "Att formatera text",
@@ -861,11 +874,74 @@
     "text": "Justering av tal\n\n\nTabeller blir mer lättlästa om ental står under ental, tiondel under tiondel osv.\n\n\n\na = 10.499; b = 2.38\nc = 123.4;  d = 9.1\nprint(f\"{a:6.2f}{c:12.2f}\\n{b:6.2f}{d:12.2f}\")\nprint(22 * \"-\");\nprint(f\"{(a+b):6.2f}{(c+d):12.2f}\")\n\n 10.50      123.40\n  2.38        9.10\n----------------------\n 12.88      132.50\n\n\n\n\nObservera att beräkningarna sker mellan måsvingarna!"
   },
   {
-    "objectID": "prog1000x/python/presentationer/while-loopar/index.html#uppgifter",
-    "href": "prog1000x/python/presentationer/while-loopar/index.html#uppgifter",
+    "objectID": "prog1000x/python/presentationer/for-loopar/for-pres.html#dagens-mål",
+    "href": "prog1000x/python/presentationer/for-loopar/for-pres.html#dagens-mål",
+    "title": "for-loopari Python",
+    "section": "Dagens mål",
+    "text": "Dagens mål\n\nAtt känna till vad en for-loop är\nAtt kunna använda range-funktionen\nAtt känna till skillnaden mellan while- och for-loopar\nAtt kunna skriva egna små program som innehåller en for-loop."
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/for-loopar/for-pres.html#likheter-och-skillnader-mellan-while--och-for-loopar",
+    "href": "prog1000x/python/presentationer/for-loopar/for-pres.html#likheter-och-skillnader-mellan-while--och-for-loopar",
+    "title": "for-loopari Python",
+    "section": "Likheter och skillnader mellan while- och for-loopar",
+    "text": "Likheter och skillnader mellan while- och for-loopar\n\n\n\n\nOfta används while-loopar när antalet varv avgörs under programkörningens gång, medan for-loopar används då det är ett känt antal varv. I vissa fall går den ena typen av loop lika bra som den andra.\nEn for-loop använder sig av en lista som loopas igenom."
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/for-loopar/for-pres.html#enklast-möjliga-for-loop",
+    "href": "prog1000x/python/presentationer/for-loopar/for-pres.html#enklast-möjliga-for-loop",
+    "title": "for-loopari Python",
+    "section": "Enklast möjliga for-loop",
+    "text": "Enklast möjliga for-loop\n\n\n\n\nlista = [10, 20, 30]\nfor element in lista:\n    print(element, end=\" \")\nprint(f\"Loopen avslutas eftersom listan är slut\")\n\n10 20 30 Loopen avslutas eftersom listan är slut\n\n\n\n\n\nVariabeln element antar respektive värde i listan i tur och ordning."
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/for-loopar/for-pres.html#längre-listor",
+    "href": "prog1000x/python/presentationer/for-loopar/for-pres.html#längre-listor",
+    "title": "for-loopari Python",
+    "section": "Längre listor",
+    "text": "Längre listor\nListorna behöver inte skrivas in manuellt, det är bra då loopen behöver snurra många varv. Här används range för att skapa en lista från ett värde till ett annat värde.\n\n\n\n\nfor i in range(3, 8):   # Här skapas listan\n    print(i, end=\" \")\n\n3 4 5 6 7 \n\n\n\n\n\nFunktionen range(3, 8) skapar listan [3, 4, 5, 6, 7]\nOm det hade varit en while-loop som skulle snurra fem varv skulle ett villkor och en räknare behövt sättas upp."
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/for-loopar/for-pres.html#funktionen-range",
+    "href": "prog1000x/python/presentationer/for-loopar/for-pres.html#funktionen-range",
+    "title": "for-loopari Python",
+    "section": "Funktionen range",
+    "text": "Funktionen range\n\n\n\nExempel på hur parametrar påverkar resultatet av range\n\nlista_A = list(range(10))\nlista_B = list(range(-5, 5))\nlista_C = list(range(0, 10, 2))\nlista_D = list(range(10, 0, -1))\nprint(f\"lista_A = {lista_A}\")\nprint(f\"lista_B = {lista_B}\")\nprint(f\"lista_C = {lista_C}\")\nprint(f\"lista_D = {lista_D}\")\n\nlista_A = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\nlista_B = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4]\nlista_C = [0, 2, 4, 6, 8]\nlista_D = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]"
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/for-loopar/for-pres.html#exempel-multiplikationstabell",
+    "href": "prog1000x/python/presentationer/for-loopar/for-pres.html#exempel-multiplikationstabell",
+    "title": "for-loopari Python",
+    "section": "Exempel: Multiplikationstabell",
+    "text": "Exempel: Multiplikationstabell\n\n\n\n\n# Dettta program beräknar och skriver ut \"tolvans tabell\"\nfor i in range(1, 13):\n    print(f\"{i:2.0f} * 12 = {i*12:3.0f}\")\n\n 1 * 12 =  12\n 2 * 12 =  24\n 3 * 12 =  36\n 4 * 12 =  48\n 5 * 12 =  60\n 6 * 12 =  72\n 7 * 12 =  84\n 8 * 12 =  96\n 9 * 12 = 108\n10 * 12 = 120\n11 * 12 = 132\n12 * 12 = 144"
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/for-loopar/for-pres.html#andra-listelement-än-tal",
+    "href": "prog1000x/python/presentationer/for-loopar/for-pres.html#andra-listelement-än-tal",
+    "title": "for-loopari Python",
+    "section": "Andra listelement än tal",
+    "text": "Andra listelement än tal\n\n\n\nEn lista kan innehålla andra element än tal.\n\n\n\n\nitems = [\"Klocka\", \"Kikare\", \"Termometer\"]\nprint(\"Du har tillgång till:\", end=\" \")\nfor item in items:\n    print(item, end=\" \")\n\nDu har tillgång till: Klocka Kikare Termometer \n\n\n\n\n\nVi kommer senare att titta på hur element kan läggas till, tas bort och sorteras i listor. Det är användbart t ex i spel."
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/for-loopar/for-pres.html#ett-tänkt-exempel",
+    "href": "prog1000x/python/presentationer/for-loopar/for-pres.html#ett-tänkt-exempel",
+    "title": "for-loopari Python",
+    "section": "Ett tänkt exempel",
+    "text": "Ett tänkt exempel\n\n\n\nitems = [\"Klocka\", \"Kikare\", \"Termometer\"]\nfor item in items:\n    if item.is_boostable:\n      item.boost()\n      print(f\"Din {item} är nu boostad ✅\")\n    else:\n      print(f\"{item} gick inte att boosta ❌\")\nSekvensen ovan skulle kunna ingå i ett spelprogram. Här är is_boostable en egenskap hos objektet item och boost är en metod som tillämpas. Dessa saker måste programmeraren designa själv; det är inte inbyggt i Python.\nSenare i kursen kommer vi att komma till klasser, och koppla objekt, egenskaper och metoder till dessa."
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/for-loopar/for-pres.html#sammanfattning",
+    "href": "prog1000x/python/presentationer/for-loopar/for-pres.html#sammanfattning",
+    "title": "for-loopari Python",
+    "section": "Sammanfattning",
+    "text": "Sammanfattning\n\nfor-loopar används antingen när något ska göras ett förutbestämt antal gånger…\n… eller när någon funktion ska tillämpas på ett element i taget i en lista\nFunktionen range kan användas för att skapa listor\nFunktionen range ger olika utdata beroende på vilka parametrar som används"
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/while-loopar/index.html#övningar",
+    "href": "prog1000x/python/presentationer/while-loopar/index.html#övningar",
     "title": "Presentation: while-loopar",
-    "section": "Uppgifter",
-    "text": "Uppgifter\nUppgifterna 1 – 7 i dokumentet Övningar: Loopar",
+    "section": "Övningar",
+    "text": "Övningar\nÖvningarna 1 – 7 i dokumentet Övningar: Loopar",
     "crumbs": [
       "Home",
       "Programmering 1",
