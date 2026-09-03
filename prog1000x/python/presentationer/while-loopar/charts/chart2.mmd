@@ -1,0 +1,27 @@
+%% Byggs med mmdc -i chart2.mmd -o chart2.svg -t dark -b transparentfg
+%%{init: {
+    "flowchart": {
+        "curve": "cardinal"
+    },
+    "theme": "base",
+    "themeVariables": {
+        "primaryTextColor": "#FFFFFF",
+        "lineColor": "#FFFFFF",
+        "fontFamily": "Times New Roman, serif",
+        "primaryColor": "transparent",
+        "primaryBorderColor": "#FFFFFF",
+        "edgeLabelBackground": "#000000",
+        "labelTextColor": "#FFFFFF"
+    }
+}}%%
+flowchart LR
+    A((Start)) --> B("Ansätt i = 0")
+    B --> C{"i ≤  3?"}
+    C --> |"Ja"| D("Ansätt j = 0")
+    D --> E{"j ≤  3?"}
+    E -->  |"Ja"| F[/Skriv ut i och j/]
+    F --> G(Öka j med 1)
+    G --> E
+    E --> |"Nej"|H("Öka i med 1")
+    H --> C
+    C --> |"Nej"|I(("Avsluta"))
