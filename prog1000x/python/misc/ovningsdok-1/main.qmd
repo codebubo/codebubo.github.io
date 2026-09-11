@@ -1,0 +1,153 @@
+
+---
+title: "Programmeringsövningar"
+author: ""
+
+format:
+  html:
+    title-block: false
+    toc: false
+    number-sections: true
+    code-fold: true
+
+  pdf:
+    include-in-header:
+      text: |
+        \makeatletter
+        \renewcommand{\maketitle}{}
+        \makeatother
+        \pagestyle{empty}
+    documentclass: scrartcl
+    papersize: a4
+    number-sections: true
+    geometry:
+      - margin=2.5cm
+    pdf-engine: lualatex
+
+execute:
+  freeze: auto
+---
+
+# Programmeringsövningar
+
+## Tärningarna
+
+Skriv ett program som slumpar fram utfall då två tärningar kastas. Utmatningen
+ska vara enligt följande (förstås med varierande utfall):
+
+```
+6, 1
+Slå tärningarna igen (j/n) --> j
+5, 2
+Slå tärningarna igen (j/n) --> x
+Slå tärningarna igen (j/n) --> J
+6, 4
+Slå tärningarna igen (j/n) --> j
+2, 1
+Slå tärningarna igen (j/n) --> n
+```
+
+Inmatningen ska vara säker, dvs om inte spelaren matar in `y` eller `n` så ska
+frågan upprepas. Tanken är också att koden enbart ska ha **ett** anrop till
+`randint`, och att de två utfallen alltså ska skapas i en loop inne i den loop
+som upprepar kasten. Observera också att utfallen ska presenteras på en enda
+rad.
+
+Rekommenderad arbetsgång
+
+  * Skapa en `while`-loop som loopar i "evighet".
+  * I den den loopen, skapa en loop som snurrar två varv.
+  * I loopen som snurrar två varv, skapa och skriv ut ett slumptal.
+  * Tillbaka i den yttre loopen, ta emot en inmatning (j/n)
+  * Hantera utfallet av inmatningen. Möjliga utfall är att loopen fortsätter,
+    att den bryts eller att inmatningen ska göras om eftersom den var ogiltig,
+
+{{< pagebreak >}}
+
+## Validering av personnummer
+
+Ett personnummer byggs upp enligt principen `ååmmdd-nnnn`. Den sista
+siffran, den s.k. kontrollsiffran, kan inte väljas godtyckligt; hela numret
+matchar följande algoritm:
+
+Varannan siffra multipliceras med 2, med start på första siffran i
+personnumret. De övriga siffrorna används som de är. Om något tal vid
+multiplikationen blir större än 9 ersätts det talet med dess siffersumma.
+Därefter summeras alla tal och om summan är jämnt delbar med 10 så är
+kontrollsiffran korrekt.
+
+Exempel: Personnumret 811218-9876 valideras.
+
+```
+8 * 2 = 16, använd siffersumman 7
+1 * 1 = 1
+1 * 2 = 2
+2 * 1 = 2
+1 * 2 = 2
+8 * 1 = 8
+9 * 2 = 18, använd siffersumman 9
+8 * 1 = 8
+7 * 2 = 14, använd siffersumman 5
+6 * 1 = 6
+
+7 + 1 + 2 + 2 + 2 + 8 + 9 + 8 + 5 + 6  = 50, jämmnt delbart med 10,
+d.v.s. kontrollsiffran 6 är korrekt.
+```
+
+Körningsexempel:
+```
+Ange ett personnummer --> 811218-9876
+Kontrollsiffran stämmer :-)
+
+Ange ett personnummer --> 821218-9876
+Felaktig kontrollsiffra :-(
+```
+
+Tips: För att få siffersumman i ett tvåsiffrigt tal, t ex 14 kan satsen
+`14 // 10 + 14 % 10` användas. Den gör en heltalsdivision med 10, vilket ger
+första siffran i talet, följt av en restdivision med 10, vilken ger den sista
+siffran. Dessa siffror adderas.
+
+Rekommenderad arbetsgång
+  
+  * Låt användaren mata in ett personnummer, gör **inte** om det till ett
+    heltal. Spara strängen i variabeln `pnum`.
+  * Skapa en summa-variabeln `summa` utanför loopen, sätt den till 0.
+  * Loopa genom personnummersträngen, `for num in pnum:...`
+  * Använd en räknarvariabel för att hålla reda på ordningsnumret, dvs om
+    aktuell siffra ska multipliceras med 2.
+  * Gör om strängen `num` till ett heltal (eventuellt med regeln om siffersumma
+    om talet är tvåsiffrigt).
+  * Addera värdet till summavariabeln.
+  * Efter loopen: kontrollera om summa är delbar med 10 (`summa % 10 == 0`).
+
+Börja med att validera ett nummer utan bindestrecket, det är lättare. Gör också
+gärna utskrifter av delresultat för att kontrollera om delresultaten blir som
+tänkt.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
