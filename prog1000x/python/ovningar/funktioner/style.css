@@ -1,0 +1,12 @@
+.small-caps {
+  text-transform: uppercase;
+  font-variant: small-caps;
+}
+
+.v-space {
+  margin-top: 25pt;
+}
+
+.double-v-space {
+  margin-top: 50pt;
+}
