@@ -1,0 +1,112 @@
+---
+title: "Python – grundläggande programmering"
+subtitle: "Vad kommer du ihåg?"
+format:
+  html:
+    css: style.css
+fontsize: 12pt
+---
+
+Namn: _________________________________________________________________________
+
+
+## Uppgift 1 – Vad skrivs ut? [4p]
+
+Titta på programmet:
+
+:::{.python}
+```python
+x = 5
+y = 3
+x = x + y
+y = x - y
+```
+:::
+
+a) Vilket värde har `x` respektive `y` efter körning?
+
+Svar: _________________________________________________________________________
+
+
+b) Lägg till en programrad sist i koden, där du använder variablerna, som
+skriver ut<br>`x + y = ...`, där punkterna ersätts med det aktuella värdet av
+summan.
+
+Svar: _________________________________________________________________________
+
+## Uppgift 2 – Fyll i rätt kod [2p]
+
+Programmet ska skriva ut "Minusgrader" om temperaturen är under 0, "Svalt" om
+temperaturen är mellan 0 och 19, och "Varmt" annars.
+
+Fyll i de tre luckorna.
+
+:::{.python}
+```python
+temperatur = 12
+
+if temperatur _____ 0:
+    print("Minusgrader")
+_____ temperatur < 20:
+    print("Svalt")
+_____:
+    print("Varmt")
+```
+:::
+
+## Uppgift 3 – Vilket värde har variabeln? [2p]
+
+Titta på programmet nedan (vänd blad):
+{{< pagebreak >}}
+
+:::{.python}
+```python
+poäng = 10
+if poäng > 5:
+    poäng = poäng + 3
+else:
+    poäng = poäng - 2
+
+poäng = poäng * 2
+```
+:::
+
+
+Ange värdet på `poäng` när programmet är färdigt: _____________________________
+
+## Uppgift 4 – Vad händer i while-loopen? [2p]
+
+:::{.python}
+```python
+x = 1
+while x <= 6:
+    if x == 3:
+        x = x + 1
+        continue
+    if x == 5:
+        break
+    x += 1
+    print(x)
+```
+:::
+
+Vilka tal skrivs ut? ___________________________________
+
+## Uppgift 5 – Vad är fel? [2p]
+
+Kim har skrivit programraderna
+
+:::{.python}
+```python
+x = 1
+while x < 5:
+    print(x, end=" ")
+```
+:::
+
+Kim förväntar sig utskriften `1 2 3 4 5`, men ser att hela skärmen fylls med
+ettor. Skriv ett nytt program nedan, baserat på Kims, som ger utskriften enligt
+förväntning (utskriften ska ske i en `while`-loop). Tips: Kim har gjort två
+missar.
+
+<div class="tom-box"></div>
