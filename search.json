@@ -678,91 +678,46 @@
     "text": "Några riktlinjer och tips\n\n\nNär vi kodar Python så görs det i Thonny\n\n\n\nVi använder inte AI för att generera kod\n\n\n\n\nVi kan däremot fråga AI om varför kod inte fungerar som tänkt\n\n\n\n\nKoda gärna tillsammans\n\n\n\n\nAtt kunna skriva kod börjar ofta med att läsa kod\n\n\n\n\nDela upp problem i mindre problem, som i sin tur delas upp i ännu mindre problem, osv"
   },
   {
-    "objectID": "prog1000x/python/misc/ovningsdok-1/main.html",
-    "href": "prog1000x/python/misc/ovningsdok-1/main.html",
-    "title": "Programmeringsövningar",
+    "objectID": "prog1000x/python/misc/main.html",
+    "href": "prog1000x/python/misc/main.html",
+    "title": "Python – grundläggande programmering",
     "section": "",
-    "text": "Skriv ett program som slumpar fram utfall då två tärningar kastas. Utmatningen ska vara enligt följande (förstås med varierande utfall):\n6, 1\nSlå tärningarna igen (j/n) --&gt; j\n5, 2\nSlå tärningarna igen (j/n) --&gt; x\nSlå tärningarna igen (j/n) --&gt; J\n6, 4\nSlå tärningarna igen (j/n) --&gt; j\n2, 1\nSlå tärningarna igen (j/n) --&gt; n\nInmatningen ska vara säker, dvs om inte spelaren matar in y eller n så ska frågan upprepas. Tanken är också att koden enbart ska ha ett anrop till randint, och att de två utfallen alltså ska skapas i en loop inne i den loop som upprepar kasten. Observera också att utfallen ska presenteras på en enda rad.\nRekommenderad arbetsgång\n\nSkapa en while-loop som loopar i “evighet”.\nI den den loopen, skapa en loop som snurrar två varv.\nI loopen som snurrar två varv, skapa och skriv ut ett slumptal.\nTillbaka i den yttre loopen, ta emot en inmatning (j/n)\nHantera utfallet av inmatningen. Möjliga utfall är att loopen fortsätter, att den bryts eller att inmatningen ska göras om eftersom den var ogiltig,\n\n\n\n\n\nEtt personnummer byggs upp enligt principen ååmmdd-nnnn. Den sista siffran, den s.k. kontrollsiffran, kan inte väljas godtyckligt; hela numret matchar följande algoritm:\nVarannan siffra multipliceras med 2, med start på första siffran i personnumret. De övriga siffrorna används som de är. Om något tal vid multiplikationen blir större än 9 ersätts det talet med dess siffersumma. Därefter summeras alla tal och om summan är jämnt delbar med 10 så är kontrollsiffran korrekt.\nExempel: Personnumret 811218-9876 valideras.\n8 * 2 = 16, använd siffersumman 7\n1 * 1 = 1\n1 * 2 = 2\n2 * 1 = 2\n1 * 2 = 2\n8 * 1 = 8\n9 * 2 = 18, använd siffersumman 9\n8 * 1 = 8\n7 * 2 = 14, använd siffersumman 5\n6 * 1 = 6\n\n7 + 1 + 2 + 2 + 2 + 8 + 9 + 8 + 5 + 6  = 50, jämmnt delbart med 10,\nd.v.s. kontrollsiffran 6 är korrekt.\nKörningsexempel:\nAnge ett personnummer --&gt; 811218-9876\nKontrollsiffran stämmer :-)\n\nAnge ett personnummer --&gt; 821218-9876\nFelaktig kontrollsiffra :-(\nTips: För att få siffersumman i ett tvåsiffrigt tal, t ex 14 kan satsen 14 // 10 + 14 % 10 användas. Den gör en heltalsdivision med 10, vilket ger första siffran i talet, följt av en restdivision med 10, vilken ger den sista siffran. Dessa siffror adderas.\nRekommenderad arbetsgång\n\nLåt användaren mata in ett personnummer, gör inte om det till ett heltal. Spara strängen i variabeln pnum.\nSkapa en summa-variabeln summa utanför loopen, sätt den till 0.\nLoopa genom personnummersträngen, for num in pnum:...\nAnvänd en räknarvariabel för att hålla reda på ordningsnumret, dvs om aktuell siffra ska multipliceras med 2.\nGör om strängen num till ett heltal (eventuellt med regeln om siffersumma om talet är tvåsiffrigt).\nAddera värdet till summavariabeln.\nEfter loopen: kontrollera om summa är delbar med 10 (summa % 10 == 0).\n\nBörja med att validera ett nummer utan bindestrecket, det är lättare. Gör också gärna utskrifter av delresultat för att kontrollera om delresultaten blir som tänkt."
+    "text": "Namn: _________________________________________________________________________"
   },
   {
-    "objectID": "prog1000x/python/misc/ovningsdok-1/main.html#tärningarna",
-    "href": "prog1000x/python/misc/ovningsdok-1/main.html#tärningarna",
-    "title": "Programmeringsövningar",
-    "section": "",
-    "text": "Skriv ett program som slumpar fram utfall då två tärningar kastas. Utmatningen ska vara enligt följande (förstås med varierande utfall):\n6, 1\nSlå tärningarna igen (j/n) --&gt; j\n5, 2\nSlå tärningarna igen (j/n) --&gt; x\nSlå tärningarna igen (j/n) --&gt; J\n6, 4\nSlå tärningarna igen (j/n) --&gt; j\n2, 1\nSlå tärningarna igen (j/n) --&gt; n\nInmatningen ska vara säker, dvs om inte spelaren matar in y eller n så ska frågan upprepas. Tanken är också att koden enbart ska ha ett anrop till randint, och att de två utfallen alltså ska skapas i en loop inne i den loop som upprepar kasten. Observera också att utfallen ska presenteras på en enda rad.\nRekommenderad arbetsgång\n\nSkapa en while-loop som loopar i “evighet”.\nI den den loopen, skapa en loop som snurrar två varv.\nI loopen som snurrar två varv, skapa och skriv ut ett slumptal.\nTillbaka i den yttre loopen, ta emot en inmatning (j/n)\nHantera utfallet av inmatningen. Möjliga utfall är att loopen fortsätter, att den bryts eller att inmatningen ska göras om eftersom den var ogiltig,"
+    "objectID": "prog1000x/python/misc/main.html#uppgift-1-vad-skrivs-ut-4p",
+    "href": "prog1000x/python/misc/main.html#uppgift-1-vad-skrivs-ut-4p",
+    "title": "Python – grundläggande programmering",
+    "section": "Uppgift 1 – Vad skrivs ut? [4p]",
+    "text": "Uppgift 1 – Vad skrivs ut? [4p]\nTitta på programmet:\n\nx = 5\ny = 3\nx = x + y\ny = x - y\n\n\nVilket värde har x respektive y efter körning?\n\nSvar: _________________________________________________________________________\n\nLägg till en programrad sist i koden, där du använder variablerna, som skriver utx + y = ..., där punkterna ersätts med det aktuella värdet av summan.\n\nSvar: _________________________________________________________________________"
   },
   {
-    "objectID": "prog1000x/python/misc/ovningsdok-1/main.html#validering-av-personnummer",
-    "href": "prog1000x/python/misc/ovningsdok-1/main.html#validering-av-personnummer",
-    "title": "Programmeringsövningar",
-    "section": "",
-    "text": "Ett personnummer byggs upp enligt principen ååmmdd-nnnn. Den sista siffran, den s.k. kontrollsiffran, kan inte väljas godtyckligt; hela numret matchar följande algoritm:\nVarannan siffra multipliceras med 2, med start på första siffran i personnumret. De övriga siffrorna används som de är. Om något tal vid multiplikationen blir större än 9 ersätts det talet med dess siffersumma. Därefter summeras alla tal och om summan är jämnt delbar med 10 så är kontrollsiffran korrekt.\nExempel: Personnumret 811218-9876 valideras.\n8 * 2 = 16, använd siffersumman 7\n1 * 1 = 1\n1 * 2 = 2\n2 * 1 = 2\n1 * 2 = 2\n8 * 1 = 8\n9 * 2 = 18, använd siffersumman 9\n8 * 1 = 8\n7 * 2 = 14, använd siffersumman 5\n6 * 1 = 6\n\n7 + 1 + 2 + 2 + 2 + 8 + 9 + 8 + 5 + 6  = 50, jämmnt delbart med 10,\nd.v.s. kontrollsiffran 6 är korrekt.\nKörningsexempel:\nAnge ett personnummer --&gt; 811218-9876\nKontrollsiffran stämmer :-)\n\nAnge ett personnummer --&gt; 821218-9876\nFelaktig kontrollsiffra :-(\nTips: För att få siffersumman i ett tvåsiffrigt tal, t ex 14 kan satsen 14 // 10 + 14 % 10 användas. Den gör en heltalsdivision med 10, vilket ger första siffran i talet, följt av en restdivision med 10, vilken ger den sista siffran. Dessa siffror adderas.\nRekommenderad arbetsgång\n\nLåt användaren mata in ett personnummer, gör inte om det till ett heltal. Spara strängen i variabeln pnum.\nSkapa en summa-variabeln summa utanför loopen, sätt den till 0.\nLoopa genom personnummersträngen, for num in pnum:...\nAnvänd en räknarvariabel för att hålla reda på ordningsnumret, dvs om aktuell siffra ska multipliceras med 2.\nGör om strängen num till ett heltal (eventuellt med regeln om siffersumma om talet är tvåsiffrigt).\nAddera värdet till summavariabeln.\nEfter loopen: kontrollera om summa är delbar med 10 (summa % 10 == 0).\n\nBörja med att validera ett nummer utan bindestrecket, det är lättare. Gör också gärna utskrifter av delresultat för att kontrollera om delresultaten blir som tänkt."
+    "objectID": "prog1000x/python/misc/main.html#uppgift-2-fyll-i-rätt-kod-2p",
+    "href": "prog1000x/python/misc/main.html#uppgift-2-fyll-i-rätt-kod-2p",
+    "title": "Python – grundläggande programmering",
+    "section": "Uppgift 2 – Fyll i rätt kod [2p]",
+    "text": "Uppgift 2 – Fyll i rätt kod [2p]\nProgrammet ska skriva ut “Minusgrader” om temperaturen är under 0, “Svalt” om temperaturen är mellan 0 och 19, och “Varmt” annars.\nFyll i de tre luckorna.\n\ntemperatur = 12\n\nif temperatur _____ 0:\n    print(\"Minusgrader\")\n_____ temperatur &lt; 20:\n    print(\"Svalt\")\n_____:\n    print(\"Varmt\")"
   },
   {
-    "objectID": "fy/simuleringar/waves/index.html#gående-vågor",
-    "href": "fy/simuleringar/waves/index.html#gående-vågor",
-    "title": "Simuleringar vågrörelse",
-    "section": "Gående vågor",
-    "text": "Gående vågor\n\nGående transversella vågor\nEn gående våg (travelling wave) består av partiklar som svänger med en viss fasförskjutning i förhållande till varandra. Nedan visas en transversell våg, där varje partikel rör sig vinkelrätt mot vågens utbredningsriktning. Svängningen är harmonisk, vilket innebär att varje partikel rör sig enligt en sinusfunktion över tid — och vågen får därmed en sinusformad profil.\nI den här animeringen sker utbredningen åt höger, vilket innebär att vågens form förflyttar sig i den riktningen, även om varje enskild partikel bara rör sig upp och ner.\n\n\n\n\n\n\n\n\n\nGående longitudinella vågor\nUnder konstruktion.",
-    "crumbs": [
-      "Home",
-      "Fysikrelaterat",
-      "Simuleringar vågrörelse"
-    ]
+    "objectID": "prog1000x/python/misc/main.html#uppgift-3-vilket-värde-har-variabeln-2p",
+    "href": "prog1000x/python/misc/main.html#uppgift-3-vilket-värde-har-variabeln-2p",
+    "title": "Python – grundläggande programmering",
+    "section": "Uppgift 3 – Vilket värde har variabeln? [2p]",
+    "text": "Uppgift 3 – Vilket värde har variabeln? [2p]\nTitta på programmet nedan (vänd blad): \n\npoäng = 10\nif poäng &gt; 5:\n    poäng = poäng + 3\nelse:\n    poäng = poäng - 2\n\npoäng = poäng * 2\n\nAnge värdet på poäng när programmet är färdigt: _____________________________"
   },
   {
-    "objectID": "fy/simuleringar/waves/index.html#stående-våg",
-    "href": "fy/simuleringar/waves/index.html#stående-våg",
-    "title": "Simuleringar vågrörelse",
-    "section": "Stående våg",
-    "text": "Stående våg\nUnder konstruktion.",
-    "crumbs": [
-      "Home",
-      "Fysikrelaterat",
-      "Simuleringar vågrörelse"
-    ]
+    "objectID": "prog1000x/python/misc/main.html#uppgift-4-vad-händer-i-while-loopen-2p",
+    "href": "prog1000x/python/misc/main.html#uppgift-4-vad-händer-i-while-loopen-2p",
+    "title": "Python – grundläggande programmering",
+    "section": "Uppgift 4 – Vad händer i while-loopen? [2p]",
+    "text": "Uppgift 4 – Vad händer i while-loopen? [2p]\n\nx = 1\nwhile x &lt;= 6:\n    if x == 3:\n        x = x + 1\n        continue\n    if x == 5:\n        break\n    x += 1\n    print(x)\n\nVilka tal skrivs ut? ___________________________________"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "CodeBubo Nest 🦉",
-    "section": "",
-    "text": "Under denna sajt samlar jag (se sidan About om vem “jag” är) en del av de presentationer, uppgifter, instruktioner och dokument som jag använder i min undervisning i matematik, fysik och programmering.\nSajten är under utbyggnad, och viss omstrukturering kan förekomma."
-  },
-  {
-    "objectID": "index.html#hello-world",
-    "href": "index.html#hello-world",
-    "title": "CodeBubo Nest 🦉",
-    "section": "",
-    "text": "Under denna sajt samlar jag (se sidan About om vem “jag” är) en del av de presentationer, uppgifter, instruktioner och dokument som jag använder i min undervisning i matematik, fysik och programmering.\nSajten är under utbyggnad, och viss omstrukturering kan förekomma."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "Jag heter Nikodemus Karlsson, och är verksam gymnasielärare i matematik, fysik och programmering. Syftet med sajten är att samla mycket av det undervisningsmaterial som jag använder."
-  },
-  {
-    "objectID": "about.html#vem-skriver-på-denna-sajt",
-    "href": "about.html#vem-skriver-på-denna-sajt",
-    "title": "About",
-    "section": "",
-    "text": "Jag heter Nikodemus Karlsson, och är verksam gymnasielärare i matematik, fysik och programmering. Syftet med sajten är att samla mycket av det undervisningsmaterial som jag använder."
-  },
-  {
-    "objectID": "about.html#verktyg-som-används-för-uppbyggnad",
-    "href": "about.html#verktyg-som-används-för-uppbyggnad",
-    "title": "About",
-    "section": "Verktyg som används för uppbyggnad",
-    "text": "Verktyg som används för uppbyggnad\nSajten är byggd med publiceringssystemet Quarto och publicerad på GitHub Pages. Det jag framförallt gillar med Quarto är att man skriver i Markdown och att det är enkelt att integrera text, bilder, kod samt matematiska formler på såväl vanliga webbsidor, presentationer och för export till pdf-dokument. Quarto är byggd på öppen källkod och finns såväl till Windows, Linux och macOS."
-  },
-  {
-    "objectID": "about.html#användning-av-materialet",
-    "href": "about.html#användning-av-materialet",
-    "title": "About",
-    "section": "Användning av materialet",
-    "text": "Användning av materialet\nDen som önskar får gärna använda, kopiera och sprida material från sajten. Källkod till sidorna och presentationerna finns i denna repo på GitHub."
+    "objectID": "prog1000x/python/misc/main.html#uppgift-5-vad-är-fel-2p",
+    "href": "prog1000x/python/misc/main.html#uppgift-5-vad-är-fel-2p",
+    "title": "Python – grundläggande programmering",
+    "section": "Uppgift 5 – Vad är fel? [2p]",
+    "text": "Uppgift 5 – Vad är fel? [2p]\nKim har skrivit programraderna\n\nx = 1\nwhile x &lt; 5:\n    print(x, end=\" \")\n\nKim förväntar sig utskriften 1 2 3 4 5, men ser att hela skärmen fylls med ettor. Skriv ett nytt program nedan, baserat på Kims, som ger utskriften enligt förväntning (utskriften ska ske i en while-loop). Tips: Kim har gjort två missar."
   },
   {
     "objectID": "prog1000x/python/cheat_sheet_python.html",
@@ -931,6 +886,93 @@
       "Programmering 1",
       "Python Cheat Sheet"
     ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Jag heter Nikodemus Karlsson, och är verksam gymnasielärare i matematik, fysik och programmering. Syftet med sajten är att samla mycket av det undervisningsmaterial som jag använder."
+  },
+  {
+    "objectID": "about.html#vem-skriver-på-denna-sajt",
+    "href": "about.html#vem-skriver-på-denna-sajt",
+    "title": "About",
+    "section": "",
+    "text": "Jag heter Nikodemus Karlsson, och är verksam gymnasielärare i matematik, fysik och programmering. Syftet med sajten är att samla mycket av det undervisningsmaterial som jag använder."
+  },
+  {
+    "objectID": "about.html#verktyg-som-används-för-uppbyggnad",
+    "href": "about.html#verktyg-som-används-för-uppbyggnad",
+    "title": "About",
+    "section": "Verktyg som används för uppbyggnad",
+    "text": "Verktyg som används för uppbyggnad\nSajten är byggd med publiceringssystemet Quarto och publicerad på GitHub Pages. Det jag framförallt gillar med Quarto är att man skriver i Markdown och att det är enkelt att integrera text, bilder, kod samt matematiska formler på såväl vanliga webbsidor, presentationer och för export till pdf-dokument. Quarto är byggd på öppen källkod och finns såväl till Windows, Linux och macOS."
+  },
+  {
+    "objectID": "about.html#användning-av-materialet",
+    "href": "about.html#användning-av-materialet",
+    "title": "About",
+    "section": "Användning av materialet",
+    "text": "Användning av materialet\nDen som önskar får gärna använda, kopiera och sprida material från sajten. Källkod till sidorna och presentationerna finns i denna repo på GitHub."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "CodeBubo Nest 🦉",
+    "section": "",
+    "text": "Under denna sajt samlar jag (se sidan About om vem “jag” är) en del av de presentationer, uppgifter, instruktioner och dokument som jag använder i min undervisning i matematik, fysik och programmering.\nSajten är under utbyggnad, och viss omstrukturering kan förekomma."
+  },
+  {
+    "objectID": "index.html#hello-world",
+    "href": "index.html#hello-world",
+    "title": "CodeBubo Nest 🦉",
+    "section": "",
+    "text": "Under denna sajt samlar jag (se sidan About om vem “jag” är) en del av de presentationer, uppgifter, instruktioner och dokument som jag använder i min undervisning i matematik, fysik och programmering.\nSajten är under utbyggnad, och viss omstrukturering kan förekomma."
+  },
+  {
+    "objectID": "fy/simuleringar/waves/index.html#gående-vågor",
+    "href": "fy/simuleringar/waves/index.html#gående-vågor",
+    "title": "Simuleringar vågrörelse",
+    "section": "Gående vågor",
+    "text": "Gående vågor\n\nGående transversella vågor\nEn gående våg (travelling wave) består av partiklar som svänger med en viss fasförskjutning i förhållande till varandra. Nedan visas en transversell våg, där varje partikel rör sig vinkelrätt mot vågens utbredningsriktning. Svängningen är harmonisk, vilket innebär att varje partikel rör sig enligt en sinusfunktion över tid — och vågen får därmed en sinusformad profil.\nI den här animeringen sker utbredningen åt höger, vilket innebär att vågens form förflyttar sig i den riktningen, även om varje enskild partikel bara rör sig upp och ner.\n\n\n\n\n\n\n\n\n\nGående longitudinella vågor\nUnder konstruktion.",
+    "crumbs": [
+      "Home",
+      "Fysikrelaterat",
+      "Simuleringar vågrörelse"
+    ]
+  },
+  {
+    "objectID": "fy/simuleringar/waves/index.html#stående-våg",
+    "href": "fy/simuleringar/waves/index.html#stående-våg",
+    "title": "Simuleringar vågrörelse",
+    "section": "Stående våg",
+    "text": "Stående våg\nUnder konstruktion.",
+    "crumbs": [
+      "Home",
+      "Fysikrelaterat",
+      "Simuleringar vågrörelse"
+    ]
+  },
+  {
+    "objectID": "prog1000x/python/misc/ovningsdok-1/main.html",
+    "href": "prog1000x/python/misc/ovningsdok-1/main.html",
+    "title": "Programmeringsövningar",
+    "section": "",
+    "text": "Skriv ett program som slumpar fram utfall då två tärningar kastas. Utmatningen ska vara enligt följande (förstås med varierande utfall):\n6, 1\nSlå tärningarna igen (j/n) --&gt; j\n5, 2\nSlå tärningarna igen (j/n) --&gt; x\nSlå tärningarna igen (j/n) --&gt; J\n6, 4\nSlå tärningarna igen (j/n) --&gt; j\n2, 1\nSlå tärningarna igen (j/n) --&gt; n\nInmatningen ska vara säker, dvs om inte spelaren matar in y eller n så ska frågan upprepas. Tanken är också att koden enbart ska ha ett anrop till randint, och att de två utfallen alltså ska skapas i en loop inne i den loop som upprepar kasten. Observera också att utfallen ska presenteras på en enda rad.\nRekommenderad arbetsgång\n\nSkapa en while-loop som loopar i “evighet”.\nI den den loopen, skapa en loop som snurrar två varv.\nI loopen som snurrar två varv, skapa och skriv ut ett slumptal.\nTillbaka i den yttre loopen, ta emot en inmatning (j/n)\nHantera utfallet av inmatningen. Möjliga utfall är att loopen fortsätter, att den bryts eller att inmatningen ska göras om eftersom den var ogiltig,\n\n\n\n\n\nEtt personnummer byggs upp enligt principen ååmmdd-nnnn. Den sista siffran, den s.k. kontrollsiffran, kan inte väljas godtyckligt; hela numret matchar följande algoritm:\nVarannan siffra multipliceras med 2, med start på första siffran i personnumret. De övriga siffrorna används som de är. Om något tal vid multiplikationen blir större än 9 ersätts det talet med dess siffersumma. Därefter summeras alla tal och om summan är jämnt delbar med 10 så är kontrollsiffran korrekt.\nExempel: Personnumret 811218-9876 valideras.\n8 * 2 = 16, använd siffersumman 7\n1 * 1 = 1\n1 * 2 = 2\n2 * 1 = 2\n1 * 2 = 2\n8 * 1 = 8\n9 * 2 = 18, använd siffersumman 9\n8 * 1 = 8\n7 * 2 = 14, använd siffersumman 5\n6 * 1 = 6\n\n7 + 1 + 2 + 2 + 2 + 8 + 9 + 8 + 5 + 6  = 50, jämmnt delbart med 10,\nd.v.s. kontrollsiffran 6 är korrekt.\nKörningsexempel:\nAnge ett personnummer --&gt; 811218-9876\nKontrollsiffran stämmer :-)\n\nAnge ett personnummer --&gt; 821218-9876\nFelaktig kontrollsiffra :-(\nTips: För att få siffersumman i ett tvåsiffrigt tal, t ex 14 kan satsen 14 // 10 + 14 % 10 användas. Den gör en heltalsdivision med 10, vilket ger första siffran i talet, följt av en restdivision med 10, vilken ger den sista siffran. Dessa siffror adderas.\nRekommenderad arbetsgång\n\nLåt användaren mata in ett personnummer, gör inte om det till ett heltal. Spara strängen i variabeln pnum.\nSkapa en summa-variabeln summa utanför loopen, sätt den till 0.\nLoopa genom personnummersträngen, for num in pnum:...\nAnvänd en räknarvariabel för att hålla reda på ordningsnumret, dvs om aktuell siffra ska multipliceras med 2.\nGör om strängen num till ett heltal (eventuellt med regeln om siffersumma om talet är tvåsiffrigt).\nAddera värdet till summavariabeln.\nEfter loopen: kontrollera om summa är delbar med 10 (summa % 10 == 0).\n\nBörja med att validera ett nummer utan bindestrecket, det är lättare. Gör också gärna utskrifter av delresultat för att kontrollera om delresultaten blir som tänkt."
+  },
+  {
+    "objectID": "prog1000x/python/misc/ovningsdok-1/main.html#tärningarna",
+    "href": "prog1000x/python/misc/ovningsdok-1/main.html#tärningarna",
+    "title": "Programmeringsövningar",
+    "section": "",
+    "text": "Skriv ett program som slumpar fram utfall då två tärningar kastas. Utmatningen ska vara enligt följande (förstås med varierande utfall):\n6, 1\nSlå tärningarna igen (j/n) --&gt; j\n5, 2\nSlå tärningarna igen (j/n) --&gt; x\nSlå tärningarna igen (j/n) --&gt; J\n6, 4\nSlå tärningarna igen (j/n) --&gt; j\n2, 1\nSlå tärningarna igen (j/n) --&gt; n\nInmatningen ska vara säker, dvs om inte spelaren matar in y eller n så ska frågan upprepas. Tanken är också att koden enbart ska ha ett anrop till randint, och att de två utfallen alltså ska skapas i en loop inne i den loop som upprepar kasten. Observera också att utfallen ska presenteras på en enda rad.\nRekommenderad arbetsgång\n\nSkapa en while-loop som loopar i “evighet”.\nI den den loopen, skapa en loop som snurrar två varv.\nI loopen som snurrar två varv, skapa och skriv ut ett slumptal.\nTillbaka i den yttre loopen, ta emot en inmatning (j/n)\nHantera utfallet av inmatningen. Möjliga utfall är att loopen fortsätter, att den bryts eller att inmatningen ska göras om eftersom den var ogiltig,"
+  },
+  {
+    "objectID": "prog1000x/python/misc/ovningsdok-1/main.html#validering-av-personnummer",
+    "href": "prog1000x/python/misc/ovningsdok-1/main.html#validering-av-personnummer",
+    "title": "Programmeringsövningar",
+    "section": "",
+    "text": "Ett personnummer byggs upp enligt principen ååmmdd-nnnn. Den sista siffran, den s.k. kontrollsiffran, kan inte väljas godtyckligt; hela numret matchar följande algoritm:\nVarannan siffra multipliceras med 2, med start på första siffran i personnumret. De övriga siffrorna används som de är. Om något tal vid multiplikationen blir större än 9 ersätts det talet med dess siffersumma. Därefter summeras alla tal och om summan är jämnt delbar med 10 så är kontrollsiffran korrekt.\nExempel: Personnumret 811218-9876 valideras.\n8 * 2 = 16, använd siffersumman 7\n1 * 1 = 1\n1 * 2 = 2\n2 * 1 = 2\n1 * 2 = 2\n8 * 1 = 8\n9 * 2 = 18, använd siffersumman 9\n8 * 1 = 8\n7 * 2 = 14, använd siffersumman 5\n6 * 1 = 6\n\n7 + 1 + 2 + 2 + 2 + 8 + 9 + 8 + 5 + 6  = 50, jämmnt delbart med 10,\nd.v.s. kontrollsiffran 6 är korrekt.\nKörningsexempel:\nAnge ett personnummer --&gt; 811218-9876\nKontrollsiffran stämmer :-)\n\nAnge ett personnummer --&gt; 821218-9876\nFelaktig kontrollsiffra :-(\nTips: För att få siffersumman i ett tvåsiffrigt tal, t ex 14 kan satsen 14 // 10 + 14 % 10 användas. Den gör en heltalsdivision med 10, vilket ger första siffran i talet, följt av en restdivision med 10, vilken ger den sista siffran. Dessa siffror adderas.\nRekommenderad arbetsgång\n\nLåt användaren mata in ett personnummer, gör inte om det till ett heltal. Spara strängen i variabeln pnum.\nSkapa en summa-variabeln summa utanför loopen, sätt den till 0.\nLoopa genom personnummersträngen, for num in pnum:...\nAnvänd en räknarvariabel för att hålla reda på ordningsnumret, dvs om aktuell siffra ska multipliceras med 2.\nGör om strängen num till ett heltal (eventuellt med regeln om siffersumma om talet är tvåsiffrigt).\nAddera värdet till summavariabeln.\nEfter loopen: kontrollera om summa är delbar med 10 (summa % 10 == 0).\n\nBörja med att validera ett nummer utan bindestrecket, det är lättare. Gör också gärna utskrifter av delresultat för att kontrollera om delresultaten blir som tänkt."
   },
   {
     "objectID": "prog1000x/python/presentationer/villkor/index.html",
