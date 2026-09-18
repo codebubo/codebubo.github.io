@@ -1,0 +1,64 @@
+
+---
+title: "Programmeringsövningar"
+draft: true
+author: ""
+
+format:
+  html:
+    title-block: false
+    toc: false
+    number-sections: true
+    code-fold: true
+
+  pdf:
+    include-in-header:
+      text: |
+        \makeatletter
+        \renewcommand{\maketitle}{}
+        \makeatother
+        \pagestyle{empty}
+    documentclass: scrartcl
+    papersize: a4
+    number-sections: true
+    geometry:
+      - margin=2.5cm
+    pdf-engine: lualatex
+
+execute:
+  freeze: auto
+---
+
+# Programmeringsövningar
+
+## Utskrift av hälsning
+
+Skriv en funktion `säg_hej()` som skriver ut `"Python rocks!"` på skärmen.
+Anropa funktionen för att kontrollera att den fungerar.
+
+## Upprepad utskrift med loop
+
+Skriv en funktion `skriv_rad(text, antal)` som skriver ut `text` på `antal`
+rader med hjälp av en loop. Om `antal` är noll eller mindre ska istället
+`"Inget att skriva"` skrivs ut.
+
+## Största talet
+
+Skriv en funktion `störst(a, b, c)` som tar tre tal som argument och
+**returnerar** det största av dem. Då funktionen skrivs ska du använda villkor
+för att göra jämförelserna, inte någon eventuell inbyggd funktion.
+
+## Skriv en funktion `summa_jämna(n) som **returnerar** summan av alla jämna
+tal från `1` till `n`. Om `n` är mindre än 1 ska funktionen returnera noll.
+
+## Primtalstabell
+
+Skriv en funktion `is_prime(x)` som returnerar `True` om talet är ett primtal,
+annars `False`.
+
+Skriv sedan en funktion `print_prime_table(max_num)` som med hjälp av en
+nästlad loop skriver ut en tabell över vilka tal från `2` till `max_num` som är
+primtal. Använd anrop till `is_prime` i loopen.
+
+Funktionen ska returnera antalet funna primtal.
+

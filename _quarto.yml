@@ -36,7 +36,7 @@ website:
               - prog1000x/python/presentationer/while-loopar/index.qmd
               - prog1000x/python/presentationer/for-loopar/index.qmd
               - prog1000x/python/presentationer/funktioner/index.qmd
-              - pr1/python/listor/presentation/index.qmd
+              - prog1000x/python/presentationer/listor/index.qmd
               - pr1/python/strangar/presentation/index.qmd
               - pr1/python/egna-datatyper/presentation/index.qmd
               - pr1/python/spara-data-pa-fil/presentation/index.qmd
@@ -48,7 +48,7 @@ website:
               - prog1000x/python/ovningar/villkor/index.qmd
               - prog1000x/python/ovningar/loopar/index.qmd
               - prog1000x/python/ovningar/funktioner/index.qmd
-              - pr1/python/uppgifter/listor/index.qmd
+              - prog1000x/python/ovningar/listor/index.qmd
               - pr1/python/uppgifter/strangar/index.qmd
               - pr1/python/uppgifter/egna-datatyper/index.qmd
               - pr1/python/uppgifter/binarsokning/index.qmd
