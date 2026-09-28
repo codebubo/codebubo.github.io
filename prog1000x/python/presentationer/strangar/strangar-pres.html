@@ -9,7 +9,7 @@
 <link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.10.18">
 
-  <title>CodeBubo – Spara data till fil i Python</title>
+  <title>CodeBubo – Strängar i Python</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -101,7 +101,7 @@
     code span.wa { color: #dcc6e0; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../../../site_libs/revealjs/dist/theme/quarto-4df01d85d5cf19cc6202400f4f043f84.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../style.css">
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FFXVNM3K2N"></script>
 
   <script type="text/javascript">
@@ -207,8 +207,8 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-color="black" data-background-image="./clker-free-vector-images-foler-29373_640.png" data-background-opacity="1" class="quarto-title-block center">
-  <h1 class="title">Spara data till fil i Python</h1>
+<section id="title-slide" author="" data-background-color="black" data-background-image="./background-1086840_1280.png" data-background-opacity="1" class="quarto-title-block center">
+  <h1 class="title">Strängar i Python</h1>
 
 <div class="quarto-title-authors">
 </div>
@@ -217,92 +217,148 @@
 <section id="dagens-mål" class="slide level2">
 <h2>Dagens mål</h2>
 <ul>
-<li>Att kunna öppna filer på datorns filsystem</li>
-<li>Att känna till JSON-formatet</li>
-<li>Att kunna läsa in och skriva data från instanser av en egendefinierad datatyp på fil.</li>
+<li>Att känna till datatypen <code>str</code></li>
+<li>Att kunna komma åt enskilda tecken i en sträng</li>
+<li>Att kunna applicera olika <em>metoder</em> på en sträng</li>
 </ul>
 </section>
-<section id="json-format" class="slide level2">
-<h2>JSON-format</h2>
+<section id="vad-är-en-sträng" class="slide level2">
+<h2>Vad är en sträng?</h2>
 <div class="v-space">
 
 </div>
-<p>Vi kommer att spara datan på fil i <code>JSON</code>-format (JavaScript Object Notation). Det är ett vanligt sätt att representera data på i många sammanhang.</p>
-<pre><code>{
-    "namn": "Anna",
-    "ålder": 30,
-    "stad": "Stockholm"
-}</code></pre>
-<p>För att använda <code>JSON</code> i Python behövs importeras en modul:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-label="1"></a><span class="im">import</span> json</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="blue-bg-small-padding">
+<p>En sträng är en följd av tecken. Ofta används dessa för någon form av utmatning i programmet.</p>
+<p>Den datatyp som representerar en sträng i Python kallas <code>str</code>.</p>
+<p>Strängar har vissa saker gemensamt med listor; t ex så har varje tecken ett index, som gör att det kan adresseras.</p>
+</div>
 </section>
-<section id="skapa-en-egen-datatyp" class="slide level2">
-<h2>Skapa en egen datatyp</h2>
+<section id="exempel-på-en-sträng" class="slide level2">
+<h2>Exempel på en sträng</h2>
 <div class="double-v-space">
 
 </div>
-<p>Vi kan deklarera en variabeltyp <code>Car</code> på det här sättet:</p>
-<div id="6d6c2d6d" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-label="1"></a><span class="kw">class</span> Car:</span>
-<span id="cb3-2"><a aria-label="2"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, brand, price, mileage):</span>
-<span id="cb3-3"><a aria-label="3"></a>        <span class="va">self</span>.brand <span class="op">=</span> brand</span>
-<span id="cb3-4"><a aria-label="4"></a>        <span class="va">self</span>.price <span class="op">=</span> price</span>
-<span id="cb3-5"><a aria-label="5"></a>        <span class="va">self</span>.mileage <span class="op">=</span> mileage</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-label="1"></a>my_string <span class="op">=</span> <span class="st">"Hello, world"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Texten <code>"Hello, world"</code> kallas för en <em>strängkonstant</em> eller <em>strängliteral</em>. Denna strängkonstant måste vara given med citationstecken.</p>
+</section>
+<section id="strängar-jämfört-med-listor" class="slide level2">
+<h2>Strängar jämfört med listor</h2>
+<p>Varje teckenläge i en sträng har ett <em>index</em>. Det går att nå ett tecken med hjälp av detta index.</p>
+<div id="e8b95dc3" class="cell output-black-on-white" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-label="1"></a>my_string <span class="op">=</span> <span class="st">"Hello, world"</span></span>
+<span id="cb2-2"><a aria-label="2"></a><span class="bu">print</span>(<span class="ss">f"Strängkonstanten är: </span><span class="sc">{</span>my_string<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-3"><a aria-label="3"></a><span class="bu">print</span>(<span class="ss">f"Strängkonstantens första tecken är: </span><span class="sc">{</span>my_string[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-4"><a aria-label="4"></a><span class="bu">print</span>(<span class="ss">f"Tecknet </span><span class="ch">\"</span><span class="ss">o</span><span class="ch">\"</span><span class="ss"> finns första gången på index: </span><span class="sc">{</span>my_string<span class="sc">.</span>index(<span class="st">'o'</span>)<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Strängkonstanten är: Hello, world
+Strängkonstantens första tecken är: H
+Tecknet "o" finns första gången på index: 4</code></pre>
+</div>
+</div>
+<div class="smaller-font">
+<p>En skillnad mot listor är att strängar inte går att förändra. Vi kan inte lägga till ett tecken med något som liknar <code>append()</code> eller ta bort ett tecken med något som liknar <code>remove()</code>.</p>
+<p>Innehållet i en sträng kallas som sagt <strong>strängkonstant</strong>.</p>
+</div>
+</section>
+<section id="delsträngar" class="slide level2">
+<h2>Delsträngar</h2>
+<div class="v-space">
+
+</div>
+<p>På samma sätt som med listor går det att ta fram en delsträng enligt följande.</p>
+<div id="d3fe3498" class="cell output-black-on-white" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-label="1"></a>my_str <span class="op">=</span> <span class="st">"Detta är en sträng som består av 42 tecken"</span></span>
+<span id="cb4-2"><a aria-label="2"></a><span class="bu">print</span>(my_str[:<span class="dv">8</span>])</span>
+<span id="cb4-3"><a aria-label="3"></a><span class="bu">print</span>(my_str[<span class="dv">19</span>:<span class="dv">29</span>])</span>
+<span id="cb4-4"><a aria-label="4"></a><span class="bu">print</span>(my_str[<span class="dv">33</span>:])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Detta är
+som består
+42 tecken</code></pre>
+</div>
+</div>
+</section>
+<section id="loopa-genom-strängar" class="slide level2">
+<h2>Loopa genom strängar</h2>
+<div class="v-space">
+
+</div>
+<p>Det går att loopa genom en sträng och på så sätt gå igenom tecken för tecken. I följande exempel skrivs vokalerna ut i en sträng samtidigt som övriga tecken maskeras.</p>
+<div id="b03a1db7" class="cell output-black-on-white" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-label="1"></a>vowels <span class="op">=</span> <span class="st">"aeiouyåäö"</span></span>
+<span id="cb6-2"><a aria-label="2"></a>chars <span class="op">=</span> <span class="st">"Hello, world"</span></span>
+<span id="cb6-3"><a aria-label="3"></a><span class="cf">for</span> char <span class="kw">in</span> chars:</span>
+<span id="cb6-4"><a aria-label="4"></a>    <span class="cf">if</span> char.lower() <span class="kw">in</span> vowels:</span>
+<span id="cb6-5"><a aria-label="5"></a>        <span class="bu">print</span>(char, end<span class="op">=</span><span class="st">""</span>)</span>
+<span id="cb6-6"><a aria-label="6"></a>    <span class="cf">else</span>:</span>
+<span id="cb6-7"><a aria-label="7"></a>        <span class="bu">print</span>(<span class="st">"*"</span>, end<span class="op">=</span><span class="st">""</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>*e**o***o***</code></pre>
+</div>
+</div>
+</section>
+<section id="bygg-ny-sträng-från-original" class="slide level2">
+<h2>Bygg ny sträng från original</h2>
+<p>Exempel: skriva ut vokalerna i en sträng.</p>
+<div id="0096d3f3" class="cell output-black-on-white" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-label="1"></a>vowels <span class="op">=</span> <span class="st">"aeiouyåäö"</span></span>
+<span id="cb8-2"><a aria-label="2"></a>source <span class="op">=</span> <span class="st">"Hello, world"</span></span>
+<span id="cb8-3"><a aria-label="3"></a>destination <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb8-4"><a aria-label="4"></a><span class="cf">for</span> char <span class="kw">in</span> source:</span>
+<span id="cb8-5"><a aria-label="5"></a>    <span class="cf">if</span> char.lower() <span class="kw">in</span> vowels:</span>
+<span id="cb8-6"><a aria-label="6"></a>        destination <span class="op">+=</span> char</span>
+<span id="cb8-7"><a aria-label="7"></a>    <span class="cf">else</span>:</span>
+<span id="cb8-8"><a aria-label="8"></a>        destination <span class="op">+=</span> <span class="st">"*"</span></span>
+<span id="cb8-9"><a aria-label="9"></a><span class="bu">print</span>(destination)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>*e**o***o***</code></pre>
+</div>
+</div>
+<p>Effekten är bl a att valda delar av <code>source</code> kopieras till <code>destination</code> med additionsoperatorn.</p>
+</section>
+<section id="strängmetoder" class="slide level2">
+<h2>Strängmetoder</h2>
+<p>Vi har redan sett exempel på <em>strängmetoder</em>: <code>.index()</code>, som returnerar indexnumret för första förekomsten av ett tecken i en sträng, och <code>.lower()</code>, vilken returnerar samma sträng som vi tillämpar metoden på, men alla alfanumeriska tecken blir gemener (“små bokstäver”).</p>
+<p>Fler exempel på användbara strängmetoder finns på <a href="../../cheat_sheet_python.html#strängar-och-strängmetoder">detta “cheat sheet”</a>.</p>
+</section>
+<section id="modifiering-genom-tilldelning" class="slide level2">
+<h2>Modifiering genom tilldelning</h2>
+<div class="smaller-font">
+<p>Strängmetoder förändrar inte strängen.</p>
+</div>
+<div id="77513866" class="cell output-black-on-white" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a aria-label="1"></a>my_str <span class="op">=</span> <span class="st">"Detta är en sträng som består av 42 tecken"</span></span>
+<span id="cb10-2"><a aria-label="2"></a>my_upper_str <span class="op">=</span> my_str.upper()</span>
+<span id="cb10-3"><a aria-label="3"></a><span class="bu">print</span>(my_str)</span>
+<span id="cb10-4"><a aria-label="4"></a><span class="bu">print</span>(my_upper_str)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Detta är en sträng som består av 42 tecken
+DETTA ÄR EN STRÄNG SOM BESTÅR AV 42 TECKEN</code></pre>
+</div>
 </div>
 <div class="v-space">
 
 </div>
-<p><em>Instanser</em> av denna datatyp kan skapas enligt</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-label="1"></a>car1 <span class="op">=</span> Car(<span class="st">"Volvo"</span>, <span class="dv">200000</span>, <span class="dv">10000</span>)</span>
-<span id="cb4-2"><a aria-label="2"></a>car2 <span class="op">=</span> Car(<span class="st">"BMW"</span>, <span class="dv">300000</span>, <span class="dv">5000</span>)</span>
-<span id="cb4-3"><a aria-label="3"></a>cars <span class="op">=</span> [car1, car2]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="konvertera-instanserna-till-json" class="slide level2">
-<h2>Konvertera instanserna till JSON</h2>
-<ul>
-<li>JSON kan inte direkt hantera Python-objekt, så vi behöver konvertera våra objekt till en Python-datatypes som JSON kan serialisera, som en dict.</li>
-<li>Använda <code>__dict__</code> för att konvertera objekt till dict.</li>
-</ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-label="1"></a>cars_dict <span class="op">=</span> [car.__dict__ <span class="cf">for</span> car <span class="kw">in</span> cars]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Detta sätt att skapa en lista på kallas för <em>listomfattning</em> eller <em>list comprehension</em>. <code>cars_dict</code> är alltså en lista.</p>
-</section>
-<section id="instansen-på-fil" class="slide level2">
-<h2>Instansen på fil</h2>
-<div class="double-v-space">
-
+<div class="smaller-font">
+<p>Det går också att tilldela den gamla strängens namn det nya värdet.</p>
 </div>
-<p>Vi använder <code>json.dump()</code> för att spara till fil:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-label="1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'cars.json'</span>, <span class="st">'w'</span>) <span class="im">as</span> f:</span>
-<span id="cb6-2"><a aria-label="2"></a>    json.dump(cars_dict, f)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="double-v-space">
-
+<div id="eaa50589" class="cell output-black-on-white" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-label="1"></a>my_str <span class="op">=</span> <span class="st">"Detta är en sträng som består av 42 tecken"</span></span>
+<span id="cb12-2"><a aria-label="2"></a>my_str <span class="op">=</span> my_str.upper()</span>
+<span id="cb12-3"><a aria-label="3"></a><span class="bu">print</span>(my_str)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>DETTA ÄR EN STRÄNG SOM BESTÅR AV 42 TECKEN</code></pre>
 </div>
-<p>Vi använder <code>json.load()</code> för att läsa från fil:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-label="1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'cars.json'</span>, <span class="st">'r'</span>) <span class="im">as</span> f:</span>
-<span id="cb7-2"><a aria-label="2"></a>    loaded_cars_dict <span class="op">=</span> json.load(f)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="konvertera-tillbaka-till-objekt" class="slide level2">
-<h2>Konvertera tillbaka till objekt</h2>
-<div class="v-space">
-
 </div>
-<p>Konvertera <code>dict</code> tillbaka till <code>Car</code>-objekt.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-label="1"></a>loaded_cars <span class="op">=</span> [Car(<span class="op">**</span>car_dict) <span class="cf">for</span> car_dict <span class="kw">in</span> loaded_cars_dict]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="double-v-space">
-
-</div>
-<p>Nu innehåller listan de båda bilarna; t ex det första objektets bilmärke är</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-label="1"></a>loaded_cars[<span class="dv">0</span>].brand <span class="co"># Volvo</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="sammanfattning" class="slide level2">
 <h2>Sammanfattning</h2>
 <ul>
-<li>Instanser av egendefinierade datatyper kan lagras på fil</li>
-<li>Ett vanligt format är <code>JSON</code>; filen är läsbar och förståelig för människor</li>
-<li>För att lagra instansen som <code>JSON</code> måste den omvandlas till en <code>dict</code> (<em>dictionary</em>) i Python, som lagrar datan i samma format</li>
-<li>För att skriva till filen används metoden <code>json.dump()</code></li>
-<li>För att läsa från filen används metoden <code>json.load()</code></li>
-<li>Efter inläsning kan datan lagras i en lista i programmet</li>
+<li>Strängar i ett datorprogram är en följd av tecken</li>
+<li>På samma sätt som listor så kan enskilda tecken kommas åt med sitt indexnummer</li>
+<li>Till skillnad från listor så kan strängen inte förändras…</li>
+<li>… men vi kan få en “effekt” av en förändring t ex genom användning av additionsoperatorn (den gamla strängen skrivs då över)</li>
+<li>Det finns strängmetoder med vars hjälp det går att utföra olika operationer på strängar</li>
 </ul>
 
 

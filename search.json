@@ -361,166 +361,601 @@
     ]
   },
   {
-    "objectID": "prog1000x/python/presentationer/funktioner/index.html#övningar",
-    "href": "prog1000x/python/presentationer/funktioner/index.html#övningar",
-    "title": "Presentation: Funktioner",
-    "section": "Övningar",
-    "text": "Övningar\nÖvningar i dokumentet Övningar: funktioner.",
-    "crumbs": [
-      "Home",
-      "Programmering 1",
-      "Presentationer, Python",
-      "Presentation: Funktioner"
-    ]
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/listor/index.html#övningar",
-    "href": "prog1000x/python/presentationer/listor/index.html#övningar",
-    "title": "Presentation: Listor",
-    "section": "Övningar",
-    "text": "Övningar\nÖvningar i dokumentet Övningar listor.",
-    "crumbs": [
-      "Home",
-      "Programmering 1",
-      "Presentationer, Python",
-      "Presentation: Listor"
-    ]
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/while-loopar/while-pres.html#dagens-mål",
-    "href": "prog1000x/python/presentationer/while-loopar/while-pres.html#dagens-mål",
-    "title": "While-loopar i Python",
+    "objectID": "prog1000x/python/presentationer/funktioner/func-pres.html#dagens-mål",
+    "href": "prog1000x/python/presentationer/funktioner/func-pres.html#dagens-mål",
+    "title": "Funktioner i Python",
     "section": "Dagens mål",
-    "text": "Dagens mål\n\nAtt känna till innebörden av en loopstruktur.\nAtt skriva enkla program som innehåller en eller flera while-loopar.\nAtt kunna använda styrsatserna break och continue.\nPå högre nivå: Att skriva program som innehåller nästlade loopar."
+    "text": "Dagens mål\n\nAtt känna till vad en funktion är för något\nAtt känna till hur en funktion anropas\nAtt kunna läsa ut vilka parametrar en funktion tar\nAtt känna till skillnaden mellan funktioner som har …\n… respektive saknar return-sats\nAtt kunna tilldela en variabel ett värde från en funktion\nAtt kunna skriva enkla funktioner …\n… såväl med som utan return"
   },
   {
-    "objectID": "prog1000x/python/presentationer/while-loopar/while-pres.html#varför-loopar",
-    "href": "prog1000x/python/presentationer/while-loopar/while-pres.html#varför-loopar",
-    "title": "While-loopar i Python",
-    "section": "Varför loopar?",
-    "text": "Varför loopar?\n\nLoopar används när en del i ett program ska upprepas ett bestämt eller obestämt antal gånger. Det kan t ex vara ett gissningsspel: Så länge som spelaren gissar fel ska det finnas möjlighet att gissa igen.\nVi vet inte hur många gissningar som behövs, men det ska finnas ett villkor som anger när loopen ska avslutas. Programmet kan även hålla koll på hur många gissningar som behövdes."
+    "objectID": "prog1000x/python/presentationer/funktioner/func-pres.html#vad-är-en-funktion-i-programmering",
+    "href": "prog1000x/python/presentationer/funktioner/func-pres.html#vad-är-en-funktion-i-programmering",
+    "title": "Funktioner i Python",
+    "section": "Vad är en funktion i programmering?",
+    "text": "Vad är en funktion i programmering?\n\n\n\n\nFunktioner används för att dela upp ett program i mindre delar. En funktion anropas från det ställe man vill den ska utföras.\nVi har redan träffat på funktioner i form av print, input och range. Nu ska vi titta på hur egna funktioner skapas."
   },
   {
-    "objectID": "prog1000x/python/presentationer/while-loopar/while-pres.html#enklast-möjliga-while-loop",
-    "href": "prog1000x/python/presentationer/while-loopar/while-pres.html#enklast-möjliga-while-loop",
-    "title": "While-loopar i Python",
-    "section": "Enklast möjliga while-loop",
-    "text": "Enklast möjliga while-loop\n\n\ni = 1\nwhile i &lt;= 5: # Blocket upprepas så länge uttrycket är sant\n    print(i, end=\" \")\n    i += 1  # i ökar med 1\nprint(f\"\\nProgrammet avslutas eftersom i = {i}\")\n\n1 2 3 4 5 \nProgrammet avslutas eftersom i = 6\n\n\n Villkoret är på rad 2. Allt som omfattas av loopen är radindraget."
+    "objectID": "prog1000x/python/presentationer/funktioner/func-pres.html#användning-av-en-enkel-funktion",
+    "href": "prog1000x/python/presentationer/funktioner/func-pres.html#användning-av-en-enkel-funktion",
+    "title": "Funktioner i Python",
+    "section": "Användning av en enkel funktion",
+    "text": "Användning av en enkel funktion\n\n\n\nExempel: En funktion som adderar två tal:\ntal_1 = 10\ntal_2 = 20\nsumma = add(tal_1, tal_2) # Ger felmeddelande!\nprint(f\"Summan av {tal_1} och {tal_2} är {summa}\")\n\n\n\nFunktionen add finns inte fördefinierad i Python, den måste vi skapa själva!"
   },
   {
-    "objectID": "prog1000x/python/presentationer/while-loopar/while-pres.html#beräkning-av-summa-ver.-1",
-    "href": "prog1000x/python/presentationer/while-loopar/while-pres.html#beräkning-av-summa-ver.-1",
-    "title": "While-loopar i Python",
-    "section": "Beräkning av summa – ver. 1",
-    "text": "Beräkning av summa – ver. 1\n\n\n\n# Detta program beräknar summan av ett antal tal\navsluta = False\nsumma = 0\nwhile not avsluta:\n    tal = int(input(\"Ange ett valfritt tal, noll avslutar -&gt; \"))\n    if tal == 0:\n        avsluta = True\n    summa += tal\nprint(f\"Summan är {summa}\")\n\n\n\n\nEtt problem här är även det sista inmatade talet ingår i summan, ett annat villkor för avslut skulle ge en felaktig summa."
+    "objectID": "prog1000x/python/presentationer/funktioner/func-pres.html#implementering",
+    "href": "prog1000x/python/presentationer/funktioner/func-pres.html#implementering",
+    "title": "Funktioner i Python",
+    "section": "Implementering",
+    "text": "Implementering\nVi kan skapa och använda funktionen add enligt följande:\n\n\n\n\ndef add(a, b):   # Här\n  summa = a + b  # skapas\n  return summa   # funktionen\n\n# Huvudprogram nedan\ntal_1 = 10\ntal_2 = 20\nsumma = add(tal_1, tal_2) # Här anropas funktionen\n\nprint(f\"Summan av {tal_1} och {tal_2} är {summa}\")\n\nSumman av 10 och 20 är 30"
   },
   {
-    "objectID": "prog1000x/python/presentationer/while-loopar/while-pres.html#beräkning-av-summa-ver.-2",
-    "href": "prog1000x/python/presentationer/while-loopar/while-pres.html#beräkning-av-summa-ver.-2",
-    "title": "While-loopar i Python",
-    "section": "Beräkning av summa – ver. 2",
-    "text": "Beräkning av summa – ver. 2\n\n\n\n# Detta program beräknar summan av ett antal tal\nsumma = 0\nwhile True: # Alltid sant!\n    tal = int(input(\"Ange ett valfritt tal, noll avslutar -&gt; \"))\n    if tal == 0:\n        break # Här bryts loopen om villkoret ovan är uppfyllt\n    summa += tal\nprint(f\"Summan är {summa}\")\n\n\n\n\nHär används styrsatsen break för att avbryta loopen då ett villkor uppfylls. Det gör att det sista talet inte kommer att ingå i summan.\nSjälva loopvillkoret är alltid sant, det är innebörden av while True på rad 3."
+    "objectID": "prog1000x/python/presentationer/funktioner/func-pres.html#funktioners-anatomi",
+    "href": "prog1000x/python/presentationer/funktioner/func-pres.html#funktioners-anatomi",
+    "title": "Funktioner i Python",
+    "section": "Funktioners anatomi",
+    "text": "Funktioners anatomi\ndef add(a, b):\n  summa = a + b\n  return summa\n\nadd: Funktionens namn\na och b: Funktionens parametrar\nreturn: Det värde som funktionen lämnar som resultat\n\nFunktionen anropas t ex enligt total = add(1, 2). Här kallas talen 1 och 2 i anropet för argument.\nVariabeln total antar det värde som return skickar tillbaka."
   },
   {
-    "objectID": "prog1000x/python/presentationer/while-loopar/while-pres.html#summan-av-positiva-tal",
-    "href": "prog1000x/python/presentationer/while-loopar/while-pres.html#summan-av-positiva-tal",
-    "title": "While-loopar i Python",
-    "section": "Summan av positiva tal",
-    "text": "Summan av positiva tal\n\n\n\n# Detta program beräknar summan av ett antal positiva tal\nsumma = 0\nwhile True:\n    tal = int(input(\"Ange ett valfritt tal, noll avslutar -&gt; \"))\n    if tal == 0:\n        break    # Loopen bryts\n    if tal &lt; 0:\n        continue # Loopen börjar om\n    summa += tal\nprint(f\"Summan av de inmatade positiva talen är {summa}\")\n\n\n\n\nStyrsatsen continue används för att hoppa över resten av loopen och börja om från dess början."
+    "objectID": "prog1000x/python/presentationer/funktioner/func-pres.html#variabler-i-funktioner",
+    "href": "prog1000x/python/presentationer/funktioner/func-pres.html#variabler-i-funktioner",
+    "title": "Funktioner i Python",
+    "section": "Variabler i funktioner",
+    "text": "Variabler i funktioner\nVariablerna som är deklarerade i funktioner är lokala. Det innebär att de inte är tillgängliga utanför funktionen.\nT ex är variablerna a, b och the_sum enbart tillgängliga inuti funktionen add nedan.\ndef add(a, b):\n  summa = a + b\n  return summa\n\n# Huvudprogram\nadd(1, 2)\n# Nedanstående ger ett felmeddelande eftersom\n# giltighetsområdet (omfattningen) för variabeln\n# summa inte räcker till denna nivå i programmet.\nprint(summa)"
   },
   {
-    "objectID": "prog1000x/python/presentationer/while-loopar/while-pres.html#nästlad-loop-flödesschema",
-    "href": "prog1000x/python/presentationer/while-loopar/while-pres.html#nästlad-loop-flödesschema",
-    "title": "While-loopar i Python",
-    "section": "Nästlad loop – flödesschema",
-    "text": "Nästlad loop – flödesschema\n\n\n\n\n\nHär finns en “loop i en loop”. För varje varv som den yttre loopen gör så kommer den inre loopen att gå ett givet antal varv."
+    "objectID": "prog1000x/python/presentationer/funktioner/func-pres.html#funktioners-returvärden",
+    "href": "prog1000x/python/presentationer/funktioner/func-pres.html#funktioners-returvärden",
+    "title": "Funktioner i Python",
+    "section": "Funktioners returvärden",
+    "text": "Funktioners returvärden\nIbland saknas behov av return-värde.\n\ndef print_multabell(n):\n  # Skriver ut fem rader i multiplikationstabell n\n  for i in range(1, 6):\n    print(f\"{i:2.0f} * {n} = {i*n:3.0f}\")\n\nprint_multabell(12) # Ange önskad tabell att skriva ut här\n\n 1 * 12 =  12\n 2 * 12 =  24\n 3 * 12 =  36\n 4 * 12 =  48\n 5 * 12 =  60\n\n\n\nHär ser syns att en valfri multiplikationstabell kan skrivas ut, men det finns ingen variabel utanför funktionen som känner till något om multiplikationen."
   },
   {
-    "objectID": "prog1000x/python/presentationer/while-loopar/while-pres.html#nästlad-loop-kodexempel",
-    "href": "prog1000x/python/presentationer/while-loopar/while-pres.html#nästlad-loop-kodexempel",
-    "title": "While-loopar i Python",
-    "section": "Nästlad loop – kodexempel",
-    "text": "Nästlad loop – kodexempel\n\n\n\n# Detta program demonstrerar nästlade loopar\ni = 0\nwhile i &lt; 3: # Start yttre loop\n    j = 0\n    while j &lt; 3: # Start inre loop\n        print(f\"i = {i}, j = {j}\")\n        j += 1\n    i += 1\nprint(\"Programmet avslutas\")\n\n\n\nDenna kod motsvarar det ritade flödesschemat på förra slajden."
+    "objectID": "prog1000x/python/presentationer/funktioner/func-pres.html#alla-funktioner-har-ett-returvärde",
+    "href": "prog1000x/python/presentationer/funktioner/func-pres.html#alla-funktioner-har-ett-returvärde",
+    "title": "Funktioner i Python",
+    "section": "Alla funktioner har ett returvärde",
+    "text": "Alla funktioner har ett returvärde\n\ndef print_multabell(n):\n  # Skriver ut fem rader i multiplikationstabell n\n  for i in range(1, 6):\n    print(f\"{i:2.0f} * {n} = {i*n:3.0f}\")\n\nprint(print_multabell(12)) \n\n 1 * 12 =  12\n 2 * 12 =  24\n 3 * 12 =  36\n 4 * 12 =  48\n 5 * 12 =  60\nNone\n\n\n\nHär anropas funktionen, och skriver ut resultatet av den på rad 6. Vi ser att resultatet blir None."
   },
   {
-    "objectID": "prog1000x/python/presentationer/while-loopar/while-pres.html#sammanfattning",
-    "href": "prog1000x/python/presentationer/while-loopar/while-pres.html#sammanfattning",
-    "title": "While-loopar i Python",
+    "objectID": "prog1000x/python/presentationer/funktioner/func-pres.html#dokumentation-av-funktioner",
+    "href": "prog1000x/python/presentationer/funktioner/func-pres.html#dokumentation-av-funktioner",
+    "title": "Funktioner i Python",
+    "section": "Dokumentation av funktioner",
+    "text": "Dokumentation av funktioner\nFunktioner bör dokumenteras. Python använder s.k docstrings för detta. Ej att förväxla med kommentarer för kodrader eller andra sekvenser i programmet!\ndef add(a, b):\n  '''\n  Funktionen adderar två tal. Ingen typkontroll sker.\n  Parameter 1: a | ett tal (int eller float)\n  Parameter 2: b | ett tal (int eller float)\n  Returvärde: summan av talen (int eller float)\n  '''\n  the_sum = a + b\n  return the_sum\nDocstrings kan användas av editorn när man skriver kod, eller i konsolen när man skriver help(add)."
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/funktioner/func-pres.html#lämna-funktionen",
+    "href": "prog1000x/python/presentationer/funktioner/func-pres.html#lämna-funktionen",
+    "title": "Funktioner i Python",
+    "section": "Lämna funktionen",
+    "text": "Lämna funktionen\nEn funktion lämnas när den når sista raden eller return.\ndef maximum(a, b):\n  '''\n  Funktionen returnerar det största av två tal\n  Parameter 1: a | ett tal (int eller float)\n  Parameter 2: b | ett tal (int eller float)\n  Returvärde: Det största av talen. Vid likhet returneras None.\n  '''\n\n  if a &gt; b:\n    return a\n  elif b &gt; a:\n    return b\n  return None # Onödig rad, utan return-sats returneras None ändå"
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/funktioner/func-pres.html#sammanfattning",
+    "href": "prog1000x/python/presentationer/funktioner/func-pres.html#sammanfattning",
+    "title": "Funktioner i Python",
     "section": "Sammanfattning",
-    "text": "Sammanfattning\n\nEn loop är en kontrollstruktur som upprepar kod.\nDet finns flera typer av loopar, idag har vi gått igenom while-loopen.\nwhile-loopen löper så länge ett villkor är uppfyllt…\n…eller tills den stöter på en break-sats.\nStyrsatsen continue gör att koden går tillbaka till loopens start.\nI nästlade loopar går koden igenom alla kombinationer av värden i den yttre och inre loopen."
+    "text": "Sammanfattning\n\nFunktioner är byggstenar i program …\n… vilket ger programmet en enklare struktur\nVariablerna i en funktion är lokala\nEn funktion lämnas vid return-sats\nOm ingen return-sats finns returneras None\nEn variabel bör tilldelas ett returnerat värde\nEn funktion bör dokumenteras med en docstring"
   },
   {
-    "objectID": "prog1000x/python/presentationer/for-loopar/index.html#övningar",
-    "href": "prog1000x/python/presentationer/for-loopar/index.html#övningar",
-    "title": "Presentation: for-loopar",
+    "objectID": "prog1000x/python/presentationer/listor/listor-pres.html#dagens-mål",
+    "href": "prog1000x/python/presentationer/listor/listor-pres.html#dagens-mål",
+    "title": "Listor i Python",
+    "section": "Dagens mål",
+    "text": "Dagens mål\n\nAtt känna till datatypen list\nAtt kunna skapa listor med element av olika datatyper\nAtt kunna komma åt enskilda element i en lista"
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/listor/listor-pres.html#vad-är-en-lista",
+    "href": "prog1000x/python/presentationer/listor/listor-pres.html#vad-är-en-lista",
+    "title": "Listor i Python",
+    "section": "Vad är en lista?",
+    "text": "Vad är en lista?\n\n\n\n\nEn lista är en s.k datastruktur som organiserar värden i en följd. Listan är också en variabel, som alltså består av en samling värden. Dessa värden kan man komma åt ett och ett, men istället för att ha ett stort antal variabler kan man alltså ha en enda lista som innehåller många värden.\nEtt exempel som kan motivera en lista i programmeringen är då ett namnregister ska hanteras."
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/listor/listor-pres.html#exempel-på-en-lista",
+    "href": "prog1000x/python/presentationer/listor/listor-pres.html#exempel-på-en-lista",
+    "title": "Listor i Python",
+    "section": "Exempel på en lista",
+    "text": "Exempel på en lista\nExempel på en lista som lagrar temperaturer:\n           -----------------------\nInnehåll   | 10 | 12 | 8 | 9 | 7 |   &lt;- Här är temperaturerna\n           -----------------------\nIndexnr.     0    1    2   3   4     &lt;- Ett index är ett ordningstal\n\n\n\nVariabeldeklaration:\n\ntemperaturer = [10, 12, 8, 9, 7] # EN variabel för FEM temperaturer\n\n\n\n\n\nprint(temperaturer[0]) # Skriver ut innehållet av index 0\nprint(temperaturer[3]) # Skriver ut innehållet av index 3\n\n10\n9"
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/listor/listor-pres.html#vad-var-nu-en-lista",
+    "href": "prog1000x/python/presentationer/listor/listor-pres.html#vad-var-nu-en-lista",
+    "title": "Listor i Python",
+    "section": "Vad var nu en lista?",
+    "text": "Vad var nu en lista?\n\nEn lista är alltså en variabel som innehåller flera olika värden. Värdena finns i “fack”, vart och ett med ett index (ordningsnummer).\nIndexet börjar med 0. Om det t ex finns 10 värden i en lista kommer man åt innehållet i “facken” genom index 0 - 9.\nAlla olika typer av variabler är tillåtna i en lista."
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/listor/listor-pres.html#att-skapa-listor",
+    "href": "prog1000x/python/presentationer/listor/listor-pres.html#att-skapa-listor",
+    "title": "Listor i Python",
+    "section": "Att skapa listor",
+    "text": "Att skapa listor\n\n\n\nOm du vet vilka värden som ska vara med från början:\nmin_lista = [10, -2, 6, 3]\n\n\n\nOm du behöver lägga till värden i efterhand:\nscores = []       # Skapar en tom lista\nscores.append(42) # Lägger till talet 42 i den från början tomma listan\n\n\n\nÄven om listan inte är tom går det att lägga till värden med hjälp av append."
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/listor/listor-pres.html#att-skapa-listor-forts",
+    "href": "prog1000x/python/presentationer/listor/listor-pres.html#att-skapa-listor-forts",
+    "title": "Listor i Python",
+    "section": "Att skapa listor (forts)",
+    "text": "Att skapa listor (forts)\n\n\n\nVi har redan tidigare gått igenom funktionen range. Här skapas en lista med talen -4, -1, 2 och 5:\n\n\n\n\nlst = list(range(-4, 6, 3))\nprint(lst)\n\n[-4, -1, 2, 5]"
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/listor/listor-pres.html#loopa-genom-listor",
+    "href": "prog1000x/python/presentationer/listor/listor-pres.html#loopa-genom-listor",
+    "title": "Listor i Python",
+    "section": "Loopa genom listor",
+    "text": "Loopa genom listor\n\n\n\nVi har också tidigare gått igenom for-loopar, som kan användas då man behöver gå igenom ett listelement i taget.\nFöljande exempel fanns i presentationen om for-loopar.\n\n\n\nitems = [\"Klocka\", \"Kikare\", \"Termometer\"]\nfor item in items:\n    if item.is_boostable:\n      item.boost()\n      print(f\"Din {item} är nu boostad ✅\")\n    else:\n      print(f\"{item} gick inte att boosta ❌\")"
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/listor/listor-pres.html#listors-funktioner-och-metoder",
+    "href": "prog1000x/python/presentationer/listor/listor-pres.html#listors-funktioner-och-metoder",
+    "title": "Listor i Python",
+    "section": "Listors funktioner och metoder",
+    "text": "Listors funktioner och metoder\n\nDet finns många funktioner för att hantera listor. Det går bl.a att sortera element, ta bort element, räkna antalet element, reversera listan, summera element och välja ut en delmängd av elementen. Exempel på detta påvisas i övningarna."
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/listor/listor-pres.html#sammanfattning",
+    "href": "prog1000x/python/presentationer/listor/listor-pres.html#sammanfattning",
+    "title": "Listor i Python",
+    "section": "Sammanfattning",
+    "text": "Sammanfattning\n\nListor används för att samla flera värden under ett enda variabelnamn\nMan kommer åt de enskilda elementen med dess index\nIndex-räkningen börjar på noll\nDet finns funktionalitet för att göra olika operationer på en lista"
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/while-loopar/index.html#övningar",
+    "href": "prog1000x/python/presentationer/while-loopar/index.html#övningar",
+    "title": "Presentation: while-loopar",
     "section": "Övningar",
-    "text": "Övningar\nÖvningarna 8 – 10 i dokumentet Övningar: loopar",
+    "text": "Övningar\nÖvningarna 1 – 7 i dokumentet Övningar: Loopar",
     "crumbs": [
       "Home",
       "Programmering 1",
       "Presentationer, Python",
-      "Presentation: `for`-loopar"
+      "Presentation: `while`-loopar"
     ]
   },
   {
-    "objectID": "prog1000x/python/presentationer/formatering/index.html#övningar",
-    "href": "prog1000x/python/presentationer/formatering/index.html#övningar",
-    "title": "Att formatera text",
-    "section": "Övningar",
-    "text": "Övningar\nÖvningar textformatering",
+    "objectID": "prog1000x/python/presentationer/for-loopar/for-pres.html#dagens-mål",
+    "href": "prog1000x/python/presentationer/for-loopar/for-pres.html#dagens-mål",
+    "title": "for-loopari Python",
+    "section": "Dagens mål",
+    "text": "Dagens mål\n\nAtt känna till vad en for-loop är\nAtt kunna använda range-funktionen\nAtt känna till skillnaden mellan while- och for-loopar\nAtt kunna skriva egna små program som innehåller en for-loop."
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/for-loopar/for-pres.html#likheter-och-skillnader-mellan-while--och-for-loopar",
+    "href": "prog1000x/python/presentationer/for-loopar/for-pres.html#likheter-och-skillnader-mellan-while--och-for-loopar",
+    "title": "for-loopari Python",
+    "section": "Likheter och skillnader mellan while- och for-loopar",
+    "text": "Likheter och skillnader mellan while- och for-loopar\n\n\n\n\nOfta används while-loopar när antalet varv avgörs under programkörningens gång, medan for-loopar används då det är ett känt antal varv. I vissa fall går den ena typen av loop lika bra som den andra.\nEn for-loop använder sig av en lista som loopas igenom."
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/for-loopar/for-pres.html#enklast-möjliga-for-loop",
+    "href": "prog1000x/python/presentationer/for-loopar/for-pres.html#enklast-möjliga-for-loop",
+    "title": "for-loopari Python",
+    "section": "Enklast möjliga for-loop",
+    "text": "Enklast möjliga for-loop\n\n\n\n\nlista = [10, 20, 30]\nfor element in lista:\n    print(element, end=\" \")\nprint(f\"Loopen avslutas eftersom listan är slut\")\n\n10 20 30 Loopen avslutas eftersom listan är slut\n\n\n\n\n\nVariabeln element antar respektive värde i listan i tur och ordning."
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/for-loopar/for-pres.html#längre-listor",
+    "href": "prog1000x/python/presentationer/for-loopar/for-pres.html#längre-listor",
+    "title": "for-loopari Python",
+    "section": "Längre listor",
+    "text": "Längre listor\nListorna behöver inte skrivas in manuellt, det är bra då loopen behöver snurra många varv. Här används range för att skapa en lista från ett värde till ett annat värde.\n\n\n\n\nfor i in range(3, 8):   # Här skapas listan\n    print(i, end=\" \")\n\n3 4 5 6 7 \n\n\n\n\n\nFunktionen range(3, 8) skapar listan [3, 4, 5, 6, 7]\nOm det hade varit en while-loop som skulle snurra fem varv skulle ett villkor och en räknare behövt sättas upp."
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/for-loopar/for-pres.html#funktionen-range",
+    "href": "prog1000x/python/presentationer/for-loopar/for-pres.html#funktionen-range",
+    "title": "for-loopari Python",
+    "section": "Funktionen range",
+    "text": "Funktionen range\n\n\n\nExempel på hur parametrar påverkar resultatet av range\n\nlista_A = list(range(10))\nlista_B = list(range(-5, 5))\nlista_C = list(range(0, 10, 2))\nlista_D = list(range(10, 0, -1))\nprint(f\"lista_A = {lista_A}\")\nprint(f\"lista_B = {lista_B}\")\nprint(f\"lista_C = {lista_C}\")\nprint(f\"lista_D = {lista_D}\")\n\nlista_A = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\nlista_B = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4]\nlista_C = [0, 2, 4, 6, 8]\nlista_D = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]"
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/for-loopar/for-pres.html#exempel-multiplikationstabell",
+    "href": "prog1000x/python/presentationer/for-loopar/for-pres.html#exempel-multiplikationstabell",
+    "title": "for-loopari Python",
+    "section": "Exempel: Multiplikationstabell",
+    "text": "Exempel: Multiplikationstabell\n\n\n\n\n# Dettta program beräknar och skriver ut \"tolvans tabell\"\nfor i in range(1, 13):\n    print(f\"{i:2.0f} * 12 = {i*12:3.0f}\")\n\n 1 * 12 =  12\n 2 * 12 =  24\n 3 * 12 =  36\n 4 * 12 =  48\n 5 * 12 =  60\n 6 * 12 =  72\n 7 * 12 =  84\n 8 * 12 =  96\n 9 * 12 = 108\n10 * 12 = 120\n11 * 12 = 132\n12 * 12 = 144"
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/for-loopar/for-pres.html#andra-listelement-än-tal",
+    "href": "prog1000x/python/presentationer/for-loopar/for-pres.html#andra-listelement-än-tal",
+    "title": "for-loopari Python",
+    "section": "Andra listelement än tal",
+    "text": "Andra listelement än tal\n\n\n\nEn lista kan innehålla andra element än tal.\n\n\n\n\nitems = [\"Klocka\", \"Kikare\", \"Termometer\"]\nprint(\"Du har tillgång till:\", end=\" \")\nfor item in items:\n    print(item, end=\" \")\n\nDu har tillgång till: Klocka Kikare Termometer \n\n\n\n\n\nVi kommer senare att titta på hur element kan läggas till, tas bort och sorteras i listor. Det är användbart t ex i spel."
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/for-loopar/for-pres.html#ett-tänkt-exempel",
+    "href": "prog1000x/python/presentationer/for-loopar/for-pres.html#ett-tänkt-exempel",
+    "title": "for-loopari Python",
+    "section": "Ett tänkt exempel",
+    "text": "Ett tänkt exempel\n\n\n\nitems = [\"Klocka\", \"Kikare\", \"Termometer\"]\nfor item in items:\n    if item.is_boostable:\n      item.boost()\n      print(f\"Din {item} är nu boostad ✅\")\n    else:\n      print(f\"{item} gick inte att boosta ❌\")\nSekvensen ovan skulle kunna ingå i ett spelprogram. Här är is_boostable en egenskap hos objektet item och boost är en metod som tillämpas. Dessa saker måste programmeraren designa själv; det är inte inbyggt i Python.\nSenare i kursen kommer vi att komma till klasser, och koppla objekt, egenskaper och metoder till dessa."
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/for-loopar/for-pres.html#sammanfattning",
+    "href": "prog1000x/python/presentationer/for-loopar/for-pres.html#sammanfattning",
+    "title": "for-loopari Python",
+    "section": "Sammanfattning",
+    "text": "Sammanfattning\n\nfor-loopar används antingen när något ska göras ett förutbestämt antal gånger…\n… eller när någon funktion ska tillämpas på ett element i taget i en lista\nFunktionen range kan användas för att skapa listor\nFunktionen range ger olika utdata beroende på vilka parametrar som används"
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/formatering/textformatering.html#utskrifter-i-python",
+    "href": "prog1000x/python/presentationer/formatering/textformatering.html#utskrifter-i-python",
+    "title": "Formateradtext",
+    "section": "Utskrifter i Python",
+    "text": "Utskrifter i Python\n\n\n\nUtskrift av sträng\n\n\nhello_string = \"Hello, world\"\nprint(hello_string)\n\nHello, world\n\n\n\n\n\n\n\nUtskrift av sträng och tal\n\n\npris = 10\nprint(f\"Priset är {pris} kr.\")\n\nPriset är 10 kr.\n\n\n\n\n\n\n Utskrift av heltal\n\n\npris = 10\nprint(pris)\n\n10\n\n\n\n\n\n\n\n\nAvrundning\n\n\nmy_float = 2/3\nprint(f\"{my_float:.2f}\")\n\n0.67\n\n\n\n\n\n\n När “fast” text ska skrivas ut tillsammans med en variabel används en s.k f-string. Det står för formatted string literal."
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/formatering/textformatering.html#formatspecifikationer",
+    "href": "prog1000x/python/presentationer/formatering/textformatering.html#formatspecifikationer",
+    "title": "Formateradtext",
+    "section": "Formatspecifikationer",
+    "text": "Formatspecifikationer\n\nEn teckensträng har en en given fältbredd. Det tydliggörs med utfyllnadstecken.\n\ns1 = \"Kalle\"\ns2 = \"Anka\"\nprint(f\"{s1:*&lt;13}\")      # A. Fältbredd 13, vänsterjusterat\nprint(f\"{s1:*&gt;13}\")      # B. Fältbredd 13, högerjusterat\nprint(f\"{s1:*^13}\")      # C. Fältbredd 13, centrerat\nprint(f\"{s1:*&lt;9}{s2}\")   # D. Flera strängar\nprint(f\"{s1:&lt;9}{s2}\")    # E. Flera strängar, inget utfyllnadstecken\n\n\n\nA. Kalle******** B. ********Kalle C. ****Kalle****\n\nD. Kalle****Anka E. Kalle    Anka"
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/formatering/textformatering.html#upprepade-tecken",
+    "href": "prog1000x/python/presentationer/formatering/textformatering.html#upprepade-tecken",
+    "title": "Formateradtext",
+    "section": "Upprepade tecken",
+    "text": "Upprepade tecken\n\nNär många lika tecken ska skrivas ut så kan strängen multipliceras.\n\n\nprint(30 * \"*\")\nprint(\"*\" + 28 * \" \" + \"*\")\nprint (\"*\" + f\"{'Välkommen!':^28}\" + \"*\")\nprint(\"*\" + 28 * \" \" + \"*\")\nprint(30 * \"*\")\n\n******************************\n*                            *\n*         Välkommen!         *\n*                            *\n******************************"
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/formatering/textformatering.html#sträng-med-radbrytning",
+    "href": "prog1000x/python/presentationer/formatering/textformatering.html#sträng-med-radbrytning",
+    "title": "Formateradtext",
+    "section": "Sträng med radbrytning",
+    "text": "Sträng med radbrytning\n\nFör att skriva ut en sträng på flera används ett s.k “flykttecken” (escape character). Här används \\n för att få radbrytning.\n\nprint(\"Här är en text på\\ntvå rader\")\n\nHär är en text på\ntvå rader\n\n\n\nDetta kan användas tillsammans med fältbredden:\n\n\nprint(f\"Detta är en högerjusterad text\\n{'på flera rader':*&gt;30}\")\n\nDetta är en högerjusterad text\n****************på flera rader"
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/formatering/textformatering.html#justering-av-tal",
+    "href": "prog1000x/python/presentationer/formatering/textformatering.html#justering-av-tal",
+    "title": "Formateradtext",
+    "section": "Justering av tal",
+    "text": "Justering av tal\n\n\nTabeller blir mer lättlästa om ental står under ental, tiondel under tiondel osv.\n\n\n\na = 10.499; b = 2.38\nc = 123.4;  d = 9.1\nprint(f\"{a:6.2f}{c:12.2f}\\n{b:6.2f}{d:12.2f}\")\nprint(22 * \"-\");\nprint(f\"{(a+b):6.2f}{(c+d):12.2f}\")\n\n 10.50      123.40\n  2.38        9.10\n----------------------\n 12.88      132.50\n\n\n\n\nObservera att beräkningarna sker mellan måsvingarna!"
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/villkor/villkor-pres.html#vad-är-ett-villkor",
+    "href": "prog1000x/python/presentationer/villkor/villkor-pres.html#vad-är-ett-villkor",
+    "title": "Villkor i Python",
+    "section": "Vad är ett villkor?",
+    "text": "Vad är ett villkor?\n\nEtt datorprogram är en följd av instruktioner. Dessa instruktioner kan baseras på indata. Beroende på vilka indata som ges kan programmet behöva ta olika vägar.\nDet som avgör vilken väg programmet ska ta ka kallas villkor."
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/villkor/villkor-pres.html#dagens-mål",
+    "href": "prog1000x/python/presentationer/villkor/villkor-pres.html#dagens-mål",
+    "title": "Villkor i Python",
+    "section": "Dagens mål",
+    "text": "Dagens mål\n\nAtt förstå hur villkor tecknas i Python med hjälp av if-satser och kunna skriva egna, enkla sådana villkor i kod.\nAtt kunna använda jämförelsoperatorerna.\nAtt känna till innebörden av booleska variabler och kunna använda sådana.\nAtt börja lära sig att tolka, och även skapa egna, flödesscheman för program som innehåller villkor."
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/villkor/villkor-pres.html#ett-enkelt-villkor",
+    "href": "prog1000x/python/presentationer/villkor/villkor-pres.html#ett-enkelt-villkor",
+    "title": "Villkor i Python",
+    "section": "Ett enkelt villkor",
+    "text": "Ett enkelt villkor\nI Python så avgörs ett villkor med hjälp av det reserverade ordet if.\n\na = 1\nif a &gt; 0:\n   print(\"a är större än 0\")\n\na är större än 0\n\n\n\n\n\n\na = -1\nif a &gt; 0:\n   print(\"a är större än noll\")\nelse:\n   print(\"a är inte större än noll\")\n\na är inte större än noll"
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/villkor/villkor-pres.html#exempel-godkänt",
+    "href": "prog1000x/python/presentationer/villkor/villkor-pres.html#exempel-godkänt",
+    "title": "Villkor i Python",
+    "section": "Exempel: Godkänt?",
+    "text": "Exempel: Godkänt?\n\n\ne_gräns = 15\npoäng = int(input('Ange din provpoäng -&gt; '))\nif poäng &gt;= e_gräns:\n   print('Godkänt')\nprint('Programmet avslutas')\n\n\nResultatet av input är en sträng; denna kan göras om till ett heltal med int enligt rad 2 ovan."
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/villkor/villkor-pres.html#exempel-godkänt-eller-ej",
+    "href": "prog1000x/python/presentationer/villkor/villkor-pres.html#exempel-godkänt-eller-ej",
+    "title": "Villkor i Python",
+    "section": "Exempel: Godkänt eller ej?",
+    "text": "Exempel: Godkänt eller ej?\n\n\ne_gräns = 15\npoäng = int(input('Ange din provpoäng -&gt; '))\nif poäng &gt;= e_gräns:\n   print('Godkänt')\nelse:\n  print('Ej godkänt')\nprint('Programmet avslutas')"
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/villkor/villkor-pres.html#jämförelseoperatorer",
+    "href": "prog1000x/python/presentationer/villkor/villkor-pres.html#jämförelseoperatorer",
+    "title": "Villkor i Python",
+    "section": "Jämförelseoperatorer",
+    "text": "Jämförelseoperatorer\n\n\n\n&gt;\n&lt;\n&gt;=\n&lt;=\n==\n!=\n\nStörre än\nMindre än\nStörre än eller lika med\nMindre än eller lika med\nLika med\nSkilt från\n\n\nObservera skillnaden mellan tilldelande likhetstecken och jämförande likhetstecken!\n\n\n\n\nprint(3 == 3) # True\nprint(3 &lt;= 3) # True\nprint(3 != 3) # False\nprint(3 != 4) # True\n\na = 3  # Tilldelande\nb = 8  # Tilldelande\na == b # Jämförande\n# Rad 3 evalueras till False\nTilldelning sker från höger till vänster."
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/villkor/villkor-pres.html#booleska-värden",
+    "href": "prog1000x/python/presentationer/villkor/villkor-pres.html#booleska-värden",
+    "title": "Villkor i Python",
+    "section": "Booleska värden",
+    "text": "Booleska värden\n Värdena True och  False kallas för booleska värden (efter George Boole, 1815 – 1864). \n Variabler som antar denna typ av värden kallas för booleska variabler. \n\n\nmy_boolean = True\nif (my_boolean):\n   print(\"Den booleska variabelns värde var True\")\n\nDen booleska variabelns värde var True\n\n\n\n\n\nmy_second_boolean = False\nif (not my_second_boolean):\n   print(\"Den booleska variabelns värde var inte True\")\n\nDen booleska variabelns värde var inte True"
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/villkor/villkor-pres.html#sammansättning-av-booleska-värden",
+    "href": "prog1000x/python/presentationer/villkor/villkor-pres.html#sammansättning-av-booleska-värden",
+    "title": "Villkor i Python",
+    "section": "Sammansättning av booleska värden",
+    "text": "Sammansättning av booleska värden\n\n\n\nBooleska värden går att kombinera med operatorerna or och  and .\n\na = True\nb = False\nprint(a and b)         # False\nprint(a or b)          # True\nprint((a or b) and a)  # True\nprint(not a)           # False\nprint(not b)           # True"
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/villkor/villkor-pres.html#exempel-kategorisera-talet",
+    "href": "prog1000x/python/presentationer/villkor/villkor-pres.html#exempel-kategorisera-talet",
+    "title": "Villkor i Python",
+    "section": "Exempel: Kategorisera talet",
+    "text": "Exempel: Kategorisera talet\n\n\n\n\n\ntal = int(input('Ange valfritt heltal -&gt;'))\nif tal &gt;= 0:\n   if tal == 0:\n      print('Noll')\n   else:\n      print('Positivt')\nelse:\n   print('Negativt')\n\nprint('Programmet avslutas')"
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/strangar/strangar-pres.html#dagens-mål",
+    "href": "prog1000x/python/presentationer/strangar/strangar-pres.html#dagens-mål",
+    "title": "Strängar i Python",
+    "section": "Dagens mål",
+    "text": "Dagens mål\n\nAtt känna till datatypen str\nAtt kunna komma åt enskilda tecken i en sträng\nAtt kunna applicera olika metoder på en sträng"
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/strangar/strangar-pres.html#vad-är-en-sträng",
+    "href": "prog1000x/python/presentationer/strangar/strangar-pres.html#vad-är-en-sträng",
+    "title": "Strängar i Python",
+    "section": "Vad är en sträng?",
+    "text": "Vad är en sträng?\n\n\n\n\nEn sträng är en följd av tecken. Ofta används dessa för någon form av utmatning i programmet.\nDen datatyp som representerar en sträng i Python kallas str.\nSträngar har vissa saker gemensamt med listor; t ex så har varje tecken ett index, som gör att det kan adresseras."
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/strangar/strangar-pres.html#exempel-på-en-sträng",
+    "href": "prog1000x/python/presentationer/strangar/strangar-pres.html#exempel-på-en-sträng",
+    "title": "Strängar i Python",
+    "section": "Exempel på en sträng",
+    "text": "Exempel på en sträng\n\n\n\nmy_string = \"Hello, world\"\nTexten \"Hello, world\" kallas för en strängkonstant eller strängliteral. Denna strängkonstant måste vara given med citationstecken."
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/strangar/strangar-pres.html#strängar-jämfört-med-listor",
+    "href": "prog1000x/python/presentationer/strangar/strangar-pres.html#strängar-jämfört-med-listor",
+    "title": "Strängar i Python",
+    "section": "Strängar jämfört med listor",
+    "text": "Strängar jämfört med listor\nVarje teckenläge i en sträng har ett index. Det går att nå ett tecken med hjälp av detta index.\n\nmy_string = \"Hello, world\"\nprint(f\"Strängkonstanten är: {my_string}\")\nprint(f\"Strängkonstantens första tecken är: {my_string[0]}\")\nprint(f\"Tecknet \\\"o\\\" finns första gången på index: {my_string.index('o')}\")\n\nSträngkonstanten är: Hello, world\nSträngkonstantens första tecken är: H\nTecknet \"o\" finns första gången på index: 4\n\n\n\nEn skillnad mot listor är att strängar inte går att förändra. Vi kan inte lägga till ett tecken med något som liknar append() eller ta bort ett tecken med något som liknar remove().\nInnehållet i en sträng kallas som sagt strängkonstant."
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/strangar/strangar-pres.html#delsträngar",
+    "href": "prog1000x/python/presentationer/strangar/strangar-pres.html#delsträngar",
+    "title": "Strängar i Python",
+    "section": "Delsträngar",
+    "text": "Delsträngar\n\n\n\nPå samma sätt som med listor går det att ta fram en delsträng enligt följande.\n\nmy_str = \"Detta är en sträng som består av 42 tecken\"\nprint(my_str[:8])\nprint(my_str[19:29])\nprint(my_str[33:])\n\nDetta är\nsom består\n42 tecken"
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/strangar/strangar-pres.html#loopa-genom-strängar",
+    "href": "prog1000x/python/presentationer/strangar/strangar-pres.html#loopa-genom-strängar",
+    "title": "Strängar i Python",
+    "section": "Loopa genom strängar",
+    "text": "Loopa genom strängar\n\n\n\nDet går att loopa genom en sträng och på så sätt gå igenom tecken för tecken. I följande exempel skrivs vokalerna ut i en sträng samtidigt som övriga tecken maskeras.\n\nvowels = \"aeiouyåäö\"\nchars = \"Hello, world\"\nfor char in chars:\n    if char.lower() in vowels:\n        print(char, end=\"\")\n    else:\n        print(\"*\", end=\"\")\n\n*e**o***o***"
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/strangar/strangar-pres.html#bygg-ny-sträng-från-original",
+    "href": "prog1000x/python/presentationer/strangar/strangar-pres.html#bygg-ny-sträng-från-original",
+    "title": "Strängar i Python",
+    "section": "Bygg ny sträng från original",
+    "text": "Bygg ny sträng från original\nExempel: skriva ut vokalerna i en sträng.\n\nvowels = \"aeiouyåäö\"\nsource = \"Hello, world\"\ndestination = \"\"\nfor char in source:\n    if char.lower() in vowels:\n        destination += char\n    else:\n        destination += \"*\"\nprint(destination)\n\n*e**o***o***\n\n\nEffekten är bl a att valda delar av source kopieras till destination med additionsoperatorn."
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/strangar/strangar-pres.html#strängmetoder",
+    "href": "prog1000x/python/presentationer/strangar/strangar-pres.html#strängmetoder",
+    "title": "Strängar i Python",
+    "section": "Strängmetoder",
+    "text": "Strängmetoder\nVi har redan sett exempel på strängmetoder: .index(), som returnerar indexnumret för första förekomsten av ett tecken i en sträng, och .lower(), vilken returnerar samma sträng som vi tillämpar metoden på, men alla alfanumeriska tecken blir gemener (“små bokstäver”).\nFler exempel på användbara strängmetoder finns på detta “cheat sheet”."
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/strangar/strangar-pres.html#modifiering-genom-tilldelning",
+    "href": "prog1000x/python/presentationer/strangar/strangar-pres.html#modifiering-genom-tilldelning",
+    "title": "Strängar i Python",
+    "section": "Modifiering genom tilldelning",
+    "text": "Modifiering genom tilldelning\n\nSträngmetoder förändrar inte strängen.\n\n\nmy_str = \"Detta är en sträng som består av 42 tecken\"\nmy_upper_str = my_str.upper()\nprint(my_str)\nprint(my_upper_str)\n\nDetta är en sträng som består av 42 tecken\nDETTA ÄR EN STRÄNG SOM BESTÅR AV 42 TECKEN\n\n\n\n\n\n\nDet går också att tilldela den gamla strängens namn det nya värdet.\n\n\nmy_str = \"Detta är en sträng som består av 42 tecken\"\nmy_str = my_str.upper()\nprint(my_str)\n\nDETTA ÄR EN STRÄNG SOM BESTÅR AV 42 TECKEN"
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/strangar/strangar-pres.html#sammanfattning",
+    "href": "prog1000x/python/presentationer/strangar/strangar-pres.html#sammanfattning",
+    "title": "Strängar i Python",
+    "section": "Sammanfattning",
+    "text": "Sammanfattning\n\nSträngar i ett datorprogram är en följd av tecken\nPå samma sätt som listor så kan enskilda tecken kommas åt med sitt indexnummer\nTill skillnad från listor så kan strängen inte förändras…\n… men vi kan få en “effekt” av en förändring t ex genom användning av additionsoperatorn (den gamla strängen skrivs då över)\nDet finns strängmetoder med vars hjälp det går att utföra olika operationer på strängar"
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/intro/intro-pres.html#introduktionsvideo",
+    "href": "prog1000x/python/presentationer/intro/intro-pres.html#introduktionsvideo",
+    "title": "Introduktion Programmering",
+    "section": "Introduktionsvideo",
+    "text": "Introduktionsvideo"
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/intro/intro-pres.html#förkunskaper",
+    "href": "prog1000x/python/presentationer/intro/intro-pres.html#förkunskaper",
+    "title": "Introduktion Programmering",
+    "section": "Förkunskaper?",
+    "text": "Förkunskaper?"
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/intro/intro-pres.html#blockschema",
+    "href": "prog1000x/python/presentationer/intro/intro-pres.html#blockschema",
+    "title": "Introduktion Programmering",
+    "section": "Blockschema",
+    "text": "Blockschema"
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/intro/intro-pres.html#vad-är-ett-datorprogram",
+    "href": "prog1000x/python/presentationer/intro/intro-pres.html#vad-är-ett-datorprogram",
+    "title": "Introduktion Programmering",
+    "section": "Vad är ett datorprogram?",
+    "text": "Vad är ett datorprogram?\n\n\n\nEtt datorprogram är som en uppsättning instruktioner eller regler som berättar för datorn vad den ska göra.\n\n\n\n\nPrecis som vi människor använder oss av instruktioner för att utföra olika uppgifter, använder sig också en dator av programmet för att lösa problem och utföra specifika arbetsuppgifter.\n\n\n\n\nDessa instruktioner i ett datorprogram skrivs vanligtvis i ett programmeringsspråk, vilket är ett särskilt språk som både människor och datorer kan förstå.\n\n\n\n\nNär programmet körs på en dator läser den stegvis igenom varje instruktion och utför de angivna operationerna."
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/intro/intro-pres.html#vad-är-ett-datorprogram-forts.",
+    "href": "prog1000x/python/presentationer/intro/intro-pres.html#vad-är-ett-datorprogram-forts.",
+    "title": "Introduktion Programmering",
+    "section": "Vad är ett datorprogram? (forts.)",
+    "text": "Vad är ett datorprogram? (forts.)\n\n\n\nGenom att kombinera olika instruktionssekvenser kan man bygga upp mer komplexa program som kan hantera allt från matematiska beräkningar till grafikrendering eller datahantering.\n\n\n\n\nMänniskor skapar dessa program för att automatisera processer, lösa problem eller utveckla nya teknologier och applikationer som används inom allt från spelutveckling till medicinsk forskning och affärsverksamhet.\n\n\n\nSammanfattningsvis kan man säga att ett datorprogram är en samling av instruktioner skrivna i programmeringsspråk, vilket ger möjlighet att styra hur en dators hårdvara fungerar och får den att utföra specifika uppgifter."
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/intro/intro-pres.html#variabler",
+    "href": "prog1000x/python/presentationer/intro/intro-pres.html#variabler",
+    "title": "Introduktion Programmering",
+    "section": "Variabler",
+    "text": "Variabler\nEn variabel är ett “namn” på ett värde. Detta värde kan uppdateras.\n\n\n\n\n“Tänk på ett tal”\n\n\n\n\n\n“Dubbla det”\n\n\n\n\n\n“Lägg till 5 till resultatet”\n\n\n\nx = 5\n\n\n\n\n\nx = 2 * x\n\n\n\n\n\nx = x + 5\n\n\n\n\n\n\n\n\n\n\n\n\n\nNu har x värdet 15."
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/intro/intro-pres.html#variabeltyper",
+    "href": "prog1000x/python/presentationer/intro/intro-pres.html#variabeltyper",
+    "title": "Introduktion Programmering",
+    "section": "Variabeltyper",
+    "text": "Variabeltyper\n\nNågra vanliga typer av variabler är  int (heltal), float (tal med decimaler) och string (sträng, text).\n\n\nExempel:\n\nett_heltal  = 5\nett_flyttal = 2.9\nen_sträng   = \"En sträng\"\n\n\nStränginnehållet måste omgärdas av citationstecken! (\"...\") Python är ett löst typat språk; variabler kan byta typ under körning."
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/intro/intro-pres.html#variabler-i-datorminnet",
+    "href": "prog1000x/python/presentationer/intro/intro-pres.html#variabler-i-datorminnet",
+    "title": "Introduktion Programmering",
+    "section": "Variabler i datorminnet",
+    "text": "Variabler i datorminnet\n\nNär en variabel tilldelas ett värde kommer detta värde att sparas på en plats i datorns minne. När variabeln adresseras kommer namnet att hänvisa till denna minnesplats.\n\n\nscore \n\n\nspeed \n\n\nname \n\n\n\n...\n\n\n42\n\n\n5.2\n\n\n\"Alice\"\n\n\n...\n\n\n\n\n\n\nMinnesadresser"
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/intro/intro-pres.html#några-regler-för-variabelnamn",
+    "href": "prog1000x/python/presentationer/intro/intro-pres.html#några-regler-för-variabelnamn",
+    "title": "Introduktion Programmering",
+    "section": "Några regler för variabelnamn",
+    "text": "Några regler för variabelnamn\n\n\nAlla bokstavstecken och siffror får användas\n\n\n\n\nKan inte börja med en siffra\n\n\n\n\nKan inte innehålla mellanslag\n\n\n\n\nKan inte innehålla bindestreck\n\n\n\n\nPython gör skillnad på versaler och gemener (speed = 42 och Speed = 42 är olika)"
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/intro/intro-pres.html#några-regler-för-variabelnamn-forts.",
+    "href": "prog1000x/python/presentationer/intro/intro-pres.html#några-regler-för-variabelnamn-forts.",
+    "title": "Introduktion Programmering",
+    "section": "Några regler för variabelnamn (forts.)",
+    "text": "Några regler för variabelnamn (forts.)\n\n\n\n\n\nVariabelnamn bör inledas med en gemen (“liten”) bokstav\n\n\n\n\nVariabelnamn bör vara uttrycksfulla, dvs beskriva vad de står för (t ex price respektive name)\n\n\n\n\nOrd separeras, t ex first_name = \"Alice\"\n\n\n\n\nLänk: Tillåtna namn på variabler"
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/intro/intro-pres.html#övning",
+    "href": "prog1000x/python/presentationer/intro/intro-pres.html#övning",
+    "title": "Introduktion Programmering",
+    "section": "Övning",
+    "text": "Övning\n\n\n\n\nGå in på app.edublocks.org\nSkapa fem variabelnamn: namn, ålder, styrka, intresse_1 och intresse_2\nGe variablerna värden för att presentera dig själv\nStyrkan ska anges som ett heltal mellan 1 och 10, men ska i presentationen överdrivas med 20 %\n\n\n\n\n\nExempel (variabelvärden i gult)\n\nJag heter: Kalle\nÅlder i år: 17\nMin styrka: 8.4\nJag gillar segling och matlagning"
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/intro/intro-pres.html#uppgift",
+    "href": "prog1000x/python/presentationer/intro/intro-pres.html#uppgift",
+    "title": "Introduktion Programmering",
+    "section": "Uppgift",
+    "text": "Uppgift\n\nSkapa mappen Programmering, som ska ligga under Dokument på din dator (här ska du organisera dina filer under kursen).\nLadda ned och installera Pythonmiljön Thonny från https://thonny.org/\nKopiera koden som skapades från den föregående “block-övningen” till ett dokument i Thonny och kör den."
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/intro/intro-pres.html#det-du-bör-ha-med-dig-efter-lektionen",
+    "href": "prog1000x/python/presentationer/intro/intro-pres.html#det-du-bör-ha-med-dig-efter-lektionen",
+    "title": "Introduktion Programmering",
+    "section": "Det du bör ha med dig efter lektionen",
+    "text": "Det du bör ha med dig efter lektionen\n\nKunna definiera ett datorprogram\nKänna till vad en variabel är, hur de bör namnges och känna till några olika typer av dessa\nKunna skriva ut strängar och tal från variabler i EduBlocks"
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/intro/intro-pres.html#kursöversikt",
+    "href": "prog1000x/python/presentationer/intro/intro-pres.html#kursöversikt",
+    "title": "Introduktion Programmering",
+    "section": "Kursöversikt",
+    "text": "Kursöversikt\n\n\nHösttermin\n\n\nPython med EduBlocks,ca 1 vecka\nGrunderna i Pythonkodning, ca 7 veckor\nNågra mindre projekt,ca 2x3 veckor\nGitHub\nÖvrigt innehåll enl. kursplan\n\n\n\nVårtermin\n\n\nNågra övriga pythonkoncept och algoritmer\nJavaScript, grafiskt innehåll i webbläsare\nProjekt"
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/intro/intro-pres.html#några-riktlinjer-och-tips",
+    "href": "prog1000x/python/presentationer/intro/intro-pres.html#några-riktlinjer-och-tips",
+    "title": "Introduktion Programmering",
+    "section": "Några riktlinjer och tips",
+    "text": "Några riktlinjer och tips\n\n\nNär vi kodar Python så görs det i Thonny\n\n\n\nVi använder inte AI för att generera kod\n\n\n\n\nVi kan däremot fråga AI om varför kod inte fungerar som tänkt\n\n\n\n\nKoda gärna tillsammans\n\n\n\n\nAtt kunna skriva kod börjar ofta med att läsa kod\n\n\n\n\nDela upp problem i mindre problem, som i sin tur delas upp i ännu mindre problem, osv"
+  },
+  {
+    "objectID": "prog1000x/python/misc/main.html",
+    "href": "prog1000x/python/misc/main.html",
+    "title": "Python – grundläggande programmering",
+    "section": "",
+    "text": "Namn: _________________________________________________________________________"
+  },
+  {
+    "objectID": "prog1000x/python/misc/main.html#uppgift-1-vad-skrivs-ut-4p",
+    "href": "prog1000x/python/misc/main.html#uppgift-1-vad-skrivs-ut-4p",
+    "title": "Python – grundläggande programmering",
+    "section": "Uppgift 1 – Vad skrivs ut? [4p]",
+    "text": "Uppgift 1 – Vad skrivs ut? [4p]\nTitta på programmet:\n\nx = 5\ny = 3\nx = x + y\ny = x - y\n\n\nVilket värde har x respektive y efter körning?\n\nSvar: _________________________________________________________________________\n\nLägg till en programrad sist i koden, där du använder variablerna, som skriver utx + y = ..., där punkterna ersätts med det aktuella värdet av summan.\n\nSvar: _________________________________________________________________________"
+  },
+  {
+    "objectID": "prog1000x/python/misc/main.html#uppgift-2-fyll-i-rätt-kod-2p",
+    "href": "prog1000x/python/misc/main.html#uppgift-2-fyll-i-rätt-kod-2p",
+    "title": "Python – grundläggande programmering",
+    "section": "Uppgift 2 – Fyll i rätt kod [2p]",
+    "text": "Uppgift 2 – Fyll i rätt kod [2p]\nProgrammet ska skriva ut “Minusgrader” om temperaturen är under 0, “Svalt” om temperaturen är mellan 0 och 19, och “Varmt” annars.\nFyll i de tre luckorna.\n\ntemperatur = 12\n\nif temperatur _____ 0:\n    print(\"Minusgrader\")\n_____ temperatur &lt; 20:\n    print(\"Svalt\")\n_____:\n    print(\"Varmt\")"
+  },
+  {
+    "objectID": "prog1000x/python/misc/main.html#uppgift-3-vilket-värde-har-variabeln-2p",
+    "href": "prog1000x/python/misc/main.html#uppgift-3-vilket-värde-har-variabeln-2p",
+    "title": "Python – grundläggande programmering",
+    "section": "Uppgift 3 – Vilket värde har variabeln? [2p]",
+    "text": "Uppgift 3 – Vilket värde har variabeln? [2p]\nTitta på programmet nedan (vänd blad): \n\npoäng = 10\nif poäng &gt; 5:\n    poäng = poäng + 3\nelse:\n    poäng = poäng - 2\n\npoäng = poäng * 2\n\nAnge värdet på poäng när programmet är färdigt: _____________________________"
+  },
+  {
+    "objectID": "prog1000x/python/misc/main.html#uppgift-4-vad-händer-i-while-loopen-2p",
+    "href": "prog1000x/python/misc/main.html#uppgift-4-vad-händer-i-while-loopen-2p",
+    "title": "Python – grundläggande programmering",
+    "section": "Uppgift 4 – Vad händer i while-loopen? [2p]",
+    "text": "Uppgift 4 – Vad händer i while-loopen? [2p]\n\nx = 1\nwhile x &lt;= 6:\n    if x == 3:\n        x = x + 1\n        continue\n    if x == 5:\n        break\n    x += 1\n    print(x)\n\nVilka tal skrivs ut? ___________________________________"
+  },
+  {
+    "objectID": "prog1000x/python/misc/main.html#uppgift-5-vad-är-fel-2p",
+    "href": "prog1000x/python/misc/main.html#uppgift-5-vad-är-fel-2p",
+    "title": "Python – grundläggande programmering",
+    "section": "Uppgift 5 – Vad är fel? [2p]",
+    "text": "Uppgift 5 – Vad är fel? [2p]\nKim har skrivit programraderna\n\nx = 1\nwhile x &lt; 5:\n    print(x, end=\" \")\n\nKim förväntar sig utskriften 1 2 3 4 5, men ser att hela skärmen fylls med ettor. Skriv ett nytt program nedan, baserat på Kims, som ger utskriften enligt förväntning (utskriften ska ske i en while-loop). Tips: Kim har gjort två missar."
+  },
+  {
+    "objectID": "fy/simuleringar/waves/index.html#gående-vågor",
+    "href": "fy/simuleringar/waves/index.html#gående-vågor",
+    "title": "Simuleringar vågrörelse",
+    "section": "Gående vågor",
+    "text": "Gående vågor\n\nGående transversella vågor\nEn gående våg (travelling wave) består av partiklar som svänger med en viss fasförskjutning i förhållande till varandra. Nedan visas en transversell våg, där varje partikel rör sig vinkelrätt mot vågens utbredningsriktning. Svängningen är harmonisk, vilket innebär att varje partikel rör sig enligt en sinusfunktion över tid — och vågen får därmed en sinusformad profil.\nI den här animeringen sker utbredningen åt höger, vilket innebär att vågens form förflyttar sig i den riktningen, även om varje enskild partikel bara rör sig upp och ner.\n\n\n\n\n\n\n\n\n\nGående longitudinella vågor\nUnder konstruktion.",
     "crumbs": [
       "Home",
-      "Programmering 1",
-      "Presentationer, Python",
-      "Att formatera text"
+      "Fysikrelaterat",
+      "Simuleringar vågrörelse"
     ]
   },
   {
-    "objectID": "prog1000x/python/presentationer/villkor/index.html",
-    "href": "prog1000x/python/presentationer/villkor/index.html",
-    "title": "Presentation: Villkor",
-    "section": "",
-    "text": "Presentation på hela skärmen",
+    "objectID": "fy/simuleringar/waves/index.html#stående-våg",
+    "href": "fy/simuleringar/waves/index.html#stående-våg",
+    "title": "Simuleringar vågrörelse",
+    "section": "Stående våg",
+    "text": "Stående våg\nUnder konstruktion.",
     "crumbs": [
       "Home",
-      "Programmering 1",
-      "Presentationer, Python",
-      "Presentation: Villkor"
+      "Fysikrelaterat",
+      "Simuleringar vågrörelse"
     ]
   },
   {
-    "objectID": "prog1000x/python/presentationer/villkor/index.html#övningar",
-    "href": "prog1000x/python/presentationer/villkor/index.html#övningar",
-    "title": "Presentation: Villkor",
-    "section": "Övningar",
-    "text": "Övningar\nÖvningar i dokumentet Övningar: Villkor",
-    "crumbs": [
-      "Home",
-      "Programmering 1",
-      "Presentationer, Python",
-      "Presentation: Villkor"
-    ]
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "CodeBubo Nest 🦉",
+    "section": "",
+    "text": "Under denna sajt samlar jag (se sidan About om vem “jag” är) en del av de presentationer, uppgifter, instruktioner och dokument som jag använder i min undervisning i matematik, fysik och programmering.\nSajten är under utbyggnad, och viss omstrukturering kan förekomma."
   },
   {
-    "objectID": "prog1000x/python/misc/ovningsdok-1/main.html",
-    "href": "prog1000x/python/misc/ovningsdok-1/main.html",
-    "title": "Programmeringsövningar",
+    "objectID": "index.html#hello-world",
+    "href": "index.html#hello-world",
+    "title": "CodeBubo Nest 🦉",
     "section": "",
-    "text": "Skriv ett program som slumpar fram utfall då två tärningar kastas. Utmatningen ska vara enligt följande (förstås med varierande utfall):\n6, 1\nSlå tärningarna igen (j/n) --&gt; j\n5, 2\nSlå tärningarna igen (j/n) --&gt; x\nSlå tärningarna igen (j/n) --&gt; J\n6, 4\nSlå tärningarna igen (j/n) --&gt; j\n2, 1\nSlå tärningarna igen (j/n) --&gt; n\nInmatningen ska vara säker, dvs om inte spelaren matar in y eller n så ska frågan upprepas. Tanken är också att koden enbart ska ha ett anrop till randint, och att de två utfallen alltså ska skapas i en loop inne i den loop som upprepar kasten. Observera också att utfallen ska presenteras på en enda rad.\nRekommenderad arbetsgång\n\nSkapa en while-loop som loopar i “evighet”.\nI den den loopen, skapa en loop som snurrar två varv.\nI loopen som snurrar två varv, skapa och skriv ut ett slumptal.\nTillbaka i den yttre loopen, ta emot en inmatning (j/n)\nHantera utfallet av inmatningen. Möjliga utfall är att loopen fortsätter, att den bryts eller att inmatningen ska göras om eftersom den var ogiltig,\n\n\n\n\n\nEtt personnummer byggs upp enligt principen ååmmdd-nnnn. Den sista siffran, den s.k. kontrollsiffran, kan inte väljas godtyckligt; hela numret matchar följande algoritm:\nVarannan siffra multipliceras med 2, med start på första siffran i personnumret. De övriga siffrorna används som de är. Om något tal vid multiplikationen blir större än 9 ersätts det talet med dess siffersumma. Därefter summeras alla tal och om summan är jämnt delbar med 10 så är kontrollsiffran korrekt.\nExempel: Personnumret 811218-9876 valideras.\n8 * 2 = 16, använd siffersumman 7\n1 * 1 = 1\n1 * 2 = 2\n2 * 1 = 2\n1 * 2 = 2\n8 * 1 = 8\n9 * 2 = 18, använd siffersumman 9\n8 * 1 = 8\n7 * 2 = 14, använd siffersumman 5\n6 * 1 = 6\n\n7 + 1 + 2 + 2 + 2 + 8 + 9 + 8 + 5 + 6  = 50, jämmnt delbart med 10,\nd.v.s. kontrollsiffran 6 är korrekt.\nKörningsexempel:\nAnge ett personnummer --&gt; 811218-9876\nKontrollsiffran stämmer :-)\n\nAnge ett personnummer --&gt; 821218-9876\nFelaktig kontrollsiffra :-(\nTips: För att få siffersumman i ett tvåsiffrigt tal, t ex 14 kan satsen 14 // 10 + 14 % 10 användas. Den gör en heltalsdivision med 10, vilket ger första siffran i talet, följt av en restdivision med 10, vilken ger den sista siffran. Dessa siffror adderas.\nRekommenderad arbetsgång\n\nLåt användaren mata in ett personnummer, gör inte om det till ett heltal. Spara strängen i variabeln pnum.\nSkapa en summa-variabeln summa utanför loopen, sätt den till 0.\nLoopa genom personnummersträngen, for num in pnum:...\nAnvänd en räknarvariabel för att hålla reda på ordningsnumret, dvs om aktuell siffra ska multipliceras med 2.\nGör om strängen num till ett heltal (eventuellt med regeln om siffersumma om talet är tvåsiffrigt).\nAddera värdet till summavariabeln.\nEfter loopen: kontrollera om summa är delbar med 10 (summa % 10 == 0).\n\nBörja med att validera ett nummer utan bindestrecket, det är lättare. Gör också gärna utskrifter av delresultat för att kontrollera om delresultaten blir som tänkt."
+    "text": "Under denna sajt samlar jag (se sidan About om vem “jag” är) en del av de presentationer, uppgifter, instruktioner och dokument som jag använder i min undervisning i matematik, fysik och programmering.\nSajten är under utbyggnad, och viss omstrukturering kan förekomma."
   },
   {
-    "objectID": "prog1000x/python/misc/ovningsdok-1/main.html#tärningarna",
-    "href": "prog1000x/python/misc/ovningsdok-1/main.html#tärningarna",
-    "title": "Programmeringsövningar",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
     "section": "",
-    "text": "Skriv ett program som slumpar fram utfall då två tärningar kastas. Utmatningen ska vara enligt följande (förstås med varierande utfall):\n6, 1\nSlå tärningarna igen (j/n) --&gt; j\n5, 2\nSlå tärningarna igen (j/n) --&gt; x\nSlå tärningarna igen (j/n) --&gt; J\n6, 4\nSlå tärningarna igen (j/n) --&gt; j\n2, 1\nSlå tärningarna igen (j/n) --&gt; n\nInmatningen ska vara säker, dvs om inte spelaren matar in y eller n så ska frågan upprepas. Tanken är också att koden enbart ska ha ett anrop till randint, och att de två utfallen alltså ska skapas i en loop inne i den loop som upprepar kasten. Observera också att utfallen ska presenteras på en enda rad.\nRekommenderad arbetsgång\n\nSkapa en while-loop som loopar i “evighet”.\nI den den loopen, skapa en loop som snurrar två varv.\nI loopen som snurrar två varv, skapa och skriv ut ett slumptal.\nTillbaka i den yttre loopen, ta emot en inmatning (j/n)\nHantera utfallet av inmatningen. Möjliga utfall är att loopen fortsätter, att den bryts eller att inmatningen ska göras om eftersom den var ogiltig,"
+    "text": "Jag heter Nikodemus Karlsson, och är verksam gymnasielärare i matematik, fysik och programmering. Syftet med sajten är att samla mycket av det undervisningsmaterial som jag använder."
   },
   {
-    "objectID": "prog1000x/python/misc/ovningsdok-1/main.html#validering-av-personnummer",
-    "href": "prog1000x/python/misc/ovningsdok-1/main.html#validering-av-personnummer",
-    "title": "Programmeringsövningar",
+    "objectID": "about.html#vem-skriver-på-denna-sajt",
+    "href": "about.html#vem-skriver-på-denna-sajt",
+    "title": "About",
     "section": "",
-    "text": "Ett personnummer byggs upp enligt principen ååmmdd-nnnn. Den sista siffran, den s.k. kontrollsiffran, kan inte väljas godtyckligt; hela numret matchar följande algoritm:\nVarannan siffra multipliceras med 2, med start på första siffran i personnumret. De övriga siffrorna används som de är. Om något tal vid multiplikationen blir större än 9 ersätts det talet med dess siffersumma. Därefter summeras alla tal och om summan är jämnt delbar med 10 så är kontrollsiffran korrekt.\nExempel: Personnumret 811218-9876 valideras.\n8 * 2 = 16, använd siffersumman 7\n1 * 1 = 1\n1 * 2 = 2\n2 * 1 = 2\n1 * 2 = 2\n8 * 1 = 8\n9 * 2 = 18, använd siffersumman 9\n8 * 1 = 8\n7 * 2 = 14, använd siffersumman 5\n6 * 1 = 6\n\n7 + 1 + 2 + 2 + 2 + 8 + 9 + 8 + 5 + 6  = 50, jämmnt delbart med 10,\nd.v.s. kontrollsiffran 6 är korrekt.\nKörningsexempel:\nAnge ett personnummer --&gt; 811218-9876\nKontrollsiffran stämmer :-)\n\nAnge ett personnummer --&gt; 821218-9876\nFelaktig kontrollsiffra :-(\nTips: För att få siffersumman i ett tvåsiffrigt tal, t ex 14 kan satsen 14 // 10 + 14 % 10 användas. Den gör en heltalsdivision med 10, vilket ger första siffran i talet, följt av en restdivision med 10, vilken ger den sista siffran. Dessa siffror adderas.\nRekommenderad arbetsgång\n\nLåt användaren mata in ett personnummer, gör inte om det till ett heltal. Spara strängen i variabeln pnum.\nSkapa en summa-variabeln summa utanför loopen, sätt den till 0.\nLoopa genom personnummersträngen, for num in pnum:...\nAnvänd en räknarvariabel för att hålla reda på ordningsnumret, dvs om aktuell siffra ska multipliceras med 2.\nGör om strängen num till ett heltal (eventuellt med regeln om siffersumma om talet är tvåsiffrigt).\nAddera värdet till summavariabeln.\nEfter loopen: kontrollera om summa är delbar med 10 (summa % 10 == 0).\n\nBörja med att validera ett nummer utan bindestrecket, det är lättare. Gör också gärna utskrifter av delresultat för att kontrollera om delresultaten blir som tänkt."
+    "text": "Jag heter Nikodemus Karlsson, och är verksam gymnasielärare i matematik, fysik och programmering. Syftet med sajten är att samla mycket av det undervisningsmaterial som jag använder."
+  },
+  {
+    "objectID": "about.html#verktyg-som-används-för-uppbyggnad",
+    "href": "about.html#verktyg-som-används-för-uppbyggnad",
+    "title": "About",
+    "section": "Verktyg som används för uppbyggnad",
+    "text": "Verktyg som används för uppbyggnad\nSajten är byggd med publiceringssystemet Quarto och publicerad på GitHub Pages. Det jag framförallt gillar med Quarto är att man skriver i Markdown och att det är enkelt att integrera text, bilder, kod samt matematiska formler på såväl vanliga webbsidor, presentationer och för export till pdf-dokument. Quarto är byggd på öppen källkod och finns såväl till Windows, Linux och macOS."
+  },
+  {
+    "objectID": "about.html#användning-av-materialet",
+    "href": "about.html#användning-av-materialet",
+    "title": "About",
+    "section": "Användning av materialet",
+    "text": "Användning av materialet\nDen som önskar får gärna använda, kopiera och sprida material från sajten. Källkod till sidorna och presentationerna finns i denna repo på GitHub."
   },
   {
     "objectID": "prog1000x/python/cheat_sheet_python.html",
@@ -691,531 +1126,205 @@
     ]
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "prog1000x/python/misc/ovningsdok-1/main.html",
+    "href": "prog1000x/python/misc/ovningsdok-1/main.html",
+    "title": "Programmeringsövningar",
     "section": "",
-    "text": "Jag heter Nikodemus Karlsson, och är verksam gymnasielärare i matematik, fysik och programmering. Syftet med sajten är att samla mycket av det undervisningsmaterial som jag använder."
+    "text": "Skriv ett program som slumpar fram utfall då två tärningar kastas. Utmatningen ska vara enligt följande (förstås med varierande utfall):\n6, 1\nSlå tärningarna igen (j/n) --&gt; j\n5, 2\nSlå tärningarna igen (j/n) --&gt; x\nSlå tärningarna igen (j/n) --&gt; J\n6, 4\nSlå tärningarna igen (j/n) --&gt; j\n2, 1\nSlå tärningarna igen (j/n) --&gt; n\nInmatningen ska vara säker, dvs om inte spelaren matar in y eller n så ska frågan upprepas. Tanken är också att koden enbart ska ha ett anrop till randint, och att de två utfallen alltså ska skapas i en loop inne i den loop som upprepar kasten. Observera också att utfallen ska presenteras på en enda rad.\nRekommenderad arbetsgång\n\nSkapa en while-loop som loopar i “evighet”.\nI den den loopen, skapa en loop som snurrar två varv.\nI loopen som snurrar två varv, skapa och skriv ut ett slumptal.\nTillbaka i den yttre loopen, ta emot en inmatning (j/n)\nHantera utfallet av inmatningen. Möjliga utfall är att loopen fortsätter, att den bryts eller att inmatningen ska göras om eftersom den var ogiltig,\n\n\n\n\n\nEtt personnummer byggs upp enligt principen ååmmdd-nnnn. Den sista siffran, den s.k. kontrollsiffran, kan inte väljas godtyckligt; hela numret matchar följande algoritm:\nVarannan siffra multipliceras med 2, med start på första siffran i personnumret. De övriga siffrorna används som de är. Om något tal vid multiplikationen blir större än 9 ersätts det talet med dess siffersumma. Därefter summeras alla tal och om summan är jämnt delbar med 10 så är kontrollsiffran korrekt.\nExempel: Personnumret 811218-9876 valideras.\n8 * 2 = 16, använd siffersumman 7\n1 * 1 = 1\n1 * 2 = 2\n2 * 1 = 2\n1 * 2 = 2\n8 * 1 = 8\n9 * 2 = 18, använd siffersumman 9\n8 * 1 = 8\n7 * 2 = 14, använd siffersumman 5\n6 * 1 = 6\n\n7 + 1 + 2 + 2 + 2 + 8 + 9 + 8 + 5 + 6  = 50, jämmnt delbart med 10,\nd.v.s. kontrollsiffran 6 är korrekt.\nKörningsexempel:\nAnge ett personnummer --&gt; 811218-9876\nKontrollsiffran stämmer :-)\n\nAnge ett personnummer --&gt; 821218-9876\nFelaktig kontrollsiffra :-(\nTips: För att få siffersumman i ett tvåsiffrigt tal, t ex 14 kan satsen 14 // 10 + 14 % 10 användas. Den gör en heltalsdivision med 10, vilket ger första siffran i talet, följt av en restdivision med 10, vilken ger den sista siffran. Dessa siffror adderas.\nRekommenderad arbetsgång\n\nLåt användaren mata in ett personnummer, gör inte om det till ett heltal. Spara strängen i variabeln pnum.\nSkapa en summa-variabeln summa utanför loopen, sätt den till 0.\nLoopa genom personnummersträngen, for num in pnum:...\nAnvänd en räknarvariabel för att hålla reda på ordningsnumret, dvs om aktuell siffra ska multipliceras med 2.\nGör om strängen num till ett heltal (eventuellt med regeln om siffersumma om talet är tvåsiffrigt).\nAddera värdet till summavariabeln.\nEfter loopen: kontrollera om summa är delbar med 10 (summa % 10 == 0).\n\nBörja med att validera ett nummer utan bindestrecket, det är lättare. Gör också gärna utskrifter av delresultat för att kontrollera om delresultaten blir som tänkt."
   },
   {
-    "objectID": "about.html#vem-skriver-på-denna-sajt",
-    "href": "about.html#vem-skriver-på-denna-sajt",
-    "title": "About",
+    "objectID": "prog1000x/python/misc/ovningsdok-1/main.html#tärningarna",
+    "href": "prog1000x/python/misc/ovningsdok-1/main.html#tärningarna",
+    "title": "Programmeringsövningar",
     "section": "",
-    "text": "Jag heter Nikodemus Karlsson, och är verksam gymnasielärare i matematik, fysik och programmering. Syftet med sajten är att samla mycket av det undervisningsmaterial som jag använder."
+    "text": "Skriv ett program som slumpar fram utfall då två tärningar kastas. Utmatningen ska vara enligt följande (förstås med varierande utfall):\n6, 1\nSlå tärningarna igen (j/n) --&gt; j\n5, 2\nSlå tärningarna igen (j/n) --&gt; x\nSlå tärningarna igen (j/n) --&gt; J\n6, 4\nSlå tärningarna igen (j/n) --&gt; j\n2, 1\nSlå tärningarna igen (j/n) --&gt; n\nInmatningen ska vara säker, dvs om inte spelaren matar in y eller n så ska frågan upprepas. Tanken är också att koden enbart ska ha ett anrop till randint, och att de två utfallen alltså ska skapas i en loop inne i den loop som upprepar kasten. Observera också att utfallen ska presenteras på en enda rad.\nRekommenderad arbetsgång\n\nSkapa en while-loop som loopar i “evighet”.\nI den den loopen, skapa en loop som snurrar två varv.\nI loopen som snurrar två varv, skapa och skriv ut ett slumptal.\nTillbaka i den yttre loopen, ta emot en inmatning (j/n)\nHantera utfallet av inmatningen. Möjliga utfall är att loopen fortsätter, att den bryts eller att inmatningen ska göras om eftersom den var ogiltig,"
   },
   {
-    "objectID": "about.html#verktyg-som-används-för-uppbyggnad",
-    "href": "about.html#verktyg-som-används-för-uppbyggnad",
-    "title": "About",
-    "section": "Verktyg som används för uppbyggnad",
-    "text": "Verktyg som används för uppbyggnad\nSajten är byggd med publiceringssystemet Quarto och publicerad på GitHub Pages. Det jag framförallt gillar med Quarto är att man skriver i Markdown och att det är enkelt att integrera text, bilder, kod samt matematiska formler på såväl vanliga webbsidor, presentationer och för export till pdf-dokument. Quarto är byggd på öppen källkod och finns såväl till Windows, Linux och macOS."
-  },
-  {
-    "objectID": "about.html#användning-av-materialet",
-    "href": "about.html#användning-av-materialet",
-    "title": "About",
-    "section": "Användning av materialet",
-    "text": "Användning av materialet\nDen som önskar får gärna använda, kopiera och sprida material från sajten. Källkod till sidorna och presentationerna finns i denna repo på GitHub."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "CodeBubo Nest 🦉",
+    "objectID": "prog1000x/python/misc/ovningsdok-1/main.html#validering-av-personnummer",
+    "href": "prog1000x/python/misc/ovningsdok-1/main.html#validering-av-personnummer",
+    "title": "Programmeringsövningar",
     "section": "",
-    "text": "Under denna sajt samlar jag (se sidan About om vem “jag” är) en del av de presentationer, uppgifter, instruktioner och dokument som jag använder i min undervisning i matematik, fysik och programmering.\nSajten är under utbyggnad, och viss omstrukturering kan förekomma."
+    "text": "Ett personnummer byggs upp enligt principen ååmmdd-nnnn. Den sista siffran, den s.k. kontrollsiffran, kan inte väljas godtyckligt; hela numret matchar följande algoritm:\nVarannan siffra multipliceras med 2, med start på första siffran i personnumret. De övriga siffrorna används som de är. Om något tal vid multiplikationen blir större än 9 ersätts det talet med dess siffersumma. Därefter summeras alla tal och om summan är jämnt delbar med 10 så är kontrollsiffran korrekt.\nExempel: Personnumret 811218-9876 valideras.\n8 * 2 = 16, använd siffersumman 7\n1 * 1 = 1\n1 * 2 = 2\n2 * 1 = 2\n1 * 2 = 2\n8 * 1 = 8\n9 * 2 = 18, använd siffersumman 9\n8 * 1 = 8\n7 * 2 = 14, använd siffersumman 5\n6 * 1 = 6\n\n7 + 1 + 2 + 2 + 2 + 8 + 9 + 8 + 5 + 6  = 50, jämmnt delbart med 10,\nd.v.s. kontrollsiffran 6 är korrekt.\nKörningsexempel:\nAnge ett personnummer --&gt; 811218-9876\nKontrollsiffran stämmer :-)\n\nAnge ett personnummer --&gt; 821218-9876\nFelaktig kontrollsiffra :-(\nTips: För att få siffersumman i ett tvåsiffrigt tal, t ex 14 kan satsen 14 // 10 + 14 % 10 användas. Den gör en heltalsdivision med 10, vilket ger första siffran i talet, följt av en restdivision med 10, vilken ger den sista siffran. Dessa siffror adderas.\nRekommenderad arbetsgång\n\nLåt användaren mata in ett personnummer, gör inte om det till ett heltal. Spara strängen i variabeln pnum.\nSkapa en summa-variabeln summa utanför loopen, sätt den till 0.\nLoopa genom personnummersträngen, for num in pnum:...\nAnvänd en räknarvariabel för att hålla reda på ordningsnumret, dvs om aktuell siffra ska multipliceras med 2.\nGör om strängen num till ett heltal (eventuellt med regeln om siffersumma om talet är tvåsiffrigt).\nAddera värdet till summavariabeln.\nEfter loopen: kontrollera om summa är delbar med 10 (summa % 10 == 0).\n\nBörja med att validera ett nummer utan bindestrecket, det är lättare. Gör också gärna utskrifter av delresultat för att kontrollera om delresultaten blir som tänkt."
   },
   {
-    "objectID": "index.html#hello-world",
-    "href": "index.html#hello-world",
-    "title": "CodeBubo Nest 🦉",
-    "section": "",
-    "text": "Under denna sajt samlar jag (se sidan About om vem “jag” är) en del av de presentationer, uppgifter, instruktioner och dokument som jag använder i min undervisning i matematik, fysik och programmering.\nSajten är under utbyggnad, och viss omstrukturering kan förekomma."
-  },
-  {
-    "objectID": "fy/simuleringar/waves/index.html#gående-vågor",
-    "href": "fy/simuleringar/waves/index.html#gående-vågor",
-    "title": "Simuleringar vågrörelse",
-    "section": "Gående vågor",
-    "text": "Gående vågor\n\nGående transversella vågor\nEn gående våg (travelling wave) består av partiklar som svänger med en viss fasförskjutning i förhållande till varandra. Nedan visas en transversell våg, där varje partikel rör sig vinkelrätt mot vågens utbredningsriktning. Svängningen är harmonisk, vilket innebär att varje partikel rör sig enligt en sinusfunktion över tid — och vågen får därmed en sinusformad profil.\nI den här animeringen sker utbredningen åt höger, vilket innebär att vågens form förflyttar sig i den riktningen, även om varje enskild partikel bara rör sig upp och ner.\n\n\n\n\n\n\n\n\n\nGående longitudinella vågor\nUnder konstruktion.",
-    "crumbs": [
-      "Home",
-      "Fysikrelaterat",
-      "Simuleringar vågrörelse"
-    ]
-  },
-  {
-    "objectID": "fy/simuleringar/waves/index.html#stående-våg",
-    "href": "fy/simuleringar/waves/index.html#stående-våg",
-    "title": "Simuleringar vågrörelse",
-    "section": "Stående våg",
-    "text": "Stående våg\nUnder konstruktion.",
-    "crumbs": [
-      "Home",
-      "Fysikrelaterat",
-      "Simuleringar vågrörelse"
-    ]
-  },
-  {
-    "objectID": "prog1000x/python/misc/main.html",
-    "href": "prog1000x/python/misc/main.html",
-    "title": "Python – grundläggande programmering",
-    "section": "",
-    "text": "Namn: _________________________________________________________________________"
-  },
-  {
-    "objectID": "prog1000x/python/misc/main.html#uppgift-1-vad-skrivs-ut-4p",
-    "href": "prog1000x/python/misc/main.html#uppgift-1-vad-skrivs-ut-4p",
-    "title": "Python – grundläggande programmering",
-    "section": "Uppgift 1 – Vad skrivs ut? [4p]",
-    "text": "Uppgift 1 – Vad skrivs ut? [4p]\nTitta på programmet:\n\nx = 5\ny = 3\nx = x + y\ny = x - y\n\n\nVilket värde har x respektive y efter körning?\n\nSvar: _________________________________________________________________________\n\nLägg till en programrad sist i koden, där du använder variablerna, som skriver utx + y = ..., där punkterna ersätts med det aktuella värdet av summan.\n\nSvar: _________________________________________________________________________"
-  },
-  {
-    "objectID": "prog1000x/python/misc/main.html#uppgift-2-fyll-i-rätt-kod-2p",
-    "href": "prog1000x/python/misc/main.html#uppgift-2-fyll-i-rätt-kod-2p",
-    "title": "Python – grundläggande programmering",
-    "section": "Uppgift 2 – Fyll i rätt kod [2p]",
-    "text": "Uppgift 2 – Fyll i rätt kod [2p]\nProgrammet ska skriva ut “Minusgrader” om temperaturen är under 0, “Svalt” om temperaturen är mellan 0 och 19, och “Varmt” annars.\nFyll i de tre luckorna.\n\ntemperatur = 12\n\nif temperatur _____ 0:\n    print(\"Minusgrader\")\n_____ temperatur &lt; 20:\n    print(\"Svalt\")\n_____:\n    print(\"Varmt\")"
-  },
-  {
-    "objectID": "prog1000x/python/misc/main.html#uppgift-3-vilket-värde-har-variabeln-2p",
-    "href": "prog1000x/python/misc/main.html#uppgift-3-vilket-värde-har-variabeln-2p",
-    "title": "Python – grundläggande programmering",
-    "section": "Uppgift 3 – Vilket värde har variabeln? [2p]",
-    "text": "Uppgift 3 – Vilket värde har variabeln? [2p]\nTitta på programmet nedan (vänd blad): \n\npoäng = 10\nif poäng &gt; 5:\n    poäng = poäng + 3\nelse:\n    poäng = poäng - 2\n\npoäng = poäng * 2\n\nAnge värdet på poäng när programmet är färdigt: _____________________________"
-  },
-  {
-    "objectID": "prog1000x/python/misc/main.html#uppgift-4-vad-händer-i-while-loopen-2p",
-    "href": "prog1000x/python/misc/main.html#uppgift-4-vad-händer-i-while-loopen-2p",
-    "title": "Python – grundläggande programmering",
-    "section": "Uppgift 4 – Vad händer i while-loopen? [2p]",
-    "text": "Uppgift 4 – Vad händer i while-loopen? [2p]\n\nx = 1\nwhile x &lt;= 6:\n    if x == 3:\n        x = x + 1\n        continue\n    if x == 5:\n        break\n    x += 1\n    print(x)\n\nVilka tal skrivs ut? ___________________________________"
-  },
-  {
-    "objectID": "prog1000x/python/misc/main.html#uppgift-5-vad-är-fel-2p",
-    "href": "prog1000x/python/misc/main.html#uppgift-5-vad-är-fel-2p",
-    "title": "Python – grundläggande programmering",
-    "section": "Uppgift 5 – Vad är fel? [2p]",
-    "text": "Uppgift 5 – Vad är fel? [2p]\nKim har skrivit programraderna\n\nx = 1\nwhile x &lt; 5:\n    print(x, end=\" \")\n\nKim förväntar sig utskriften 1 2 3 4 5, men ser att hela skärmen fylls med ettor. Skriv ett nytt program nedan, baserat på Kims, som ger utskriften enligt förväntning (utskriften ska ske i en while-loop). Tips: Kim har gjort två missar."
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/intro/intro-pres.html#introduktionsvideo",
-    "href": "prog1000x/python/presentationer/intro/intro-pres.html#introduktionsvideo",
-    "title": "Introduktion Programmering",
-    "section": "Introduktionsvideo",
-    "text": "Introduktionsvideo"
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/intro/intro-pres.html#förkunskaper",
-    "href": "prog1000x/python/presentationer/intro/intro-pres.html#förkunskaper",
-    "title": "Introduktion Programmering",
-    "section": "Förkunskaper?",
-    "text": "Förkunskaper?"
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/intro/intro-pres.html#blockschema",
-    "href": "prog1000x/python/presentationer/intro/intro-pres.html#blockschema",
-    "title": "Introduktion Programmering",
-    "section": "Blockschema",
-    "text": "Blockschema"
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/intro/intro-pres.html#vad-är-ett-datorprogram",
-    "href": "prog1000x/python/presentationer/intro/intro-pres.html#vad-är-ett-datorprogram",
-    "title": "Introduktion Programmering",
-    "section": "Vad är ett datorprogram?",
-    "text": "Vad är ett datorprogram?\n\n\n\nEtt datorprogram är som en uppsättning instruktioner eller regler som berättar för datorn vad den ska göra.\n\n\n\n\nPrecis som vi människor använder oss av instruktioner för att utföra olika uppgifter, använder sig också en dator av programmet för att lösa problem och utföra specifika arbetsuppgifter.\n\n\n\n\nDessa instruktioner i ett datorprogram skrivs vanligtvis i ett programmeringsspråk, vilket är ett särskilt språk som både människor och datorer kan förstå.\n\n\n\n\nNär programmet körs på en dator läser den stegvis igenom varje instruktion och utför de angivna operationerna."
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/intro/intro-pres.html#vad-är-ett-datorprogram-forts.",
-    "href": "prog1000x/python/presentationer/intro/intro-pres.html#vad-är-ett-datorprogram-forts.",
-    "title": "Introduktion Programmering",
-    "section": "Vad är ett datorprogram? (forts.)",
-    "text": "Vad är ett datorprogram? (forts.)\n\n\n\nGenom att kombinera olika instruktionssekvenser kan man bygga upp mer komplexa program som kan hantera allt från matematiska beräkningar till grafikrendering eller datahantering.\n\n\n\n\nMänniskor skapar dessa program för att automatisera processer, lösa problem eller utveckla nya teknologier och applikationer som används inom allt från spelutveckling till medicinsk forskning och affärsverksamhet.\n\n\n\nSammanfattningsvis kan man säga att ett datorprogram är en samling av instruktioner skrivna i programmeringsspråk, vilket ger möjlighet att styra hur en dators hårdvara fungerar och får den att utföra specifika uppgifter."
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/intro/intro-pres.html#variabler",
-    "href": "prog1000x/python/presentationer/intro/intro-pres.html#variabler",
-    "title": "Introduktion Programmering",
-    "section": "Variabler",
-    "text": "Variabler\nEn variabel är ett “namn” på ett värde. Detta värde kan uppdateras.\n\n\n\n\n“Tänk på ett tal”\n\n\n\n\n\n“Dubbla det”\n\n\n\n\n\n“Lägg till 5 till resultatet”\n\n\n\nx = 5\n\n\n\n\n\nx = 2 * x\n\n\n\n\n\nx = x + 5\n\n\n\n\n\n\n\n\n\n\n\n\n\nNu har x värdet 15."
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/intro/intro-pres.html#variabeltyper",
-    "href": "prog1000x/python/presentationer/intro/intro-pres.html#variabeltyper",
-    "title": "Introduktion Programmering",
-    "section": "Variabeltyper",
-    "text": "Variabeltyper\n\nNågra vanliga typer av variabler är  int (heltal), float (tal med decimaler) och string (sträng, text).\n\n\nExempel:\n\nett_heltal  = 5\nett_flyttal = 2.9\nen_sträng   = \"En sträng\"\n\n\nStränginnehållet måste omgärdas av citationstecken! (\"...\") Python är ett löst typat språk; variabler kan byta typ under körning."
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/intro/intro-pres.html#variabler-i-datorminnet",
-    "href": "prog1000x/python/presentationer/intro/intro-pres.html#variabler-i-datorminnet",
-    "title": "Introduktion Programmering",
-    "section": "Variabler i datorminnet",
-    "text": "Variabler i datorminnet\n\nNär en variabel tilldelas ett värde kommer detta värde att sparas på en plats i datorns minne. När variabeln adresseras kommer namnet att hänvisa till denna minnesplats.\n\n\nscore \n\n\nspeed \n\n\nname \n\n\n\n...\n\n\n42\n\n\n5.2\n\n\n\"Alice\"\n\n\n...\n\n\n\n\n\n\nMinnesadresser"
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/intro/intro-pres.html#några-regler-för-variabelnamn",
-    "href": "prog1000x/python/presentationer/intro/intro-pres.html#några-regler-för-variabelnamn",
-    "title": "Introduktion Programmering",
-    "section": "Några regler för variabelnamn",
-    "text": "Några regler för variabelnamn\n\n\nAlla bokstavstecken och siffror får användas\n\n\n\n\nKan inte börja med en siffra\n\n\n\n\nKan inte innehålla mellanslag\n\n\n\n\nKan inte innehålla bindestreck\n\n\n\n\nPython gör skillnad på versaler och gemener (speed = 42 och Speed = 42 är olika)"
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/intro/intro-pres.html#några-regler-för-variabelnamn-forts.",
-    "href": "prog1000x/python/presentationer/intro/intro-pres.html#några-regler-för-variabelnamn-forts.",
-    "title": "Introduktion Programmering",
-    "section": "Några regler för variabelnamn (forts.)",
-    "text": "Några regler för variabelnamn (forts.)\n\n\n\n\n\nVariabelnamn bör inledas med en gemen (“liten”) bokstav\n\n\n\n\nVariabelnamn bör vara uttrycksfulla, dvs beskriva vad de står för (t ex price respektive name)\n\n\n\n\nOrd separeras, t ex first_name = \"Alice\"\n\n\n\n\nLänk: Tillåtna namn på variabler"
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/intro/intro-pres.html#övning",
-    "href": "prog1000x/python/presentationer/intro/intro-pres.html#övning",
-    "title": "Introduktion Programmering",
-    "section": "Övning",
-    "text": "Övning\n\n\n\n\nGå in på app.edublocks.org\nSkapa fem variabelnamn: namn, ålder, styrka, intresse_1 och intresse_2\nGe variablerna värden för att presentera dig själv\nStyrkan ska anges som ett heltal mellan 1 och 10, men ska i presentationen överdrivas med 20 %\n\n\n\n\n\nExempel (variabelvärden i gult)\n\nJag heter: Kalle\nÅlder i år: 17\nMin styrka: 8.4\nJag gillar segling och matlagning"
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/intro/intro-pres.html#uppgift",
-    "href": "prog1000x/python/presentationer/intro/intro-pres.html#uppgift",
-    "title": "Introduktion Programmering",
-    "section": "Uppgift",
-    "text": "Uppgift\n\nSkapa mappen Programmering, som ska ligga under Dokument på din dator (här ska du organisera dina filer under kursen).\nLadda ned och installera Pythonmiljön Thonny från https://thonny.org/\nKopiera koden som skapades från den föregående “block-övningen” till ett dokument i Thonny och kör den."
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/intro/intro-pres.html#det-du-bör-ha-med-dig-efter-lektionen",
-    "href": "prog1000x/python/presentationer/intro/intro-pres.html#det-du-bör-ha-med-dig-efter-lektionen",
-    "title": "Introduktion Programmering",
-    "section": "Det du bör ha med dig efter lektionen",
-    "text": "Det du bör ha med dig efter lektionen\n\nKunna definiera ett datorprogram\nKänna till vad en variabel är, hur de bör namnges och känna till några olika typer av dessa\nKunna skriva ut strängar och tal från variabler i EduBlocks"
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/intro/intro-pres.html#kursöversikt",
-    "href": "prog1000x/python/presentationer/intro/intro-pres.html#kursöversikt",
-    "title": "Introduktion Programmering",
-    "section": "Kursöversikt",
-    "text": "Kursöversikt\n\n\nHösttermin\n\n\nPython med EduBlocks,ca 1 vecka\nGrunderna i Pythonkodning, ca 7 veckor\nNågra mindre projekt,ca 2x3 veckor\nGitHub\nÖvrigt innehåll enl. kursplan\n\n\n\nVårtermin\n\n\nNågra övriga pythonkoncept och algoritmer\nJavaScript, grafiskt innehåll i webbläsare\nProjekt"
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/intro/intro-pres.html#några-riktlinjer-och-tips",
-    "href": "prog1000x/python/presentationer/intro/intro-pres.html#några-riktlinjer-och-tips",
-    "title": "Introduktion Programmering",
-    "section": "Några riktlinjer och tips",
-    "text": "Några riktlinjer och tips\n\n\nNär vi kodar Python så görs det i Thonny\n\n\n\nVi använder inte AI för att generera kod\n\n\n\n\nVi kan däremot fråga AI om varför kod inte fungerar som tänkt\n\n\n\n\nKoda gärna tillsammans\n\n\n\n\nAtt kunna skriva kod börjar ofta med att läsa kod\n\n\n\n\nDela upp problem i mindre problem, som i sin tur delas upp i ännu mindre problem, osv"
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/villkor/villkor-pres.html#vad-är-ett-villkor",
-    "href": "prog1000x/python/presentationer/villkor/villkor-pres.html#vad-är-ett-villkor",
-    "title": "Villkor i Python",
-    "section": "Vad är ett villkor?",
-    "text": "Vad är ett villkor?\n\nEtt datorprogram är en följd av instruktioner. Dessa instruktioner kan baseras på indata. Beroende på vilka indata som ges kan programmet behöva ta olika vägar.\nDet som avgör vilken väg programmet ska ta ka kallas villkor."
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/villkor/villkor-pres.html#dagens-mål",
-    "href": "prog1000x/python/presentationer/villkor/villkor-pres.html#dagens-mål",
-    "title": "Villkor i Python",
-    "section": "Dagens mål",
-    "text": "Dagens mål\n\nAtt förstå hur villkor tecknas i Python med hjälp av if-satser och kunna skriva egna, enkla sådana villkor i kod.\nAtt kunna använda jämförelsoperatorerna.\nAtt känna till innebörden av booleska variabler och kunna använda sådana.\nAtt börja lära sig att tolka, och även skapa egna, flödesscheman för program som innehåller villkor."
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/villkor/villkor-pres.html#ett-enkelt-villkor",
-    "href": "prog1000x/python/presentationer/villkor/villkor-pres.html#ett-enkelt-villkor",
-    "title": "Villkor i Python",
-    "section": "Ett enkelt villkor",
-    "text": "Ett enkelt villkor\nI Python så avgörs ett villkor med hjälp av det reserverade ordet if.\n\na = 1\nif a &gt; 0:\n   print(\"a är större än 0\")\n\na är större än 0\n\n\n\n\n\n\na = -1\nif a &gt; 0:\n   print(\"a är större än noll\")\nelse:\n   print(\"a är inte större än noll\")\n\na är inte större än noll"
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/villkor/villkor-pres.html#exempel-godkänt",
-    "href": "prog1000x/python/presentationer/villkor/villkor-pres.html#exempel-godkänt",
-    "title": "Villkor i Python",
-    "section": "Exempel: Godkänt?",
-    "text": "Exempel: Godkänt?\n\n\ne_gräns = 15\npoäng = int(input('Ange din provpoäng -&gt; '))\nif poäng &gt;= e_gräns:\n   print('Godkänt')\nprint('Programmet avslutas')\n\n\nResultatet av input är en sträng; denna kan göras om till ett heltal med int enligt rad 2 ovan."
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/villkor/villkor-pres.html#exempel-godkänt-eller-ej",
-    "href": "prog1000x/python/presentationer/villkor/villkor-pres.html#exempel-godkänt-eller-ej",
-    "title": "Villkor i Python",
-    "section": "Exempel: Godkänt eller ej?",
-    "text": "Exempel: Godkänt eller ej?\n\n\ne_gräns = 15\npoäng = int(input('Ange din provpoäng -&gt; '))\nif poäng &gt;= e_gräns:\n   print('Godkänt')\nelse:\n  print('Ej godkänt')\nprint('Programmet avslutas')"
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/villkor/villkor-pres.html#jämförelseoperatorer",
-    "href": "prog1000x/python/presentationer/villkor/villkor-pres.html#jämförelseoperatorer",
-    "title": "Villkor i Python",
-    "section": "Jämförelseoperatorer",
-    "text": "Jämförelseoperatorer\n\n\n\n&gt;\n&lt;\n&gt;=\n&lt;=\n==\n!=\n\nStörre än\nMindre än\nStörre än eller lika med\nMindre än eller lika med\nLika med\nSkilt från\n\n\nObservera skillnaden mellan tilldelande likhetstecken och jämförande likhetstecken!\n\n\n\n\nprint(3 == 3) # True\nprint(3 &lt;= 3) # True\nprint(3 != 3) # False\nprint(3 != 4) # True\n\na = 3  # Tilldelande\nb = 8  # Tilldelande\na == b # Jämförande\n# Rad 3 evalueras till False\nTilldelning sker från höger till vänster."
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/villkor/villkor-pres.html#booleska-värden",
-    "href": "prog1000x/python/presentationer/villkor/villkor-pres.html#booleska-värden",
-    "title": "Villkor i Python",
-    "section": "Booleska värden",
-    "text": "Booleska värden\n Värdena True och  False kallas för booleska värden (efter George Boole, 1815 – 1864). \n Variabler som antar denna typ av värden kallas för booleska variabler. \n\n\nmy_boolean = True\nif (my_boolean):\n   print(\"Den booleska variabelns värde var True\")\n\nDen booleska variabelns värde var True\n\n\n\n\n\nmy_second_boolean = False\nif (not my_second_boolean):\n   print(\"Den booleska variabelns värde var inte True\")\n\nDen booleska variabelns värde var inte True"
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/villkor/villkor-pres.html#sammansättning-av-booleska-värden",
-    "href": "prog1000x/python/presentationer/villkor/villkor-pres.html#sammansättning-av-booleska-värden",
-    "title": "Villkor i Python",
-    "section": "Sammansättning av booleska värden",
-    "text": "Sammansättning av booleska värden\n\n\n\nBooleska värden går att kombinera med operatorerna or och  and .\n\na = True\nb = False\nprint(a and b)         # False\nprint(a or b)          # True\nprint((a or b) and a)  # True\nprint(not a)           # False\nprint(not b)           # True"
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/villkor/villkor-pres.html#exempel-kategorisera-talet",
-    "href": "prog1000x/python/presentationer/villkor/villkor-pres.html#exempel-kategorisera-talet",
-    "title": "Villkor i Python",
-    "section": "Exempel: Kategorisera talet",
-    "text": "Exempel: Kategorisera talet\n\n\n\n\n\ntal = int(input('Ange valfritt heltal -&gt;'))\nif tal &gt;= 0:\n   if tal == 0:\n      print('Noll')\n   else:\n      print('Positivt')\nelse:\n   print('Negativt')\n\nprint('Programmet avslutas')"
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/formatering/textformatering.html#utskrifter-i-python",
-    "href": "prog1000x/python/presentationer/formatering/textformatering.html#utskrifter-i-python",
-    "title": "Formateradtext",
-    "section": "Utskrifter i Python",
-    "text": "Utskrifter i Python\n\n\n\nUtskrift av sträng\n\n\nhello_string = \"Hello, world\"\nprint(hello_string)\n\nHello, world\n\n\n\n\n\n\n\nUtskrift av sträng och tal\n\n\npris = 10\nprint(f\"Priset är {pris} kr.\")\n\nPriset är 10 kr.\n\n\n\n\n\n\n Utskrift av heltal\n\n\npris = 10\nprint(pris)\n\n10\n\n\n\n\n\n\n\n\nAvrundning\n\n\nmy_float = 2/3\nprint(f\"{my_float:.2f}\")\n\n0.67\n\n\n\n\n\n\n När “fast” text ska skrivas ut tillsammans med en variabel används en s.k f-string. Det står för formatted string literal."
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/formatering/textformatering.html#formatspecifikationer",
-    "href": "prog1000x/python/presentationer/formatering/textformatering.html#formatspecifikationer",
-    "title": "Formateradtext",
-    "section": "Formatspecifikationer",
-    "text": "Formatspecifikationer\n\nEn teckensträng har en en given fältbredd. Det tydliggörs med utfyllnadstecken.\n\ns1 = \"Kalle\"\ns2 = \"Anka\"\nprint(f\"{s1:*&lt;13}\")      # A. Fältbredd 13, vänsterjusterat\nprint(f\"{s1:*&gt;13}\")      # B. Fältbredd 13, högerjusterat\nprint(f\"{s1:*^13}\")      # C. Fältbredd 13, centrerat\nprint(f\"{s1:*&lt;9}{s2}\")   # D. Flera strängar\nprint(f\"{s1:&lt;9}{s2}\")    # E. Flera strängar, inget utfyllnadstecken\n\n\n\nA. Kalle******** B. ********Kalle C. ****Kalle****\n\nD. Kalle****Anka E. Kalle    Anka"
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/formatering/textformatering.html#upprepade-tecken",
-    "href": "prog1000x/python/presentationer/formatering/textformatering.html#upprepade-tecken",
-    "title": "Formateradtext",
-    "section": "Upprepade tecken",
-    "text": "Upprepade tecken\n\nNär många lika tecken ska skrivas ut så kan strängen multipliceras.\n\n\nprint(30 * \"*\")\nprint(\"*\" + 28 * \" \" + \"*\")\nprint (\"*\" + f\"{'Välkommen!':^28}\" + \"*\")\nprint(\"*\" + 28 * \" \" + \"*\")\nprint(30 * \"*\")\n\n******************************\n*                            *\n*         Välkommen!         *\n*                            *\n******************************"
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/formatering/textformatering.html#sträng-med-radbrytning",
-    "href": "prog1000x/python/presentationer/formatering/textformatering.html#sträng-med-radbrytning",
-    "title": "Formateradtext",
-    "section": "Sträng med radbrytning",
-    "text": "Sträng med radbrytning\n\nFör att skriva ut en sträng på flera används ett s.k “flykttecken” (escape character). Här används \\n för att få radbrytning.\n\nprint(\"Här är en text på\\ntvå rader\")\n\nHär är en text på\ntvå rader\n\n\n\nDetta kan användas tillsammans med fältbredden:\n\n\nprint(f\"Detta är en högerjusterad text\\n{'på flera rader':*&gt;30}\")\n\nDetta är en högerjusterad text\n****************på flera rader"
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/formatering/textformatering.html#justering-av-tal",
-    "href": "prog1000x/python/presentationer/formatering/textformatering.html#justering-av-tal",
-    "title": "Formateradtext",
-    "section": "Justering av tal",
-    "text": "Justering av tal\n\n\nTabeller blir mer lättlästa om ental står under ental, tiondel under tiondel osv.\n\n\n\na = 10.499; b = 2.38\nc = 123.4;  d = 9.1\nprint(f\"{a:6.2f}{c:12.2f}\\n{b:6.2f}{d:12.2f}\")\nprint(22 * \"-\");\nprint(f\"{(a+b):6.2f}{(c+d):12.2f}\")\n\n 10.50      123.40\n  2.38        9.10\n----------------------\n 12.88      132.50\n\n\n\n\nObservera att beräkningarna sker mellan måsvingarna!"
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/for-loopar/for-pres.html#dagens-mål",
-    "href": "prog1000x/python/presentationer/for-loopar/for-pres.html#dagens-mål",
-    "title": "for-loopari Python",
-    "section": "Dagens mål",
-    "text": "Dagens mål\n\nAtt känna till vad en for-loop är\nAtt kunna använda range-funktionen\nAtt känna till skillnaden mellan while- och for-loopar\nAtt kunna skriva egna små program som innehåller en for-loop."
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/for-loopar/for-pres.html#likheter-och-skillnader-mellan-while--och-for-loopar",
-    "href": "prog1000x/python/presentationer/for-loopar/for-pres.html#likheter-och-skillnader-mellan-while--och-for-loopar",
-    "title": "for-loopari Python",
-    "section": "Likheter och skillnader mellan while- och for-loopar",
-    "text": "Likheter och skillnader mellan while- och for-loopar\n\n\n\n\nOfta används while-loopar när antalet varv avgörs under programkörningens gång, medan for-loopar används då det är ett känt antal varv. I vissa fall går den ena typen av loop lika bra som den andra.\nEn for-loop använder sig av en lista som loopas igenom."
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/for-loopar/for-pres.html#enklast-möjliga-for-loop",
-    "href": "prog1000x/python/presentationer/for-loopar/for-pres.html#enklast-möjliga-for-loop",
-    "title": "for-loopari Python",
-    "section": "Enklast möjliga for-loop",
-    "text": "Enklast möjliga for-loop\n\n\n\n\nlista = [10, 20, 30]\nfor element in lista:\n    print(element, end=\" \")\nprint(f\"Loopen avslutas eftersom listan är slut\")\n\n10 20 30 Loopen avslutas eftersom listan är slut\n\n\n\n\n\nVariabeln element antar respektive värde i listan i tur och ordning."
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/for-loopar/for-pres.html#längre-listor",
-    "href": "prog1000x/python/presentationer/for-loopar/for-pres.html#längre-listor",
-    "title": "for-loopari Python",
-    "section": "Längre listor",
-    "text": "Längre listor\nListorna behöver inte skrivas in manuellt, det är bra då loopen behöver snurra många varv. Här används range för att skapa en lista från ett värde till ett annat värde.\n\n\n\n\nfor i in range(3, 8):   # Här skapas listan\n    print(i, end=\" \")\n\n3 4 5 6 7 \n\n\n\n\n\nFunktionen range(3, 8) skapar listan [3, 4, 5, 6, 7]\nOm det hade varit en while-loop som skulle snurra fem varv skulle ett villkor och en räknare behövt sättas upp."
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/for-loopar/for-pres.html#funktionen-range",
-    "href": "prog1000x/python/presentationer/for-loopar/for-pres.html#funktionen-range",
-    "title": "for-loopari Python",
-    "section": "Funktionen range",
-    "text": "Funktionen range\n\n\n\nExempel på hur parametrar påverkar resultatet av range\n\nlista_A = list(range(10))\nlista_B = list(range(-5, 5))\nlista_C = list(range(0, 10, 2))\nlista_D = list(range(10, 0, -1))\nprint(f\"lista_A = {lista_A}\")\nprint(f\"lista_B = {lista_B}\")\nprint(f\"lista_C = {lista_C}\")\nprint(f\"lista_D = {lista_D}\")\n\nlista_A = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\nlista_B = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4]\nlista_C = [0, 2, 4, 6, 8]\nlista_D = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]"
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/for-loopar/for-pres.html#exempel-multiplikationstabell",
-    "href": "prog1000x/python/presentationer/for-loopar/for-pres.html#exempel-multiplikationstabell",
-    "title": "for-loopari Python",
-    "section": "Exempel: Multiplikationstabell",
-    "text": "Exempel: Multiplikationstabell\n\n\n\n\n# Dettta program beräknar och skriver ut \"tolvans tabell\"\nfor i in range(1, 13):\n    print(f\"{i:2.0f} * 12 = {i*12:3.0f}\")\n\n 1 * 12 =  12\n 2 * 12 =  24\n 3 * 12 =  36\n 4 * 12 =  48\n 5 * 12 =  60\n 6 * 12 =  72\n 7 * 12 =  84\n 8 * 12 =  96\n 9 * 12 = 108\n10 * 12 = 120\n11 * 12 = 132\n12 * 12 = 144"
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/for-loopar/for-pres.html#andra-listelement-än-tal",
-    "href": "prog1000x/python/presentationer/for-loopar/for-pres.html#andra-listelement-än-tal",
-    "title": "for-loopari Python",
-    "section": "Andra listelement än tal",
-    "text": "Andra listelement än tal\n\n\n\nEn lista kan innehålla andra element än tal.\n\n\n\n\nitems = [\"Klocka\", \"Kikare\", \"Termometer\"]\nprint(\"Du har tillgång till:\", end=\" \")\nfor item in items:\n    print(item, end=\" \")\n\nDu har tillgång till: Klocka Kikare Termometer \n\n\n\n\n\nVi kommer senare att titta på hur element kan läggas till, tas bort och sorteras i listor. Det är användbart t ex i spel."
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/for-loopar/for-pres.html#ett-tänkt-exempel",
-    "href": "prog1000x/python/presentationer/for-loopar/for-pres.html#ett-tänkt-exempel",
-    "title": "for-loopari Python",
-    "section": "Ett tänkt exempel",
-    "text": "Ett tänkt exempel\n\n\n\nitems = [\"Klocka\", \"Kikare\", \"Termometer\"]\nfor item in items:\n    if item.is_boostable:\n      item.boost()\n      print(f\"Din {item} är nu boostad ✅\")\n    else:\n      print(f\"{item} gick inte att boosta ❌\")\nSekvensen ovan skulle kunna ingå i ett spelprogram. Här är is_boostable en egenskap hos objektet item och boost är en metod som tillämpas. Dessa saker måste programmeraren designa själv; det är inte inbyggt i Python.\nSenare i kursen kommer vi att komma till klasser, och koppla objekt, egenskaper och metoder till dessa."
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/for-loopar/for-pres.html#sammanfattning",
-    "href": "prog1000x/python/presentationer/for-loopar/for-pres.html#sammanfattning",
-    "title": "for-loopari Python",
-    "section": "Sammanfattning",
-    "text": "Sammanfattning\n\nfor-loopar används antingen när något ska göras ett förutbestämt antal gånger…\n… eller när någon funktion ska tillämpas på ett element i taget i en lista\nFunktionen range kan användas för att skapa listor\nFunktionen range ger olika utdata beroende på vilka parametrar som används"
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/while-loopar/index.html#övningar",
-    "href": "prog1000x/python/presentationer/while-loopar/index.html#övningar",
-    "title": "Presentation: while-loopar",
+    "objectID": "prog1000x/python/presentationer/strangar/index.html#övningar",
+    "href": "prog1000x/python/presentationer/strangar/index.html#övningar",
+    "title": "Presentation: Strängar",
     "section": "Övningar",
-    "text": "Övningar\nÖvningarna 1 – 7 i dokumentet Övningar: Loopar",
+    "text": "Övningar\nUppgifterna i dokumentet Övningar, Strängar",
     "crumbs": [
       "Home",
       "Programmering 1",
       "Presentationer, Python",
-      "Presentation: `while`-loopar"
+      "Presentation: Strängar"
     ]
   },
   {
-    "objectID": "prog1000x/python/presentationer/listor/listor-pres.html#dagens-mål",
-    "href": "prog1000x/python/presentationer/listor/listor-pres.html#dagens-mål",
-    "title": "Listor i Python",
+    "objectID": "prog1000x/python/presentationer/villkor/index.html",
+    "href": "prog1000x/python/presentationer/villkor/index.html",
+    "title": "Presentation: Villkor",
+    "section": "",
+    "text": "Presentation på hela skärmen",
+    "crumbs": [
+      "Home",
+      "Programmering 1",
+      "Presentationer, Python",
+      "Presentation: Villkor"
+    ]
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/villkor/index.html#övningar",
+    "href": "prog1000x/python/presentationer/villkor/index.html#övningar",
+    "title": "Presentation: Villkor",
+    "section": "Övningar",
+    "text": "Övningar\nÖvningar i dokumentet Övningar: Villkor",
+    "crumbs": [
+      "Home",
+      "Programmering 1",
+      "Presentationer, Python",
+      "Presentation: Villkor"
+    ]
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/formatering/index.html#övningar",
+    "href": "prog1000x/python/presentationer/formatering/index.html#övningar",
+    "title": "Att formatera text",
+    "section": "Övningar",
+    "text": "Övningar\nÖvningar textformatering",
+    "crumbs": [
+      "Home",
+      "Programmering 1",
+      "Presentationer, Python",
+      "Att formatera text"
+    ]
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/for-loopar/index.html#övningar",
+    "href": "prog1000x/python/presentationer/for-loopar/index.html#övningar",
+    "title": "Presentation: for-loopar",
+    "section": "Övningar",
+    "text": "Övningar\nÖvningarna 8 – 10 i dokumentet Övningar: loopar",
+    "crumbs": [
+      "Home",
+      "Programmering 1",
+      "Presentationer, Python",
+      "Presentation: `for`-loopar"
+    ]
+  },
+  {
+    "objectID": "prog1000x/python/presentationer/while-loopar/while-pres.html#dagens-mål",
+    "href": "prog1000x/python/presentationer/while-loopar/while-pres.html#dagens-mål",
+    "title": "While-loopar i Python",
     "section": "Dagens mål",
-    "text": "Dagens mål\n\nAtt känna till datatypen list\nAtt kunna skapa listor med element av olika datatyper\nAtt kunna komma åt enskilda element i en lista"
+    "text": "Dagens mål\n\nAtt känna till innebörden av en loopstruktur.\nAtt skriva enkla program som innehåller en eller flera while-loopar.\nAtt kunna använda styrsatserna break och continue.\nPå högre nivå: Att skriva program som innehåller nästlade loopar."
   },
   {
-    "objectID": "prog1000x/python/presentationer/listor/listor-pres.html#vad-är-en-lista",
-    "href": "prog1000x/python/presentationer/listor/listor-pres.html#vad-är-en-lista",
-    "title": "Listor i Python",
-    "section": "Vad är en lista?",
-    "text": "Vad är en lista?\n\n\n\n\nEn lista är en s.k datastruktur som organiserar värden i en följd. Listan är också en variabel, som alltså består av en samling värden. Dessa värden kan man komma åt ett och ett, men istället för att ha ett stort antal variabler kan man alltså ha en enda lista som innehåller många värden.\nEtt exempel som kan motivera en lista i programmeringen är då ett namnregister ska hanteras."
+    "objectID": "prog1000x/python/presentationer/while-loopar/while-pres.html#varför-loopar",
+    "href": "prog1000x/python/presentationer/while-loopar/while-pres.html#varför-loopar",
+    "title": "While-loopar i Python",
+    "section": "Varför loopar?",
+    "text": "Varför loopar?\n\nLoopar används när en del i ett program ska upprepas ett bestämt eller obestämt antal gånger. Det kan t ex vara ett gissningsspel: Så länge som spelaren gissar fel ska det finnas möjlighet att gissa igen.\nVi vet inte hur många gissningar som behövs, men det ska finnas ett villkor som anger när loopen ska avslutas. Programmet kan även hålla koll på hur många gissningar som behövdes."
   },
   {
-    "objectID": "prog1000x/python/presentationer/listor/listor-pres.html#exempel-på-en-lista",
-    "href": "prog1000x/python/presentationer/listor/listor-pres.html#exempel-på-en-lista",
-    "title": "Listor i Python",
-    "section": "Exempel på en lista",
-    "text": "Exempel på en lista\nExempel på en lista som lagrar temperaturer:\n           -----------------------\nInnehåll   | 10 | 12 | 8 | 9 | 7 |   &lt;- Här är temperaturerna\n           -----------------------\nIndexnr.     0    1    2   3   4     &lt;- Ett index är ett ordningstal\n\n\n\nVariabeldeklaration:\n\ntemperaturer = [10, 12, 8, 9, 7] # EN variabel för FEM temperaturer\n\n\n\n\n\nprint(temperaturer[0]) # Skriver ut innehållet av index 0\nprint(temperaturer[3]) # Skriver ut innehållet av index 3\n\n10\n9"
+    "objectID": "prog1000x/python/presentationer/while-loopar/while-pres.html#enklast-möjliga-while-loop",
+    "href": "prog1000x/python/presentationer/while-loopar/while-pres.html#enklast-möjliga-while-loop",
+    "title": "While-loopar i Python",
+    "section": "Enklast möjliga while-loop",
+    "text": "Enklast möjliga while-loop\n\n\ni = 1\nwhile i &lt;= 5: # Blocket upprepas så länge uttrycket är sant\n    print(i, end=\" \")\n    i += 1  # i ökar med 1\nprint(f\"\\nProgrammet avslutas eftersom i = {i}\")\n\n1 2 3 4 5 \nProgrammet avslutas eftersom i = 6\n\n\n Villkoret är på rad 2. Allt som omfattas av loopen är radindraget."
   },
   {
-    "objectID": "prog1000x/python/presentationer/listor/listor-pres.html#vad-var-nu-en-lista",
-    "href": "prog1000x/python/presentationer/listor/listor-pres.html#vad-var-nu-en-lista",
-    "title": "Listor i Python",
-    "section": "Vad var nu en lista?",
-    "text": "Vad var nu en lista?\n\nEn lista är alltså en variabel som innehåller flera olika värden. Värdena finns i “fack”, vart och ett med ett index (ordningsnummer).\nIndexet börjar med 0. Om det t ex finns 10 värden i en lista kommer man åt innehållet i “facken” genom index 0 - 9.\nAlla olika typer av variabler är tillåtna i en lista."
+    "objectID": "prog1000x/python/presentationer/while-loopar/while-pres.html#beräkning-av-summa-ver.-1",
+    "href": "prog1000x/python/presentationer/while-loopar/while-pres.html#beräkning-av-summa-ver.-1",
+    "title": "While-loopar i Python",
+    "section": "Beräkning av summa – ver. 1",
+    "text": "Beräkning av summa – ver. 1\n\n\n\n# Detta program beräknar summan av ett antal tal\navsluta = False\nsumma = 0\nwhile not avsluta:\n    tal = int(input(\"Ange ett valfritt tal, noll avslutar -&gt; \"))\n    if tal == 0:\n        avsluta = True\n    summa += tal\nprint(f\"Summan är {summa}\")\n\n\n\n\nEtt problem här är även det sista inmatade talet ingår i summan, ett annat villkor för avslut skulle ge en felaktig summa."
   },
   {
-    "objectID": "prog1000x/python/presentationer/listor/listor-pres.html#att-skapa-listor",
-    "href": "prog1000x/python/presentationer/listor/listor-pres.html#att-skapa-listor",
-    "title": "Listor i Python",
-    "section": "Att skapa listor",
-    "text": "Att skapa listor\n\n\n\nOm du vet vilka värden som ska vara med från början:\nmin_lista = [10, -2, 6, 3]\n\n\n\nOm du behöver lägga till värden i efterhand:\nscores = []       # Skapar en tom lista\nscores.append(42) # Lägger till talet 42 i den från början tomma listan\n\n\n\nÄven om listan inte är tom går det att lägga till värden med hjälp av append."
+    "objectID": "prog1000x/python/presentationer/while-loopar/while-pres.html#beräkning-av-summa-ver.-2",
+    "href": "prog1000x/python/presentationer/while-loopar/while-pres.html#beräkning-av-summa-ver.-2",
+    "title": "While-loopar i Python",
+    "section": "Beräkning av summa – ver. 2",
+    "text": "Beräkning av summa – ver. 2\n\n\n\n# Detta program beräknar summan av ett antal tal\nsumma = 0\nwhile True: # Alltid sant!\n    tal = int(input(\"Ange ett valfritt tal, noll avslutar -&gt; \"))\n    if tal == 0:\n        break # Här bryts loopen om villkoret ovan är uppfyllt\n    summa += tal\nprint(f\"Summan är {summa}\")\n\n\n\n\nHär används styrsatsen break för att avbryta loopen då ett villkor uppfylls. Det gör att det sista talet inte kommer att ingå i summan.\nSjälva loopvillkoret är alltid sant, det är innebörden av while True på rad 3."
   },
   {
-    "objectID": "prog1000x/python/presentationer/listor/listor-pres.html#att-skapa-listor-forts",
-    "href": "prog1000x/python/presentationer/listor/listor-pres.html#att-skapa-listor-forts",
-    "title": "Listor i Python",
-    "section": "Att skapa listor (forts)",
-    "text": "Att skapa listor (forts)\n\n\n\nVi har redan tidigare gått igenom funktionen range. Här skapas en lista med talen -4, -1, 2 och 5:\n\n\n\n\nlst = list(range(-4, 6, 3))\nprint(lst)\n\n[-4, -1, 2, 5]"
+    "objectID": "prog1000x/python/presentationer/while-loopar/while-pres.html#summan-av-positiva-tal",
+    "href": "prog1000x/python/presentationer/while-loopar/while-pres.html#summan-av-positiva-tal",
+    "title": "While-loopar i Python",
+    "section": "Summan av positiva tal",
+    "text": "Summan av positiva tal\n\n\n\n# Detta program beräknar summan av ett antal positiva tal\nsumma = 0\nwhile True:\n    tal = int(input(\"Ange ett valfritt tal, noll avslutar -&gt; \"))\n    if tal == 0:\n        break    # Loopen bryts\n    if tal &lt; 0:\n        continue # Loopen börjar om\n    summa += tal\nprint(f\"Summan av de inmatade positiva talen är {summa}\")\n\n\n\n\nStyrsatsen continue används för att hoppa över resten av loopen och börja om från dess början."
   },
   {
-    "objectID": "prog1000x/python/presentationer/listor/listor-pres.html#loopa-genom-listor",
-    "href": "prog1000x/python/presentationer/listor/listor-pres.html#loopa-genom-listor",
-    "title": "Listor i Python",
-    "section": "Loopa genom listor",
-    "text": "Loopa genom listor\n\n\n\nVi har också tidigare gått igenom for-loopar, som kan användas då man behöver gå igenom ett listelement i taget.\nFöljande exempel fanns i presentationen om for-loopar.\n\n\n\nitems = [\"Klocka\", \"Kikare\", \"Termometer\"]\nfor item in items:\n    if item.is_boostable:\n      item.boost()\n      print(f\"Din {item} är nu boostad ✅\")\n    else:\n      print(f\"{item} gick inte att boosta ❌\")"
+    "objectID": "prog1000x/python/presentationer/while-loopar/while-pres.html#nästlad-loop-flödesschema",
+    "href": "prog1000x/python/presentationer/while-loopar/while-pres.html#nästlad-loop-flödesschema",
+    "title": "While-loopar i Python",
+    "section": "Nästlad loop – flödesschema",
+    "text": "Nästlad loop – flödesschema\n\n\n\n\n\nHär finns en “loop i en loop”. För varje varv som den yttre loopen gör så kommer den inre loopen att gå ett givet antal varv."
   },
   {
-    "objectID": "prog1000x/python/presentationer/listor/listor-pres.html#listors-funktioner-och-metoder",
-    "href": "prog1000x/python/presentationer/listor/listor-pres.html#listors-funktioner-och-metoder",
-    "title": "Listor i Python",
-    "section": "Listors funktioner och metoder",
-    "text": "Listors funktioner och metoder\n\nDet finns många funktioner för att hantera listor. Det går bl.a att sortera element, ta bort element, räkna antalet element, reversera listan, summera element och välja ut en delmängd av elementen. Exempel på detta påvisas i övningarna."
+    "objectID": "prog1000x/python/presentationer/while-loopar/while-pres.html#nästlad-loop-kodexempel",
+    "href": "prog1000x/python/presentationer/while-loopar/while-pres.html#nästlad-loop-kodexempel",
+    "title": "While-loopar i Python",
+    "section": "Nästlad loop – kodexempel",
+    "text": "Nästlad loop – kodexempel\n\n\n\n# Detta program demonstrerar nästlade loopar\ni = 0\nwhile i &lt; 3: # Start yttre loop\n    j = 0\n    while j &lt; 3: # Start inre loop\n        print(f\"i = {i}, j = {j}\")\n        j += 1\n    i += 1\nprint(\"Programmet avslutas\")\n\n\n\nDenna kod motsvarar det ritade flödesschemat på förra slajden."
   },
   {
-    "objectID": "prog1000x/python/presentationer/listor/listor-pres.html#sammanfattning",
-    "href": "prog1000x/python/presentationer/listor/listor-pres.html#sammanfattning",
-    "title": "Listor i Python",
+    "objectID": "prog1000x/python/presentationer/while-loopar/while-pres.html#sammanfattning",
+    "href": "prog1000x/python/presentationer/while-loopar/while-pres.html#sammanfattning",
+    "title": "While-loopar i Python",
     "section": "Sammanfattning",
-    "text": "Sammanfattning\n\nListor används för att samla flera värden under ett enda variabelnamn\nMan kommer åt de enskilda elementen med dess index\nIndex-räkningen börjar på noll\nDet finns funktionalitet för att göra olika operationer på en lista"
+    "text": "Sammanfattning\n\nEn loop är en kontrollstruktur som upprepar kod.\nDet finns flera typer av loopar, idag har vi gått igenom while-loopen.\nwhile-loopen löper så länge ett villkor är uppfyllt…\n…eller tills den stöter på en break-sats.\nStyrsatsen continue gör att koden går tillbaka till loopens start.\nI nästlade loopar går koden igenom alla kombinationer av värden i den yttre och inre loopen."
   },
   {
-    "objectID": "prog1000x/python/presentationer/funktioner/func-pres.html#dagens-mål",
-    "href": "prog1000x/python/presentationer/funktioner/func-pres.html#dagens-mål",
-    "title": "Funktioner i Python",
-    "section": "Dagens mål",
-    "text": "Dagens mål\n\nAtt känna till vad en funktion är för något\nAtt känna till hur en funktion anropas\nAtt kunna läsa ut vilka parametrar en funktion tar\nAtt känna till skillnaden mellan funktioner som har …\n… respektive saknar return-sats\nAtt kunna tilldela en variabel ett värde från en funktion\nAtt kunna skriva enkla funktioner …\n… såväl med som utan return"
+    "objectID": "prog1000x/python/presentationer/listor/index.html#övningar",
+    "href": "prog1000x/python/presentationer/listor/index.html#övningar",
+    "title": "Presentation: Listor",
+    "section": "Övningar",
+    "text": "Övningar\nÖvningar i dokumentet Övningar listor.",
+    "crumbs": [
+      "Home",
+      "Programmering 1",
+      "Presentationer, Python",
+      "Presentation: Listor"
+    ]
   },
   {
-    "objectID": "prog1000x/python/presentationer/funktioner/func-pres.html#vad-är-en-funktion-i-programmering",
-    "href": "prog1000x/python/presentationer/funktioner/func-pres.html#vad-är-en-funktion-i-programmering",
-    "title": "Funktioner i Python",
-    "section": "Vad är en funktion i programmering?",
-    "text": "Vad är en funktion i programmering?\n\n\n\n\nFunktioner används för att dela upp ett program i mindre delar. En funktion anropas från det ställe man vill den ska utföras.\nVi har redan träffat på funktioner i form av print, input och range. Nu ska vi titta på hur egna funktioner skapas."
+    "objectID": "prog1000x/python/presentationer/funktioner/index.html#övningar",
+    "href": "prog1000x/python/presentationer/funktioner/index.html#övningar",
+    "title": "Presentation: Funktioner",
+    "section": "Övningar",
+    "text": "Övningar\nÖvningar i dokumentet Övningar: funktioner.",
+    "crumbs": [
+      "Home",
+      "Programmering 1",
+      "Presentationer, Python",
+      "Presentation: Funktioner"
+    ]
   },
   {
-    "objectID": "prog1000x/python/presentationer/funktioner/func-pres.html#användning-av-en-enkel-funktion",
-    "href": "prog1000x/python/presentationer/funktioner/func-pres.html#användning-av-en-enkel-funktion",
-    "title": "Funktioner i Python",
-    "section": "Användning av en enkel funktion",
-    "text": "Användning av en enkel funktion\n\n\n\nExempel: En funktion som adderar två tal:\ntal_1 = 10\ntal_2 = 20\nsumma = add(tal_1, tal_2) # Ger felmeddelande!\nprint(f\"Summan av {tal_1} och {tal_2} är {summa}\")\n\n\n\nFunktionen add finns inte fördefinierad i Python, den måste vi skapa själva!"
+    "objectID": "prog1000x/python/ovningar/strangar/index.html",
+    "href": "prog1000x/python/ovningar/strangar/index.html",
+    "title": "Övningar: Strängar",
+    "section": "",
+    "text": "Skriv ett program som räknar antalet förekomster av bokstaven “p” i strängen \"Packa pappas kappsäck\".\n\n\n\n\n\n\nTipLösningsförslag övning 1\n\n\n\n\n\nmy_str = \"Packa pappas kappsäck\"\np = 0\nfor char in my_str:\n  if char.lower() == \"p\":\n    p += 1\nprint(p)\n\n\n\n\n\n\nDeklarera strängen vowels = \"aeiouyåäö\", och använd denna för att räkna antalet konsonanter i \"Packa pappas kappsäck\".\nTips: Du kan ha nytta av strängmetoden isalnum(), se Cheat Sheet.\n\n\n\n\n\n\nTipLösningsförslag övning 2\n\n\n\n\n\nvowels = \"aeiouyåäö\"\nmy_str = \"Packa pappas kappsäck\"\ncons = 0\nfor char in my_str:\n    if not(char in vowels) and char.isalnum():\n        cons += 1\nprint(cons)\n\n\n\n\n\n\nSkriv ett program som skriver ut strängen \"Packa pappas kappsäck\" baklänges.\nTips: Du kan ha nytta av funktionen len, som fungerar på samma sätt som för listor, se Cheat Sheet\n\n\n\n\n\n\nTipLösningsförslag övning 3\n\n\n\n\n\nVariant 1, med loop\nmy_str = \"Packa pappas kappsäck\"\nfor i in range(len(my_str) - 1, -1, -1):\n    print(my_str[i], end=\"\")\nVariant 2, med “baklänges delsträng”\nmy_str = \"Packa pappas kappsäck\"\nrev_str = my_str[::-1]\nprint(rev_str)\n\n\n\n\n\n\nSkriv ett program som frågar användaren efter en mening. Programmet ska sedan avgöra om meningen är en palindrom. En palindrom är ett ord eller en mening som blir likadan när den läses baklänges. T ex är \"Sirap i Paris, \"Ni talar bra latin\" och \"Was it a car or a cat I saw?\" palindromer. Observera att mellanslagen inte räknas!\nTips: Omvandla först strängen till en sträng utan mellanslag och skiljetecken!\n\n\n\n\n\n\nTipLösningsförslag övning 4\n\n\n\n\n\nMetoden går ut på att skapa två strängar med gemena bokstäver utan skiljetecken: en framlänges och en baklänges.\nsrc_raw = input(\"Ange en sträng som ska testas som palindrom -&gt; \")\nsrc_comp = \"\"\nrev_comp = \"\"\n\nmax_index = len(src_raw) - 1\n\n# Skapa strängen med gemena bokstäver och utan skiljetecken\nfor i in range(0, max_index+1):\n    if src_raw[i].isalnum():\n        src_comp += src_raw[i].lower()\n    \n# Skapa baklänges-strängen\nfor i in range(max_index, -1, -1):\n    if src_raw[i].isalnum():\n        rev_comp += src_raw[i].lower()\n\n# Jämför strängarna med varandra\nif src_comp == rev_comp:\n    print(f\"\\\"{src_raw}\\\" är en palindrom\")\nelse:\n    print(f\"\\\"{src_raw}\\\" är inte en palindrom\")\n\n\n\n\n\n\nI rövarspråket så blir varje så ska varje konsonant upprepas med bokstaven “o” mellan. T ex översätts ordet “KAFFE” till “KOKAFOFFOFE”.\nSkapa ett program som översätter en valfri sträng till rövarspråket.\n\n\n\n\n\n\nTipLösningsförslag övning 5\n\n\n\n\n\nsource = input(\"Ange en sträng för översättning till rövarspråket -&gt; \")\ntarget = \"\"\nconsonants = \"bcdfghjklmnpqrstvwxz\"\nfor char in source:\n    target += char\n    if char.lower() in consonants:\n        target += \"o\" + char\nprint(target)",
+    "crumbs": [
+      "Home",
+      "Programmering 1",
+      "Övningar, Python",
+      "Övningar: Strängar"
+    ]
   },
   {
-    "objectID": "prog1000x/python/presentationer/funktioner/func-pres.html#implementering",
-    "href": "prog1000x/python/presentationer/funktioner/func-pres.html#implementering",
-    "title": "Funktioner i Python",
-    "section": "Implementering",
-    "text": "Implementering\nVi kan skapa och använda funktionen add enligt följande:\n\n\n\n\ndef add(a, b):   # Här\n  summa = a + b  # skapas\n  return summa   # funktionen\n\n# Huvudprogram nedan\ntal_1 = 10\ntal_2 = 20\nsumma = add(tal_1, tal_2) # Här anropas funktionen\n\nprint(f\"Summan av {tal_1} och {tal_2} är {summa}\")\n\nSumman av 10 och 20 är 30"
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/funktioner/func-pres.html#funktioners-anatomi",
-    "href": "prog1000x/python/presentationer/funktioner/func-pres.html#funktioners-anatomi",
-    "title": "Funktioner i Python",
-    "section": "Funktioners anatomi",
-    "text": "Funktioners anatomi\ndef add(a, b):\n  summa = a + b\n  return summa\n\nadd: Funktionens namn\na och b: Funktionens parametrar\nreturn: Det värde som funktionen lämnar som resultat\n\nFunktionen anropas t ex enligt total = add(1, 2). Här kallas talen 1 och 2 i anropet för argument.\nVariabeln total antar det värde som return skickar tillbaka."
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/funktioner/func-pres.html#variabler-i-funktioner",
-    "href": "prog1000x/python/presentationer/funktioner/func-pres.html#variabler-i-funktioner",
-    "title": "Funktioner i Python",
-    "section": "Variabler i funktioner",
-    "text": "Variabler i funktioner\nVariablerna som är deklarerade i funktioner är lokala. Det innebär att de inte är tillgängliga utanför funktionen.\nT ex är variablerna a, b och the_sum enbart tillgängliga inuti funktionen add nedan.\ndef add(a, b):\n  summa = a + b\n  return summa\n\n# Huvudprogram\nadd(1, 2)\n# Nedanstående ger ett felmeddelande eftersom\n# giltighetsområdet (omfattningen) för variabeln\n# summa inte räcker till denna nivå i programmet.\nprint(summa)"
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/funktioner/func-pres.html#funktioners-returvärden",
-    "href": "prog1000x/python/presentationer/funktioner/func-pres.html#funktioners-returvärden",
-    "title": "Funktioner i Python",
-    "section": "Funktioners returvärden",
-    "text": "Funktioners returvärden\nIbland saknas behov av return-värde.\n\ndef print_multabell(n):\n  # Skriver ut fem rader i multiplikationstabell n\n  for i in range(1, 6):\n    print(f\"{i:2.0f} * {n} = {i*n:3.0f}\")\n\nprint_multabell(12) # Ange önskad tabell att skriva ut här\n\n 1 * 12 =  12\n 2 * 12 =  24\n 3 * 12 =  36\n 4 * 12 =  48\n 5 * 12 =  60\n\n\n\nHär ser syns att en valfri multiplikationstabell kan skrivas ut, men det finns ingen variabel utanför funktionen som känner till något om multiplikationen."
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/funktioner/func-pres.html#alla-funktioner-har-ett-returvärde",
-    "href": "prog1000x/python/presentationer/funktioner/func-pres.html#alla-funktioner-har-ett-returvärde",
-    "title": "Funktioner i Python",
-    "section": "Alla funktioner har ett returvärde",
-    "text": "Alla funktioner har ett returvärde\n\ndef print_multabell(n):\n  # Skriver ut fem rader i multiplikationstabell n\n  for i in range(1, 6):\n    print(f\"{i:2.0f} * {n} = {i*n:3.0f}\")\n\nprint(print_multabell(12)) \n\n 1 * 12 =  12\n 2 * 12 =  24\n 3 * 12 =  36\n 4 * 12 =  48\n 5 * 12 =  60\nNone\n\n\n\nHär anropas funktionen, och skriver ut resultatet av den på rad 6. Vi ser att resultatet blir None."
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/funktioner/func-pres.html#dokumentation-av-funktioner",
-    "href": "prog1000x/python/presentationer/funktioner/func-pres.html#dokumentation-av-funktioner",
-    "title": "Funktioner i Python",
-    "section": "Dokumentation av funktioner",
-    "text": "Dokumentation av funktioner\nFunktioner bör dokumenteras. Python använder s.k docstrings för detta. Ej att förväxla med kommentarer för kodrader eller andra sekvenser i programmet!\ndef add(a, b):\n  '''\n  Funktionen adderar två tal. Ingen typkontroll sker.\n  Parameter 1: a | ett tal (int eller float)\n  Parameter 2: b | ett tal (int eller float)\n  Returvärde: summan av talen (int eller float)\n  '''\n  the_sum = a + b\n  return the_sum\nDocstrings kan användas av editorn när man skriver kod, eller i konsolen när man skriver help(add)."
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/funktioner/func-pres.html#lämna-funktionen",
-    "href": "prog1000x/python/presentationer/funktioner/func-pres.html#lämna-funktionen",
-    "title": "Funktioner i Python",
-    "section": "Lämna funktionen",
-    "text": "Lämna funktionen\nEn funktion lämnas när den når sista raden eller return.\ndef maximum(a, b):\n  '''\n  Funktionen returnerar det största av två tal\n  Parameter 1: a | ett tal (int eller float)\n  Parameter 2: b | ett tal (int eller float)\n  Returvärde: Det största av talen. Vid likhet returneras None.\n  '''\n\n  if a &gt; b:\n    return a\n  elif b &gt; a:\n    return b\n  return None # Onödig rad, utan return-sats returneras None ändå"
-  },
-  {
-    "objectID": "prog1000x/python/presentationer/funktioner/func-pres.html#sammanfattning",
-    "href": "prog1000x/python/presentationer/funktioner/func-pres.html#sammanfattning",
-    "title": "Funktioner i Python",
-    "section": "Sammanfattning",
-    "text": "Sammanfattning\n\nFunktioner är byggstenar i program …\n… vilket ger programmet en enklare struktur\nVariablerna i en funktion är lokala\nEn funktion lämnas vid return-sats\nOm ingen return-sats finns returneras None\nEn variabel bör tilldelas ett returnerat värde\nEn funktion bör dokumenteras med en docstring"
+    "objectID": "prog1000x/python/ovningar/strangar/index.html#övningar-med-kommentarer-och-lösningsförslag",
+    "href": "prog1000x/python/ovningar/strangar/index.html#övningar-med-kommentarer-och-lösningsförslag",
+    "title": "Övningar: Strängar",
+    "section": "",
+    "text": "Skriv ett program som räknar antalet förekomster av bokstaven “p” i strängen \"Packa pappas kappsäck\".\n\n\n\n\n\n\nTipLösningsförslag övning 1\n\n\n\n\n\nmy_str = \"Packa pappas kappsäck\"\np = 0\nfor char in my_str:\n  if char.lower() == \"p\":\n    p += 1\nprint(p)\n\n\n\n\n\n\nDeklarera strängen vowels = \"aeiouyåäö\", och använd denna för att räkna antalet konsonanter i \"Packa pappas kappsäck\".\nTips: Du kan ha nytta av strängmetoden isalnum(), se Cheat Sheet.\n\n\n\n\n\n\nTipLösningsförslag övning 2\n\n\n\n\n\nvowels = \"aeiouyåäö\"\nmy_str = \"Packa pappas kappsäck\"\ncons = 0\nfor char in my_str:\n    if not(char in vowels) and char.isalnum():\n        cons += 1\nprint(cons)\n\n\n\n\n\n\nSkriv ett program som skriver ut strängen \"Packa pappas kappsäck\" baklänges.\nTips: Du kan ha nytta av funktionen len, som fungerar på samma sätt som för listor, se Cheat Sheet\n\n\n\n\n\n\nTipLösningsförslag övning 3\n\n\n\n\n\nVariant 1, med loop\nmy_str = \"Packa pappas kappsäck\"\nfor i in range(len(my_str) - 1, -1, -1):\n    print(my_str[i], end=\"\")\nVariant 2, med “baklänges delsträng”\nmy_str = \"Packa pappas kappsäck\"\nrev_str = my_str[::-1]\nprint(rev_str)\n\n\n\n\n\n\nSkriv ett program som frågar användaren efter en mening. Programmet ska sedan avgöra om meningen är en palindrom. En palindrom är ett ord eller en mening som blir likadan när den läses baklänges. T ex är \"Sirap i Paris, \"Ni talar bra latin\" och \"Was it a car or a cat I saw?\" palindromer. Observera att mellanslagen inte räknas!\nTips: Omvandla först strängen till en sträng utan mellanslag och skiljetecken!\n\n\n\n\n\n\nTipLösningsförslag övning 4\n\n\n\n\n\nMetoden går ut på att skapa två strängar med gemena bokstäver utan skiljetecken: en framlänges och en baklänges.\nsrc_raw = input(\"Ange en sträng som ska testas som palindrom -&gt; \")\nsrc_comp = \"\"\nrev_comp = \"\"\n\nmax_index = len(src_raw) - 1\n\n# Skapa strängen med gemena bokstäver och utan skiljetecken\nfor i in range(0, max_index+1):\n    if src_raw[i].isalnum():\n        src_comp += src_raw[i].lower()\n    \n# Skapa baklänges-strängen\nfor i in range(max_index, -1, -1):\n    if src_raw[i].isalnum():\n        rev_comp += src_raw[i].lower()\n\n# Jämför strängarna med varandra\nif src_comp == rev_comp:\n    print(f\"\\\"{src_raw}\\\" är en palindrom\")\nelse:\n    print(f\"\\\"{src_raw}\\\" är inte en palindrom\")\n\n\n\n\n\n\nI rövarspråket så blir varje så ska varje konsonant upprepas med bokstaven “o” mellan. T ex översätts ordet “KAFFE” till “KOKAFOFFOFE”.\nSkapa ett program som översätter en valfri sträng till rövarspråket.\n\n\n\n\n\n\nTipLösningsförslag övning 5\n\n\n\n\n\nsource = input(\"Ange en sträng för översättning till rövarspråket -&gt; \")\ntarget = \"\"\nconsonants = \"bcdfghjklmnpqrstvwxz\"\nfor char in source:\n    target += char\n    if char.lower() in consonants:\n        target += \"o\" + char\nprint(target)",
+    "crumbs": [
+      "Home",
+      "Programmering 1",
+      "Övningar, Python",
+      "Övningar: Strängar"
+    ]
   },
   {
     "objectID": "prog1000x/python/ovningar/formatering/index.html",

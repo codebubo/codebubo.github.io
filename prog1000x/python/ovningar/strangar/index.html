@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Presentation: Listor – CodeBubo</title>
+<title>Övningar: Strängar – CodeBubo</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -25,6 +25,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -84,6 +119,7 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
 
 
 <link rel="stylesheet" href="../../../../styles.css">
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light">
@@ -122,7 +158,7 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../../prog1000x/python/cheat_sheet_python.html">Programmering 1</a></li><li class="breadcrumb-item"><a href="../../../../prog1000x/python/presentationer/intro/index.html">Presentationer, Python</a></li><li class="breadcrumb-item"><a href="../../../../prog1000x/python/presentationer/listor/index.html">Presentation: Listor</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../../prog1000x/python/cheat_sheet_python.html">Programmering 1</a></li><li class="breadcrumb-item"><a href="../../../../prog1000x/python/ovningar/formatering/index.html">Övningar, Python</a></li><li class="breadcrumb-item"><a href="../../../../prog1000x/python/ovningar/strangar/index.html">Övningar: Strängar</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -155,13 +191,13 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Presentationer, Python</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../prog1000x/python/presentationer/intro/index.html" class="sidebar-item-text sidebar-link">
@@ -200,7 +236,7 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../prog1000x/python/presentationer/listor/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../../prog1000x/python/presentationer/listor/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Presentation: Listor</span></a>
   </div>
 </li>
@@ -214,13 +250,13 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Övningar, Python</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../prog1000x/python/ovningar/formatering/index.html" class="sidebar-item-text sidebar-link">
@@ -253,7 +289,7 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../prog1000x/python/ovningar/strangar/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../prog1000x/python/ovningar/strangar/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Övningar: Strängar</span></a>
   </div>
 </li>
@@ -397,16 +433,26 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#övningar" id="toc-övningar" class="nav-link active" data-scroll-target="#övningar">Övningar</a></li>
+  <li><a href="#strängar" id="toc-strängar" class="nav-link active" data-scroll-target="#strängar">Strängar</a>
+  <ul class="collapse">
+  <li><a href="#övningar-med-kommentarer-och-lösningsförslag" id="toc-övningar-med-kommentarer-och-lösningsförslag" class="nav-link" data-scroll-target="#övningar-med-kommentarer-och-lösningsförslag">Övningar med kommentarer och lösningsförslag</a>
+  <ul class="collapse">
+  <li><a href="#övning-1" id="toc-övning-1" class="nav-link" data-scroll-target="#övning-1">Övning 1</a></li>
+  <li><a href="#övning-2" id="toc-övning-2" class="nav-link" data-scroll-target="#övning-2">Övning 2</a></li>
+  <li><a href="#övning-3" id="toc-övning-3" class="nav-link" data-scroll-target="#övning-3">Övning 3</a></li>
+  <li><a href="#övning-4" id="toc-övning-4" class="nav-link" data-scroll-target="#övning-4">Övning 4</a></li>
+  <li><a href="#övning-5" id="toc-övning-5" class="nav-link" data-scroll-target="#övning-5">Övning 5</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../../prog1000x/python/cheat_sheet_python.html">Programmering 1</a></li><li class="breadcrumb-item"><a href="../../../../prog1000x/python/presentationer/intro/index.html">Presentationer, Python</a></li><li class="breadcrumb-item"><a href="../../../../prog1000x/python/presentationer/listor/index.html">Presentation: Listor</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../../prog1000x/python/cheat_sheet_python.html">Programmering 1</a></li><li class="breadcrumb-item"><a href="../../../../prog1000x/python/ovningar/formatering/index.html">Övningar, Python</a></li><li class="breadcrumb-item"><a href="../../../../prog1000x/python/ovningar/strangar/index.html">Övningar: Strängar</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Presentation: Listor</h1>
+<h1 class="title">Övningar: Strängar</h1>
 </div>
 
 
@@ -423,16 +469,163 @@ gtag('config', 'G-FFXVNM3K2N', { 'anonymize_ip': true});
 </header>
 
 
-<div class="double-v-space">
-
+<section id="strängar" class="level1">
+<h1>Strängar</h1>
+<section id="övningar-med-kommentarer-och-lösningsförslag" class="level2">
+<h2 class="anchored" data-anchor-id="övningar-med-kommentarer-och-lösningsförslag">Övningar med kommentarer och lösningsförslag</h2>
+<section id="övning-1" class="level3">
+<h3 class="anchored" data-anchor-id="övning-1">Övning 1</h3>
+<p>Skriv ett program som räknar antalet förekomster av bokstaven “p” i strängen <code>"Packa pappas kappsäck"</code>.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 1">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
 </div>
-<iframe src="./listor-pres.html" width="800" height="550">
-</iframe>
-<section id="övningar" class="level2">
-<h2 class="anchored" data-anchor-id="övningar">Övningar</h2>
-<p>Övningar i dokumentet <a href="../../../../prog1000x/python/ovningar/listor/index.html">Övningar listor</a>.</p>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Lösningsförslag övning 1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>my_str <span class="op">=</span> <span class="st">"Packa pappas kappsäck"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> char <span class="kw">in</span> my_str:</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> char.lower() <span class="op">==</span> <span class="st">"p"</span>:</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    p <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</section>
+<section id="övning-2" class="level3">
+<h3 class="anchored" data-anchor-id="övning-2">Övning 2</h3>
+<p>Deklarera strängen <code>vowels = "aeiouyåäö"</code>, och använd denna för att räkna antalet konsonanter i <code>"Packa pappas kappsäck"</code>.</p>
+<p>Tips: Du kan ha nytta av strängmetoden <code>isalnum()</code>, se <a href="../../cheat_sheet_python.html#strängar-och-strängmetoder">Cheat Sheet</a>.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 2">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Lösningsförslag övning 2
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>vowels <span class="op">=</span> <span class="st">"aeiouyåäö"</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>my_str <span class="op">=</span> <span class="st">"Packa pappas kappsäck"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>cons <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> char <span class="kw">in</span> my_str:</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span>(char <span class="kw">in</span> vowels) <span class="kw">and</span> char.isalnum():</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        cons <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cons)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</section>
+<section id="övning-3" class="level3">
+<h3 class="anchored" data-anchor-id="övning-3">Övning 3</h3>
+<p>Skriv ett program som skriver ut strängen <code>"Packa pappas kappsäck"</code> baklänges.</p>
+<p>Tips: Du kan ha nytta av funktionen <code>len</code>, som fungerar på samma sätt som för listor, se <a href="../../cheat_sheet_python.html#antal-element-i-en-lista">Cheat Sheet</a></p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 3">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Lösningsförslag övning 3
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Variant 1, med loop</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>my_str <span class="op">=</span> <span class="st">"Packa pappas kappsäck"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(my_str) <span class="op">-</span> <span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>):</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(my_str[i], end<span class="op">=</span><span class="st">""</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Variant 2, med “baklänges delsträng”</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>my_str <span class="op">=</span> <span class="st">"Packa pappas kappsäck"</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>rev_str <span class="op">=</span> my_str[::<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rev_str)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</section>
+<section id="övning-4" class="level3">
+<h3 class="anchored" data-anchor-id="övning-4">Övning 4</h3>
+<p>Skriv ett program som frågar användaren efter en mening. Programmet ska sedan avgöra om meningen är en palindrom. En palindrom är ett ord eller en mening som blir likadan när den läses baklänges. T ex är <code>"Sirap i Paris</code>, <code>"Ni talar bra latin"</code> och <code>"Was it a car or a cat I saw?"</code> palindromer. Observera att mellanslagen inte räknas!</p>
+<p>Tips: Omvandla först strängen till en sträng utan mellanslag och skiljetecken!</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 4">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Lösningsförslag övning 4
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Metoden går ut på att skapa två strängar med gemena bokstäver utan skiljetecken: en framlänges och en baklänges.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>src_raw <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Ange en sträng som ska testas som palindrom -&gt; "</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>src_comp <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>rev_comp <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>max_index <span class="op">=</span> <span class="bu">len</span>(src_raw) <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Skapa strängen med gemena bokstäver och utan skiljetecken</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, max_index<span class="op">+</span><span class="dv">1</span>):</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> src_raw[i].isalnum():</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>        src_comp <span class="op">+=</span> src_raw[i].lower()</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Skapa baklänges-strängen</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(max_index, <span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>):</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> src_raw[i].isalnum():</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>        rev_comp <span class="op">+=</span> src_raw[i].lower()</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Jämför strängarna med varandra</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> src_comp <span class="op">==</span> rev_comp:</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\"</span><span class="sc">{</span>src_raw<span class="sc">}</span><span class="ch">\"</span><span class="ss"> är en palindrom"</span>)</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\"</span><span class="sc">{</span>src_raw<span class="sc">}</span><span class="ch">\"</span><span class="ss"> är inte en palindrom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</section>
+<section id="övning-5" class="level3">
+<h3 class="anchored" data-anchor-id="övning-5">Övning 5</h3>
+<p>I rövarspråket så blir varje så ska varje konsonant upprepas med bokstaven “o” mellan. T ex översätts ordet “KAFFE” till “KOKAFOFFOFE”.</p>
+<p>Skapa ett program som översätter en valfri sträng till rövarspråket.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lösningsförslag övning 5">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Lösningsförslag övning 5
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>source <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Ange en sträng för översättning till rövarspråket -&gt; "</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>target <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>consonants <span class="op">=</span> <span class="st">"bcdfghjklmnpqrstvwxz"</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> char <span class="kw">in</span> source:</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    target <span class="op">+=</span> char</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> char.lower() <span class="kw">in</span> consonants:</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        target <span class="op">+=</span> <span class="st">"o"</span> <span class="op">+</span> char</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(target)     </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
