@@ -10,7 +10,7 @@ format:
 
 ## Övningar med kommentarer och lösningsförslag
 
-### Uppgift 1
+### Övning 1
 
 Skapa listan `lst`. Lägg till tio stycken heltalsvärden; dessa ska inte
 vara i någon storleksordning. Utför därefter följande:
